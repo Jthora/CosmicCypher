@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "base24-order-reactive-static-256x-glow.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

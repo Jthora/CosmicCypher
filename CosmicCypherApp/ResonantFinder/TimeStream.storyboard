@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2k0-hm-hsl">
+    <device id="retina6_1" orientation="landscape" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Time Stream View Controller-->
+        <scene sceneID="nWl-ap-bbQ">
+            <objects>
+                <viewController id="2k0-hm-hsl" customClass="TimeStreamViewController" customModule="ResonantFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Uj8-5B-v0L">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <skView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y0i-YQ-sYk">
+                                <rect key="frame" x="44" y="0.0" width="808" height="393"/>
+                            </skView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="YDF-hT-9Mx"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="y0i-YQ-sYk" firstAttribute="top" secondItem="YDF-hT-9Mx" secondAttribute="top" id="OM0-p9-gQh"/>
+                            <constraint firstItem="YDF-hT-9Mx" firstAttribute="bottom" secondItem="y0i-YQ-sYk" secondAttribute="bottom" id="SUb-f9-y1L"/>
+                            <constraint firstItem="YDF-hT-9Mx" firstAttribute="trailing" secondItem="y0i-YQ-sYk" secondAttribute="trailing" id="mjK-C6-fgU"/>
+                            <constraint firstItem="y0i-YQ-sYk" firstAttribute="leading" secondItem="YDF-hT-9Mx" secondAttribute="leading" id="vte-Uf-ff5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="spriteKitView" destination="y0i-YQ-sYk" id="HNn-jq-5zC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mgk-nT-QBo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="112" y="108"/>
+        </scene>
+    </scenes>
+</document>

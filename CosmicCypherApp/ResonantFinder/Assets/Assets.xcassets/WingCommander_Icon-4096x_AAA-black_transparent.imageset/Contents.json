@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "WingCommander_Icon-4096x_AAA-black_transparent.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

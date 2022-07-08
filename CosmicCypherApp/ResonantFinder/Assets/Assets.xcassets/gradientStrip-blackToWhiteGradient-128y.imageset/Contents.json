@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "gradientStrip-blackToWhiteGradient-128y.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

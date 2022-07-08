@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "base36-fire-static-chaos-256x-glow.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "WingsIcon.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

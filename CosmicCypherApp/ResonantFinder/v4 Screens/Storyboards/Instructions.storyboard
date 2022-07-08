@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Instructions-->
+        <scene sceneID="jqv-Ed-0b4">
+            <objects>
+                <viewController storyboardIdentifier="CosmicCypherInstructionsViewController" title="Instructions" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WiR-m6-RXl" customClass="CosmicCypherInstructionsViewController" customModule="ResonantFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bII-fo-Dg0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="10" translatesAutoresizingMaskIntoConstraints="NO" id="Pxs-q0-r3H">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CosmicCypher-Mk2" translatesAutoresizingMaskIntoConstraints="NO" id="bhR-xu-kW7">
+                                        <rect key="frame" x="0.0" y="0.0" width="3060" height="1980"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1980" id="btC-C5-AhH"/>
+                                            <constraint firstAttribute="width" constant="3060" id="rru-zk-kd5"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="bhR-xu-kW7" firstAttribute="trailing" secondItem="1BG-6V-Hwc" secondAttribute="trailing" id="Q2C-8z-gzK"/>
+                                    <constraint firstItem="bhR-xu-kW7" firstAttribute="leading" secondItem="1BG-6V-Hwc" secondAttribute="leading" id="lqN-FG-iOw"/>
+                                    <constraint firstItem="bhR-xu-kW7" firstAttribute="bottom" secondItem="1BG-6V-Hwc" secondAttribute="bottom" id="ueT-ty-q7t"/>
+                                    <constraint firstItem="bhR-xu-kW7" firstAttribute="top" secondItem="1BG-6V-Hwc" secondAttribute="top" id="wMG-Zd-M0D"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="1BG-6V-Hwc"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="HQT-rP-sH9"/>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ddp-Wa-Tfl">
+                                <rect key="frame" x="20" y="64" width="56" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Back"/>
+                                <connections>
+                                    <action selector="backButtonClick:" destination="WiR-m6-RXl" eventType="touchUpInside" id="Gfk-EI-IeD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pJz-6F-TXm"/>
+                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Pxs-q0-r3H" firstAttribute="top" secondItem="pJz-6F-TXm" secondAttribute="top" id="9rO-ra-Lfv"/>
+                            <constraint firstItem="Ddp-Wa-Tfl" firstAttribute="leading" secondItem="pJz-6F-TXm" secondAttribute="leading" constant="20" id="CpQ-a9-gRs"/>
+                            <constraint firstItem="pJz-6F-TXm" firstAttribute="trailing" secondItem="Pxs-q0-r3H" secondAttribute="trailing" id="PRJ-KJ-qHf"/>
+                            <constraint firstItem="Ddp-Wa-Tfl" firstAttribute="top" secondItem="bII-fo-Dg0" secondAttribute="topMargin" constant="20" id="eyQ-jW-CHg"/>
+                            <constraint firstItem="Pxs-q0-r3H" firstAttribute="leading" secondItem="pJz-6F-TXm" secondAttribute="leading" id="hBY-U9-HXe"/>
+                            <constraint firstItem="pJz-6F-TXm" firstAttribute="bottom" secondItem="Pxs-q0-r3H" secondAttribute="bottom" id="iGB-Bd-bRh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="Ddp-Wa-Tfl" id="qjP-fz-Fi4"/>
+                        <outlet property="imageView" destination="bhR-xu-kW7" id="zYE-H9-Oex"/>
+                        <outlet property="imageViewBottomConstraint" destination="ueT-ty-q7t" id="X5N-f2-6t1"/>
+                        <outlet property="imageViewLeadingConstraint" destination="lqN-FG-iOw" id="81Z-Yw-zgb"/>
+                        <outlet property="imageViewTopConstraint" destination="wMG-Zd-M0D" id="PZo-qI-tiK"/>
+                        <outlet property="imageViewTrailingConstraint" destination="Q2C-8z-gzK" id="nHq-ih-a0q"/>
+                        <outlet property="scrollView" destination="Pxs-q0-r3H" id="XlR-dZ-44R"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V2S-5j-kwP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-781" y="1566"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="CosmicCypher-Mk2" width="3060" height="1980"/>
+    </resources>
+</document>

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "AstrologyIcon_Node_ASC.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "base24-void-active-static-256x-glow.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

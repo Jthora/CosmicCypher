@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "base36-fire-active-core-256x-glow.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

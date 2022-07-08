@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "base36-water-static-chaos-256x-glow.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "base12-air-reactive-256x-glow.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

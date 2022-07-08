@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "base36-fire-reactive-prime-256x-glow.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

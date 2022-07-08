@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "AstrologyIcon_Aspect_Sextile.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

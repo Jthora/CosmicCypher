@@ -1,0 +1,11 @@
+CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/BinaryCodable" "${PODS_CONFIGURATION_BUILD_DIR}/Charts" "${PODS_CONFIGURATION_BUILD_DIR}/GaugeKit" "${PODS_CONFIGURATION_BUILD_DIR}/ObjCAA" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftAA" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftAlgorithms" "${PODS_CONFIGURATION_BUILD_DIR}/TimeZoneLocate" "${PODS_CONFIGURATION_BUILD_DIR}/TinyConstraints"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/BinaryCodable/BinaryCodable.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Charts/Charts.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/GaugeKit/GaugeKit.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/ObjCAA/ObjCAA.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftAA/SwiftAA.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftAlgorithms/Algorithms.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/TimeZoneLocate/TimeZoneLocate.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/TinyConstraints/TinyConstraints.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -framework "Algorithms" -framework "BinaryCodable" -framework "Charts" -framework "CoreLocation" -framework "Foundation" -framework "GaugeKit" -framework "ObjCAA" -framework "QuartzCore" -framework "SwiftAA" -framework "TimeZoneLocate" -framework "TinyConstraints" -framework "UIKit"
+PODS_BUILD_DIR = ${BUILD_DIR}
+PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
+PODS_ROOT = ${SRCROOT}/Pods
+PODS_XCFRAMEWORKS_BUILD_DIR = $(PODS_CONFIGURATION_BUILD_DIR)/XCFrameworkIntermediates
+USE_RECURSIVE_SCRIPT_INPUTS_IN_SCRIPT_PHASES = YES

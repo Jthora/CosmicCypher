@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "AstrologyIcon_Aspect_Tenth.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -1,0 +1,9 @@
+${PODS_ROOT}/Target Support Files/Pods-ResonantFinder/Pods-ResonantFinder-frameworks.sh
+${BUILT_PRODUCTS_DIR}/BinaryCodable/BinaryCodable.framework
+${BUILT_PRODUCTS_DIR}/Charts/Charts.framework
+${BUILT_PRODUCTS_DIR}/GaugeKit/GaugeKit.framework
+${BUILT_PRODUCTS_DIR}/ObjCAA/ObjCAA.framework
+${BUILT_PRODUCTS_DIR}/SwiftAA/SwiftAA.framework
+${BUILT_PRODUCTS_DIR}/SwiftAlgorithms/Algorithms.framework
+${BUILT_PRODUCTS_DIR}/TimeZoneLocate/TimeZoneLocate.framework
+${BUILT_PRODUCTS_DIR}/TinyConstraints/TinyConstraints.framework

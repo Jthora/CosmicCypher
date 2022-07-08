@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "AstrologyIcon_Base16_Air.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

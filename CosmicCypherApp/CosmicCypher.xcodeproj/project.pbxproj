@@ -1,0 +1,1719 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0FCAD8A97A139039945A1014 /* Pods_ResonantFinderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37FC7A9F8CB70DB8098D3BB3 /* Pods_ResonantFinderTests.framework */; };
+		3166A6704E347F35EF9611AF /* Pods_ResonantFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 791E85B1B8EF148AE402C981 /* Pods_ResonantFinder.framework */; };
+		C97C87D63E93F32C7C790AA1 /* Pods_ResonantFinder_ResonantFinderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 935DCEB4CD464AC28B628A99 /* Pods_ResonantFinder_ResonantFinderUITests.framework */; };
+		FA07C9AE254019D800683486 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07C9AD254019D800683486 /* AppDelegate.swift */; };
+		FA07C9B0254019D800683486 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07C9AF254019D800683486 /* SceneDelegate.swift */; };
+		FA07C9B2254019D800683486 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07C9B1254019D800683486 /* ViewController.swift */; };
+		FA07C9B7254019DB00683486 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA07C9B6254019DB00683486 /* Assets.xcassets */; };
+		FA07C9BA254019DB00683486 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA07C9B8254019DB00683486 /* LaunchScreen.storyboard */; };
+		FA07C9C5254019DC00683486 /* ResonantFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07C9C4254019DC00683486 /* ResonantFinderTests.swift */; };
+		FA07C9D0254019DC00683486 /* ResonantFinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07C9CF254019DC00683486 /* ResonantFinderUITests.swift */; };
+		FA07CA1F25401EBB00683486 /* NaturaDisk.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA07C9E425401EBB00683486 /* NaturaDisk.sks */; };
+		FA07CA2025401EBB00683486 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07C9E625401EBB00683486 /* Assets.swift */; };
+		FA07CA2125401EBB00683486 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07C9E725401EBB00683486 /* Utils.swift */; };
+		FA07CA2225401EBB00683486 /* SelectDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07C9E925401EBB00683486 /* SelectDateViewController.swift */; };
+		FA07CA2325401EBB00683486 /* ResonanceReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07C9EA25401EBB00683486 /* ResonanceReportViewController.swift */; };
+		FA07CA2425401EBB00683486 /* TimeStreamCompositeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07C9EB25401EBB00683486 /* TimeStreamCompositeTableViewCell.swift */; };
+		FA07CA2525401EBB00683486 /* ResonanceReportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07C9EC25401EBB00683486 /* ResonanceReportTableViewCell.swift */; };
+		FA07CA2625401EBB00683486 /* SetDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07C9ED25401EBB00683486 /* SetDateViewController.swift */; };
+		FA07CA2725401EBB00683486 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA07C9EE25401EBB00683486 /* Main.storyboard */; };
+		FA07CA3825401EBC00683486 /* ResultHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07CA0A25401EBB00683486 /* ResultHistoryTableViewCell.swift */; };
+		FA07CA3925401EBC00683486 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07CA0B25401EBB00683486 /* MainViewController.swift */; };
+		FA07CA3A25401EBC00683486 /* FindLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07CA0C25401EBB00683486 /* FindLocationViewController.swift */; };
+		FA07CA3B25401EBC00683486 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07CA0D25401EBB00683486 /* ResultTableViewCell.swift */; };
+		FA07CA3C25401EBC00683486 /* ReportHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07CA0E25401EBB00683486 /* ReportHistoryViewController.swift */; };
+		FA07CA4425401EBC00683486 /* Aldrich-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA07CA1725401EBB00683486 /* Aldrich-Regular.ttf */; };
+		FA07CA4525401EBC00683486 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07CA1925401EBB00683486 /* Date+Extension.swift */; };
+		FA07CA4625401EBC00683486 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07CA1A25401EBB00683486 /* UIImage+Extension.swift */; };
+		FA07CA4725401EBC00683486 /* SceneKit+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07CA1B25401EBB00683486 /* SceneKit+Extension.swift */; };
+		FA07CA4825401EBC00683486 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07CA1C25401EBB00683486 /* String+Extension.swift */; };
+		FA07CA4925401EBC00683486 /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07CA1D25401EBB00683486 /* Dictionary+Extension.swift */; };
+		FA07CA4A25401EBC00683486 /* SpriteKit+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07CA1E25401EBB00683486 /* SpriteKit+Extension.swift */; };
+		FA1FDD452570262700B51BD2 /* ReadingsSubScreenCOEH.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1FDD442570262700B51BD2 /* ReadingsSubScreenCOEH.swift */; };
+		FA1FDD4A257026CA00B51BD2 /* ReadingsSubScreenSSSB.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1FDD49257026CA00B51BD2 /* ReadingsSubScreenSSSB.swift */; };
+		FA1FDD4F257026F700B51BD2 /* ReadingsSubScreenPNPA.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1FDD4E257026F700B51BD2 /* ReadingsSubScreenPNPA.swift */; };
+		FA1FDD542570270800B51BD2 /* ReadingsSubScreenEDED.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1FDD532570270800B51BD2 /* ReadingsSubScreenEDED.swift */; };
+		FA1FDD5E257269F800B51BD2 /* StarChartTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1FDD5D257269F800B51BD2 /* StarChartTest.swift */; };
+		FA1FDD6B2577144700B51BD2 /* TimeStream.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1FDD6A2577144700B51BD2 /* TimeStream.storyboard */; };
+		FA1FDD74257714C400B51BD2 /* TimeStreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1FDD73257714C400B51BD2 /* TimeStreamViewController.swift */; };
+		FA1FDD8C2579647D00B51BD2 /* View_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1FDD8B2579647D00B51BD2 /* View_Extension.swift */; };
+		FA1FDD92257969E500B51BD2 /* ElementalReadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1FDD91257969E500B51BD2 /* ElementalReadingViewController.swift */; };
+		FA1FDD98257A0A3A00B51BD2 /* SpriteNodeCosmicEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1FDD97257A0A3A00B51BD2 /* SpriteNodeCosmicEvent.swift */; };
+		FA2C449328696071009E61B2 /* StarChartCoreReactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2C449228696071009E61B2 /* StarChartCoreReactive.swift */; };
+		FA2C449528697B4E009E61B2 /* StarChartCompositeRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2C449428697B4E009E61B2 /* StarChartCompositeRenderer.swift */; };
+		FA2C449728697B9F009E61B2 /* StarChartComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2C449628697B9F009E61B2 /* StarChartComposite.swift */; };
+		FA2C449F286CEEDC009E61B2 /* TimeStreamPresetSelect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA2C449E286CEEDC009E61B2 /* TimeStreamPresetSelect.storyboard */; };
+		FA2C44A1286CEEE8009E61B2 /* TimeStreamManualSelect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA2C44A0286CEEE8009E61B2 /* TimeStreamManualSelect.storyboard */; };
+		FA2CB4882859F77B003AD95C /* TimeStreamColorRenderMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2CB4872859F77B003AD95C /* TimeStreamColorRenderMode.swift */; };
+		FA2CB48A285E4E9B003AD95C /* UUID+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2CB489285E4E9B003AD95C /* UUID+Extension.swift */; };
+		FA2CB48C285FFCCE003AD95C /* TimeStreamCoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2CB48B285FFCCE003AD95C /* TimeStreamCoreDelegate.swift */; };
+		FA2CB48E2860EC4F003AD95C /* CIFilter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2CB48D2860EC4F003AD95C /* CIFilter+Extension.swift */; };
+		FA2CB4902860EF49003AD95C /* TimeStreamSpriteMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2CB48F2860EF49003AD95C /* TimeStreamSpriteMask.swift */; };
+		FA2CB4922860F664003AD95C /* CGImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2CB4912860F664003AD95C /* CGImage+Extension.swift */; };
+		FA2CB49428629725003AD95C /* TimeStreamImageMapArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2CB49328629725003AD95C /* TimeStreamImageMapArchive.swift */; };
+		FA2CB4962862A9C7003AD95C /* CosmicCypherInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2CB4952862A9C6003AD95C /* CosmicCypherInstructionsViewController.swift */; };
+		FA33AAFB2864E12E00BC9F76 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA33AAFA2864E12E00BC9F76 /* Settings.swift */; };
+		FA33AAFD2864E18E00BC9F76 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA33AAFC2864E18E00BC9F76 /* Settings.storyboard */; };
+		FA33AAFF2864E1A000BC9F76 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA33AAFE2864E1A000BC9F76 /* SettingsViewController.swift */; };
+		FA33AB01286557D800BC9F76 /* PlanetSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA33AB00286557D800BC9F76 /* PlanetSelect.swift */; };
+		FA33AB032865582200BC9F76 /* PlanetSelect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA33AB022865582200BC9F76 /* PlanetSelect.storyboard */; };
+		FA33AB052865584D00BC9F76 /* PlanetSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA33AB042865584D00BC9F76 /* PlanetSelectViewController.swift */; };
+		FA33AB0728655B8500BC9F76 /* StarChartSelect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA33AB0628655B8500BC9F76 /* StarChartSelect.storyboard */; };
+		FA33AB0928655DF700BC9F76 /* Instructions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA33AB0828655DF700BC9F76 /* Instructions.storyboard */; };
+		FA33AB0C2866760700BC9F76 /* CosmicAlignmentSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA33AB0B2866760700BC9F76 /* CosmicAlignmentSpriteNode.swift */; };
+		FA33AB0F2868D66900BC9F76 /* PlanetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA33AB0E2868D66900BC9F76 /* PlanetCollectionViewCell.swift */; };
+		FA33AB112868D79900BC9F76 /* AspectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA33AB102868D79900BC9F76 /* AspectCollectionViewCell.swift */; };
+		FA35C08E2849783A006114AB /* Earth+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C05E28497839006114AB /* Earth+Extension.swift */; };
+		FA35C08F2849783A006114AB /* JulianDay+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C05F28497839006114AB /* JulianDay+Extension.swift */; };
+		FA35C0902849783A006114AB /* Astronomy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C06028497839006114AB /* Astronomy.swift */; };
+		FA35C0912849783A006114AB /* TextureGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C06228497839006114AB /* TextureGeneration.swift */; };
+		FA35C0922849783A006114AB /* StarChartRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C06428497839006114AB /* StarChartRegistry.swift */; };
+		FA35C0932849783A006114AB /* ResonanceScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C06528497839006114AB /* ResonanceScore.swift */; };
+		FA35C0942849783A006114AB /* StarCharts+Gravimetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C06628497839006114AB /* StarCharts+Gravimetrics.swift */; };
+		FA35C0952849783A006114AB /* StarCharts+DataMaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C06728497839006114AB /* StarCharts+DataMaps.swift */; };
+		FA35C0962849783A006114AB /* PlanetaryHarmonics.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C06828497839006114AB /* PlanetaryHarmonics.swift */; };
+		FA35C0972849783A006114AB /* StarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C06928497839006114AB /* StarChart.swift */; };
+		FA35C0982849783A006114AB /* EnergyLevels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C06A28497839006114AB /* EnergyLevels.swift */; };
+		FA35C0992849783A006114AB /* StarChartSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C06B28497839006114AB /* StarChartSprite.swift */; };
+		FA35C09A2849783A006114AB /* StarChartGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C06C28497839006114AB /* StarChartGenerator.swift */; };
+		FA35C09B2849783A006114AB /* StarChart+ChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C06D28497839006114AB /* StarChart+ChartData.swift */; };
+		FA35C09C2849783A006114AB /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C06F28497839006114AB /* Regex.swift */; };
+		FA35C09D2849783A006114AB /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C07128497839006114AB /* Math.swift */; };
+		FA35C09E2849783A006114AB /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C07328497839006114AB /* Time.swift */; };
+		FA35C09F2849783A006114AB /* Scaler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C07528497839006114AB /* Scaler.swift */; };
+		FA35C0AA2849783A006114AB /* TimeStreamImageStrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C0842849783A006114AB /* TimeStreamImageStrip.swift */; };
+		FA35C0AB2849783A006114AB /* TimeStreamImageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C0852849783A006114AB /* TimeStreamImageGenerator.swift */; };
+		FA35C0AC2849783A006114AB /* AstrologyCompositeAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C0872849783A006114AB /* AstrologyCompositeAlignment.swift */; };
+		FA35C0AD2849783A006114AB /* Astrology.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C0892849783A006114AB /* Astrology.swift */; };
+		FA35C0AE2849783A006114AB /* AstrologicalNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C08A2849783A006114AB /* AstrologicalNode.swift */; };
+		FA35C0AF2849783A006114AB /* Ayanamsa.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C08B2849783A006114AB /* Ayanamsa.swift */; };
+		FA35C0B02849783A006114AB /* PlanetState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C08C2849783A006114AB /* PlanetState.swift */; };
+		FA35C0B12849783A006114AB /* PlanetRetrogradeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C08D2849783A006114AB /* PlanetRetrogradeState.swift */; };
+		FA35C0BC28497879006114AB /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C0B428497879006114AB /* Color.swift */; };
+		FA35C0BD28497879006114AB /* Natura.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C0B528497879006114AB /* Natura.swift */; };
+		FA35C0BE28497879006114AB /* CosmicAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C0B628497879006114AB /* CosmicAlignment.swift */; };
+		FA35C0BF28497879006114AB /* Personology.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C0B728497879006114AB /* Personology.swift */; };
+		FA35C0C028497879006114AB /* Arcana.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C0B828497879006114AB /* Arcana.swift */; };
+		FA35C0C128497879006114AB /* Zodiac.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C0B928497879006114AB /* Zodiac.swift */; };
+		FA35C0C228497879006114AB /* Chevron.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C0BA28497879006114AB /* Chevron.swift */; };
+		FA35C0C328497879006114AB /* Decans.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C0BB28497879006114AB /* Decans.swift */; };
+		FA35C0C5284979DB006114AB /* StarKitImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C0C4284979DB006114AB /* StarKitImage.swift */; };
+		FA35C0C728499195006114AB /* StarKitAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C0C628499195006114AB /* StarKitAssets.swift */; };
+		FA35C0C9284992B3006114AB /* AstroUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C0C8284992B3006114AB /* AstroUtils.swift */; };
+		FA35C0D52849A840006114AB /* TimeStreamSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C0CB2849A83F006114AB /* TimeStreamSceneView.swift */; };
+		FA35C0D62849A840006114AB /* TimeStreamScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C0CC2849A83F006114AB /* TimeStreamScene.swift */; };
+		FA35C0D72849A840006114AB /* TimeStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C0CD2849A83F006114AB /* TimeStream.swift */; };
+		FA35C0D82849A840006114AB /* TimeStreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C0CE2849A83F006114AB /* TimeStreamView.swift */; };
+		FA35C0D92849A840006114AB /* TimeStreamNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C0CF2849A840006114AB /* TimeStreamNode.swift */; };
+		FA35C0DA2849A840006114AB /* TimeStreamMaterialType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C0D02849A840006114AB /* TimeStreamMaterialType.swift */; };
+		FA35C0DB2849A840006114AB /* TimeStreamGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C0D12849A840006114AB /* TimeStreamGeometry.swift */; };
+		FA35C0DC2849A840006114AB /* TimeStreamMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C0D22849A840006114AB /* TimeStreamMaterial.swift */; };
+		FA35C0DD2849A840006114AB /* TimeStreamGeometryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C0D32849A840006114AB /* TimeStreamGeometryType.swift */; };
+		FA35C0DE2849A840006114AB /* TimeStreamNodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C0D42849A840006114AB /* TimeStreamNodeType.swift */; };
+		FA35C0E02849A872006114AB /* TimeStreamSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C0DF2849A872006114AB /* TimeStreamSpriteNode.swift */; };
+		FA35C0E32849A984006114AB /* SCNGeometryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C0E22849A984006114AB /* SCNGeometryExtension.swift */; };
+		FA35C0E52849AC8F006114AB /* TimeStreamComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C0E42849AC8F006114AB /* TimeStreamComposite.swift */; };
+		FA35C0E72849B932006114AB /* TimeStreamCompositeRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C0E62849B932006114AB /* TimeStreamCompositeRegistry.swift */; };
+		FA35C0E9284A60A2006114AB /* TimeStreamCompositeSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C0E8284A60A2006114AB /* TimeStreamCompositeSpriteNode.swift */; };
+		FA35C0EB284A6E2D006114AB /* TimeStreamImageMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C0EA284A6E2D006114AB /* TimeStreamImageMap.swift */; };
+		FA35C0ED284A7195006114AB /* TimeStreamImageMapRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C0EC284A7195006114AB /* TimeStreamImageMapRegistry.swift */; };
+		FA4D1B8A2561FBFE0043DE9F /* TimeStreamDisplayScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D1B892561FBFE0043DE9F /* TimeStreamDisplayScreen.swift */; };
+		FA4D1B8F2561FCA00043DE9F /* ControlsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D1B8E2561FCA00043DE9F /* ControlsScreen.swift */; };
+		FA4D1B942561FDA00043DE9F /* ArkanaNaturaDisplayScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D1B932561FDA00043DE9F /* ArkanaNaturaDisplayScreen.swift */; };
+		FA4D1B9C2561FE070043DE9F /* ReadingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D1B9B2561FE070043DE9F /* ReadingsScreen.swift */; };
+		FA6101CD286D73AA0000D4D5 /* StarChartSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6101CC286D73AA0000D4D5 /* StarChartSelectViewController.swift */; };
+		FA6101CF286D73B70000D4D5 /* TimeStreamSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6101CE286D73B70000D4D5 /* TimeStreamSelectViewController.swift */; };
+		FA6101D1286D73C70000D4D5 /* GeoLocationSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6101D0286D73C70000D4D5 /* GeoLocationSelectViewController.swift */; };
+		FA6101D3286D73D70000D4D5 /* OffgridGeoLocationSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6101D2286D73D70000D4D5 /* OffgridGeoLocationSelectViewController.swift */; };
+		FA6101D5286D73E80000D4D5 /* OnlineGeoLocationSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6101D4286D73E80000D4D5 /* OnlineGeoLocationSelectViewController.swift */; };
+		FA6101D7286D78580000D4D5 /* TimeStreamSelect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA6101D6286D78580000D4D5 /* TimeStreamSelect.storyboard */; };
+		FA6101D9286E3C9D0000D4D5 /* TimeStreamManualSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6101D8286E3C9C0000D4D5 /* TimeStreamManualSelectViewController.swift */; };
+		FA6101DB286E3CAC0000D4D5 /* TimeStreamPresetSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6101DA286E3CAC0000D4D5 /* TimeStreamPresetSelectViewController.swift */; };
+		FA6101DD286F99D20000D4D5 /* CGPoint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6101DC286F99D20000D4D5 /* CGPoint+Extension.swift */; };
+		FA6101DF286F9F1F0000D4D5 /* TimeStreamCompositeNotchSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6101DE286F9F1F0000D4D5 /* TimeStreamCompositeNotchSpriteNode.swift */; };
+		FA6101E12870AE8E0000D4D5 /* TimeStreamChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6101E02870AE8E0000D4D5 /* TimeStreamChart.swift */; };
+		FA6101E32870B0F10000D4D5 /* TimeStreamChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6101E22870B0F10000D4D5 /* TimeStreamChartTableViewCell.swift */; };
+		FA6101E52870C4C00000D4D5 /* TimeStreamPresetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6101E42870C4C00000D4D5 /* TimeStreamPresetTableViewCell.swift */; };
+		FA6101E72870C8800000D4D5 /* TimeStreamPresets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6101E62870C8800000D4D5 /* TimeStreamPresets.swift */; };
+		FAB131152873A7E8000AD7B9 /* AstrologicalNodeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB131142873A7E8000AD7B9 /* AstrologicalNodeState.swift */; };
+		FAB131172873A807000AD7B9 /* AstrologicalNodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB131162873A807000AD7B9 /* AstrologicalNodeType.swift */; };
+		FAB1311928749201000AD7B9 /* PlanetNodeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB1311828749201000AD7B9 /* PlanetNodeState.swift */; };
+		FAB1311B28749B3E000AD7B9 /* AstrologicalNodeStateTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB1311A28749B3E000AD7B9 /* AstrologicalNodeStateTimeline.swift */; };
+		FAB1311D2874A319000AD7B9 /* AstrologicalNodeStateRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB1311C2874A319000AD7B9 /* AstrologicalNodeStateRegistry.swift */; };
+		FAB1311F2874A328000AD7B9 /* AstrologicalNodeStateArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB1311E2874A328000AD7B9 /* AstrologicalNodeStateArchive.swift */; };
+		FAB131222878AD25000AD7B9 /* Iceberg-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAB131212878AD24000AD7B9 /* Iceberg-Regular.ttf */; };
+		FAEAFEAC2847DC88001AEAE0 /* UIImage+GIF+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEAFEAB2847DC88001AEAE0 /* UIImage+GIF+Extension.swift */; };
+		FAEAFEB02847E0D7001AEAE0 /* StarDiskFormation-loaderAnim_2.gif in Resources */ = {isa = PBXBuildFile; fileRef = FAEAFEAF2847E0D6001AEAE0 /* StarDiskFormation-loaderAnim_2.gif */; };
+		FAEAFEB4284841CC001AEAE0 /* TimeStreamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEAFEB3284841CC001AEAE0 /* TimeStreamTableViewCell.swift */; };
+		FAEAFEB62848423B001AEAE0 /* TimeStreamAddTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEAFEB52848423B001AEAE0 /* TimeStreamAddTableViewCell.swift */; };
+		FAEAFEB828489FE9001AEAE0 /* TimeStreamSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEAFEB728489FE9001AEAE0 /* TimeStreamSettingsViewController.swift */; };
+		FAEAFEBA28492595001AEAE0 /* EditTimeStreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEAFEB928492595001AEAE0 /* EditTimeStreamViewController.swift */; };
+		FAEAFEBD284927BB001AEAE0 /* v4.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAEAFEBC284927BB001AEAE0 /* v4.storyboard */; };
+		FAEAFEBF28492802001AEAE0 /* v3.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAEAFEBE28492802001AEAE0 /* v3.storyboard */; };
+		FAEB2793284D0EEE009994B8 /* TimeStreamConfigurationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB2792284D0EEE009994B8 /* TimeStreamConfigurationTableViewCell.swift */; };
+		FAEB2795284D12DA009994B8 /* TimeStreamAddNewCompositeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB2794284D12DA009994B8 /* TimeStreamAddNewCompositeTableViewCell.swift */; };
+		FAEB2797284D12EC009994B8 /* TimeStreamAddNewConfigurationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB2796284D12EC009994B8 /* TimeStreamAddNewConfigurationTableViewCell.swift */; };
+		FAEB2799284D16CC009994B8 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB2798284D16CC009994B8 /* UITableView+Extension.swift */; };
+		FAEB279B284D1FF1009994B8 /* TimeStreamCompositePresets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB279A284D1FF1009994B8 /* TimeStreamCompositePresets.swift */; };
+		FAEB279D284D2AB5009994B8 /* TimeStreamCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB279C284D2AB5009994B8 /* TimeStreamCore.swift */; };
+		FAEB279F284E5668009994B8 /* TimeStreamRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB279E284E5668009994B8 /* TimeStreamRegistry.swift */; };
+		FAEB27A1284E5831009994B8 /* TimeStreamArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB27A0284E5831009994B8 /* TimeStreamArchive.swift */; };
+		FAEB27A3284E753B009994B8 /* TimeStreamPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB27A2284E753B009994B8 /* TimeStreamPath.swift */; };
+		FAEB27A5284E7F44009994B8 /* SwiftAA+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB27A4284E7F44009994B8 /* SwiftAA+Codable.swift */; };
+		FAEB27A7284E81CF009994B8 /* StarChart+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB27A6284E81CF009994B8 /* StarChart+Codable.swift */; };
+		FAEB27A9284E9DA9009994B8 /* TimeStreamGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB27A8284E9DA9009994B8 /* TimeStreamGenerator.swift */; };
+		FAEB27AB284EA1E0009994B8 /* SwiftAA+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB27AA284EA1E0009994B8 /* SwiftAA+Hashable.swift */; };
+		FAEB27AF284FC51B009994B8 /* StarChartArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB27AE284FC51B009994B8 /* StarChartArchive.swift */; };
+		FAEB27B128502B78009994B8 /* StarChart+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB27B028502B78009994B8 /* StarChart+Hashable.swift */; };
+		FAEB27B32850BB75009994B8 /* TimeStreamCompositeArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB27B22850BB75009994B8 /* TimeStreamCompositeArchive.swift */; };
+		FAEB27B52850C0A4009994B8 /* TimeStreamCompositeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB27B42850C0A4009994B8 /* TimeStreamCompositeGenerator.swift */; };
+		FAEB27B72851033A009994B8 /* PlanetStateRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB27B62851033A009994B8 /* PlanetStateRegistry.swift */; };
+		FAEB27B928510345009994B8 /* PlanetStateArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB27B828510345009994B8 /* PlanetStateArchive.swift */; };
+		FAEB27BC2851CB2D009994B8 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAEB27BA2851CB2D009994B8 /* Model.xcdatamodeld */; };
+		FAEB27C02851D21D009994B8 /* Codable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB27BF2851D21D009994B8 /* Codable+Extension.swift */; };
+		FAEB27C22851D286009994B8 /* StarChartCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB27C12851D286009994B8 /* StarChartCore.swift */; };
+		FAEB27C42851DC9E009994B8 /* PlanetStateTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB27C32851DC9E009994B8 /* PlanetStateTimeline.swift */; };
+		FAEB27C628523730009994B8 /* CoreData+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB27C528523730009994B8 /* CoreData+Extensions.swift */; };
+		FAEB27C828527AAC009994B8 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB27C728527AAC009994B8 /* Data+Extension.swift */; };
+		FAEB27CA285612DC009994B8 /* TimeStreamConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB27C9285612DC009994B8 /* TimeStreamConfiguration.swift */; };
+		FAEB27CC28572DFB009994B8 /* SKSpriteNode+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB27CB28572DFB009994B8 /* SKSpriteNode+Extension.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FA07C9C1254019DC00683486 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA07C9A2254019D800683486 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA07C9A9254019D800683486;
+			remoteInfo = ResonantFinder;
+		};
+		FA07C9CC254019DC00683486 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA07C9A2254019D800683486 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA07C9A9254019D800683486;
+			remoteInfo = ResonantFinder;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		170BFF1D5642CC611EA954C7 /* Pods-ResonantFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ResonantFinder.release.xcconfig"; path = "Target Support Files/Pods-ResonantFinder/Pods-ResonantFinder.release.xcconfig"; sourceTree = "<group>"; };
+		37FC7A9F8CB70DB8098D3BB3 /* Pods_ResonantFinderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ResonantFinderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		727DC80FE1543DB1F3D684A6 /* Pods-ResonantFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ResonantFinder.debug.xcconfig"; path = "Target Support Files/Pods-ResonantFinder/Pods-ResonantFinder.debug.xcconfig"; sourceTree = "<group>"; };
+		791E85B1B8EF148AE402C981 /* Pods_ResonantFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ResonantFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		935DCEB4CD464AC28B628A99 /* Pods_ResonantFinder_ResonantFinderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ResonantFinder_ResonantFinderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0BA924699052F7F2DD90957 /* Pods-ResonantFinder-ResonantFinderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ResonantFinder-ResonantFinderUITests.release.xcconfig"; path = "Target Support Files/Pods-ResonantFinder-ResonantFinderUITests/Pods-ResonantFinder-ResonantFinderUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A89F8DF0B1032D53596D143A /* Pods-ResonantFinderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ResonantFinderTests.release.xcconfig"; path = "Target Support Files/Pods-ResonantFinderTests/Pods-ResonantFinderTests.release.xcconfig"; sourceTree = "<group>"; };
+		E44DAD6AFC67C48066A9E053 /* Pods-ResonantFinderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ResonantFinderTests.debug.xcconfig"; path = "Target Support Files/Pods-ResonantFinderTests/Pods-ResonantFinderTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FA07C9AA254019D800683486 /* CosmicCypher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CosmicCypher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA07C9AD254019D800683486 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FA07C9AF254019D800683486 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FA07C9B1254019D800683486 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FA07C9B6254019DB00683486 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA07C9B9254019DB00683486 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FA07C9BB254019DC00683486 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA07C9C0254019DC00683486 /* CosmicCypherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CosmicCypherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA07C9C4254019DC00683486 /* ResonantFinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResonantFinderTests.swift; sourceTree = "<group>"; };
+		FA07C9C6254019DC00683486 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA07C9CB254019DC00683486 /* CosmicCypherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CosmicCypherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA07C9CF254019DC00683486 /* ResonantFinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResonantFinderUITests.swift; sourceTree = "<group>"; };
+		FA07C9D1254019DC00683486 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA07C9E425401EBB00683486 /* NaturaDisk.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = NaturaDisk.sks; sourceTree = "<group>"; };
+		FA07C9E625401EBB00683486 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		FA07C9E725401EBB00683486 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		FA07C9E925401EBB00683486 /* SelectDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectDateViewController.swift; sourceTree = "<group>"; };
+		FA07C9EA25401EBB00683486 /* ResonanceReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResonanceReportViewController.swift; sourceTree = "<group>"; };
+		FA07C9EB25401EBB00683486 /* TimeStreamCompositeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeStreamCompositeTableViewCell.swift; sourceTree = "<group>"; };
+		FA07C9EC25401EBB00683486 /* ResonanceReportTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResonanceReportTableViewCell.swift; sourceTree = "<group>"; };
+		FA07C9ED25401EBB00683486 /* SetDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetDateViewController.swift; sourceTree = "<group>"; };
+		FA07C9EE25401EBB00683486 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		FA07CA0A25401EBB00683486 /* ResultHistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		FA07CA0B25401EBB00683486 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		FA07CA0C25401EBB00683486 /* FindLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindLocationViewController.swift; sourceTree = "<group>"; };
+		FA07CA0D25401EBB00683486 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
+		FA07CA0E25401EBB00683486 /* ReportHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportHistoryViewController.swift; sourceTree = "<group>"; };
+		FA07CA1725401EBB00683486 /* Aldrich-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aldrich-Regular.ttf"; sourceTree = "<group>"; };
+		FA07CA1925401EBB00683486 /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		FA07CA1A25401EBB00683486 /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		FA07CA1B25401EBB00683486 /* SceneKit+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SceneKit+Extension.swift"; sourceTree = "<group>"; };
+		FA07CA1C25401EBB00683486 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		FA07CA1D25401EBB00683486 /* Dictionary+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
+		FA07CA1E25401EBB00683486 /* SpriteKit+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SpriteKit+Extension.swift"; sourceTree = "<group>"; };
+		FA1FDD442570262700B51BD2 /* ReadingsSubScreenCOEH.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadingsSubScreenCOEH.swift; sourceTree = "<group>"; };
+		FA1FDD49257026CA00B51BD2 /* ReadingsSubScreenSSSB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingsSubScreenSSSB.swift; sourceTree = "<group>"; };
+		FA1FDD4E257026F700B51BD2 /* ReadingsSubScreenPNPA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingsSubScreenPNPA.swift; sourceTree = "<group>"; };
+		FA1FDD532570270800B51BD2 /* ReadingsSubScreenEDED.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingsSubScreenEDED.swift; sourceTree = "<group>"; };
+		FA1FDD5D257269F800B51BD2 /* StarChartTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarChartTest.swift; sourceTree = "<group>"; };
+		FA1FDD6A2577144700B51BD2 /* TimeStream.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TimeStream.storyboard; sourceTree = "<group>"; };
+		FA1FDD73257714C400B51BD2 /* TimeStreamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamViewController.swift; sourceTree = "<group>"; };
+		FA1FDD8B2579647D00B51BD2 /* View_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View_Extension.swift; sourceTree = "<group>"; };
+		FA1FDD91257969E500B51BD2 /* ElementalReadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementalReadingViewController.swift; sourceTree = "<group>"; };
+		FA1FDD97257A0A3A00B51BD2 /* SpriteNodeCosmicEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteNodeCosmicEvent.swift; sourceTree = "<group>"; };
+		FA2C449228696071009E61B2 /* StarChartCoreReactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarChartCoreReactive.swift; sourceTree = "<group>"; };
+		FA2C449428697B4E009E61B2 /* StarChartCompositeRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarChartCompositeRenderer.swift; sourceTree = "<group>"; };
+		FA2C449628697B9F009E61B2 /* StarChartComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarChartComposite.swift; sourceTree = "<group>"; };
+		FA2C449E286CEEDC009E61B2 /* TimeStreamPresetSelect.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TimeStreamPresetSelect.storyboard; sourceTree = "<group>"; };
+		FA2C44A0286CEEE8009E61B2 /* TimeStreamManualSelect.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TimeStreamManualSelect.storyboard; sourceTree = "<group>"; };
+		FA2CB4872859F77B003AD95C /* TimeStreamColorRenderMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamColorRenderMode.swift; sourceTree = "<group>"; };
+		FA2CB489285E4E9B003AD95C /* UUID+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UUID+Extension.swift"; sourceTree = "<group>"; };
+		FA2CB48B285FFCCE003AD95C /* TimeStreamCoreDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamCoreDelegate.swift; sourceTree = "<group>"; };
+		FA2CB48D2860EC4F003AD95C /* CIFilter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CIFilter+Extension.swift"; sourceTree = "<group>"; };
+		FA2CB48F2860EF49003AD95C /* TimeStreamSpriteMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamSpriteMask.swift; sourceTree = "<group>"; };
+		FA2CB4912860F664003AD95C /* CGImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGImage+Extension.swift"; sourceTree = "<group>"; };
+		FA2CB49328629725003AD95C /* TimeStreamImageMapArchive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamImageMapArchive.swift; sourceTree = "<group>"; };
+		FA2CB4952862A9C6003AD95C /* CosmicCypherInstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicCypherInstructionsViewController.swift; sourceTree = "<group>"; };
+		FA33AAFA2864E12E00BC9F76 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		FA33AAFC2864E18E00BC9F76 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		FA33AAFE2864E1A000BC9F76 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		FA33AB00286557D800BC9F76 /* PlanetSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetSelect.swift; sourceTree = "<group>"; };
+		FA33AB022865582200BC9F76 /* PlanetSelect.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlanetSelect.storyboard; sourceTree = "<group>"; };
+		FA33AB042865584D00BC9F76 /* PlanetSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetSelectViewController.swift; sourceTree = "<group>"; };
+		FA33AB0628655B8500BC9F76 /* StarChartSelect.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StarChartSelect.storyboard; sourceTree = "<group>"; };
+		FA33AB0828655DF700BC9F76 /* Instructions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Instructions.storyboard; sourceTree = "<group>"; };
+		FA33AB0B2866760700BC9F76 /* CosmicAlignmentSpriteNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicAlignmentSpriteNode.swift; sourceTree = "<group>"; };
+		FA33AB0E2868D66900BC9F76 /* PlanetCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetCollectionViewCell.swift; sourceTree = "<group>"; };
+		FA33AB102868D79900BC9F76 /* AspectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectCollectionViewCell.swift; sourceTree = "<group>"; };
+		FA35C05E28497839006114AB /* Earth+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Earth+Extension.swift"; sourceTree = "<group>"; };
+		FA35C05F28497839006114AB /* JulianDay+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JulianDay+Extension.swift"; sourceTree = "<group>"; };
+		FA35C06028497839006114AB /* Astronomy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Astronomy.swift; sourceTree = "<group>"; };
+		FA35C06228497839006114AB /* TextureGeneration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextureGeneration.swift; sourceTree = "<group>"; };
+		FA35C06428497839006114AB /* StarChartRegistry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarChartRegistry.swift; sourceTree = "<group>"; };
+		FA35C06528497839006114AB /* ResonanceScore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResonanceScore.swift; sourceTree = "<group>"; };
+		FA35C06628497839006114AB /* StarCharts+Gravimetrics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StarCharts+Gravimetrics.swift"; sourceTree = "<group>"; };
+		FA35C06728497839006114AB /* StarCharts+DataMaps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StarCharts+DataMaps.swift"; sourceTree = "<group>"; };
+		FA35C06828497839006114AB /* PlanetaryHarmonics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanetaryHarmonics.swift; sourceTree = "<group>"; };
+		FA35C06928497839006114AB /* StarChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarChart.swift; sourceTree = "<group>"; };
+		FA35C06A28497839006114AB /* EnergyLevels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnergyLevels.swift; sourceTree = "<group>"; };
+		FA35C06B28497839006114AB /* StarChartSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarChartSprite.swift; sourceTree = "<group>"; };
+		FA35C06C28497839006114AB /* StarChartGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarChartGenerator.swift; sourceTree = "<group>"; };
+		FA35C06D28497839006114AB /* StarChart+ChartData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StarChart+ChartData.swift"; sourceTree = "<group>"; };
+		FA35C06F28497839006114AB /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
+		FA35C07128497839006114AB /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
+		FA35C07328497839006114AB /* Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		FA35C07528497839006114AB /* Scaler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scaler.swift; sourceTree = "<group>"; };
+		FA35C0842849783A006114AB /* TimeStreamImageStrip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeStreamImageStrip.swift; sourceTree = "<group>"; };
+		FA35C0852849783A006114AB /* TimeStreamImageGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeStreamImageGenerator.swift; sourceTree = "<group>"; };
+		FA35C0872849783A006114AB /* AstrologyCompositeAlignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstrologyCompositeAlignment.swift; sourceTree = "<group>"; };
+		FA35C0892849783A006114AB /* Astrology.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Astrology.swift; sourceTree = "<group>"; };
+		FA35C08A2849783A006114AB /* AstrologicalNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstrologicalNode.swift; sourceTree = "<group>"; };
+		FA35C08B2849783A006114AB /* Ayanamsa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ayanamsa.swift; sourceTree = "<group>"; };
+		FA35C08C2849783A006114AB /* PlanetState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanetState.swift; sourceTree = "<group>"; };
+		FA35C08D2849783A006114AB /* PlanetRetrogradeState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanetRetrogradeState.swift; sourceTree = "<group>"; };
+		FA35C0B428497879006114AB /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		FA35C0B528497879006114AB /* Natura.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Natura.swift; sourceTree = "<group>"; };
+		FA35C0B628497879006114AB /* CosmicAlignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmicAlignment.swift; sourceTree = "<group>"; };
+		FA35C0B728497879006114AB /* Personology.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Personology.swift; sourceTree = "<group>"; };
+		FA35C0B828497879006114AB /* Arcana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arcana.swift; sourceTree = "<group>"; };
+		FA35C0B928497879006114AB /* Zodiac.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Zodiac.swift; sourceTree = "<group>"; };
+		FA35C0BA28497879006114AB /* Chevron.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chevron.swift; sourceTree = "<group>"; };
+		FA35C0BB28497879006114AB /* Decans.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decans.swift; sourceTree = "<group>"; };
+		FA35C0C4284979DB006114AB /* StarKitImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarKitImage.swift; sourceTree = "<group>"; };
+		FA35C0C628499195006114AB /* StarKitAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarKitAssets.swift; sourceTree = "<group>"; };
+		FA35C0C8284992B3006114AB /* AstroUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstroUtils.swift; sourceTree = "<group>"; };
+		FA35C0CB2849A83F006114AB /* TimeStreamSceneView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeStreamSceneView.swift; sourceTree = "<group>"; };
+		FA35C0CC2849A83F006114AB /* TimeStreamScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeStreamScene.swift; sourceTree = "<group>"; };
+		FA35C0CD2849A83F006114AB /* TimeStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeStream.swift; sourceTree = "<group>"; };
+		FA35C0CE2849A83F006114AB /* TimeStreamView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeStreamView.swift; sourceTree = "<group>"; };
+		FA35C0CF2849A840006114AB /* TimeStreamNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeStreamNode.swift; sourceTree = "<group>"; };
+		FA35C0D02849A840006114AB /* TimeStreamMaterialType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeStreamMaterialType.swift; sourceTree = "<group>"; };
+		FA35C0D12849A840006114AB /* TimeStreamGeometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeStreamGeometry.swift; sourceTree = "<group>"; };
+		FA35C0D22849A840006114AB /* TimeStreamMaterial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeStreamMaterial.swift; sourceTree = "<group>"; };
+		FA35C0D32849A840006114AB /* TimeStreamGeometryType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeStreamGeometryType.swift; sourceTree = "<group>"; };
+		FA35C0D42849A840006114AB /* TimeStreamNodeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeStreamNodeType.swift; sourceTree = "<group>"; };
+		FA35C0DF2849A872006114AB /* TimeStreamSpriteNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamSpriteNode.swift; sourceTree = "<group>"; };
+		FA35C0E22849A984006114AB /* SCNGeometryExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCNGeometryExtension.swift; sourceTree = "<group>"; };
+		FA35C0E42849AC8F006114AB /* TimeStreamComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamComposite.swift; sourceTree = "<group>"; };
+		FA35C0E62849B932006114AB /* TimeStreamCompositeRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamCompositeRegistry.swift; sourceTree = "<group>"; };
+		FA35C0E8284A60A2006114AB /* TimeStreamCompositeSpriteNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamCompositeSpriteNode.swift; sourceTree = "<group>"; };
+		FA35C0EA284A6E2D006114AB /* TimeStreamImageMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamImageMap.swift; sourceTree = "<group>"; };
+		FA35C0EC284A7195006114AB /* TimeStreamImageMapRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamImageMapRegistry.swift; sourceTree = "<group>"; };
+		FA4D1B892561FBFE0043DE9F /* TimeStreamDisplayScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamDisplayScreen.swift; sourceTree = "<group>"; };
+		FA4D1B8E2561FCA00043DE9F /* ControlsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsScreen.swift; sourceTree = "<group>"; };
+		FA4D1B932561FDA00043DE9F /* ArkanaNaturaDisplayScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArkanaNaturaDisplayScreen.swift; sourceTree = "<group>"; };
+		FA4D1B9B2561FE070043DE9F /* ReadingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingsScreen.swift; sourceTree = "<group>"; };
+		FA6101CC286D73AA0000D4D5 /* StarChartSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarChartSelectViewController.swift; sourceTree = "<group>"; };
+		FA6101CE286D73B70000D4D5 /* TimeStreamSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamSelectViewController.swift; sourceTree = "<group>"; };
+		FA6101D0286D73C70000D4D5 /* GeoLocationSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoLocationSelectViewController.swift; sourceTree = "<group>"; };
+		FA6101D2286D73D70000D4D5 /* OffgridGeoLocationSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffgridGeoLocationSelectViewController.swift; sourceTree = "<group>"; };
+		FA6101D4286D73E80000D4D5 /* OnlineGeoLocationSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineGeoLocationSelectViewController.swift; sourceTree = "<group>"; };
+		FA6101D6286D78580000D4D5 /* TimeStreamSelect.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TimeStreamSelect.storyboard; sourceTree = "<group>"; };
+		FA6101D8286E3C9C0000D4D5 /* TimeStreamManualSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamManualSelectViewController.swift; sourceTree = "<group>"; };
+		FA6101DA286E3CAC0000D4D5 /* TimeStreamPresetSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamPresetSelectViewController.swift; sourceTree = "<group>"; };
+		FA6101DC286F99D20000D4D5 /* CGPoint+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extension.swift"; sourceTree = "<group>"; };
+		FA6101DE286F9F1F0000D4D5 /* TimeStreamCompositeNotchSpriteNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamCompositeNotchSpriteNode.swift; sourceTree = "<group>"; };
+		FA6101E02870AE8E0000D4D5 /* TimeStreamChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamChart.swift; sourceTree = "<group>"; };
+		FA6101E22870B0F10000D4D5 /* TimeStreamChartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamChartTableViewCell.swift; sourceTree = "<group>"; };
+		FA6101E42870C4C00000D4D5 /* TimeStreamPresetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamPresetTableViewCell.swift; sourceTree = "<group>"; };
+		FA6101E62870C8800000D4D5 /* TimeStreamPresets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamPresets.swift; sourceTree = "<group>"; };
+		FA82199E27EC2E764D44C775 /* Pods-ResonantFinder-ResonantFinderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ResonantFinder-ResonantFinderUITests.debug.xcconfig"; path = "Target Support Files/Pods-ResonantFinder-ResonantFinderUITests/Pods-ResonantFinder-ResonantFinderUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		FAB131142873A7E8000AD7B9 /* AstrologicalNodeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstrologicalNodeState.swift; sourceTree = "<group>"; };
+		FAB131162873A807000AD7B9 /* AstrologicalNodeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstrologicalNodeType.swift; sourceTree = "<group>"; };
+		FAB1311828749201000AD7B9 /* PlanetNodeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetNodeState.swift; sourceTree = "<group>"; };
+		FAB1311A28749B3E000AD7B9 /* AstrologicalNodeStateTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstrologicalNodeStateTimeline.swift; sourceTree = "<group>"; };
+		FAB1311C2874A319000AD7B9 /* AstrologicalNodeStateRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstrologicalNodeStateRegistry.swift; sourceTree = "<group>"; };
+		FAB1311E2874A328000AD7B9 /* AstrologicalNodeStateArchive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstrologicalNodeStateArchive.swift; sourceTree = "<group>"; };
+		FAB131212878AD24000AD7B9 /* Iceberg-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Iceberg-Regular.ttf"; sourceTree = "<group>"; };
+		FAEAFEAB2847DC88001AEAE0 /* UIImage+GIF+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+GIF+Extension.swift"; sourceTree = "<group>"; };
+		FAEAFEAF2847E0D6001AEAE0 /* StarDiskFormation-loaderAnim_2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "StarDiskFormation-loaderAnim_2.gif"; sourceTree = "<group>"; };
+		FAEAFEB3284841CC001AEAE0 /* TimeStreamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamTableViewCell.swift; sourceTree = "<group>"; };
+		FAEAFEB52848423B001AEAE0 /* TimeStreamAddTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamAddTableViewCell.swift; sourceTree = "<group>"; };
+		FAEAFEB728489FE9001AEAE0 /* TimeStreamSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamSettingsViewController.swift; sourceTree = "<group>"; };
+		FAEAFEB928492595001AEAE0 /* EditTimeStreamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTimeStreamViewController.swift; sourceTree = "<group>"; };
+		FAEAFEBC284927BB001AEAE0 /* v4.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = v4.storyboard; sourceTree = "<group>"; };
+		FAEAFEBE28492802001AEAE0 /* v3.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = v3.storyboard; sourceTree = "<group>"; };
+		FAEB2792284D0EEE009994B8 /* TimeStreamConfigurationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamConfigurationTableViewCell.swift; sourceTree = "<group>"; };
+		FAEB2794284D12DA009994B8 /* TimeStreamAddNewCompositeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamAddNewCompositeTableViewCell.swift; sourceTree = "<group>"; };
+		FAEB2796284D12EC009994B8 /* TimeStreamAddNewConfigurationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamAddNewConfigurationTableViewCell.swift; sourceTree = "<group>"; };
+		FAEB2798284D16CC009994B8 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		FAEB279A284D1FF1009994B8 /* TimeStreamCompositePresets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamCompositePresets.swift; sourceTree = "<group>"; };
+		FAEB279C284D2AB5009994B8 /* TimeStreamCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamCore.swift; sourceTree = "<group>"; };
+		FAEB279E284E5668009994B8 /* TimeStreamRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamRegistry.swift; sourceTree = "<group>"; };
+		FAEB27A0284E5831009994B8 /* TimeStreamArchive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamArchive.swift; sourceTree = "<group>"; };
+		FAEB27A2284E753B009994B8 /* TimeStreamPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamPath.swift; sourceTree = "<group>"; };
+		FAEB27A4284E7F44009994B8 /* SwiftAA+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftAA+Codable.swift"; sourceTree = "<group>"; };
+		FAEB27A6284E81CF009994B8 /* StarChart+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StarChart+Codable.swift"; sourceTree = "<group>"; };
+		FAEB27A8284E9DA9009994B8 /* TimeStreamGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamGenerator.swift; sourceTree = "<group>"; };
+		FAEB27AA284EA1E0009994B8 /* SwiftAA+Hashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftAA+Hashable.swift"; sourceTree = "<group>"; };
+		FAEB27AE284FC51B009994B8 /* StarChartArchive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarChartArchive.swift; sourceTree = "<group>"; };
+		FAEB27B028502B78009994B8 /* StarChart+Hashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StarChart+Hashable.swift"; sourceTree = "<group>"; };
+		FAEB27B22850BB75009994B8 /* TimeStreamCompositeArchive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamCompositeArchive.swift; sourceTree = "<group>"; };
+		FAEB27B42850C0A4009994B8 /* TimeStreamCompositeGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamCompositeGenerator.swift; sourceTree = "<group>"; };
+		FAEB27B62851033A009994B8 /* PlanetStateRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetStateRegistry.swift; sourceTree = "<group>"; };
+		FAEB27B828510345009994B8 /* PlanetStateArchive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetStateArchive.swift; sourceTree = "<group>"; };
+		FAEB27BB2851CB2D009994B8 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		FAEB27BF2851D21D009994B8 /* Codable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+Extension.swift"; sourceTree = "<group>"; };
+		FAEB27C12851D286009994B8 /* StarChartCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarChartCore.swift; sourceTree = "<group>"; };
+		FAEB27C32851DC9E009994B8 /* PlanetStateTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetStateTimeline.swift; sourceTree = "<group>"; };
+		FAEB27C528523730009994B8 /* CoreData+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreData+Extensions.swift"; sourceTree = "<group>"; };
+		FAEB27C728527AAC009994B8 /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
+		FAEB27C9285612DC009994B8 /* TimeStreamConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamConfiguration.swift; sourceTree = "<group>"; };
+		FAEB27CB28572DFB009994B8 /* SKSpriteNode+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKSpriteNode+Extension.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FA07C9A7254019D800683486 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3166A6704E347F35EF9611AF /* Pods_ResonantFinder.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA07C9BD254019DC00683486 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FCAD8A97A139039945A1014 /* Pods_ResonantFinderTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA07C9C8254019DC00683486 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C97C87D63E93F32C7C790AA1 /* Pods_ResonantFinder_ResonantFinderUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1498EC2A76CEFBE7D13F5759 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				727DC80FE1543DB1F3D684A6 /* Pods-ResonantFinder.debug.xcconfig */,
+				170BFF1D5642CC611EA954C7 /* Pods-ResonantFinder.release.xcconfig */,
+				FA82199E27EC2E764D44C775 /* Pods-ResonantFinder-ResonantFinderUITests.debug.xcconfig */,
+				A0BA924699052F7F2DD90957 /* Pods-ResonantFinder-ResonantFinderUITests.release.xcconfig */,
+				E44DAD6AFC67C48066A9E053 /* Pods-ResonantFinderTests.debug.xcconfig */,
+				A89F8DF0B1032D53596D143A /* Pods-ResonantFinderTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		40FE86CF0D858DB3B63E25DB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				791E85B1B8EF148AE402C981 /* Pods_ResonantFinder.framework */,
+				935DCEB4CD464AC28B628A99 /* Pods_ResonantFinder_ResonantFinderUITests.framework */,
+				37FC7A9F8CB70DB8098D3BB3 /* Pods_ResonantFinderTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA07C9A1254019D800683486 = {
+			isa = PBXGroup;
+			children = (
+				FA07C9AC254019D800683486 /* ResonantFinder */,
+				FA07C9C3254019DC00683486 /* ResonantFinderTests */,
+				FA07C9CE254019DC00683486 /* ResonantFinderUITests */,
+				FA07C9AB254019D800683486 /* Products */,
+				1498EC2A76CEFBE7D13F5759 /* Pods */,
+				40FE86CF0D858DB3B63E25DB /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FA07C9AB254019D800683486 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA07C9AA254019D800683486 /* CosmicCypher.app */,
+				FA07C9C0254019DC00683486 /* CosmicCypherTests.xctest */,
+				FA07C9CB254019DC00683486 /* CosmicCypherUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA07C9AC254019D800683486 /* ResonantFinder */ = {
+			isa = PBXGroup;
+			children = (
+				FAB131242878AD87000AD7B9 /* Assets */,
+				FA33AB0A286675F300BC9F76 /* CosmicAlignment */,
+				FA35C05C28497839006114AB /* CoreAstrology */,
+				FA35C0B228497879006114AB /* CoreNatura */,
+				FA07CA1825401EBB00683486 /* Extensions */,
+				FAEAFEB128484195001AEAE0 /* v4 Screens */,
+				FA4D1B872561FB090043DE9F /* v3 Screens */,
+				FA07C9E325401EBB00683486 /* v2 Screens */,
+				FA07CA0925401EBB00683486 /* v1 Screens */,
+				FA07C9AD254019D800683486 /* AppDelegate.swift */,
+				FA07C9AF254019D800683486 /* SceneDelegate.swift */,
+				FA33AAFA2864E12E00BC9F76 /* Settings.swift */,
+				FA33AB00286557D800BC9F76 /* PlanetSelect.swift */,
+				FA07C9B1254019D800683486 /* ViewController.swift */,
+				FAEAFEAF2847E0D6001AEAE0 /* StarDiskFormation-loaderAnim_2.gif */,
+				FA1FDD6A2577144700B51BD2 /* TimeStream.storyboard */,
+				FA07C9B8254019DB00683486 /* LaunchScreen.storyboard */,
+				FA07C9BB254019DC00683486 /* Info.plist */,
+				FAEB27BA2851CB2D009994B8 /* Model.xcdatamodeld */,
+			);
+			path = ResonantFinder;
+			sourceTree = "<group>";
+		};
+		FA07C9C3254019DC00683486 /* ResonantFinderTests */ = {
+			isa = PBXGroup;
+			children = (
+				FA1FDD5D257269F800B51BD2 /* StarChartTest.swift */,
+				FA07C9C4254019DC00683486 /* ResonantFinderTests.swift */,
+				FA07C9C6254019DC00683486 /* Info.plist */,
+			);
+			path = ResonantFinderTests;
+			sourceTree = "<group>";
+		};
+		FA07C9CE254019DC00683486 /* ResonantFinderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FA07C9CF254019DC00683486 /* ResonantFinderUITests.swift */,
+				FA07C9D1254019DC00683486 /* Info.plist */,
+			);
+			path = ResonantFinderUITests;
+			sourceTree = "<group>";
+		};
+		FA07C9E325401EBB00683486 /* v2 Screens */ = {
+			isa = PBXGroup;
+			children = (
+				FA07C9E425401EBB00683486 /* NaturaDisk.sks */,
+				FA07C9E525401EBB00683486 /* Utils */,
+				FA07C9E825401EBB00683486 /* VCs */,
+			);
+			path = "v2 Screens";
+			sourceTree = "<group>";
+		};
+		FA07C9E525401EBB00683486 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FA07C9E625401EBB00683486 /* Assets.swift */,
+				FA07C9E725401EBB00683486 /* Utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		FA07C9E825401EBB00683486 /* VCs */ = {
+			isa = PBXGroup;
+			children = (
+				FA07C9E925401EBB00683486 /* SelectDateViewController.swift */,
+				FA07C9EA25401EBB00683486 /* ResonanceReportViewController.swift */,
+				FA07C9EC25401EBB00683486 /* ResonanceReportTableViewCell.swift */,
+				FA07C9ED25401EBB00683486 /* SetDateViewController.swift */,
+			);
+			path = VCs;
+			sourceTree = "<group>";
+		};
+		FA07CA0925401EBB00683486 /* v1 Screens */ = {
+			isa = PBXGroup;
+			children = (
+				FA07CA0A25401EBB00683486 /* ResultHistoryTableViewCell.swift */,
+				FA07CA0B25401EBB00683486 /* MainViewController.swift */,
+				FA07CA0C25401EBB00683486 /* FindLocationViewController.swift */,
+				FA07CA0D25401EBB00683486 /* ResultTableViewCell.swift */,
+				FA07CA0E25401EBB00683486 /* ReportHistoryViewController.swift */,
+			);
+			path = "v1 Screens";
+			sourceTree = "<group>";
+		};
+		FA07CA1825401EBB00683486 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FA07CA1925401EBB00683486 /* Date+Extension.swift */,
+				FA07CA1A25401EBB00683486 /* UIImage+Extension.swift */,
+				FA07CA1B25401EBB00683486 /* SceneKit+Extension.swift */,
+				FA07CA1C25401EBB00683486 /* String+Extension.swift */,
+				FA07CA1D25401EBB00683486 /* Dictionary+Extension.swift */,
+				FA07CA1E25401EBB00683486 /* SpriteKit+Extension.swift */,
+				FA1FDD8B2579647D00B51BD2 /* View_Extension.swift */,
+				FAEAFEAB2847DC88001AEAE0 /* UIImage+GIF+Extension.swift */,
+				FAEB2798284D16CC009994B8 /* UITableView+Extension.swift */,
+				FAEB27A4284E7F44009994B8 /* SwiftAA+Codable.swift */,
+				FAEB27AA284EA1E0009994B8 /* SwiftAA+Hashable.swift */,
+				FAEB27BF2851D21D009994B8 /* Codable+Extension.swift */,
+				FAEB27C528523730009994B8 /* CoreData+Extensions.swift */,
+				FAEB27C728527AAC009994B8 /* Data+Extension.swift */,
+				FAEB27CB28572DFB009994B8 /* SKSpriteNode+Extension.swift */,
+				FA2CB489285E4E9B003AD95C /* UUID+Extension.swift */,
+				FA2CB48D2860EC4F003AD95C /* CIFilter+Extension.swift */,
+				FA2CB4912860F664003AD95C /* CGImage+Extension.swift */,
+				FA6101DC286F99D20000D4D5 /* CGPoint+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FA1FDD432570262700B51BD2 /* SubScreens */ = {
+			isa = PBXGroup;
+			children = (
+				FA1FDD442570262700B51BD2 /* ReadingsSubScreenCOEH.swift */,
+				FA1FDD49257026CA00B51BD2 /* ReadingsSubScreenSSSB.swift */,
+				FA1FDD4E257026F700B51BD2 /* ReadingsSubScreenPNPA.swift */,
+				FA1FDD532570270800B51BD2 /* ReadingsSubScreenEDED.swift */,
+			);
+			path = SubScreens;
+			sourceTree = "<group>";
+		};
+		FA1FDD72257714B100B51BD2 /* TimeStream */ = {
+			isa = PBXGroup;
+			children = (
+				FA1FDD96257A06D500B51BD2 /* Sprites */,
+				FA1FDD73257714C400B51BD2 /* TimeStreamViewController.swift */,
+			);
+			path = TimeStream;
+			sourceTree = "<group>";
+		};
+		FA1FDD90257969CE00B51BD2 /* ElementalReading */ = {
+			isa = PBXGroup;
+			children = (
+				FA1FDD91257969E500B51BD2 /* ElementalReadingViewController.swift */,
+			);
+			path = ElementalReading;
+			sourceTree = "<group>";
+		};
+		FA1FDD96257A06D500B51BD2 /* Sprites */ = {
+			isa = PBXGroup;
+			children = (
+				FA1FDD97257A0A3A00B51BD2 /* SpriteNodeCosmicEvent.swift */,
+			);
+			path = Sprites;
+			sourceTree = "<group>";
+		};
+		FA33AB0A286675F300BC9F76 /* CosmicAlignment */ = {
+			isa = PBXGroup;
+			children = (
+				FA33AB0B2866760700BC9F76 /* CosmicAlignmentSpriteNode.swift */,
+			);
+			path = CosmicAlignment;
+			sourceTree = "<group>";
+		};
+		FA33AB0D2868D63500BC9F76 /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				FA33AB0E2868D66900BC9F76 /* PlanetCollectionViewCell.swift */,
+				FA33AB102868D79900BC9F76 /* AspectCollectionViewCell.swift */,
+			);
+			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
+		FA35C05B2849348B006114AB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FAEAFEB728489FE9001AEAE0 /* TimeStreamSettingsViewController.swift */,
+				FAEAFEB928492595001AEAE0 /* EditTimeStreamViewController.swift */,
+				FA2CB4952862A9C6003AD95C /* CosmicCypherInstructionsViewController.swift */,
+				FA33AAFE2864E1A000BC9F76 /* SettingsViewController.swift */,
+				FA33AB042865584D00BC9F76 /* PlanetSelectViewController.swift */,
+				FA6101CC286D73AA0000D4D5 /* StarChartSelectViewController.swift */,
+				FA6101CE286D73B70000D4D5 /* TimeStreamSelectViewController.swift */,
+				FA6101D0286D73C70000D4D5 /* GeoLocationSelectViewController.swift */,
+				FA6101D2286D73D70000D4D5 /* OffgridGeoLocationSelectViewController.swift */,
+				FA6101D4286D73E80000D4D5 /* OnlineGeoLocationSelectViewController.swift */,
+				FA6101D8286E3C9C0000D4D5 /* TimeStreamManualSelectViewController.swift */,
+				FA6101DA286E3CAC0000D4D5 /* TimeStreamPresetSelectViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FA35C05C28497839006114AB /* CoreAstrology */ = {
+			isa = PBXGroup;
+			children = (
+				FAEB27AD284FC4A8009994B8 /* AstrologicalNode */,
+				FAEB27AC284FC4A1009994B8 /* PlanetState */,
+				FA35C0E12849A984006114AB /* Geometry */,
+				FA35C0CA2849A828006114AB /* TimeStream */,
+				FA35C05D28497839006114AB /* Astronomy */,
+				FA35C06128497839006114AB /* TextureGeneration */,
+				FA35C06328497839006114AB /* StarChart */,
+				FA35C06E28497839006114AB /* Regex */,
+				FA35C07028497839006114AB /* Math */,
+				FA35C07228497839006114AB /* Time */,
+				FA35C07428497839006114AB /* Scaler */,
+				FA35C08328497839006114AB /* Psionics */,
+				FA35C0862849783A006114AB /* Alignments */,
+				FA35C0882849783A006114AB /* Astrology */,
+			);
+			path = CoreAstrology;
+			sourceTree = "<group>";
+		};
+		FA35C05D28497839006114AB /* Astronomy */ = {
+			isa = PBXGroup;
+			children = (
+				FA35C05E28497839006114AB /* Earth+Extension.swift */,
+				FA35C05F28497839006114AB /* JulianDay+Extension.swift */,
+				FA35C06028497839006114AB /* Astronomy.swift */,
+			);
+			path = Astronomy;
+			sourceTree = "<group>";
+		};
+		FA35C06128497839006114AB /* TextureGeneration */ = {
+			isa = PBXGroup;
+			children = (
+				FA35C06228497839006114AB /* TextureGeneration.swift */,
+			);
+			path = TextureGeneration;
+			sourceTree = "<group>";
+		};
+		FA35C06328497839006114AB /* StarChart */ = {
+			isa = PBXGroup;
+			children = (
+				FA35C06928497839006114AB /* StarChart.swift */,
+				FA35C06C28497839006114AB /* StarChartGenerator.swift */,
+				FA35C06428497839006114AB /* StarChartRegistry.swift */,
+				FA35C06B28497839006114AB /* StarChartSprite.swift */,
+				FA35C06628497839006114AB /* StarCharts+Gravimetrics.swift */,
+				FA35C06728497839006114AB /* StarCharts+DataMaps.swift */,
+				FA35C06D28497839006114AB /* StarChart+ChartData.swift */,
+				FAEB27A6284E81CF009994B8 /* StarChart+Codable.swift */,
+				FAEB27AE284FC51B009994B8 /* StarChartArchive.swift */,
+				FAEB27B028502B78009994B8 /* StarChart+Hashable.swift */,
+				FAEB27C12851D286009994B8 /* StarChartCore.swift */,
+				FA2C449228696071009E61B2 /* StarChartCoreReactive.swift */,
+				FA2C449428697B4E009E61B2 /* StarChartCompositeRenderer.swift */,
+				FA2C449628697B9F009E61B2 /* StarChartComposite.swift */,
+			);
+			path = StarChart;
+			sourceTree = "<group>";
+		};
+		FA35C06E28497839006114AB /* Regex */ = {
+			isa = PBXGroup;
+			children = (
+				FA35C06F28497839006114AB /* Regex.swift */,
+			);
+			path = Regex;
+			sourceTree = "<group>";
+		};
+		FA35C07028497839006114AB /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				FA35C07128497839006114AB /* Math.swift */,
+			);
+			path = Math;
+			sourceTree = "<group>";
+		};
+		FA35C07228497839006114AB /* Time */ = {
+			isa = PBXGroup;
+			children = (
+				FA35C07328497839006114AB /* Time.swift */,
+			);
+			path = Time;
+			sourceTree = "<group>";
+		};
+		FA35C07428497839006114AB /* Scaler */ = {
+			isa = PBXGroup;
+			children = (
+				FA35C07528497839006114AB /* Scaler.swift */,
+			);
+			path = Scaler;
+			sourceTree = "<group>";
+		};
+		FA35C08328497839006114AB /* Psionics */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Psionics;
+			sourceTree = "<group>";
+		};
+		FA35C0862849783A006114AB /* Alignments */ = {
+			isa = PBXGroup;
+			children = (
+				FA35C0872849783A006114AB /* AstrologyCompositeAlignment.swift */,
+			);
+			path = Alignments;
+			sourceTree = "<group>";
+		};
+		FA35C0882849783A006114AB /* Astrology */ = {
+			isa = PBXGroup;
+			children = (
+				FA35C0892849783A006114AB /* Astrology.swift */,
+				FA35C08B2849783A006114AB /* Ayanamsa.swift */,
+				FA35C0C8284992B3006114AB /* AstroUtils.swift */,
+				FA35C0C628499195006114AB /* StarKitAssets.swift */,
+				FA35C0C4284979DB006114AB /* StarKitImage.swift */,
+			);
+			path = Astrology;
+			sourceTree = "<group>";
+		};
+		FA35C0B228497879006114AB /* CoreNatura */ = {
+			isa = PBXGroup;
+			children = (
+				FA35C0B328497879006114AB /* Color */,
+				FA35C0B528497879006114AB /* Natura.swift */,
+				FA35C0B628497879006114AB /* CosmicAlignment.swift */,
+				FA35C0B728497879006114AB /* Personology.swift */,
+				FA35C0B828497879006114AB /* Arcana.swift */,
+				FA35C0B928497879006114AB /* Zodiac.swift */,
+				FA35C0BA28497879006114AB /* Chevron.swift */,
+				FA35C0BB28497879006114AB /* Decans.swift */,
+			);
+			path = CoreNatura;
+			sourceTree = "<group>";
+		};
+		FA35C0B328497879006114AB /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				FA35C0B428497879006114AB /* Color.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		FA35C0CA2849A828006114AB /* TimeStream */ = {
+			isa = PBXGroup;
+			children = (
+				FA35C0CD2849A83F006114AB /* TimeStream.swift */,
+				FAEB27A8284E9DA9009994B8 /* TimeStreamGenerator.swift */,
+				FAEB279E284E5668009994B8 /* TimeStreamRegistry.swift */,
+				FAEB27A0284E5831009994B8 /* TimeStreamArchive.swift */,
+				FAEB27A2284E753B009994B8 /* TimeStreamPath.swift */,
+				FA35C0DF2849A872006114AB /* TimeStreamSpriteNode.swift */,
+				FA35C0D12849A840006114AB /* TimeStreamGeometry.swift */,
+				FA35C0D32849A840006114AB /* TimeStreamGeometryType.swift */,
+				FA35C0D22849A840006114AB /* TimeStreamMaterial.swift */,
+				FA35C0D02849A840006114AB /* TimeStreamMaterialType.swift */,
+				FA35C0CF2849A840006114AB /* TimeStreamNode.swift */,
+				FA35C0D42849A840006114AB /* TimeStreamNodeType.swift */,
+				FA35C0CC2849A83F006114AB /* TimeStreamScene.swift */,
+				FA35C0CB2849A83F006114AB /* TimeStreamSceneView.swift */,
+				FA35C0CE2849A83F006114AB /* TimeStreamView.swift */,
+				FA35C0852849783A006114AB /* TimeStreamImageGenerator.swift */,
+				FA35C0842849783A006114AB /* TimeStreamImageStrip.swift */,
+				FA35C0EA284A6E2D006114AB /* TimeStreamImageMap.swift */,
+				FA35C0EC284A7195006114AB /* TimeStreamImageMapRegistry.swift */,
+				FAEB27C9285612DC009994B8 /* TimeStreamConfiguration.swift */,
+				FA35C0E42849AC8F006114AB /* TimeStreamComposite.swift */,
+				FAEB27B42850C0A4009994B8 /* TimeStreamCompositeGenerator.swift */,
+				FA35C0E62849B932006114AB /* TimeStreamCompositeRegistry.swift */,
+				FAEB27B22850BB75009994B8 /* TimeStreamCompositeArchive.swift */,
+				FA35C0E8284A60A2006114AB /* TimeStreamCompositeSpriteNode.swift */,
+				FAEB279A284D1FF1009994B8 /* TimeStreamCompositePresets.swift */,
+				FAEB279C284D2AB5009994B8 /* TimeStreamCore.swift */,
+				FA2CB48B285FFCCE003AD95C /* TimeStreamCoreDelegate.swift */,
+				FA2CB4872859F77B003AD95C /* TimeStreamColorRenderMode.swift */,
+				FA2CB48F2860EF49003AD95C /* TimeStreamSpriteMask.swift */,
+				FA2CB49328629725003AD95C /* TimeStreamImageMapArchive.swift */,
+				FA6101DE286F9F1F0000D4D5 /* TimeStreamCompositeNotchSpriteNode.swift */,
+				FA6101E02870AE8E0000D4D5 /* TimeStreamChart.swift */,
+				FA6101E62870C8800000D4D5 /* TimeStreamPresets.swift */,
+			);
+			path = TimeStream;
+			sourceTree = "<group>";
+		};
+		FA35C0E12849A984006114AB /* Geometry */ = {
+			isa = PBXGroup;
+			children = (
+				FA35C0E22849A984006114AB /* SCNGeometryExtension.swift */,
+			);
+			path = Geometry;
+			sourceTree = "<group>";
+		};
+		FA4D1B872561FB090043DE9F /* v3 Screens */ = {
+			isa = PBXGroup;
+			children = (
+				FAEAFEC028492841001AEAE0 /* Storyboards */,
+				FA1FDD90257969CE00B51BD2 /* ElementalReading */,
+				FA1FDD72257714B100B51BD2 /* TimeStream */,
+				FA4D1B882561FB1F0043DE9F /* VCs */,
+			);
+			path = "v3 Screens";
+			sourceTree = "<group>";
+		};
+		FA4D1B882561FB1F0043DE9F /* VCs */ = {
+			isa = PBXGroup;
+			children = (
+				FA1FDD432570262700B51BD2 /* SubScreens */,
+				FA4D1B892561FBFE0043DE9F /* TimeStreamDisplayScreen.swift */,
+				FA4D1B8E2561FCA00043DE9F /* ControlsScreen.swift */,
+				FA4D1B932561FDA00043DE9F /* ArkanaNaturaDisplayScreen.swift */,
+				FA4D1B9B2561FE070043DE9F /* ReadingsScreen.swift */,
+			);
+			path = VCs;
+			sourceTree = "<group>";
+		};
+		FAB131242878AD87000AD7B9 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				FAB131212878AD24000AD7B9 /* Iceberg-Regular.ttf */,
+				FA07CA1725401EBB00683486 /* Aldrich-Regular.ttf */,
+				FA07C9B6254019DB00683486 /* Assets.xcassets */,
+				FA07C9EE25401EBB00683486 /* Main.storyboard */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		FAEAFEB128484195001AEAE0 /* v4 Screens */ = {
+			isa = PBXGroup;
+			children = (
+				FAEAFEB2284841AE001AEAE0 /* TableViewCells */,
+				FA33AB0D2868D63500BC9F76 /* CollectionViewCells */,
+				FA35C05B2849348B006114AB /* ViewControllers */,
+				FAEAFEBB284927A8001AEAE0 /* Storyboards */,
+			);
+			path = "v4 Screens";
+			sourceTree = "<group>";
+		};
+		FAEAFEB2284841AE001AEAE0 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				FA07C9EB25401EBB00683486 /* TimeStreamCompositeTableViewCell.swift */,
+				FAEAFEB3284841CC001AEAE0 /* TimeStreamTableViewCell.swift */,
+				FAEAFEB52848423B001AEAE0 /* TimeStreamAddTableViewCell.swift */,
+				FAEB2792284D0EEE009994B8 /* TimeStreamConfigurationTableViewCell.swift */,
+				FAEB2794284D12DA009994B8 /* TimeStreamAddNewCompositeTableViewCell.swift */,
+				FAEB2796284D12EC009994B8 /* TimeStreamAddNewConfigurationTableViewCell.swift */,
+				FA6101E22870B0F10000D4D5 /* TimeStreamChartTableViewCell.swift */,
+				FA6101E42870C4C00000D4D5 /* TimeStreamPresetTableViewCell.swift */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		FAEAFEBB284927A8001AEAE0 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FAEAFEBC284927BB001AEAE0 /* v4.storyboard */,
+				FA33AAFC2864E18E00BC9F76 /* Settings.storyboard */,
+				FA33AB022865582200BC9F76 /* PlanetSelect.storyboard */,
+				FA33AB0628655B8500BC9F76 /* StarChartSelect.storyboard */,
+				FA6101D6286D78580000D4D5 /* TimeStreamSelect.storyboard */,
+				FA33AB0828655DF700BC9F76 /* Instructions.storyboard */,
+				FA2C449E286CEEDC009E61B2 /* TimeStreamPresetSelect.storyboard */,
+				FA2C44A0286CEEE8009E61B2 /* TimeStreamManualSelect.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		FAEAFEC028492841001AEAE0 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FAEAFEBE28492802001AEAE0 /* v3.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		FAEB27AC284FC4A1009994B8 /* PlanetState */ = {
+			isa = PBXGroup;
+			children = (
+				FA35C08C2849783A006114AB /* PlanetState.swift */,
+				FAB1311828749201000AD7B9 /* PlanetNodeState.swift */,
+				FAEB27C32851DC9E009994B8 /* PlanetStateTimeline.swift */,
+				FAEB27B62851033A009994B8 /* PlanetStateRegistry.swift */,
+				FAEB27B828510345009994B8 /* PlanetStateArchive.swift */,
+				FA35C08D2849783A006114AB /* PlanetRetrogradeState.swift */,
+				FA35C06528497839006114AB /* ResonanceScore.swift */,
+				FA35C06A28497839006114AB /* EnergyLevels.swift */,
+				FA35C06828497839006114AB /* PlanetaryHarmonics.swift */,
+			);
+			path = PlanetState;
+			sourceTree = "<group>";
+		};
+		FAEB27AD284FC4A8009994B8 /* AstrologicalNode */ = {
+			isa = PBXGroup;
+			children = (
+				FA35C08A2849783A006114AB /* AstrologicalNode.swift */,
+				FAB131142873A7E8000AD7B9 /* AstrologicalNodeState.swift */,
+				FAB131162873A807000AD7B9 /* AstrologicalNodeType.swift */,
+				FAB1311A28749B3E000AD7B9 /* AstrologicalNodeStateTimeline.swift */,
+				FAB1311C2874A319000AD7B9 /* AstrologicalNodeStateRegistry.swift */,
+				FAB1311E2874A328000AD7B9 /* AstrologicalNodeStateArchive.swift */,
+			);
+			path = AstrologicalNode;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FA07C9A9254019D800683486 /* CosmicCypher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA07C9D4254019DC00683486 /* Build configuration list for PBXNativeTarget "CosmicCypher" */;
+			buildPhases = (
+				16C900163CCF61D7F4944E76 /* [CP] Check Pods Manifest.lock */,
+				FA07C9A6254019D800683486 /* Sources */,
+				FA07C9A7254019D800683486 /* Frameworks */,
+				FA07C9A8254019D800683486 /* Resources */,
+				2E52C2810BF57370AC9AF099 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CosmicCypher;
+			productName = ResonantFinder;
+			productReference = FA07C9AA254019D800683486 /* CosmicCypher.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FA07C9BF254019DC00683486 /* CosmicCypherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA07C9D7254019DC00683486 /* Build configuration list for PBXNativeTarget "CosmicCypherTests" */;
+			buildPhases = (
+				C5878268495F5C829543C31A /* [CP] Check Pods Manifest.lock */,
+				FA07C9BC254019DC00683486 /* Sources */,
+				FA07C9BD254019DC00683486 /* Frameworks */,
+				FA07C9BE254019DC00683486 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA07C9C2254019DC00683486 /* PBXTargetDependency */,
+			);
+			name = CosmicCypherTests;
+			productName = ResonantFinderTests;
+			productReference = FA07C9C0254019DC00683486 /* CosmicCypherTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FA07C9CA254019DC00683486 /* CosmicCypherUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA07C9DA254019DC00683486 /* Build configuration list for PBXNativeTarget "CosmicCypherUITests" */;
+			buildPhases = (
+				7A0B29F91AE7CEF931AEF884 /* [CP] Check Pods Manifest.lock */,
+				FA07C9C7254019DC00683486 /* Sources */,
+				FA07C9C8254019DC00683486 /* Frameworks */,
+				FA07C9C9254019DC00683486 /* Resources */,
+				1092D4C593235136E41C8EF2 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA07C9CD254019DC00683486 /* PBXTargetDependency */,
+			);
+			name = CosmicCypherUITests;
+			productName = ResonantFinderUITests;
+			productReference = FA07C9CB254019DC00683486 /* CosmicCypherUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FA07C9A2254019D800683486 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					FA07C9A9254019D800683486 = {
+						CreatedOnToolsVersion = 12.0.1;
+					};
+					FA07C9BF254019DC00683486 = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = FA07C9A9254019D800683486;
+					};
+					FA07C9CA254019DC00683486 = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = FA07C9A9254019D800683486;
+					};
+				};
+			};
+			buildConfigurationList = FA07C9A5254019D800683486 /* Build configuration list for PBXProject "CosmicCypher" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FA07C9A1254019D800683486;
+			productRefGroup = FA07C9AB254019D800683486 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FA07C9A9254019D800683486 /* CosmicCypher */,
+				FA07C9BF254019DC00683486 /* CosmicCypherTests */,
+				FA07C9CA254019DC00683486 /* CosmicCypherUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FA07C9A8254019D800683486 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA07C9BA254019DB00683486 /* LaunchScreen.storyboard in Resources */,
+				FA07C9B7254019DB00683486 /* Assets.xcassets in Resources */,
+				FA2C44A1286CEEE8009E61B2 /* TimeStreamManualSelect.storyboard in Resources */,
+				FA07CA4425401EBC00683486 /* Aldrich-Regular.ttf in Resources */,
+				FA2C449F286CEEDC009E61B2 /* TimeStreamPresetSelect.storyboard in Resources */,
+				FA33AAFD2864E18E00BC9F76 /* Settings.storyboard in Resources */,
+				FA33AB0928655DF700BC9F76 /* Instructions.storyboard in Resources */,
+				FA33AB0728655B8500BC9F76 /* StarChartSelect.storyboard in Resources */,
+				FAEAFEBF28492802001AEAE0 /* v3.storyboard in Resources */,
+				FAEAFEB02847E0D7001AEAE0 /* StarDiskFormation-loaderAnim_2.gif in Resources */,
+				FA33AB032865582200BC9F76 /* PlanetSelect.storyboard in Resources */,
+				FAEAFEBD284927BB001AEAE0 /* v4.storyboard in Resources */,
+				FA6101D7286D78580000D4D5 /* TimeStreamSelect.storyboard in Resources */,
+				FA07CA1F25401EBB00683486 /* NaturaDisk.sks in Resources */,
+				FA07CA2725401EBB00683486 /* Main.storyboard in Resources */,
+				FAB131222878AD25000AD7B9 /* Iceberg-Regular.ttf in Resources */,
+				FA1FDD6B2577144700B51BD2 /* TimeStream.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA07C9BE254019DC00683486 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA07C9C9254019DC00683486 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1092D4C593235136E41C8EF2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ResonantFinder-ResonantFinderUITests/Pods-ResonantFinder-ResonantFinderUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ResonantFinder-ResonantFinderUITests/Pods-ResonantFinder-ResonantFinderUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ResonantFinder-ResonantFinderUITests/Pods-ResonantFinder-ResonantFinderUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		16C900163CCF61D7F4944E76 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ResonantFinder-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2E52C2810BF57370AC9AF099 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ResonantFinder/Pods-ResonantFinder-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ResonantFinder/Pods-ResonantFinder-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ResonantFinder/Pods-ResonantFinder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A0B29F91AE7CEF931AEF884 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ResonantFinder-ResonantFinderUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5878268495F5C829543C31A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ResonantFinderTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FA07C9A6254019D800683486 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAEB27B72851033A009994B8 /* PlanetStateRegistry.swift in Sources */,
+				FAEB27C22851D286009994B8 /* StarChartCore.swift in Sources */,
+				FA35C0972849783A006114AB /* StarChart.swift in Sources */,
+				FA33AB0F2868D66900BC9F76 /* PlanetCollectionViewCell.swift in Sources */,
+				FAB1311928749201000AD7B9 /* PlanetNodeState.swift in Sources */,
+				FA35C0922849783A006114AB /* StarChartRegistry.swift in Sources */,
+				FA35C0DE2849A840006114AB /* TimeStreamNodeType.swift in Sources */,
+				FA2CB48A285E4E9B003AD95C /* UUID+Extension.swift in Sources */,
+				FA35C0C028497879006114AB /* Arcana.swift in Sources */,
+				FA33AB052865584D00BC9F76 /* PlanetSelectViewController.swift in Sources */,
+				FA07CA4625401EBC00683486 /* UIImage+Extension.swift in Sources */,
+				FA2CB48C285FFCCE003AD95C /* TimeStreamCoreDelegate.swift in Sources */,
+				FAB1311B28749B3E000AD7B9 /* AstrologicalNodeStateTimeline.swift in Sources */,
+				FA35C0BF28497879006114AB /* Personology.swift in Sources */,
+				FA07CA2225401EBB00683486 /* SelectDateViewController.swift in Sources */,
+				FAEAFEB62848423B001AEAE0 /* TimeStreamAddTableViewCell.swift in Sources */,
+				FAB1311F2874A328000AD7B9 /* AstrologicalNodeStateArchive.swift in Sources */,
+				FA35C0BE28497879006114AB /* CosmicAlignment.swift in Sources */,
+				FA07CA3A25401EBC00683486 /* FindLocationViewController.swift in Sources */,
+				FAEAFEB828489FE9001AEAE0 /* TimeStreamSettingsViewController.swift in Sources */,
+				FAB131152873A7E8000AD7B9 /* AstrologicalNodeState.swift in Sources */,
+				FA35C0B12849783A006114AB /* PlanetRetrogradeState.swift in Sources */,
+				FA6101DB286E3CAC0000D4D5 /* TimeStreamPresetSelectViewController.swift in Sources */,
+				FA6101E72870C8800000D4D5 /* TimeStreamPresets.swift in Sources */,
+				FA1FDD4F257026F700B51BD2 /* ReadingsSubScreenPNPA.swift in Sources */,
+				FA1FDD542570270800B51BD2 /* ReadingsSubScreenEDED.swift in Sources */,
+				FA07CA2325401EBB00683486 /* ResonanceReportViewController.swift in Sources */,
+				FA1FDD74257714C400B51BD2 /* TimeStreamViewController.swift in Sources */,
+				FA35C0E72849B932006114AB /* TimeStreamCompositeRegistry.swift in Sources */,
+				FA35C0982849783A006114AB /* EnergyLevels.swift in Sources */,
+				FA35C0C328497879006114AB /* Decans.swift in Sources */,
+				FA4D1B9C2561FE070043DE9F /* ReadingsScreen.swift in Sources */,
+				FA2CB4922860F664003AD95C /* CGImage+Extension.swift in Sources */,
+				FA35C08E2849783A006114AB /* Earth+Extension.swift in Sources */,
+				FA07CA4A25401EBC00683486 /* SpriteKit+Extension.swift in Sources */,
+				FA6101CD286D73AA0000D4D5 /* StarChartSelectViewController.swift in Sources */,
+				FA07CA3925401EBC00683486 /* MainViewController.swift in Sources */,
+				FA07CA2125401EBB00683486 /* Utils.swift in Sources */,
+				FAEB27C828527AAC009994B8 /* Data+Extension.swift in Sources */,
+				FA35C0D82849A840006114AB /* TimeStreamView.swift in Sources */,
+				FAEB2795284D12DA009994B8 /* TimeStreamAddNewCompositeTableViewCell.swift in Sources */,
+				FAB1311D2874A319000AD7B9 /* AstrologicalNodeStateRegistry.swift in Sources */,
+				FA35C08F2849783A006114AB /* JulianDay+Extension.swift in Sources */,
+				FA35C0932849783A006114AB /* ResonanceScore.swift in Sources */,
+				FA4D1B942561FDA00043DE9F /* ArkanaNaturaDisplayScreen.swift in Sources */,
+				FAEB27B128502B78009994B8 /* StarChart+Hashable.swift in Sources */,
+				FA35C09F2849783A006114AB /* Scaler.swift in Sources */,
+				FAEAFEAC2847DC88001AEAE0 /* UIImage+GIF+Extension.swift in Sources */,
+				FAEB279B284D1FF1009994B8 /* TimeStreamCompositePresets.swift in Sources */,
+				FA4D1B8F2561FCA00043DE9F /* ControlsScreen.swift in Sources */,
+				FA35C0992849783A006114AB /* StarChartSprite.swift in Sources */,
+				FA2CB4962862A9C7003AD95C /* CosmicCypherInstructionsViewController.swift in Sources */,
+				FA07C9B2254019D800683486 /* ViewController.swift in Sources */,
+				FA07C9AE254019D800683486 /* AppDelegate.swift in Sources */,
+				FA35C0DD2849A840006114AB /* TimeStreamGeometryType.swift in Sources */,
+				FAEB27A7284E81CF009994B8 /* StarChart+Codable.swift in Sources */,
+				FA07CA2625401EBB00683486 /* SetDateViewController.swift in Sources */,
+				FA2C449328696071009E61B2 /* StarChartCoreReactive.swift in Sources */,
+				FA33AB0C2866760700BC9F76 /* CosmicAlignmentSpriteNode.swift in Sources */,
+				FA35C0912849783A006114AB /* TextureGeneration.swift in Sources */,
+				FAEB27B52850C0A4009994B8 /* TimeStreamCompositeGenerator.swift in Sources */,
+				FA35C0E9284A60A2006114AB /* TimeStreamCompositeSpriteNode.swift in Sources */,
+				FA07CA3825401EBC00683486 /* ResultHistoryTableViewCell.swift in Sources */,
+				FA4D1B8A2561FBFE0043DE9F /* TimeStreamDisplayScreen.swift in Sources */,
+				FAEB27A3284E753B009994B8 /* TimeStreamPath.swift in Sources */,
+				FA07CA2025401EBB00683486 /* Assets.swift in Sources */,
+				FA35C09E2849783A006114AB /* Time.swift in Sources */,
+				FA1FDD98257A0A3A00B51BD2 /* SpriteNodeCosmicEvent.swift in Sources */,
+				FA35C0962849783A006114AB /* PlanetaryHarmonics.swift in Sources */,
+				FA35C0AE2849783A006114AB /* AstrologicalNode.swift in Sources */,
+				FA33AAFB2864E12E00BC9F76 /* Settings.swift in Sources */,
+				FA07CA4525401EBC00683486 /* Date+Extension.swift in Sources */,
+				FAEAFEBA28492595001AEAE0 /* EditTimeStreamViewController.swift in Sources */,
+				FA33AB112868D79900BC9F76 /* AspectCollectionViewCell.swift in Sources */,
+				FA6101D3286D73D70000D4D5 /* OffgridGeoLocationSelectViewController.swift in Sources */,
+				FA1FDD92257969E500B51BD2 /* ElementalReadingViewController.swift in Sources */,
+				FA2CB4882859F77B003AD95C /* TimeStreamColorRenderMode.swift in Sources */,
+				FA35C0C228497879006114AB /* Chevron.swift in Sources */,
+				FA35C0D52849A840006114AB /* TimeStreamSceneView.swift in Sources */,
+				FA33AB01286557D800BC9F76 /* PlanetSelect.swift in Sources */,
+				FAEAFEB4284841CC001AEAE0 /* TimeStreamTableViewCell.swift in Sources */,
+				FA35C09A2849783A006114AB /* StarChartGenerator.swift in Sources */,
+				FAEB27BC2851CB2D009994B8 /* Model.xcdatamodeld in Sources */,
+				FAEB27A5284E7F44009994B8 /* SwiftAA+Codable.swift in Sources */,
+				FA35C0DB2849A840006114AB /* TimeStreamGeometry.swift in Sources */,
+				FAEB27B928510345009994B8 /* PlanetStateArchive.swift in Sources */,
+				FA35C0DA2849A840006114AB /* TimeStreamMaterialType.swift in Sources */,
+				FAEB27CC28572DFB009994B8 /* SKSpriteNode+Extension.swift in Sources */,
+				FA35C0D92849A840006114AB /* TimeStreamNode.swift in Sources */,
+				FAEB2793284D0EEE009994B8 /* TimeStreamConfigurationTableViewCell.swift in Sources */,
+				FA35C0AB2849783A006114AB /* TimeStreamImageGenerator.swift in Sources */,
+				FA2C449528697B4E009E61B2 /* StarChartCompositeRenderer.swift in Sources */,
+				FA2CB49428629725003AD95C /* TimeStreamImageMapArchive.swift in Sources */,
+				FAB131172873A807000AD7B9 /* AstrologicalNodeType.swift in Sources */,
+				FA35C0ED284A7195006114AB /* TimeStreamImageMapRegistry.swift in Sources */,
+				FA35C0AA2849783A006114AB /* TimeStreamImageStrip.swift in Sources */,
+				FA6101E32870B0F10000D4D5 /* TimeStreamChartTableViewCell.swift in Sources */,
+				FAEB27CA285612DC009994B8 /* TimeStreamConfiguration.swift in Sources */,
+				FA1FDD452570262700B51BD2 /* ReadingsSubScreenCOEH.swift in Sources */,
+				FAEB2797284D12EC009994B8 /* TimeStreamAddNewConfigurationTableViewCell.swift in Sources */,
+				FA1FDD8C2579647D00B51BD2 /* View_Extension.swift in Sources */,
+				FA07CA2425401EBB00683486 /* TimeStreamCompositeTableViewCell.swift in Sources */,
+				FA35C0EB284A6E2D006114AB /* TimeStreamImageMap.swift in Sources */,
+				FA35C0E52849AC8F006114AB /* TimeStreamComposite.swift in Sources */,
+				FA35C0C728499195006114AB /* StarKitAssets.swift in Sources */,
+				FA35C0DC2849A840006114AB /* TimeStreamMaterial.swift in Sources */,
+				FA07CA4725401EBC00683486 /* SceneKit+Extension.swift in Sources */,
+				FA2CB48E2860EC4F003AD95C /* CIFilter+Extension.swift in Sources */,
+				FA2C449728697B9F009E61B2 /* StarChartComposite.swift in Sources */,
+				FA07C9B0254019D800683486 /* SceneDelegate.swift in Sources */,
+				FA35C09D2849783A006114AB /* Math.swift in Sources */,
+				FA35C0902849783A006114AB /* Astronomy.swift in Sources */,
+				FAEB279D284D2AB5009994B8 /* TimeStreamCore.swift in Sources */,
+				FAEB27B32850BB75009994B8 /* TimeStreamCompositeArchive.swift in Sources */,
+				FA2CB4902860EF49003AD95C /* TimeStreamSpriteMask.swift in Sources */,
+				FA35C0AD2849783A006114AB /* Astrology.swift in Sources */,
+				FAEB27A1284E5831009994B8 /* TimeStreamArchive.swift in Sources */,
+				FAEB27C628523730009994B8 /* CoreData+Extensions.swift in Sources */,
+				FA6101DF286F9F1F0000D4D5 /* TimeStreamCompositeNotchSpriteNode.swift in Sources */,
+				FA07CA4925401EBC00683486 /* Dictionary+Extension.swift in Sources */,
+				FA35C0B02849783A006114AB /* PlanetState.swift in Sources */,
+				FA6101D9286E3C9D0000D4D5 /* TimeStreamManualSelectViewController.swift in Sources */,
+				FA1FDD4A257026CA00B51BD2 /* ReadingsSubScreenSSSB.swift in Sources */,
+				FA35C0C128497879006114AB /* Zodiac.swift in Sources */,
+				FA6101E12870AE8E0000D4D5 /* TimeStreamChart.swift in Sources */,
+				FA35C0BD28497879006114AB /* Natura.swift in Sources */,
+				FA35C0AC2849783A006114AB /* AstrologyCompositeAlignment.swift in Sources */,
+				FA35C0942849783A006114AB /* StarCharts+Gravimetrics.swift in Sources */,
+				FA35C0952849783A006114AB /* StarCharts+DataMaps.swift in Sources */,
+				FA35C0C9284992B3006114AB /* AstroUtils.swift in Sources */,
+				FA07CA3C25401EBC00683486 /* ReportHistoryViewController.swift in Sources */,
+				FA35C0E02849A872006114AB /* TimeStreamSpriteNode.swift in Sources */,
+				FA6101D1286D73C70000D4D5 /* GeoLocationSelectViewController.swift in Sources */,
+				FA6101DD286F99D20000D4D5 /* CGPoint+Extension.swift in Sources */,
+				FA07CA2525401EBB00683486 /* ResonanceReportTableViewCell.swift in Sources */,
+				FAEB27C02851D21D009994B8 /* Codable+Extension.swift in Sources */,
+				FAEB279F284E5668009994B8 /* TimeStreamRegistry.swift in Sources */,
+				FA35C0BC28497879006114AB /* Color.swift in Sources */,
+				FA35C09C2849783A006114AB /* Regex.swift in Sources */,
+				FAEB27AB284EA1E0009994B8 /* SwiftAA+Hashable.swift in Sources */,
+				FAEB27A9284E9DA9009994B8 /* TimeStreamGenerator.swift in Sources */,
+				FAEB27C42851DC9E009994B8 /* PlanetStateTimeline.swift in Sources */,
+				FA07CA3B25401EBC00683486 /* ResultTableViewCell.swift in Sources */,
+				FA33AAFF2864E1A000BC9F76 /* SettingsViewController.swift in Sources */,
+				FA35C0C5284979DB006114AB /* StarKitImage.swift in Sources */,
+				FA07CA4825401EBC00683486 /* String+Extension.swift in Sources */,
+				FAEB27AF284FC51B009994B8 /* StarChartArchive.swift in Sources */,
+				FA35C0D62849A840006114AB /* TimeStreamScene.swift in Sources */,
+				FA6101CF286D73B70000D4D5 /* TimeStreamSelectViewController.swift in Sources */,
+				FA35C0E32849A984006114AB /* SCNGeometryExtension.swift in Sources */,
+				FA35C0AF2849783A006114AB /* Ayanamsa.swift in Sources */,
+				FA6101D5286D73E80000D4D5 /* OnlineGeoLocationSelectViewController.swift in Sources */,
+				FA35C0D72849A840006114AB /* TimeStream.swift in Sources */,
+				FA6101E52870C4C00000D4D5 /* TimeStreamPresetTableViewCell.swift in Sources */,
+				FA35C09B2849783A006114AB /* StarChart+ChartData.swift in Sources */,
+				FAEB2799284D16CC009994B8 /* UITableView+Extension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA07C9BC254019DC00683486 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA1FDD5E257269F800B51BD2 /* StarChartTest.swift in Sources */,
+				FA07C9C5254019DC00683486 /* ResonantFinderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA07C9C7254019DC00683486 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA07C9D0254019DC00683486 /* ResonantFinderUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FA07C9C2254019DC00683486 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA07C9A9254019D800683486 /* CosmicCypher */;
+			targetProxy = FA07C9C1254019DC00683486 /* PBXContainerItemProxy */;
+		};
+		FA07C9CD254019DC00683486 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA07C9A9254019D800683486 /* CosmicCypher */;
+			targetProxy = FA07C9CC254019DC00683486 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FA07C9B8254019DB00683486 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA07C9B9254019DB00683486 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FA07C9D2254019DC00683486 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FA07C9D3254019DC00683486 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FA07C9D5254019DC00683486 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 727DC80FE1543DB1F3D684A6 /* Pods-ResonantFinder.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H4H7UN3F3K;
+				INFOPLIST_FILE = ResonantFinder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.thora.cosmiccypher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FA07C9D6254019DC00683486 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 170BFF1D5642CC611EA954C7 /* Pods-ResonantFinder.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H4H7UN3F3K;
+				INFOPLIST_FILE = ResonantFinder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.thora.cosmiccypher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FA07C9D8254019DC00683486 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E44DAD6AFC67C48066A9E053 /* Pods-ResonantFinderTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H4H7UN3F3K;
+				INFOPLIST_FILE = ResonantFinderTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.thora.resonantfinder.ResonantFinderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CosmicCypher.app/CosmicCypher";
+			};
+			name = Debug;
+		};
+		FA07C9D9254019DC00683486 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A89F8DF0B1032D53596D143A /* Pods-ResonantFinderTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H4H7UN3F3K;
+				INFOPLIST_FILE = ResonantFinderTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.thora.resonantfinder.ResonantFinderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CosmicCypher.app/CosmicCypher";
+			};
+			name = Release;
+		};
+		FA07C9DB254019DC00683486 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA82199E27EC2E764D44C775 /* Pods-ResonantFinder-ResonantFinderUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H4H7UN3F3K;
+				INFOPLIST_FILE = ResonantFinderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.thora.resonantfinder.ResonantFinderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ResonantFinder;
+			};
+			name = Debug;
+		};
+		FA07C9DC254019DC00683486 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0BA924699052F7F2DD90957 /* Pods-ResonantFinder-ResonantFinderUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H4H7UN3F3K;
+				INFOPLIST_FILE = ResonantFinderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.thora.resonantfinder.ResonantFinderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ResonantFinder;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FA07C9A5254019D800683486 /* Build configuration list for PBXProject "CosmicCypher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA07C9D2254019DC00683486 /* Debug */,
+				FA07C9D3254019DC00683486 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA07C9D4254019DC00683486 /* Build configuration list for PBXNativeTarget "CosmicCypher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA07C9D5254019DC00683486 /* Debug */,
+				FA07C9D6254019DC00683486 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA07C9D7254019DC00683486 /* Build configuration list for PBXNativeTarget "CosmicCypherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA07C9D8254019DC00683486 /* Debug */,
+				FA07C9D9254019DC00683486 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA07C9DA254019DC00683486 /* Build configuration list for PBXNativeTarget "CosmicCypherUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA07C9DB254019DC00683486 /* Debug */,
+				FA07C9DC254019DC00683486 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FAEB27BA2851CB2D009994B8 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FAEB27BB2851CB2D009994B8 /* Model.xcdatamodel */,
+			);
+			currentVersion = FAEB27BB2851CB2D009994B8 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = FA07C9A2254019D800683486 /* Project object */;
+}

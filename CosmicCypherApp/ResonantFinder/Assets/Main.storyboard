@@ -21,7 +21,7 @@
         <!--Resonance Report View Controller-->
         <scene sceneID="KpV-3I-xFV">
             <objects>
-                <viewController storyboardIdentifier="ResonanceReportViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0dJ-eA-Nbr" customClass="ResonanceReportViewController" customModule="ResonantFinder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResonanceReportViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0dJ-eA-Nbr" customClass="ResonanceReportViewController" customModule="CosmicCypher" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e2e-IO-DME">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1264,7 +1264,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="92" height="230"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <prototypes>
-                                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ResonanceReportTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResonanceReportTableViewCell" rowHeight="73" id="SuK-RN-xER" customClass="ResonanceReportTableViewCell" customModule="ResonantFinder" customModuleProvider="target">
+                                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ResonanceReportTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResonanceReportTableViewCell" rowHeight="73" id="SuK-RN-xER" customClass="ResonanceReportTableViewCell" customModule="CosmicCypher" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="44.5" width="92" height="73"/>
                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SuK-RN-xER" id="Hbo-xK-72b">
@@ -1741,7 +1741,7 @@
                                                 <rect key="frame" x="20" y="20" width="374" height="205.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TimeStreamCompositeTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" showsReorderControl="YES" indentationWidth="10" reuseIdentifier="TimeStreamCompositeTableViewCell" rowHeight="128" id="Yeu-Yg-s2U" customClass="TimeStreamCompositeTableViewCell" customModule="ResonantFinder" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TimeStreamCompositeTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" showsReorderControl="YES" indentationWidth="10" reuseIdentifier="TimeStreamCompositeTableViewCell" rowHeight="128" id="Yeu-Yg-s2U" customClass="TimeStreamCompositeTableViewCell" customModule="CosmicCypher" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="44.5" width="374" height="128"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Yeu-Yg-s2U" id="xKP-7E-cZg">
@@ -1762,17 +1762,19 @@
                                                                             <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="20"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" pointerInteraction="YES" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xtb-LG-RcJ">
-                                                                            <rect key="frame" x="0.0" y="34.5" width="68" height="17.5"/>
-                                                                            <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="8"/>
-                                                                            <menu key="menu" title="DataMetricsMenu" identifier="DataMetricsMenu" id="Nlg-IE-oYp">
-                                                                                <menuOptions key="menuOptions" displayInline="YES" singleSelection="YES"/>
+                                                                        <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" pointerInteraction="YES" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xtb-LG-RcJ">
+                                                                            <rect key="frame" x="0.0" y="34.5" width="91" height="24"/>
+                                                                            <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="10"/>
+                                                                            <menu key="menu" title="DisplayOptionMenu" identifier="DisplayOptionMenu" id="Nlg-IE-oYp">
+                                                                                <menuOptions key="menuOptions" singleSelection="YES"/>
                                                                                 <children>
                                                                                     <command title="Harmonics" id="XON-ZF-ir1"/>
                                                                                     <command title="Gravimetrics" id="nCU-Xv-jQA"/>
                                                                                 </children>
                                                                             </menu>
-                                                                            <state key="normal" title="Metrics" image="filemenu.and.selection" catalog="system"/>
+                                                                            <state key="normal" title="Metrics">
+                                                                                <imageReference key="image" image="filemenu.and.selection" catalog="system" symbolScale="large"/>
+                                                                            </state>
                                                                         </button>
                                                                         <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="100" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QxT-X5-swl">
                                                                             <rect key="frame" x="4" y="97" width="40" height="12"/>
@@ -1815,6 +1817,7 @@
                                                                         <constraint firstItem="QxT-X5-swl" firstAttribute="leading" secondItem="um2-Ug-gd1" secondAttribute="leading" constant="4" id="VNJ-eO-c5y"/>
                                                                         <constraint firstItem="iRM-7F-qr0" firstAttribute="leading" secondItem="um2-Ug-gd1" secondAttribute="leading" constant="8" id="X7w-bg-AbR"/>
                                                                         <constraint firstItem="twC-ak-F5T" firstAttribute="leading" secondItem="um2-Ug-gd1" secondAttribute="leading" constant="4" id="eJY-zD-F9k"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="Xtb-LG-RcJ" secondAttribute="trailing" id="gsH-bk-Ty4"/>
                                                                         <constraint firstAttribute="bottom" secondItem="iRM-7F-qr0" secondAttribute="bottom" constant="2" id="haL-l5-se2"/>
                                                                         <constraint firstItem="Xtb-LG-RcJ" firstAttribute="top" secondItem="7Oa-Vx-JZy" secondAttribute="bottom" id="jrh-Cl-Ic3"/>
                                                                         <constraint firstAttribute="trailing" secondItem="iRM-7F-qr0" secondAttribute="trailing" constant="8" id="kFq-8Y-VP5"/>
@@ -1835,6 +1838,10 @@
                                                                 <skView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cZH-gB-Eik">
                                                                     <rect key="frame" x="91" y="0.0" width="283" height="128"/>
                                                                 </skView>
+                                                                <view hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wpm-Xl-wzy">
+                                                                    <rect key="frame" x="91" y="0.0" width="283" height="128"/>
+                                                                    <color key="backgroundColor" systemColor="separatorColor"/>
+                                                                </view>
                                                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6Rd-IA-vlb">
                                                                     <rect key="frame" x="112" y="62" width="150" height="4"/>
                                                                 </progressView>
@@ -1847,29 +1854,35 @@
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstItem="um2-Ug-gd1" firstAttribute="top" secondItem="xKP-7E-cZg" secondAttribute="top" id="3mv-JQ-X7Y"/>
+                                                                <constraint firstItem="wpm-Xl-wzy" firstAttribute="centerY" secondItem="cZH-gB-Eik" secondAttribute="centerY" id="5ni-Qb-aKM"/>
                                                                 <constraint firstItem="6Rd-IA-vlb" firstAttribute="centerX" secondItem="xKP-7E-cZg" secondAttribute="centerX" id="CpR-1d-9dY"/>
+                                                                <constraint firstItem="wpm-Xl-wzy" firstAttribute="height" secondItem="cZH-gB-Eik" secondAttribute="height" id="Dkj-8c-7Cv"/>
                                                                 <constraint firstItem="cZH-gB-Eik" firstAttribute="leading" secondItem="um2-Ug-gd1" secondAttribute="trailing" id="EEc-9w-3gI"/>
                                                                 <constraint firstItem="Dar-oz-eaF" firstAttribute="top" secondItem="6Rd-IA-vlb" secondAttribute="top" multiplier="1.1" id="Fvs-3o-XzG"/>
                                                                 <constraint firstAttribute="bottom" secondItem="um2-Ug-gd1" secondAttribute="bottom" id="KJR-70-che"/>
+                                                                <constraint firstItem="wpm-Xl-wzy" firstAttribute="centerX" secondItem="cZH-gB-Eik" secondAttribute="centerX" id="KcM-Ug-YPF"/>
                                                                 <constraint firstAttribute="trailing" secondItem="cZH-gB-Eik" secondAttribute="trailing" id="N9d-qA-GFr"/>
                                                                 <constraint firstItem="um2-Ug-gd1" firstAttribute="leading" secondItem="xKP-7E-cZg" secondAttribute="leading" id="YVZ-7m-vhT"/>
                                                                 <constraint firstItem="cZH-gB-Eik" firstAttribute="top" secondItem="xKP-7E-cZg" secondAttribute="top" id="ejH-nJ-IeF"/>
                                                                 <constraint firstItem="Dar-oz-eaF" firstAttribute="centerX" secondItem="6Rd-IA-vlb" secondAttribute="centerX" id="euu-Ih-AVh"/>
                                                                 <constraint firstItem="6Rd-IA-vlb" firstAttribute="width" secondItem="xKP-7E-cZg" secondAttribute="width" multiplier="0.40107" id="gll-pE-Ru9"/>
                                                                 <constraint firstItem="6Rd-IA-vlb" firstAttribute="centerY" secondItem="xKP-7E-cZg" secondAttribute="centerY" id="lCf-2i-kbC"/>
+                                                                <constraint firstItem="wpm-Xl-wzy" firstAttribute="width" secondItem="cZH-gB-Eik" secondAttribute="width" id="vqE-hY-BI7"/>
                                                                 <constraint firstAttribute="bottom" secondItem="cZH-gB-Eik" secondAttribute="bottom" id="yJm-wV-oow"/>
                                                                 <constraint firstItem="um2-Ug-gd1" firstAttribute="width" secondItem="xKP-7E-cZg" secondAttribute="width" multiplier="0.243902" id="yTB-Tb-Hpd"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
                                                         <connections>
                                                             <outlet property="calculatingLabel" destination="Dar-oz-eaF" id="5LT-KL-dRr"/>
+                                                            <outlet property="chartSuperView" destination="wpm-Xl-wzy" id="Tth-BN-GPb"/>
                                                             <outlet property="dateLabel" destination="7Oa-Vx-JZy" id="2as-bb-Msj"/>
+                                                            <outlet property="displayOptionButton" destination="Xtb-LG-RcJ" id="ncr-Nd-2iv"/>
                                                             <outlet property="nameLabel" destination="twC-ak-F5T" id="i9a-7G-rwx"/>
                                                             <outlet property="progressBar" destination="6Rd-IA-vlb" id="Skg-JU-mWi"/>
                                                             <outlet property="spriteKitView" destination="cZH-gB-Eik" id="nb7-8t-uzy"/>
                                                         </connections>
                                                     </tableViewCell>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TimeStreamAddNewCompositeTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimeStreamAddNewCompositeTableViewCell" rowHeight="137" id="fGT-pN-bTV" customClass="TimeStreamAddNewCompositeTableViewCell" customModule="ResonantFinder" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TimeStreamAddNewCompositeTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimeStreamAddNewCompositeTableViewCell" rowHeight="137" id="fGT-pN-bTV" customClass="TimeStreamAddNewCompositeTableViewCell" customModule="CosmicCypher" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="172.5" width="374" height="137"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fGT-pN-bTV" id="Leb-Bd-dyc">
@@ -2150,7 +2163,7 @@ Time:  10:51:55</string>
         <!--Elemental Reading View Controller-->
         <scene sceneID="mau-Xh-HtC">
             <objects>
-                <viewController id="ub0-Dy-MkY" customClass="ElementalReadingViewController" customModule="ResonantFinder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ub0-Dy-MkY" customClass="ElementalReadingViewController" customModule="CosmicCypher" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GTZ-Dj-sVX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

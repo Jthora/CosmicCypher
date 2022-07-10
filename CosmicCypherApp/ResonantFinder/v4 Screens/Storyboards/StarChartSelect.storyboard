@@ -16,7 +16,7 @@
         <!--Star Chart Select-->
         <scene sceneID="bk8-Ui-kX1">
             <objects>
-                <viewController storyboardIdentifier="StarChartSelectViewController" title="Star Chart Select" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8ZG-bb-DNe" customClass="StarChartSelectViewController" customModule="ResonantFinder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StarChartSelectViewController" title="Star Chart Select" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8ZG-bb-DNe" customClass="StarChartSelectViewController" customModule="CosmicCypher" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9oJ-yd-3d6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -88,7 +88,7 @@
         <!--GeoLocation Select-->
         <scene sceneID="TPI-5S-pGE">
             <objects>
-                <viewController storyboardIdentifier="GeoLocationSelectViewController" title="GeoLocation Select" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wEi-IU-yCC" customClass="GeoLocationSelectViewController" customModule="ResonantFinder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GeoLocationSelectViewController" title="GeoLocation Select" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wEi-IU-yCC" customClass="GeoLocationSelectViewController" customModule="CosmicCypher" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OMC-mV-mPe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -97,9 +97,9 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="399"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTo-mg-Pb9">
-                                        <rect key="frame" x="72.5" y="171" width="269" height="57"/>
+                                        <rect key="frame" x="28.5" y="171" width="357" height="57"/>
                                         <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="48"/>
-                                        <state key="normal" title="Online Map"/>
+                                        <state key="normal" title="MapKit Locate"/>
                                         <connections>
                                             <action selector="liveFeedButtonTap:" destination="8ZG-bb-DNe" eventType="touchUpInside" id="v4Q-4L-tJN"/>
                                             <segue destination="WjJ-tz-R1J" kind="presentation" id="VwG-by-zc7"/>
@@ -115,7 +115,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X8O-fZ-twO">
                                 <rect key="frame" x="0.0" y="443" width="414" height="399"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocb-Pu-ffV">
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocb-Pu-ffV">
                                         <rect key="frame" x="57" y="171" width="300" height="57"/>
                                         <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="48"/>
                                         <state key="normal" title="Offgrid Map"/>
@@ -161,7 +161,7 @@
         <!--Offgrid Map-->
         <scene sceneID="H2o-EX-6Mc">
             <objects>
-                <viewController storyboardIdentifier="OffgridGeoLocationSelectViewController" title="Offgrid Map" useStoryboardIdentifierAsRestorationIdentifier="YES" id="peQ-uh-hBP" customClass="OffgridGeoLocationSelectViewController" customModule="ResonantFinder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OffgridGeoLocationSelectViewController" title="Offgrid Map" useStoryboardIdentifierAsRestorationIdentifier="YES" id="peQ-uh-hBP" customClass="OffgridGeoLocationSelectViewController" customModule="CosmicCypher" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EwG-a8-QkU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -285,7 +285,7 @@
         <!--Online Map-->
         <scene sceneID="So5-E9-lRZ">
             <objects>
-                <viewController storyboardIdentifier="OnlineGeoLocationSelectViewController" title="Online Map" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WjJ-tz-R1J" customClass="OnlineGeoLocationSelectViewController" customModule="ResonantFinder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnlineGeoLocationSelectViewController" title="Online Map" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WjJ-tz-R1J" customClass="OnlineGeoLocationSelectViewController" customModule="CosmicCypher" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hZ7-LH-Me8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

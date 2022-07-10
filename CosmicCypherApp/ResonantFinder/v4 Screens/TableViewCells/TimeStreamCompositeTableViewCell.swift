@@ -8,6 +8,7 @@
 
 import UIKit
 import SpriteKit
+import Charts
 
 
 
@@ -22,7 +23,15 @@ class TimeStreamCompositeTableViewCell: UITableViewCell {
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var calculatingLabel: UILabel!
     
+    @IBOutlet weak var chartSuperView: UIView!
+    @IBOutlet weak var displayOptionButton: UIButton!
     
+    
+    var lineChartView: LineChartView = {
+       let lineChartView = LineChartView()
+        lineChartView.backgroundColor = .systemBlue
+        return lineChartView
+    }()
     
     lazy var scene:SKScene = generateSpriteKitScene()
     
@@ -84,9 +93,24 @@ class TimeStreamCompositeTableViewCell: UITableViewCell {
         
         setupLabels(name: name, configuration: configuration)
         
+        setupButtons()
+        setupCharts()
+        setChartData()
+        
         setupTimeStreamCompositeSpriteNode()
         
         setupGestureRecognizers()
+        
+    }
+    
+    func setupButtons() {
+        displayOptionButton.menu = UIMenu(children: [
+            UIAction(title: "Harmonics", state: .on, handler:showHarmonicsClosure),
+            UIAction(title: "Gravimetrics", handler:showGravimetricsClosure)])
+    }
+    
+    func setupChartGraph() {
+        
     }
     
     func setupGestureRecognizers() {
@@ -189,6 +213,7 @@ class TimeStreamCompositeTableViewCell: UITableViewCell {
     
     func update(name: String? = nil, configuration: TimeStream.Configuration? = nil) {
         setup(name: name, configuration: configuration)
+        setChartData()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -251,7 +276,49 @@ class TimeStreamCompositeTableViewCell: UITableViewCell {
     func generateSpriteKitScene() -> SKScene {
         return SKScene(size: self.spriteKitView.frame.size)
     }
+    
+    
+    func setupCharts() {
+        // setup view
+        self.chartSuperView.addSubview(lineChartView)
+        lineChartView.centerInSuperview()
+        lineChartView.width(to: self.chartSuperView)
+        lineChartView.height(to: self.chartSuperView)
+    }
+    
+    func setChartData() {
+        let numbers = [1,2,3,5,4,7,4,5,6,4,3,3,5,6,5,4,3,3,4,5,4,3,2,4,5,6,5,4,3,5,4,3,4,4,4,5,4,3,3,4,4,3,5,6]
+        
+        var entries: [ChartDataEntry] = []
+        for (i,number) in numbers.enumerated() {
+            entries.append(ChartDataEntry(x: Double(i), y: Double(number)))
+        }
+        
+        let set1 = LineChartDataSet(entries: entries, label: "Gravimetrics")
+        let data = LineChartData(dataSets: [set1])
+        lineChartView.data = data
+    }
+    
+    
+    func showGravimetricsClosure(action: UIAction) {
+        self.chartSuperView.isHidden = false
+        self.chartSuperView.alpha = 0
+        UIView.animate(withDuration: 0.5, delay: 0) {
+            self.chartSuperView.alpha = 1
+        }
+        print("Show Gravimetrics")
+    }
+    func showHarmonicsClosure(action: UIAction) {
+        self.chartSuperView.alpha = 1
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut) {
+            self.chartSuperView.alpha = 0
+        } completion: { _ in
+            self.chartSuperView.alpha = 0
+            self.chartSuperView.isHidden = true
+        }
 
+        print("Show Harmonics")
+    }
 }
 
 extension TimeStreamCompositeTableViewCell: TimeStreamCoreReactive {

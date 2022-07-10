@@ -285,25 +285,30 @@ class ResonanceReportViewController: UIViewController {
             self.updatePowerBars(starChart:starChart)
             self.updateModalityMeters(starChart:starChart)
             
-            self.discernmentCentralBlob?.removeFromSuperlayer()
-            self.discernmentCentralBlob = nil
-            if let dcb = self.createDiscernmentCentralGraphZone() {
-                self.discernmentCentralBlob = dcb
-                self.discernmentGraphView.layer.addSublayer(self.discernmentCentralBlob!)
-            }
-            
-            self.discernmentOuterBlob?.removeFromSuperlayer()
-            self.discernmentOuterBlob = nil
-            if let dob = self.createDiscernmentOuterGraphZone() {
-                self.discernmentOuterBlob = dob
-                self.discernmentGraphView.layer.addSublayer(self.discernmentOuterBlob!)
-            }
-            
-            self.discernmentCentralPoint?.removeFromSuperlayer()
-            self.discernmentCentralPoint = nil
-            if let cp = self.createDiscernmentCentralPoint() {
-                self.discernmentCentralPoint = cp
-                self.discernmentGraphView.layer.addSublayer(self.discernmentCentralPoint!)
+            DispatchQueue.global().async {
+                guard let dcb = self.createDiscernmentCentralGraphZone() else {return}
+                DispatchQueue.main.async {
+                    self.discernmentCentralBlob?.removeFromSuperlayer()
+                    self.discernmentCentralBlob = nil
+                    self.discernmentCentralBlob = dcb
+                    self.discernmentGraphView.layer.addSublayer(self.discernmentCentralBlob!)
+                }
+                
+                guard let dob = self.createDiscernmentOuterGraphZone() else {return}
+                DispatchQueue.main.async {
+                    self.discernmentOuterBlob?.removeFromSuperlayer()
+                    self.discernmentOuterBlob = nil
+                    self.discernmentOuterBlob = dob
+                    self.discernmentGraphView.layer.addSublayer(self.discernmentOuterBlob!)
+                }
+                
+                guard let cp = self.createDiscernmentCentralPoint() else {return}
+                DispatchQueue.main.async {
+                    self.discernmentCentralPoint?.removeFromSuperlayer()
+                    self.discernmentCentralPoint = nil
+                    self.discernmentCentralPoint = cp
+                    self.discernmentGraphView.layer.addSublayer(self.discernmentCentralPoint!)
+                }
             }
             
         }
@@ -699,7 +704,7 @@ extension ResonanceReportViewController: UITableViewDelegate, UITableViewDataSou
             guard let cell = aspectsResultsTableView.dequeueReusableCell(withIdentifier: "ResonanceReportTableViewCell") as? ResonanceReportTableViewCell else { return UITableViewCell() }
             
             let aspects = StarChart.Core.sortedAspects
-            guard aspects.count >= indexPath.row else {return UITableViewCell()}
+            guard indexPath.row < aspects.count else {return UITableViewCell()}
             let aspect = aspects[indexPath.row]
             guard let pLong = StarChart.Core.current.alignments[aspect.primaryBody.type]?.longitude,
                   let sLong = StarChart.Core.current.alignments[aspect.secondaryBody.type]?.longitude else { return cell }

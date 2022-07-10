@@ -139,11 +139,18 @@ extension TimeStream.Composite {
         }
         
         func setScrubber(x:CGFloat, updateStarChart:Bool = true) {
-            setScrubber(position: CGPoint(x: x, y: scrubberSprite.position.y))
+            DispatchQueue.main.async {
+                self.setScrubber(position: CGPoint(x: x, y: self.scrubberSprite.position.y))
+            }
             if updateStarChart,
                let point = currentNotch?.point {
-                StarChart.Core.current = StarChartRegistry.main.getStarChart(point: point)
-                ResonanceReportViewController.current?.update()
+                DispatchQueue.global().async {
+                    let starChart = StarChartRegistry.main.getStarChart(point: point)
+                    DispatchQueue.main.async {
+                        StarChart.Core.current = starChart
+                        ResonanceReportViewController.current?.update()
+                    }
+                }
             }
         }
         

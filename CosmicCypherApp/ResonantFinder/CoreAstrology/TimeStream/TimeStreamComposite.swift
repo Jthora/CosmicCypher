@@ -20,6 +20,8 @@ extension TimeStream {
         var startDate: Date? { return configuration.startDate }
         var endDate: Date? { return configuration.endDate }
         
+        var resonanceScores:[StarChart.ResonanceScore] { return configuration.resonanceScores }
+        
         init(name: String? = nil, uuid:UUID? = nil, configuration: TimeStream.Configuration, imageMap: ImageMap? = nil, onComplete:((Composite)->Void)? = nil, onProgress:((_ completion:Double)->Void)? = nil) {
             self.name = name
             

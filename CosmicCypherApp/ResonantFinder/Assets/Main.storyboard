@@ -1840,13 +1840,33 @@
                                                                 </skView>
                                                                 <view hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wpm-Xl-wzy">
                                                                     <rect key="frame" x="91" y="0.0" width="283" height="128"/>
+                                                                    <subviews>
+                                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="410-8G-vL0">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="283" height="128"/>
+                                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                        </view>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calculating Gravimetrics..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="INX-0j-3RA">
+                                                                            <rect key="frame" x="60" y="45.5" width="163" height="11.5"/>
+                                                                            <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="12"/>
+                                                                            <color key="textColor" systemColor="systemBackgroundColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
                                                                     <color key="backgroundColor" systemColor="separatorColor"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="trailing" secondItem="410-8G-vL0" secondAttribute="trailing" id="BCQ-8c-f4g"/>
+                                                                        <constraint firstItem="INX-0j-3RA" firstAttribute="centerY" secondItem="wpm-Xl-wzy" secondAttribute="centerY" multiplier="0.8" id="BlD-rK-Zgv"/>
+                                                                        <constraint firstItem="410-8G-vL0" firstAttribute="top" secondItem="wpm-Xl-wzy" secondAttribute="top" id="Edk-GG-r4h"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="410-8G-vL0" secondAttribute="bottom" id="QM4-rV-rEi"/>
+                                                                        <constraint firstItem="INX-0j-3RA" firstAttribute="centerX" secondItem="wpm-Xl-wzy" secondAttribute="centerX" id="UDB-wZ-htz"/>
+                                                                        <constraint firstItem="410-8G-vL0" firstAttribute="leading" secondItem="wpm-Xl-wzy" secondAttribute="leading" id="Y39-lw-tN7"/>
+                                                                    </constraints>
                                                                 </view>
                                                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6Rd-IA-vlb">
                                                                     <rect key="frame" x="112" y="62" width="150" height="4"/>
                                                                 </progressView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calculating..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dar-oz-eaF">
-                                                                    <rect key="frame" x="147.5" y="68" width="79.5" height="11.5"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calculating Harmonics..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dar-oz-eaF">
+                                                                    <rect key="frame" x="113" y="68" width="148.5" height="11.5"/>
                                                                     <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="12"/>
                                                                     <color key="textColor" systemColor="systemBackgroundColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -1875,6 +1895,8 @@
                                                         <connections>
                                                             <outlet property="calculatingLabel" destination="Dar-oz-eaF" id="5LT-KL-dRr"/>
                                                             <outlet property="chartSuperView" destination="wpm-Xl-wzy" id="Tth-BN-GPb"/>
+                                                            <outlet property="chartView" destination="410-8G-vL0" id="9kQ-Fx-7xF"/>
+                                                            <outlet property="chartViewMessageLabel" destination="INX-0j-3RA" id="ROX-YC-UfM"/>
                                                             <outlet property="dateLabel" destination="7Oa-Vx-JZy" id="2as-bb-Msj"/>
                                                             <outlet property="displayOptionButton" destination="Xtb-LG-RcJ" id="ncr-Nd-2iv"/>
                                                             <outlet property="nameLabel" destination="twC-ak-F5T" id="i9a-7G-rwx"/>

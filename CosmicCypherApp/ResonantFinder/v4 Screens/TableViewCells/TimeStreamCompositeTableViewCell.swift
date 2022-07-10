@@ -24,6 +24,8 @@ class TimeStreamCompositeTableViewCell: UITableViewCell {
     @IBOutlet weak var calculatingLabel: UILabel!
     
     @IBOutlet weak var chartSuperView: UIView!
+    @IBOutlet weak var chartView: UIView!
+    @IBOutlet weak var chartViewMessageLabel: UILabel!
     @IBOutlet weak var displayOptionButton: UIButton!
     
     
@@ -280,23 +282,67 @@ class TimeStreamCompositeTableViewCell: UITableViewCell {
     
     func setupCharts() {
         // setup view
-        self.chartSuperView.addSubview(lineChartView)
+        
+        self.chartView.addSubview(lineChartView)
         lineChartView.centerInSuperview()
-        lineChartView.width(to: self.chartSuperView)
-        lineChartView.height(to: self.chartSuperView)
+        lineChartView.width(to: self.chartView)
+        lineChartView.height(to: self.chartView)
     }
     
     func setChartData() {
-        let numbers = [1,2,3,5,4,7,4,5,6,4,3,3,5,6,5,4,3,3,4,5,4,3,2,4,5,6,5,4,3,5,4,3,4,4,4,5,4,3,3,4,4,3,5,6]
-        
-        var entries: [ChartDataEntry] = []
-        for (i,number) in numbers.enumerated() {
-            entries.append(ChartDataEntry(x: Double(i), y: Double(number)))
+        DispatchQueue.main.async {
+            self.chartViewMessageLabel.isHidden = false
         }
         
-        let set1 = LineChartDataSet(entries: entries, label: "Gravimetrics")
-        let data = LineChartData(dataSets: [set1])
-        lineChartView.data = data
+        DispatchQueue.global().async {
+            guard let starCharts = self.timeStreamComposite?.configuration.timeStreams.first?.starCharts else { return }
+            //guard let resonanceScores = self.timeStreamComposite?.resonanceScores else { return }
+            //let globalNetEnergies = resonanceScores.map({ $0.energies.globalNetEnergy })
+            
+            
+            let globalNetGravimetricMagnitudes:EnergyMagnitudes = starCharts.map({ $0.globalNetGravimetricMagnitude(includeSun: false) })
+            var globalNetGravityEntries: [ChartDataEntry] = []
+            for (i,magnitude) in globalNetGravimetricMagnitudes.enumerated() {
+                let normalizedMagnitude = globalNetGravimetricMagnitudes.normalize(magnitude: magnitude)!
+                let entry = ChartDataEntry(x: Double(i), y: Double(normalizedMagnitude))
+                globalNetGravityEntries.append(entry)
+            }
+            
+            let stellarNetGravimentricMagnitudes:EnergyMagnitudes = starCharts.map({ $0.stellarNetGravimentricMagnitude() })
+            var stellarNetGravityEntries: [ChartDataEntry] = []
+            for (i,magnitude) in stellarNetGravimentricMagnitudes.enumerated() {
+                let normalizedMagnitude = stellarNetGravimentricMagnitudes.normalize(magnitude: magnitude)!
+                let entry = ChartDataEntry(x: Double(i), y: Double(normalizedMagnitude))
+                stellarNetGravityEntries.append(entry)
+            }
+            
+            let interplanetaryAbsoluteGravimentricMagnitudes:EnergyMagnitudes = starCharts.map({ $0.interplanetaryAbsoluteGravimentricMagnitude(includeSun: true) })
+            var interplanetaryNetGravityEntries: [ChartDataEntry] = []
+            for (i,magnitude) in interplanetaryAbsoluteGravimentricMagnitudes.enumerated() {
+                let normalizedMagnitude = interplanetaryAbsoluteGravimentricMagnitudes.normalize(magnitude: magnitude)!
+                let entry = ChartDataEntry(x: Double(i), y: Double(normalizedMagnitude))
+                interplanetaryNetGravityEntries.append(entry)
+            }
+            
+            DispatchQueue.main.async {
+                let set1 = LineChartDataSet(entries: globalNetGravityEntries, label: "global")
+                set1.colors = [.systemMint]
+                set1.circleColors = [.systemMint]
+                set1.circleRadius = 3
+                let set2 = LineChartDataSet(entries: stellarNetGravityEntries, label: "stellar")
+                set2.colors = [.systemYellow]
+                set2.circleColors = [.systemYellow]
+                set2.circleRadius = 4
+                let set3 = LineChartDataSet(entries: interplanetaryNetGravityEntries, label: "interplanetary")
+                set3.colors = [.systemIndigo]
+                set3.circleColors = [.systemIndigo]
+                set3.circleRadius = 5
+                let data = LineChartData(dataSets: [set1,set2,set3])
+                self.lineChartView.data = data
+                
+                self.chartViewMessageLabel.isHidden = true
+            }
+        }
     }
     
     

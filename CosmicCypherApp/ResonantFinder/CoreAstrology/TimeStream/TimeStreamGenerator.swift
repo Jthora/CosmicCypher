@@ -93,7 +93,7 @@ extension TimeStream {
             case personal // Personal (harmonics)
             
             
-            static let defaultSet:[Option] = [.today(.harmonics),.tomorrow(.harmonics),.thisMonth(.gravimetrics)]
+            static let defaultSet:[Option] = [.thisYear(.harmonics),.thisSolarCycle(.harmonics),.today(.harmonics),.tomorrow(.harmonics),.thisMonth(.harmonics)]
             
             
             func generate() -> TimeStream {

@@ -49,3 +49,22 @@ extension TimeInterval {
         return self/1.0
     }
 }
+
+typealias EnergyMagnitudes = [Double]
+extension EnergyMagnitudes {
+    
+    var sum: Double? {
+        guard self.count != 0 else { return nil }
+        return self.reduce(0, +)
+    }
+    
+    var average: Double? {
+        guard self.count != 0 else { return nil }
+        return sum! / Double(self.count)
+    }
+    
+    func normalize(magnitude: Double) -> Double? {
+        guard let average = self.average else { return nil }
+        return magnitude / average
+    }
+}

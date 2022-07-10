@@ -93,6 +93,11 @@ public final class TimeStream {
     func generateImageStrips(nodeTypes:[CoreAstrology.AspectBody.NodeType] = DEFAULT_SELECTED_NODETYPES) -> TimeStreamImageStripSet {
         return TimeStream.ImageGenerator.generateStrips(timestream: self, nodeTypes: nodeTypes)
     }
+    
+    
+    func resonanceScores() -> [StarChart.ResonanceScore] {
+        return self.starCharts.map({ $0.resonanceScore() })
+    }
 }
 
 

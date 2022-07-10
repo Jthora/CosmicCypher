@@ -9,12 +9,22 @@ import UIKit
 import Charts
 
 extension TimeStream {
-    class Chart {
+    class Chart: LineChartView {
         
         let configuration: TimeStream.Configuration
         // data?
         init(configuration: TimeStream.Configuration) {
             self.configuration = configuration
+            super.init()
+            
+            setup()
+        }
+        
+        required init?(coder aDecoder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+        func setup() {
+            
         }
     }
 }

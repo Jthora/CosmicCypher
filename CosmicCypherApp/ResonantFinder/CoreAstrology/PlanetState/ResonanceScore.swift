@@ -33,11 +33,6 @@ public extension StarChart {
 // MARK: Resonance Score Methods
 extension StarChart {
     
-    // Returns the Total Resonance Score of 1 or more StarCharts
-    public static func resonanceScore(from starCharts: [StarChart]) {
-        
-    }
-    
     public func resonanceScore() -> ResonanceScore {
         return ResonanceScore(harmonics: self.planetaryHarmonics, energies: self.energyLevels)
     }

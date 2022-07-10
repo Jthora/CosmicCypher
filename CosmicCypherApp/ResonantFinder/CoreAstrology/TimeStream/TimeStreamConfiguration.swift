@@ -34,6 +34,10 @@ extension TimeStream {
             self.timeStreams = timeStreams
             self.nodeTypes = nodeTypes
         }
+        
+        var resonanceScores: [StarChart.ResonanceScore] {
+            return timeStreams.first?.resonanceScores() ?? []
+        }
     }
 }
 

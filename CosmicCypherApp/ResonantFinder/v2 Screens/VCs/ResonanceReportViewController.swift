@@ -273,45 +273,79 @@ class ResonanceReportViewController: UIViewController {
         StarChart.Core.current = StarChart(date: date, coordinates: coordinates)
     }
     
-    func update() {
-        DispatchQueue.main.async {
-            
-            let starChart = StarChart.Core.current
-            let location = CLLocation(latitude: StarChart.Core.current.coordinates.latitude.value, longitude: -StarChart.Core.current.coordinates.longitude.value)
-            
-            self.dateTimeCoordsLabel.text = "Latitude: \(starChart.coordinates.latitude)\nLongitude: \(-starChart.coordinates.longitude)\nDate: \(starChart.date.formatted(date: .numeric, time: .omitted))\nTime: \(starChart.date.formattedTime(for: starChart.coordinates))"
-            
-            self.aspectsResultsTableView.reloadData()
-            self.updatePowerBars(starChart:starChart)
-            self.updateModalityMeters(starChart:starChart)
-            
-            DispatchQueue.global().async {
-                guard let dcb = self.createDiscernmentCentralGraphZone() else {return}
-                DispatchQueue.main.async {
-                    self.discernmentCentralBlob?.removeFromSuperlayer()
-                    self.discernmentCentralBlob = nil
-                    self.discernmentCentralBlob = dcb
-                    self.discernmentGraphView.layer.addSublayer(self.discernmentCentralBlob!)
-                }
-                
-                guard let dob = self.createDiscernmentOuterGraphZone() else {return}
-                DispatchQueue.main.async {
-                    self.discernmentOuterBlob?.removeFromSuperlayer()
-                    self.discernmentOuterBlob = nil
-                    self.discernmentOuterBlob = dob
-                    self.discernmentGraphView.layer.addSublayer(self.discernmentOuterBlob!)
-                }
-                
-                guard let cp = self.createDiscernmentCentralPoint() else {return}
-                DispatchQueue.main.async {
-                    self.discernmentCentralPoint?.removeFromSuperlayer()
-                    self.discernmentCentralPoint = nil
-                    self.discernmentCentralPoint = cp
-                    self.discernmentGraphView.layer.addSublayer(self.discernmentCentralPoint!)
-                }
-            }
-            
+    fileprivate var _updateQueue:DispatchQueue = DispatchQueue(label: "_updateQueue")
+    private let _updateOperationQueue: OperationQueue = {
+        let op = OperationQueue()
+        op.isSuspended = false
+        return op
+    } ()
+    
+    class ResonanceReportUpdateOperation: Operation {
+        
+        var vc: ResonanceReportViewController
+        
+        init(_ vc:ResonanceReportViewController) {
+            self.vc = vc
         }
+        
+          override func main() {
+              if isCancelled { return }
+              
+              DispatchQueue.main.async {
+                  
+                  let starChart = StarChart.Core.current
+                  let location = CLLocation(latitude: StarChart.Core.current.coordinates.latitude.value, longitude: -StarChart.Core.current.coordinates.longitude.value)
+                  
+                  self.vc.dateTimeCoordsLabel.text = "Latitude: \(starChart.coordinates.latitude)\nLongitude: \(-starChart.coordinates.longitude)\nDate: \(starChart.date.formatted(date: .numeric, time: .omitted))\nTime: \(starChart.date.formattedTime(for: starChart.coordinates))"
+                  
+                  self.vc.aspectsResultsTableView.reloadData()
+                  self.vc.updatePowerBars(starChart:starChart)
+                  self.vc.updateModalityMeters(starChart:starChart)
+                  
+                  if self.isCancelled { return }
+                  
+                  self.vc._updateQueue.async {
+                      guard let dcb = self.vc.createDiscernmentCentralGraphZone() else {return}
+                      if self.isCancelled { return }
+                      DispatchQueue.main.async {
+                          self.vc.discernmentCentralBlob?.removeFromSuperlayer()
+                          self.vc.discernmentCentralBlob = nil
+                          self.vc.discernmentCentralBlob = dcb
+                          self.vc.discernmentGraphView.layer.addSublayer(self.vc.discernmentCentralBlob!)
+                      }
+                      if self.isCancelled { return }
+                      
+                      guard let dob = self.vc.createDiscernmentOuterGraphZone() else {return}
+                      if self.isCancelled { return }
+                      DispatchQueue.main.async {
+                          self.vc.discernmentOuterBlob?.removeFromSuperlayer()
+                          self.vc.discernmentOuterBlob = nil
+                          self.vc.discernmentOuterBlob = dob
+                          self.vc.discernmentGraphView.layer.addSublayer(self.vc.discernmentOuterBlob!)
+                      }
+                      if self.isCancelled { return }
+                      
+                      guard let cp = self.vc.createDiscernmentCentralPoint() else {return}
+                      if self.isCancelled { return }
+                      DispatchQueue.main.async {
+                          self.vc.discernmentCentralPoint?.removeFromSuperlayer()
+                          self.vc.discernmentCentralPoint = nil
+                          self.vc.discernmentCentralPoint = cp
+                          self.vc.discernmentGraphView.layer.addSublayer(self.vc.discernmentCentralPoint!)
+                      }
+                  }
+                  
+              }
+          }
+    }
+    
+    func updateWithOperation() {
+        _updateOperationQueue.cancelAllOperations()
+        _updateOperationQueue.addOperation(ResonanceReportUpdateOperation(self))
+    }
+    
+    func update() {
+        updateWithOperation()
     }
     
     func setupRenderAnimation() {

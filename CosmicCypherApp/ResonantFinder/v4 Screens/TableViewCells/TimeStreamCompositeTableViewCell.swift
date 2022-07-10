@@ -332,11 +332,11 @@ class TimeStreamCompositeTableViewCell: UITableViewCell {
                 let set2 = LineChartDataSet(entries: stellarNetGravityEntries, label: "stellar")
                 set2.colors = [.systemYellow]
                 set2.circleColors = [.systemYellow]
-                set2.circleRadius = 4
+                set2.circleRadius = 3
                 let set3 = LineChartDataSet(entries: interplanetaryNetGravityEntries, label: "interplanetary")
                 set3.colors = [.systemIndigo]
                 set3.circleColors = [.systemIndigo]
-                set3.circleRadius = 5
+                set3.circleRadius = 3
                 let data = LineChartData(dataSets: [set1,set2,set3])
                 self.lineChartView.data = data
                 

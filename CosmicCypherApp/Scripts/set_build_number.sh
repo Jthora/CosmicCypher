@@ -1,8 +1,3 @@
-#ifndef set_build_number_h
-#define set_build_number_h
-
-
-#endif /* set_build_number_h */
 #!/bin/bash
 
 git=$(sh /etc/profile; which git)

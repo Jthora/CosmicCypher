@@ -193,6 +193,7 @@ class ResonanceReportViewController: UIViewController {
         update()
     }
     
+    // set display settings for text visibility of energy levels based on orientation of device screen and size available
     func animateBarLabels() {
         if resonanceBarsView.bounds.width < resonanceBarsView.bounds.height {
             UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseInOut) {
@@ -273,6 +274,18 @@ class ResonanceReportViewController: UIViewController {
         StarChart.Core.current = StarChart(date: date, coordinates: coordinates)
     }
     
+    // MARK: Update
+    // Update
+    func update() {
+        updateWithOperation()
+    }
+    
+    // Update using Update Operation Queue
+    func updateWithOperation() {
+        _updateOperationQueue.cancelAllOperations()
+        _updateOperationQueue.addOperation(ResonanceReportUpdateOperation(self))
+    }
+    
     // Update Dispatch Queue
     fileprivate var _updateQueue:DispatchQueue = DispatchQueue(label: "_updateQueue")
     
@@ -283,7 +296,7 @@ class ResonanceReportViewController: UIViewController {
         return op
     } ()
     
-    // Update
+    // Update Operation
     class ResonanceReportUpdateOperation: Operation {
         
         var vc: ResonanceReportViewController
@@ -291,7 +304,7 @@ class ResonanceReportViewController: UIViewController {
             self.vc = vc
         }
         
-        // Run Operation Function
+        // Run Update Operation Function
         override func main() {
 
             // Update on Main Thread
@@ -307,7 +320,7 @@ class ResonanceReportViewController: UIViewController {
                 self.vc.aspectsResultsTableView.reloadData()
 
                 /// Energy Levels
-                self.vc.updatePowerBars(starChart:starChart)
+                self.vc.updateEnergyLevels(starChart:starChart)
 
                 /// Modality Meters
                 self.vc.updateModalityMeters(starChart:starChart)
@@ -355,14 +368,7 @@ class ResonanceReportViewController: UIViewController {
         }
     }
     
-    func updateWithOperation() {
-        _updateOperationQueue.cancelAllOperations()
-        _updateOperationQueue.addOperation(ResonanceReportUpdateOperation(self))
-    }
-    
-    func update() {
-        updateWithOperation()
-    }
+    // MARK: Setup
     
     func setupRenderAnimation() {
         self.renderingProgressAnimation.image = UIImage.gifImageWithName("StarDiskFormation-loaderAnim_2")
@@ -399,6 +405,7 @@ class ResonanceReportViewController: UIViewController {
         scene.addChild(testSprite)
     }
     
+    // TODO: Update TimeStream Visualizer
     func updateTimeStreamVisualizer() {
         
     }
@@ -406,7 +413,8 @@ class ResonanceReportViewController: UIViewController {
     
     
     
-    // MARK: MAX
+    // MARK: Discernment Graph
+    // Outer Cirlce
     func createDiscernmentOuterGraphZone() -> CAShapeLayer? {
         
         let selectedAspectBodies = StarChart.Core.selectedNodeTypes
@@ -455,7 +463,7 @@ class ResonanceReportViewController: UIViewController {
         return shapeLayer
     }
     
-    // MARK: Min
+    // Central Cirlce
     func createDiscernmentCentralGraphZone() -> CAShapeLayer? {
         
         let selectedPlanets = StarChart.Core.selectedPlanets
@@ -504,7 +512,7 @@ class ResonanceReportViewController: UIViewController {
         return shapeLayer
     }
     
-    // MARK: Average
+    // Central Point
     func createDiscernmentCentralPoint() -> CAShapeLayer? {
         
         let selectedAspectBodies = StarChart.Core.selectedNodeTypes
@@ -554,7 +562,7 @@ class ResonanceReportViewController: UIViewController {
         return shapeLayer
     }
     
-    
+    // MARK: Buttons
     @IBAction func settingsButtonTouch(_ sender: UIButton) {
         //TimeStreamSettingsViewController.presentModally(over: self)
         SettingsViewController.presentModally(over: self)
@@ -597,6 +605,7 @@ class ResonanceReportViewController: UIViewController {
         
     }
     
+    // MARK: UI Controls
     private var _hideCentralUI:Bool = false
     func toggleCentralUI(animate:Bool = true) {
         DispatchQueue.main.async {
@@ -641,7 +650,7 @@ class ResonanceReportViewController: UIViewController {
         }
     }
     
-    
+    // MARK: Gesture Recognizers
     // Tap on Main Screen
     @IBAction func tapGestureRecognizer(_ sender: UITapGestureRecognizer) {
         toggleCentralUI(animate: true)
@@ -658,15 +667,9 @@ class ResonanceReportViewController: UIViewController {
         // Reset to original position
     }
     
-    @IBAction func tapOnPowerBars(_ sender: Any) {
-        // Switch between two modes
-        // Mode 1: Elements and Forces values are Blended: to better show spread of
-        // Mode 2: Elements and Forces are discretely placed between each other: so to be more specific about where powers are distributed
-        
-        // TODO:: Mode 3+: Natura Disk Display
-    }
-    
-    func updatePowerBars(starChart:StarChart) {
+    // MARK: Update Energy Levels
+    // Update Energy Levels
+    func updateEnergyLevels(starChart:StarChart) {
         
         let cosmicAlignment = StarChart.Core.currentCosmicAlignment
         
@@ -709,6 +712,8 @@ class ResonanceReportViewController: UIViewController {
         
     }
     
+    // MARK: Update Modality Meters
+    // Update Modality Meters
     func updateModalityMeters(starChart:StarChart) {
         let zodiacIndex = starChart.produceZodiacIndex(limitList: StarChart.Core.selectedNodeTypes)
         
@@ -736,6 +741,7 @@ class ResonanceReportViewController: UIViewController {
     
 }
 
+// MARK: UITableView Delegate and DataSource
 extension ResonanceReportViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

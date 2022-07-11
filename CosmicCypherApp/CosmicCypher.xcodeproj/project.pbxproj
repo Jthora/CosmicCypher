@@ -972,6 +972,7 @@
 				FA07C9A7254019D800683486 /* Frameworks */,
 				FA07C9A8254019D800683486 /* Resources */,
 				2E52C2810BF57370AC9AF099 /* [CP] Embed Pods Frameworks */,
+				FA2CC945287CA7A50078ECE1 /* Run Script - Set Build Number */,
 			);
 			buildRules = (
 			);
@@ -1204,6 +1205,24 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		FA2CC945287CA7A50078ECE1 /* Run Script - Set Build Number */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script - Set Build Number";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "$SRCROOT/Scripts/set_build_number.sh\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1538,6 +1557,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = "Build and Version set by Build Phase Shell Script";
 				DEVELOPMENT_TEAM = H4H7UN3F3K;
 				INFOPLIST_FILE = ResonantFinder/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1559,6 +1579,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = "Build and Version set by Build Phase Shell Script";
 				DEVELOPMENT_TEAM = H4H7UN3F3K;
 				INFOPLIST_FILE = ResonantFinder/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;

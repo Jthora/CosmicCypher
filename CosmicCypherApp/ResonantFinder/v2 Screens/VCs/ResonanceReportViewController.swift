@@ -12,6 +12,7 @@ import CoreLocation
 import SwiftAA
 import SpriteKit
 import CoreGraphics
+import TinyConstraints
 
 class ResonanceReportViewController: UIViewController {
     
@@ -28,7 +29,256 @@ class ResonanceReportViewController: UIViewController {
     }
     
     
+    // MARK: Bars
+    // Bar View
     @IBOutlet weak var resonanceBarsView: UIView!
+    
+    @IBOutlet weak var barAirView: UIView!
+    @IBOutlet weak var barFireView: UIView!
+    @IBOutlet weak var barWaterView: UIView!
+    @IBOutlet weak var barEarthView: UIView!
+    
+    @IBOutlet weak var barSpiritPotentialView: UIView!
+    @IBOutlet weak var barSpiritView: UIView!
+    @IBOutlet weak var barLightPotentialView: UIView!
+    @IBOutlet weak var barLightView: UIView!
+    @IBOutlet weak var barShadowPotentialView: UIView!
+    @IBOutlet weak var barShadowView: UIView!
+    @IBOutlet weak var barSoulPotentialView: UIView!
+    @IBOutlet weak var barSoulView: UIView!
+    
+    @IBOutlet weak var barCorePotentialView: UIView!
+    @IBOutlet weak var barCoreView: UIView!
+    @IBOutlet weak var barAlphaPotentialView: UIView!
+    @IBOutlet weak var barAlphaView: UIView!
+    @IBOutlet weak var barOrderPotentialView: UIView!
+    @IBOutlet weak var barOrderView: UIView!
+    @IBOutlet weak var barVoidPotentialView: UIView!
+    @IBOutlet weak var barVoidView: UIView!
+    @IBOutlet weak var barOmegaPotentialView: UIView!
+    @IBOutlet weak var barOmegaView: UIView!
+    @IBOutlet weak var barChaosPotentialView: UIView!
+    @IBOutlet weak var barChaosView: UIView!
+    
+    @IBOutlet weak var barOneView: UIView!
+    @IBOutlet weak var barManyView: UIView!
+    
+    // levelBar
+    var barAir: LevelBarView? = nil
+    var barFire: LevelBarView? = nil
+    var barWater: LevelBarView? = nil
+    var barEarth: LevelBarView? = nil
+    
+    var barSpiritPotential: LevelBarView? = nil
+    var barSpirit: LevelBarView? = nil
+    var barLightPotential: LevelBarView? = nil
+    var barLight: LevelBarView? = nil
+    var barShadowPotential: LevelBarView? = nil
+    var barShadow: LevelBarView? = nil
+    var barSoulPotential: LevelBarView? = nil
+    var barSoul: LevelBarView? = nil
+    
+    var barCorePotential: LevelBarView? = nil
+    var barCore: LevelBarView? = nil
+    var barAlphaPotential: LevelBarView? = nil
+    var barAlpha: LevelBarView? = nil
+    var barOrderPotential: LevelBarView? = nil
+    var barOrder: LevelBarView? = nil
+    var barVoidPotential: LevelBarView? = nil
+    var barVoid: LevelBarView? = nil
+    var barOmegaPotential: LevelBarView? = nil
+    var barOmega: LevelBarView? = nil
+    var barChaosPotential: LevelBarView? = nil
+    var barChaos: LevelBarView? = nil
+    
+    var barOne: LevelBarView? = nil
+    var barMany: LevelBarView? = nil
+    
+    func setupBars() {
+        
+        barAir = LevelBarView(frame: barAirView.frame, sideAlignment: .right)
+        barAirView.addSubview(barAir!)
+        barAir!.centerInSuperview()
+        barAir!.width(to: barAirView)
+        barAir!.height(to: barAirView)
+        barAir!.setBarColor(uiColor: UIColor.from(.air))
+        
+        barFire = LevelBarView(frame: barFireView.frame, sideAlignment: .right)
+        barFireView.addSubview(barFire!)
+        barFire!.centerInSuperview()
+        barFire!.width(to: barFireView)
+        barFire!.height(to: barFireView)
+        barFire!.setBarColor(uiColor: UIColor.from(.fire))
+        
+        barWater = LevelBarView(frame: barWaterView.frame, sideAlignment: .right)
+        barWaterView.addSubview(barWater!)
+        barWater!.centerInSuperview()
+        barWater!.width(to: barWaterView)
+        barWater!.height(to: barWaterView)
+        barWater!.setBarColor(uiColor: UIColor.from(.water))
+        
+        barEarth = LevelBarView(frame: barEarthView.frame, sideAlignment: .right)
+        barEarthView.addSubview(barEarth!)
+        barEarth!.centerInSuperview()
+        barEarth!.width(to: barEarthView)
+        barEarth!.height(to: barEarthView)
+        barEarth!.setBarColor(uiColor: UIColor.from(.earth))
+        
+        barSpirit = LevelBarView(frame: barSpiritView.frame, sideAlignment: .left)
+        barSpiritView.addSubview(barSpirit!)
+        barSpirit!.centerInSuperview()
+        barSpirit!.width(to: barSpiritView)
+        barSpirit!.height(to: barSpiritView)
+        barSpirit!.setBarColor(uiColor: UIColor.from(.spirit))
+        
+        barLight = LevelBarView(frame: barLightView.frame, sideAlignment: .left)
+        barLightView.addSubview(barLight!)
+        barLight!.centerInSuperview()
+        barLight!.width(to: barLightView)
+        barLight!.height(to: barLightView)
+        barLight!.setBarColor(uiColor: UIColor.from(.light))
+        
+        barShadow = LevelBarView(frame: barShadowView.frame, sideAlignment: .left)
+        barShadowView.addSubview(barShadow!)
+        barShadow!.centerInSuperview()
+        barShadow!.width(to: barShadowView)
+        barShadow!.height(to: barShadowView)
+        barShadow!.setBarColor(uiColor: UIColor.from(.shadow))
+        
+        barSoul = LevelBarView(frame: barSoulView.frame, sideAlignment: .left)
+        barSoulView.addSubview(barSoul!)
+        barSoul!.centerInSuperview()
+        barSoul!.width(to: barSoulView)
+        barSoul!.height(to: barSoulView)
+        barSoul!.setBarColor(uiColor: UIColor.from(.soul))
+        
+        barCore = LevelBarView(frame: barCoreView.frame, sideAlignment: .right)
+        barCoreView.addSubview(barCore!)
+        barCore!.centerInSuperview()
+        barCore!.width(to: barCoreView)
+        barCore!.height(to: barCoreView)
+        barCore!.setBarColor(uiColor: UIColor.from(.core))
+        
+        barVoid = LevelBarView(frame: barVoidView.frame, sideAlignment: .left)
+        barVoidView.addSubview(barVoid!)
+        barVoid!.centerInSuperview()
+        barVoid!.width(to: barVoidView)
+        barVoid!.height(to: barVoidView)
+        barVoid!.setBarColor(uiColor: UIColor.from(.void))
+        
+        barAlpha = LevelBarView(frame: barAlphaView.frame, sideAlignment: .right)
+        barAlphaView.addSubview(barAlpha!)
+        barAlpha!.centerInSuperview()
+        barAlpha!.width(to: barAlphaView)
+        barAlpha!.height(to: barAlphaView)
+        barAlpha!.setBarColor(uiColor: UIColor.from(.alpha))
+        
+        barOmega = LevelBarView(frame: barOmegaView.frame, sideAlignment: .left)
+        barOmegaView.addSubview(barOmega!)
+        barOmega!.centerInSuperview()
+        barOmega!.width(to: barOmegaView)
+        barOmega!.height(to: barOmegaView)
+        barOmega!.setBarColor(uiColor: UIColor.from(.omega))
+        
+        barOrder = LevelBarView(frame: barOrderView.frame, sideAlignment: .right)
+        barOrderView.addSubview(barOrder!)
+        barOrder!.centerInSuperview()
+        barOrder!.width(to: barOrderView)
+        barOrder!.height(to: barOrderView)
+        barOrder!.setBarColor(uiColor: UIColor.from(.order))
+        
+        barChaos = LevelBarView(frame: barChaosView.frame, sideAlignment: .left)
+        barChaosView.addSubview(barChaos!)
+        barChaos!.centerInSuperview()
+        barChaos!.width(to: barChaosView)
+        barChaos!.height(to: barChaosView)
+        barChaos!.setBarColor(uiColor: UIColor.from(.chaos))
+        
+        barOne = LevelBarView(frame: barOneView.frame, sideAlignment: .right)
+        barOneView.addSubview(barOne!)
+        barOne!.centerInSuperview()
+        barOne!.width(to: barOneView)
+        barOne!.height(to: barOneView)
+        barOne!.setBarColor(uiColor: UIColor.from(.mono))
+        
+        barMany = LevelBarView(frame: barManyView.frame, sideAlignment: .left)
+        barManyView.addSubview(barMany!)
+        barMany!.centerInSuperview()
+        barMany!.width(to: barManyView)
+        barMany!.height(to: barManyView)
+        barMany!.setBarColor(uiColor: UIColor.from(.poly))
+        
+        
+        barCorePotential = LevelBarView(frame: barCorePotentialView.frame, sideAlignment: .right)
+        barCorePotentialView.addSubview(barCorePotential!)
+        barCorePotential!.centerInSuperview()
+        barCorePotential!.width(to: barCorePotentialView)
+        barCorePotential!.height(to: barCorePotentialView)
+        barCorePotential!.setBarColor(uiColor: UIColor.from(.core).withAlphaComponent(0.5))
+        
+        barAlphaPotential = LevelBarView(frame: barAlphaPotentialView.frame, sideAlignment: .right)
+        barAlphaPotentialView.addSubview(barAlphaPotential!)
+        barAlphaPotential!.centerInSuperview()
+        barAlphaPotential!.width(to: barAlphaPotentialView)
+        barAlphaPotential!.height(to: barAlphaPotentialView)
+        barAlphaPotential!.setBarColor(uiColor: UIColor.from(.alpha).withAlphaComponent(0.5))
+        
+        barOrderPotential = LevelBarView(frame: barOrderPotentialView.frame, sideAlignment: .right)
+        barOrderPotentialView.addSubview(barOrderPotential!)
+        barOrderPotential!.centerInSuperview()
+        barOrderPotential!.width(to: barOrderPotentialView)
+        barOrderPotential!.height(to: barOrderPotentialView)
+        barOrderPotential!.setBarColor(uiColor: UIColor.from(.order).withAlphaComponent(0.5))
+        
+        barVoidPotential = LevelBarView(frame: barVoidPotentialView.frame, sideAlignment: .left)
+        barVoidPotentialView.addSubview(barVoidPotential!)
+        barVoidPotential!.centerInSuperview()
+        barVoidPotential!.width(to: barVoidPotentialView)
+        barVoidPotential!.height(to: barVoidPotentialView)
+        barVoidPotential!.setBarColor(uiColor: UIColor.from(.void).withAlphaComponent(0.5))
+        
+        barOmegaPotential = LevelBarView(frame: barOmegaPotentialView.frame, sideAlignment: .left)
+        barOmegaPotentialView.addSubview(barOmegaPotential!)
+        barOmegaPotential!.centerInSuperview()
+        barOmegaPotential!.width(to: barOmegaPotentialView)
+        barOmegaPotential!.height(to: barOmegaPotentialView)
+        barOmegaPotential!.setBarColor(uiColor: UIColor.from(.omega).withAlphaComponent(0.5))
+        
+        barChaosPotential = LevelBarView(frame: barChaosPotentialView.frame, sideAlignment: .left)
+        barChaosPotentialView.addSubview(barChaosPotential!)
+        barChaosPotential!.centerInSuperview()
+        barChaosPotential!.width(to: barChaosPotentialView)
+        barChaosPotential!.height(to: barChaosPotentialView)
+        barChaosPotential!.setBarColor(uiColor: UIColor.from(.chaos).withAlphaComponent(0.5))
+        
+        barSpiritPotential = LevelBarView(frame: barSpiritPotentialView.frame, sideAlignment: .left)
+        barSpiritPotentialView.addSubview(barSpiritPotential!)
+        barSpiritPotential!.centerInSuperview()
+        barSpiritPotential!.width(to: barSpiritPotentialView)
+        barSpiritPotential!.height(to: barSpiritPotentialView)
+        barSpiritPotential!.setBarColor(uiColor: UIColor.from(.spirit).withAlphaComponent(0.5))
+        
+        barLightPotential = LevelBarView(frame: barLightPotentialView.frame, sideAlignment: .left)
+        barLightPotentialView.addSubview(barLightPotential!)
+        barLightPotential!.centerInSuperview()
+        barLightPotential!.width(to: barLightPotentialView)
+        barLightPotential!.height(to: barLightPotentialView)
+        barLightPotential!.setBarColor(uiColor: UIColor.from(.light).withAlphaComponent(0.5))
+        
+        barShadowPotential = LevelBarView(frame: barShadowPotentialView.frame, sideAlignment: .left)
+        barShadowPotentialView.addSubview(barShadowPotential!)
+        barShadowPotential!.centerInSuperview()
+        barShadowPotential!.width(to: barShadowPotentialView)
+        barShadowPotential!.height(to: barShadowPotentialView)
+        barShadowPotential!.setBarColor(uiColor: UIColor.from(.shadow).withAlphaComponent(0.5))
+        
+        barSoulPotential = LevelBarView(frame: barSoulPotentialView.frame, sideAlignment: .left)
+        barSoulPotentialView.addSubview(barSoulPotential!)
+        barSoulPotential!.centerInSuperview()
+        barSoulPotential!.width(to: barSoulPotentialView)
+        barSoulPotential!.height(to: barSoulPotentialView)
+        barSoulPotential!.setBarColor(uiColor: UIColor.from(.soul).withAlphaComponent(0.5))
+    }
     
     // Bar Labels
     @IBOutlet weak var resonanceBarAirLabel: UILabel!
@@ -47,43 +297,6 @@ class ResonanceReportViewController: UIViewController {
     @IBOutlet weak var resonanceBarOmegaLabel: UILabel!
     @IBOutlet weak var resonanceBarChaosLabel: UILabel!
     @IBOutlet weak var resonanceBarPolyLabel: UILabel!
-    
-    
-    
-    
-    // Power Bars
-    @IBOutlet weak var powerBarAir: UIProgressView!
-    @IBOutlet weak var powerBarFire: UIProgressView!
-    @IBOutlet weak var powerBarWater: UIProgressView!
-    @IBOutlet weak var powerBarEarth: UIProgressView!
-    @IBOutlet weak var powerBarCore: UIProgressView!
-    @IBOutlet weak var powerBarAlpha: UIProgressView!
-    @IBOutlet weak var powerBarOne: UIProgressView!
-    @IBOutlet weak var powerBarNegative: UIProgressView!
-    @IBOutlet weak var shadowBarTop: UIProgressView!
-    @IBOutlet weak var shadowBarHoly: UIProgressView!
-    @IBOutlet weak var shadowBarEvil: UIProgressView!
-    @IBOutlet weak var shadowBarBottom: UIProgressView!
-    @IBOutlet weak var shadowBarVoid: UIProgressView!
-    @IBOutlet weak var shadowBarOmega: UIProgressView!
-    @IBOutlet weak var shadowBarMany: UIProgressView!
-    @IBOutlet weak var shadowBarPositive: UIProgressView!
-    
-    // Potential Bars
-    @IBOutlet weak var potentialBarCore: UIProgressView!
-    @IBOutlet weak var potentialBarAlpha: UIProgressView!
-    @IBOutlet weak var potentialBarOrder: UIProgressView!
-    @IBOutlet weak var potentialBarNether: UIProgressView!
-    @IBOutlet weak var potentialBarSpirit: UIProgressView!
-    @IBOutlet weak var potentialBarLight: UIProgressView!
-    @IBOutlet weak var potentialBarShadow: UIProgressView!
-    @IBOutlet weak var potentialBarSoul: UIProgressView!
-    @IBOutlet weak var potentialBarVoid: UIProgressView!
-    @IBOutlet weak var potentialBarOmega: UIProgressView!
-    @IBOutlet weak var potentialBarChaos: UIProgressView!
-    @IBOutlet weak var potentialBarAether: UIProgressView!
-    
-    // 
     
     // Modality Numbers
     @IBOutlet weak var cardinalNumberLabel: UILabel!
@@ -159,6 +372,10 @@ class ResonanceReportViewController: UIViewController {
     var discernmentOuterBlob:CAShapeLayer? = nil
     
     var degreeOffset:Degree = 0
+    
+    
+    // MARK: View Event Responders
+    // View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -173,27 +390,39 @@ class ResonanceReportViewController: UIViewController {
         TimeStream.Core.add(reactive: self)
         StarChart.Core.add(reactive: self)
         
-        //setupTimeStreamVisualizer()
-        //setupCosmicAlignmentSprite()
-        setupSpriteKitScene()
-        setupRenderAnimation()
-        update()
-        renderStarChart()
+        setup()
         
     }
     
+    // View Will Appear
     override func viewWillAppear(_ animated: Bool) {
+        resetEnergyLevels()
         ResonanceReportViewController.current = self
-        update()
     }
     
+    // View Did Appear
     override func viewDidAppear(_ animated: Bool) {
         isLive = true
         animateBarLabels()
         update()
     }
     
-    // set display settings for text visibility of energy levels based on orientation of device screen and size available
+    
+    // MARK: Setup
+    // Setup
+    func setup() {
+        //setupTimeStreamVisualizer()
+        //setupCosmicAlignmentSprite()
+        setupBars()
+        setupSpriteKitScene()
+        setupRenderAnimation()
+        resetEnergyLevels()
+        update()
+        renderStarChart()
+    }
+    
+    // Display/Hide Bar Labels
+    /// set display settings for text visibility of energy levels based on orientation of device screen and size available
     func animateBarLabels() {
         if resonanceBarsView.bounds.width < resonanceBarsView.bounds.height {
             UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseInOut) {
@@ -581,6 +810,11 @@ class ResonanceReportViewController: UIViewController {
     }
     
     
+    @IBAction func barsTouched(_ sender: UIButton) {
+        ElementalReadingViewController.presentModally(over: self)
+    }
+    
+    
     @IBAction func shareButtonTouch(_ sender: UIButton) {
         DispatchQueue.main.async {
             //Set the default sharing message.
@@ -667,49 +901,81 @@ class ResonanceReportViewController: UIViewController {
         // Reset to original position
     }
     
+    
+    func resetEnergyLevels() {
+//        self.barAir.setProgress(0)
+//        self.barFire.setProgress(0)
+//        self.barWater.setProgress(0)
+//        self.barEarth.setProgress(0)
+//
+//        self.barSpirit.setProgress(0)
+//        self.barLight.setProgress(0)
+//        self.barShadow.setProgress(0)
+//        self.barSoul.setProgress(0)
+//
+//        self.barCore.setProgress(0)
+//        self.barAlpha.setProgress(0)
+//        self.barOrder.setProgress(0)
+//        self.barVoid.setProgress(0)
+//        self.barOmega.setProgress(0)
+//        self.barChaos.setProgress(0)
+//
+//        self.barOne.setProgress(0)
+//        self.barMany.setProgress(0)
+//
+//        self.barCorePotential.setProgress(0)
+//        self.barAlphaPotential.setProgress(0)
+//        self.barOrderPotential.setProgress(0)
+//        self.barVoidPotential.setProgress(0)
+//        self.barOmegaPotential.setProgress(0)
+//        self.barChaosPotential.setProgress(0)
+//
+//        self.barSpiritPotential.setProgress(0)
+//        self.barLightPotential.setProgress(0)
+//        self.barShadowPotential.setProgress(0)
+//        self.barSoulPotential.setProgress(0)
+        
+    }
+    
     // MARK: Update Energy Levels
     // Update Energy Levels
     func updateEnergyLevels(starChart:StarChart) {
         
         let cosmicAlignment = StarChart.Core.currentCosmicAlignment
         
-        powerBarAir.setProgress(Float(cosmicAlignment.level(.air, .baseline)), animated: true)
-        powerBarFire.setProgress(Float(cosmicAlignment.level(.fire, .baseline)), animated: true)
-        powerBarWater.setProgress(Float(cosmicAlignment.level(.water, .baseline)), animated: true)
-        powerBarEarth.setProgress(Float(cosmicAlignment.level(.earth, .baseline)), animated: true)
-        
-        shadowBarTop.setProgress(Float(cosmicAlignment.level(.spirit, .baseline)), animated: true)
-        shadowBarHoly.setProgress(Float(cosmicAlignment.level(.light, .baseline)), animated: true)
-        shadowBarEvil.setProgress(Float(cosmicAlignment.level(.shadow, .baseline)), animated: true)
-        shadowBarBottom.setProgress(Float(cosmicAlignment.level(.soul, .baseline)), animated: true)
-        
-        powerBarCore.setProgress(Float(cosmicAlignment.level(.core, .baseline)), animated: true)
-        powerBarAlpha.setProgress(Float(cosmicAlignment.level(.alpha, .baseline)), animated: true)
-        powerBarOne.setProgress(Float(cosmicAlignment.level(.order, .baseline)), animated: true)
-        powerBarNegative.setProgress(Float(cosmicAlignment.level(.mono, .baseline)), animated: true)
-        
-        shadowBarVoid.setProgress(Float(cosmicAlignment.level(.void, .baseline)), animated: true)
-        shadowBarOmega.setProgress(Float(cosmicAlignment.level(.omega, .baseline)), animated: true)
-        shadowBarMany.setProgress(Float(cosmicAlignment.level(.chaos, .baseline)), animated: true)
-        shadowBarPositive.setProgress(Float(cosmicAlignment.level(.poly, .baseline)), animated: true)
-        
-        
-        potentialBarCore.setProgress(Float(cosmicAlignment.level(.core, .potential)), animated: true)
-        potentialBarAlpha.setProgress(Float(cosmicAlignment.level(.alpha, .potential)), animated: true)
-        potentialBarOrder.setProgress(Float(cosmicAlignment.level(.order, .potential)), animated: true)
-        potentialBarNether.setProgress(Float(cosmicAlignment.level(.mono, .potential)), animated: true)
-        potentialBarSpirit.setProgress(Float(cosmicAlignment.level(.spirit, .potential)), animated: true)
-        potentialBarLight.setProgress(Float(cosmicAlignment.level(.light, .potential)), animated: true)
-        potentialBarShadow.setProgress(Float(cosmicAlignment.level(.shadow, .potential)), animated: true)
-        potentialBarSoul.setProgress(Float(cosmicAlignment.level(.soul, .potential)), animated: true)
-        
-        potentialBarVoid.setProgress(Float(cosmicAlignment.level(.void, .potential)), animated: true)
-        potentialBarOmega.setProgress(Float(cosmicAlignment.level(.omega, .potential)), animated: true)
-        potentialBarChaos.setProgress(Float(cosmicAlignment.level(.chaos, .potential)), animated: true)
-        potentialBarAether.setProgress(Float(cosmicAlignment.level(.poly, .potential)), animated: true)
-        
-        
-        
+        DispatchQueue.main.async {
+            self.barAir?.setProgress(Float(cosmicAlignment.level(.air, .baseline)))
+            self.barFire?.setProgress(Float(cosmicAlignment.level(.fire, .baseline)))
+            self.barWater?.setProgress(Float(cosmicAlignment.level(.water, .baseline)))
+            self.barEarth?.setProgress(Float(cosmicAlignment.level(.earth, .baseline)))
+
+            self.barSpirit?.setProgress(Float(cosmicAlignment.level(.spirit, .baseline)))
+            self.barLight?.setProgress(Float(cosmicAlignment.level(.light, .baseline)))
+            self.barShadow?.setProgress(Float(cosmicAlignment.level(.shadow, .baseline)))
+            self.barSoul?.setProgress(Float(cosmicAlignment.level(.soul, .baseline)))
+
+            self.barCore?.setProgress(Float(cosmicAlignment.level(.core, .baseline)))
+            self.barAlpha?.setProgress(Float(cosmicAlignment.level(.alpha, .baseline)))
+            self.barOrder?.setProgress(Float(cosmicAlignment.level(.order, .baseline)))
+            self.barVoid?.setProgress(Float(cosmicAlignment.level(.void, .baseline)))
+            self.barOmega?.setProgress(Float(cosmicAlignment.level(.omega, .baseline)))
+            self.barChaos?.setProgress(Float(cosmicAlignment.level(.chaos, .baseline)))
+
+            self.barOne?.setProgress(Float(cosmicAlignment.level(.mono, .baseline)))
+            self.barMany?.setProgress(Float(cosmicAlignment.level(.poly, .baseline)))
+
+            self.barSpiritPotential?.setProgress(Float(cosmicAlignment.level(.spirit, .potential)))
+            self.barLightPotential?.setProgress(Float(cosmicAlignment.level(.light, .potential)))
+            self.barShadowPotential?.setProgress(Float(cosmicAlignment.level(.shadow, .potential)))
+            self.barSoulPotential?.setProgress(Float(cosmicAlignment.level(.soul, .potential)))
+
+            self.barCorePotential?.setProgress(Float(cosmicAlignment.level(.core, .potential)))
+            self.barAlphaPotential?.setProgress(Float(cosmicAlignment.level(.alpha, .potential)))
+            self.barOrderPotential?.setProgress(Float(cosmicAlignment.level(.order, .potential)))
+            self.barVoidPotential?.setProgress(Float(cosmicAlignment.level(.void, .potential)))
+            self.barOmegaPotential?.setProgress(Float(cosmicAlignment.level(.omega, .potential)))
+            self.barChaosPotential?.setProgress(Float(cosmicAlignment.level(.chaos, .potential)))
+        }
     }
     
     // MARK: Update Modality Meters

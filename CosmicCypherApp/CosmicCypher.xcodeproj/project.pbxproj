@@ -61,6 +61,8 @@
 		FA2CB4922860F664003AD95C /* CGImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2CB4912860F664003AD95C /* CGImage+Extension.swift */; };
 		FA2CB49428629725003AD95C /* TimeStreamImageMapArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2CB49328629725003AD95C /* TimeStreamImageMapArchive.swift */; };
 		FA2CB4962862A9C7003AD95C /* CosmicCypherInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2CB4952862A9C6003AD95C /* CosmicCypherInstructionsViewController.swift */; };
+		FA2CC949287DF6010078ECE1 /* LevelBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2CC948287DF6010078ECE1 /* LevelBarView.swift */; };
+		FA2CC94B287E9E6E0078ECE1 /* ElementalReading.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA2CC94A287E9E6E0078ECE1 /* ElementalReading.storyboard */; };
 		FA33AAFB2864E12E00BC9F76 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA33AAFA2864E12E00BC9F76 /* Settings.swift */; };
 		FA33AAFD2864E18E00BC9F76 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA33AAFC2864E18E00BC9F76 /* Settings.storyboard */; };
 		FA33AAFF2864E1A000BC9F76 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA33AAFE2864E1A000BC9F76 /* SettingsViewController.swift */; };
@@ -271,6 +273,8 @@
 		FA2CB4912860F664003AD95C /* CGImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGImage+Extension.swift"; sourceTree = "<group>"; };
 		FA2CB49328629725003AD95C /* TimeStreamImageMapArchive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamImageMapArchive.swift; sourceTree = "<group>"; };
 		FA2CB4952862A9C6003AD95C /* CosmicCypherInstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicCypherInstructionsViewController.swift; sourceTree = "<group>"; };
+		FA2CC948287DF6010078ECE1 /* LevelBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelBarView.swift; sourceTree = "<group>"; };
+		FA2CC94A287E9E6E0078ECE1 /* ElementalReading.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ElementalReading.storyboard; sourceTree = "<group>"; };
 		FA33AAFA2864E12E00BC9F76 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		FA33AAFC2864E18E00BC9F76 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		FA33AAFE2864E1A000BC9F76 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -475,6 +479,7 @@
 		FA07C9AC254019D800683486 /* ResonantFinder */ = {
 			isa = PBXGroup;
 			children = (
+				FA2CC947287DF5E80078ECE1 /* UI */,
 				FAB131242878AD87000AD7B9 /* Assets */,
 				FA33AB0A286675F300BC9F76 /* CosmicAlignment */,
 				FA35C05C28497839006114AB /* CoreAstrology */,
@@ -619,6 +624,14 @@
 				FA1FDD97257A0A3A00B51BD2 /* SpriteNodeCosmicEvent.swift */,
 			);
 			path = Sprites;
+			sourceTree = "<group>";
+		};
+		FA2CC947287DF5E80078ECE1 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				FA2CC948287DF6010078ECE1 /* LevelBarView.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		FA33AB0A286675F300BC9F76 /* CosmicAlignment */ = {
@@ -919,6 +932,7 @@
 				FA33AB0828655DF700BC9F76 /* Instructions.storyboard */,
 				FA2C449E286CEEDC009E61B2 /* TimeStreamPresetSelect.storyboard */,
 				FA2C44A0286CEEE8009E61B2 /* TimeStreamManualSelect.storyboard */,
+				FA2CC94A287E9E6E0078ECE1 /* ElementalReading.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -1076,6 +1090,7 @@
 				FA2C449F286CEEDC009E61B2 /* TimeStreamPresetSelect.storyboard in Resources */,
 				FA33AAFD2864E18E00BC9F76 /* Settings.storyboard in Resources */,
 				FA33AB0928655DF700BC9F76 /* Instructions.storyboard in Resources */,
+				FA2CC94B287E9E6E0078ECE1 /* ElementalReading.storyboard in Resources */,
 				FA33AB0728655B8500BC9F76 /* StarChartSelect.storyboard in Resources */,
 				FAEAFEBF28492802001AEAE0 /* v3.storyboard in Resources */,
 				FAEAFEB02847E0D7001AEAE0 /* StarDiskFormation-loaderAnim_2.gif in Resources */,
@@ -1363,6 +1378,7 @@
 				FA35C0C9284992B3006114AB /* AstroUtils.swift in Sources */,
 				FA07CA3C25401EBC00683486 /* ReportHistoryViewController.swift in Sources */,
 				FA35C0E02849A872006114AB /* TimeStreamSpriteNode.swift in Sources */,
+				FA2CC949287DF6010078ECE1 /* LevelBarView.swift in Sources */,
 				FA6101D1286D73C70000D4D5 /* GeoLocationSelectViewController.swift in Sources */,
 				FA6101DD286F99D20000D4D5 /* CGPoint+Extension.swift in Sources */,
 				FA07CA2525401EBB00683486 /* ResonanceReportTableViewCell.swift in Sources */,

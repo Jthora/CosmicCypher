@@ -9,6 +9,15 @@ import UIKit
 
 class ElementalReadingViewController: UIViewController {
     
+    static func presentModally(over presentingViewController: UIViewController) {
+        guard let vc = UIStoryboard(name: "ElementalReading", bundle: nil).instantiateViewController(withIdentifier: "ElementalReadingViewController") as? ElementalReadingViewController else {
+            return
+        }
+        presentingViewController.present(vc, animated: true) {
+            // Presented
+        }
+        
+    }
     
     @IBOutlet weak var barViewFire: UIProgressView!
     @IBOutlet weak var barViewAir: UIProgressView!

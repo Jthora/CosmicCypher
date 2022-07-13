@@ -819,7 +819,7 @@ class ResonanceReportViewController: UIViewController {
         DispatchQueue.main.async {
             //Set the default sharing message.
             let message = "Cosmic Cypher App"
-            let link = NSURL(string: "https://cosmiccypher.thora.tech/")
+            let link = NSURL(string: "https://cosmiccypher.app/")
             // Screenshot:
             UIGraphicsBeginImageContextWithOptions(self.view.frame.size, true, 0.0)
             self.view.drawHierarchy(in: self.view.frame, afterScreenUpdates: false)

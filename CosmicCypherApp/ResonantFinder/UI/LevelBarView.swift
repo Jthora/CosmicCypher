@@ -40,6 +40,9 @@ class LevelBarView: UIView {
         progressView.translatesAutoresizingMaskIntoConstraints = false
         progressView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         
+        progressView.borderWidth = 1
+        progressView.borderColor = .black
+        
         switch sideAlignment {
         case .left:
             progressView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true

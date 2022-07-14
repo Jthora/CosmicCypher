@@ -50,6 +50,9 @@ public final class TimeStreamCompositeRegistry: ObservableObject {
     func save(composite: TimeStream.Composite, onComplete:(()->())? = nil) {
         print("save composite [\(composite.uuid.uuidString)]")
         cache[composite.uuid] = composite
+        if uuidList.contains(composite.uuid) == false {
+            uuidList.append(composite.uuid)
+        }
         queue.async {
             Task {
                 try await TimeStreamCompositeArchive.main.store(composite: composite)

@@ -63,6 +63,7 @@
 		FA2CB4962862A9C7003AD95C /* CosmicCypherInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2CB4952862A9C6003AD95C /* CosmicCypherInstructionsViewController.swift */; };
 		FA2CC949287DF6010078ECE1 /* LevelBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2CC948287DF6010078ECE1 /* LevelBarView.swift */; };
 		FA2CC94B287E9E6E0078ECE1 /* ElementalReading.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA2CC94A287E9E6E0078ECE1 /* ElementalReading.storyboard */; };
+		FA2CC94D287F797F0078ECE1 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2CC94C287F797F0078ECE1 /* UIViewController+Extension.swift */; };
 		FA33AAFB2864E12E00BC9F76 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA33AAFA2864E12E00BC9F76 /* Settings.swift */; };
 		FA33AAFD2864E18E00BC9F76 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA33AAFC2864E18E00BC9F76 /* Settings.storyboard */; };
 		FA33AAFF2864E1A000BC9F76 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA33AAFE2864E1A000BC9F76 /* SettingsViewController.swift */; };
@@ -275,6 +276,7 @@
 		FA2CB4952862A9C6003AD95C /* CosmicCypherInstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicCypherInstructionsViewController.swift; sourceTree = "<group>"; };
 		FA2CC948287DF6010078ECE1 /* LevelBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelBarView.swift; sourceTree = "<group>"; };
 		FA2CC94A287E9E6E0078ECE1 /* ElementalReading.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ElementalReading.storyboard; sourceTree = "<group>"; };
+		FA2CC94C287F797F0078ECE1 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		FA33AAFA2864E12E00BC9F76 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		FA33AAFC2864E18E00BC9F76 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		FA33AAFE2864E1A000BC9F76 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -586,6 +588,7 @@
 				FA2CB48D2860EC4F003AD95C /* CIFilter+Extension.swift */,
 				FA2CB4912860F664003AD95C /* CGImage+Extension.swift */,
 				FA6101DC286F99D20000D4D5 /* CGPoint+Extension.swift */,
+				FA2CC94C287F797F0078ECE1 /* UIViewController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1296,6 +1299,7 @@
 				FAEAFEAC2847DC88001AEAE0 /* UIImage+GIF+Extension.swift in Sources */,
 				FAEB279B284D1FF1009994B8 /* TimeStreamCompositePresets.swift in Sources */,
 				FA4D1B8F2561FCA00043DE9F /* ControlsScreen.swift in Sources */,
+				FA2CC94D287F797F0078ECE1 /* UIViewController+Extension.swift in Sources */,
 				FA35C0992849783A006114AB /* StarChartSprite.swift in Sources */,
 				FA2CB4962862A9C7003AD95C /* CosmicCypherInstructionsViewController.swift in Sources */,
 				FA07C9B2254019D800683486 /* ViewController.swift in Sources */,

@@ -559,10 +559,10 @@ class ResonanceReportViewController: UIViewController {
                 self.vc._updateQueue.async {
 
                     /// Central Point
-                    if self.isCancelled { return }
-                    guard let cp = self.vc.createDiscernmentCentralPoint() else {return}
-                    if self.isCancelled { return }
                     DispatchQueue.main.async {
+                        if self.isCancelled { return }
+                        guard let cp = self.vc.createDiscernmentCentralPoint() else {return}
+                        if self.isCancelled { return }
                         self.vc.discernmentCentralPoint?.removeFromSuperlayer()
                         self.vc.discernmentCentralPoint = nil
                         self.vc.discernmentCentralPoint = cp
@@ -570,9 +570,9 @@ class ResonanceReportViewController: UIViewController {
                     }
 
                     /// Central Circle
-                    guard let dcb = self.vc.createDiscernmentCentralGraphZone() else {return}
-                    if self.isCancelled { return }
                     DispatchQueue.main.async {
+                        guard let dcb = self.vc.createDiscernmentCentralGraphZone() else {return}
+                        if self.isCancelled { return }
                         self.vc.discernmentCentralBlob?.removeFromSuperlayer()
                         self.vc.discernmentCentralBlob = nil
                         self.vc.discernmentCentralBlob = dcb
@@ -580,10 +580,10 @@ class ResonanceReportViewController: UIViewController {
                     }
 
                     /// Outer Circle
-                    if self.isCancelled { return }
-                    guard let dob = self.vc.createDiscernmentOuterGraphZone() else {return}
-                    if self.isCancelled { return }
                     DispatchQueue.main.async {
+                        if self.isCancelled { return }
+                        guard let dob = self.vc.createDiscernmentOuterGraphZone() else {return}
+                        if self.isCancelled { return }
                         self.vc.discernmentOuterBlob?.removeFromSuperlayer()
                         self.vc.discernmentOuterBlob = nil
                         self.vc.discernmentOuterBlob = dob
@@ -1097,8 +1097,11 @@ extension ResonanceReportViewController: UITableViewDelegate, UITableViewDataSou
                 return 2*tableView.frame.size.height/3
             }
             return tableView.frame.size.height
+        } else if tableView == aspectsResultsTableView {
+            return tableView.contentSize.width
+        } else {
+            return tableView.rowHeight
         }
-        return tableView.rowHeight
     }
     
     
@@ -1133,8 +1136,10 @@ extension ResonanceReportViewController: UITableViewDelegate, UITableViewDataSou
                     print("ERROR: missing composite for delete swipe action")
                     return
                 }
-
                 TimeStream.Core.delete(timeStreamComposite: composite)
+                DispatchQueue.main.async {
+                    ResonanceReportViewController.current?.timeStreamTableView.reloadData()
+                }
             }
             return UISwipeActionsConfiguration(actions: [contextItemEdit, contextItemDelete])
         } else {
@@ -1188,6 +1193,8 @@ extension ResonanceReportViewController: TimeStreamCoreReactive {
             case .complete:
                 break
             case .start(uuid: let uuid, name: let name, configuration: let configuration):
+                self.timeStreamTableView.reloadData()
+                self.loadingTimeStreamsSpinner.startAnimating()
                 break
             }
         }

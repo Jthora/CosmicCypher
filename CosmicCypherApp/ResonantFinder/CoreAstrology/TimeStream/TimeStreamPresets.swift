@@ -84,9 +84,8 @@ extension TimeStream {
         }
         
         func configuration() -> TimeStream.Configuration {
-            
-            let timestreams = [timestream()]
-            let option = self.timestreamGeneratorOption()
+            let option = self.timestreamGeneratorOption
+            let timestreams = [TimeStream.Generator.generate(option)]
             let configuration = TimeStream.Configuration(sampleCount: option.sampleCount,
                                                          primaryChart: nil,
                                                          secondaryChart: nil,
@@ -95,13 +94,12 @@ extension TimeStream {
             return configuration
         }
         
-        func sampleCount() -> Int {
-            return timestreamGeneratorOption().sampleCount
+        var sampleCount: Int {
+            return timestreamGeneratorOption.sampleCount
         }
         
-        func timestreamGeneratorOption() -> TimeStream.Generator.Option {
+        var timestreamGeneratorOption: TimeStream.Generator.Option {
             switch self {
-                
             case .astroHarmonicsToday: return .today(.harmonics)
             case .astroHarmonicsThisMonth: return .thisMonth(.harmonics)
             case .astroHarmonicsThisYear: return .thisYear(.harmonics)
@@ -111,27 +109,5 @@ extension TimeStream {
             case .interPlanetaryGravimetrics: return .interplanetaryWeb
             }
         }
-        
-        
-        func tableViewCell() -> UITableViewCell {
-            
-            let configuration = self.configuration()
-            
-            switch self {
-            case .astroHarmonicsToday, .astroHarmonicsThisMonth, .astroHarmonicsThisYear, .astroHarmonicsThisSolarCycle:
-                let cell = TimeStreamCompositeTableViewCell()
-                let composite = TimeStream.Composite(configuration: configuration)
-                cell.timeStreamComposite = composite
-                return cell
-            case .geoCentricGravimetrics, .helioCentricGravimetrics, .interPlanetaryGravimetrics:
-                let cell = TimeStreamChartTableViewCell()
-                let chart = TimeStream.Chart(configuration: configuration)
-                cell.chart = chart
-                return cell
-            }
-        }
-        
-        
-        
     }
 }

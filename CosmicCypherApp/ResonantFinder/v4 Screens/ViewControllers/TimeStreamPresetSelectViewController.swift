@@ -51,8 +51,20 @@ extension TimeStreamPresetSelectViewController: UITableViewDataSource, UITableVi
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let preset = TimeStream.Preset(rawValue: indexPath.row)
-        
+        guard let preset = TimeStream.Preset(rawValue: indexPath.row) else {
+            print("ERROR: No TimeStream.Preset for indexPath.row: [\(indexPath.row)]")
+            return
+        }
+        let uuid = UUID()
+        dismissAllViewControllers(animated: true) {
+            DispatchQueue.global().async {
+                TimeStream.Core.addNewComposite(uuid: uuid, preset: preset)
+                DispatchQueue.main.async {
+                    ResonanceReportViewController.current?.timeStreamTableView.reloadData()
+                    ResonanceReportViewController.current?.loadingTimeStreamsSpinner.stopAnimating()
+                }
+            }
+        }
     }
     
 }

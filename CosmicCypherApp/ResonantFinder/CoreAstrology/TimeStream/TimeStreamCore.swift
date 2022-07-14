@@ -10,6 +10,7 @@ import UIKit
 extension TimeStream {
     public final class Core: ObservableObject {
         
+        // MARK: Initial Activation
         private static let _secretInitCompleteKey:String = "_secretInitCompleteKey"
         static func initialActivation() {
             if UserDefaults.standard.bool(forKey: _secretInitCompleteKey) == true {
@@ -49,6 +50,15 @@ extension TimeStream {
         private static let _compositeUUIDsKey:String = "_lastCompositeUUIDsKey"
         private static let _hasSavedCompositeUUIDsKey:String = "_hasSavedCompositeUUIDsKey"
         
+        static func saveCompositeUUID(uuid: UUID) {
+            guard let uuids = _compositeUUIDs,
+                  uuids.contains(uuid) != true else {
+                print("ERROR: saveCompositeUUID uuid already added")
+                return
+            }
+            _compositeUUIDs!.append(uuid)
+            saveCompositeUUIDs(uuids: _compositeUUIDs!)
+        }
         static func saveCompositeUUIDs(uuids:[UUID]) {
             let rawData = try? uuids.rawData()
             UserDefaults.standard.set(rawData, forKey: _compositeUUIDsKey)
@@ -76,7 +86,6 @@ extension TimeStream {
                 return uuids
             }
         }
-        
         
         // MARK: Action/Reaction Delegates
         static private var _reactors:[TimeStreamCoreReactive] = []
@@ -159,6 +168,48 @@ extension TimeStream {
             return composites
         }
         
+        static func addNewComposite(uuid:UUID, preset: TimeStream.Preset) { addNewComposite(uuid: uuid, option: preset.timestreamGeneratorOption) }
+        static func addNewComposite(uuid: UUID = UUID(), option: TimeStream.Generator.Option) {
+            
+            guard uuidList.contains(uuid) == false else { return }
+            _compositeCount = TimeStreamCompositeRegistry.main.uuidList.count+1
+            
+            /// Setup
+            let name = option.title
+            let timestream  = option.generate()
+            let nodeTypes = option.nodeTypes
+            let sampleCount = option.sampleCount
+            let configuration = TimeStream.Configuration(sampleCount: sampleCount, primaryChart: nil, secondaryChart: nil, timeStreams: [timestream], nodeTypes: nodeTypes)
+            
+            
+            /// React Start
+            DispatchQueue.main.async {
+                TimeStream.Core.react(to: .onLoadTimeStream(loadTimeStreamAction: .start(uuid: uuid, name: name, configuration: configuration)))
+            }
+            
+            /// Create Composite
+            let composite = TimeStream.Composite(name: name, uuid: uuid, configuration: configuration, onComplete: { _ in
+                print("timestream composite loaded")
+            } , onProgress: { completion in
+                /// React Progress
+                DispatchQueue.main.async {
+                    TimeStream.Core.react(to: .onLoadTimeStream(loadTimeStreamAction: .progress(uuid: uuid, completion: completion)))
+                }
+            })
+            
+            /// Add Composite to List
+            //composites.append(composite)
+            TimeStreamCompositeRegistry.main.save(composite: composite)
+            _compositeCount = TimeStreamCompositeRegistry.main.uuidList.count
+            saveCompositeCount(count: _compositeCount)
+            
+            /// React Complete
+            DispatchQueue.main.async {
+                // Complete Loader Animation and Show TimeStream in Cell
+                TimeStream.Core.react(to: .onLoadTimeStream(loadTimeStreamAction: .complete(uuid: uuid, composite: composite)))
+            }
+        }
+        
         static func reloadComposites() {
             DispatchQueue.global().async {
                 Task {
@@ -214,6 +265,9 @@ extension TimeStream.Core {
         print("Delete TimeStream Composite")
         // TODO: functionality for Delete TimeStream Composite
         TimeStreamCompositeRegistry.main.cache[composite.uuid] = nil
+        TimeStreamCompositeRegistry.main.uuidList.removeAll(where: { $0 == composite.uuid } )
+        _compositeCount = TimeStreamCompositeRegistry.main.uuidList.count
+        saveCompositeCount(count: _compositeCount)
         Task {
             await TimeStreamCompositeArchive.main.delete(uuid: composite.uuid)
         }

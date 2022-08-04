@@ -12,6 +12,8 @@ import Charts
 
 
 
+
+
 class TimeStreamCompositeTableViewCell: UITableViewCell {
 
     @IBOutlet weak var spriteKitView: SKView!
@@ -29,11 +31,7 @@ class TimeStreamCompositeTableViewCell: UITableViewCell {
     @IBOutlet weak var displayOptionButton: UIButton!
     
     
-    var lineChartView: LineChartView = {
-       let lineChartView = LineChartView()
-        lineChartView.backgroundColor = .systemBlue
-        return lineChartView
-    }()
+    var lineChartView: TimeStream.Chart?
     
     lazy var scene:SKScene = generateSpriteKitScene()
     
@@ -97,7 +95,7 @@ class TimeStreamCompositeTableViewCell: UITableViewCell {
         
         setupButtons()
         setupCharts()
-        setChartData()
+        setChartData(.gravimetrics)
         
         setupTimeStreamCompositeSpriteNode()
         
@@ -108,7 +106,9 @@ class TimeStreamCompositeTableViewCell: UITableViewCell {
     func setupButtons() {
         displayOptionButton.menu = UIMenu(children: [
             UIAction(title: "Harmonics", state: .on, handler:showHarmonicsClosure),
-            UIAction(title: "Gravimetrics", handler:showGravimetricsClosure)])
+            UIAction(title: "Gravimetrics", handler:showGravimetricsClosure),
+            UIAction(title: "Exa/Deb", handler:showExaDebClosure),
+            UIAction(title: "Rise/Fall", handler:showRiseFallClosure)])
     }
     
     func setupChartGraph() {
@@ -215,7 +215,7 @@ class TimeStreamCompositeTableViewCell: UITableViewCell {
     
     func update(name: String? = nil, configuration: TimeStream.Configuration? = nil) {
         setup(name: name, configuration: configuration)
-        setChartData()
+        setChartData(.gravimetrics)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -282,69 +282,45 @@ class TimeStreamCompositeTableViewCell: UITableViewCell {
     
     func setupCharts() {
         // setup view
+        guard let configuration = self.timeStreamComposite?.configuration else {return}
+        lineChartView = TimeStream.Chart(frame: self.chartView.frame, configuration: configuration)
         
-        self.chartView.addSubview(lineChartView)
-        lineChartView.centerInSuperview()
-        lineChartView.width(to: self.chartView)
-        lineChartView.height(to: self.chartView)
+        self.chartView.addSubview(lineChartView!)
+        lineChartView?.centerInSuperview()
+        lineChartView?.width(to: self.chartView)
+        lineChartView?.height(to: self.chartView)
     }
     
-    func setChartData() {
+    func setChartData(_ chartMode:TimeStream.Chart.ChartMode) {
         DispatchQueue.main.async {
             self.chartViewMessageLabel.isHidden = false
         }
         
-        DispatchQueue.global().async {
-            guard let starCharts = self.timeStreamComposite?.configuration.timeStreams.first?.starCharts else { return }
-            //guard let resonanceScores = self.timeStreamComposite?.resonanceScores else { return }
-            //let globalNetEnergies = resonanceScores.map({ $0.energies.globalNetEnergy })
-            
-            
-            let globalNetGravimetricMagnitudes:EnergyMagnitudes = starCharts.map({ $0.globalNetGravimetricMagnitude(includeSun: false) })
-            var globalNetGravityEntries: [ChartDataEntry] = []
-            for (i,magnitude) in globalNetGravimetricMagnitudes.enumerated() {
-                let normalizedMagnitude = globalNetGravimetricMagnitudes.normalize(magnitude: magnitude)!
-                let entry = ChartDataEntry(x: Double(i), y: Double(normalizedMagnitude))
-                globalNetGravityEntries.append(entry)
-            }
-            
-            let stellarNetGravimentricMagnitudes:EnergyMagnitudes = starCharts.map({ $0.stellarNetGravimentricMagnitude() })
-            var stellarNetGravityEntries: [ChartDataEntry] = []
-            for (i,magnitude) in stellarNetGravimentricMagnitudes.enumerated() {
-                let normalizedMagnitude = stellarNetGravimentricMagnitudes.normalize(magnitude: magnitude)!
-                let entry = ChartDataEntry(x: Double(i), y: Double(normalizedMagnitude))
-                stellarNetGravityEntries.append(entry)
-            }
-            
-            let interplanetaryAbsoluteGravimentricMagnitudes:EnergyMagnitudes = starCharts.map({ $0.interplanetaryAbsoluteGravimentricMagnitude(includeSun: true) })
-            var interplanetaryNetGravityEntries: [ChartDataEntry] = []
-            for (i,magnitude) in interplanetaryAbsoluteGravimentricMagnitudes.enumerated() {
-                let normalizedMagnitude = interplanetaryAbsoluteGravimentricMagnitudes.normalize(magnitude: magnitude)!
-                let entry = ChartDataEntry(x: Double(i), y: Double(normalizedMagnitude))
-                interplanetaryNetGravityEntries.append(entry)
-            }
-            
+        lineChartView?.setupChartData(chartMode: chartMode, onComplete: {
             DispatchQueue.main.async {
-                let set1 = LineChartDataSet(entries: globalNetGravityEntries, label: "global")
-                set1.colors = [.systemMint]
-                set1.circleColors = [.systemMint]
-                set1.circleRadius = 3
-                let set2 = LineChartDataSet(entries: stellarNetGravityEntries, label: "stellar")
-                set2.colors = [.systemYellow]
-                set2.circleColors = [.systemYellow]
-                set2.circleRadius = 3
-                let set3 = LineChartDataSet(entries: interplanetaryNetGravityEntries, label: "interplanetary")
-                set3.colors = [.systemIndigo]
-                set3.circleColors = [.systemIndigo]
-                set3.circleRadius = 3
-                let data = LineChartData(dataSets: [set1,set2,set3])
-                self.lineChartView.data = data
-                
                 self.chartViewMessageLabel.isHidden = true
             }
-        }
+        })
     }
     
+    
+    func showRiseFallClosure(action: UIAction) {
+        self.chartSuperView.isHidden = false
+        self.chartSuperView.alpha = 0
+        UIView.animate(withDuration: 0.5, delay: 0) {
+            self.chartSuperView.alpha = 1
+        }
+        print("Show Rise/Fall")
+    }
+    
+    func showExaDebClosure(action: UIAction) {
+        self.chartSuperView.isHidden = false
+        self.chartSuperView.alpha = 0
+        UIView.animate(withDuration: 0.5, delay: 0) {
+            self.chartSuperView.alpha = 1
+        }
+        print("Show Exa/Deb")
+    }
     
     func showGravimetricsClosure(action: UIAction) {
         self.chartSuperView.isHidden = false
@@ -354,6 +330,7 @@ class TimeStreamCompositeTableViewCell: UITableViewCell {
         }
         print("Show Gravimetrics")
     }
+    
     func showHarmonicsClosure(action: UIAction) {
         self.chartSuperView.alpha = 1
         UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut) {

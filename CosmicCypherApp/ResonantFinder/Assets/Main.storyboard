@@ -1276,6 +1276,8 @@
                                                                                 <children>
                                                                                     <command title="Harmonics" id="XON-ZF-ir1"/>
                                                                                     <command title="Gravimetrics" id="nCU-Xv-jQA"/>
+                                                                                    <command title="Exa/Deb" id="8Tf-Ad-DJa"/>
+                                                                                    <command title="Rise/Fall" id="H0L-Sn-15s"/>
                                                                                 </children>
                                                                             </menu>
                                                                             <state key="normal" title="Metrics">

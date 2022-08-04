@@ -1,6 +1,0 @@
-framework module Pods_ResonantFinder_ResonantFinderUITests {
-  umbrella header "Pods-ResonantFinder-ResonantFinderUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}

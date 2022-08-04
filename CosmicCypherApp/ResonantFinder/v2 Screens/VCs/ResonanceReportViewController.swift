@@ -941,6 +941,8 @@ class ResonanceReportViewController: UIViewController {
     // Update Energy Levels
     func updateEnergyLevels(starChart:StarChart) {
         
+        guard !StarChart.Core.selectedPlanets.isEmpty else {return}
+        
         let cosmicAlignment = StarChart.Core.currentCosmicAlignment
         
         DispatchQueue.main.async {

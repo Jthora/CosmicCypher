@@ -1,4 +1,4 @@
-${PODS_ROOT}/Target Support Files/Pods-ResonantFinder-ResonantFinderUITests/Pods-ResonantFinder-ResonantFinderUITests-frameworks.sh
+${PODS_ROOT}/Target Support Files/Pods-CosmicCypher-CosmicCypherUITests/Pods-CosmicCypher-CosmicCypherUITests-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/BinaryCodable/BinaryCodable.framework
 ${BUILT_PRODUCTS_DIR}/Charts/Charts.framework
 ${BUILT_PRODUCTS_DIR}/GaugeKit/GaugeKit.framework

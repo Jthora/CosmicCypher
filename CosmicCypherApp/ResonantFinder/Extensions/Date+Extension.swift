@@ -300,9 +300,12 @@ extension Date {
 extension Date {
     func formattedTime(for coordinates: GeographicCoordinates) -> String {
         var calendar = Calendar.current
-        let timeZone = coordinates.location.timeZone
+        var timeZone:TimeZone? = nil
+        #if !targetEnvironment(macCatalyst)
+        timeZone = coordinates.location.timeZone
         calendar.timeZone = timeZone
-        let abbreviation = timeZone.abbreviation() ?? "Unknown TimeZone"
+        #endif
+        let abbreviation = timeZone?.abbreviation() ?? "Unknown TimeZone"
         let hour = calendar.component(.hour, from: self)
         let minute = calendar.component(.minute, from: self)
         let second = calendar.component(.second, from: self)

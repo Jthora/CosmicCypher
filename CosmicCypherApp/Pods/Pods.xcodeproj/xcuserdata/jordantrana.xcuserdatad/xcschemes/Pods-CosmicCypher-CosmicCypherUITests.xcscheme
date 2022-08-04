@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "911C4D1F9196CDC4DE83A2141E9C3231"
-               BuildableName = "Pods_ResonantFinderTests.framework"
-               BlueprintName = "Pods-ResonantFinderTests"
+               BlueprintIdentifier = "0138F9AE54E9E48B6F10EB0861FEC976"
+               BuildableName = "Pods_CosmicCypher_CosmicCypherUITests.framework"
+               BlueprintName = "Pods-CosmicCypher-CosmicCypherUITests"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

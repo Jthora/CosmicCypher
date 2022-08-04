@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_ResonantFinder_ResonantFinderUITestsVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_ResonantFinder_ResonantFinderUITestsVersionString[];
+FOUNDATION_EXPORT double Pods_CosmicCypher_CosmicCypherUITestsVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_CosmicCypher_CosmicCypherUITestsVersionString[];
 

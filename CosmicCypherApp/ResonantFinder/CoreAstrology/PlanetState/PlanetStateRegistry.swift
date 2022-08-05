@@ -1,6 +1,6 @@
 //
 //  PlanetStateRegistry.swift
-//  ResonantFinder
+//  CosmicCypher
 //
 //  Created by Jordan Trana on 6/8/22.
 //

@@ -1,6 +1,6 @@
 //
 //  TimeStreamChartTableViewCell.swift
-//  ResonantFinder
+//  CosmicCypher
 //
 //  Created by Jordan Trana on 7/2/22.
 //

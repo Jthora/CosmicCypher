@@ -1,6 +1,6 @@
 //
 //  TimeStreamViewController.swift
-//  ResonantFinder
+//  CosmicCypher
 //
 //  Created by Jordan Trana on 12/1/20.
 //

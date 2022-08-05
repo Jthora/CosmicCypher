@@ -1,6 +1,6 @@
 //
 //  ResultHistoryTableViewCell.swift
-//  ResonantFinder
+//  CosmicCypher
 //
 //  Created by Jordan Trana on 10/9/19.
 //  Copyright © 2019 Jordan Trana. All rights reserved.

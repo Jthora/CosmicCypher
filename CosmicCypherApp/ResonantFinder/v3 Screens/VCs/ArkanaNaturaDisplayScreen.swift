@@ -1,6 +1,6 @@
 //
 //  ArkanaNaturaReadingsScreen.swift
-//  ResonantFinder
+//  CosmicCypher
 //
 //  Created by Jordan Trana on 11/15/20.
 //

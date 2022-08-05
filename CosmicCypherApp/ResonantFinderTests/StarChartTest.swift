@@ -1,6 +1,6 @@
 //
 //  StarChartTest.swift
-//  ResonantFinderTests
+//  CosmicCypherTests
 //
 //  Created by Jordan Trana on 11/28/20.
 //

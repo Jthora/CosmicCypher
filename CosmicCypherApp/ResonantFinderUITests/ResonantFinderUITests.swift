@@ -1,6 +1,6 @@
 //
-//  ResonantFinderUITests.swift
-//  ResonantFinderUITests
+//  CosmicCypherUITests.swift
+//  CosmicCypherUITests
 //
 //  Created by Jordan Trana on 10/21/20.
 //

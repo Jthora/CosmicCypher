@@ -1,6 +1,6 @@
 //
 //  UITableView+Extension.swift
-//  ResonantFinder
+//  CosmicCypher
 //
 //  Created by Jordan Trana on 6/5/22.
 //

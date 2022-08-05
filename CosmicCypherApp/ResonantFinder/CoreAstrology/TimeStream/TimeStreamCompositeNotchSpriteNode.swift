@@ -1,6 +1,6 @@
 //
 //  TimeStreamCompositeNotchSpriteNode.swift
-//  ResonantFinder
+//  CosmicCypher
 //
 //  Created by Jordan Trana on 7/1/22.
 //

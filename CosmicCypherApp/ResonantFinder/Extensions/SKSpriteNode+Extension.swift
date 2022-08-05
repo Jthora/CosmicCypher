@@ -1,6 +1,6 @@
 //
 //  SKSpriteNode+Extension.swift
-//  ResonantFinder
+//  CosmicCypher
 //
 //  Created by Jordan Trana on 6/13/22.
 //

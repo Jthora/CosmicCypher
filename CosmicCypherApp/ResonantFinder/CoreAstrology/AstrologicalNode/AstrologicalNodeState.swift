@@ -1,6 +1,6 @@
 //
 //  AstrologicalNodeState.swift
-//  ResonantFinder
+//  CosmicCypher
 //
 //  Created by Jordan Trana on 7/4/22.
 //

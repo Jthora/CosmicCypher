@@ -1,6 +1,6 @@
 //
 //  StarChart+Hashable.swift
-//  ResonantFinder
+//  CosmicCypher
 //
 //  Created by Jordan Trana on 6/7/22.
 //

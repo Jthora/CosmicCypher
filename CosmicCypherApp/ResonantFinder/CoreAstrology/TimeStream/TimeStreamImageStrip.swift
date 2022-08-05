@@ -1,6 +1,6 @@
 //
 //  TimeStreamImageStrip.swift
-//  ResonantFinder
+//  CosmicCypher
 //
 //  Created by Jordan Trana on 12/8/20.
 //

@@ -1,6 +1,6 @@
 //
 //  SelectDateViewController.swift
-//  ResonantFinder
+//  CosmicCypher
 //
 //  Created by Jordan Trana on 12/13/19.
 //  Copyright © 2019 Jordan Trana. All rights reserved.

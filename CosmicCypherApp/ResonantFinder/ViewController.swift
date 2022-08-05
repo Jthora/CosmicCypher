@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  ResonantFinder
+//  CosmicCypher
 //
 //  Created by Jordan Trana on 10/21/20.
 //

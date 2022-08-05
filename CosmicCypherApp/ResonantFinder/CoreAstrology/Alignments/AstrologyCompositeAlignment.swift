@@ -1,6 +1,6 @@
 //
 //  AstrologyCompositeAlignment.swift
-//  ResonantFinder
+//  CosmicCypher
 //
 //  Created by Jordan Trana on 2/16/21.
 //

@@ -1,6 +1,6 @@
 //
 //  View_Extension.swift
-//  ResonantFinder
+//  CosmicCypher
 //
 //  Created by Jordan Trana on 12/3/20.
 //

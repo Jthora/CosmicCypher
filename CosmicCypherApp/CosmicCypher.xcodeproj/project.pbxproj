@@ -38,6 +38,12 @@
 		FA07CA4825401EBC00683486 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07CA1C25401EBB00683486 /* String+Extension.swift */; };
 		FA07CA4925401EBC00683486 /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07CA1D25401EBB00683486 /* Dictionary+Extension.swift */; };
 		FA07CA4A25401EBC00683486 /* SpriteKit+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07CA1E25401EBB00683486 /* SpriteKit+Extension.swift */; };
+		FA12D5E5289D7B3500411649 /* ResonanceReportViewController+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12D5E4289D7B3500411649 /* ResonanceReportViewController+Reactive.swift */; };
+		FA12D5E7289D7BA900411649 /* ResonanceReportViewController+TableViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12D5E6289D7BA900411649 /* ResonanceReportViewController+TableViewDelegates.swift */; };
+		FA12D5E9289D7C1A00411649 /* ResonanceReportViewController+UpdateOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12D5E8289D7C1A00411649 /* ResonanceReportViewController+UpdateOperation.swift */; };
+		FA12D5EB289D7C6F00411649 /* ResonanceReportViewController+DiscernmentChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12D5EA289D7C6F00411649 /* ResonanceReportViewController+DiscernmentChart.swift */; };
+		FA12D5ED289D7CE600411649 /* ResonanceReportViewController+UIControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12D5EC289D7CE600411649 /* ResonanceReportViewController+UIControls.swift */; };
+		FA12D5EF289D7EB200411649 /* ResonanceReportViewController+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12D5EE289D7EB200411649 /* ResonanceReportViewController+Setup.swift */; };
 		FA1FDD452570262700B51BD2 /* ReadingsSubScreenCOEH.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1FDD442570262700B51BD2 /* ReadingsSubScreenCOEH.swift */; };
 		FA1FDD4A257026CA00B51BD2 /* ReadingsSubScreenSSSB.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1FDD49257026CA00B51BD2 /* ReadingsSubScreenSSSB.swift */; };
 		FA1FDD4F257026F700B51BD2 /* ReadingsSubScreenPNPA.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1FDD4E257026F700B51BD2 /* ReadingsSubScreenPNPA.swift */; };
@@ -257,6 +263,12 @@
 		FA07CA1C25401EBB00683486 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		FA07CA1D25401EBB00683486 /* Dictionary+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
 		FA07CA1E25401EBB00683486 /* SpriteKit+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SpriteKit+Extension.swift"; sourceTree = "<group>"; };
+		FA12D5E4289D7B3500411649 /* ResonanceReportViewController+Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResonanceReportViewController+Reactive.swift"; sourceTree = "<group>"; };
+		FA12D5E6289D7BA900411649 /* ResonanceReportViewController+TableViewDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResonanceReportViewController+TableViewDelegates.swift"; sourceTree = "<group>"; };
+		FA12D5E8289D7C1A00411649 /* ResonanceReportViewController+UpdateOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResonanceReportViewController+UpdateOperation.swift"; sourceTree = "<group>"; };
+		FA12D5EA289D7C6F00411649 /* ResonanceReportViewController+DiscernmentChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResonanceReportViewController+DiscernmentChart.swift"; sourceTree = "<group>"; };
+		FA12D5EC289D7CE600411649 /* ResonanceReportViewController+UIControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResonanceReportViewController+UIControls.swift"; sourceTree = "<group>"; };
+		FA12D5EE289D7EB200411649 /* ResonanceReportViewController+Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResonanceReportViewController+Setup.swift"; sourceTree = "<group>"; };
 		FA1FDD442570262700B51BD2 /* ReadingsSubScreenCOEH.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadingsSubScreenCOEH.swift; sourceTree = "<group>"; };
 		FA1FDD49257026CA00B51BD2 /* ReadingsSubScreenSSSB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingsSubScreenSSSB.swift; sourceTree = "<group>"; };
 		FA1FDD4E257026F700B51BD2 /* ReadingsSubScreenPNPA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingsSubScreenPNPA.swift; sourceTree = "<group>"; };
@@ -683,6 +695,12 @@
 				FA6101D4286D73E80000D4D5 /* OnlineGeoLocationSelectViewController.swift */,
 				FA6101D8286E3C9C0000D4D5 /* TimeStreamManualSelectViewController.swift */,
 				FA6101DA286E3CAC0000D4D5 /* TimeStreamPresetSelectViewController.swift */,
+				FA12D5E4289D7B3500411649 /* ResonanceReportViewController+Reactive.swift */,
+				FA12D5E6289D7BA900411649 /* ResonanceReportViewController+TableViewDelegates.swift */,
+				FA12D5E8289D7C1A00411649 /* ResonanceReportViewController+UpdateOperation.swift */,
+				FA12D5EA289D7C6F00411649 /* ResonanceReportViewController+DiscernmentChart.swift */,
+				FA12D5EC289D7CE600411649 /* ResonanceReportViewController+UIControls.swift */,
+				FA12D5EE289D7EB200411649 /* ResonanceReportViewController+Setup.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1268,6 +1286,7 @@
 				FA35C0972849783A006114AB /* StarChart.swift in Sources */,
 				FA33AB0F2868D66900BC9F76 /* PlanetCollectionViewCell.swift in Sources */,
 				FAB1311928749201000AD7B9 /* PlanetNodeState.swift in Sources */,
+				FA12D5E5289D7B3500411649 /* ResonanceReportViewController+Reactive.swift in Sources */,
 				FA35C0922849783A006114AB /* StarChartRegistry.swift in Sources */,
 				FA35C0DE2849A840006114AB /* TimeStreamNodeType.swift in Sources */,
 				FA2CB48A285E4E9B003AD95C /* UUID+Extension.swift in Sources */,
@@ -1277,6 +1296,7 @@
 				FA2CB48C285FFCCE003AD95C /* TimeStreamCoreDelegate.swift in Sources */,
 				FAB1311B28749B3E000AD7B9 /* AstrologicalNodeStateTimeline.swift in Sources */,
 				FA35C0BF28497879006114AB /* Personology.swift in Sources */,
+				FA12D5E7289D7BA900411649 /* ResonanceReportViewController+TableViewDelegates.swift in Sources */,
 				FA07CA2225401EBB00683486 /* SelectDateViewController.swift in Sources */,
 				FAEAFEB62848423B001AEAE0 /* TimeStreamAddTableViewCell.swift in Sources */,
 				FAB1311F2874A328000AD7B9 /* AstrologicalNodeStateArchive.swift in Sources */,
@@ -1342,6 +1362,7 @@
 				FA1FDD92257969E500B51BD2 /* ElementalReadingViewController.swift in Sources */,
 				FA2CB4882859F77B003AD95C /* TimeStreamColorRenderMode.swift in Sources */,
 				FA35C0C228497879006114AB /* Chevron.swift in Sources */,
+				FA12D5ED289D7CE600411649 /* ResonanceReportViewController+UIControls.swift in Sources */,
 				FA35C0D52849A840006114AB /* TimeStreamSceneView.swift in Sources */,
 				FA33AB01286557D800BC9F76 /* PlanetSelect.swift in Sources */,
 				FAEAFEB4284841CC001AEAE0 /* TimeStreamTableViewCell.swift in Sources */,
@@ -1356,6 +1377,7 @@
 				FAEB2793284D0EEE009994B8 /* TimeStreamConfigurationTableViewCell.swift in Sources */,
 				FA35C0AB2849783A006114AB /* TimeStreamImageGenerator.swift in Sources */,
 				FA2C449528697B4E009E61B2 /* StarChartCompositeRenderer.swift in Sources */,
+				FA12D5E9289D7C1A00411649 /* ResonanceReportViewController+UpdateOperation.swift in Sources */,
 				FA2CB49428629725003AD95C /* TimeStreamImageMapArchive.swift in Sources */,
 				FAB131172873A807000AD7B9 /* AstrologicalNodeType.swift in Sources */,
 				FA35C0ED284A7195006114AB /* TimeStreamImageMapRegistry.swift in Sources */,
@@ -1398,6 +1420,7 @@
 				FA35C0E02849A872006114AB /* TimeStreamSpriteNode.swift in Sources */,
 				FA2CC949287DF6010078ECE1 /* LevelBarView.swift in Sources */,
 				FA6101D1286D73C70000D4D5 /* GeoLocationSelectViewController.swift in Sources */,
+				FA12D5EF289D7EB200411649 /* ResonanceReportViewController+Setup.swift in Sources */,
 				FA6101DD286F99D20000D4D5 /* CGPoint+Extension.swift in Sources */,
 				FA07CA2525401EBB00683486 /* ResonanceReportTableViewCell.swift in Sources */,
 				FAEB27C02851D21D009994B8 /* Codable+Extension.swift in Sources */,
@@ -1421,6 +1444,7 @@
 				FA6101E52870C4C00000D4D5 /* TimeStreamPresetTableViewCell.swift in Sources */,
 				FA35C09B2849783A006114AB /* StarChart+ChartData.swift in Sources */,
 				FAEB2799284D16CC009994B8 /* UITableView+Extension.swift in Sources */,
+				FA12D5EB289D7C6F00411649 /* ResonanceReportViewController+DiscernmentChart.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

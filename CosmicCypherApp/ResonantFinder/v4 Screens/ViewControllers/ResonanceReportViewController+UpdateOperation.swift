@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 extension ResonanceReportViewController {
     // Update Operation
@@ -39,7 +40,7 @@ extension ResonanceReportViewController {
 
                 /// Discernment Chart
                 if self.isCancelled { return }
-                self.vc._updateQueue.async {
+                self.vc.updateQueue.async {
 
                     /// Central Point
                     DispatchQueue.main.async {

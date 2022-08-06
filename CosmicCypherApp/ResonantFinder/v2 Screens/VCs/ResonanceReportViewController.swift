@@ -220,7 +220,7 @@ class ResonanceReportViewController: UIViewController {
     }
     
     // Update Dispatch Queue
-    fileprivate var _updateQueue:DispatchQueue = DispatchQueue(label: "_updateQueue")
+    var updateQueue:DispatchQueue = DispatchQueue(label: "updateQueue")
     
     // Update Operation Queue
     private let _updateOperationQueue: OperationQueue = {
@@ -228,6 +228,7 @@ class ResonanceReportViewController: UIViewController {
         op.isSuspended = false
         return op
     } ()
+    
     
     
     // MARK: StarChart

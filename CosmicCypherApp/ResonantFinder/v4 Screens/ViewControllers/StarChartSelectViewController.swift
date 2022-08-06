@@ -20,7 +20,7 @@ class StarChartSelectViewController: UIViewController {
     
     @IBAction func rightNowButtonTouch(_ sender: UIButton) {
         
-        ResonanceReportViewController.current?.isLive = true
+        //ResonanceReportViewController.current?.isLive = true
         
         StarChart.Core.current = StarChart(date: Date(), coordinates: StarChart.Core.current.coordinates)
         ResonanceReportViewController.current?.update()

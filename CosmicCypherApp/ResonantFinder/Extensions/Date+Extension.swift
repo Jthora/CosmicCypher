@@ -303,7 +303,7 @@ extension Date {
         var timeZone:TimeZone? = nil
         #if !targetEnvironment(macCatalyst)
         timeZone = coordinates.location.timeZone
-        calendar.timeZone = timeZone
+        calendar.timeZone = timeZone!
         #endif
         let abbreviation = timeZone?.abbreviation() ?? "Unknown TimeZone"
         let hour = calendar.component(.hour, from: self)

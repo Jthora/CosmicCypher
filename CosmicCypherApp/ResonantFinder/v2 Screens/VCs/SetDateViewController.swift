@@ -28,13 +28,13 @@ class SetDateViewController: UIViewController {
 
     @IBAction func liveFeedButtonTap(_ sender: UIButton) {
         
-        ResonanceReportViewController.current?.isLive = true
+        //ResonanceReportViewController.current?.isLive = true
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func specificDateButtonTap(_ sender: Any) {
         
-        ResonanceReportViewController.current?.isLive = false
+        //ResonanceReportViewController.current?.isLive = false
         
     }
 }

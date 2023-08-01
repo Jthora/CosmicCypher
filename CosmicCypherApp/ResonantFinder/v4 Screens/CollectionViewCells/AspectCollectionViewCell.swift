@@ -13,6 +13,8 @@ class AspectCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var aspectLabel: UILabel!
     @IBOutlet weak var aspectSelectedLabel: UILabel!
     
+    var selectionContext:PlanetSelectViewController.SelectionContext = .starChart
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setSelectedState(selected:aspectSelected)
@@ -33,14 +35,29 @@ class AspectCollectionViewCell: UICollectionViewCell {
     
     func updateCore() {
         guard let aspectRelationType = aspectRelationType else { return }
-        if aspectSelected {
-            if !StarChart.Core.selectedAspects.contains(aspectRelationType) {
-                StarChart.Core.selectedAspects.append(aspectRelationType)
+        switch selectionContext {
+        case .starChart:
+            if aspectSelected {
+                if !StarChart.Core.selectedAspects.contains(aspectRelationType) {
+                    StarChart.Core.selectedAspects.append(aspectRelationType)
+                }
+            } else {
+                if StarChart.Core.selectedAspects.contains(aspectRelationType) {
+                    StarChart.Core.selectedAspects.removeAll { aspectType in
+                        aspectRelationType == aspectType
+                    }
+                }
             }
-        } else {
-            if StarChart.Core.selectedAspects.contains(aspectRelationType) {
-                StarChart.Core.selectedAspects.removeAll { aspectType in
-                    aspectRelationType == aspectType
+        case .aspectScanner:
+            if aspectSelected {
+                if !AspectEventScanner.Core.aspectAngles.contains(aspectRelationType) {
+                    AspectEventScanner.Core.aspectAngles.append(aspectRelationType)
+                }
+            } else {
+                if AspectEventScanner.Core.aspectAngles.contains(aspectRelationType) {
+                    AspectEventScanner.Core.aspectAngles.removeAll { aspectType in
+                        aspectRelationType == aspectType
+                    }
                 }
             }
         }
@@ -105,7 +122,12 @@ class AspectCollectionViewCell: UICollectionViewCell {
         }
         aspectImageView.image = aspectRelationType.image
         aspectLabel.text = aspectRelationType.fraction
-        aspectSelected = StarChart.Core.selectedAspects.contains(aspectRelationType)
+        switch selectionContext {
+        case .starChart:
+            aspectSelected = StarChart.Core.selectedAspects.contains(aspectRelationType)
+        case .aspectScanner:
+            aspectSelected = AspectEventScanner.Core.aspectAngles.contains(aspectRelationType)
+        }
     }
     
     override var isSelected: Bool {

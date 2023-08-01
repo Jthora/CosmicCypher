@@ -30,35 +30,55 @@ open class StarChartRegistry {
     
     public static let main:StarChartRegistry = StarChartRegistry()
     
-    
-    
+    // Cache
     public var cache:[StarChartHashKey:StarChart] = [:]
+    public func resetCache() {
+        cache.removeAll()
+        cacheWarningThreshold = 10000
+    }
     
+    // Cache Warning Delegate
+    private var cacheWarningDelegates:[StarChartRegistryCacheWarningDelegate] = []
+    private var cacheWarningThreshold = 10000
+    public func add(cacheWarningDelegate:StarChartRegistryCacheWarningDelegate) {
+        cacheWarningDelegates.append(cacheWarningDelegate)
+    }
+    private func callCacheWarningDelegates() {
+        for cacheWarningDelegate in cacheWarningDelegates {
+            cacheWarningDelegate.cacheWarning(threshold: cacheWarningThreshold)
+        }
+    }
     
     func getStarChart(date:Date, geographicCoordinates:GeographicCoordinates, onComplete:((_ starChart: StarChart)->())? = nil) -> StarChart {
-        let timestamp = Date()
+        //let timestamp = Date()
         let hashKey = StarChartHashKey(date: date, geographicCoordinates: geographicCoordinates)
         if let starChart = getStarChart(hashKey: hashKey) {
-            print("loaded starchart from cache [\(timestamp.timeIntervalSinceNow)]")
+            //print("loaded starchart from cache [\(timestamp.timeIntervalSinceNow)]")
             onComplete?(starChart)
             return starChart
         }
         if let starChart = StarChartArchive.main.fetch(date: date, geographicCoordinates: geographicCoordinates) {
-            print("loaded starchart from archive [\(timestamp.timeIntervalSinceNow)]")
+            //print("loaded starchart from archive [\(timestamp.timeIntervalSinceNow)]")
             cache[hashKey] = starChart
             onComplete?(starChart)
             return starChart
         }
-        print("generating new starchart [\(timestamp.timeIntervalSinceNow)]")
+        //print("generating new starchart [\(timestamp.timeIntervalSinceNow)]")
         let starChart = StarChart(date: date, coordinates: geographicCoordinates, celestialOffset: .galacticCenter) // Duh, Galactic Center.
-        print("starchart generated [\(timestamp.timeIntervalSinceNow)]")
+        //print("starchart generated [\(timestamp.timeIntervalSinceNow)]")
         Task {
             try await StarChartArchive.main.store(starChart: starChart)
-            print("stored new starchart [\(timestamp.timeIntervalSinceNow)]")
+            //print("stored new starchart [\(timestamp.timeIntervalSinceNow)]")
         }
         cache[starChart.hashKey] = starChart
-        print("cached new starchart [\(timestamp.timeIntervalSinceNow)]")
+        //print("cached new starchart [\(timestamp.timeIntervalSinceNow)]")
         onComplete?(starChart)
+        
+        // Cache Safety
+        if cache.count > cacheWarningThreshold {
+            callCacheWarningDelegates()
+            cacheWarningThreshold += cacheWarningThreshold
+        }
         return starChart
     }
     
@@ -80,4 +100,8 @@ open class StarChartRegistry {
     func getStarChart(hashKey:StarChartHashKey) -> StarChart? {
         return cache[hashKey]
     }
+}
+
+public protocol StarChartRegistryCacheWarningDelegate {
+    func cacheWarning(threshold:Int)
 }

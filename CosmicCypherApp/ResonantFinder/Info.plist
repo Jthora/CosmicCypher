@@ -64,6 +64,8 @@
 	</array>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.lifestyle</string>
 	<key>UTExportedTypeDeclarations</key>
 	<array>
 		<dict>

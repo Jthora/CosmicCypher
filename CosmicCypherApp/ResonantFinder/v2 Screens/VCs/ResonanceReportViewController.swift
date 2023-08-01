@@ -244,7 +244,8 @@ class ResonanceReportViewController: UIViewController {
     // MARK: Buttons
     @IBAction func settingsButtonTouch(_ sender: UIButton) {
         //TimeStreamSettingsViewController.presentModally(over: self)
-        SettingsViewController.presentModally(over: self)
+        //SettingsViewController.presentModally(over: self)
+        AspectEventScanViewController.presentModally(over: self)
     }
     
     @IBAction func instructionsButtonTouch(_ sender: UIButton) {
@@ -252,7 +253,7 @@ class ResonanceReportViewController: UIViewController {
     }
     
     @IBAction func planetSelectButtonTouch(_ sender: UIButton) {
-        PlanetSelectViewController.presentModally(over: self)
+        PlanetSelectViewController.presentModally(over: self, selectionContext: .starChart)
     }
     
     @IBAction func geoLocationButtonTouch(_ sender: UIButton) {

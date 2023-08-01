@@ -9,14 +9,31 @@ import UIKit
 
 class GeoLocationSelectViewController: UIViewController {
     
-    static func presentModally(over presentingViewController: UIViewController) {
-        guard let vc = UIStoryboard(name: "StarChartSelect", bundle: nil).instantiateViewController(withIdentifier: "GeoLocationSelectViewController") as? GeoLocationSelectViewController else {
+    var onDismiss: (()->())? = nil
+    var originViewController:UIViewController? = nil
+    
+    static func presentModally(over presentingViewController: UIViewController, originViewController: UIViewController?, onDismiss: (()->())? = nil) {
+        guard let vc:GeoLocationSelectViewController = UIStoryboard(name: "GeoLocationSelect", bundle: nil).instantiateViewController(withIdentifier: "GeoLocationSelectViewController") as? GeoLocationSelectViewController else {
             return
         }
+        vc.onDismiss = onDismiss
+        vc.originViewController = originViewController
         presentingViewController.present(vc, animated: true) {
             
         }
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        onDismiss?()
+    }
+    
+    
+    @IBAction func mapKitLocateButtonPressed(_ sender: UIButton) {
+        DispatchQueue.main.async {
+            OnlineGeoLocationSelectViewController.presentModally(over: self, originViewController: self.originViewController)
+        }
+    }
 }
+
 
 

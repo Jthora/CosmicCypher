@@ -9,6 +9,10 @@ import Foundation
 import SwiftAA
 import CoreData
 
+// MARK: StarChart Archive Delegate
+public protocol StarChartArchiveDelegate {
+    func cacheWarning(archive:StarChartArchive, availableRAM:Double)
+}
 
 // MARK: StarChart Archive
 public final actor StarChartArchive {

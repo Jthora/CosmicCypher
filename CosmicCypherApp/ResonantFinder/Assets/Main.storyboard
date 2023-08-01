@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0dJ-eA-Nbr">
-    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0dJ-eA-Nbr">
+    <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light">
+        <simulatedSceneSize key="mac" width="865" height="1073"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -23,20 +26,20 @@
             <objects>
                 <viewController storyboardIdentifier="ResonanceReportViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0dJ-eA-Nbr" customClass="ResonanceReportViewController" customModule="CosmicCypher" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e2e-IO-DME">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b7b-WO-Abr">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="24" width="1024" height="1322"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="so5-qc-Ftd" userLabel="TopView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="246"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="269"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TZX-DV-Hap">
-                                                <rect key="frame" x="246" y="8" width="160" height="230"/>
+                                                <rect key="frame" x="269" y="8" width="747" height="253"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RZN-bF-uPS">
-                                                        <rect key="frame" x="0.0" y="6.5" width="79" height="17.5"/>
+                                                        <rect key="frame" x="0.0" y="8.5" width="372.5" height="16.5"/>
                                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -48,19 +51,19 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AstrologyIcon_Base16_Air" translatesAutoresizingMaskIntoConstraints="NO" id="67O-uO-ANz">
-                                                        <rect key="frame" x="56" y="4" width="23" height="23"/>
+                                                        <rect key="frame" x="347" y="4" width="25.5" height="25.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="67O-uO-ANz" secondAttribute="height" multiplier="1:1" id="x30-Ya-7HC"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Air" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQM-Ox-f5k">
-                                                        <rect key="frame" x="0.0" y="6.5" width="56" height="17.5"/>
+                                                        <rect key="frame" x="0.0" y="8.5" width="347" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="Iceberg-Regular" family="Iceberg" pointSize="14"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hxd-Mj-OnT">
-                                                        <rect key="frame" x="0.0" y="31.5" width="79" height="17.5"/>
+                                                        <rect key="frame" x="0.0" y="35" width="372.5" height="17.5"/>
                                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -72,19 +75,19 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AstrologyIcon_Base16_Fire" translatesAutoresizingMaskIntoConstraints="NO" id="roG-Of-WNd">
-                                                        <rect key="frame" x="56" y="29" width="23" height="23"/>
+                                                        <rect key="frame" x="347" y="31.5" width="25.5" height="25"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="roG-Of-WNd" secondAttribute="height" multiplier="1:1" id="fyT-3J-k3H"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fire" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXK-qF-C7v">
-                                                        <rect key="frame" x="0.0" y="31.5" width="56" height="17.5"/>
+                                                        <rect key="frame" x="0.0" y="35" width="347" height="17.5"/>
                                                         <fontDescription key="fontDescription" name="Iceberg-Regular" family="Iceberg" pointSize="14"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iFv-Bj-Aim">
-                                                        <rect key="frame" x="0.0" y="56.5" width="79" height="17.5"/>
+                                                        <rect key="frame" x="0.0" y="63" width="372.5" height="16.5"/>
                                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -96,19 +99,19 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AstrologyIcon_Base16_Water" translatesAutoresizingMaskIntoConstraints="NO" id="kqV-4Z-4OS">
-                                                        <rect key="frame" x="56" y="54" width="23" height="23"/>
+                                                        <rect key="frame" x="347" y="58.5" width="25.5" height="25.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="kqV-4Z-4OS" secondAttribute="height" multiplier="1:1" id="Qtf-36-okP"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Water" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9t-eL-ncp">
-                                                        <rect key="frame" x="0.0" y="56.5" width="56" height="17.5"/>
+                                                        <rect key="frame" x="0.0" y="63" width="347" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="Iceberg-Regular" family="Iceberg" pointSize="14"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EWl-0o-LZ7">
-                                                        <rect key="frame" x="0.0" y="81.5" width="79" height="17.5"/>
+                                                        <rect key="frame" x="0.0" y="90" width="372.5" height="17.5"/>
                                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -120,19 +123,19 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AstrologyIcon_Base16_Earth" translatesAutoresizingMaskIntoConstraints="NO" id="wbF-JI-ed3">
-                                                        <rect key="frame" x="56" y="79" width="23" height="23"/>
+                                                        <rect key="frame" x="347" y="86" width="25.5" height="25"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="wbF-JI-ed3" secondAttribute="height" multiplier="1:1" id="8zE-XI-8tb"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Earth" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5n-wl-XW9">
-                                                        <rect key="frame" x="0.0" y="81.5" width="56" height="17.5"/>
+                                                        <rect key="frame" x="0.0" y="90" width="347" height="17.5"/>
                                                         <fontDescription key="fontDescription" name="Iceberg-Regular" family="Iceberg" pointSize="14"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sGS-5b-zVX">
-                                                        <rect key="frame" x="81" y="6.5" width="79" height="17.5"/>
+                                                        <rect key="frame" x="374.5" y="8.5" width="372.5" height="16.5"/>
                                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -144,7 +147,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GTU-yo-cUh">
-                                                        <rect key="frame" x="81" y="6.5" width="79" height="17.5"/>
+                                                        <rect key="frame" x="374.5" y="8.5" width="372.5" height="16.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -156,16 +159,16 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AstrologyIcon_Base16_Spirit" translatesAutoresizingMaskIntoConstraints="NO" id="ac4-Ax-Mur">
-                                                        <rect key="frame" x="81" y="4" width="23" height="23"/>
+                                                        <rect key="frame" x="374.5" y="4" width="25.5" height="25.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spirit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yXM-E3-5cS">
-                                                        <rect key="frame" x="104" y="6.5" width="56" height="17.5"/>
+                                                        <rect key="frame" x="400" y="8.5" width="347" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="Iceberg-Regular" family="Iceberg" pointSize="14"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3VI-If-lfZ">
-                                                        <rect key="frame" x="81" y="31.5" width="79" height="17.5"/>
+                                                        <rect key="frame" x="374.5" y="35" width="372.5" height="17.5"/>
                                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -177,7 +180,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nFo-Yg-eLg">
-                                                        <rect key="frame" x="81" y="31.5" width="79" height="17.5"/>
+                                                        <rect key="frame" x="374.5" y="35" width="372.5" height="17.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -189,19 +192,19 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AstrologyIcon_Base16_Holy" translatesAutoresizingMaskIntoConstraints="NO" id="cth-hZ-jbH">
-                                                        <rect key="frame" x="81" y="29" width="23" height="23"/>
+                                                        <rect key="frame" x="374.5" y="31.5" width="25.5" height="25"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="cth-hZ-jbH" secondAttribute="height" multiplier="1:1" id="oky-dw-Emc"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Light" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YP6-BC-gxe">
-                                                        <rect key="frame" x="104" y="31.5" width="56" height="17.5"/>
+                                                        <rect key="frame" x="400" y="35" width="347" height="17.5"/>
                                                         <fontDescription key="fontDescription" name="Iceberg-Regular" family="Iceberg" pointSize="14"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pp2-xW-ocy">
-                                                        <rect key="frame" x="81" y="56.5" width="79" height="17.5"/>
+                                                        <rect key="frame" x="374.5" y="63" width="372.5" height="16.5"/>
                                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -213,7 +216,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fKh-Qc-au8">
-                                                        <rect key="frame" x="81" y="56.5" width="79" height="17.5"/>
+                                                        <rect key="frame" x="374.5" y="63" width="372.5" height="16.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -225,19 +228,19 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AstrologyIcon_Base16_Evil" translatesAutoresizingMaskIntoConstraints="NO" id="9Ui-jJ-yhD">
-                                                        <rect key="frame" x="81" y="54" width="23" height="23"/>
+                                                        <rect key="frame" x="374.5" y="58.5" width="25.5" height="25.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="9Ui-jJ-yhD" secondAttribute="height" multiplier="1:1" id="zFS-es-Xfc"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shadow" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="col-jT-sOY">
-                                                        <rect key="frame" x="104" y="56.5" width="56" height="17.5"/>
+                                                        <rect key="frame" x="400" y="63" width="347" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="Iceberg-Regular" family="Iceberg" pointSize="14"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ec-ax-Z9V">
-                                                        <rect key="frame" x="81" y="81.5" width="79" height="17.5"/>
+                                                        <rect key="frame" x="374.5" y="90" width="372.5" height="17.5"/>
                                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -249,7 +252,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eFc-Fg-OBO">
-                                                        <rect key="frame" x="81" y="81.5" width="79" height="17.5"/>
+                                                        <rect key="frame" x="374.5" y="90" width="372.5" height="17.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -261,19 +264,19 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AstrologyIcon_Base16_Body" translatesAutoresizingMaskIntoConstraints="NO" id="qBN-bo-1P9">
-                                                        <rect key="frame" x="81" y="79" width="23" height="23"/>
+                                                        <rect key="frame" x="374.5" y="86" width="25.5" height="25"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="qBN-bo-1P9" secondAttribute="height" multiplier="1:1" id="TW8-bS-RLz"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Soul" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PP9-TS-QFo">
-                                                        <rect key="frame" x="104" y="81.5" width="56" height="17.5"/>
+                                                        <rect key="frame" x="400" y="90" width="347" height="17.5"/>
                                                         <fontDescription key="fontDescription" name="Iceberg-Regular" family="Iceberg" pointSize="14"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="foo-UA-1aX">
-                                                        <rect key="frame" x="0.0" y="123.5" width="79" height="20"/>
+                                                        <rect key="frame" x="0.0" y="138.5" width="372.5" height="20"/>
                                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -285,7 +288,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dig-aq-TBn">
-                                                        <rect key="frame" x="0.0" y="123.5" width="79" height="20"/>
+                                                        <rect key="frame" x="0.0" y="138.5" width="372.5" height="20"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -297,14 +300,14 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AstrologyIcon_Base16_Core" translatesAutoresizingMaskIntoConstraints="NO" id="NqS-EU-PH1">
-                                                        <rect key="frame" x="56" y="122" width="23" height="23"/>
+                                                        <rect key="frame" x="347" y="136" width="25.5" height="25"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="NqS-EU-PH1" secondAttribute="height" multiplier="1:1" id="ETV-qB-w6z"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Core" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qFC-Te-wYI">
-                                                        <rect key="frame" x="0.0" y="123.5" width="56" height="20"/>
+                                                        <rect key="frame" x="0.0" y="138.5" width="347" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="STP-ng-xmw"/>
                                                         </constraints>
@@ -312,7 +315,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FML-k6-30X">
-                                                        <rect key="frame" x="0.0" y="149.5" width="79" height="17.5"/>
+                                                        <rect key="frame" x="0.0" y="167" width="372.5" height="17.5"/>
                                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -324,7 +327,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uJq-bS-exh">
-                                                        <rect key="frame" x="0.0" y="149.5" width="79" height="17.5"/>
+                                                        <rect key="frame" x="0.0" y="167" width="372.5" height="17.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -336,16 +339,16 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AstrologyIcon_Base16_Alpha" translatesAutoresizingMaskIntoConstraints="NO" id="zAm-Lp-luX">
-                                                        <rect key="frame" x="56" y="147" width="23" height="23"/>
+                                                        <rect key="frame" x="347" y="163" width="25.5" height="25.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alpha" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jaI-Ly-uxC">
-                                                        <rect key="frame" x="0.0" y="149.5" width="56" height="17.5"/>
+                                                        <rect key="frame" x="0.0" y="167" width="347" height="17.5"/>
                                                         <fontDescription key="fontDescription" name="Iceberg-Regular" family="Iceberg" pointSize="14"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oVL-jA-SZg">
-                                                        <rect key="frame" x="0.0" y="174.5" width="79" height="17.5"/>
+                                                        <rect key="frame" x="0.0" y="194.5" width="372.5" height="17.5"/>
                                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -357,7 +360,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PJF-OO-Mog">
-                                                        <rect key="frame" x="0.0" y="174.5" width="79" height="17.5"/>
+                                                        <rect key="frame" x="0.0" y="194.5" width="372.5" height="17.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -369,16 +372,16 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AstrologyIcon_Base16_Order" translatesAutoresizingMaskIntoConstraints="NO" id="ESE-t7-4u7">
-                                                        <rect key="frame" x="56" y="172" width="23" height="23"/>
+                                                        <rect key="frame" x="347" y="190.5" width="25.5" height="25"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xuj-vS-lpP">
-                                                        <rect key="frame" x="0.0" y="174.5" width="56" height="17.5"/>
+                                                        <rect key="frame" x="0.0" y="194.5" width="347" height="17.5"/>
                                                         <fontDescription key="fontDescription" name="Iceberg-Regular" family="Iceberg" pointSize="14"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4id-yg-xtV">
-                                                        <rect key="frame" x="0.0" y="205.5" width="79" height="17.5"/>
+                                                        <rect key="frame" x="0.0" y="228" width="372.5" height="16.5"/>
                                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -390,16 +393,16 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AstrologyIcon_Base16_Nether" translatesAutoresizingMaskIntoConstraints="NO" id="7es-so-Iau">
-                                                        <rect key="frame" x="56" y="203" width="23" height="23"/>
+                                                        <rect key="frame" x="347" y="223.5" width="25.5" height="25.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZK-r1-hlv">
-                                                        <rect key="frame" x="0.0" y="205.5" width="56" height="17.5"/>
+                                                        <rect key="frame" x="0.0" y="228" width="347" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="Iceberg-Regular" family="Iceberg" pointSize="14"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MPI-7I-xvP">
-                                                        <rect key="frame" x="81" y="124.5" width="79" height="17.5"/>
+                                                        <rect key="frame" x="374.5" y="140" width="372.5" height="17"/>
                                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -411,7 +414,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QlX-l2-7hP">
-                                                        <rect key="frame" x="81" y="124.5" width="79" height="17.5"/>
+                                                        <rect key="frame" x="374.5" y="140" width="372.5" height="17"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -423,16 +426,16 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AstrologyIcon_Base16_Void" translatesAutoresizingMaskIntoConstraints="NO" id="vRv-FN-9VP">
-                                                        <rect key="frame" x="81" y="122" width="23" height="23"/>
+                                                        <rect key="frame" x="374.5" y="136" width="25.5" height="25"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Void" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ZY-af-pjw">
-                                                        <rect key="frame" x="104" y="124.5" width="56" height="17.5"/>
+                                                        <rect key="frame" x="400" y="140" width="347" height="17"/>
                                                         <fontDescription key="fontDescription" name="Iceberg-Regular" family="Iceberg" pointSize="14"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J9t-lh-oIJ">
-                                                        <rect key="frame" x="81" y="149.5" width="79" height="17.5"/>
+                                                        <rect key="frame" x="374.5" y="167" width="372.5" height="17.5"/>
                                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -444,7 +447,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zuo-N6-hdS">
-                                                        <rect key="frame" x="81" y="149.5" width="79" height="17.5"/>
+                                                        <rect key="frame" x="374.5" y="167" width="372.5" height="17.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -456,16 +459,16 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AstrologyIcon_Base16_Omega" translatesAutoresizingMaskIntoConstraints="NO" id="LwK-3S-Hbu">
-                                                        <rect key="frame" x="81" y="147" width="23" height="23"/>
+                                                        <rect key="frame" x="374.5" y="163" width="25.5" height="25.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Omega" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gN5-2q-C9Z">
-                                                        <rect key="frame" x="104" y="149.5" width="56" height="17.5"/>
+                                                        <rect key="frame" x="400" y="167" width="347" height="17.5"/>
                                                         <fontDescription key="fontDescription" name="Iceberg-Regular" family="Iceberg" pointSize="14"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GDB-8H-OJW">
-                                                        <rect key="frame" x="81" y="174.5" width="79" height="17.5"/>
+                                                        <rect key="frame" x="374.5" y="194.5" width="372.5" height="17.5"/>
                                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -477,7 +480,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9g9-St-GMX">
-                                                        <rect key="frame" x="81" y="174.5" width="79" height="17.5"/>
+                                                        <rect key="frame" x="374.5" y="194.5" width="372.5" height="17.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -489,16 +492,16 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AstrologyIcon_Base16_Chaos" translatesAutoresizingMaskIntoConstraints="NO" id="ppy-hz-ZzO">
-                                                        <rect key="frame" x="81" y="172" width="23" height="23"/>
+                                                        <rect key="frame" x="374.5" y="190.5" width="25.5" height="25"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chaos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQd-Jx-iDn">
-                                                        <rect key="frame" x="104" y="174.5" width="56" height="17.5"/>
+                                                        <rect key="frame" x="400" y="194.5" width="347" height="17.5"/>
                                                         <fontDescription key="fontDescription" name="Iceberg-Regular" family="Iceberg" pointSize="14"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iQd-Ey-Zgk">
-                                                        <rect key="frame" x="81" y="205.5" width="79" height="17.5"/>
+                                                        <rect key="frame" x="374.5" y="228" width="372.5" height="16.5"/>
                                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -510,16 +513,16 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AstrologyIcon_Base16_Aether" translatesAutoresizingMaskIntoConstraints="NO" id="4hP-f3-SW1">
-                                                        <rect key="frame" x="81" y="203" width="23" height="23"/>
+                                                        <rect key="frame" x="374.5" y="223.5" width="25.5" height="25.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Many" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uT0-Di-7Cj">
-                                                        <rect key="frame" x="104" y="205.5" width="56" height="17.5"/>
+                                                        <rect key="frame" x="400" y="228" width="347" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="Iceberg-Regular" family="Iceberg" pointSize="14"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zHo-NW-K5u">
-                                                        <rect key="frame" x="79" y="0.0" width="2" height="230"/>
+                                                        <rect key="frame" x="372.5" y="0.0" width="2" height="253"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="2" id="QIc-QH-gxK"/>
@@ -746,7 +749,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AGb-Ic-jrI">
-                                                <rect key="frame" x="246" y="8" width="160" height="230"/>
+                                                <rect key="frame" x="269" y="8" width="747" height="253"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
                                                 <connections>
@@ -754,33 +757,33 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qna-Vv-oeT">
-                                                <rect key="frame" x="8" y="8" width="230" height="230"/>
+                                                <rect key="frame" x="8" y="8" width="253" height="253"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C4j-ZF-eaD">
-                                                        <rect key="frame" x="0.0" y="0.0" width="92" height="230"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="101" height="253"/>
                                                         <subviews>
                                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c0T-WX-Uaf">
-                                                                <rect key="frame" x="0.0" y="0.0" width="92" height="230"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="101" height="253"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <prototypes>
                                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ResonanceReportTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResonanceReportTableViewCell" rowHeight="73" id="SuK-RN-xER" customClass="ResonanceReportTableViewCell" customModule="CosmicCypher" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="44.5" width="92" height="73"/>
+                                                                        <rect key="frame" x="0.0" y="50" width="101" height="73"/>
                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SuK-RN-xER" id="Hbo-xK-72b">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="92" height="73"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="101" height="73"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <subviews>
                                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kEx-UI-DAr">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="92" height="73"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="101" height="73"/>
                                                                                     <subviews>
                                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HMn-56-rYr">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="92" height="49"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="101" height="49"/>
                                                                                             <subviews>
                                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AstrologyIcon_Planet_Mercury" translatesAutoresizingMaskIntoConstraints="NO" id="TyH-QX-Sed">
-                                                                                                    <rect key="frame" x="61.5" y="8" width="32.5" height="33"/>
+                                                                                                    <rect key="frame" x="70.5" y="8" width="32.5" height="33"/>
                                                                                                 </imageView>
                                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AstrologyIcon_Aspect_Eleventh" translatesAutoresizingMaskIntoConstraints="NO" id="Pri-e2-dYw">
-                                                                                                    <rect key="frame" x="23" y="1.5" width="46" height="46"/>
+                                                                                                    <rect key="frame" x="25.5" y="-1" width="50.5" height="50.5"/>
                                                                                                 </imageView>
                                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AstrologyIcon_Node_Sun" translatesAutoresizingMaskIntoConstraints="NO" id="k54-wP-vsv">
                                                                                                     <rect key="frame" x="-2" y="8" width="32.5" height="33"/>
@@ -789,25 +792,25 @@
                                                                                                     </constraints>
                                                                                                 </imageView>
                                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AstrologyIcon_Arkana_Aquarius" translatesAutoresizingMaskIntoConstraints="NO" id="jpK-zc-Y0e">
-                                                                                                    <rect key="frame" x="65.5" y="0.0" width="24.5" height="24.5"/>
+                                                                                                    <rect key="frame" x="74.5" y="0.0" width="24.5" height="24.5"/>
                                                                                                 </imageView>
                                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AstrologyIcon_Arkana_Aquarius" translatesAutoresizingMaskIntoConstraints="NO" id="huh-pE-WkL">
                                                                                                     <rect key="frame" x="2" y="0.0" width="24.5" height="24.5"/>
                                                                                                 </imageView>
                                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AstrologyIcon_Arkana_Taurus" translatesAutoresizingMaskIntoConstraints="NO" id="zbl-dQ-Lpj">
-                                                                                                    <rect key="frame" x="65.5" y="24.5" width="24.5" height="24.5"/>
+                                                                                                    <rect key="frame" x="74.5" y="24.5" width="24.5" height="24.5"/>
                                                                                                 </imageView>
                                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AstrologyIcon_Arkana_Taurus" translatesAutoresizingMaskIntoConstraints="NO" id="dO2-Sc-cMS">
                                                                                                     <rect key="frame" x="2" y="24.5" width="24.5" height="24.5"/>
                                                                                                 </imageView>
                                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="○ 0.9375" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6nf-tj-lFz">
-                                                                                                    <rect key="frame" x="21.5" y="42.5" width="49" height="6.5"/>
+                                                                                                    <rect key="frame" x="21.5" y="44.5" width="58" height="4.5"/>
                                                                                                     <fontDescription key="fontDescription" name="Iceberg-Regular" family="Iceberg" pointSize="12"/>
                                                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                     <nil key="highlightedColor"/>
                                                                                                 </label>
                                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;5/11&gt;" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Adf-J6-u7F">
-                                                                                                    <rect key="frame" x="21.5" y="0.0" width="49" height="9.5"/>
+                                                                                                    <rect key="frame" x="21.5" y="0.0" width="58" height="7"/>
                                                                                                     <fontDescription key="fontDescription" name="Iceberg-Regular" family="Iceberg" pointSize="12"/>
                                                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                     <nil key="highlightedColor"/>
@@ -853,16 +856,16 @@
                                                                                             </constraints>
                                                                                         </view>
                                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gon-hL-PIe">
-                                                                                            <rect key="frame" x="0.0" y="49" width="92" height="24"/>
+                                                                                            <rect key="frame" x="0.0" y="49" width="101" height="24"/>
                                                                                             <subviews>
                                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[+0.87º]⇧" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Bfi-Uh-cNq">
-                                                                                                    <rect key="frame" x="2" y="0.0" width="88" height="14.5"/>
+                                                                                                    <rect key="frame" x="2" y="0.0" width="97" height="14.5"/>
                                                                                                     <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="15"/>
                                                                                                     <nil key="textColor"/>
                                                                                                     <nil key="highlightedColor"/>
                                                                                                 </label>
                                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12.134%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hT8-rp-lDQ">
-                                                                                                    <rect key="frame" x="0.0" y="12.5" width="92" height="11.5"/>
+                                                                                                    <rect key="frame" x="0.0" y="12.5" width="101" height="11.5"/>
                                                                                                     <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="8"/>
                                                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                     <nil key="highlightedColor"/>
@@ -934,16 +937,16 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DtR-VF-Pdq">
-                                                        <rect key="frame" x="92" y="0.0" width="138" height="138"/>
+                                                        <rect key="frame" x="101" y="0.0" width="152" height="152"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SuperHeroGraphBG" translatesAutoresizingMaskIntoConstraints="NO" id="bng-bs-Xub">
-                                                                <rect key="frame" x="0.0" y="0.0" width="138" height="138"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="152" height="152"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="1"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </imageView>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xuL-7g-R20">
-                                                                <rect key="frame" x="0.0" y="0.0" width="138" height="138"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="152" height="152"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </view>
                                                         </subviews>
@@ -961,40 +964,40 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pvb-5G-6IV">
-                                                        <rect key="frame" x="92" y="138" width="138" height="92"/>
+                                                        <rect key="frame" x="101" y="152" width="152" height="101"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5mJ-V8-HU7">
-                                                                <rect key="frame" x="0.0" y="0.0" width="138" height="41"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="152" height="45.5"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AstrologyIcon_Arkana_Leo" translatesAutoresizingMaskIntoConstraints="NO" id="Wrh-QH-VBx">
-                                                                        <rect key="frame" x="48" y="0.0" width="41.5" height="41"/>
+                                                                        <rect key="frame" x="53.5" y="0.0" width="45.5" height="45.5"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="Wrh-QH-VBx" secondAttribute="height" multiplier="1:1" id="wq7-61-Lld"/>
                                                                         </constraints>
                                                                     </imageView>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AstrologyIcon_Arkana_Aries" translatesAutoresizingMaskIntoConstraints="NO" id="Srq-8b-rDU">
-                                                                        <rect key="frame" x="2.5" y="0.0" width="41" height="41"/>
+                                                                        <rect key="frame" x="3" y="0.0" width="45.5" height="45.5"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="Srq-8b-rDU" secondAttribute="height" multiplier="1:1" id="KD7-73-eul"/>
                                                                         </constraints>
                                                                     </imageView>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AstrologyIcon_Arkana_Sagittarius" translatesAutoresizingMaskIntoConstraints="NO" id="zS3-YT-ncJ">
-                                                                        <rect key="frame" x="94" y="0.0" width="41.5" height="41"/>
+                                                                        <rect key="frame" x="104" y="0.0" width="45.5" height="45.5"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="zS3-YT-ncJ" secondAttribute="height" multiplier="1:1" id="44E-7t-JfO"/>
                                                                         </constraints>
                                                                     </imageView>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AstrologyIcon_Arkana_Libra" translatesAutoresizingMaskIntoConstraints="NO" id="DcD-BT-jIc">
-                                                                        <rect key="frame" x="2.5" y="12.5" width="41" height="41"/>
+                                                                        <rect key="frame" x="3" y="13.5" width="45.5" height="45.5"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="DcD-BT-jIc" secondAttribute="height" multiplier="1:1" id="qio-r3-Jrr"/>
                                                                         </constraints>
                                                                     </imageView>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AstrologyIcon_Arkana_Aquarius" translatesAutoresizingMaskIntoConstraints="NO" id="Y3n-tS-OyC">
-                                                                        <rect key="frame" x="48" y="12.5" width="41.5" height="41"/>
+                                                                        <rect key="frame" x="53.5" y="13.5" width="45.5" height="45.5"/>
                                                                     </imageView>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AstrologyIcon_Arkana_Gemini" translatesAutoresizingMaskIntoConstraints="NO" id="UJ9-sG-WK0">
-                                                                        <rect key="frame" x="94" y="12.5" width="41.5" height="41"/>
+                                                                        <rect key="frame" x="104" y="13.5" width="45.5" height="45.5"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="UJ9-sG-WK0" secondAttribute="height" multiplier="1:1" id="jwo-XR-CvD"/>
                                                                         </constraints>
@@ -1022,31 +1025,31 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MDL-TT-cIJ">
-                                                                <rect key="frame" x="0.0" y="50.5" width="138" height="41.5"/>
+                                                                <rect key="frame" x="0.0" y="55.5" width="152" height="45.5"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AstrologyIcon_Arkana_Cancer" translatesAutoresizingMaskIntoConstraints="NO" id="7cr-TR-xIF">
-                                                                        <rect key="frame" x="2.5" y="0.0" width="41" height="41.5"/>
+                                                                        <rect key="frame" x="3" y="0.0" width="45.5" height="45.5"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="7cr-TR-xIF" secondAttribute="height" multiplier="1:1" id="8cf-8f-rJd"/>
                                                                         </constraints>
                                                                     </imageView>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AstrologyIcon_Arkana_Scorpio" translatesAutoresizingMaskIntoConstraints="NO" id="hCU-Ug-piL">
-                                                                        <rect key="frame" x="48" y="0.0" width="41.5" height="41.5"/>
+                                                                        <rect key="frame" x="53.5" y="0.0" width="45.5" height="45.5"/>
                                                                     </imageView>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AstrologyIcon_Arkana_Pisces" translatesAutoresizingMaskIntoConstraints="NO" id="5wz-SJ-K5u">
-                                                                        <rect key="frame" x="94" y="0.0" width="41.5" height="41.5"/>
+                                                                        <rect key="frame" x="104" y="0.0" width="45.5" height="45.5"/>
                                                                     </imageView>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AstrologyIcon_Arkana_Capricorn" translatesAutoresizingMaskIntoConstraints="NO" id="efp-n5-7Nl">
-                                                                        <rect key="frame" x="2.5" y="-14.5" width="41" height="41.5"/>
+                                                                        <rect key="frame" x="3" y="-16" width="45.5" height="45.5"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="efp-n5-7Nl" secondAttribute="height" multiplier="1:1" id="1zS-qk-ZUr"/>
                                                                         </constraints>
                                                                     </imageView>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AstrologyIcon_Arkana_Taurus" translatesAutoresizingMaskIntoConstraints="NO" id="eR4-AG-R2Y">
-                                                                        <rect key="frame" x="48" y="-14.5" width="41.5" height="41.5"/>
+                                                                        <rect key="frame" x="53.5" y="-16" width="45.5" height="45.5"/>
                                                                     </imageView>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AstrologyIcon_Arkana_Virgo" translatesAutoresizingMaskIntoConstraints="NO" id="vNS-oR-BoN">
-                                                                        <rect key="frame" x="94" y="-14.5" width="41.5" height="41.5"/>
+                                                                        <rect key="frame" x="104" y="-16" width="45.5" height="45.5"/>
                                                                     </imageView>
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1075,19 +1078,19 @@
                                                                 </constraints>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100.0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OqI-fh-SB5">
-                                                                <rect key="frame" x="46" y="41" width="45.5" height="9.5"/>
+                                                                <rect key="frame" x="51" y="45.5" width="50" height="10"/>
                                                                 <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="11"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100.0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IyM-Ay-0Gf">
-                                                                <rect key="frame" x="0.0" y="41" width="46" height="9.5"/>
+                                                                <rect key="frame" x="0.0" y="45.5" width="51" height="10"/>
                                                                 <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="11"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100.0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eFH-wu-enF">
-                                                                <rect key="frame" x="91.5" y="41" width="46.5" height="9.5"/>
+                                                                <rect key="frame" x="101" y="45.5" width="51" height="10"/>
                                                                 <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="11"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -1165,14 +1168,14 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R0Z-bS-oMR" userLabel="MidView">
-                                        <rect key="frame" x="52" y="254" width="310.5" height="310.5"/>
+                                        <rect key="frame" x="128" y="277" width="768" height="768"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CosmicAlignmentDisk_chevrons_outlineColor" translatesAutoresizingMaskIntoConstraints="NO" id="3TE-We-Mdz">
-                                                <rect key="frame" x="0.0" y="0.0" width="310.5" height="310.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="768" height="768"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
                                             <skView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e1s-Uh-xQh">
-                                                <rect key="frame" x="0.0" y="0.0" width="310.5" height="310.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="768" height="768"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <gestureRecognizers/>
                                                 <connections>
@@ -1182,13 +1185,13 @@
                                                 </connections>
                                             </skView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dxI-XR-Ff8">
-                                                <rect key="frame" x="0.0" y="0.0" width="310.5" height="310.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="768" height="768"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="dxI-XR-Ff8" secondAttribute="height" id="1SG-WL-Nbn"/>
                                                 </constraints>
                                             </imageView>
                                             <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="32U-hg-Bim">
-                                                <rect key="frame" x="124.5" y="150" width="61" height="10"/>
+                                                <rect key="frame" x="309" y="379" width="150" height="10"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="10" id="DvO-DB-cml"/>
                                                 </constraints>
@@ -1199,7 +1202,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </progressView>
                                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Kr6-WV-Pf2">
-                                                <rect key="frame" x="123" y="123" width="64" height="64"/>
+                                                <rect key="frame" x="352" y="352" width="64" height="64"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="64" id="4Kl-sk-gvR"/>
                                                     <constraint firstAttribute="height" constant="64" id="FtY-7G-hm9"/>
@@ -1207,7 +1210,7 @@
                                                 <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </activityIndicatorView>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rendering..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D0E-zr-Yfy">
-                                                <rect key="frame" x="118.5" y="175.5" width="73.5" height="11.5"/>
+                                                <rect key="frame" x="347" y="404.5" width="74" height="11.5"/>
                                                 <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="12"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -1237,35 +1240,35 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5WF-Xc-bDp" userLabel="BottomView">
-                                        <rect key="frame" x="0.0" y="572.5" width="414" height="245.5"/>
+                                        <rect key="frame" x="0.0" y="1053" width="1024" height="269"/>
                                         <subviews>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" canCancelContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="xlI-qC-f89">
-                                                <rect key="frame" x="20" y="20" width="374" height="205.5"/>
+                                                <rect key="frame" x="20" y="20" width="984" height="229"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TimeStreamCompositeTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" showsReorderControl="YES" indentationWidth="10" reuseIdentifier="TimeStreamCompositeTableViewCell" rowHeight="128" id="Yeu-Yg-s2U" customClass="TimeStreamCompositeTableViewCell" customModule="CosmicCypher" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="44.5" width="374" height="128"/>
+                                                        <rect key="frame" x="0.0" y="50" width="984" height="128"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Yeu-Yg-s2U" id="xKP-7E-cZg">
-                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="128"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="984" height="128"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="um2-Ug-gd1">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="91" height="128"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Oa-Vx-JZy">
-                                                                            <rect key="frame" x="2" y="23" width="87" height="11.5"/>
+                                                                            <rect key="frame" x="2" y="23" width="236" height="11.5"/>
                                                                             <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="12"/>
                                                                             <color key="textColor" systemColor="secondaryLabelColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="twC-ak-F5T">
-                                                                            <rect key="frame" x="4" y="4" width="83" height="19"/>
+                                                                            <rect key="frame" x="4" y="4" width="232" height="19"/>
                                                                             <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="20"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="clip" pointerInteraction="YES" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xtb-LG-RcJ">
-                                                                            <rect key="frame" x="2" y="34.5" width="87" height="28"/>
+                                                                            <rect key="frame" x="2" y="34.5" width="236" height="28"/>
                                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="28" id="fK9-bb-g07"/>
@@ -1291,7 +1294,7 @@
                                                                             </userDefinedRuntimeAttributes>
                                                                         </button>
                                                                         <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="100" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QxT-X5-swl">
-                                                                            <rect key="frame" x="3" y="92" width="41" height="16"/>
+                                                                            <rect key="frame" x="3" y="92" width="108" height="16"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="16" id="Npk-k5-S5d"/>
                                                                             </constraints>
@@ -1299,7 +1302,7 @@
                                                                             <textInputTraits key="textInputTraits"/>
                                                                         </textField>
                                                                         <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iRM-7F-qr0">
-                                                                            <rect key="frame" x="8" y="110" width="75" height="16"/>
+                                                                            <rect key="frame" x="8" y="110" width="224" height="16"/>
                                                                             <state key="normal" title="Button"/>
                                                                             <buttonConfiguration key="configuration" style="filled">
                                                                                 <attributedString key="attributedTitle">
@@ -1313,7 +1316,7 @@
                                                                             </buttonConfiguration>
                                                                         </button>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Samples" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HnH-kk-7cR">
-                                                                            <rect key="frame" x="3" y="82.5" width="41" height="9.5"/>
+                                                                            <rect key="frame" x="3" y="82.5" width="108" height="9.5"/>
                                                                             <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="10"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
@@ -1350,17 +1353,17 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </view>
                                                                 <skView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cZH-gB-Eik">
-                                                                    <rect key="frame" x="91" y="0.0" width="283" height="128"/>
+                                                                    <rect key="frame" x="240" y="0.0" width="744" height="128"/>
                                                                 </skView>
                                                                 <view hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wpm-Xl-wzy">
-                                                                    <rect key="frame" x="91" y="0.0" width="283" height="128"/>
+                                                                    <rect key="frame" x="240" y="0.0" width="744" height="128"/>
                                                                     <subviews>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="410-8G-vL0">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="283" height="128"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="744" height="128"/>
                                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                         </view>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calculating Gravimetrics..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="INX-0j-3RA">
-                                                                            <rect key="frame" x="60" y="45.5" width="163" height="11.5"/>
+                                                                            <rect key="frame" x="290.5" y="45.5" width="163" height="11.5"/>
                                                                             <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="12"/>
                                                                             <color key="textColor" systemColor="systemBackgroundColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -1377,10 +1380,10 @@
                                                                     </constraints>
                                                                 </view>
                                                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6Rd-IA-vlb">
-                                                                    <rect key="frame" x="112" y="62" width="150" height="4"/>
+                                                                    <rect key="frame" x="294.5" y="62" width="395" height="4"/>
                                                                 </progressView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calculating Harmonics..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dar-oz-eaF">
-                                                                    <rect key="frame" x="113" y="68" width="148.5" height="11.5"/>
+                                                                    <rect key="frame" x="418" y="68" width="148" height="11.5"/>
                                                                     <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="12"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -1419,14 +1422,14 @@
                                                         </connections>
                                                     </tableViewCell>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TimeStreamAddNewCompositeTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimeStreamAddNewCompositeTableViewCell" rowHeight="137" id="fGT-pN-bTV" customClass="TimeStreamAddNewCompositeTableViewCell" customModule="CosmicCypher" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="172.5" width="374" height="137"/>
+                                                        <rect key="frame" x="0.0" y="178" width="984" height="137"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fGT-pN-bTV" id="Leb-Bd-dyc">
-                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="137"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="984" height="137"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2R-Xn-BI9">
-                                                                    <rect key="frame" x="172" y="22" width="30.5" height="59"/>
+                                                                    <rect key="frame" x="477" y="22" width="30.5" height="59"/>
                                                                     <attributedString key="attributedText">
                                                                         <fragment content="+">
                                                                             <attributes>
@@ -1438,7 +1441,7 @@
                                                                     <color key="highlightedColor" systemColor="labelColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ne-XR-DUf">
-                                                                    <rect key="frame" x="116.5" y="69" width="141.5" height="16"/>
+                                                                    <rect key="frame" x="421" y="69" width="142" height="16"/>
                                                                     <attributedString key="attributedText">
                                                                         <fragment content="Add Timestream">
                                                                             <attributes>
@@ -1461,7 +1464,7 @@
                                                 </prototypes>
                                             </tableView>
                                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="47y-TB-KsZ">
-                                                <rect key="frame" x="188.5" y="104" width="37" height="37"/>
+                                                <rect key="frame" x="493.5" y="116" width="37" height="37"/>
                                                 <color key="color" systemColor="systemGray2Color"/>
                                             </activityIndicatorView>
                                         </subviews>
@@ -1476,7 +1479,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ija-bO-JsC">
-                                        <rect key="frame" x="62" y="254" width="200" height="70"/>
+                                        <rect key="frame" x="153.5" y="277" width="200" height="70"/>
                                         <color key="backgroundColor" systemColor="tertiaryLabelColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="6FD-lX-KIi"/>
@@ -1491,7 +1494,7 @@ Time:  10:51:55</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S8T-cw-Gnc">
-                                        <rect key="frame" x="0.0" y="246" width="62" height="62"/>
+                                        <rect key="frame" x="0.0" y="269" width="153.5" height="153.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="S8T-cw-Gnc" secondAttribute="height" multiplier="1:1" id="Z7t-4X-gyw"/>
                                         </constraints>
@@ -1501,28 +1504,28 @@ Time:  10:51:55</string>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E1d-3W-cqr">
-                                        <rect key="frame" x="352" y="246" width="62" height="62"/>
+                                        <rect key="frame" x="870.5" y="269" width="153.5" height="153.5"/>
                                         <state key="normal" image="ResonantFinder-CircleButtons-instructions"/>
                                         <connections>
                                             <action selector="instructionsButtonTouch:" destination="0dJ-eA-Nbr" eventType="touchUpInside" id="p5A-9V-tQ0"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsA-NX-W5Y">
-                                        <rect key="frame" x="0.0" y="510" width="62" height="62.5"/>
+                                        <rect key="frame" x="0.0" y="899.5" width="153.5" height="153.5"/>
                                         <state key="normal" image="ResonantFinder-CircleButtons-settings"/>
                                         <connections>
                                             <action selector="settingsButtonTouch:" destination="0dJ-eA-Nbr" eventType="touchUpInside" id="Ccv-X2-7TR"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6kO-gU-B14">
-                                        <rect key="frame" x="352" y="510" width="62" height="62.5"/>
+                                        <rect key="frame" x="870.5" y="899.5" width="153.5" height="153.5"/>
                                         <state key="normal" image="ResonantFinder-CircleButton-PlanetSelect"/>
                                         <connections>
                                             <action selector="planetSelectButtonTouch:" destination="0dJ-eA-Nbr" eventType="touchUpInside" id="SQZ-i4-p2w"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVK-M8-eDC">
-                                        <rect key="frame" x="320" y="316" width="74" height="31"/>
+                                        <rect key="frame" x="927.5" y="430.5" width="76.5" height="34"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" imagePlacement="trailing" title="Share" imagePadding="0.0" cornerStyle="capsule">
@@ -1557,7 +1560,7 @@ Time:  10:51:55</string>
                                     <constraint firstItem="E1d-3W-cqr" firstAttribute="width" secondItem="E1d-3W-cqr" secondAttribute="height" multiplier="1:1" id="QNn-kc-jkf"/>
                                     <constraint firstItem="Ija-bO-JsC" firstAttribute="top" secondItem="so5-qc-Ftd" secondAttribute="bottom" constant="8" symbolic="YES" id="QmN-5k-5FO"/>
                                     <constraint firstItem="5WF-Xc-bDp" firstAttribute="leading" secondItem="b7b-WO-Abr" secondAttribute="leading" id="T3O-um-dPE"/>
-                                    <constraint firstItem="nVK-M8-eDC" firstAttribute="top" secondItem="E1d-3W-cqr" secondAttribute="bottom" constant="8" symbolic="YES" id="Tti-tj-phk"/>
+                                    <constraint firstItem="nVK-M8-eDC" firstAttribute="top" secondItem="E1d-3W-cqr" secondAttribute="bottom" constant="20" symbolic="YES" id="Tti-tj-phk"/>
                                     <constraint firstAttribute="bottom" secondItem="5WF-Xc-bDp" secondAttribute="bottom" id="W7Q-i5-QzX"/>
                                     <constraint firstAttribute="trailing" secondItem="E1d-3W-cqr" secondAttribute="trailing" id="X4u-xv-y0e"/>
                                     <constraint firstItem="5WF-Xc-bDp" firstAttribute="top" secondItem="rsA-NX-W5Y" secondAttribute="bottom" id="b7J-vS-nZh"/>
@@ -1577,7 +1580,7 @@ Time:  10:51:55</string>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jordan Trana 2022 - For Starcom Use" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wiq-2Z-c8O">
-                                <rect key="frame" x="16" y="862" width="382" height="21"/>
+                                <rect key="frame" x="16" y="1346" width="992" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="7G9-o9-yJm"/>
                                 </constraints>
@@ -1692,7 +1695,7 @@ Time:  10:51:55</string>
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="88.405797101449281" y="147.32142857142856"/>
+            <point key="canvasLocation" x="103.69942196531792" y="214.44547996272135"/>
         </scene>
     </scenes>
     <resources>
@@ -1736,7 +1739,7 @@ Time:  10:51:55</string>
         <image name="arrow.right.square" catalog="system" width="128" height="114"/>
         <image name="filemenu.and.selection" catalog="system" width="128" height="93"/>
         <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1760,7 +1763,7 @@ Time:  10:51:55</string>
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

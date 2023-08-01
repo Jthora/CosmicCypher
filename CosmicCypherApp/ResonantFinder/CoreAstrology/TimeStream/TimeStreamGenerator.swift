@@ -210,7 +210,7 @@ extension TimeStream {
                 case .thisYear: return [.sun,.venus,.mercury]
                 case .thisSolarCycle: return [.sun,.mars,.jupiter]
                 case .thisJupiterSaturnPhase: return [.jupiter,.saturn]
-                case .thisYugaCycle: return [.pluto]
+                case .thisYugaCycle: return [.uranus,.neptune]
                 case .thisUranusNeptunePhase: return [.uranus,.neptune]
                 case .interPersonal: return [.ascendant,.moon,.sun]
                 case .intraPersonal: return [.ascendant,.moon,.sun]

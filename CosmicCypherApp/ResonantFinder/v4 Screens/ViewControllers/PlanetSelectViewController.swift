@@ -10,10 +10,14 @@ import UIKit
 
 class PlanetSelectViewController: UIViewController {
     
-    static func presentModally(over presentingViewController: UIViewController) {
+    var selectionContext:SelectionContext = .starChart
+    var onDismiss:(()->())? = nil
+    static func presentModally(over presentingViewController: UIViewController, selectionContext: SelectionContext, onDismiss: (()->())? = nil) {
         guard let vc = UIStoryboard(name: "PlanetSelect", bundle: nil).instantiateViewController(withIdentifier: "PlanetSelectViewController") as? PlanetSelectViewController else {
             return
         }
+        vc.selectionContext = selectionContext
+        vc.onDismiss = onDismiss
         presentingViewController.present(vc, animated: true) {
             
         }
@@ -21,6 +25,9 @@ class PlanetSelectViewController: UIViewController {
     
     @IBOutlet weak var planetCollectionView: UICollectionView!
     @IBOutlet weak var aspectCollectionView: UICollectionView!
+    
+    var initialSelectedAspectAngles: [CoreAstrology.AspectRelationType] = []
+    var initialSelectedNodeTypes: [CoreAstrology.AspectBody.NodeType] = []
     
     override func viewDidLoad() {
         planetCollectionView.delegate = self
@@ -31,11 +38,35 @@ class PlanetSelectViewController: UIViewController {
         
         planetCollectionView.collectionViewLayout = createGridLayout()
         aspectCollectionView.collectionViewLayout = createGridLayout()
+        
+        switch selectionContext {
+        case .starChart:
+            initialSelectedAspectAngles = StarChart.Core.selectedAspects
+            initialSelectedNodeTypes = StarChart.Core.selectedNodeTypes
+        case .aspectScanner:
+            initialSelectedAspectAngles = AspectEventScanner.Core.aspectAngles
+            initialSelectedNodeTypes = AspectEventScanner.Core.planetsAndNodes
+        }
     }
     override func viewWillDisappear(_ animated: Bool) {
-        DispatchQueue.main.async {
-            ResonanceReportViewController.current?.renderStarChart()
+        switch selectionContext {
+        case .starChart:
+            DispatchQueue.main.async {
+                ResonanceReportViewController.current?.renderStarChart()
+            }
+        case .aspectScanner:
+            if initialSelectedAspectAngles != AspectEventScanner.Core.aspectAngles {
+                DispatchQueue.main.async {
+                    AspectEventScanner.Core.console.updatedAspectAngles()
+                }
+            }
+            if initialSelectedNodeTypes != AspectEventScanner.Core.planetsAndNodes {
+                DispatchQueue.main.async {
+                    AspectEventScanner.Core.console.updatedPlanetsAndNodes()
+                }
+            }
         }
+        onDismiss?()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -69,8 +100,12 @@ extension PlanetSelectViewController: UICollectionViewDelegate {
             print("PlanetCollectionViewCell error: no cell for indexPath.row \(indexPath.row)")
             return
         }
-        DispatchQueue.main.async {
-            ResonanceReportViewController.current?.update()
+        switch selectionContext {
+        case .starChart:
+            DispatchQueue.main.async {
+                ResonanceReportViewController.current?.update()
+            }
+        case .aspectScanner: ()
         }
     }
 }
@@ -87,34 +122,58 @@ extension PlanetSelectViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == planetCollectionView {
             if let cell: PlanetCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlanetCollectionViewCell", for: indexPath) as? PlanetCollectionViewCell {
+                cell.selectionContext = selectionContext
                 cell.planet = CoreAstrology.AspectBody.NodeType.allCases[indexPath.row]
                 if let planet = cell.planet {
-                    cell.planetSelected = StarChart.Core.selectedNodeTypes.contains(planet)
+                    switch selectionContext {
+                    case .starChart:
+                        cell.planetSelected = StarChart.Core.selectedNodeTypes.contains(planet)
+                    case .aspectScanner:
+                        cell.planetSelected = AspectEventScanner.Core.planetsAndNodes.contains(planet)
+                    }
                     cell.setSelectedState(selected: cell.planetSelected)
                 }
                 return cell
             } else {
                 let cell = PlanetCollectionViewCell()
+                cell.selectionContext = selectionContext
                 cell.planet = CoreAstrology.AspectBody.NodeType.allCases[indexPath.row]
                 if let planet = cell.planet {
-                    cell.planetSelected = StarChart.Core.selectedNodeTypes.contains(planet)
+                    switch selectionContext {
+                    case .starChart:
+                        cell.planetSelected = StarChart.Core.selectedNodeTypes.contains(planet)
+                    case .aspectScanner:
+                        cell.planetSelected = AspectEventScanner.Core.planetsAndNodes.contains(planet)
+                    }
                     cell.setSelectedState(selected: cell.planetSelected)
                 }
                 return cell
             }
         } else if collectionView == aspectCollectionView {
             if let cell: AspectCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "AspectCollectionViewCell", for: indexPath) as? AspectCollectionViewCell {
+                cell.selectionContext = selectionContext
                 cell.aspectRelationType = CoreAstrology.AspectRelationType.allCases[indexPath.row]
                 if let aspectRelationType = cell.aspectRelationType {
-                    cell.aspectSelected = StarChart.Core.selectedAspects.contains(aspectRelationType)
+                    switch selectionContext {
+                    case .starChart:
+                        cell.aspectSelected = StarChart.Core.selectedAspects.contains(aspectRelationType)
+                    case .aspectScanner:
+                        cell.aspectSelected = AspectEventScanner.Core.aspectAngles.contains(aspectRelationType)
+                    }
                     cell.setSelectedState(selected: cell.aspectSelected)
                 }
                 return cell
             } else {
                 let cell = AspectCollectionViewCell()
+                cell.selectionContext = selectionContext
                 cell.aspectRelationType = CoreAstrology.AspectRelationType.allCases[indexPath.row]
                 if let aspectRelationType = cell.aspectRelationType {
-                    cell.aspectSelected = StarChart.Core.selectedAspects.contains(aspectRelationType)
+                    switch selectionContext {
+                    case .starChart:
+                        cell.aspectSelected = StarChart.Core.selectedAspects.contains(aspectRelationType)
+                    case .aspectScanner:
+                        cell.aspectSelected = AspectEventScanner.Core.aspectAngles.contains(aspectRelationType)
+                    }
                     cell.setSelectedState(selected: cell.aspectSelected)
                 }
                 return cell
@@ -123,5 +182,13 @@ extension PlanetSelectViewController: UICollectionViewDataSource {
             let cell = UICollectionViewCell()
             return cell
         }
+    }
+}
+
+
+extension PlanetSelectViewController {
+    enum SelectionContext {
+        case starChart
+        case aspectScanner
     }
 }

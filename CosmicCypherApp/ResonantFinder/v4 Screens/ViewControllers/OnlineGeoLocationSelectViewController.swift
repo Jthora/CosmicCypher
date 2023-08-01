@@ -2,7 +2,7 @@
 //  OnlineGeoLocationSelectViewController.swift
 //  CosmicCypher
 //
-//  Created by Jordan Trana on 6/29/22.
+//  Created by Jordan Trana on 7/22/23.
 //
 
 import UIKit
@@ -12,10 +12,13 @@ import TimeZoneLocate
 
 class OnlineGeoLocationSelectViewController: UIViewController, UISearchBarDelegate, UITextFieldDelegate {
     
-    static func presentModally(over presentingViewController: UIViewController) {
-        guard let vc = UIStoryboard(name: "StarChartSelect", bundle: nil).instantiateViewController(withIdentifier: "OnlineGeoLocationSelectViewController") as? OnlineGeoLocationSelectViewController else {
+    var originViewController:UIViewController? = nil
+    
+    static func presentModally(over presentingViewController: UIViewController, originViewController: UIViewController?) {
+        guard let vc = UIStoryboard(name: "GeoLocationSelect", bundle: nil).instantiateViewController(withIdentifier: "OnlineGeoLocationSelectViewController") as? OnlineGeoLocationSelectViewController else {
             return
         }
+        vc.originViewController = originViewController
         presentingViewController.present(vc, animated: true) {
             
         }
@@ -23,13 +26,13 @@ class OnlineGeoLocationSelectViewController: UIViewController, UISearchBarDelega
         
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var datePicker: UIDatePicker!
-    @IBOutlet weak var timePicker: UIDatePicker!
     @IBOutlet weak var latitudeTextField: UITextField!
     @IBOutlet weak var longitudeTextField: UITextField!
     @IBOutlet weak var touchZoneView: UIView!
     @IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
     @IBOutlet weak var selectDateButton: UIButton!
+    
+    var dataMode:DataMode = .aspectEventScannerCore
     
     var searchController:UISearchController? = nil
     var annotation:MKAnnotation? = nil
@@ -41,16 +44,6 @@ class OnlineGeoLocationSelectViewController: UIViewController, UISearchBarDelega
     var pinAnnotationView:MKPinAnnotationView? = nil
     
     var delegate:FindLocationViewControllerDelegate? = nil
-    
-    static func presentModally(over presentingViewController: UIViewController, delegate:FindLocationViewControllerDelegate) {
-        guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FindLocationViewController") as? FindLocationViewController else {
-            return
-        }
-        presentingViewController.present(vc, animated: true) {
-            vc.delegate = delegate
-        }
-        
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,14 +55,6 @@ class OnlineGeoLocationSelectViewController: UIViewController, UISearchBarDelega
         
         latitudeTextField.text = "\(StarChart.Core.current.coordinates.latitude.value)"
         longitudeTextField.text = "\(-StarChart.Core.current.coordinates.longitude.value)"
-        
-        let timezone = StarChart.Core.current.coordinates.location.timeZone
-        
-        datePicker.timeZone = StarChart.Core.current.coordinates.location.timeZone
-        timePicker.timeZone = StarChart.Core.current.coordinates.location.timeZone
-        
-        datePicker.date = StarChart.Core.current.date//.convertToTimeZone(initTimeZone: <#T##TimeZone#>, timeZone: timezone)
-        timePicker.date = StarChart.Core.current.date
         
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -83,17 +68,10 @@ class OnlineGeoLocationSelectViewController: UIViewController, UISearchBarDelega
         ResonanceReportViewController.current?.renderStarChart()
     }
     
-    
-    @IBAction func cancelButtonTap(_ sender: UIButton) {
-        self.dismiss(animated: true) {
-            // Dismissed
-        }
-    }
-    
     @IBAction func selectButtonTap(_ sender: UIButton) {
         // Set Lat Long and Location Title to Main Screen
-        selectGeoDate()
-        self.view.window?.rootViewController?.dismiss(animated: true, completion: {
+        selectGeoLocation()
+        originViewController?.dismiss(animated: true, completion: {
             // Dismissed
         })
     }
@@ -212,25 +190,29 @@ class OnlineGeoLocationSelectViewController: UIViewController, UISearchBarDelega
         self.dismiss(animated: true, completion: nil)
     }
     
-    func selectGeoDate() {
-        let isLatLongSet:Bool
+    // Select GeoLocation
+    func selectGeoLocation() {
         let lat:Double
         let long:Double
         
+        // Handle different situations 
         if let latitude = latitudeTextField.text?.toDouble(),
         let longitude = longitudeTextField.text?.toDouble() {
             lat = latitude
             long = longitude
-            isLatLongSet = true
         } else {
-            lat = StarChart.Core.current.coordinates.location.coordinate.latitude
-            long = StarChart.Core.current.coordinates.location.coordinate.longitude
-            isLatLongSet = false
+            switch dataMode {
+            case .aspectEventScannerCore:
+                lat = AspectEventScanner.Core.coordinates.location.coordinate.latitude
+                long = AspectEventScanner.Core.coordinates.location.coordinate.longitude
+            case .starChartCore:
+                lat = StarChart.Core.current.coordinates.location.coordinate.latitude
+                long = StarChart.Core.current.coordinates.location.coordinate.longitude
+            }
         }
         
+        // Lat Long to Coordinate
         let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
-        
-        // Lat Long
         let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
         let coordinates = GeographicCoordinates(location)
         
@@ -238,49 +220,30 @@ class OnlineGeoLocationSelectViewController: UIViewController, UISearchBarDelega
         
         print(cityTitle)
         
-        let secondsFromGMT = Int(coordinate.longitude/180 * (60*60*12))
-        
-//        let timeZone: TimeZone
-//        if isLatLongSet {
-//            timeZone = location.timeZone
-//        } else {
-//            timeZone = TimeZone.current
-//        }
-        let timeZoneA = TimeZone(secondsFromGMT: 0)!
-        let timeZoneB = TimeZone(secondsFromGMT: -secondsFromGMT)!
-        let timeZoneC = TimeZone(secondsFromGMT: secondsFromGMT)!
-        let timeZoneD = TimeZone.current
-        let timeZone = location.timeZone
-        
-        print("timeZoneA: \(timeZoneA.secondsFromGMT())")
-        print("timeZoneB: \(timeZoneB.secondsFromGMT())")
-        print("timeZoneC: \(timeZoneC.secondsFromGMT())")
-        print("timeZoneD: \(timeZoneD.secondsFromGMT())")
-        print("timeZone: \(timeZone.secondsFromGMT())")
-        
-        let hour = timePicker.date.hour(timeZone: timeZone)
-        let offsetHour = timePicker.date.hour()
-        let minute = timePicker.date.minute(timeZone: timeZone)
-        let offsetMinute = timePicker.date.minute()
-
-        if var timeZoneDate = Date(year: datePicker.date.year,
-                                   month: datePicker.date.month,
-                                   day: datePicker.date.day,
-                                   timeZone: timeZone,
-                                   hour: hour,
-                                   minute: minute,
-                                   second: timePicker.date.second) {
-            print("OnlineGeoLocate: TimeZone Offset: \(timeZone.description)")
-            print("OnlineGeoLocate: datePicker date \(datePicker.date) - \(datePicker.date.formatted(date: .numeric, time: .complete))")
-            print("OnlineGeoLocate: timePicker time \(timePicker.date) - \(timePicker.date.formatted(date: .numeric, time: .complete))")
-            print("OnlineGeoLocate: current starchart changing \(timeZoneDate) - \(timeZoneDate.formatted(date: .numeric, time: .complete))")
-            
+        switch dataMode {
+        case .aspectEventScannerCore:
+            AspectEventScanner.Core.coordinates = coordinates
+        case .starChartCore:
+            let timeZoneDate = StarChart.Core.current.date
             StarChart.Core.current = StarChartRegistry.main.getStarChart(date: timeZoneDate, geographicCoordinates: coordinates, onComplete: { starChart in
                 ResonanceReportViewController.current?.update()
             })
-        } else {
-            print("OnlineGeoLocate: ERROR:: TimeZone Offset Missing")
         }
-        
+    }
+}
+
+
+extension OnlineGeoLocationSelectViewController {
+    enum DataMode {
+        case aspectEventScannerCore
+        case starChartCore
+    }
+                
+    func modeFor(_ object:AnyObject) -> OnlineGeoLocationSelectViewController.DataMode {
+        if object is AspectEventScanner.Core {
+            return .aspectEventScannerCore
+        } else {
+            return .starChartCore
+        }
     }
 }

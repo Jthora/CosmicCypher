@@ -16,6 +16,7 @@ class PlanetCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var topZodiacImageView: UIImageView!
     @IBOutlet weak var bottomZodiacImageView: UIImageView!
     
+    var selectionContext:PlanetSelectViewController.SelectionContext = .starChart
     
     var planet:CoreAstrology.AspectBody.NodeType? = nil {
         didSet {
@@ -43,14 +44,29 @@ class PlanetCollectionViewCell: UICollectionViewCell {
     
     func updateCore() {
         guard let planet = planet else { return }
-        if planetSelected {
-            if !StarChart.Core.selectedNodeTypes.contains(planet) {
-                StarChart.Core.selectedNodeTypes.append(planet)
+        switch selectionContext {
+        case .starChart:
+            if planetSelected {
+                if !StarChart.Core.selectedNodeTypes.contains(planet) {
+                    StarChart.Core.selectedNodeTypes.append(planet)
+                }
+            } else {
+                if StarChart.Core.selectedNodeTypes.contains(planet) {
+                    StarChart.Core.selectedNodeTypes.removeAll { planetType in
+                        planet == planetType
+                    }
+                }
             }
-        } else {
-            if StarChart.Core.selectedNodeTypes.contains(planet) {
-                StarChart.Core.selectedNodeTypes.removeAll { planetType in
-                    planet == planetType
+        case .aspectScanner:
+            if planetSelected {
+                if !AspectEventScanner.Core.planetsAndNodes.contains(planet) {
+                    AspectEventScanner.Core.planetsAndNodes.append(planet)
+                }
+            } else {
+                if AspectEventScanner.Core.planetsAndNodes.contains(planet) {
+                    AspectEventScanner.Core.planetsAndNodes.removeAll { planetType in
+                        planet == planetType
+                    }
                 }
             }
         }
@@ -116,7 +132,12 @@ class PlanetCollectionViewCell: UICollectionViewCell {
         }
         planetImageView.image = planet.image
         planetLabel.text = planet.text
-        planetSelected = StarChart.Core.selectedNodeTypes.contains(planet)
+        switch selectionContext {
+        case .starChart:
+            planetSelected = StarChart.Core.selectedNodeTypes.contains(planet)
+        case .aspectScanner:
+            planetSelected = AspectEventScanner.Core.planetsAndNodes.contains(planet)
+        }
         
         if let chevron = alignment?.createChevron() {
             topZodiacImageView.image = chevron.topZodiac.image

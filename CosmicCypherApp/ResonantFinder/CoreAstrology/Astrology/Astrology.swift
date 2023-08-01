@@ -246,6 +246,35 @@ open class CoreAstrology {
             }
         }
         
+        public var symbol:String {
+            switch self {
+            case .conjunction: return "☌"
+            case .opposition: return "☍"
+            case .trine: return "△"
+            case .square: return "☐"
+            case .quintile: return "⭐︎"
+            case .biquintile: return "⭐︎²"
+            case .sextile: return "✱"
+            case .septile: return "7¹"
+            case .biseptile: return "7²"
+            case .triseptile: return "7³"
+            case .semisquare: return "8¹"
+            case .bisemisquare: return "8³"
+            case .novile: return "9¹"
+            case .binovile: return "9²"
+            case .quadranovile: return "9⁴"
+            case .oneTenth: return "10¹"
+            case .threeTenth: return "10³"
+            case .oneEleventh: return "11¹"
+            case .twoEleventh: return "11²"
+            case .threeEleventh: return "11³"
+            case .fourEleventh: return "11⁴"
+            case .fiveEleventh: return "11⁵"
+            case .oneTwelfth: return "12¹"
+            case .fiveTwelfth: return "12⁵"
+            }
+        }
+        
         public var imageName:String {
             switch self {
             case .conjunction: return "AstrologyIcon_Aspect_Conjunct"
@@ -459,8 +488,8 @@ open class CoreAstrology {
             
             public var symbol:String {
                 switch self {
-                case .moon: return "☽"
                 case .sun: return "☉"
+                case .moon: return "☽"
                 case .mercury: return "☿"
                 case .venus: return "♀"
                 case .mars: return "♂︎"
@@ -469,7 +498,17 @@ open class CoreAstrology {
                 case .uranus: return "♅"
                 case .neptune: return "♆"
                 case .pluto: return "♇"
-                default: return ""
+                case .ascendant: return "Asc"
+                case .decendant: return "Dec"
+                case .midheaven: return "MH"
+                case .imumCoeli: return "IC"
+                case .lunarAscendingNode: return "☊"
+                case .lunarDecendingNode: return "☋"
+                case .lunarApogee: return "⚸"
+                case .lunarPerigee: return "-⚸"
+                case .partOfFortune: return "Ⓧ"
+                case .partOfSpirit: return "꩜"
+                case .partOfEros: return "♡"
                 }
             }
             
@@ -578,7 +617,6 @@ open class CoreAstrology {
                 case .saturn: return Saturn(julianDay: julianDay, highPrecision: highPrecision).equatorialCoordinates
                 case .uranus: return Uranus(julianDay: julianDay, highPrecision: highPrecision).equatorialCoordinates
                 case .neptune: return Neptune(julianDay: julianDay, highPrecision: highPrecision).equatorialCoordinates
-                case .pluto: return Pluto(julianDay: julianDay, highPrecision: highPrecision).apparentGeocentricEquatorialCoordinates
                 default: return nil
                 }
             }
@@ -616,6 +654,7 @@ open class CoreAstrology {
                 case .saturn: return Saturn(julianDay: julianDay, highPrecision: highPrecision).longitudeOfPerihelion()
                 case .uranus: return Uranus(julianDay: julianDay, highPrecision: highPrecision).longitudeOfPerihelion()
                 case .neptune: return Neptune(julianDay: julianDay, highPrecision: highPrecision).longitudeOfPerihelion()
+                case .pluto: return Pluto(julianDay: julianDay, highPrecision: highPrecision).longitudeOfPerihelion()
                 default: return nil
                 }
             }
@@ -632,7 +671,7 @@ open class CoreAstrology {
                 case .saturn: return Saturn(julianDay: julianDay, highPrecision: highPrecision).equatorialCoordinates.alpha.inDegrees
                 case .uranus: return Uranus(julianDay: julianDay, highPrecision: highPrecision).equatorialCoordinates.alpha.inDegrees
                 case .neptune: return Neptune(julianDay: julianDay, highPrecision: highPrecision).equatorialCoordinates.alpha.inDegrees
-                case .pluto: return Pluto(julianDay: julianDay, highPrecision: highPrecision).apparentGeocentricEquatorialCoordinates.alpha.inDegrees
+                case .pluto: return Pluto(julianDay: julianDay, highPrecision: highPrecision).meanLongitude()//.apparentGeocentricEquatorialCoordinates.alpha.inDegrees
                 case .lunarApogee: return Moon(julianDay:Moon(julianDay:julianDay, highPrecision: highPrecision).apogee(), highPrecision: highPrecision).equatorialCoordinates.alpha.inDegrees
                 case .lunarPerigee: return Moon(julianDay:Moon(julianDay:julianDay, highPrecision: highPrecision).perigee(), highPrecision: highPrecision).equatorialCoordinates.alpha.inDegrees
                 case .lunarAscendingNode: return Moon(julianDay:Moon(julianDay:julianDay, highPrecision: highPrecision).passageThroughAscendingNode(), highPrecision: highPrecision).equatorialCoordinates.alpha.inDegrees
@@ -691,7 +730,6 @@ open class CoreAstrology {
                 case .saturn: return Saturn(julianDay: julianDay, highPrecision: highPrecision)
                 case .uranus: return Uranus(julianDay: julianDay, highPrecision: highPrecision)
                 case .neptune: return Neptune(julianDay: julianDay, highPrecision: highPrecision)
-                case .pluto: return Pluto(julianDay: julianDay, highPrecision: highPrecision)
                 default: return nil
                 }
             }
@@ -874,8 +912,10 @@ open class CoreAstrology {
         }
     }
     
-    
     public final class Aspect {
+        
+        public typealias SymbolHash = String
+        
         public var primaryBody:AspectBody
         public var relation:AspectRelation
         public var secondaryBody:AspectBody
@@ -913,6 +953,11 @@ open class CoreAstrology {
         
         public var description:String {
             return primaryBody.type.defaultDescription + relation.defaultDescription + secondaryBody.type.defaultDescription
+        }
+        
+        public var symbolHash:SymbolHash {
+            var string: String = "\(primaryBody.type.symbol) \(relation.type.symbol) \(secondaryBody.type.symbol)"
+            return string
         }
         
         public func planetaryEffectDescription(flipPlanets:Bool = false) -> String {

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,10 +23,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KOh-Ki-r4n">
-                                <rect key="frame" x="0.0" y="44" width="414" height="409"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="407"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0JJ-Wi-5Ml">
-                                        <rect key="frame" x="80.5" y="176" width="253" height="57"/>
+                                        <rect key="frame" x="80.5" y="175" width="253" height="57"/>
                                         <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="48"/>
                                         <state key="normal" title="Right Now"/>
                                         <connections>
@@ -40,10 +41,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="niq-Zk-rwC">
-                                <rect key="frame" x="0.0" y="453" width="414" height="409"/>
+                                <rect key="frame" x="0.0" y="455" width="414" height="407"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTh-35-XDa">
-                                        <rect key="frame" x="33.5" y="176" width="347" height="57"/>
+                                        <rect key="frame" x="33.5" y="175" width="347" height="57"/>
                                         <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="48"/>
                                         <state key="normal" title="Manual Select"/>
                                         <connections>
@@ -83,21 +84,21 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ylB-Mp-2t6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1706" y="-392"/>
+            <point key="canvasLocation" x="1706" y="-405"/>
         </scene>
         <!--GeoLocation Select-->
         <scene sceneID="TPI-5S-pGE">
             <objects>
                 <viewController storyboardIdentifier="GeoLocationSelectViewController" title="GeoLocation Select" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wEi-IU-yCC" customClass="GeoLocationSelectViewController" customModule="CosmicCypher" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OMC-mV-mPe">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R8Y-yZ-6Z8">
-                                <rect key="frame" x="0.0" y="44" width="414" height="399"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="395"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTo-mg-Pb9">
-                                        <rect key="frame" x="28.5" y="171" width="357" height="57"/>
+                                        <rect key="frame" x="28.5" y="169" width="357" height="57"/>
                                         <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="48"/>
                                         <state key="normal" title="MapKit Locate"/>
                                         <connections>
@@ -113,10 +114,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X8O-fZ-twO">
-                                <rect key="frame" x="0.0" y="443" width="414" height="399"/>
+                                <rect key="frame" x="0.0" y="443" width="414" height="395"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocb-Pu-ffV">
-                                        <rect key="frame" x="57" y="171" width="300" height="57"/>
+                                        <rect key="frame" x="57" y="169" width="300" height="57"/>
                                         <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="48"/>
                                         <state key="normal" title="Offgrid Map"/>
                                         <connections>
@@ -132,7 +133,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.20000000298023224" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GeoLocation Select" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AR1-Po-Ahb">
-                                <rect key="frame" x="87" y="409.5" width="240" height="23"/>
+                                <rect key="frame" x="87" y="408" width="240" height="22.5"/>
                                 <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -163,17 +164,17 @@
             <objects>
                 <viewController storyboardIdentifier="OffgridGeoLocationSelectViewController" title="Offgrid Map" useStoryboardIdentifierAsRestorationIdentifier="YES" id="peQ-uh-hBP" customClass="OffgridGeoLocationSelectViewController" customModule="CosmicCypher" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EwG-a8-QkU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fui-Mb-tEb">
-                                <rect key="frame" x="20" y="44" width="374" height="374"/>
+                                <rect key="frame" x="20" y="48" width="374" height="374"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Fui-Mb-tEb" secondAttribute="height" multiplier="1:1" id="bGC-uy-zyB"/>
                                 </constraints>
                             </sceneKitView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BzU-md-4i5">
-                                <rect key="frame" x="0.0" y="44" width="46" height="46"/>
+                                <rect key="frame" x="0.0" y="48" width="46" height="46"/>
                                 <color key="backgroundColor" systemColor="lightTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="BzU-md-4i5" secondAttribute="height" multiplier="1:1" id="M3r-IC-PvK"/>
@@ -182,7 +183,7 @@
                                 <state key="normal" title="𝗫"/>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NKc-H1-OHH">
-                                <rect key="frame" x="0.0" y="438" width="414" height="404"/>
+                                <rect key="frame" x="0.0" y="442" width="414" height="396"/>
                                 <subviews>
                                     <searchBar contentMode="redraw" placeholder="search" translatesAutoresizingMaskIntoConstraints="NO" id="J6C-dy-rYT">
                                         <rect key="frame" x="8" y="0.0" width="398" height="44"/>
@@ -220,7 +221,7 @@
                                         <rect key="frame" x="271" y="115" width="151" height="216"/>
                                     </datePicker>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3sX-7e-Pri">
-                                        <rect key="frame" x="0.0" y="330.5" width="414" height="73.5"/>
+                                        <rect key="frame" x="0.0" y="330.5" width="414" height="65.5"/>
                                         <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="36"/>
                                         <state key="normal" title="Select GeoDate"/>
                                         <connections>
@@ -285,16 +286,16 @@
         <!--Online Map-->
         <scene sceneID="So5-E9-lRZ">
             <objects>
-                <viewController storyboardIdentifier="OnlineGeoLocationSelectViewController" title="Online Map" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WjJ-tz-R1J" customClass="OnlineGeoLocationSelectViewController" customModule="CosmicCypher" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnlineGeoLocationAndTimeSelectViewController" title="Online Map" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WjJ-tz-R1J" customClass="OnlineGeoLocationAndTimeSelectViewController" customModule="CosmicCypher" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hZ7-LH-Me8">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CRU-Ia-6y9">
-                                <rect key="frame" x="0.0" y="44" width="414" height="399"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="395"/>
                                 <subviews>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aWP-UZ-lcn">
-                                        <rect key="frame" x="16" y="16" width="382" height="367"/>
+                                        <rect key="frame" x="16" y="16" width="382" height="363"/>
                                     </mapView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xag-IG-juw">
                                         <rect key="frame" x="0.0" y="0.0" width="46" height="46"/>
@@ -320,7 +321,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SPA-qq-ZJ7">
-                                <rect key="frame" x="0.0" y="443" width="414" height="399"/>
+                                <rect key="frame" x="0.0" y="443" width="414" height="395"/>
                                 <subviews>
                                     <searchBar contentMode="redraw" placeholder="search" translatesAutoresizingMaskIntoConstraints="NO" id="v6c-zf-KlW">
                                         <rect key="frame" x="8" y="0.0" width="398" height="44"/>
@@ -358,7 +359,7 @@
                                         <rect key="frame" x="271" y="115" width="151" height="216"/>
                                     </datePicker>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ztI-jj-YlS">
-                                        <rect key="frame" x="0.0" y="330.5" width="414" height="68.5"/>
+                                        <rect key="frame" x="0.0" y="330.5" width="414" height="64.5"/>
                                         <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="36"/>
                                         <state key="normal" title="Select GeoDate"/>
                                         <connections>
@@ -406,7 +407,7 @@
                                 </constraints>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CsQ-De-Itc">
-                                <rect key="frame" x="0.0" y="44" width="414" height="391"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="387"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="HFg-No-Xd9" appends="YES" id="N3e-3y-Tdd"/>

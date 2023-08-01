@@ -139,11 +139,18 @@
 		FA4D1B8F2561FCA00043DE9F /* ControlsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D1B8E2561FCA00043DE9F /* ControlsScreen.swift */; };
 		FA4D1B942561FDA00043DE9F /* ArkanaNaturaDisplayScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D1B932561FDA00043DE9F /* ArkanaNaturaDisplayScreen.swift */; };
 		FA4D1B9C2561FE070043DE9F /* ReadingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D1B9B2561FE070043DE9F /* ReadingsScreen.swift */; };
+		FA5CF1762A757B29006CBEB5 /* AspectEventConsole.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5CF1752A757B29006CBEB5 /* AspectEventConsole.swift */; };
+		FA5CF1782A7587FE006CBEB5 /* AspectEventScannerResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5CF1772A7587FE006CBEB5 /* AspectEventScannerResults.swift */; };
+		FA5CF17A2A75881D006CBEB5 /* AspectEventExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5CF1792A75881D006CBEB5 /* AspectEventExporter.swift */; };
+		FA5CF17C2A765666006CBEB5 /* AspectEventExport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA5CF17B2A765666006CBEB5 /* AspectEventExport.storyboard */; };
+		FA5CF17E2A765DE7006CBEB5 /* AspectEventExportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5CF17D2A765DE7006CBEB5 /* AspectEventExportViewController.swift */; };
+		FA5CF1802A7672DD006CBEB5 /* AspectEventDataArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5CF17F2A7672DD006CBEB5 /* AspectEventDataArchive.swift */; };
+		FA5CF1822A767A92006CBEB5 /* AspectEventScannerResultsFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5CF1812A767A92006CBEB5 /* AspectEventScannerResultsFormatter.swift */; };
 		FA6101CD286D73AA0000D4D5 /* StarChartSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6101CC286D73AA0000D4D5 /* StarChartSelectViewController.swift */; };
 		FA6101CF286D73B70000D4D5 /* TimeStreamSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6101CE286D73B70000D4D5 /* TimeStreamSelectViewController.swift */; };
 		FA6101D1286D73C70000D4D5 /* GeoLocationSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6101D0286D73C70000D4D5 /* GeoLocationSelectViewController.swift */; };
 		FA6101D3286D73D70000D4D5 /* OffgridGeoLocationSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6101D2286D73D70000D4D5 /* OffgridGeoLocationSelectViewController.swift */; };
-		FA6101D5286D73E80000D4D5 /* OnlineGeoLocationSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6101D4286D73E80000D4D5 /* OnlineGeoLocationSelectViewController.swift */; };
+		FA6101D5286D73E80000D4D5 /* OnlineGeoLocationAndTimeSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6101D4286D73E80000D4D5 /* OnlineGeoLocationAndTimeSelectViewController.swift */; };
 		FA6101D7286D78580000D4D5 /* TimeStreamSelect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA6101D6286D78580000D4D5 /* TimeStreamSelect.storyboard */; };
 		FA6101D9286E3C9D0000D4D5 /* TimeStreamManualSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6101D8286E3C9C0000D4D5 /* TimeStreamManualSelectViewController.swift */; };
 		FA6101DB286E3CAC0000D4D5 /* TimeStreamPresetSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6101DA286E3CAC0000D4D5 /* TimeStreamPresetSelectViewController.swift */; };
@@ -160,6 +167,9 @@
 		FAB1311D2874A319000AD7B9 /* AstrologicalNodeStateRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB1311C2874A319000AD7B9 /* AstrologicalNodeStateRegistry.swift */; };
 		FAB1311F2874A328000AD7B9 /* AstrologicalNodeStateArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB1311E2874A328000AD7B9 /* AstrologicalNodeStateArchive.swift */; };
 		FAB131222878AD25000AD7B9 /* Iceberg-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAB131212878AD24000AD7B9 /* Iceberg-Regular.ttf */; };
+		FAE12E472A6C0921002016A3 /* OnlineGeoLocationSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE12E462A6C0921002016A3 /* OnlineGeoLocationSelectViewController.swift */; };
+		FAE12E4A2A6C1371002016A3 /* AspectEventScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE12E492A6C1371002016A3 /* AspectEventScanner.swift */; };
+		FAE12E4E2A6C1432002016A3 /* AspectEventScannerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE12E4D2A6C1432002016A3 /* AspectEventScannerCore.swift */; };
 		FAEAFEAC2847DC88001AEAE0 /* UIImage+GIF+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEAFEAB2847DC88001AEAE0 /* UIImage+GIF+Extension.swift */; };
 		FAEAFEB02847E0D7001AEAE0 /* StarDiskFormation-loaderAnim_2.gif in Resources */ = {isa = PBXBuildFile; fileRef = FAEAFEAF2847E0D6001AEAE0 /* StarDiskFormation-loaderAnim_2.gif */; };
 		FAEAFEB4284841CC001AEAE0 /* TimeStreamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEAFEB3284841CC001AEAE0 /* TimeStreamTableViewCell.swift */; };
@@ -195,6 +205,10 @@
 		FAEB27C828527AAC009994B8 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB27C728527AAC009994B8 /* Data+Extension.swift */; };
 		FAEB27CA285612DC009994B8 /* TimeStreamConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB27C9285612DC009994B8 /* TimeStreamConfiguration.swift */; };
 		FAEB27CC28572DFB009994B8 /* SKSpriteNode+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB27CB28572DFB009994B8 /* SKSpriteNode+Extension.swift */; };
+		FAFE792C2A6AD84000C56612 /* AspectEventScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE792B2A6AD84000C56612 /* AspectEventScanViewController.swift */; };
+		FAFE792E2A6AD87200C56612 /* AspectEventScan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAFE792D2A6AD87200C56612 /* AspectEventScan.storyboard */; };
+		FAFE79302A6BE85B00C56612 /* GeoLocationAndTimeSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE792F2A6BE85B00C56612 /* GeoLocationAndTimeSelectViewController.swift */; };
+		FAFE79322A6C029400C56612 /* GeoLocationSelect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAFE79312A6C029400C56612 /* GeoLocationSelect.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -365,11 +379,18 @@
 		FA4D1B932561FDA00043DE9F /* ArkanaNaturaDisplayScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArkanaNaturaDisplayScreen.swift; sourceTree = "<group>"; };
 		FA4D1B9B2561FE070043DE9F /* ReadingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingsScreen.swift; sourceTree = "<group>"; };
 		FA545E61289C1DBD007E66A1 /* CosmicCypher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CosmicCypher.entitlements; sourceTree = "<group>"; };
+		FA5CF1752A757B29006CBEB5 /* AspectEventConsole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectEventConsole.swift; sourceTree = "<group>"; };
+		FA5CF1772A7587FE006CBEB5 /* AspectEventScannerResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectEventScannerResults.swift; sourceTree = "<group>"; };
+		FA5CF1792A75881D006CBEB5 /* AspectEventExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectEventExporter.swift; sourceTree = "<group>"; };
+		FA5CF17B2A765666006CBEB5 /* AspectEventExport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AspectEventExport.storyboard; sourceTree = "<group>"; };
+		FA5CF17D2A765DE7006CBEB5 /* AspectEventExportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectEventExportViewController.swift; sourceTree = "<group>"; };
+		FA5CF17F2A7672DD006CBEB5 /* AspectEventDataArchive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectEventDataArchive.swift; sourceTree = "<group>"; };
+		FA5CF1812A767A92006CBEB5 /* AspectEventScannerResultsFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectEventScannerResultsFormatter.swift; sourceTree = "<group>"; };
 		FA6101CC286D73AA0000D4D5 /* StarChartSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarChartSelectViewController.swift; sourceTree = "<group>"; };
 		FA6101CE286D73B70000D4D5 /* TimeStreamSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamSelectViewController.swift; sourceTree = "<group>"; };
 		FA6101D0286D73C70000D4D5 /* GeoLocationSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoLocationSelectViewController.swift; sourceTree = "<group>"; };
 		FA6101D2286D73D70000D4D5 /* OffgridGeoLocationSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffgridGeoLocationSelectViewController.swift; sourceTree = "<group>"; };
-		FA6101D4286D73E80000D4D5 /* OnlineGeoLocationSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineGeoLocationSelectViewController.swift; sourceTree = "<group>"; };
+		FA6101D4286D73E80000D4D5 /* OnlineGeoLocationAndTimeSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineGeoLocationAndTimeSelectViewController.swift; sourceTree = "<group>"; };
 		FA6101D6286D78580000D4D5 /* TimeStreamSelect.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TimeStreamSelect.storyboard; sourceTree = "<group>"; };
 		FA6101D8286E3C9C0000D4D5 /* TimeStreamManualSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamManualSelectViewController.swift; sourceTree = "<group>"; };
 		FA6101DA286E3CAC0000D4D5 /* TimeStreamPresetSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamPresetSelectViewController.swift; sourceTree = "<group>"; };
@@ -387,6 +408,9 @@
 		FAB1311C2874A319000AD7B9 /* AstrologicalNodeStateRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstrologicalNodeStateRegistry.swift; sourceTree = "<group>"; };
 		FAB1311E2874A328000AD7B9 /* AstrologicalNodeStateArchive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstrologicalNodeStateArchive.swift; sourceTree = "<group>"; };
 		FAB131212878AD24000AD7B9 /* Iceberg-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Iceberg-Regular.ttf"; sourceTree = "<group>"; };
+		FAE12E462A6C0921002016A3 /* OnlineGeoLocationSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineGeoLocationSelectViewController.swift; sourceTree = "<group>"; };
+		FAE12E492A6C1371002016A3 /* AspectEventScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectEventScanner.swift; sourceTree = "<group>"; };
+		FAE12E4D2A6C1432002016A3 /* AspectEventScannerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectEventScannerCore.swift; sourceTree = "<group>"; };
 		FAEAFEAB2847DC88001AEAE0 /* UIImage+GIF+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+GIF+Extension.swift"; sourceTree = "<group>"; };
 		FAEAFEAF2847E0D6001AEAE0 /* StarDiskFormation-loaderAnim_2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "StarDiskFormation-loaderAnim_2.gif"; sourceTree = "<group>"; };
 		FAEAFEB3284841CC001AEAE0 /* TimeStreamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamTableViewCell.swift; sourceTree = "<group>"; };
@@ -422,6 +446,10 @@
 		FAEB27C728527AAC009994B8 /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 		FAEB27C9285612DC009994B8 /* TimeStreamConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamConfiguration.swift; sourceTree = "<group>"; };
 		FAEB27CB28572DFB009994B8 /* SKSpriteNode+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKSpriteNode+Extension.swift"; sourceTree = "<group>"; };
+		FAFE792B2A6AD84000C56612 /* AspectEventScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectEventScanViewController.swift; sourceTree = "<group>"; };
+		FAFE792D2A6AD87200C56612 /* AspectEventScan.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AspectEventScan.storyboard; sourceTree = "<group>"; };
+		FAFE792F2A6BE85B00C56612 /* GeoLocationAndTimeSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoLocationAndTimeSelectViewController.swift; sourceTree = "<group>"; };
+		FAFE79312A6C029400C56612 /* GeoLocationSelect.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GeoLocationSelect.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -691,8 +719,10 @@
 				FA6101CC286D73AA0000D4D5 /* StarChartSelectViewController.swift */,
 				FA6101CE286D73B70000D4D5 /* TimeStreamSelectViewController.swift */,
 				FA6101D0286D73C70000D4D5 /* GeoLocationSelectViewController.swift */,
+				FAFE792F2A6BE85B00C56612 /* GeoLocationAndTimeSelectViewController.swift */,
 				FA6101D2286D73D70000D4D5 /* OffgridGeoLocationSelectViewController.swift */,
-				FA6101D4286D73E80000D4D5 /* OnlineGeoLocationSelectViewController.swift */,
+				FAE12E462A6C0921002016A3 /* OnlineGeoLocationSelectViewController.swift */,
+				FA6101D4286D73E80000D4D5 /* OnlineGeoLocationAndTimeSelectViewController.swift */,
 				FA6101D8286E3C9C0000D4D5 /* TimeStreamManualSelectViewController.swift */,
 				FA6101DA286E3CAC0000D4D5 /* TimeStreamPresetSelectViewController.swift */,
 				FA12D5E4289D7B3500411649 /* ResonanceReportViewController+Reactive.swift */,
@@ -701,6 +731,8 @@
 				FA12D5EA289D7C6F00411649 /* ResonanceReportViewController+DiscernmentChart.swift */,
 				FA12D5EC289D7CE600411649 /* ResonanceReportViewController+UIControls.swift */,
 				FA12D5EE289D7EB200411649 /* ResonanceReportViewController+Setup.swift */,
+				FAFE792B2A6AD84000C56612 /* AspectEventScanViewController.swift */,
+				FA5CF17D2A765DE7006CBEB5 /* AspectEventExportViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -708,6 +740,7 @@
 		FA35C05C28497839006114AB /* CoreAstrology */ = {
 			isa = PBXGroup;
 			children = (
+				FAE12E482A6C1362002016A3 /* AspectEventScanner */,
 				FAEB27AD284FC4A8009994B8 /* AstrologicalNode */,
 				FAEB27AC284FC4A1009994B8 /* PlanetState */,
 				FA35C0E12849A984006114AB /* Geometry */,
@@ -930,6 +963,20 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		FAE12E482A6C1362002016A3 /* AspectEventScanner */ = {
+			isa = PBXGroup;
+			children = (
+				FAE12E492A6C1371002016A3 /* AspectEventScanner.swift */,
+				FAE12E4D2A6C1432002016A3 /* AspectEventScannerCore.swift */,
+				FA5CF1752A757B29006CBEB5 /* AspectEventConsole.swift */,
+				FA5CF1772A7587FE006CBEB5 /* AspectEventScannerResults.swift */,
+				FA5CF1792A75881D006CBEB5 /* AspectEventExporter.swift */,
+				FA5CF17F2A7672DD006CBEB5 /* AspectEventDataArchive.swift */,
+				FA5CF1812A767A92006CBEB5 /* AspectEventScannerResultsFormatter.swift */,
+			);
+			path = AspectEventScanner;
+			sourceTree = "<group>";
+		};
 		FAEAFEB128484195001AEAE0 /* v4 Screens */ = {
 			isa = PBXGroup;
 			children = (
@@ -968,6 +1015,9 @@
 				FA2C449E286CEEDC009E61B2 /* TimeStreamPresetSelect.storyboard */,
 				FA2C44A0286CEEE8009E61B2 /* TimeStreamManualSelect.storyboard */,
 				FA2CC94A287E9E6E0078ECE1 /* ElementalReading.storyboard */,
+				FAFE792D2A6AD87200C56612 /* AspectEventScan.storyboard */,
+				FAFE79312A6C029400C56612 /* GeoLocationSelect.storyboard */,
+				FA5CF17B2A765666006CBEB5 /* AspectEventExport.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -1118,12 +1168,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAFE792E2A6AD87200C56612 /* AspectEventScan.storyboard in Resources */,
 				FA07C9BA254019DB00683486 /* LaunchScreen.storyboard in Resources */,
 				FA07C9B7254019DB00683486 /* Assets.xcassets in Resources */,
 				FA2C44A1286CEEE8009E61B2 /* TimeStreamManualSelect.storyboard in Resources */,
 				FA07CA4425401EBC00683486 /* Aldrich-Regular.ttf in Resources */,
 				FA2C449F286CEEDC009E61B2 /* TimeStreamPresetSelect.storyboard in Resources */,
 				FA33AAFD2864E18E00BC9F76 /* Settings.storyboard in Resources */,
+				FAFE79322A6C029400C56612 /* GeoLocationSelect.storyboard in Resources */,
 				FA33AB0928655DF700BC9F76 /* Instructions.storyboard in Resources */,
 				FA2CC94B287E9E6E0078ECE1 /* ElementalReading.storyboard in Resources */,
 				FA33AB0728655B8500BC9F76 /* StarChartSelect.storyboard in Resources */,
@@ -1133,6 +1185,7 @@
 				FAEAFEBD284927BB001AEAE0 /* v4.storyboard in Resources */,
 				FA6101D7286D78580000D4D5 /* TimeStreamSelect.storyboard in Resources */,
 				FA07CA1F25401EBB00683486 /* NaturaDisk.sks in Resources */,
+				FA5CF17C2A765666006CBEB5 /* AspectEventExport.storyboard in Resources */,
 				FA07CA2725401EBB00683486 /* Main.storyboard in Resources */,
 				FAB131222878AD25000AD7B9 /* Iceberg-Regular.ttf in Resources */,
 				FA1FDD6B2577144700B51BD2 /* TimeStream.storyboard in Resources */,
@@ -1283,6 +1336,7 @@
 			files = (
 				FAEB27B72851033A009994B8 /* PlanetStateRegistry.swift in Sources */,
 				FAEB27C22851D286009994B8 /* StarChartCore.swift in Sources */,
+				FAE12E4E2A6C1432002016A3 /* AspectEventScannerCore.swift in Sources */,
 				FA35C0972849783A006114AB /* StarChart.swift in Sources */,
 				FA33AB0F2868D66900BC9F76 /* PlanetCollectionViewCell.swift in Sources */,
 				FAB1311928749201000AD7B9 /* PlanetNodeState.swift in Sources */,
@@ -1323,8 +1377,10 @@
 				FA07CA2125401EBB00683486 /* Utils.swift in Sources */,
 				FAEB27C828527AAC009994B8 /* Data+Extension.swift in Sources */,
 				FA35C0D82849A840006114AB /* TimeStreamView.swift in Sources */,
+				FA5CF17A2A75881D006CBEB5 /* AspectEventExporter.swift in Sources */,
 				FAEB2795284D12DA009994B8 /* TimeStreamAddNewCompositeTableViewCell.swift in Sources */,
 				FAB1311D2874A319000AD7B9 /* AstrologicalNodeStateRegistry.swift in Sources */,
+				FA5CF1762A757B29006CBEB5 /* AspectEventConsole.swift in Sources */,
 				FA35C08F2849783A006114AB /* JulianDay+Extension.swift in Sources */,
 				FA35C0932849783A006114AB /* ResonanceScore.swift in Sources */,
 				FA4D1B942561FDA00043DE9F /* ArkanaNaturaDisplayScreen.swift in Sources */,
@@ -1344,6 +1400,7 @@
 				FA2C449328696071009E61B2 /* StarChartCoreReactive.swift in Sources */,
 				FA33AB0C2866760700BC9F76 /* CosmicAlignmentSpriteNode.swift in Sources */,
 				FA35C0912849783A006114AB /* TextureGeneration.swift in Sources */,
+				FAFE79302A6BE85B00C56612 /* GeoLocationAndTimeSelectViewController.swift in Sources */,
 				FAEB27B52850C0A4009994B8 /* TimeStreamCompositeGenerator.swift in Sources */,
 				FA35C0E9284A60A2006114AB /* TimeStreamCompositeSpriteNode.swift in Sources */,
 				FA07CA3825401EBC00683486 /* ResultHistoryTableViewCell.swift in Sources */,
@@ -1354,9 +1411,11 @@
 				FA1FDD98257A0A3A00B51BD2 /* SpriteNodeCosmicEvent.swift in Sources */,
 				FA35C0962849783A006114AB /* PlanetaryHarmonics.swift in Sources */,
 				FA35C0AE2849783A006114AB /* AstrologicalNode.swift in Sources */,
+				FAFE792C2A6AD84000C56612 /* AspectEventScanViewController.swift in Sources */,
 				FA33AAFB2864E12E00BC9F76 /* Settings.swift in Sources */,
 				FA07CA4525401EBC00683486 /* Date+Extension.swift in Sources */,
 				FAEAFEBA28492595001AEAE0 /* EditTimeStreamViewController.swift in Sources */,
+				FA5CF1782A7587FE006CBEB5 /* AspectEventScannerResults.swift in Sources */,
 				FA33AB112868D79900BC9F76 /* AspectCollectionViewCell.swift in Sources */,
 				FA6101D3286D73D70000D4D5 /* OffgridGeoLocationSelectViewController.swift in Sources */,
 				FA1FDD92257969E500B51BD2 /* ElementalReadingViewController.swift in Sources */,
@@ -1430,16 +1489,21 @@
 				FAEB27AB284EA1E0009994B8 /* SwiftAA+Hashable.swift in Sources */,
 				FAEB27A9284E9DA9009994B8 /* TimeStreamGenerator.swift in Sources */,
 				FAEB27C42851DC9E009994B8 /* PlanetStateTimeline.swift in Sources */,
+				FAE12E4A2A6C1371002016A3 /* AspectEventScanner.swift in Sources */,
+				FA5CF17E2A765DE7006CBEB5 /* AspectEventExportViewController.swift in Sources */,
 				FA07CA3B25401EBC00683486 /* ResultTableViewCell.swift in Sources */,
 				FA33AAFF2864E1A000BC9F76 /* SettingsViewController.swift in Sources */,
+				FA5CF1802A7672DD006CBEB5 /* AspectEventDataArchive.swift in Sources */,
 				FA35C0C5284979DB006114AB /* StarKitImage.swift in Sources */,
 				FA07CA4825401EBC00683486 /* String+Extension.swift in Sources */,
 				FAEB27AF284FC51B009994B8 /* StarChartArchive.swift in Sources */,
+				FA5CF1822A767A92006CBEB5 /* AspectEventScannerResultsFormatter.swift in Sources */,
 				FA35C0D62849A840006114AB /* TimeStreamScene.swift in Sources */,
 				FA6101CF286D73B70000D4D5 /* TimeStreamSelectViewController.swift in Sources */,
 				FA35C0E32849A984006114AB /* SCNGeometryExtension.swift in Sources */,
+				FAE12E472A6C0921002016A3 /* OnlineGeoLocationSelectViewController.swift in Sources */,
 				FA35C0AF2849783A006114AB /* Ayanamsa.swift in Sources */,
-				FA6101D5286D73E80000D4D5 /* OnlineGeoLocationSelectViewController.swift in Sources */,
+				FA6101D5286D73E80000D4D5 /* OnlineGeoLocationAndTimeSelectViewController.swift in Sources */,
 				FA35C0D72849A840006114AB /* TimeStream.swift in Sources */,
 				FA6101E52870C4C00000D4D5 /* TimeStreamPresetTableViewCell.swift in Sources */,
 				FA35C09B2849783A006114AB /* StarChart+ChartData.swift in Sources */,
@@ -1626,7 +1690,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = app.thora.cosmiccypher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1651,7 +1715,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = app.thora.cosmiccypher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

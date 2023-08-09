@@ -134,16 +134,16 @@ extension StarChart {
                                        size: size,
                                        nodeTypes: selectedNodeTypes,
                                        onProgress: { progressPercentage in
-                                        print("react to .renderProgress")
+                                        //print("react to .renderProgress")
                                         react(to: .renderProgress(completion: progressPercentage))
                                     }, onComplete: { compositeImage in
                                         let compositeTexture = SKTexture(cgImage: compositeImage)
                                         let sprite = StarChartSpriteNode(texture: compositeTexture, color: .clear, size: size)
                                         sprite.position = size.midPoint
-                                        print("react to .renderComplete")
+                                        //print("react to .renderComplete")
                                         react(to: .renderComplete(sprite: sprite))
                                     }, onStop: {
-                                        print("react to .renderStop")
+                                        //print("react to .renderStop")
                                         react(to: .renderStop)
                                     })
             

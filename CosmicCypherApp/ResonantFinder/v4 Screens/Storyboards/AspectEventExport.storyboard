@@ -12,9 +12,6 @@
         <array key="Aldrich-Regular.ttf">
             <string>Aldrich-Regular</string>
         </array>
-        <array key="Iceberg-Regular.ttf">
-            <string>Iceberg-Regular</string>
-        </array>
     </customFonts>
     <scenes>
         <!--Aspect Event Export View Controller-->
@@ -29,32 +26,27 @@
                                 <rect key="frame" x="8" y="67" width="377" height="743"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aspect Event Export" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRH-x4-BE6">
-                                        <rect key="frame" x="8" y="8" width="361" height="19"/>
+                                        <rect key="frame" x="8" y="8.0000000000000018" width="361" height="18.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x0h-PH-FpA">
-                                        <rect key="frame" x="132" y="700" width="113.33333333333331" height="35"/>
+                                        <rect key="frame" x="128.33333333333334" y="700" width="120.33333333333334" height="35"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" image="plus.rectangle.on.rectangle" catalog="system" title="Backup"/>
-                                        <connections>
-                                            <action selector="backupButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="UPX-hc-7qu"/>
-                                        </connections>
+                                        <buttonConfiguration key="configuration" style="filled" image="filemenu.and.selection" catalog="system" title="Archives"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Export Mode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F5Z-xm-ewB">
-                                        <rect key="frame" x="8" y="613" width="111.66666666666667" height="16"/>
+                                        <rect key="frame" x="8" y="566" width="111.66666666666667" height="16"/>
                                         <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="OY6-cN-bS6">
-                                        <rect key="frame" x="8" y="637" width="327" height="32"/>
+                                        <rect key="frame" x="8" y="590" width="109" height="32"/>
                                         <segments>
                                             <segment title="JSON"/>
                                             <segment title="TXT"/>
-                                            <segment title="SYMBOLS"/>
-                                            <segment title="EMOJI"/>
                                         </segments>
                                         <connections>
                                             <action selector="exportModeSegmentedControlChanged:" destination="Y6W-OH-hqX" eventType="valueChanged" id="UMi-ws-led"/>
@@ -70,15 +62,15 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="79G-TS-9m9">
-                                        <rect key="frame" x="274" y="700" width="95" height="35"/>
+                                        <rect key="frame" x="268" y="700" width="101" height="35"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" image="arrowshape.turn.up.forward" catalog="system" title="Share"/>
+                                        <buttonConfiguration key="configuration" style="filled" image="arrowshape.turn.up.forward" catalog="system" title="Export"/>
                                         <connections>
                                             <action selector="shareButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="4Sm-Yg-2dh"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eod-b6-PlQ">
-                                        <rect key="frame" x="8" y="35" width="361" height="570"/>
+                                        <rect key="frame" x="8" y="34.666666666666686" width="361" height="523.33333333333326"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data Viewer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ce-Gd-ncj">
                                                 <rect key="frame" x="8" y="8" width="107" height="16"/>
@@ -86,11 +78,11 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MMe-v6-Q3D">
-                                                <rect key="frame" x="8" y="32" width="345" height="530"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MMe-v6-Q3D">
+                                                <rect key="frame" x="8" y="31.999999999999972" width="345" height="483.33333333333326"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" red="0.50423423420000002" green="0.87" blue="0.32135135139999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="Iceberg-Regular" family="Iceberg" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                         </subviews>
@@ -104,27 +96,76 @@
                                             <constraint firstItem="4Ce-Gd-ncj" firstAttribute="leading" secondItem="Eod-b6-PlQ" secondAttribute="leading" constant="8" id="gli-KO-bCe"/>
                                         </constraints>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Format Option" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fz2-hP-2SK">
+                                        <rect key="frame" x="8.0000000000000071" y="629" width="127.66666666666669" height="16"/>
+                                        <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7jU-0y-j9O">
+                                        <rect key="frame" x="8" y="653" width="218" height="32"/>
+                                        <segments>
+                                            <segment title="Symbols"/>
+                                            <segment title="Letters"/>
+                                            <segment title="Words"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="exportModeSegmentedControlChanged:" destination="Y6W-OH-hqX" eventType="valueChanged" id="IJk-dT-zyj"/>
+                                            <action selector="formatOptionSegmentedControlChanged:" destination="Y6W-OH-hqX" eventType="valueChanged" id="dx1-Xf-WW4"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kcP-WR-qZt">
+                                        <rect key="frame" x="320" y="590" width="51" height="31"/>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Include Legend" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dh3-M6-cbV">
+                                        <rect key="frame" x="240.66666666666663" y="566" width="128.33333333333337" height="16"/>
+                                        <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rPC-Cj-VTG">
+                                        <rect key="frame" x="320" y="653" width="51" height="31"/>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verbose" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bc3-hD-AXc">
+                                        <rect key="frame" x="298" y="629" width="71" height="16"/>
+                                        <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="bc3-hD-AXc" secondAttribute="trailing" constant="8" id="07N-b2-OJz"/>
                                     <constraint firstAttribute="trailing" secondItem="79G-TS-9m9" secondAttribute="trailing" constant="8" id="0JZ-6d-V3y"/>
                                     <constraint firstItem="F5Z-xm-ewB" firstAttribute="leading" secondItem="MU2-DI-Y01" secondAttribute="leading" constant="8" id="0yh-Qo-7Bc"/>
                                     <constraint firstItem="mJt-z0-eAc" firstAttribute="leading" secondItem="MU2-DI-Y01" secondAttribute="leading" constant="8" id="47J-i6-HVZ"/>
+                                    <constraint firstItem="kcP-WR-qZt" firstAttribute="top" secondItem="dh3-M6-cbV" secondAttribute="bottom" constant="8" id="5gq-JP-tOF"/>
                                     <constraint firstItem="x0h-PH-FpA" firstAttribute="centerX" secondItem="MU2-DI-Y01" secondAttribute="centerX" id="7G4-jX-mGY"/>
                                     <constraint firstItem="79G-TS-9m9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="x0h-PH-FpA" secondAttribute="trailing" constant="8" id="7Q0-wV-rfK"/>
+                                    <constraint firstItem="79G-TS-9m9" firstAttribute="top" secondItem="rPC-Cj-VTG" secondAttribute="bottom" constant="16" id="7vV-Az-M75"/>
                                     <constraint firstItem="jRH-x4-BE6" firstAttribute="top" secondItem="MU2-DI-Y01" secondAttribute="top" constant="8" id="Dj8-nt-jHo"/>
+                                    <constraint firstItem="bc3-hD-AXc" firstAttribute="top" secondItem="kcP-WR-qZt" secondAttribute="bottom" constant="8" symbolic="YES" id="HjB-Q8-HBz"/>
                                     <constraint firstItem="x0h-PH-FpA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mJt-z0-eAc" secondAttribute="trailing" constant="8" id="INf-5B-BGj"/>
                                     <constraint firstItem="Eod-b6-PlQ" firstAttribute="top" secondItem="jRH-x4-BE6" secondAttribute="bottom" constant="8" id="MHc-pj-7e1"/>
+                                    <constraint firstItem="fz2-hP-2SK" firstAttribute="leading" secondItem="MU2-DI-Y01" secondAttribute="leading" constant="8" id="MvV-68-12f"/>
                                     <constraint firstItem="jRH-x4-BE6" firstAttribute="leading" secondItem="MU2-DI-Y01" secondAttribute="leading" constant="8" id="NAi-ma-Toh"/>
+                                    <constraint firstAttribute="trailing" secondItem="dh3-M6-cbV" secondAttribute="trailing" constant="8" id="OeN-tv-Wk4"/>
+                                    <constraint firstItem="dh3-M6-cbV" firstAttribute="top" secondItem="Eod-b6-PlQ" secondAttribute="bottom" constant="8" id="Qll-MY-ktP"/>
+                                    <constraint firstItem="x0h-PH-FpA" firstAttribute="top" secondItem="7jU-0y-j9O" secondAttribute="bottom" constant="16" id="UPg-dH-Ms9"/>
+                                    <constraint firstAttribute="trailing" secondItem="kcP-WR-qZt" secondAttribute="trailing" constant="8" id="Zfx-kx-Oi7"/>
                                     <constraint firstItem="F5Z-xm-ewB" firstAttribute="top" secondItem="Eod-b6-PlQ" secondAttribute="bottom" constant="8" id="hph-L6-PUq"/>
+                                    <constraint firstItem="fz2-hP-2SK" firstAttribute="top" secondItem="OY6-cN-bS6" secondAttribute="bottom" constant="8" id="il4-qF-nNi"/>
                                     <constraint firstItem="Eod-b6-PlQ" firstAttribute="leading" secondItem="MU2-DI-Y01" secondAttribute="leading" constant="8" id="kTT-WI-dGP"/>
                                     <constraint firstAttribute="bottom" secondItem="79G-TS-9m9" secondAttribute="bottom" constant="8" id="keo-aQ-kxF"/>
                                     <constraint firstAttribute="trailing" secondItem="Eod-b6-PlQ" secondAttribute="trailing" constant="8" id="m78-Tz-6A9"/>
+                                    <constraint firstItem="7jU-0y-j9O" firstAttribute="leading" secondItem="MU2-DI-Y01" secondAttribute="leading" constant="8" id="mgV-pD-FAG"/>
+                                    <constraint firstAttribute="trailing" secondItem="rPC-Cj-VTG" secondAttribute="trailing" constant="8" id="nyF-2I-aKo"/>
                                     <constraint firstItem="OY6-cN-bS6" firstAttribute="top" secondItem="F5Z-xm-ewB" secondAttribute="bottom" constant="8" id="oNo-Od-2BD"/>
                                     <constraint firstAttribute="bottom" secondItem="x0h-PH-FpA" secondAttribute="bottom" constant="8" id="qTD-Qs-MpI"/>
-                                    <constraint firstItem="x0h-PH-FpA" firstAttribute="top" secondItem="OY6-cN-bS6" secondAttribute="bottom" constant="32" id="qn6-fA-k98"/>
                                     <constraint firstAttribute="trailing" secondItem="jRH-x4-BE6" secondAttribute="trailing" constant="8" id="t9L-JJ-22Q"/>
                                     <constraint firstItem="OY6-cN-bS6" firstAttribute="leading" secondItem="MU2-DI-Y01" secondAttribute="leading" constant="8" id="uFy-uc-Dk4"/>
+                                    <constraint firstItem="7jU-0y-j9O" firstAttribute="top" secondItem="fz2-hP-2SK" secondAttribute="bottom" constant="8" id="uI5-80-t0f"/>
+                                    <constraint firstItem="rPC-Cj-VTG" firstAttribute="top" secondItem="bc3-hD-AXc" secondAttribute="bottom" constant="8" symbolic="YES" id="vVO-o7-Hcl"/>
                                     <constraint firstAttribute="bottom" secondItem="mJt-z0-eAc" secondAttribute="bottom" constant="8" id="yiP-MV-ZXn"/>
                                 </constraints>
                             </view>
@@ -139,10 +180,13 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="buttonBackup" destination="x0h-PH-FpA" id="GR7-Zs-sew"/>
-                        <outlet property="buttonDelete" destination="mJt-z0-eAc" id="UC2-Hy-FpU"/>
+                        <outlet property="buttonArchives" destination="x0h-PH-FpA" id="JVM-gZ-ugP"/>
+                        <outlet property="buttonDelete" destination="mJt-z0-eAc" id="Lvc-NO-hfL"/>
                         <outlet property="buttonShare" destination="79G-TS-9m9" id="18Y-fY-uMh"/>
                         <outlet property="segmentedControlExportMode" destination="OY6-cN-bS6" id="TR1-Ph-XxR"/>
+                        <outlet property="segmentedControlFormatOption" destination="7jU-0y-j9O" id="vox-l3-8zU"/>
+                        <outlet property="switchIncludeLegend" destination="kcP-WR-qZt" id="5hA-3H-Tqt"/>
+                        <outlet property="switchVerbose" destination="rPC-Cj-VTG" id="CqM-Ar-loH"/>
                         <outlet property="textViewDataViewer" destination="MMe-v6-Q3D" id="QMP-Tw-6m1"/>
                     </connections>
                 </viewController>
@@ -153,7 +197,7 @@
     </scenes>
     <resources>
         <image name="arrowshape.turn.up.forward" catalog="system" width="128" height="104"/>
-        <image name="plus.rectangle.on.rectangle" catalog="system" width="128" height="98"/>
+        <image name="filemenu.and.selection" catalog="system" width="128" height="93"/>
         <image name="trash" catalog="system" width="117" height="128"/>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

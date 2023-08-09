@@ -84,7 +84,7 @@ extension AstrologicalNodeStateTimeline {
                     nodeStates[nodeType]?.append(planetState)
                     
                 } else {
-                    print("new astrological node state [\(nodeType.text)]")
+                    //print("new astrological node state [\(nodeType.text)]")
                     guard let alignment = starChart.alignments[nodeType] else {continue}
                     let degrees = alignment.longitude.value
                     

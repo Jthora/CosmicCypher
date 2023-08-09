@@ -233,7 +233,7 @@ extension AspectEventScanViewController: AspectEventScannerDelegate {
         }
     }
     
-    func scanError(error: AspectEventScanner.ScanError) {
+    func scanError(error: AspectEventScanner.AspectScanError) {
         switch error {
         case .startAndEndDateAreSame, .cannotGetTotalScanCountFromDates:
             DispatchQueue.main.async {

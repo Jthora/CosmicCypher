@@ -25,6 +25,14 @@ extension AspectEventScanner {
         static var exporter:AspectEventExporter = AspectEventExporter()
         static var archive:AspectEventDataArchive = AspectEventDataArchive()
         
+        static var hashKey: AspectEventScanner.Results.HashKey {
+            return exporter.currentExportableData.hashKey
+        }
+        
+        static var exportableData: AspectEventExporter.ExportableData {
+            return exporter.currentExportableData
+        }
+        
         static var state: State {
             get {
                 return scanner.state

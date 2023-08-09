@@ -26,9 +26,13 @@ class AspectEventExportViewController: UIViewController {
     @IBOutlet weak var textViewDataViewer: UITextView!
     
     @IBOutlet weak var segmentedControlExportMode: UISegmentedControl!
+    @IBOutlet weak var segmentedControlFormatOption: UISegmentedControl!
+    
+    @IBOutlet weak var switchIncludeLegend: UISwitch!
+    @IBOutlet weak var switchVerbose: UISwitch!
     
     @IBOutlet weak var buttonDelete: UIButton!
-    @IBOutlet weak var buttonBackup: UIButton!
+    @IBOutlet weak var buttonArchives: UIButton!
     @IBOutlet weak var buttonShare: UIButton!
     
     // MARK: Helpers
@@ -47,16 +51,23 @@ class AspectEventExportViewController: UIViewController {
     }
     
     func updateUI() {
-        guard let results = currentResults else {
-            textViewDataViewer.text = "No Scanner Results in Archive"
-            buttonDelete.isEnabled = false
-            buttonBackup.isEnabled = false
-            buttonShare.isEnabled = false
-            return
+        DispatchQueue.main.async {
+            guard let results = self.currentResults else {
+                self.textViewDataViewer.text = "No Scanner Results in Archive"
+                self.buttonDelete.isEnabled = false
+                self.buttonArchives.isEnabled = false
+                self.buttonShare.isEnabled = false
+                return
+            }
+            
+            let dataString = results.format(exportMode: self.exporter.exportMode,
+                                            formatOption: self.exporter.formatOption,
+                                            includeLegend: self.exporter.includeLegend,
+                                            verbose: self.exporter.verbose)
+            
+            self.segmentedControlExportMode.selectedSegmentIndex = self.exporter.exportMode.rawValue
+            self.textViewDataViewer.text = dataString
         }
-        
-        segmentedControlExportMode.selectedSegmentIndex = exporter.mode.rawValue
-        textViewDataViewer.text = exporter.dataString
     }
     
     // MARK: Export Mode
@@ -65,11 +76,23 @@ class AspectEventExportViewController: UIViewController {
             print("Index Out of Bounds: ExportMode Segmented Control")
             return
         }
-        exporter.mode = newMode
+        self.exporter.exportMode = newMode
         DispatchQueue.main.async {
             self.updateUI()
         }
     }
+    
+    @IBAction func formatOptionSegmentedControlChanged(_ sender: UISegmentedControl) {
+        guard let newOption = AspectEventScanner.Results.Formatter.Option(rawValue: sender.selectedSegmentIndex) else {
+            print("Index Out of Bounds: FormatOption Segmented Control")
+            return
+        }
+        self.exporter.formatOption = newOption
+        DispatchQueue.main.async {
+            self.updateUI()
+        }
+    }
+    
     
     // MARK: Delete
     @IBAction func deleteButtonPressed(_ sender: UIButton) {
@@ -93,44 +116,25 @@ class AspectEventExportViewController: UIViewController {
     }
     
     func performDelete() {
-        exporter.deleteData { success, errorMessage in
-            if success {
-                // Show success popup
-                self.showPopup(title: "Backup Successful", message: "Data has been successfully backed up.")
-            } else {
-                // Show error popup with the error message
-                let errorMessageToShow = errorMessage ?? "Unknown error occurred."
-                self.showPopup(title: "Backup Error", message: errorMessageToShow)
-            }
-        }
-    }
-    
-    // MARK: Backup
-    @IBAction func backupButtonPressed(_ sender: UIButton) {
-        exporter.backupData { success, errorMessage in
-            if success {
-                // Show success popup
-                self.showPopup(title: "Backup Successful", message: "Data has been successfully backed up.")
-            } else {
-                // Show error popup with the error message
-                let errorMessageToShow = errorMessage ?? "Unknown error occurred."
-                self.showPopup(title: "Backup Error", message: errorMessageToShow)
-            }
-        }
+        let hashKey = AspectEventScanner.Core.hashKey
+        archive.delete(hashKey: hashKey)
+        exporter.delete(for: hashKey)
     }
     
     // MARK: Share
     @IBAction func shareButtonPressed(_ sender: UIButton) {
-        exporter.shareData(vc: self, sender: sender) { success, errorMessage in
+        exporter.exportData(vc: self,
+                            sender: sender,
+                            completion: { success, errorMessage in
             if success {
                 // Show success popup
-                self.showPopup(title: "Share Successful", message: "Data has been successfully shared.")
+                self.showPopup(title: "Export Successful", message: "Data has been successfully shared.")
             } else {
                 // Show error popup with the error message
                 let errorMessageToShow = errorMessage ?? "Unknown error occurred."
-                self.showPopup(title: "Share Error", message: errorMessageToShow)
+                self.showPopup(title: "Export Error", message: errorMessageToShow)
             }
-        }
+        })
     }
     
     // MARK: Show Popup

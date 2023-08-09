@@ -82,7 +82,7 @@ public final actor PlanetStateArchive {
             let fetchResults = try DataCore.context.fetch(request)
             
             guard fetchResults.count != 0 else {
-                print("PlanetStateArchive.fetch() Error: fetch results empty")
+                //print("PlanetStateArchive.fetch() Error: fetch results empty")
                 return nil
             }
             guard let managedObject = fetchResults[0] as? NSManagedObject else {

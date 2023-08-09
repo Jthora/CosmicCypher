@@ -11,6 +11,10 @@ class AspectEventDataArchive {
     
     var cache:[AspectEventScanner.Results.HashKey:AspectEventScanner.Results] = [:]
     var latestHashKey:AspectEventScanner.Results.HashKey? = nil
+    var latestResults:AspectEventScanner.Results? {
+        guard let latestHashKey = latestHashKey else { return nil }
+        return cache[latestHashKey]
+    }
     
     func store(results:AspectEventScanner.Results) {
         cache[results.hashKey] = results
@@ -20,5 +24,40 @@ class AspectEventDataArchive {
     func fetch(for hashKey:AspectEventScanner.Results.HashKey) -> AspectEventScanner.Results? {
         // Async extract data persistantly
         return cache[hashKey]
+    }
+    
+    func delete(hashKey:AspectEventScanner.Results.HashKey) {
+        cache.removeValue(forKey: hashKey)
+    }
+    
+    
+    // MARK: Backup Data
+    func backupData(_ exportableData:AspectEventExporter.ExportableData,
+                    completion: @escaping (_ success: Bool, _ errorMessage: String?) -> Void) {
+        
+        guard !exportableData.dataString.isEmpty else {
+            print("Error while saving backup: Data String Empty")
+            completion(false, "No Data. Data string is Empty!")
+            return
+        }
+       
+        // Create a unique filename based on the current timestamp
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyyMMddHHmmss"
+        let fileExtension = exportableData.exportMode.fileExtension
+        let fileName = "backup_\(exportableData.fileName).\(fileExtension)"
+
+        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            let fileURL = dir.appendingPathComponent(fileName).appendingPathExtension(fileExtension)
+
+            do {
+                try exportableData.dataString.write(to: fileURL, atomically: true, encoding: .utf8)
+                print("Backup successful!")
+                completion(true, nil)
+            } catch let error {
+                print("Error while saving backup: \(error)")
+                completion(false, error.localizedDescription)
+            }
+        }
     }
 }

@@ -74,7 +74,7 @@ public final actor StarChartArchive {
             let fetchResults = try DataCore.context.fetch(request)
             
             guard fetchResults.count != 0 else {
-                print("StarChartArchive.fetch() Error: fetch results empty")
+                //print("StarChartArchive.fetch() Error: fetch results empty")
                 return nil
             }
             guard let managedObject = fetchResults[0] as? NSManagedObject else {

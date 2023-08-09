@@ -10,7 +10,7 @@ import SwiftAA
 
 protocol AspectEventScannerDelegate {
     func scanUpdate(progress:Float, subProgress:Float)
-    func scanError(error:AspectEventScanner.ScanError)
+    func scanError(error:AspectEventScanner.AspectScanError)
     func scanComplete(aspectsFound:[Date: [CoreAstrology.Aspect]])
 }
 
@@ -122,7 +122,7 @@ class AspectEventScanner {
         }
     }
     
-    var activelyScanningAspects:[CoreAstrology.Aspect.SymbolHash: (CoreAstrology.Aspect, Date)] = [:]
+    var activelyScanningAspects:[CoreAstrology.Aspect.SymbolHash: (aspect: CoreAstrology.Aspect, date: Date)] = [:]
     var recentlyLockedInAspects:[CoreAstrology.Aspect.SymbolHash:Bool] = [:]
     
     var lockedInAspects: [Date: [CoreAstrology.Aspect]] = [:]
@@ -132,142 +132,145 @@ class AspectEventScanner {
         lockedInAspects[date] = aspectArray
     }
     
+    func resetScanner() {
+        activelyScanningAspects = [:]
+        recentlyLockedInAspects = [:]
+        lockedInAspects = [:]
+    }
     
-    func findAspectEvents() {
+    func startScanner() {
+        resetScanner()
         state = .scanning
+        
         guard startDate != endDate else {
-            state = .fail
-            console?.error(.scanner, context: "Start Date == End Date")
-            delegate?.scanError(error: .startAndEndDateAreSame)
-            state = .ready
+            handleScanError(error: .startAndEndDateAreSame, context: "Start Date == End Date")
+            return
+        }
+
+        guard let totalScanCount = daysBetweenDates(startDate: startDate, endDate: endDate) else {
+            handleScanError(error: .cannotGetTotalScanCountFromDates, context: "Cannot get Total Scan Count from Dates")
             return
         }
         
-        var scanCount:Float = 0
-        guard let totalScanCount:Float = daysBetweenDates(startDate: startDate, endDate: endDate) else {
-            state = .fail
-            console?.error(.scanner, context: "Cannot get Total Scan Count from Dates")
-            delegate?.scanError(error: .cannotGetTotalScanCountFromDates)
-            state = .ready
-            return
-        }
+        // Find Aspects
+        let aspects = findAspectEvents()
         
         // Scanning Properties
         var currentDate = startDate
-        
-        // Calculation Delta
-        let startTime = Date().timeIntervalSince1970
-        var calculationDelta:TimeInterval = 0
+        let nodeTypes: [CoreAstrology.AspectBody.NodeType] = AspectEventScanner.Core.planetsAndNodes
+        var scanCount: Float = 0
         
         // Background Thread
-        DispatchQueue.global().async {
-            
+        DispatchQueue.global(qos: .userInitiated).async {
             // Scanning Loop
             while currentDate <= self.endDate {
-                
                 // Number of Iterations
                 scanCount += 1
-                let progress = scanCount/totalScanCount
-                
-                let preStarChartCalculationTimeStamp = Date().timeIntervalSince1970
-                
-                // Calculate the positions of the planets for the current Date
-                let starChart = StarChartRegistry.main.getStarChart(date: currentDate, geographicCoordinates: self.coordinates)
-                
-                let postStarChartCalculationTimeStamp = Date().timeIntervalSince1970
-                calculationDelta = postStarChartCalculationTimeStamp - preStarChartCalculationTimeStamp
-                
-                
-                // Prevents Rescry into any recently discovered aspects
-                var aspectsStillRecentlyLockedIn:[CoreAstrology.Aspect.SymbolHash] = []
+                let progress = scanCount / totalScanCount
                 
                 // Report progress to Console UI
-                self.console?.scanning(scans: Int(scanCount),
-                                       scrying: self.activelyScanningAspects.count,
-                                       discovered: self.lockedInAspects.count,
-                                       calculationDelta: calculationDelta)
-                
-                // Report to View Controller for updating Progress Bars
-                self.delegate?.scanUpdate(progress: progress, subProgress: 0)
-                
-                // The Aspects for this date are calculated
-                for thisAspect in starChart.aspects {
-                    
-                    // Only perform the scry for selected aspects, planets and nodes
-                    guard self.selectedAspects.contains(thisAspect.relation.type), self.selectedNodeTypes.contains(thisAspect.primaryBody.type), self.selectedNodeTypes.contains(thisAspect.secondaryBody.type) else {continue}
-                    
-                    // Skip any recently locked in aspects
-                    guard self.recentlyLockedInAspects[thisAspect.symbolHash] == nil else {
-                        continue
-                    }
-                    
-                    if let (previousAspect, previousDate) = self.activelyScanningAspects[thisAspect.symbolHash] {
-                        // Aspect is not new
-                        let previousOrb = previousAspect.relation.orbDistance
-                        let thisOrb = thisAspect.relation.orbDistance
-                        if abs(thisOrb) < abs(previousOrb) {
-                            // This aspect is closer
-                            self.activelyScanningAspects[thisAspect.symbolHash] = (thisAspect, currentDate)
-                        } else {
-                            // The aspect is not closer, the previous aspect is correct
-                            self.activelyScanningAspects[thisAspect.symbolHash] = nil
-                            self.lockIn(aspect: thisAspect, for: currentDate)
-                            self.recentlyLockedInAspects[thisAspect.symbolHash] = true
-                        }
-                    } else {
-                        // Aspect is new
-                        self.activelyScanningAspects[thisAspect.symbolHash] = (thisAspect, currentDate)
-                    }
-                    
+                DispatchQueue.main.async {
+                    self.console?.scanning(scans: Int(scanCount),
+                                           scrying: self.activelyScanningAspects.count,
+                                           discovered: self.lockedInAspects.count)
+                    self.delegate?.scanUpdate(progress: progress, subProgress: 0)
                 }
-                
-                // remove recentlyLockedInAspects that are no longer being detected
-                let symbolHashes = starChart.aspects.map { $0.symbolHash }
-                let recentlyLocked = self.recentlyLockedInAspects
-                for (key, _) in recentlyLocked {
-                    if !symbolHashes.contains(key) {
-                        self.recentlyLockedInAspects.removeValue(forKey: key)
-                    }
-                }
-                
-                // Scan to check if the current aspects
-             
-                // determine the next scan date (based on mode selection)
-                switch self.mode {
-                case .simple:
-                    let calendar = Calendar.current
-                    var dateComponents = DateComponents()
-                    dateComponents.day = 1
-                    guard let nextDay = calendar.date(byAdding: dateComponents, to: currentDate) else {
-                        DispatchQueue.main.async {
-                            self.console?.error(.system, context: "Date Component Creation Failure")
-                        }
-                        return
-                    }
-                    currentDate = nextDay
-                case .precise:
-                    let calendar = Calendar.current
-                    var dateComponents = DateComponents()
-                    dateComponents.day = 1
-                    let nextDay = calendar.date(byAdding: dateComponents, to: currentDate)
-                    guard let nextDay = calendar.date(byAdding: dateComponents, to: currentDate) else {
-                        DispatchQueue.main.async {
-                            self.console?.error(.system, context: "Date Component Creation Failure")
-                        }
-                        return
-                    }
-                    currentDate = nextDay
-                }
+                self.calculate(aspects: aspects, for: nodeTypes, on: currentDate)
+
+                // determine the next scan date
+                currentDate = Calendar.current.date(byAdding: .day, value: 1, to: currentDate)!
             }
-            let hashKey = Results.HashKey(startDate: self.startDate,
-                                          endDate: self.endDate,
-                                          longitude: self.longitude,
-                                          latitude: self.latitude)
-            let results = Results(lockedInAspects: self.lockedInAspects, hashKey: hashKey)
-            self.archive(results: results)
-            self.exporter?.process(results: results)
+
+            self.archiveResults()
             self.delegate?.scanComplete(aspectsFound: self.lockedInAspects)
         }
+    }
+    
+    
+    func findAspectEvents() -> [CoreAstrology.Aspect] {
+
+        var currentDate = startDate
+        let aspectTypes: Set<CoreAstrology.AspectRelationType> = Set(AspectEventScanner.Core.aspectAngles)
+        let nodeTypes: [CoreAstrology.AspectBody.NodeType] = AspectEventScanner.Core.planetsAndNodes
+
+        // Aspects
+        var aspects: [CoreAstrology.Aspect] = []
+        for (index1, nodeType1) in nodeTypes.enumerated() {
+            guard let longitude1 = nodeType1.geocentricLongitude(date: currentDate),
+                  let body1 = CoreAstrology.AspectBody(type: nodeType1, date: currentDate) else { continue }
+            
+            for nodeType2 in nodeTypes.dropFirst(index1 + 1) { // Avoid duplicate and reverse combinations
+                guard let longitude2 = nodeType2.geocentricLongitude(date: currentDate),
+                      let body2 = CoreAstrology.AspectBody(type: nodeType2, date: currentDate),
+                      let relation = CoreAstrology.AspectRelation(degrees: longitude1 - longitude2) else { continue }
+                
+                if aspectTypes.contains(relation.type) {
+                    // Create Aspect
+                    let aspect = CoreAstrology.Aspect(primaryBody: body1,
+                                                      relation: relation,
+                                                      secondaryBody: body2)
+                    aspects.append(aspect)
+                }
+            }
+        }
+        
+        return aspects
+    }
+
+    private func handleScanError(error: AspectScanError, context: String) {
+        state = .fail
+        console?.error(.scanner, context: context)
+        delegate?.scanError(error: error)
+        state = .ready
+    }
+    
+    private func calculate(aspects:[CoreAstrology.Aspect], for planets:[CoreAstrology.AspectBody.NodeType], on date:Date) {
+        for thisAspect in aspects {
+            let hash = thisAspect.symbolHash
+            let recentlyLocked = recentlyLockedInAspects[hash]
+            var previousAspectDate = activelyScanningAspects[hash]?.1
+            var previousOrbDistance = activelyScanningAspects[hash]?.0.longitudeAngle ?? Double.greatestFiniteMagnitude
+            //let thisOrb = thisAspect.relation.type.rawValue
+            let thisOrbDistance = thisAspect.longitudeAngle
+
+            guard recentlyLocked == nil else {
+                continue
+            }
+
+            if let prevDate = previousAspectDate, abs(thisOrbDistance) >= abs(previousOrbDistance) {
+                self.activelyScanningAspects[hash] = nil
+                let realDate = deepScan(aspect: thisAspect, for: prevDate)
+                lockIn(aspect: thisAspect, for: realDate)
+                recentlyLockedInAspects[hash] = true
+            } else {
+                activelyScanningAspects[hash] = (aspect: thisAspect, date: date)
+            }
+        }
+
+        // remove recentlyLockedInAspects that are no longer being detected
+        let symbolHashes = aspects.map { $0.symbolHash }
+        for (key, _) in recentlyLockedInAspects where !symbolHashes.contains(key) {
+            recentlyLockedInAspects.removeValue(forKey: key)
+        }
+    }
+
+    private func calculateAspects(for starChart: StarChart, on date: Date) {
+        let aspects = starChart.aspects.filter { aspect in
+            return selectedAspects.contains(aspect.relation.type)
+                && selectedNodeTypes.contains(aspect.primaryBody.type)
+                && selectedNodeTypes.contains(aspect.secondaryBody.type)
+        }
+
+        
+    }
+
+    private func archiveResults() {
+        let hashKey = Results.HashKey(startDate: self.startDate,
+                                      endDate: self.endDate,
+                                      longitude: self.longitude,
+                                      latitude: self.latitude)
+        let results = Results(lockedInAspects: self.lockedInAspects, hashKey: hashKey)
+        self.archive(results: results)
     }
     
     
@@ -276,7 +279,7 @@ class AspectEventScanner {
     func scan()
     {
         print("scan")
-        findAspectEvents()
+        startScanner()
     }
     
     func reset() {
@@ -334,8 +337,81 @@ extension AspectEventScanner {
 }
 
 extension AspectEventScanner {
-    enum ScanError: Error {
+    enum AspectScanError: Error {
         case startAndEndDateAreSame
         case cannotGetTotalScanCountFromDates
+    }
+}
+
+    
+extension AspectEventScanner {
+    
+    func deepScan(aspect: CoreAstrology.Aspect, for estimatedDate: Date) -> Date {
+        // Calculate the exact date and time of the aspect
+        let aspectDate = calculateAspectDate(estimatedDate: estimatedDate,
+                                             primaryObject: aspect.primaryBody,
+                                             secondaryObject: aspect.secondaryBody,
+                                             aspectRelation: aspect.relation)
+        return aspectDate
+    }
+    
+    private func calculateAspectDate(estimatedDate: Date,
+                                      primaryObject: CoreAstrology.AspectBody,
+                                      secondaryObject: CoreAstrology.AspectBody,
+                                      aspectRelation: CoreAstrology.AspectRelation) -> Date {
+        let p1Type = primaryObject.type
+        let p2Type = secondaryObject.type
+        let targetAspectType = aspectRelation.type
+        let targetAspectAngle = targetAspectType.rawValue
+        let targetOrbThreshold = 0.01 // Set the target orb threshold to 0.01 degrees
+        
+        // Calculate the TimeInterval for 24 hours
+        let oneDay: TimeInterval = 24 * 60 * 60
+        
+        // Calculate the TimeInterval range for 24 hours before and after the estimatedDate
+        let startTimeInterval = estimatedDate.timeIntervalSinceReferenceDate - oneDay
+        let endTimeInterval = estimatedDate.timeIntervalSinceReferenceDate + oneDay
+        
+        var closestDate = estimatedDate
+        var minDistance = Double.greatestFiniteMagnitude
+        
+        var lowerBoundTimeInterval = startTimeInterval
+        var upperBoundTimeInterval = endTimeInterval
+        
+        while upperBoundTimeInterval - lowerBoundTimeInterval >= 1.0 {
+            // Perform a binary search to find the closest aspect date
+            
+            let midTimeInterval = (lowerBoundTimeInterval + upperBoundTimeInterval) / 2.0
+            let midDate = Date(timeIntervalSinceReferenceDate: midTimeInterval)
+            
+            guard let b1 = CoreAstrology.AspectBody(type: primaryObject.type, date: midDate),
+                  let b2 = CoreAstrology.AspectBody(type: secondaryObject.type, date: midDate) else {
+                break
+            }
+            // Calculate the aspect angle between the two planetary bodies
+            let positionAngle: Double = b1.longitudeAngle(relativeTo: b2)
+            
+            // Calculate the difference between the aspect angle and the orb distance
+            let distance = abs(positionAngle - targetAspectAngle)
+            
+            if distance < minDistance {
+                minDistance = distance
+                closestDate = midDate
+            }
+            
+            // Check if the aspect angle is within the target orb threshold
+            if distance < targetOrbThreshold {
+                // If it is, we found an aspect within the desired orb, so we can exit the loop early
+                break
+            }
+            
+            if positionAngle > targetAspectAngle {
+                lowerBoundTimeInterval = midTimeInterval
+            } else {
+                upperBoundTimeInterval = midTimeInterval
+            }
+        }
+        
+        return closestDate
     }
 }

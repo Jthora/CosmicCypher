@@ -70,7 +70,7 @@ public final class TimeStream {
         onProgress?(0)
         for (i,point) in points.enumerated() {
             onProgress?(Double(i)/Double(count))
-            print("loading starchart (\(i)/\(count)) [\(timestamp.timeIntervalSinceNow)]")
+            //print("loading starchart (\(i)/\(count)) [\(timestamp.timeIntervalSinceNow)]")
             let starChart:StarChart = StarChartRegistry.main.getStarChart(date: point.date, geographicCoordinates: point.coordinates)
             append(starChart: starChart)
         }

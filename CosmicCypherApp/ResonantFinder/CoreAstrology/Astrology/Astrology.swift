@@ -368,6 +368,14 @@ open class CoreAstrology {
             hasher.combine(equatorialCoordinates.delta)
         }
         
+        public func positionAngle(relativeTo secondBody:AspectBody) -> Degree {
+            equatorialCoordinates.positionAngle(relativeTo: secondBody.equatorialCoordinates)
+        }
+        
+        public func longitudeAngle(relativeTo secondBody:AspectBody) -> Double {
+            return equatorialCoordinates.alpha.value - secondBody.equatorialCoordinates.alpha.value
+        }
+        
         public enum NodeType: Int, CaseIterable {
             case sun
             case moon
@@ -924,6 +932,14 @@ open class CoreAstrology {
             self.primaryBody = primaryBody
             self.relation = relation
             self.secondaryBody = secondaryBody
+        }
+        
+        public var longitudeAngle:Double {
+            return primaryBody.longitudeAngle(relativeTo: secondaryBody)
+        }
+        
+        public var positionAngle:Degree {
+            return primaryBody.positionAngle(relativeTo: secondaryBody)
         }
         
         public var concentration:Double? {

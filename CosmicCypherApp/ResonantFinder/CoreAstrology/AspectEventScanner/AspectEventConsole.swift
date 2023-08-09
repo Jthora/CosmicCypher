@@ -88,8 +88,8 @@ class AspectEventConsole {
         text = "📐 Aspect Angles Updated\n\(currentText)"
     }
     
-    func scanning(scans:Int, scrying:Int, discovered:Int, calculationDelta:TimeInterval) {
-        text = "🌐 Scans: [\(scans)]\n🔮 Scrying: [\(scrying)]\n☑️ Discovered: [\(discovered)]\nDelta: [\(calculationDelta)]"
+    func scanning(scans:Int, scrying:Int, discovered:Int) {
+        text = "🌐 Scans: [\(scans)]\n🔮 Scrying: [\(scrying)]\n☑️ Discovered: [\(discovered)]]"
     }
     
     func error(_ errorType:ErrorType, context:String? = nil) {

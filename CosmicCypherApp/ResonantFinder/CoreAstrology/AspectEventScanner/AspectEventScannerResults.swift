@@ -34,12 +34,14 @@ extension AspectEventScanner {
             
             // JSON compatible data format
             var data: [String:Any] = [:]
+            let sortedKeys = lockedInAspects.keys.sorted()
             
             switch mode {
             case .dateOnly:
                 
                 // Format: [DateKey:[AspectHashes]]
-                for (date, aspects) in lockedInAspects {
+                for date in sortedKeys {
+                    guard let aspects = lockedInAspects[date] else { continue }
                     
                     // Convert Date to String for Key
                     let dateFormatter = DateFormatter()
@@ -56,7 +58,8 @@ extension AspectEventScanner {
             case .dateAndTime:
                 
                 // Format: [DateTimeKey:[AspectHashes]]
-                for (date, aspects) in lockedInAspects {
+                for date in sortedKeys {
+                    guard let aspects = lockedInAspects[date] else { continue }
                     
                     // Convert Date to String for Key
                     let dateFormatter = DateFormatter()
@@ -73,7 +76,8 @@ extension AspectEventScanner {
             case .dateWithSubTime:
                 
                 // Format: [DateKey:[TimeKey:[AspectHashes]]]
-                for (date, aspects) in lockedInAspects {
+                for date in sortedKeys {
+                    guard let aspects = lockedInAspects[date] else { continue }
                     
                     // Convert Date to String for Date Key
                     let dateFormatter = DateFormatter()
@@ -132,8 +136,26 @@ extension AspectEventScanner {
         }
         
         // MARK: Fomatter
-        func format(_ exportMode:AspectEventExporter.ExportMode = .json) -> String {
-            return Formatter.format(results: self, exportMode: exportMode)
+        func format(exportMode:AspectEventExporter.ExportMode,
+                    formatOption: AspectEventScanner.Results.Formatter.Option,
+                    includeLegend: Bool,
+                    verbose: Bool) -> String {
+            return Formatter.format(results: self,
+                                    exportMode: exportMode,
+                                    formatOption: formatOption,
+                                    includeLegend: includeLegend,
+                                    verbose: verbose)
+        }
+        
+        func exportableData(exportMode:AspectEventExporter.ExportMode = AspectEventScanner.Core.exporter.exportMode,
+                            formatOption:AspectEventScanner.Results.Formatter.Option = AspectEventScanner.Core.exporter.formatOption,
+                            includeLegend:Bool = AspectEventScanner.Core.exporter.includeLegend,
+                            verbose:Bool = AspectEventScanner.Core.exporter.verbose) -> AspectEventExporter.ExportableData {
+            return AspectEventExporter.ExportableData(results: self,
+                                               exportMode: exportMode,
+                                               formatOption: formatOption,
+                                               includeLegend: includeLegend,
+                                               verbose: verbose)
         }
     }
 
@@ -262,4 +284,10 @@ extension AspectEventScanner.Results.HashKey {
         self = "S\(timeStampStart)E\(timeStampEnd)L\(longitude)L\(latitude)"
     }
     
+    static var current:AspectEventScanner.Results.HashKey {
+        return AspectEventScanner.Results.HashKey(startDate: AspectEventScanner.Core.startDate,
+                                                  endDate: AspectEventScanner.Core.endDate,
+                                                  longitude: AspectEventScanner.Core.coordinates.longitude.value,
+                                                  latitude: AspectEventScanner.Core.coordinates.latitude.value)
+    }
 }

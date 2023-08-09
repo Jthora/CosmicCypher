@@ -37,7 +37,7 @@ public final class PlanetStateRegistry: ObservableObject {
         if let planetState = getPlanetState(date: starChart.date, nodeType: nodeType) {
             return planetState
         } else {
-            print("creating new planetState")
+            //print("creating new planetState")
             let planetState = PlanetState(starChart: starChart, nodeType: nodeType)
             return planetState
         }

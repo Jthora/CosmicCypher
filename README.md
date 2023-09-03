@@ -1,6 +1,6 @@
 # CosmicCypher
 
-![Markdown Logo](https://i.imgur.com/IwNB1ix.jpg)
+![Markdown Logo](https://imgur.com/dbhLwml)
 
 This is an astrology app that uses Universal Symbology as part of next-level calculations based on astronomical data.
 The app is designed to run entirely offgrid, so even when the internet is out, this app will still work!

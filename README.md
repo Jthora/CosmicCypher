@@ -1,4 +1,4 @@
-# CosmicCypher
+# Cosmic Cypher App for iOS
 
 ![Markdown Logo](https://i.imgur.com/RD5PjoR.png)
 

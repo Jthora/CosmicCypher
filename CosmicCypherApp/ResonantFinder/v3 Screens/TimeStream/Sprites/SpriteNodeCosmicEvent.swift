@@ -31,7 +31,7 @@ class SpriteNodeCosmicEvent: SKSpriteNode {
         let fraction = aspect.relation.type.fraction
         
         // Bottom Distance
-        var degrees = aspect.relation.degrees.value.truncatingRemainder(dividingBy: 360)
+        var degrees = aspect.relation.nodeDistance.value.truncatingRemainder(dividingBy: 360)
         if degrees > 180 {
             degrees = 180-(degrees-180)
         }

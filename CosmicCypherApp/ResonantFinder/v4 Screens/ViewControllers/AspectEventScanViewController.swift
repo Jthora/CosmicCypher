@@ -235,7 +235,7 @@ extension AspectEventScanViewController: AspectEventScannerDelegate {
     
     func scanError(error: AspectEventScanner.AspectScanError) {
         switch error {
-        case .startAndEndDateAreSame, .cannotGetTotalScanCountFromDates:
+        default:
             DispatchQueue.main.async {
                 self.progressBar.progress = 0
                 self.subProgressBar.progress = 0

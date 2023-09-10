@@ -125,18 +125,18 @@ public extension PlanetaryHarmonics {
         }
         
         init(aspect:CoreAstrology.Aspect) {
-            self.base1 = (1 - sin(aspect.relation.degrees.value * Double.pi / 180))
-            self.base2 = sin(aspect.relation.degrees.value * Double.pi / 180)
-            self.base3 = sin(aspect.relation.degrees.value * Double.pi / 120)
-            self.base4 = sin(aspect.relation.degrees.value * Double.pi / 90)
-            self.base5 = sin(aspect.relation.degrees.value * Double.pi / 72)
-            self.base6 = sin(aspect.relation.degrees.value * Double.pi / 60)
-            self.base7 = sin(aspect.relation.degrees.value * Double.pi / (1.0/7.0))
-            self.base8 = sin(aspect.relation.degrees.value * Double.pi / 45)
-            self.base9 = sin(aspect.relation.degrees.value * Double.pi / 40)
-            self.base10 = sin(aspect.relation.degrees.value * Double.pi / 36)
-            self.base11 = sin(aspect.relation.degrees.value * Double.pi / (1.0/11.0))
-            self.base12 = sin(aspect.relation.degrees.value * Double.pi / 30)
+            self.base1 = (1 - sin(aspect.relation.nodeDistance.value * Double.pi / 180))
+            self.base2 = sin(aspect.relation.nodeDistance.value * Double.pi / 180)
+            self.base3 = sin(aspect.relation.nodeDistance.value * Double.pi / 120)
+            self.base4 = sin(aspect.relation.nodeDistance.value * Double.pi / 90)
+            self.base5 = sin(aspect.relation.nodeDistance.value * Double.pi / 72)
+            self.base6 = sin(aspect.relation.nodeDistance.value * Double.pi / 60)
+            self.base7 = sin(aspect.relation.nodeDistance.value * Double.pi / (1.0/7.0))
+            self.base8 = sin(aspect.relation.nodeDistance.value * Double.pi / 45)
+            self.base9 = sin(aspect.relation.nodeDistance.value * Double.pi / 40)
+            self.base10 = sin(aspect.relation.nodeDistance.value * Double.pi / 36)
+            self.base11 = sin(aspect.relation.nodeDistance.value * Double.pi / (1.0/11.0))
+            self.base12 = sin(aspect.relation.nodeDistance.value * Double.pi / 30)
         }
         
         mutating func add(_ otherSample: HarmonicsSample) {

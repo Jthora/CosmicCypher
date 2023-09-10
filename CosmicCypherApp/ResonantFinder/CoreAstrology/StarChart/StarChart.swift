@@ -52,8 +52,12 @@ public final class StarChart {
     }
     
     private func setupAspects() {
+        print("StarChart: setupAspects")
         for (primaryKey,primaryAlignment) in alignments {
+            print("primaryKey: \(primaryKey)")
+            
             for (secondaryKey,secondaryAlignment) in alignments where primaryKey != secondaryKey {
+                print("secondaryKey: \(secondaryKey)")
                 
                 guard !shouldSkipRedundant(primaryAlignment.nodeType, secondaryAlignment.nodeType) else { continue }
 //
@@ -62,14 +66,16 @@ public final class StarChart {
 //                }) else {
 //                    continue
 //                }
-                let offset = abs(primaryAlignment.longitude - secondaryAlignment.longitude)
+                let nodeDistance = abs(primaryAlignment.longitude - secondaryAlignment.longitude)
                 
-                if let relation = CoreAstrology.AspectRelation(degrees: offset),
+                if let relation = CoreAstrology.AspectRelation(nodeDistance: nodeDistance),
                    let primaryBody = CoreAstrology.AspectBody(type: primaryAlignment.nodeType, date: date),
                    let secondaryBody = CoreAstrology.AspectBody(type: secondaryAlignment.nodeType, date: date) {
+                    print("Creating Aspect: \(primaryBody.type.symbol)\(relation.type.symbol)\(secondaryBody.type.symbol) for \(date)")
                     let aspect = CoreAstrology.Aspect(primaryBody: primaryBody,
                                                       relation: relation,
                                                       secondaryBody: secondaryBody)
+                    print("Created Aspect: \(aspect.type.hash) for \(date)")
                     aspects.append(aspect)
                 }
             }

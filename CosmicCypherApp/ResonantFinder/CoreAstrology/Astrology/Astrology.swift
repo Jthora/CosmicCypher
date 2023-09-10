@@ -14,7 +14,7 @@ open class CoreAstrology {
     public final class AspectRelation {
         
         public var type:AspectRelationType
-        public var degrees:Degree
+        public var nodeDistance:Degree
         
         public enum AspectRelationCategory {
             case ease
@@ -58,7 +58,7 @@ open class CoreAstrology {
         }
         
         public var orbDistance:Degree {
-            return type.degree - abs(degrees)
+            return type.degree - abs(nodeDistance)
         }
         
         public var concentration:Double {
@@ -66,14 +66,14 @@ open class CoreAstrology {
             return Double(ratio)
         }
         
-        public init(degrees:Degree, forceWith t: AspectRelationType) {
-            self.degrees = degrees
+        public init(nodeDistance:Degree, forceWith t: AspectRelationType) {
+            self.nodeDistance = nodeDistance
             self.type = t
         }
         
-        public init?(degrees:Degree) {
-            self.degrees = degrees
-            guard let t = AspectRelationType(degreeOffset: degrees) else {return nil}
+        public init?(nodeDistance:Degree, limitTypes:[AspectRelationType] = AspectRelationType.allCases) {
+            self.nodeDistance = nodeDistance
+            guard let t = AspectRelationType(nodeDistance: nodeDistance, limitTypes: limitTypes) else {return nil}
             self.type = t
         }
         
@@ -84,25 +84,48 @@ open class CoreAstrology {
     
     public enum AspectRelationType:Double, CaseIterable, Codable {
         
-        public init?(degreeOffset:Degree) {
+        // init AspectRelationType (based on distance between AspectBodies)
+        public init?(nodeDistance:Degree, limitTypes:[AspectRelationType] = AspectRelationType.allCases) {
+            print("creating aspect relation for nodeDistance: \(nodeDistance)")
+            
+            // Setup
             var relationType:AspectRelationType? = nil
-            var lastDistance:Degree = 360
-            for thisRelation in AspectRelationType.allCases {
-                if thisRelation.withinOrb(orbitDegreeOffset: degreeOffset) {
-                    if relationType == nil {
-                        relationType = thisRelation
-                        lastDistance = thisRelation.distance(orbitDegreeOffset: degreeOffset)
-                    } else if lastDistance > thisRelation.distance(orbitDegreeOffset: degreeOffset) {
-                        relationType = thisRelation
-                        lastDistance = thisRelation.distance(orbitDegreeOffset: degreeOffset)
-                    }
+            
+            // Iterate through all Types
+            for thisRelationType in limitTypes {
+                print("checking for relationType: \(thisRelationType.symbol)")
+                // If type is within orb
+                if thisRelationType.withinOrb(nodeDistance: nodeDistance) {
+                    print("found relationType: \(thisRelationType.symbol)")
+                    relationType = thisRelationType
+                    break
                 }
             }
+            
+            // if none found, return nil
             guard let type = relationType else {
-                //print("WARNING: AspectRelationType is nil for degreeOffset \(degreeOffset)")
+                print("no relationType found for nodeDistance: \(nodeDistance)")
                 return nil
             }
+            
+            // Init
+            print("init relationType: \(type.symbol)")
             self = type
+        }
+        
+        // init AspectRelationType (based on )
+        public init?(distanceFromOrbCenter:Degree, expectedType:AspectRelationType) {
+            print("creating aspect relation for distanceFromOrbCenter: \(distanceFromOrbCenter)")
+            
+            print("checking for relationType: \(expectedType.symbol)")
+            // If type is within orb
+            if abs(distanceFromOrbCenter) < expectedType.orb {
+                print("found relationType: \(expectedType.symbol)")
+                self = expectedType
+            } else {
+                print("relationType \(expectedType.symbol) not within distance (return nil)")
+                return nil
+            }
         }
         
         case conjunction = 0
@@ -146,8 +169,11 @@ open class CoreAstrology {
             return abs(orbitDegreeOffset - self.degree)
         }
         
-        public func withinOrb(orbitDegreeOffset:Degree) -> Bool {
-            return orbitDegreeOffset > self.degree - self.orb && orbitDegreeOffset < self.degree + self.orb
+        public func withinOrb(nodeDistance:Degree) -> Bool {
+            let diff = abs(self.degree - nodeDistance)
+            let orb = self.orb
+            let isWithinOrb = diff < orb
+            return isWithinOrb
         }
         
         public var isEasyAspect:Bool {
@@ -372,8 +398,12 @@ open class CoreAstrology {
             equatorialCoordinates.positionAngle(relativeTo: secondBody.equatorialCoordinates)
         }
         
-        public func longitudeAngle(relativeTo secondBody:AspectBody) -> Double {
-            return equatorialCoordinates.alpha.value - secondBody.equatorialCoordinates.alpha.value
+        public func longitudeDifference(from secondBody:AspectBody, on date:Date) -> Degree? {
+            guard let l1 = self.type.geocentricLongitude(date: date),
+                  let l2 = secondBody.type.geocentricLongitude(date: date) else {
+                return nil
+            }
+            return l1 - l2
         }
         
         public enum NodeType: Int, CaseIterable {
@@ -920,22 +950,70 @@ open class CoreAstrology {
         }
     }
     
-    public final class Aspect {
-        
+    public struct AspectType: Equatable {
         public typealias SymbolHash = String
         
-        public var primaryBody:AspectBody
-        public var relation:AspectRelation
-        public var secondaryBody:AspectBody
+        public var primaryBodyType:AspectBody.NodeType
+        public var relationType:AspectRelationType
+        public var secondaryBodyType:AspectBody.NodeType
         
-        public init(primaryBody:AspectBody, relation:AspectRelation, secondaryBody:AspectBody) {
-            self.primaryBody = primaryBody
-            self.relation = relation
-            self.secondaryBody = secondaryBody
+        public var hash:SymbolHash {
+            return "\(primaryBodyType.symbol) \(relationType.symbol) \(secondaryBodyType.symbol)"
         }
         
-        public var longitudeAngle:Double {
-            return primaryBody.longitudeAngle(relativeTo: secondaryBody)
+        public func aspectEvent(for date:Date) -> AspectEvent? {
+            guard let aspect = aspect(for: date) else { return nil }
+            return AspectEvent(aspect: aspect, date: date)
+        }
+        
+        public func aspect(for date:Date) -> Aspect? {
+            print("creating aspect for: \(hash)")
+            guard let b1 = AspectBody(type: primaryBodyType, date: date),
+                  let b2 = AspectBody(type: secondaryBodyType, date: date),
+                  let d = b1.longitudeDifference(from: b2, on: date),
+                  let r = AspectRelation(nodeDistance: d, limitTypes: [relationType]) else { return nil }
+            print("using b1(\(b1.type.symbol)) b2(\(b2.type.symbol)) r(\(r.type.symbol))")
+            let aspect = Aspect(primaryBody: b1, relation: r, secondaryBody: b2)
+            print("created aspect: \(aspect.hash)")
+            return aspect
+        }
+    }
+    
+    public struct AspectEvent {
+        public var aspect:Aspect
+        public var date:Date
+    }
+    
+    public final class Aspect {
+        // properties
+        public var relation:AspectRelation
+        public var primaryBody:AspectBody
+        public var secondaryBody:AspectBody
+        
+        // accessors
+        public var type:AspectType { return AspectType(primaryBodyType: primaryBody.type, relationType: relation.type, secondaryBodyType: secondaryBody.type) }
+        public var hash:AspectType.SymbolHash { return type.hash }
+        
+        // init
+        public init(primaryBody:AspectBody, relation:AspectRelation, secondaryBody:AspectBody) {
+            self.primaryBody = primaryBody
+            self.secondaryBody = secondaryBody
+            self.relation = relation
+        }
+        
+        // init from AspectType and Date
+        public init?(type:AspectType, date:Date) {
+            guard let b1 = AspectBody(type: type.primaryBodyType, date: date),
+                  let b2 = AspectBody(type: type.secondaryBodyType, date: date),
+                  let d = b1.longitudeDifference(from: b2, on: date),
+                  let r = AspectRelation(nodeDistance: d) else { return nil }
+            self.primaryBody = b1
+            self.secondaryBody = b2
+            self.relation = r
+        }
+        
+        public func longitudeDifference(for date:Date) -> Degree? {
+            return primaryBody.longitudeDifference(from: secondaryBody, on: date)
         }
         
         public var positionAngle:Degree {
@@ -969,11 +1047,6 @@ open class CoreAstrology {
         
         public var description:String {
             return primaryBody.type.defaultDescription + relation.defaultDescription + secondaryBody.type.defaultDescription
-        }
-        
-        public var symbolHash:SymbolHash {
-            var string: String = "\(primaryBody.type.symbol) \(relation.type.symbol) \(secondaryBody.type.symbol)"
-            return string
         }
         
         public func planetaryEffectDescription(flipPlanets:Bool = false) -> String {

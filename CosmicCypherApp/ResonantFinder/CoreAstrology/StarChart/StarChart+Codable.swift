@@ -94,22 +94,22 @@ extension CoreAstrology.Aspect: Codable {
 extension CoreAstrology.AspectRelation: Codable {
     
     enum CodingKeys: CodingKey {
-        case degrees
+        case nodeDistance
         case type
     }
     
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(degrees, forKey: .degrees)
+        try container.encode(nodeDistance, forKey: .nodeDistance)
         try container.encode(type, forKey: .type)
     }
     
     public convenience init(from decoder: Decoder) throws {
         //print("decoding AspectRelation")
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        let degrees = try container.decode(Degree.self, forKey: .degrees)
+        let nodeDistance = try container.decode(Degree.self, forKey: .nodeDistance)
         let type = try container.decode(CoreAstrology.AspectRelationType.self, forKey: .type)
-        self.init(degrees: degrees, forceWith: type)
+        self.init(nodeDistance: nodeDistance, forceWith: type)
     }
 }
 

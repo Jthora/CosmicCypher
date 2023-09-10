@@ -40,7 +40,7 @@ class ResonanceReportTableViewCell: UITableViewCell {
     func setup(with aspect:CoreAstrology.Aspect, primaryBodyLongitude:Degree, secondaryBodyLongitude:Degree) {
         
         // Distance
-        var degrees = aspect.relation.degrees.value.truncatingRemainder(dividingBy: 360)
+        var degrees = aspect.relation.nodeDistance.value.truncatingRemainder(dividingBy: 360)
         var positive = "+"
         
         

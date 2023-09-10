@@ -49,7 +49,7 @@ extension AspectEventScanner {
                     let dateString:String = dateFormatter.string(from: date)
                     
                     // Aspects as [String] for Value
-                    let aspectHashes:[String] = aspects.map( { $0.symbolHash } )
+                    let aspectHashes:[String] = aspects.map( { $0.hash } )
                     
                     // Add More
                     data[dateString] = aspectHashes
@@ -67,7 +67,7 @@ extension AspectEventScanner {
                     let dateString:String = dateFormatter.string(from: date)
                     
                     // Aspects as [String] for Value
-                    let aspectHashes = aspects.map( { $0.symbolHash } )
+                    let aspectHashes = aspects.map( { $0.hash } )
                     
                     // Add More
                     data[dateString] = aspectHashes
@@ -89,7 +89,7 @@ extension AspectEventScanner {
                     let timeString:String = dateFormatter.string(from: date)
                     
                     // Aspects as [String] for Value
-                    let aspectHashes = aspects.map( { $0.symbolHash } )
+                    let aspectHashes = aspects.map( { $0.hash } )
                     
                     if var dateData = data[dateString] as? [String:Any] {
                         // Add More

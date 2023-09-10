@@ -80,7 +80,7 @@ public struct AstroUtils {
             }
         }
         
-        let aspectRelation = CoreAstrology.AspectRelation(degrees: degreeDiff, forceWith: closestAspectRelation)
+        let aspectRelation = CoreAstrology.AspectRelation(nodeDistance: degreeDiff, forceWith: closestAspectRelation)
         return aspectRelation
     }
     

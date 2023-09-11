@@ -280,7 +280,7 @@ open class CoreAstrology {
             case .square: return "☐"
             case .quintile: return "⭐︎"
             case .biquintile: return "⭐︎²"
-            case .sextile: return "✱"
+            case .sextile: return "✱" // ⚹
             case .septile: return "7¹"
             case .biseptile: return "7²"
             case .triseptile: return "7³"
@@ -527,10 +527,10 @@ open class CoreAstrology {
             public var symbol:String {
                 switch self {
                 case .sun: return "☉"
-                case .moon: return "☽"
+                case .moon: return "☾"
                 case .mercury: return "☿"
                 case .venus: return "♀"
-                case .mars: return "♂︎"
+                case .mars: return "♂"
                 case .jupiter: return "♃"
                 case .saturn: return "♄"
                 case .uranus: return "♅"
@@ -542,8 +542,8 @@ open class CoreAstrology {
                 case .imumCoeli: return "IC"
                 case .lunarAscendingNode: return "☊"
                 case .lunarDecendingNode: return "☋"
-                case .lunarApogee: return "⚸"
-                case .lunarPerigee: return "-⚸"
+                case .lunarApogee: return "☾̥"
+                case .lunarPerigee: return "☾̇"
                 case .partOfFortune: return "Ⓧ"
                 case .partOfSpirit: return "꩜"
                 case .partOfEros: return "♡"

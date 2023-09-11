@@ -66,6 +66,7 @@ class AspectEventExportViewController: UIViewController {
                                             verbose: self.exporter.verbose)
             
             self.segmentedControlExportMode.selectedSegmentIndex = self.exporter.exportMode.rawValue
+            self.segmentedControlFormatOption.selectedSegmentIndex = self.exporter.formatOption.rawValue
             self.textViewDataViewer.text = dataString
         }
     }
@@ -76,8 +77,8 @@ class AspectEventExportViewController: UIViewController {
             print("Index Out of Bounds: ExportMode Segmented Control")
             return
         }
-        self.exporter.exportMode = newMode
         DispatchQueue.main.async {
+            self.exporter.exportMode = newMode
             self.updateUI()
         }
     }
@@ -87,8 +88,22 @@ class AspectEventExportViewController: UIViewController {
             print("Index Out of Bounds: FormatOption Segmented Control")
             return
         }
-        self.exporter.formatOption = newOption
         DispatchQueue.main.async {
+            self.exporter.formatOption = newOption
+            self.updateUI()
+        }
+    }
+    
+    @IBAction func includeLegendSwitched(_ sender: UISwitch) {
+        DispatchQueue.main.async {
+            self.exporter.includeLegend = sender.isOn
+            self.updateUI()
+        }
+    }
+    
+    @IBAction func verboseSwitched(_ sender: UISwitch) {
+        DispatchQueue.main.async {
+            self.exporter.verbose = sender.isOn
             self.updateUI()
         }
     }

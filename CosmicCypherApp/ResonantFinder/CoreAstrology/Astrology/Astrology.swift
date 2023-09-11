@@ -86,17 +86,17 @@ open class CoreAstrology {
         
         // init AspectRelationType (based on distance between AspectBodies)
         public init?(nodeDistance:Degree, limitTypes:[AspectRelationType] = AspectRelationType.allCases) {
-            print("creating aspect relation for nodeDistance: \(nodeDistance)")
+            //print("creating aspect relation for nodeDistance: \(nodeDistance)")
             
             // Setup
             var relationType:AspectRelationType? = nil
             
             // Iterate through all Types
             for thisRelationType in limitTypes {
-                print("checking for relationType: \(thisRelationType.symbol)")
+                //print("checking for relationType: \(thisRelationType.symbol)")
                 // If type is within orb
                 if thisRelationType.withinOrb(nodeDistance: nodeDistance) {
-                    print("found relationType: \(thisRelationType.symbol)")
+                    //print("found relationType: \(thisRelationType.symbol)")
                     relationType = thisRelationType
                     break
                 }
@@ -104,26 +104,26 @@ open class CoreAstrology {
             
             // if none found, return nil
             guard let type = relationType else {
-                print("no relationType found for nodeDistance: \(nodeDistance)")
+                //print("no relationType found for nodeDistance: \(nodeDistance)")
                 return nil
             }
             
             // Init
-            print("init relationType: \(type.symbol)")
+            //print("init relationType: \(type.symbol)")
             self = type
         }
         
         // init AspectRelationType (based on )
         public init?(distanceFromOrbCenter:Degree, expectedType:AspectRelationType) {
-            print("creating aspect relation for distanceFromOrbCenter: \(distanceFromOrbCenter)")
+            //print("creating aspect relation for distanceFromOrbCenter: \(distanceFromOrbCenter)")
             
-            print("checking for relationType: \(expectedType.symbol)")
+            //print("checking for relationType: \(expectedType.symbol)")
             // If type is within orb
             if abs(distanceFromOrbCenter) < expectedType.orb {
-                print("found relationType: \(expectedType.symbol)")
+                //print("found relationType: \(expectedType.symbol)")
                 self = expectedType
             } else {
-                print("relationType \(expectedType.symbol) not within distance (return nil)")
+                //print("relationType \(expectedType.symbol) not within distance (return nil)")
                 return nil
             }
         }
@@ -967,14 +967,14 @@ open class CoreAstrology {
         }
         
         public func aspect(for date:Date) -> Aspect? {
-            print("creating aspect for: \(hash)")
+            //print("creating aspect for: \(hash)")
             guard let b1 = AspectBody(type: primaryBodyType, date: date),
                   let b2 = AspectBody(type: secondaryBodyType, date: date),
                   let d = b1.longitudeDifference(from: b2, on: date),
                   let r = AspectRelation(nodeDistance: d, limitTypes: [relationType]) else { return nil }
-            print("using b1(\(b1.type.symbol)) b2(\(b2.type.symbol)) r(\(r.type.symbol))")
+            //print("using b1(\(b1.type.symbol)) b2(\(b2.type.symbol)) r(\(r.type.symbol))")
             let aspect = Aspect(primaryBody: b1, relation: r, secondaryBody: b2)
-            print("created aspect: \(aspect.hash)")
+            //print("created aspect: \(aspect.hash)")
             return aspect
         }
     }

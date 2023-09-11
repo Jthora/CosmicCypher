@@ -110,12 +110,14 @@
                                             <segment title="Words"/>
                                         </segments>
                                         <connections>
-                                            <action selector="exportModeSegmentedControlChanged:" destination="Y6W-OH-hqX" eventType="valueChanged" id="IJk-dT-zyj"/>
                                             <action selector="formatOptionSegmentedControlChanged:" destination="Y6W-OH-hqX" eventType="valueChanged" id="dx1-Xf-WW4"/>
                                         </connections>
                                     </segmentedControl>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kcP-WR-qZt">
                                         <rect key="frame" x="320" y="590" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="includeLegendSwitched:" destination="Y6W-OH-hqX" eventType="valueChanged" id="h7P-r9-bUm"/>
+                                        </connections>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Include Legend" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dh3-M6-cbV">
                                         <rect key="frame" x="240.66666666666663" y="566" width="128.33333333333337" height="16"/>
@@ -125,6 +127,9 @@
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rPC-Cj-VTG">
                                         <rect key="frame" x="320" y="653" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="verboseSwitched:" destination="Y6W-OH-hqX" eventType="valueChanged" id="unk-FM-2ah"/>
+                                        </connections>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verbose" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bc3-hD-AXc">
                                         <rect key="frame" x="298" y="629" width="71" height="16"/>

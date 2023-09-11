@@ -167,7 +167,7 @@ class AspectEventScanner {
         
         // List AspectTypes
         let aspectTypes = createListOfAspectTypes(relationTypes: relationTypes, nodeTypes: nodeTypes)
-        print("Aspects To Scan: \(aspectTypes.map({$0.hash}))")
+        //print("Aspects To Scan: \(aspectTypes.map({$0.hash}))")
         
         // Scan for Aspects
         scan(aspectTypes: aspectTypes, totalScanCount: totalScanCount)
@@ -198,7 +198,7 @@ class AspectEventScanner {
     
     // Go through every day and scan for Aspects that are within orb
     private func scan(aspectTypes: [CoreAstrology.AspectType], totalScanCount:Float) {
-        print("scanning aspects")
+        //print("scanning aspects")
         
         // Perform on Background Thread
         DispatchQueue.global(qos: .userInitiated).async {
@@ -222,9 +222,9 @@ class AspectEventScanner {
                 }
                 
                 // Find Aspects within Orb
-                print("finding aspects for types: \(aspectTypes.map({$0.hash}))")
+                //print("finding aspects for types: \(aspectTypes.map({$0.hash}))")
                 let aspects = self.findAspectsWithinOrb(aspectTypes: aspectTypes, on: currentDate)
-                print("found aspects: \(aspects.map({$0.hash}))")
+                //print("found aspects: \(aspects.map({$0.hash}))")
                 
                 // Calculate Aspects
                 self.calculate(aspects: aspects, on: currentDate)
@@ -245,9 +245,9 @@ class AspectEventScanner {
     private func findAspectsWithinOrb(aspectTypes:[CoreAstrology.AspectType], on date:Date) -> [CoreAstrology.Aspect] {
         var aspects: [CoreAstrology.Aspect] = []
         for aspectType in aspectTypes {
-            print("checking orb for: \(aspectType.hash)")
+            //print("checking orb for: \(aspectType.hash)")
             guard let aspect = aspectType.aspect(for: date) else {continue}
-            print("found aspect within orb: \(aspect.hash)")
+            //print("found aspect within orb: \(aspect.hash)")
             aspects.append(aspect)
         }
         return aspects
@@ -255,36 +255,36 @@ class AspectEventScanner {
     
     // Cycle through Aspects and Planets looking for Orbs at 0º
     private func calculate(aspects:[CoreAstrology.Aspect], on currentDate:Date) {
-        print("Calculating: \(currentDate)")
+        //print("Calculating: \(currentDate)")
         
         // Iterate through Aspects
         for currentAspect in aspects {
-            print("Iterating: \(currentAspect.hash)")
+            //print("Iterating: \(currentAspect.hash)")
             
             // Symbol Hash
             let hash = currentAspect.hash
             
             // Current Aspect Distance
             guard let currentDistance = currentAspect.longitudeDifference(for: currentDate) else {
-                print("Skipping \(hash) (FAILURE to get longitudeDifference for \(currentAspect) on \(currentDate)")
+                //print("Skipping \(hash) (FAILURE to get longitudeDifference for \(currentAspect) on \(currentDate)")
                 continue
             }
             
             // Ensure that aspect isn't Recently Locked In
             guard recentlyLockedInAspectTypes[hash] == nil else {
-                print("Skipping \(hash) (recently Locked In)")
+                //print("Skipping \(hash) (recently Locked In)")
                 continue // Skip to next aspect
             }
             
             // If Previous Aspect exists, compare with Current Aspect
             if let previousAspectEvent = activelyScanningAspectEvents[hash] {
-                print("Comparing \(previousAspectEvent.aspect.type.hash) with \(currentAspect.type.hash)")
+                //print("Comparing \(previousAspectEvent.aspect.type.hash) with \(currentAspect.type.hash)")
                 
                 // Previous Date, Aspect and Distance
                 let previousDate = previousAspectEvent.date
                 let previousAspect = previousAspectEvent.aspect
                 guard let previousDistance = previousAspect.longitudeDifference(for: previousDate) else {
-                    print("Skipping \(hash) (FAILURE to get longitudeDifference for \(previousAspect) on \(previousDate))")
+                    //print("Skipping \(hash) (FAILURE to get longitudeDifference for \(previousAspect) on \(previousDate))")
                     continue
                 }
                 
@@ -293,13 +293,13 @@ class AspectEventScanner {
                 
                 // If closer, update aspect
                 if isCloser {
-                    print("Closing In on (\(hash)) for [\(currentDate)] at [\(currentDistance)]")
+                    //print("Closing In on (\(hash)) for [\(currentDate)] at [\(currentDistance)]")
                     
                     // Update Aspect because it's closer to 0º orb
                     activelyScanningAspectEvents[hash] = CoreAstrology.AspectEvent(aspect: currentAspect, date: currentDate)
                 } else {
                     // else
-                    print("Locking In (\(hash)) for [\(previousDate)] at [\(previousDistance)]")
+                    //print("Locking In (\(hash)) for [\(previousDate)] at [\(previousDistance)]")
                     
                     // No longer Actively Scanning Aspect
                     self.activelyScanningAspectEvents.removeValue(forKey: hash)
@@ -307,7 +307,7 @@ class AspectEventScanner {
                     // Deep Scan to aquire the Exact Time of Date for the Aspect Event
                     let realDate = deepScan(aspect: previousAspect, for: previousDate)
                     guard let realAspect = CoreAstrology.Aspect(type: previousAspect.type, date: realDate) else {
-                        print("FailureToGetRealDate \(previousAspect): \(realDate)")
+                        //print("FailureToGetRealDate \(previousAspect): \(realDate)")
                         self.handleScanError(error: .failureToGetRealDate, context: "\(previousAspect): \(realDate)")
                         continue
                     }
@@ -321,12 +321,12 @@ class AspectEventScanner {
                 
             } else {
                 // No Previous Aspect Date (initial state) add
-                print("Newly detected Aspect \(hash)")
+                //print("Newly detected Aspect \(hash)")
                 activelyScanningAspectEvents[hash] = CoreAstrology.AspectEvent(aspect: currentAspect, date: currentDate)
             }
         }
 
-        print("Considering removal of locked in aspects...")
+        //print("Considering removal of locked in aspects...")
         // remove recentlyLockedInAspects that are no longer being detected
         let symbolHashes = aspects.map { $0.hash }
         
@@ -334,7 +334,7 @@ class AspectEventScanner {
         for (key, _) in recentlyLockedInAspectTypes {
             // Remove Recently Locked In Flag, as it's not being scanned anymore and may appear again in the future
             if !symbolHashes.contains(key) {
-                print("Clearing recently locked in aspect: \(key)")
+                //print("Clearing recently locked in aspect: \(key)")
                 recentlyLockedInAspectTypes.removeValue(forKey: key)
             }
         }
@@ -343,7 +343,7 @@ class AspectEventScanner {
     // Archive the currently Locked In Aspects
     private func archiveResults() {
         // Archiving Results
-        print("Archiving Results")
+        //print("Archiving Results")
         let hashKey = Results.HashKey(startDate: self.startDate,
                                       endDate: self.endDate,
                                       longitude: self.longitude,
@@ -441,17 +441,17 @@ extension AspectEventScanner {
     // Deep Scanner
     func deepScan(aspect: CoreAstrology.Aspect, for estimatedDate: Date) -> Date {
         // Calculate the exact date and time of the aspect
-        let aspectDate = calculateAspectDate(estimatedDate: estimatedDate,
-                                             primaryObject: aspect.primaryBody,
-                                             secondaryObject: aspect.secondaryBody,
-                                             aspectRelation: aspect.relation)
+        let aspectDate = calculateAspectDateTime(estimatedDate: estimatedDate,
+                                                 primaryObject: aspect.primaryBody,
+                                                 secondaryObject: aspect.secondaryBody,
+                                                 aspectRelation: aspect.relation)
         return aspectDate
     }
     
-    private func calculateAspectDate(estimatedDate: Date,
-                                      primaryObject: CoreAstrology.AspectBody,
-                                      secondaryObject: CoreAstrology.AspectBody,
-                                      aspectRelation: CoreAstrology.AspectRelation) -> Date {
+    private func calculateAspectDateTime(estimatedDate: Date,
+                                         primaryObject: CoreAstrology.AspectBody,
+                                         secondaryObject: CoreAstrology.AspectBody,
+                                         aspectRelation: CoreAstrology.AspectRelation) -> Date {
         let p1Type = primaryObject.type
         let p2Type = secondaryObject.type
         let targetAspectType = aspectRelation.type

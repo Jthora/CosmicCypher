@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import BinaryCodable
+//import BinaryCodable
 
 
 // https://gist.github.com/tannernelson/73d0923efdee50e6c38f

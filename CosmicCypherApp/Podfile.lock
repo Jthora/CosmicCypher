@@ -1,10 +1,8 @@
 PODS:
-  - BinaryCodable (0.3.1)
   - Charts (4.1.0):
     - Charts/Core (= 4.1.0)
   - Charts/Core (4.1.0):
     - SwiftAlgorithms (~> 1.0)
-  - GaugeKit (0.5.1)
   - ObjCAA (2.4.0)
   - SwiftAA (2.4.0):
     - ObjCAA (~> 2.4.0)
@@ -13,18 +11,14 @@ PODS:
   - TinyConstraints (4.0.2)
 
 DEPENDENCIES:
-  - BinaryCodable
   - Charts
-  - GaugeKit
   - SwiftAA
   - TimeZoneLocate
   - TinyConstraints
 
 SPEC REPOS:
   trunk:
-    - BinaryCodable
     - Charts
-    - GaugeKit
     - ObjCAA
     - SwiftAA
     - SwiftAlgorithms
@@ -32,15 +26,13 @@ SPEC REPOS:
     - TinyConstraints
 
 SPEC CHECKSUMS:
-  BinaryCodable: 2416153108f4cd2c5e6c11bf15ef383dae6c6f23
-  Charts: 354f86803d11d9c35de280587fef50d1af063978
-  GaugeKit: b09f41f141511c172a606403e71adf8e9b6008b3
+  Charts: ce0768268078eee0336f122c3c4ca248e4e204c5
   ObjCAA: d7e9ff513ccaa6511a79152adfbe169f6abb02e3
   SwiftAA: 726a9f6cf6bfda3e59ae88a8c3b9f0e122948973
   SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
   TimeZoneLocate: 8536d7435a408ac14b6e0190ffcca2c2bb91aff8
   TinyConstraints: 7b7ccc0c485bb3bb47082138ff28bc33cd49897f
 
-PODFILE CHECKSUM: c0bcd11b4b78a873a6fc9d9dc907ce948ace53ac
+PODFILE CHECKSUM: 00f9dde9b76f79f660d1979fc08ebbc1c390d33b
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.0

@@ -446,6 +446,9 @@
 		FAEB27C728527AAC009994B8 /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 		FAEB27C9285612DC009994B8 /* TimeStreamConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamConfiguration.swift; sourceTree = "<group>"; };
 		FAEB27CB28572DFB009994B8 /* SKSpriteNode+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKSpriteNode+Extension.swift"; sourceTree = "<group>"; };
+		FAFA406F2AB05C2800455D97 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAFA40732AB05D1B00455D97 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAFB68882AB0629300FEBDF4 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAFE792B2A6AD84000C56612 /* AspectEventScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectEventScanViewController.swift; sourceTree = "<group>"; };
 		FAFE792D2A6AD87200C56612 /* AspectEventScan.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AspectEventScan.storyboard; sourceTree = "<group>"; };
 		FAFE792F2A6BE85B00C56612 /* GeoLocationAndTimeSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoLocationAndTimeSelectViewController.swift; sourceTree = "<group>"; };
@@ -502,6 +505,9 @@
 		40FE86CF0D858DB3B63E25DB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FAFB68882AB0629300FEBDF4 /* Charts.framework */,
+				FAFA40732AB05D1B00455D97 /* Charts.framework */,
+				FAFA406F2AB05C2800455D97 /* Charts.framework */,
 				64EF9314ECA183C508527135 /* Pods_CosmicCypher.framework */,
 				8E40E340033B175EDED4394C /* Pods_CosmicCypher_CosmicCypherUITests.framework */,
 				D84C4B7FFCB993BE3E5D99BA /* Pods_CosmicCypherTests.framework */,
@@ -1676,6 +1682,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AD025F5C6AE57EA49DBDED89 /* Pods-CosmicCypher.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CosmicCypher.entitlements;
@@ -1688,6 +1695,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = app.thora.cosmiccypher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
@@ -1701,6 +1709,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2A94E4E23317CBF122824BA0 /* Pods-CosmicCypher.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CosmicCypher.entitlements;
@@ -1713,6 +1722,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = app.thora.cosmiccypher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;

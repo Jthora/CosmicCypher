@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import BinaryCodable
+//import BinaryCodable
 import SwiftAA
 
 public final class PlanetState: AstrologicalNodeState {

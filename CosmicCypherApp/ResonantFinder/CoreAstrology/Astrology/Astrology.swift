@@ -403,7 +403,14 @@ open class CoreAstrology {
                   let l2 = secondBody.type.geocentricLongitude(date: date) else {
                 return nil
             }
-            return l1 - l2
+            // Calculate the absolute difference between the angles
+            var difference = abs(l1 - l2)
+            
+            // Handle the wrapping behavior
+            if difference > 180 {
+                difference = 360 - difference
+            }
+            return difference
         }
         
         public enum NodeType: Int, CaseIterable {

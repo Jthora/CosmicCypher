@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "CosmicCypherMk3-appIcon.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

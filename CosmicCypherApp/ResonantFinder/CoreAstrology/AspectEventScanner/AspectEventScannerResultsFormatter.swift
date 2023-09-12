@@ -75,8 +75,8 @@ extension AspectEventScanner.Results {
                     
                     if verbose {
                         switch formatOption {
-                        case .letters, .words: formattedString += "date "
-                        case .symbols: formattedString += "D"
+                        case .words: formattedString += "Date "
+                        case .letters, .symbols: formattedString += "D"
                         }
                     }
                 } else {
@@ -85,8 +85,8 @@ extension AspectEventScanner.Results {
                         formattedKey
                         // Format Time for Key
                         switch formatOption {
-                        case .letters, .words:
-                            formattedKey = formattedKey.replacingOccurrences(of: "T", with: "time ")
+                        case .words:
+                            formattedKey = formattedKey.replacingOccurrences(of: "T", with: "Time ")
                         default: ()
                         }
                     } else {

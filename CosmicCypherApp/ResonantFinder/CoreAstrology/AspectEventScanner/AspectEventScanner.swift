@@ -440,6 +440,7 @@ extension AspectEventScanner {
 extension AspectEventScanner {
     // Deep Scanner
     func deepScan(aspect: CoreAstrology.Aspect, for estimatedDate: Date) -> Date {
+        print("deep scan")
         // Calculate the exact date and time of the aspect
         let aspectDate = calculateAspectDateTime(estimatedDate: estimatedDate,
                                                  primaryObject: aspect.primaryBody,
@@ -457,13 +458,14 @@ extension AspectEventScanner {
         let targetAspectType = aspectRelation.type
         let targetAspectAngle = targetAspectType.rawValue
         let targetOrbThreshold = 0.01 // Set the target orb threshold to 0.01 degrees
+        print("DeepScan(\(p1Type.symbol)\(targetAspectType.symbol)\(p2Type.symbol))")
         
         // Calculate the TimeInterval for 24 hours
-        let oneDay: TimeInterval = 24 * 60 * 60
+        let halfDay: TimeInterval = 12 * 60 * 60
         
         // Calculate the TimeInterval range for 24 hours before and after the estimatedDate
-        let startTimeInterval = estimatedDate.timeIntervalSinceReferenceDate - oneDay
-        let endTimeInterval = estimatedDate.timeIntervalSinceReferenceDate + oneDay
+        let startTimeInterval = estimatedDate.timeIntervalSinceReferenceDate - halfDay
+        let endTimeInterval = estimatedDate.timeIntervalSinceReferenceDate + halfDay
         
         var closestDate = estimatedDate
         var minDistance = Double.greatestFiniteMagnitude
@@ -472,6 +474,8 @@ extension AspectEventScanner {
         var upperBoundTimeInterval = endTimeInterval
         
         while upperBoundTimeInterval - lowerBoundTimeInterval >= 1.0 {
+            
+            print("DeepScan(\(p1Type.symbol)\(targetAspectType.symbol)\(p2Type.symbol)): upper(\(Date(timeIntervalSinceReferenceDate: upperBoundTimeInterval))) lower(\(Date(timeIntervalSinceReferenceDate: lowerBoundTimeInterval)))")
             // Perform a binary search to find the closest aspect date
             
             let midTimeInterval = (lowerBoundTimeInterval + upperBoundTimeInterval) / 2.0
@@ -482,30 +486,56 @@ extension AspectEventScanner {
                   let longitudeDifference: Degree = b1.longitudeDifference(from: b2, on: midDate) else {
                 break
             }
+            
+            print("DeepScan(\(p1Type.symbol)\(targetAspectType.symbol)\(p2Type.symbol)): longitudeDifference(\(longitudeDifference))(\(targetAspectAngle))")
             // Calculate the aspect angle between the two planetary bodies
             //.longitudeAngle(relativeTo: b2)
             
             // Calculate the difference between the aspect angle and the orb distance
             let distance = abs(longitudeDifference.value - targetAspectAngle)
+            print("DeepScan(\(p1Type.symbol)\(targetAspectType.symbol)\(p2Type.symbol)): distance(\(distance))")
             
             if distance < minDistance {
+                print("DeepScan(\(p1Type.symbol)\(targetAspectType.symbol)\(p2Type.symbol)): closing in (\(minDistance) -> \(distance))")
                 minDistance = distance
                 closestDate = midDate
             }
             
             // Check if the aspect angle is within the target orb threshold
             if distance < targetOrbThreshold {
+                print("DeepScan(\(p1Type.symbol)\(targetAspectType.symbol)\(p2Type.symbol)): targetOrbThreshold (\(distance) < \(targetOrbThreshold))")
                 // If it is, we found an aspect within the desired orb, so we can exit the loop early
                 break
             }
             
-            if longitudeDifference.value > targetAspectAngle {
+            // Assumption
+            
+            // Time is not the same as angle progress...
+            
+            // Make this function more intelligent.
+            
+            // Handle for scenarios where clearly something's fishy and adjustments to the deep scan values must be made
+            
+            // if, for example, the lower bounds move up, but we actually end up going even farther away...
+            // then the next pass we need to fix for that and expand the lower bounds by moving it back down 2 iteratives.
+            // then try again.
+            
+            // continue until the correct time is discovered.
+            
+            // There's no way to make a 'perfect' formula considering the 0/360 issue, Retrogrades and cut-offs on the start dates and end dates
+            
+            // Instead, just make the deep scanner smart
+            
+            if longitudeDifference.value < targetAspectAngle {
+                print("DeepScan(\(p1Type.symbol)\(targetAspectType.symbol)\(p2Type.symbol)): moving lower bounds up")
                 lowerBoundTimeInterval = midTimeInterval
             } else {
+                print("DeepScan(\(p1Type.symbol)\(targetAspectType.symbol)\(p2Type.symbol)): moving upper bounds down")
                 upperBoundTimeInterval = midTimeInterval
             }
         }
         
+        print("DeepScan(\(p1Type.symbol)\(targetAspectType.symbol)\(p2Type.symbol)): \(estimatedDate) -> \(closestDate)")
         return closestDate
     }
 }

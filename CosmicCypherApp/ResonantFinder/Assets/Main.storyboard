@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0dJ-eA-Nbr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0dJ-eA-Nbr">
     <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light">
         <simulatedSceneSize key="mac" width="865" height="1073"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -39,7 +39,7 @@
                                                 <rect key="frame" x="269" y="8" width="747" height="253"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RZN-bF-uPS">
-                                                        <rect key="frame" x="0.0" y="8.5" width="372.5" height="16.5"/>
+                                                        <rect key="frame" x="0.0" y="8" width="372.5" height="17.5"/>
                                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -58,7 +58,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Air" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQM-Ox-f5k">
-                                                        <rect key="frame" x="0.0" y="8.5" width="347" height="16.5"/>
+                                                        <rect key="frame" x="0.0" y="8" width="347" height="17.5"/>
                                                         <fontDescription key="fontDescription" name="Iceberg-Regular" family="Iceberg" pointSize="14"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -87,7 +87,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iFv-Bj-Aim">
-                                                        <rect key="frame" x="0.0" y="63" width="372.5" height="16.5"/>
+                                                        <rect key="frame" x="0.0" y="62.5" width="372.5" height="17.5"/>
                                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -106,7 +106,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Water" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9t-eL-ncp">
-                                                        <rect key="frame" x="0.0" y="63" width="347" height="16.5"/>
+                                                        <rect key="frame" x="0.0" y="62.5" width="347" height="17.5"/>
                                                         <fontDescription key="fontDescription" name="Iceberg-Regular" family="Iceberg" pointSize="14"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -135,7 +135,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sGS-5b-zVX">
-                                                        <rect key="frame" x="374.5" y="8.5" width="372.5" height="16.5"/>
+                                                        <rect key="frame" x="374.5" y="8" width="372.5" height="17.5"/>
                                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -147,7 +147,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GTU-yo-cUh">
-                                                        <rect key="frame" x="374.5" y="8.5" width="372.5" height="16.5"/>
+                                                        <rect key="frame" x="374.5" y="8" width="372.5" height="17.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -163,7 +163,7 @@
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spirit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yXM-E3-5cS">
-                                                        <rect key="frame" x="400" y="8.5" width="347" height="16.5"/>
+                                                        <rect key="frame" x="400" y="8" width="347" height="17.5"/>
                                                         <fontDescription key="fontDescription" name="Iceberg-Regular" family="Iceberg" pointSize="14"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -204,7 +204,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pp2-xW-ocy">
-                                                        <rect key="frame" x="374.5" y="63" width="372.5" height="16.5"/>
+                                                        <rect key="frame" x="374.5" y="62.5" width="372.5" height="17.5"/>
                                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -216,7 +216,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fKh-Qc-au8">
-                                                        <rect key="frame" x="374.5" y="63" width="372.5" height="16.5"/>
+                                                        <rect key="frame" x="374.5" y="62.5" width="372.5" height="17.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -235,7 +235,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shadow" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="col-jT-sOY">
-                                                        <rect key="frame" x="400" y="63" width="347" height="16.5"/>
+                                                        <rect key="frame" x="400" y="62.5" width="347" height="17.5"/>
                                                         <fontDescription key="fontDescription" name="Iceberg-Regular" family="Iceberg" pointSize="14"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -381,7 +381,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4id-yg-xtV">
-                                                        <rect key="frame" x="0.0" y="228" width="372.5" height="16.5"/>
+                                                        <rect key="frame" x="0.0" y="227.5" width="372.5" height="17.5"/>
                                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -397,7 +397,7 @@
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZK-r1-hlv">
-                                                        <rect key="frame" x="0.0" y="228" width="347" height="16.5"/>
+                                                        <rect key="frame" x="0.0" y="227.5" width="347" height="17.5"/>
                                                         <fontDescription key="fontDescription" name="Iceberg-Regular" family="Iceberg" pointSize="14"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -501,7 +501,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iQd-Ey-Zgk">
-                                                        <rect key="frame" x="374.5" y="228" width="372.5" height="16.5"/>
+                                                        <rect key="frame" x="374.5" y="227.5" width="372.5" height="17.5"/>
                                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -517,7 +517,7 @@
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Many" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uT0-Di-7Cj">
-                                                        <rect key="frame" x="400" y="228" width="347" height="16.5"/>
+                                                        <rect key="frame" x="400" y="227.5" width="347" height="17.5"/>
                                                         <fontDescription key="fontDescription" name="Iceberg-Regular" family="Iceberg" pointSize="14"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -1479,7 +1479,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ija-bO-JsC">
-                                        <rect key="frame" x="153.5" y="277" width="200" height="70"/>
+                                        <rect key="frame" x="169.5" y="277" width="200" height="70"/>
                                         <color key="backgroundColor" systemColor="tertiaryLabelColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="6FD-lX-KIi"/>
@@ -1494,38 +1494,38 @@ Time:  10:51:55</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S8T-cw-Gnc">
-                                        <rect key="frame" x="0.0" y="269" width="153.5" height="153.5"/>
+                                        <rect key="frame" x="8" y="277" width="153.5" height="153.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="S8T-cw-Gnc" secondAttribute="height" multiplier="1:1" id="Z7t-4X-gyw"/>
                                         </constraints>
-                                        <state key="normal" image="ResonantFinder-CircleButtons-dateLocation"/>
+                                        <state key="normal" image="Button_Settings-512x"/>
                                         <connections>
                                             <action selector="geoLocationButtonTouch:" destination="0dJ-eA-Nbr" eventType="touchUpInside" id="rZD-U3-Vdc"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E1d-3W-cqr">
-                                        <rect key="frame" x="870.5" y="269" width="153.5" height="153.5"/>
-                                        <state key="normal" image="ResonantFinder-CircleButtons-instructions"/>
+                                        <rect key="frame" x="862.5" y="277" width="153.5" height="153.5"/>
+                                        <state key="normal" image="Button_Education-512x"/>
                                         <connections>
                                             <action selector="instructionsButtonTouch:" destination="0dJ-eA-Nbr" eventType="touchUpInside" id="p5A-9V-tQ0"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsA-NX-W5Y">
-                                        <rect key="frame" x="0.0" y="899.5" width="153.5" height="153.5"/>
-                                        <state key="normal" image="ResonantFinder-CircleButtons-settings"/>
+                                        <rect key="frame" x="10" y="889.5" width="153.5" height="153.5"/>
+                                        <state key="normal" image="Button_Advanced-512x"/>
                                         <connections>
                                             <action selector="settingsButtonTouch:" destination="0dJ-eA-Nbr" eventType="touchUpInside" id="Ccv-X2-7TR"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6kO-gU-B14">
-                                        <rect key="frame" x="870.5" y="899.5" width="153.5" height="153.5"/>
-                                        <state key="normal" image="ResonantFinder-CircleButton-PlanetSelect"/>
+                                        <rect key="frame" x="862.5" y="891.5" width="153.5" height="153.5"/>
+                                        <state key="normal" image="Button_Planets-512x"/>
                                         <connections>
                                             <action selector="planetSelectButtonTouch:" destination="0dJ-eA-Nbr" eventType="touchUpInside" id="SQZ-i4-p2w"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVK-M8-eDC">
-                                        <rect key="frame" x="927.5" y="430.5" width="76.5" height="34"/>
+                                        <rect key="frame" x="927.5" y="438.5" width="76.5" height="34"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" imagePlacement="trailing" title="Share" imagePadding="0.0" cornerStyle="capsule">
@@ -1547,11 +1547,11 @@ Time:  10:51:55</string>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="E1d-3W-cqr" firstAttribute="top" secondItem="so5-qc-Ftd" secondAttribute="bottom" id="1aA-bI-lDu"/>
+                                    <constraint firstItem="E1d-3W-cqr" firstAttribute="top" secondItem="so5-qc-Ftd" secondAttribute="bottom" constant="8" id="1aA-bI-lDu"/>
                                     <constraint firstItem="E1d-3W-cqr" firstAttribute="height" secondItem="3TE-We-Mdz" secondAttribute="height" multiplier="0.2" id="5Ml-bO-bL8"/>
                                     <constraint firstItem="S8T-cw-Gnc" firstAttribute="height" secondItem="3TE-We-Mdz" secondAttribute="height" multiplier="0.2" id="6wr-Oi-BmF"/>
                                     <constraint firstItem="6kO-gU-B14" firstAttribute="width" secondItem="6kO-gU-B14" secondAttribute="height" multiplier="1:1" id="7Kg-Pj-mgM"/>
-                                    <constraint firstItem="Ija-bO-JsC" firstAttribute="leading" secondItem="S8T-cw-Gnc" secondAttribute="trailing" id="7hI-KK-0Yy"/>
+                                    <constraint firstItem="Ija-bO-JsC" firstAttribute="leading" secondItem="S8T-cw-Gnc" secondAttribute="trailing" constant="8" id="7hI-KK-0Yy"/>
                                     <constraint firstItem="R0Z-bS-oMR" firstAttribute="width" secondItem="b7b-WO-Abr" secondAttribute="width" multiplier="0.75" id="C1G-7u-we1"/>
                                     <constraint firstItem="5WF-Xc-bDp" firstAttribute="top" secondItem="R0Z-bS-oMR" secondAttribute="bottom" constant="8" id="EoE-aK-jCA"/>
                                     <constraint firstItem="R0Z-bS-oMR" firstAttribute="top" secondItem="so5-qc-Ftd" secondAttribute="bottom" constant="8" id="JU6-89-69p"/>
@@ -1560,21 +1560,21 @@ Time:  10:51:55</string>
                                     <constraint firstItem="E1d-3W-cqr" firstAttribute="width" secondItem="E1d-3W-cqr" secondAttribute="height" multiplier="1:1" id="QNn-kc-jkf"/>
                                     <constraint firstItem="Ija-bO-JsC" firstAttribute="top" secondItem="so5-qc-Ftd" secondAttribute="bottom" constant="8" symbolic="YES" id="QmN-5k-5FO"/>
                                     <constraint firstItem="5WF-Xc-bDp" firstAttribute="leading" secondItem="b7b-WO-Abr" secondAttribute="leading" id="T3O-um-dPE"/>
-                                    <constraint firstItem="nVK-M8-eDC" firstAttribute="top" secondItem="E1d-3W-cqr" secondAttribute="bottom" constant="20" symbolic="YES" id="Tti-tj-phk"/>
+                                    <constraint firstItem="nVK-M8-eDC" firstAttribute="top" secondItem="E1d-3W-cqr" secondAttribute="bottom" constant="8" symbolic="YES" id="Tti-tj-phk"/>
                                     <constraint firstAttribute="bottom" secondItem="5WF-Xc-bDp" secondAttribute="bottom" id="W7Q-i5-QzX"/>
-                                    <constraint firstAttribute="trailing" secondItem="E1d-3W-cqr" secondAttribute="trailing" id="X4u-xv-y0e"/>
-                                    <constraint firstItem="5WF-Xc-bDp" firstAttribute="top" secondItem="rsA-NX-W5Y" secondAttribute="bottom" id="b7J-vS-nZh"/>
-                                    <constraint firstItem="S8T-cw-Gnc" firstAttribute="top" secondItem="so5-qc-Ftd" secondAttribute="bottom" id="c4e-7c-xVX"/>
-                                    <constraint firstItem="S8T-cw-Gnc" firstAttribute="leading" secondItem="b7b-WO-Abr" secondAttribute="leading" id="cz6-Oq-9Zu"/>
+                                    <constraint firstAttribute="trailing" secondItem="E1d-3W-cqr" secondAttribute="trailing" constant="8" id="X4u-xv-y0e"/>
+                                    <constraint firstItem="5WF-Xc-bDp" firstAttribute="top" secondItem="rsA-NX-W5Y" secondAttribute="bottom" constant="10" id="b7J-vS-nZh"/>
+                                    <constraint firstItem="S8T-cw-Gnc" firstAttribute="top" secondItem="so5-qc-Ftd" secondAttribute="bottom" constant="8" id="c4e-7c-xVX"/>
+                                    <constraint firstItem="S8T-cw-Gnc" firstAttribute="leading" secondItem="b7b-WO-Abr" secondAttribute="leading" constant="8" id="cz6-Oq-9Zu"/>
                                     <constraint firstAttribute="trailing" secondItem="so5-qc-Ftd" secondAttribute="trailing" id="gJn-Gh-TYu"/>
                                     <constraint firstItem="so5-qc-Ftd" firstAttribute="leading" secondItem="b7b-WO-Abr" secondAttribute="leading" id="gbE-Kv-3Fl"/>
                                     <constraint firstItem="6kO-gU-B14" firstAttribute="height" secondItem="3TE-We-Mdz" secondAttribute="height" multiplier="0.2" id="h3h-7J-vvJ"/>
                                     <constraint firstItem="so5-qc-Ftd" firstAttribute="top" secondItem="b7b-WO-Abr" secondAttribute="top" id="hGW-qi-PCd"/>
                                     <constraint firstAttribute="trailing" secondItem="5WF-Xc-bDp" secondAttribute="trailing" id="jMV-fK-0Fl"/>
-                                    <constraint firstItem="5WF-Xc-bDp" firstAttribute="top" secondItem="6kO-gU-B14" secondAttribute="bottom" id="jxV-j3-Jd1"/>
-                                    <constraint firstAttribute="trailing" secondItem="6kO-gU-B14" secondAttribute="trailing" id="lec-3E-j2f"/>
+                                    <constraint firstItem="5WF-Xc-bDp" firstAttribute="top" secondItem="6kO-gU-B14" secondAttribute="bottom" constant="8" id="jxV-j3-Jd1"/>
+                                    <constraint firstAttribute="trailing" secondItem="6kO-gU-B14" secondAttribute="trailing" constant="8" id="lec-3E-j2f"/>
                                     <constraint firstItem="rsA-NX-W5Y" firstAttribute="height" secondItem="3TE-We-Mdz" secondAttribute="height" multiplier="0.2" id="nRq-sk-Kpa"/>
-                                    <constraint firstItem="rsA-NX-W5Y" firstAttribute="leading" secondItem="b7b-WO-Abr" secondAttribute="leading" id="qD6-ex-y83"/>
+                                    <constraint firstItem="rsA-NX-W5Y" firstAttribute="leading" secondItem="b7b-WO-Abr" secondAttribute="leading" constant="10" id="qD6-ex-y83"/>
                                     <constraint firstItem="so5-qc-Ftd" firstAttribute="height" secondItem="5WF-Xc-bDp" secondAttribute="height" id="yAS-Wc-PD7"/>
                                     <constraint firstItem="rsA-NX-W5Y" firstAttribute="width" secondItem="rsA-NX-W5Y" secondAttribute="height" multiplier="1:1" id="zRr-6s-wko"/>
                                 </constraints>
@@ -1730,11 +1730,11 @@ Time:  10:51:55</string>
         <image name="AstrologyIcon_Base16_Water" width="333" height="333"/>
         <image name="AstrologyIcon_Node_Sun" width="333" height="333"/>
         <image name="AstrologyIcon_Planet_Mercury" width="333" height="333"/>
+        <image name="Button_Advanced-512x" width="512" height="512"/>
+        <image name="Button_Education-512x" width="512" height="512"/>
+        <image name="Button_Planets-512x" width="512" height="512"/>
+        <image name="Button_Settings-512x" width="512" height="512"/>
         <image name="CosmicAlignmentDisk_chevrons_outlineColor" width="2048" height="2048"/>
-        <image name="ResonantFinder-CircleButton-PlanetSelect" width="256" height="256"/>
-        <image name="ResonantFinder-CircleButtons-dateLocation" width="256" height="256"/>
-        <image name="ResonantFinder-CircleButtons-instructions" width="256" height="256"/>
-        <image name="ResonantFinder-CircleButtons-settings" width="256" height="256"/>
         <image name="SuperHeroGraphBG" width="128" height="128"/>
         <image name="arrow.right.square" catalog="system" width="128" height="114"/>
         <image name="filemenu.and.selection" catalog="system" width="128" height="93"/>

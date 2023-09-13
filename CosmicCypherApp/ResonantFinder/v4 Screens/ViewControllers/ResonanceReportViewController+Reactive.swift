@@ -40,7 +40,7 @@ extension ResonanceReportViewController: StarChartCoreReactive {
         switch action {
         case .renderStart:
             DispatchQueue.main.async {
-                print("renderStart")
+                //print("renderStart")
                 self.renderingProgressBar.isHidden = false
                 self.renderingProgressSpinner.isHidden = false
                 self.renderingProgressLabel.isHidden = false
@@ -56,12 +56,12 @@ extension ResonanceReportViewController: StarChartCoreReactive {
             break
         case .renderProgress(let percentageCompleted):
             DispatchQueue.main.async {
-                print("renderProgress")
+                //print("renderProgress")
                 self.renderingProgressBar.progress = percentageCompleted
             }
         case .renderComplete(let spriteNode):
             DispatchQueue.main.async {
-                print("renderComplete")
+                //print("renderComplete")
                 
                 UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut) {
                     self.renderingProgressBar.alpha = 0
@@ -84,7 +84,7 @@ extension ResonanceReportViewController: StarChartCoreReactive {
             }
         case .renderStop:
             DispatchQueue.main.async {
-                print("renderStop")
+                //print("renderStop")
                 UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut) {
                     self.renderingProgressBar.alpha = 0
                     self.renderingProgressSpinner.alpha = 0

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Button_Planets-512x.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

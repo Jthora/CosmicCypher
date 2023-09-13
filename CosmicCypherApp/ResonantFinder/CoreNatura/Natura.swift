@@ -317,6 +317,13 @@ extension Arcana {
             }
         }
         
+        // Base36 Decans detection of a Decan that is a Prime Element (instead of one of the side decans)
+        public static func isPrime(degree: Degree) -> Bool {
+            let zodiacDegree = ((((degree.value)/360)*superCount)).truncatingRemainder(dividingBy: 1)
+            print("isPrime(zodiacDegree: \(zodiacDegree))")
+            return zodiacDegree > 0.333333 && zodiacDegree < 0.666667
+        }
+        
         public var duality:Duality {
             switch self {
                 case .air, .fire: return .yang
@@ -336,23 +343,23 @@ extension Arcana {
     
     /// Energy of the Cosmos
     public enum Force:Int, CaseIterable {
-        case light
-        case heat
-        case magnetism
-        case gravity
+        case heat // Chaos
+        case magnetism // Core
+        case light // Order
+        case gravity // Void
         
         public static let superCount:Double = 12
         public static let count:Double = 4
         
         public static func from(degree:Degree) -> Force {
-            let degree = degree - 15
-            var elementAccurate = ((((degree.value)/360)*superCount)).truncatingRemainder(dividingBy: count)
+            var degree = Degree(((degree.value - 15) + 180).truncatingRemainder(dividingBy: 360))
+            var elementAccurate = ((((degree.value)/360)*superCount)).truncatingRemainder(dividingBy: count) - 1
             if elementAccurate < 0 { elementAccurate += count }
             return Force(rawValue: Int(elementAccurate))!
         }
         
         public static func subFrom(degree: Degree) -> Force {
-            let degree = degree - 15
+            var degree = Degree(((degree.value - 15) + 180).truncatingRemainder(dividingBy: 360))
             var elementAccurate = (((degree.value)/360)*superCount).truncatingRemainder(dividingBy: count)
             if elementAccurate < 0 { elementAccurate += count }
             if elementAccurate.truncatingRemainder(dividingBy: 1) > 0.5 {

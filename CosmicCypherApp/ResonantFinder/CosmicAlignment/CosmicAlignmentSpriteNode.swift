@@ -22,106 +22,92 @@ class CosmicAlignmentSpriteNode: SKSpriteNode {
         
         self.removeAllChildren()
         
-        // Base12 30 degrees
+        // Base12 (30 degrees)
         // Inner
         for i in 0...11 {
-            let degree:Degree = Degree((Double(i)*30.0))+15
+            // Get Zodiac Sprite Type
+            var degree:Degree = Degree((Double(i)*30.0))+15
             let radius:CGFloat = size.height/5
             let zodiac = Arcana.Zodiac.from(degree: degree)
             let element = zodiac.element
             let modality = zodiac.modality
             
+            // Setup Zodiac Sprite and Container Sprite
+            let zodiacSprite = getBase12Sprite(element, modality, glow: true)
+            zodiacSprite.size = CGSize(width: size.width/10, height: size.height/10)
+            zodiacSprite.position = CGPoint(x: 0, y: radius)
+            let containerSprite = SKSpriteNode(texture: nil, color: .clear, size: size)
             
+            // Rotate Sprite
+            degree += 180
+            degree = Degree(degree.value.truncatingRemainder(dividingBy: 360))
+            degree = 360 - degree
+            containerSprite.zRotation = CGFloat(degree.inRadians.value)
             
-            let subSprite = getBase12Sprite(element, modality, glow: true)
-            subSprite.size = CGSize(width: size.width/10, height: size.height/10)
-            subSprite.position = CGPoint(x: 0, y: radius)
-            
-            let sprite = SKSpriteNode(texture: nil, color: .clear, size: size)
-            sprite.zRotation = CGFloat(degree.inRadians.value)
-            
-            sprite.addChild(subSprite)
-            addChild(sprite)
+            // Add Sprite
+            containerSprite.addChild(zodiacSprite)
+            addChild(containerSprite)
         }
         
-        // Base24 30 degrees
-        // Inner
-        for i in 0...35 {
-            let degree:Degree = Degree((Double(i)*10.0))
-            let radius:CGFloat = size.height/3
-            let force = Arcana.Force.from(degree: degree)
-            let zodiac = Arcana.Zodiac.from(degree: degree)
-            let subZodiac = Arcana.Zodiac.subFrom(degree: degree)
-            
-            let subSprite = getBase36Sprite(force, zodiac.modality, subZodiac.modality, glow: true)
-            subSprite.size = CGSize(width: size.width/10, height: size.height/10)
-            subSprite.position = CGPoint(x: 0, y: radius)
-            
-            let sprite = SKSpriteNode(texture: nil, color: .clear, size: size)
-            sprite.zRotation = CGFloat(degree.inRadians.value)
-            
-            sprite.addChild(subSprite)
-            addChild(sprite)
-        }
-        
-        // Base24 30 degrees
-        // Inner
+        // Base24 (15 degrees)
+        // Mid
         for i in 0...11 {
-            let degree:Degree = Degree((Double(i)*30.0))-0.1
+            // Get Cusp Sprite Type
+            var degree:Degree = Degree((Double(i)*30.0))-0.1
             let radius:CGFloat = size.height/4
             let force = Arcana.Force.from(degree: degree)
             let zodiac = Arcana.Zodiac.from(degree: degree)
             let subZodiac = Arcana.Zodiac.subFrom(degree: degree)
+            let topZodiac = zodiac.duality == .yang ? zodiac : subZodiac
+            let bottomZodiac = subZodiac.duality == .yang ? zodiac : subZodiac
             
-            let subSprite = getBase24CuspSprite(force, zodiac.modality, subZodiac.modality, glow: true)
-            subSprite.size = CGSize(width: size.width/10, height: size.height/10)
-            subSprite.position = CGPoint(x: 0, y: radius)
+            // Setup Cusp Sprite and Container Sprite
+            let cuspSprite = getBase24CuspSprite(force, topZodiac.modality, bottomZodiac.modality, glow: true)
+            cuspSprite.size = CGSize(width: size.width/10, height: size.height/10)
+            cuspSprite.position = CGPoint(x: 0, y: radius)
+            let containerSprite = SKSpriteNode(texture: nil, color: .clear, size: size)
             
-            let sprite = SKSpriteNode(texture: nil, color: .clear, size: size)
-            sprite.zRotation = CGFloat(degree.inRadians.value)
+            // Rotate Sprite
+            degree += 180
+            degree = Degree(degree.value.truncatingRemainder(dividingBy: 360))
+            degree = 360 - degree
+            containerSprite.zRotation = CGFloat(degree.inRadians.value)
             
-            sprite.addChild(subSprite)
-            addChild(sprite)
+            // Add Sprite
+            containerSprite.addChild(cuspSprite)
+            addChild(containerSprite)
         }
         
-//
-//        // Base24 15 degrees (cusps only)
-//        // Outer
-//        for i in 0...11 {
-//            let degree = Degree((Double(i)*30.0))
-//            let radius = size.width/6
-//            let zodiac = Arcana.Zodiac.from(degree: degree)
-//            let subZodiac = Arcana.Zodiac.subFrom(degree: degree)
-//            let force = Arcana.Force.from(degree: degree)
-//            let sprite = getBase24CuspSprite(force, zodiac.modality, subZodiac.modality, glow: true)
-//            sprite.size = CGSize(width: size.width/8, height: size.height/8)
-//            sprite.position = CGPoint(x: 0, y: radius)
-//            sprite.anchorPoint = CGPoint(x: 0, y: -radius/sprite.size.height)
-//            addChild(sprite)
-//            sprite.zRotation = CGFloat(degree.value)
-//        }
-//
-//        // Base36 10 degrees
-//        // Mid
-//        for i in 0...35 {
-//            let degree = Degree((Double(i)*10))
-//            let radius = size.width/4
-//            let zodiac = Arcana.Zodiac.from(degree: degree)
-//            let subZodiac = Arcana.Zodiac.subFrom(degree: degree)
-//            let force = Arcana.Force.from(degree: degree)
-//            let sprite = getBase36Sprite(force, zodiac.modality, subZodiac.modality, glow: true)
-//            sprite.size = CGSize(width: size.width/9, height: size.height/9)
-//            sprite.position = CGPoint(x: 0, y: radius)
-//            sprite.anchorPoint = CGPoint(x: 0, y: -radius/sprite.size.height)
-//            addChild(sprite)
-//            sprite.zRotation = CGFloat(degree.value)
-//        }
-        
+        // Base 36 (10 degrees)
+        // Outer
+        for i in 0...35 {
+            var degree:Degree = Degree((Double(i)*10.0))+5
+            let radius:CGFloat = size.height/3
+            let element = Arcana.Element.from(degree: degree)
+            let force = Arcana.Force.from(degree: degree)
+            let zodiac = Arcana.Zodiac.from(degree: degree)
+            let isPrime = Arcana.Element.isPrime(degree: degree)
+            print("sprite @(\(degree)) element[\(element)] force[\(force)] zodiac[\(zodiac)]")
+            
+            let decanSprite = getBase36Sprite(element, isPrime ? nil : force, zodiac.modality, glow: true)
+            decanSprite.size = CGSize(width: size.width/10, height: size.height/10)
+            decanSprite.position = CGPoint(x: 0, y: radius)
+            let containerSprite = SKSpriteNode(texture: nil, color: .clear, size: size)
+            
+            // Rotate Sprite
+            degree += 180
+            degree = Degree(degree.value.truncatingRemainder(dividingBy: 360))
+            degree = 360 - degree
+            containerSprite.zRotation = CGFloat(degree.inRadians.value)
+            
+            // Add Sprite
+            containerSprite.addChild(decanSprite)
+            addChild(containerSprite)
+        }
     }
     
-    
-    
-    
+    // MARK: Sprite Images
+    // Base 12 Zodiac Sprites
     func getBase12Sprite(_ element: Arcana.Element, _ modality: Arcana.Modality, glow:Bool = true) -> SKSpriteNode {
         return SKSpriteNode(imageNamed: getBase12ImageName(element, modality))
     }
@@ -157,10 +143,11 @@ class CosmicAlignmentSpriteNode: SKSpriteNode {
         }
     }
     
-    
+    // Base 24 Cusp Sprites
     func getBase24CuspSprite(_ force: Arcana.Force, _ topModality: Arcana.Modality, _ bottomModality: Arcana.Modality, glow:Bool = true) -> SKSpriteNode {
         return SKSpriteNode(imageNamed: getBase24CuspImageName(force, topModality, bottomModality))
     }
+    
     // Base 24 cusps [4F x (3M + 3M)]
     func getBase24CuspImageName(_ force: Arcana.Force, _ topModality: Arcana.Modality, _ bottomModality: Arcana.Modality) -> String {
         switch force {
@@ -182,11 +169,11 @@ class CosmicAlignmentSpriteNode: SKSpriteNode {
             }
         case .magnetism:
             if topModality == .cardinal && bottomModality == .fixed {
-                return "base24-void-active-static-256x-glow.png"
+                return "base24-core-active-static-256x-glow.png"
             } else if topModality == .mutable && bottomModality == .cardinal {
-                return "base24-void-reactive-active-256x-glow.png"
+                return "base24-core-reactive-active-256x-glow.png"
             } else if topModality == .fixed && bottomModality == .mutable {
-                return "base24-void-static-reactive-256x-glow.png"
+                return "base24-core-static-reactive-256x-glow.png"
             }
         case .gravity:
             if topModality == .cardinal && bottomModality == .fixed {
@@ -200,95 +187,96 @@ class CosmicAlignmentSpriteNode: SKSpriteNode {
         return ""
     }
     
-    
-    func getBase36Sprite(_ force: Arcana.Force, _ modality: Arcana.Modality, _ subModality: Arcana.Modality, glow:Bool = true) -> SKSpriteNode {
-        return SKSpriteNode(imageNamed: getBase36ImageName(force, modality, subModality))
+    // Base 36 Decan Sprites
+    func getBase36Sprite(_ element: Arcana.Element, _ force: Arcana.Force?, _ modality: Arcana.Modality, glow:Bool = true) -> SKSpriteNode {
+        return SKSpriteNode(imageNamed: getBase36ImageName(element, force, modality))
     }
-    // Base 36 [4F x 3M x 3M]
-    func getBase36ImageName(_ force: Arcana.Force, _ modality: Arcana.Modality, _ subModality: Arcana.Modality) -> String {
-        switch force {
-        case .light:
-            switch modality {
-            case .cardinal:
-                switch subModality {
-                case .cardinal: return "base36-order-active-active-256x-glow.png"
-                case .fixed: return "base36-order-active-static-256x-glow.png"
-                case .mutable: return "base36-order-active-reactive-256x-glow.png"
+    // Base 36 [4E x 2F1P x 3M]
+    func getBase36ImageName(_ element: Arcana.Element, _ force: Arcana.Force?, _ modality: Arcana.Modality) -> String {
+        
+        switch element {
+        case .fire:
+            switch force {
+            case .heat:
+                switch modality {
+                case .cardinal: return "base36-fire-active-chaos-256x-glow.png" // "base36-air-active-order-256x-glow.png"
+                case .fixed: return "base36-fire-static-chaos-256x-glow.png"
+                case .mutable: return "base36-fire-reactive-chaos-256x-glow.png"
                 }
-            case .fixed:
-                switch subModality {
-                case .cardinal: return "base36-order-static-active-256x-glow.png"
-                case .fixed: return "base36-order-static-static-256x-glow.png"
-                case .mutable: return "base36-order-static-reactive-256x-glow.png"
+            case .magnetism:
+                switch modality {
+                case .cardinal: return "base36-fire-active-core-256x-glow.png"
+                case .fixed: return "base36-fire-static-core-256x-glow.png"
+                case .mutable: return "base36-fire-reactive-core-256x-glow.png"
                 }
-            case .mutable:
-                switch subModality {
-                case .cardinal: return "base36-order-reactive-active-256x-glow.png"
-                case .fixed: return "base36-order-reactive-static-256x-glow.png"
-                case .mutable: return "base36-order-reactive-reactive-256x-glow.png"
-                }
-            }
-        case .heat:
-            switch modality {
-            case .cardinal:
-                switch subModality {
-                case .cardinal: return "base36-chaos-active-active-256x-glow.png"
-                case .fixed: return "base36-chaos-active-static-256x-glow.png"
-                case .mutable: return "base36-chaos-active-reactive-256x-glow.png"
-                }
-            case .fixed:
-                switch subModality {
-                case .cardinal: return "base36-chaos-static-active-256x-glow.png"
-                case .fixed: return "base36-chaos-static-static-256x-glow.png"
-                case .mutable: return "base36-chaos-static-reactive-256x-glow.png"
-                }
-            case .mutable:
-                switch subModality {
-                case .cardinal: return "base36-chaos-reactive-active-256x-glow.png"
-                case .fixed: return "base36-chaos-reactive-static-256x-glow.png"
-                case .mutable: return "base36-chaos-reactive-reactive-256x-glow.png"
+            default:
+                switch modality {
+                case .cardinal: return "base36-fire-active-prime-256x-glow.png"
+                case .fixed: return "base36-fire-static-prime-256x-glow.png"
+                case .mutable: return "base36-fire-reactive-prime-256x-glow.png"
                 }
             }
-        case .magnetism:
-            switch modality {
-            case .cardinal:
-                switch subModality {
-                case .cardinal: return "base36-core-active-active-256x-glow.png"
-                case .fixed: return "base36-core-active-static-256x-glow.png"
-                case .mutable: return "base36-core-active-reactive-256x-glow.png"
+        case .earth:
+            switch force {
+            case .magnetism:
+                switch modality {
+                case .cardinal: return "base36-earth-active-core-256x-glow.png"
+                case .fixed: return "base36-earth-static-core-256x-glow.png"
+                case .mutable: return "base36-earth-reactive-core-256x-glow.png"
                 }
-            case .fixed:
-                switch subModality {
-                case .cardinal: return "base36-core-static-active-256x-glow.png"
-                case .fixed: return "base36-core-static-static-256x-glow.png"
-                case .mutable: return "base36-core-static-reactive-256x-glow.png"
+            case .light:
+                switch modality {
+                case .cardinal: return "base36-earth-active-order-256x-glow.png"
+                case .fixed: return "base36-earth-static-order-256x-glow.png"
+                case .mutable: return "base36-earth-reactive-order-256x-glow.png"
                 }
-            case .mutable:
-                switch subModality {
-                case .cardinal: return "base36-core-reactive-active-256x-glow.png"
-                case .fixed: return "base36-core-reactive-static-256x-glow.png"
-                case .mutable: return "base36-core-reactive-reactive-256x-glow.png"
+            default:
+                switch modality {
+                case .cardinal: return "base36-earth-active-prime-256x-glow.png"
+                case .fixed: return "base36-earth-static-prime-256x-glow.png"
+                case .mutable: return "base36-earth-reactive-prime-256x-glow.png"
                 }
             }
-        case .gravity:
-            switch modality {
-            case .cardinal:
-                switch subModality {
-                case .cardinal: return "base36-void-active-active-256x-glow.png"
-                case .fixed: return "base36-void-active-static-256x-glow.png"
-                case .mutable: return "base36-void-active-reactive-256x-glow.png"
+        case .air:
+            switch force {
+            case .light:
+                switch modality {
+                case .cardinal: return "base36-air-active-order-256x-glow.png" // base36-air-active-order-256x-glow.png
+                case .fixed: return "base36-air-static-order-256x-glow.png"
+                case .mutable: return "base36-air-reactive-order-256x-glow.png"
                 }
-            case .fixed:
-                switch subModality {
-                case .cardinal: return "base36-void-static-active-256x-glow.png"
-                case .fixed: return "base36-void-static-static-256x-glow.png"
-                case .mutable: return "base36-void-static-reactive-256x-glow.png"
+            case .gravity:
+                switch modality {
+                case .cardinal: return "base36-air-active-void-256x-glow.png"
+                case .fixed: return "base36-air-static-void-256x-glow.png"
+                case .mutable: return "base36-air-reactive-void-256x-glow.png"
                 }
-            case .mutable:
-                switch subModality {
-                case .cardinal: return "base36-void-reactive-active-256x-glow.png"
-                case .fixed: return "base36-void-reactive-static-256x-glow.png"
-                case .mutable: return "base36-void-reactive-reactive-256x-glow.png"
+            default:
+                switch modality {
+                case .cardinal: return "base36-air-active-prime-256x-glow.png"
+                case .fixed: return "base36-air-static-prime-256x-glow.png"
+                case .mutable: return "base36-air-reactive-prime-256x-glow.png"
+                }
+            }
+        case .water:
+            switch force {
+            case .gravity:
+                switch modality {
+                case .cardinal: return "base36-water-active-void-256x-glow.png"
+                case .fixed: return "base36-water-static-void-256x-glow.png"
+                case .mutable: return "base36-water-reactive-void-256x-glow.png"
+                }
+            case .heat:
+                switch modality {
+                case .cardinal: return "base36-water-active-chaos-256x-glow.png"
+                case .fixed: return "base36-water-static-chaos-256x-glow.png"
+                case .mutable: return "base36-water-reactive-chaos-256x-glow.png"
+                }
+            default:
+                switch modality {
+                case .cardinal: return "base36-water-active-prime-256x-glow.png"
+                case .fixed: return "base36-water-static-prime-256x-glow.png"
+                case .mutable: return "base36-water-reactive-prime-256x-glow.png"
                 }
             }
         }

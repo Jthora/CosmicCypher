@@ -16,13 +16,13 @@ extension ResonanceReportViewController {
     // Setup
     func setup() {
         //setupTimeStreamVisualizer()
-        //setupCosmicAlignmentSprite()
         setupBars()
         setupSpriteKitScene()
-        setupRenderAnimation()
+        //setupRenderAnimation()
         resetEnergyLevels()
         update()
         renderStarChart()
+        setupCosmicAlignmentSprite()
     }
     
     func setupBars() {
@@ -226,11 +226,13 @@ extension ResonanceReportViewController {
         spriteKitView.presentScene(scene)
     }
     
+    // Sprite Based Cosmic Disk
     func setupCosmicAlignmentSprite() {
         let spriteNode = CosmicAlignmentSpriteNode.create(size: scene.size)
         //spriteNode.color = .red
         spriteNode.position = spriteKitView.center
-        scene.addChild(spriteNode)
+        self.scene.addChild(spriteNode)
+        self.spriteKitView.presentScene(self.scene)
     }
     
     func setupTimeStreamVisualizer() {

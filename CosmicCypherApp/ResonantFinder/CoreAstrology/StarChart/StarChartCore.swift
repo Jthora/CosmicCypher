@@ -127,6 +127,9 @@ extension StarChart {
         static var isRendering:Bool = true
         static var cancelComposite:Bool = false
         static func renderStarChart(starChart:StarChart? = nil, size:CGSize) {
+            // BYPASS ⚠️
+            react(to: .renderStop)
+            return
             print("react to .renderStart")
             react(to: .renderStart)
             

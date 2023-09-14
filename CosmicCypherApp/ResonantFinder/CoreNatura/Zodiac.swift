@@ -31,7 +31,9 @@ extension Arcana {
         public static func from(degree:Degree) -> Zodiac {
             var zodiacAccurate = (((degree.value)/360)*count).truncatingRemainder(dividingBy: count)
             if zodiacAccurate < 0 { zodiacAccurate += count }
-            return Zodiac(rawValue: Int(zodiacAccurate))!
+            let zodiac = Zodiac(rawValue: Int(zodiacAccurate))!
+            print("creating Zodiac(\(zodiac)) degree(\(degree))")
+            return zodiac
         }
         
         public static func subFrom(degree: Degree) -> Zodiac {

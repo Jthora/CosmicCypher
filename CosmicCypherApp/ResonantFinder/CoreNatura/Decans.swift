@@ -17,12 +17,16 @@ extension Arcana {
         public static let count:Double = 36
         
         public static func from(degree:Degree) -> Decan {
-            let decanIndex = Int((degree.value/(count/360)).truncatingRemainder(dividingBy: count))
-            return Decan(rawValue: decanIndex)!
+            var decanAccurate = (((degree.value)/360)*count).truncatingRemainder(dividingBy: count)
+            if decanAccurate < 0 { decanAccurate += count }
+            let decan = Decan(rawValue: Int(decanAccurate))!
+            print("creating Decan(\(decan)) degree(\(degree))")
+            return decan
         }
         
         public static func subFrom(degree: Degree) -> Decan {
-            let decanAccurate = (degree.value/(count/360)).truncatingRemainder(dividingBy: count)
+            var decanAccurate = (((degree.value)/360)*count).truncatingRemainder(dividingBy: count)
+            if decanAccurate < 0 { decanAccurate += count }
             if decanAccurate.truncatingRemainder(dividingBy: 1) > 0.5 {
                 var index = abs(Int(decanAccurate)+1)
                 if index > Int(count)-1 { index = 0 }

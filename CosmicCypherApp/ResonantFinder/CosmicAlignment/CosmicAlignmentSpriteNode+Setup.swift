@@ -37,6 +37,7 @@ extension CosmicAlignmentSpriteNode {
             zodiacSprite.size = CGSize(width: size.width/10, height: size.height/10)
             zodiacSprite.position = CGPoint(x: 0, y: radius)
             let containerSprite = SKSpriteNode(texture: nil, color: .clear, size: size)
+            self.spritesBase12[zodiac] = zodiacSprite
             
             // Rotate Sprite
             degree += 180
@@ -59,6 +60,7 @@ extension CosmicAlignmentSpriteNode {
             let radius:CGFloat = size.height/3.8
             let force = Arcana.Force.from(degree: degree)
             let zodiac = Arcana.Zodiac.from(degree: degree)
+            let cusp = Arcana.Cusp.from(degree: degree)
             let subZodiac = Arcana.Zodiac.subFrom(degree: degree)
             let topZodiac = zodiac.duality == .yang ? zodiac : subZodiac
             let bottomZodiac = subZodiac.duality == .yang ? zodiac : subZodiac
@@ -68,6 +70,7 @@ extension CosmicAlignmentSpriteNode {
             cuspSprite.size = CGSize(width: size.width/10, height: size.height/10)
             cuspSprite.position = CGPoint(x: 0, y: radius)
             let containerSprite = SKSpriteNode(texture: nil, color: .clear, size: size)
+            self.spritesBase24[cusp] = cuspSprite
             
             // Rotate Sprite
             degree += 180
@@ -90,13 +93,15 @@ extension CosmicAlignmentSpriteNode {
             let element = Arcana.Element.from(degree: degree)
             let force = Arcana.Force.from(degree: degree)
             let zodiac = Arcana.Zodiac.from(degree: degree)
+            let decan = Arcana.Decan.from(degree: degree)
             let isPrime = Arcana.Element.isPrime(degree: degree)
-            print("sprite @(\(degree)) element[\(element)] force[\(force)] zodiac[\(zodiac)]")
+            //print("sprite @(\(degree)) element[\(element)] force[\(force)] zodiac[\(zodiac)]")
             
             let decanSprite = getBase36Sprite(element, isPrime ? nil : force, zodiac.modality, glow: true)
             decanSprite.size = CGSize(width: size.width/10, height: size.height/10)
             decanSprite.position = CGPoint(x: 0, y: radius)
             let containerSprite = SKSpriteNode(texture: nil, color: .clear, size: size)
+            self.spritesBase36[decan] = decanSprite
             
             // Rotate Sprite
             degree += 180

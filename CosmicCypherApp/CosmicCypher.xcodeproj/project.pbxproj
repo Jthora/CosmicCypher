@@ -205,6 +205,12 @@
 		FAEB27C828527AAC009994B8 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB27C728527AAC009994B8 /* Data+Extension.swift */; };
 		FAEB27CA285612DC009994B8 /* TimeStreamConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB27C9285612DC009994B8 /* TimeStreamConfiguration.swift */; };
 		FAEB27CC28572DFB009994B8 /* SKSpriteNode+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB27CB28572DFB009994B8 /* SKSpriteNode+Extension.swift */; };
+		FAFB688D2AB1C4CC00FEBDF4 /* CosmicAlignmentSpriteNode+Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB688C2AB1C4CC00FEBDF4 /* CosmicAlignmentSpriteNode+Images.swift */; };
+		FAFB688F2AB1C50700FEBDF4 /* CosmicAlignmentSpriteNode+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB688E2AB1C50700FEBDF4 /* CosmicAlignmentSpriteNode+Setup.swift */; };
+		FAFB68912AB2757C00FEBDF4 /* PlanetaryPlacementsSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB68902AB2757C00FEBDF4 /* PlanetaryPlacementsSpriteNode.swift */; };
+		FAFB68942AB2817A00FEBDF4 /* PlanetSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB68932AB2817A00FEBDF4 /* PlanetSpriteNode.swift */; };
+		FAFB68962AB2938500FEBDF4 /* AspectLinesSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB68952AB2938500FEBDF4 /* AspectLinesSpriteNode.swift */; };
+		FAFB68982AB2A80400FEBDF4 /* AspectLineSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB68972AB2A80400FEBDF4 /* AspectLineSpriteNode.swift */; };
 		FAFE792C2A6AD84000C56612 /* AspectEventScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE792B2A6AD84000C56612 /* AspectEventScanViewController.swift */; };
 		FAFE792E2A6AD87200C56612 /* AspectEventScan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAFE792D2A6AD87200C56612 /* AspectEventScan.storyboard */; };
 		FAFE79302A6BE85B00C56612 /* GeoLocationAndTimeSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE792F2A6BE85B00C56612 /* GeoLocationAndTimeSelectViewController.swift */; };
@@ -449,6 +455,12 @@
 		FAFA406F2AB05C2800455D97 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAFA40732AB05D1B00455D97 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAFB68882AB0629300FEBDF4 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAFB688C2AB1C4CC00FEBDF4 /* CosmicAlignmentSpriteNode+Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CosmicAlignmentSpriteNode+Images.swift"; sourceTree = "<group>"; };
+		FAFB688E2AB1C50700FEBDF4 /* CosmicAlignmentSpriteNode+Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CosmicAlignmentSpriteNode+Setup.swift"; sourceTree = "<group>"; };
+		FAFB68902AB2757C00FEBDF4 /* PlanetaryPlacementsSpriteNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetaryPlacementsSpriteNode.swift; sourceTree = "<group>"; };
+		FAFB68932AB2817A00FEBDF4 /* PlanetSpriteNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetSpriteNode.swift; sourceTree = "<group>"; };
+		FAFB68952AB2938500FEBDF4 /* AspectLinesSpriteNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectLinesSpriteNode.swift; sourceTree = "<group>"; };
+		FAFB68972AB2A80400FEBDF4 /* AspectLineSpriteNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectLineSpriteNode.swift; sourceTree = "<group>"; };
 		FAFE792B2A6AD84000C56612 /* AspectEventScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectEventScanViewController.swift; sourceTree = "<group>"; };
 		FAFE792D2A6AD87200C56612 /* AspectEventScan.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AspectEventScan.storyboard; sourceTree = "<group>"; };
 		FAFE792F2A6BE85B00C56612 /* GeoLocationAndTimeSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoLocationAndTimeSelectViewController.swift; sourceTree = "<group>"; };
@@ -701,6 +713,12 @@
 			isa = PBXGroup;
 			children = (
 				FA33AB0B2866760700BC9F76 /* CosmicAlignmentSpriteNode.swift */,
+				FAFB688C2AB1C4CC00FEBDF4 /* CosmicAlignmentSpriteNode+Images.swift */,
+				FAFB688E2AB1C50700FEBDF4 /* CosmicAlignmentSpriteNode+Setup.swift */,
+				FAFB68902AB2757C00FEBDF4 /* PlanetaryPlacementsSpriteNode.swift */,
+				FAFB68932AB2817A00FEBDF4 /* PlanetSpriteNode.swift */,
+				FAFB68952AB2938500FEBDF4 /* AspectLinesSpriteNode.swift */,
+				FAFB68972AB2A80400FEBDF4 /* AspectLineSpriteNode.swift */,
 			);
 			path = CosmicAlignment;
 			sourceTree = "<group>";
@@ -1343,12 +1361,14 @@
 				FAEB27B72851033A009994B8 /* PlanetStateRegistry.swift in Sources */,
 				FAEB27C22851D286009994B8 /* StarChartCore.swift in Sources */,
 				FAE12E4E2A6C1432002016A3 /* AspectEventScannerCore.swift in Sources */,
+				FAFB68912AB2757C00FEBDF4 /* PlanetaryPlacementsSpriteNode.swift in Sources */,
 				FA35C0972849783A006114AB /* StarChart.swift in Sources */,
 				FA33AB0F2868D66900BC9F76 /* PlanetCollectionViewCell.swift in Sources */,
 				FAB1311928749201000AD7B9 /* PlanetNodeState.swift in Sources */,
 				FA12D5E5289D7B3500411649 /* ResonanceReportViewController+Reactive.swift in Sources */,
 				FA35C0922849783A006114AB /* StarChartRegistry.swift in Sources */,
 				FA35C0DE2849A840006114AB /* TimeStreamNodeType.swift in Sources */,
+				FAFB68962AB2938500FEBDF4 /* AspectLinesSpriteNode.swift in Sources */,
 				FA2CB48A285E4E9B003AD95C /* UUID+Extension.swift in Sources */,
 				FA35C0C028497879006114AB /* Arcana.swift in Sources */,
 				FA33AB052865584D00BC9F76 /* PlanetSelectViewController.swift in Sources */,
@@ -1364,6 +1384,7 @@
 				FA07CA3A25401EBC00683486 /* FindLocationViewController.swift in Sources */,
 				FAEAFEB828489FE9001AEAE0 /* TimeStreamSettingsViewController.swift in Sources */,
 				FAB131152873A7E8000AD7B9 /* AstrologicalNodeState.swift in Sources */,
+				FAFB688F2AB1C50700FEBDF4 /* CosmicAlignmentSpriteNode+Setup.swift in Sources */,
 				FA35C0B12849783A006114AB /* PlanetRetrogradeState.swift in Sources */,
 				FA6101DB286E3CAC0000D4D5 /* TimeStreamPresetSelectViewController.swift in Sources */,
 				FA6101E72870C8800000D4D5 /* TimeStreamPresets.swift in Sources */,
@@ -1418,6 +1439,7 @@
 				FA35C0962849783A006114AB /* PlanetaryHarmonics.swift in Sources */,
 				FA35C0AE2849783A006114AB /* AstrologicalNode.swift in Sources */,
 				FAFE792C2A6AD84000C56612 /* AspectEventScanViewController.swift in Sources */,
+				FAFB68942AB2817A00FEBDF4 /* PlanetSpriteNode.swift in Sources */,
 				FA33AAFB2864E12E00BC9F76 /* Settings.swift in Sources */,
 				FA07CA4525401EBC00683486 /* Date+Extension.swift in Sources */,
 				FAEAFEBA28492595001AEAE0 /* EditTimeStreamViewController.swift in Sources */,
@@ -1448,6 +1470,7 @@
 				FA35C0ED284A7195006114AB /* TimeStreamImageMapRegistry.swift in Sources */,
 				FA35C0AA2849783A006114AB /* TimeStreamImageStrip.swift in Sources */,
 				FA6101E32870B0F10000D4D5 /* TimeStreamChartTableViewCell.swift in Sources */,
+				FAFB688D2AB1C4CC00FEBDF4 /* CosmicAlignmentSpriteNode+Images.swift in Sources */,
 				FAEB27CA285612DC009994B8 /* TimeStreamConfiguration.swift in Sources */,
 				FA1FDD452570262700B51BD2 /* ReadingsSubScreenCOEH.swift in Sources */,
 				FAEB2797284D12EC009994B8 /* TimeStreamAddNewConfigurationTableViewCell.swift in Sources */,
@@ -1487,6 +1510,7 @@
 				FA6101D1286D73C70000D4D5 /* GeoLocationSelectViewController.swift in Sources */,
 				FA12D5EF289D7EB200411649 /* ResonanceReportViewController+Setup.swift in Sources */,
 				FA6101DD286F99D20000D4D5 /* CGPoint+Extension.swift in Sources */,
+				FAFB68982AB2A80400FEBDF4 /* AspectLineSpriteNode.swift in Sources */,
 				FA07CA2525401EBB00683486 /* ResonanceReportTableViewCell.swift in Sources */,
 				FAEB27C02851D21D009994B8 /* Codable+Extension.swift in Sources */,
 				FAEB279F284E5668009994B8 /* TimeStreamRegistry.swift in Sources */,

@@ -23,6 +23,8 @@ extension ResonanceReportViewController {
         update()
         renderStarChart()
         setupCosmicAlignmentSprite()
+        setupPlanetPlacementSprite()
+        setupAspectLinesSprite()
     }
     
     func setupBars() {
@@ -232,7 +234,25 @@ extension ResonanceReportViewController {
         //spriteNode.color = .red
         spriteNode.position = spriteKitView.center
         self.scene.addChild(spriteNode)
-        self.spriteKitView.presentScene(self.scene)
+    }
+    
+    // Sprite Based Planet Astrology Disk
+    func setupPlanetPlacementSprite() {
+        let starChart = StarChart.Core.current
+        let selectedPlanets = StarChart.Core.selectedPlanets
+        let spriteNode = PlanetaryPlacementsSpriteNode.create(starChart: starChart, selectedPlanets: selectedPlanets, size: scene.size)
+        //spriteNode.color = .red
+        spriteNode.position = spriteKitView.center
+        self.scene.addChild(spriteNode)
+    }
+    
+    func setupAspectLinesSprite() {
+        let starChart = StarChart.Core.current
+        let selectedPlanets = StarChart.Core.selectedPlanets
+        let selectedAspects = StarChart.Core.selectedAspects
+        let spriteNode = AspectLinesSpriteNode.create(starChart: starChart, selectedPlanets: selectedPlanets, size: scene.size)
+        spriteNode.position = spriteKitView.center
+        self.scene.addChild(spriteNode)
     }
     
     func setupTimeStreamVisualizer() {

@@ -25,6 +25,7 @@ extension ResonanceReportViewController {
         setupCosmicAlignmentSprite()
         setupPlanetPlacementSprite()
         setupAspectLinesSprite()
+        update()
     }
     
     func setupBars() {
@@ -230,10 +231,9 @@ extension ResonanceReportViewController {
     
     // Sprite Based Cosmic Disk
     func setupCosmicAlignmentSprite() {
-        let spriteNode = CosmicAlignmentSpriteNode.create(size: scene.size)
-        //spriteNode.color = .red
-        spriteNode.position = spriteKitView.center
-        self.scene.addChild(spriteNode)
+        self.cosmicDiskSprite = CosmicAlignmentSpriteNode.create(size: self.scene.size)
+        self.cosmicDiskSprite.position = self.spriteKitView.center
+        self.scene.addChild(self.cosmicDiskSprite)
     }
     
     // Sprite Based Planet Astrology Disk
@@ -250,7 +250,7 @@ extension ResonanceReportViewController {
         let starChart = StarChart.Core.current
         let selectedPlanets = StarChart.Core.selectedPlanets
         let selectedAspects = StarChart.Core.selectedAspects
-        let spriteNode = AspectLinesSpriteNode.create(starChart: starChart, selectedPlanets: selectedPlanets, size: scene.size)
+        let spriteNode = AspectLinesSpriteNode.create(starChart: starChart, selectedPlanets: selectedPlanets, selectedAspects: selectedAspects, size: scene.size)
         spriteNode.position = spriteKitView.center
         self.scene.addChild(spriteNode)
     }

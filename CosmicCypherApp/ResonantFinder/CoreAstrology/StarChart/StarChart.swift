@@ -204,13 +204,24 @@ public final class StarChart {
         return count
     }
     
+    // Base 8
     public func produceNaturaIndex(limitList:[CoreAstrology.AspectBody.NodeType]? = nil, limitType:[AstrologicalNodeSubType]? = nil) -> Arcana.Natura.Index {
         return Arcana.Natura.Index(alignments: self.alignments, limitList: limitList, limitType: limitType)
     }
     
-    
+    // Base 12
     public func produceZodiacIndex(limitList:[CoreAstrology.AspectBody.NodeType]? = nil, limitType:[AstrologicalNodeSubType]? = nil) -> Arcana.Zodiac.Index {
         return Arcana.Zodiac.Index(alignments: self.alignments, limitList: limitList, limitType: limitType)
+    }
+    
+    // Base 24
+    public func produceCuspIndex(limitList:[CoreAstrology.AspectBody.NodeType]? = nil, limitType:[AstrologicalNodeSubType]? = nil) -> Arcana.Cusp.Index {
+        return Arcana.Cusp.Index(alignments: self.alignments, limitList: limitList, limitType: limitType)
+    }
+    
+    // Base 36
+    public func produceDecanIndex(limitList:[CoreAstrology.AspectBody.NodeType]? = nil, limitType:[AstrologicalNodeSubType]? = nil) -> Arcana.Decan.Index {
+        return Arcana.Decan.Index(alignments: self.alignments, limitList: limitList, limitType: limitType)
     }
     
     public func duplicate(celestialOffset: CoreAstrology.Ayanamsa? = nil) -> StarChart {

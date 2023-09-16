@@ -11,15 +11,18 @@ import SwiftAA
 
 class AspectLinesSpriteNode: SKSpriteNode {
     
-    public static func create(starChart: StarChart, selectedPlanets:[CoreAstrology.AspectBody.NodeType], size: CGSize) -> AspectLinesSpriteNode {
+    public static func create(starChart: StarChart, selectedPlanets:[CoreAstrology.AspectBody.NodeType], selectedAspects: [CoreAstrology.AspectRelationType], size: CGSize) -> AspectLinesSpriteNode {
         let sprite = AspectLinesSpriteNode(texture: nil, color: .clear, size: size)
-        sprite.setup(with: starChart, selectedPlanets: selectedPlanets)
+        sprite.setup(with: starChart, selectedPlanets: selectedPlanets, selectedAspects: selectedAspects)
         return sprite
     }
     
-    public func setup(with starChart:StarChart, selectedPlanets:[CoreAstrology.AspectBody.NodeType]) {
+    public func setup(with starChart:StarChart, selectedPlanets:[CoreAstrology.AspectBody.NodeType], selectedAspects:[CoreAstrology.AspectRelationType]) {
         
         for aspect in starChart.aspects {
+            
+            // Must be part of accepted list of aspect types
+            guard selectedAspects.contains(aspect.relation.type) else {continue}
             
             // Planets
             let b1 = aspect.primaryBody.type

@@ -1,5 +1,5 @@
 //
-//  Decans.swift
+//  Decan.swift
 //  PsiKit
 //
 //  Created by Jordan Trana on 11/28/19.

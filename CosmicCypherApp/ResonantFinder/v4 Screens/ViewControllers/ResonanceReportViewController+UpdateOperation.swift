@@ -31,6 +31,9 @@ extension ResonanceReportViewController {
                 /// Text Fields
                 self.vc.dateTimeCoordsLabel.text = "Latitude: \(starChart.coordinates.latitude)\nLongitude: \(-starChart.coordinates.longitude)\nDate: \(starChart.date.formatted(date: .numeric, time: .omitted))\nTime: \(starChart.date.formattedTime(for: starChart.coordinates))"
                 self.vc.aspectsResultsTableView.reloadData()
+                
+                /// Cosmic Alignment Sprite Node (Central Disk)
+                self.vc.updateCosmicDisk()
 
                 /// Energy Levels
                 self.vc.updateEnergyLevels(starChart:starChart)

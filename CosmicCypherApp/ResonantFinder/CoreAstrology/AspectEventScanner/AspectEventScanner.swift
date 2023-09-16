@@ -257,6 +257,16 @@ class AspectEventScanner {
     private func calculate(aspects:[CoreAstrology.Aspect], on currentDate:Date) {
         //print("Calculating: \(currentDate)")
         
+        
+        // TODO: ⚠️ Create Solution to compensate for Retrogrades:
+        /// Detect Retrogrades, Stationary and Direct motions.
+        /// Track Retrogrades
+        /// use enum for Motion
+        /// Expand Scanner Bounds based on Motion Distance Change
+        /// Use high-calc Time Skipper for Bounds Expansion
+        /// Cancel if Out-of-Orb
+        
+        
         // Iterate through Aspects
         for currentAspect in aspects {
             //print("Iterating: \(currentAspect.hash)")
@@ -453,6 +463,17 @@ extension AspectEventScanner {
                                          primaryObject: CoreAstrology.AspectBody,
                                          secondaryObject: CoreAstrology.AspectBody,
                                          aspectRelation: CoreAstrology.AspectRelation) -> Date {
+        
+        
+        // TODO: ⚠️ Create Solution to compensate for Retrogrades:
+        /// Detect Retrogrades, Stationary and Direct motions.
+        /// Track Retrogrades
+        /// use enum for Motion
+        /// Expand Scanner Bounds based on Motion Distance Change
+        /// Use high-calc Time Skipper for Bounds Expansion
+        /// Cancel if Out-of-Orb
+        
+        
         let p1Type = primaryObject.type
         let p2Type = secondaryObject.type
         let targetAspectType = aspectRelation.type

@@ -25,12 +25,70 @@ open class Chevron {
         self.longitude = longitude
     }
     
+    // Top Bottom Zodiac
+    public var topZodiac:Arcana.Zodiac {
+        switch zodiac.element {
+        case .air, .fire: return zodiac
+        case .earth, .water: return subZodiac
+        }
+    }
+    public var bottomZodiac:Arcana.Zodiac {
+        switch subZodiac.element {
+        case .air, .fire: return zodiac
+        case .earth, .water: return subZodiac
+        }
+    }
+    
+    // Base 4
+    public var element:Arcana.Element {
+        return Arcana.Element.from(degree: longitude)
+    }
+    public var subElement:Arcana.Element {
+        return Arcana.Element.subFrom(degree: longitude)
+    }
+    
+    // Base 8
+    public var natura:Arcana.Natura {
+        return Arcana.Natura.from(degree: longitude)
+    }
+    public var subNatura:Arcana.Natura {
+        return Arcana.Natura.subFrom(degree: longitude)
+    }
+    
+    // Base 12 [even] 30º
     public var zodiac:Arcana.Zodiac {
         return Arcana.Zodiac.from(degree: longitude)
     }
     public var subZodiac:Arcana.Zodiac {
         return Arcana.Zodiac.subFrom(degree: longitude)
     }
+    
+    // Base 12(24) [odd] 30º
+    public var cusp:Arcana.Cusp {
+        return Arcana.Cusp.from(degree: longitude)
+    }
+    public var subCusp:Arcana.Cusp {
+        return Arcana.Cusp.subFrom(degree: longitude)
+    }
+    
+    // Base 36 [even] 10º
+    public var decan:Arcana.Decan {
+        return Arcana.Decan.from(degree: longitude)
+    }
+    public var subDecan:Arcana.Decan {
+        return Arcana.Decan.subFrom(degree: longitude)
+    }
+    
+    // Base 8 Distribution
+    public var naturaDistribution:Double {
+        return abs(subNaturaDistribution-1)
+    }
+    public var subNaturaDistribution:Double {
+        let value = abs((((longitude.value-7.5)/360)*24).truncatingRemainder(dividingBy: 1)-0.5)
+        return value > 0 ? value : 1 + value
+    }
+    
+    // Base 12 Distribution
     public var zodiacDistribution:Double {
         return abs(subZodiacDistribution-1)
     }
@@ -52,25 +110,29 @@ open class Chevron {
         return value > 0 ? value : 1 + value
     }
     
-    public var topZodiac:Arcana.Zodiac {
-        switch zodiac.element {
-        case .air, .fire: return zodiac
-        case .earth, .water: return subZodiac
-        }
+    // Base 12 Distribution
+    public var cuspDistribution:Double {
+        return abs(subZodiacDistribution-1)
     }
-    public var bottomZodiac:Arcana.Zodiac {
-        switch subZodiac.element {
-        case .air, .fire: return zodiac
-        case .earth, .water: return subZodiac
+    public var subCuspDistribution:Double {
+        
+        let l:Double
+        if longitude.value < 0 {
+            l = longitude.value+360
+        } else {
+            l = longitude.value.truncatingRemainder(dividingBy: 360)
         }
+        let a = l/360
+        let b = a*12
+        let c = b.truncatingRemainder(dividingBy: 1)
+        let d = c-0.5
+        let e = abs(d)
+        
+        let value = e
+        return value > 0 ? value : 1 + value
     }
     
-    public var decan:Arcana.Decan {
-        return Arcana.Decan.from(degree: longitude)
-    }
-    public var subDecan:Arcana.Decan {
-        return Arcana.Decan.subFrom(degree: longitude)
-    }
+    // Base 36 Distribution
     public var decanDistribution:Double {
         return 1-subNaturaDistribution
     }
@@ -79,26 +141,6 @@ open class Chevron {
         return value > 0 ? value : 1 + value
     }
     
-    public var natura:Arcana.Natura {
-        return Arcana.Natura.from(degree: longitude)
-    }
-    public var subNatura:Arcana.Natura {
-        return Arcana.Natura.subFrom(degree: longitude)
-    }
-    public var naturaDistribution:Double {
-        return abs(subNaturaDistribution-1)
-    }
-    public var subNaturaDistribution:Double {
-        let value = abs((((longitude.value-7.5)/360)*24).truncatingRemainder(dividingBy: 1)-0.5)
-        return value > 0 ? value : 1 + value
-    }
-    
-    public var element:Arcana.Element {
-        return Arcana.Element.from(degree: longitude)
-    }
-    public var subElement:Arcana.Element {
-        return Arcana.Element.subFrom(degree: longitude)
-    }
     public var elementDistribution:Double {
         return abs(subElementDistribution-1)
     }

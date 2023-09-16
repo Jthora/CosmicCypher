@@ -161,8 +161,10 @@ class ResonanceReportViewController: UIViewController {
     var hideCentralUI:Bool = false
     var readingUpdateTimer:Timer? = nil
     
+    // MARK: Cosmic Disk
     @IBOutlet weak var spriteKitView: SKView!
     var scene:SKScene = SKScene(size: CGSize(width: 512, height: 512))
+    var cosmicDiskSprite:CosmicAlignmentSpriteNode = CosmicAlignmentSpriteNode() // Empty
     
     @IBOutlet weak var aspectsResultsTableView: UITableView!
     @IBOutlet weak var timeStreamTableView: UITableView!

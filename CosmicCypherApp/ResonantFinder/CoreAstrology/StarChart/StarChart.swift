@@ -71,11 +71,11 @@ public final class StarChart {
                 if let relation = CoreAstrology.AspectRelation(nodeDistance: nodeDistance),
                    let primaryBody = CoreAstrology.AspectBody(type: primaryAlignment.nodeType, date: date),
                    let secondaryBody = CoreAstrology.AspectBody(type: secondaryAlignment.nodeType, date: date) {
-                    print("Creating Aspect: \(primaryBody.type.symbol)\(relation.type.symbol)\(secondaryBody.type.symbol) for \(date)")
+                    //print("Creating Aspect: \(primaryBody.type.symbol)\(relation.type.symbol)\(secondaryBody.type.symbol) for \(date)")
                     let aspect = CoreAstrology.Aspect(primaryBody: primaryBody,
                                                       relation: relation,
                                                       secondaryBody: secondaryBody)
-                    print("Created Aspect: \(aspect.type.hash) for \(date)")
+                    //print("Created Aspect: \(aspect.type.hash) for \(date)")
                     aspects.append(aspect)
                 }
             }

@@ -14,9 +14,16 @@ extension CosmicAlignmentSpriteNode {
     func setup() {
         self.removeAllChildren()
         
+        // Cosmic Disk
         setupBase12()
         setupBase24()
         setupBase36()
+        
+        // Planets
+        setupPlanetPlacementSprite()
+        
+        // Lines
+        setupAspectLinesSprite()
     }
 }
 
@@ -113,5 +120,24 @@ extension CosmicAlignmentSpriteNode {
             containerSprite.addChild(decanSprite)
             addChild(containerSprite)
         }
+    }
+    
+    // Sprite Based Planet Astrology Disk
+    func setupPlanetPlacementSprite() {
+        let starChart = StarChart.Core.current
+        let selectedPlanets = StarChart.Core.selectedPlanets
+        planetaryPlacementSpriteNode = PlanetaryPlacementsSpriteNode.create(starChart: starChart, selectedPlanets: selectedPlanets, size: self.size)
+        //spriteNode.color = .red
+        planetaryPlacementSpriteNode.position = self.position
+        addChild(planetaryPlacementSpriteNode)
+    }
+    
+    func setupAspectLinesSprite() {
+        let starChart = StarChart.Core.current
+        let selectedPlanets = StarChart.Core.selectedPlanets
+        let selectedAspects = StarChart.Core.selectedAspects
+        aspectLinesSpriteNode = AspectLinesSpriteNode.create(starChart: starChart, selectedPlanets: selectedPlanets, selectedAspects: selectedAspects, size: self.size)
+        aspectLinesSpriteNode.position = self.position
+        addChild(aspectLinesSpriteNode)
     }
 }

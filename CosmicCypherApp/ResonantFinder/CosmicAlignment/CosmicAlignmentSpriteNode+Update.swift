@@ -16,16 +16,16 @@ extension CosmicAlignmentSpriteNode {
         updateZodiac(starChart: starChart, selectedPlanets: selectedPlanets)
         updateCusps(starChart: starChart, selectedPlanets: selectedPlanets)
         updateDecans(starChart: starChart, selectedPlanets: selectedPlanets)
+        updatePlanetaryPositions(starChart: starChart, selectedPlanets: selectedPlanets)
+        updateAspectLines(starChart: starChart, selectedPlanets: selectedPlanets, selectedAspects: selectedAspects)
     }
     
     // Base 12 Zodiac
-    func updateZodiac(starChart:StarChart, selectedPlanets:[CoreAstrology.AspectBody.NodeType]) {
+    func updateZodiac(starChart:StarChart, selectedPlanets:[CoreAstrology.AspectBody.NodeType], animate:Bool = true) {
         // set the alpha of each Zodiac Sprite
         // Stack Arkana levels by taking the sub and main of each node for Zodiac
         
-        let alignments = starChart.alignments
         let zodiacIndex = starChart.produceZodiacIndex(limitList: selectedPlanets)
-        
         var alphaLevels: [Arcana.Zodiac: CGFloat] = [:]
         
         // Setup Alpha Levels Buffer for Sprites
@@ -35,17 +35,33 @@ extension CosmicAlignmentSpriteNode {
             alphaLevels[zodiac] = min(1, grossAlpha)
         }
         
-        for (zodiac, alpha) in alphaLevels {
-            self.spritesBase12[zodiac]?.alpha = alpha
+        // Change Alpha (with animation)
+        if animate {
+            // Animate the alpha changes
+            for (zodiac, targetAlpha) in alphaLevels {
+                if let sprite = self.spritesBase12[zodiac] {
+                    let currentAlpha = sprite.alpha
+                    let fadeDuration = 0.5 // Set the duration of the fade animation as desired
+
+                    // Create an SKAction to fade from the current alpha to the target alpha
+                    let fadeAction = SKAction.fadeAlpha(to: targetAlpha, duration: fadeDuration)
+
+                    // Run the fade action on the sprite
+                    sprite.run(fadeAction)
+                }
+            }
+        } else {
+            for (zodiac, targetAlpha) in alphaLevels {
+                self.spritesBase12[zodiac]?.alpha = targetAlpha
+            }
         }
     }
     
     // Base 24(12) Cusps
-    func updateCusps(starChart:StarChart, selectedPlanets:[CoreAstrology.AspectBody.NodeType]) {
+    func updateCusps(starChart:StarChart, selectedPlanets:[CoreAstrology.AspectBody.NodeType], animate:Bool = true) {
         // Set the alpha of each Cusp Sprite
         // Stack Arkana levels by taking the sub and main of each node for Cusp
         
-        let alignments = starChart.alignments
         let cuspIndex = starChart.produceCuspIndex(limitList: selectedPlanets)//produceZodiacIndex(limitList: selectedPlanets)
         var alphaLevels: [Arcana.Cusp: CGFloat] = [:]
         
@@ -56,17 +72,33 @@ extension CosmicAlignmentSpriteNode {
             alphaLevels[cusp] = min(1, grossAlpha)
         }
         
-        for (cusp, alpha) in alphaLevels {
-            self.spritesBase24[cusp]?.alpha = alpha
+        // Change Alpha (with animation)
+        if animate {
+            // Animate the alpha changes
+            for (cusp, targetAlpha) in alphaLevels {
+                if let sprite = self.spritesBase24[cusp] {
+                    let currentAlpha = sprite.alpha
+                    let fadeDuration = 0.5 // Set the duration of the fade animation as desired
+
+                    // Create an SKAction to fade from the current alpha to the target alpha
+                    let fadeAction = SKAction.fadeAlpha(to: targetAlpha, duration: fadeDuration)
+
+                    // Run the fade action on the sprite
+                    sprite.run(fadeAction)
+                }
+            }
+        } else {
+            for (cusp, targetAlpha) in alphaLevels {
+                self.spritesBase24[cusp]?.alpha = targetAlpha
+            }
         }
     }
     
     // Base 36 Decans
-    func updateDecans(starChart:StarChart, selectedPlanets:[CoreAstrology.AspectBody.NodeType]) {
+    func updateDecans(starChart:StarChart, selectedPlanets:[CoreAstrology.AspectBody.NodeType], animate:Bool = true) {
         // Set the alpha of each Decan Sprite
         // Stack Arkana levels by taking the sub and main of each node for Decan
         
-        let alignments = starChart.alignments
         let decanIndex = starChart.produceDecanIndex(limitList: selectedPlanets)//produceZodiacIndex(limitList: selectedPlanets)
         var alphaLevels: [Arcana.Decan: CGFloat] = [:]
         
@@ -77,8 +109,33 @@ extension CosmicAlignmentSpriteNode {
             alphaLevels[decan] = min(1, grossAlpha)
         }
         
-        for (decan, alpha) in alphaLevels {
-            self.spritesBase36[decan]?.alpha = alpha
+        // Change Alpha (with animation)
+        if animate {
+            // Animate the alpha changes
+            for (decan, targetAlpha) in alphaLevels {
+                if let sprite = self.spritesBase36[decan] {
+                    let currentAlpha = sprite.alpha
+                    let fadeDuration = 0.5 // Set the duration of the fade animation as desired
+
+                    // Create an SKAction to fade from the current alpha to the target alpha
+                    let fadeAction = SKAction.fadeAlpha(to: targetAlpha, duration: fadeDuration)
+
+                    // Run the fade action on the sprite
+                    sprite.run(fadeAction)
+                }
+            }
+        } else {
+            for (decan, targetAlpha) in alphaLevels {
+                self.spritesBase36[decan]?.alpha = targetAlpha
+            }
         }
+    }
+    
+    func updatePlanetaryPositions(starChart: StarChart, selectedPlanets:[CoreAstrology.AspectBody.NodeType]) {
+        self.planetaryPlacementSpriteNode.update(with: starChart, selectedPlanets: selectedPlanets)
+    }
+    
+    func updateAspectLines(starChart: StarChart, selectedPlanets:[CoreAstrology.AspectBody.NodeType], selectedAspects:[CoreAstrology.AspectRelationType]) {
+        self.aspectLinesSpriteNode.update(with: starChart, selectedPlanets: selectedPlanets, selectedAspects: selectedAspects)
     }
 }

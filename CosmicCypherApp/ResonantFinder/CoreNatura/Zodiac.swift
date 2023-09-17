@@ -32,7 +32,7 @@ extension Arcana {
             var zodiacAccurate = (((degree.value)/360)*count).truncatingRemainder(dividingBy: count)
             if zodiacAccurate < 0 { zodiacAccurate += count }
             let zodiac = Zodiac(rawValue: Int(zodiacAccurate))!
-            print("creating Zodiac(\(zodiac)) degree(\(degree))")
+            //print("creating Zodiac(\(zodiac)) degree(\(degree))")
             return zodiac
         }
         

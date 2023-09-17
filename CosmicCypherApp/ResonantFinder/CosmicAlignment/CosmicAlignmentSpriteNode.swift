@@ -15,6 +15,9 @@ class CosmicAlignmentSpriteNode: SKSpriteNode {
     var spritesBase24:[Arcana.Cusp:SKSpriteNode] = [:]
     var spritesBase36:[Arcana.Decan:SKSpriteNode] = [:]
     
+    var planetaryPlacementSpriteNode:PlanetaryPlacementsSpriteNode = PlanetaryPlacementsSpriteNode()
+    var aspectLinesSpriteNode:AspectLinesSpriteNode = AspectLinesSpriteNode()
+    
     static func create(size: CGSize) -> CosmicAlignmentSpriteNode {
         let sprite = CosmicAlignmentSpriteNode(texture: nil, color: .clear, size: size)
         sprite.setup()

@@ -20,7 +20,7 @@ extension Arcana {
             var decanAccurate = (((degree.value)/360)*count).truncatingRemainder(dividingBy: count)
             if decanAccurate < 0 { decanAccurate += count }
             let decan = Decan(rawValue: Int(decanAccurate))!
-            print("creating Decan(\(decan)) degree(\(degree))")
+            //print("creating Decan(\(decan)) degree(\(degree))")
             return decan
         }
         

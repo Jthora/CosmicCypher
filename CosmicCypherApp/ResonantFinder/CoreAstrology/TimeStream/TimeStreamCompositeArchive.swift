@@ -165,7 +165,7 @@ public final actor TimeStreamCompositeArchive {
         if let uuidList = uuidList {
             return uuidList
         } else {
-            print("Creating New UUIDList")
+            //print("Creating New UUIDList")
             let uuidList = UUIDList()
             try await store(uuidList: uuidList)
             return uuidList

@@ -32,7 +32,7 @@ extension Arcana {
             let d = ((deg).truncatingRemainder(dividingBy: 360))/30
             let i = d.truncatingRemainder(dividingBy: count)
             let c = Cusp(rawValue: Int(i))!
-            print("creating Cusp(\(c)) degree(\(degree)) deg(\(deg)) d(\(d)) i(\(i))")
+            //print("creating Cusp(\(c)) degree(\(degree)) deg(\(deg)) d(\(d)) i(\(i))")
             return c
         }
         

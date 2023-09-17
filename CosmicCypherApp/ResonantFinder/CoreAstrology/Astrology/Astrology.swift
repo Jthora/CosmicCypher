@@ -82,7 +82,7 @@ open class CoreAstrology {
         }
     }
     
-    public enum AspectRelationType:Double, CaseIterable, Codable {
+    public enum AspectRelationType: Int, CaseIterable, Codable {
         
         // init AspectRelationType (based on distance between AspectBodies)
         public init?(nodeDistance:Degree, limitTypes:[AspectRelationType] = AspectRelationType.allCases) {
@@ -128,41 +128,74 @@ open class CoreAstrology {
             }
         }
         
-        case conjunction = 0
-        case opposition = 180
-        
-        case sextile = 60
-        case trine = 120
-        
-        case semisquare = 45
-        case square = 90
-        case bisemisquare = 135
-        
-        case quintile = 72
-        case biquintile = 144
-        
-        case septile = 51.4285714286
-        case biseptile = 102.857142857
-        case triseptile = 154.285714286
-        
-        case novile = 40
-        case binovile = 80
-        case quadranovile = 160
-        
-        case oneTenth = 36
-        case threeTenth = 108
-        
-        case oneEleventh = 32.72727272727
-        case twoEleventh = 65.45454545455
-        case threeEleventh = 98.18181818182
-        case fourEleventh = 130.90909090909
-        case fiveEleventh = 163.63636363636
-        
-        case oneTwelfth = 30 // semisextile
-        case fiveTwelfth = 150 // fiveTwelfth
+        case conjunction
+        case opposition
+
+        case sextile
+        case trine
+
+        case semisquare
+        case square
+        case bisemisquare
+
+        case quintile
+        case biquintile
+
+        case septile
+        case biseptile
+        case triseptile
+
+        case novile
+        case binovile
+        case quadranovile
+
+        case oneTenth
+        case threeTenth
+
+        case oneEleventh
+        case twoEleventh
+        case threeEleventh
+        case fourEleventh
+        case fiveEleventh
+
+        case oneTwelfth // semisextile
+        case fiveTwelfth
         
         public var degree:Degree {
-            return Degree(self.rawValue)
+            switch self {
+            case .conjunction: return 0
+            case .opposition: return 180
+            
+            case .sextile: return 60
+            case .trine: return 120
+            
+            case .semisquare: return 45
+            case .square: return 90
+            case .bisemisquare: return 135
+            
+            case .quintile: return 72
+            case .biquintile: return 144
+            
+            case .septile: return 51.4285714286
+            case .biseptile: return 102.857142857
+            case .triseptile: return 154.285714286
+            
+            case .novile: return 40
+            case .binovile: return 80
+            case .quadranovile: return 160
+            
+            case .oneTenth: return 36
+            case .threeTenth: return 108
+            
+            case .oneEleventh: return 32.72727272727
+            case .twoEleventh: return 65.45454545455
+            case .threeEleventh: return 98.18181818182
+            case .fourEleventh: return 130.90909090909
+            case .fiveEleventh: return 163.63636363636
+            
+            case .oneTwelfth: return 30 // semisextile
+            case .fiveTwelfth: return 150 // fiveTwelfth
+            }
         }
         
         public func distance(orbitDegreeOffset:Degree) -> Degree {
@@ -1050,6 +1083,13 @@ open class CoreAstrology {
         public func angleDiff(for date:Date, coords:GeographicCoordinates, magnitude:Bool = true) -> Degree? {
             let d = self.primaryBody.equatorialCoordinates.alpha.inDegrees - self.secondaryBody.equatorialCoordinates.alpha.inDegrees
             return magnitude ? abs(d) : d
+        }
+        
+        public var orbStrength:Double {
+            let orb = self.relation.type.orb.value
+            let dist = abs(self.relation.orbDistance.value)
+            let strength = (orb - dist)/orb
+            return strength
         }
         
         public var description:String {

@@ -54,10 +54,10 @@ public final class StarChart {
     private func setupAspects() {
         print("StarChart: setupAspects")
         for (primaryKey,primaryAlignment) in alignments {
-            print("primaryKey: \(primaryKey)")
+            //print("primaryKey: \(primaryKey)")
             
             for (secondaryKey,secondaryAlignment) in alignments where primaryKey != secondaryKey {
-                print("secondaryKey: \(secondaryKey)")
+                //print("secondaryKey: \(secondaryKey)")
                 
                 guard !shouldSkipRedundant(primaryAlignment.nodeType, secondaryAlignment.nodeType) else { continue }
 //

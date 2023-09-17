@@ -11,14 +11,20 @@ import SpriteKit
 
 public class AspectLineSpriteNode: SKSpriteNode {
     
+    static let defaultOrbStrength:Double = 1.0
+    static let defaultLineWidth:CGFloat = 2.0
     var lineNode:SKShapeNode? = nil
     
     // Store the current p1 and p2 positions
     var currentP1: CGPoint = .zero
     var currentP2: CGPoint = .zero
     
-    static func create(p1:CGPoint, p2:CGPoint, aspectType:CoreAstrology.AspectRelationType) -> AspectLineSpriteNode {
+    static func create(p1:CGPoint, p2:CGPoint, aspectType:CoreAstrology.AspectRelationType, orbStrength:Double?) -> AspectLineSpriteNode {
+        
         let aspectLineSpriteNode = AspectLineSpriteNode()
+        
+        let lineWidth:CGFloat = CGFloat(orbStrength ?? defaultOrbStrength) * defaultLineWidth
+        let alpha = min(1,(lineWidth))
         
         // Store the current positions
         aspectLineSpriteNode.currentP1 = p1
@@ -26,7 +32,8 @@ public class AspectLineSpriteNode: SKSpriteNode {
         
         // Create an empty shape node for the line
         let lineNode = SKShapeNode()
-        lineNode.lineWidth = 2.0 // Set the line width
+        lineNode.lineWidth = lineWidth
+        lineNode.alpha = alpha
         
         switch aspectType {
         case .conjunction, .trine, .sextile: lineNode.strokeColor = .green
@@ -47,7 +54,15 @@ public class AspectLineSpriteNode: SKSpriteNode {
     }
     
     // Update method to animate the line to new positions
-    func update(p1: CGPoint, p2: CGPoint, animate: Bool = false) {
+    func update(p1: CGPoint, p2: CGPoint, orbStrength: Double? = nil, animate: Bool = false) {
+        
+        
+        let lineWidth:CGFloat = CGFloat(orbStrength ?? AspectLineSpriteNode.defaultOrbStrength) * AspectLineSpriteNode.defaultLineWidth
+        let alpha = min(1,(lineWidth))
+        
+        lineNode?.lineWidth = lineWidth
+        lineNode?.alpha = alpha
+        
         // Create a new path from current positions to the new positions
         let newPath = CGMutablePath()
         newPath.move(to: currentP1)

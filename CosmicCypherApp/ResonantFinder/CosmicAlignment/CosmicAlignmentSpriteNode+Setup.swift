@@ -101,7 +101,7 @@ extension CosmicAlignmentSpriteNode {
             let force = Arcana.Force.from(degree: degree)
             let zodiac = Arcana.Zodiac.from(degree: degree)
             let decan = Arcana.Decan.from(degree: degree)
-            let isPrime = Arcana.Element.isPrime(degree: degree)
+            let isPrime = Arcana.Element.isPrimeElement(degree: degree)
             //print("sprite @(\(degree)) element[\(element)] force[\(force)] zodiac[\(zodiac)]")
             
             let decanSprite = getBase36Sprite(element, isPrime ? nil : force, zodiac.modality, glow: true)
@@ -125,8 +125,8 @@ extension CosmicAlignmentSpriteNode {
     // Sprite Based Planet Astrology Disk
     func setupPlanetPlacementSprite() {
         let starChart = StarChart.Core.current
-        let selectedPlanets = StarChart.Core.selectedPlanets
-        planetaryPlacementSpriteNode = PlanetaryPlacementsSpriteNode.create(starChart: starChart, selectedPlanets: selectedPlanets, size: self.size)
+        let selectedNodeTypes = StarChart.Core.selectedNodeTypes
+        planetaryPlacementSpriteNode = PlanetaryPlacementsSpriteNode.create(starChart: starChart, selectedNodeTypes: selectedNodeTypes, size: self.size)
         //spriteNode.color = .red
         planetaryPlacementSpriteNode.position = self.position
         addChild(planetaryPlacementSpriteNode)
@@ -134,9 +134,9 @@ extension CosmicAlignmentSpriteNode {
     
     func setupAspectLinesSprite() {
         let starChart = StarChart.Core.current
-        let selectedPlanets = StarChart.Core.selectedPlanets
+        let selectedNodeTypes = StarChart.Core.selectedNodeTypes
         let selectedAspects = StarChart.Core.selectedAspects
-        aspectLinesSpriteNode = AspectLinesSpriteNode.create(starChart: starChart, selectedPlanets: selectedPlanets, selectedAspects: selectedAspects, size: self.size)
+        aspectLinesSpriteNode = AspectLinesSpriteNode.create(starChart: starChart, selectedNodeTypes: selectedNodeTypes, selectedAspects: selectedAspects, size: self.size)
         aspectLinesSpriteNode.position = self.position
         addChild(aspectLinesSpriteNode)
     }

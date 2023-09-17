@@ -107,7 +107,7 @@ extension StarChart {
         private static func fetchSelectedNodeTypes() -> [CoreAstrology.AspectBody.NodeType] {
             guard let decoded  = UserDefaults.standard.object(forKey: _selectedNodeTypesKey) as? Data,
                   let rawValues = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(decoded) as? [Int] else {
-                print("cannot decode data: defaulting to DEFAULT_SELECTED_PLANETS")
+                print("cannot decode data: defaulting to DEFAULT_SELECTED_NODETYPES")
                 return DEFAULT_SELECTED_NODETYPES
             }
             let selectedPlanets = rawValues.map({ CoreAstrology.AspectBody.NodeType(rawValue: $0)! })
@@ -116,10 +116,11 @@ extension StarChart {
         
         private static func fetchSelectedAspects() -> [CoreAstrology.AspectRelationType] {
             guard let decoded  = UserDefaults.standard.object(forKey: _selectedAspectsKey) as? Data,
-                  let selectedAspects = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(decoded) as? [CoreAstrology.AspectRelationType] else {
+                  let rawValues = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(decoded) as? [Int] else {
                 print("cannot decode data: defaulting to DEFAULT_SELECTED_ASPECTS")
                 return DEFAULT_SELECTED_ASPECTS
             }
+            let selectedAspects = rawValues.map({ CoreAstrology.AspectRelationType(rawValue: $0)! })
             return selectedAspects
         }
         

@@ -318,9 +318,9 @@ extension Arcana {
         }
         
         // Base36 Decans detection of a Decan that is a Prime Element (instead of one of the side decans)
-        public static func isPrime(degree: Degree) -> Bool {
+        public static func isPrimeElement(degree: Degree) -> Bool {
             let zodiacDegree = ((((degree.value)/360)*superCount)).truncatingRemainder(dividingBy: 1)
-            print("isPrime(zodiacDegree: \(zodiacDegree))")
+            //print("isPrime(zodiacDegree: \(zodiacDegree))")
             return zodiacDegree > 0.333333 && zodiacDegree < 0.666667
         }
         

@@ -14,8 +14,9 @@ extension ResonanceReportViewController {
     
     func updateCosmicDisk() {
         let starChart = StarChart.Core.current
-        let selectedPlanets = StarChart.Core.selectedPlanets
+        let selectedNodeTypes = StarChart.Core.selectedNodeTypes
         let selectedAspects = StarChart.Core.selectedAspects
-        self.cosmicDiskSprite.update(starChart: starChart, selectedPlanets: selectedPlanets, selectedAspects: selectedAspects)
+        
+        self.cosmicDiskSprite.update(starChart: starChart, selectedNodeTypes: selectedNodeTypes, selectedAspects: selectedAspects)
     }
 }

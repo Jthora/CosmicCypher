@@ -11,7 +11,7 @@ import SwiftAA
 
 class PlanetaryPlacementsSpriteNode: SKSpriteNode {
     
-    lazy var defaultRadius:CGFloat = size.height/2.45
+    lazy var defaultRadius:CGFloat = size.height/2.4
     
     // MARK: Sprites
     private var planetSpriteNodes:[CoreAstrology.AspectBody.NodeType:PlanetSpriteNode] = [:]
@@ -25,14 +25,14 @@ class PlanetaryPlacementsSpriteNode: SKSpriteNode {
     }
     
     // MARK: Create
-    public static func create(starChart: StarChart, selectedPlanets:[CoreAstrology.AspectBody.NodeType], size: CGSize) -> PlanetaryPlacementsSpriteNode {
+    public static func create(starChart: StarChart, selectedNodeTypes:[CoreAstrology.AspectBody.NodeType], size: CGSize) -> PlanetaryPlacementsSpriteNode {
         let sprite = PlanetaryPlacementsSpriteNode(texture: nil, color: .clear, size: size)
-        sprite.setup(with: starChart, selectedPlanets: selectedPlanets)
+        sprite.setup(with: starChart, selectedNodeTypes: selectedNodeTypes)
         return sprite
     }
     
     // MARK: Setup
-    public func setup(with starChart:StarChart, selectedPlanets:[CoreAstrology.AspectBody.NodeType]) {
+    public func setup(with starChart:StarChart, selectedNodeTypes:[CoreAstrology.AspectBody.NodeType]) {
         
         // Clear for Reset
         clear()
@@ -41,7 +41,7 @@ class PlanetaryPlacementsSpriteNode: SKSpriteNode {
         for (nodeType, alignment) in starChart.alignments {
             
             // Only Selected Planets
-            guard selectedPlanets.contains(nodeType) else {continue}
+            guard selectedNodeTypes.contains(nodeType) else {continue}
             
             // Setup Values
             var degree = alignment.longitude
@@ -78,14 +78,14 @@ class PlanetaryPlacementsSpriteNode: SKSpriteNode {
     }
     
     // MARK: Update
-    public func update(with starChart:StarChart, selectedPlanets:[CoreAstrology.AspectBody.NodeType], animate: Bool = false) {
+    public func update(with starChart:StarChart, selectedNodeTypes:[CoreAstrology.AspectBody.NodeType], animate: Bool = false) {
         
         // Check if Reset Required
         let containerKeys = Set(containerSpriteNodes.keys)
-        let selectedKeys = Set(selectedPlanets)
+        let selectedKeys = Set(selectedNodeTypes)
         guard selectedKeys.isSubset(of: containerKeys) && containerKeys.isSubset(of: selectedKeys) else {
             // Reset Required
-            setup(with: starChart, selectedPlanets: selectedPlanets)
+            setup(with: starChart, selectedNodeTypes: selectedNodeTypes)
             return
         }
         

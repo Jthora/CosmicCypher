@@ -477,7 +477,7 @@ extension AspectEventScanner {
         let p1Type = primaryObject.type
         let p2Type = secondaryObject.type
         let targetAspectType = aspectRelation.type
-        let targetAspectAngle = targetAspectType.rawValue
+        let targetAspectAngle = targetAspectType.degree.value
         let targetOrbThreshold = 0.01 // Set the target orb threshold to 0.01 degrees
         print("DeepScan(\(p1Type.symbol)\(targetAspectType.symbol)\(p2Type.symbol))")
         

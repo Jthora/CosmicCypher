@@ -26,7 +26,8 @@ extension TimeStream.Composite {
                 timeStream.loadStarCharts(sampleCount: configuration.sampleCount, onComplete: {
                     print("timestream loaded")
                 }, onProgress: onProgress)
-                imageStripSets.append(timeStream.generateImageStrips(nodeTypes: configuration.nodeTypes))
+                let imageStripSet = timeStream.generateImageStrips(nodeTypes: configuration.nodeTypes)
+                imageStripSets.append(imageStripSet)
             }
             self.imageStripSets = imageStripSets
             onComplete?(self)

@@ -12,20 +12,22 @@ import SpriteKit
 extension CosmicAlignmentSpriteNode {
     
     // Update
-    func update(starChart:StarChart, selectedPlanets:[CoreAstrology.AspectBody.NodeType], selectedAspects:[CoreAstrology.AspectRelationType]) {
-        updateZodiac(starChart: starChart, selectedPlanets: selectedPlanets)
-        updateCusps(starChart: starChart, selectedPlanets: selectedPlanets)
-        updateDecans(starChart: starChart, selectedPlanets: selectedPlanets)
-        updatePlanetaryPositions(starChart: starChart, selectedPlanets: selectedPlanets)
-        updateAspectLines(starChart: starChart, selectedPlanets: selectedPlanets, selectedAspects: selectedAspects)
+    func update(starChart:StarChart, selectedNodeTypes:[CoreAstrology.AspectBody.NodeType], selectedAspects:[CoreAstrology.AspectRelationType]) {
+        DispatchQueue.main.async {
+            self.updateZodiac(starChart: starChart, selectedNodeTypes: selectedNodeTypes)
+            self.updateCusps(starChart: starChart, selectedNodeTypes: selectedNodeTypes)
+            self.updateDecans(starChart: starChart, selectedNodeTypes: selectedNodeTypes)
+            self.updatePlanetaryPositions(starChart: starChart, selectedNodeTypes: selectedNodeTypes)
+            self.updateAspectLines(starChart: starChart, selectedNodeTypes: selectedNodeTypes, selectedAspects: selectedAspects)
+        }
     }
     
     // Base 12 Zodiac
-    func updateZodiac(starChart:StarChart, selectedPlanets:[CoreAstrology.AspectBody.NodeType], animate:Bool = true) {
+    func updateZodiac(starChart:StarChart, selectedNodeTypes:[CoreAstrology.AspectBody.NodeType], animate:Bool = true) {
         // set the alpha of each Zodiac Sprite
         // Stack Arkana levels by taking the sub and main of each node for Zodiac
         
-        let zodiacIndex = starChart.produceZodiacIndex(limitList: selectedPlanets)
+        let zodiacIndex = starChart.produceZodiacIndex(limitList: selectedNodeTypes)
         var alphaLevels: [Arcana.Zodiac: CGFloat] = [:]
         
         // Setup Alpha Levels Buffer for Sprites
@@ -58,11 +60,11 @@ extension CosmicAlignmentSpriteNode {
     }
     
     // Base 24(12) Cusps
-    func updateCusps(starChart:StarChart, selectedPlanets:[CoreAstrology.AspectBody.NodeType], animate:Bool = true) {
+    func updateCusps(starChart:StarChart, selectedNodeTypes:[CoreAstrology.AspectBody.NodeType], animate:Bool = true) {
         // Set the alpha of each Cusp Sprite
         // Stack Arkana levels by taking the sub and main of each node for Cusp
         
-        let cuspIndex = starChart.produceCuspIndex(limitList: selectedPlanets)//produceZodiacIndex(limitList: selectedPlanets)
+        let cuspIndex = starChart.produceCuspIndex(limitList: selectedNodeTypes)//produceZodiacIndex(limitList: selectedPlanets)
         var alphaLevels: [Arcana.Cusp: CGFloat] = [:]
         
         // Setup Alpha Levels Buffer for Sprites
@@ -95,11 +97,11 @@ extension CosmicAlignmentSpriteNode {
     }
     
     // Base 36 Decans
-    func updateDecans(starChart:StarChart, selectedPlanets:[CoreAstrology.AspectBody.NodeType], animate:Bool = true) {
+    func updateDecans(starChart:StarChart, selectedNodeTypes:[CoreAstrology.AspectBody.NodeType], animate:Bool = true) {
         // Set the alpha of each Decan Sprite
         // Stack Arkana levels by taking the sub and main of each node for Decan
         
-        let decanIndex = starChart.produceDecanIndex(limitList: selectedPlanets)//produceZodiacIndex(limitList: selectedPlanets)
+        let decanIndex = starChart.produceDecanIndex(limitList: selectedNodeTypes)//produceZodiacIndex(limitList: selectedPlanets)
         var alphaLevels: [Arcana.Decan: CGFloat] = [:]
         
         // Setup Alpha Levels Buffer for Sprites
@@ -131,11 +133,11 @@ extension CosmicAlignmentSpriteNode {
         }
     }
     
-    func updatePlanetaryPositions(starChart: StarChart, selectedPlanets:[CoreAstrology.AspectBody.NodeType]) {
-        self.planetaryPlacementSpriteNode.update(with: starChart, selectedPlanets: selectedPlanets)
+    func updatePlanetaryPositions(starChart: StarChart, selectedNodeTypes:[CoreAstrology.AspectBody.NodeType]) {
+        self.planetaryPlacementSpriteNode.update(with: starChart, selectedNodeTypes: selectedNodeTypes)
     }
     
-    func updateAspectLines(starChart: StarChart, selectedPlanets:[CoreAstrology.AspectBody.NodeType], selectedAspects:[CoreAstrology.AspectRelationType]) {
-        self.aspectLinesSpriteNode.update(with: starChart, selectedPlanets: selectedPlanets, selectedAspects: selectedAspects)
+    func updateAspectLines(starChart: StarChart, selectedNodeTypes:[CoreAstrology.AspectBody.NodeType], selectedAspects:[CoreAstrology.AspectRelationType]) {
+        self.aspectLinesSpriteNode.update(with: starChart, selectedNodeTypes: selectedNodeTypes, selectedAspects: selectedAspects)
     }
 }

@@ -30,6 +30,16 @@ class TimeStreamCompositeTableViewCell: UITableViewCell {
     @IBOutlet weak var chartViewMessageLabel: UILabel!
     @IBOutlet weak var displayOptionButton: UIButton!
     
+    @IBOutlet weak var settingsButton: UIButton!
+    
+    @IBOutlet weak var reloadButton: UIButton!
+    
+    
+    @IBOutlet weak var exportButton: UIButton!
+    
+    
+    @IBOutlet weak var deleteButton: UIButton!
+    
     
     var lineChartView: TimeStream.Chart?
     
@@ -107,10 +117,10 @@ class TimeStreamCompositeTableViewCell: UITableViewCell {
     
     func setupButtons() {
         displayOptionButton.menu = UIMenu(children: [
-            UIAction(title: "Harmonics", state: .on, handler:showHarmonicsClosure),
-            UIAction(title: "Gravimetrics", handler:showGravimetricsClosure),
-            UIAction(title: "Exa/Deb", handler:showExaDebClosure),
-            UIAction(title: "Rise/Fall", handler:showRiseFallClosure)])
+            UIAction(title: "Harmonics Spectrograph", state: .on, handler:showHarmonicsClosure),
+            UIAction(title: "Global Net Energy [Gravimetrics]", handler:showGravimetricsClosure),
+            UIAction(title: "Exa/Deb Chart", handler:showExaDebClosure),
+            UIAction(title: "Rise/Fall Chart", handler:showRiseFallClosure)])
     }
     
     func setupChartGraph() {

@@ -15,8 +15,8 @@ extension ResonanceReportViewController: TimeStreamCoreReactive {
             switch updateAction {
             case .composites:
                 DispatchQueue.main.async {
-                    self.timeStreamTableView.reloadData()
-                    self.loadingTimeStreamsSpinner.stopAnimating()
+//                    self.timeStreamTableView.reloadData()
+//                    self.loadingTimeStreamsSpinner.stopAnimating()
                 }
             }
         case .onLoadTimeStream(loadTimeStreamAction: let loadTimeStreamAction):
@@ -27,8 +27,8 @@ extension ResonanceReportViewController: TimeStreamCoreReactive {
             case .complete:
                 break
             case .start(uuid: let uuid, name: let name, configuration: let configuration):
-                self.timeStreamTableView.reloadData()
-                self.loadingTimeStreamsSpinner.startAnimating()
+//                self.timeStreamTableView.reloadData()
+//                self.loadingTimeStreamsSpinner.startAnimating()
                 break
             }
         }

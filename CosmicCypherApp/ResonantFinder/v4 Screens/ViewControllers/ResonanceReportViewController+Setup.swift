@@ -15,6 +15,8 @@ extension ResonanceReportViewController {
     // MARK: Setup
     // Setup
     func setup() {
+        
+        
         //setupTimeStreamVisualizer()
         setupBars()
         setupSpriteKitScene()
@@ -23,6 +25,10 @@ extension ResonanceReportViewController {
         update()
         renderStarChart()
         setupCosmicAlignmentSprite()
+        
+        // Time Stream Interface
+        TimeStreamInterfaceViewController.present(in: timeStreamInterfaceContainerView)
+        
         update()
     }
     

@@ -40,6 +40,8 @@ extension ResonanceReportViewController {
 
                 /// Modality Meters
                 self.vc.updateModalityMeters(starChart:starChart)
+                
+                self.vc.timeStreamInterfaceContainerView
 
                 /// Discernment Chart
                 if self.isCancelled { return }

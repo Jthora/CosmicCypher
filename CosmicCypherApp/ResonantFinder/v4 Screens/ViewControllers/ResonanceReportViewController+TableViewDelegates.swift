@@ -14,8 +14,8 @@ extension ResonanceReportViewController: UITableViewDelegate, UITableViewDataSou
         if tableView == aspectsResultsTableView {
             return StarChart.Core.current.sortedAspects(selectedNodeTypes: StarChart.Core.selectedNodeTypes,
                                                        selectedAspects: StarChart.Core.selectedAspects).count
-        } else if tableView == self.timeStreamTableView {
-            return TimeStream.Core.compositeCount + 1 //currentComposites.count + 1
+//        } else if tableView == self.timeStreamTableView {
+//            return TimeStream.Core.compositeCount + 1 //currentComposites.count + 1
         } else {
             return 0
         }
@@ -35,35 +35,35 @@ extension ResonanceReportViewController: UITableViewDelegate, UITableViewDataSou
             
             return cell
             
-        } else if tableView == timeStreamTableView {
-            // Add New Cell
-            if indexPath.row >= TimeStream.Core.compositeCount {
-                guard let cell = timeStreamTableView.dequeueReusableCell(withIdentifier: "TimeStreamAddNewCompositeTableViewCell") as? TimeStreamAddNewCompositeTableViewCell else {
-                    let cell = TimeStreamAddNewCompositeTableViewCell()
-                    return cell
-                }
-                return cell
-            }
-            
-            // Existing TimeStream Cell
-            guard let cell = timeStreamTableView.dequeueReusableCell(withIdentifier: "TimeStreamCompositeTableViewCell") as? TimeStreamCompositeTableViewCell else {
-                let cell = TimeStreamCompositeTableViewCell()
-                
-                cell.timeStreamComposite = TimeStream.Core.composite(for: indexPath)
-                cell.uuid = TimeStream.Core.compositeUUID(for: indexPath)
-                cell.update()
-                
-                return cell
-            }
-            
-            cell.timeStreamComposite = TimeStream.Core.composite(for: indexPath)
-            cell.uuid = TimeStream.Core.compositeUUID(for: indexPath)
-            cell.update()
-            /// Setup TimeStream Visualization
-            /// Composites
-            /// SpriteNodes
-            
-            return cell
+//        } else if tableView == timeStreamTableView {
+//            // Add New Cell
+//            if indexPath.row >= TimeStream.Core.compositeCount {
+//                guard let cell = timeStreamTableView.dequeueReusableCell(withIdentifier: "TimeStreamAddNewCompositeTableViewCell") as? TimeStreamAddNewCompositeTableViewCell else {
+//                    let cell = TimeStreamAddNewCompositeTableViewCell()
+//                    return cell
+//                }
+//                return cell
+//            }
+//
+//            // Existing TimeStream Cell
+//            guard let cell = timeStreamTableView.dequeueReusableCell(withIdentifier: "TimeStreamCompositeTableViewCell") as? TimeStreamCompositeTableViewCell else {
+//                let cell = TimeStreamCompositeTableViewCell()
+//
+//                cell.timeStreamComposite = TimeStream.Core.composite(for: indexPath)
+//                cell.uuid = TimeStream.Core.compositeUUID(for: indexPath)
+//                cell.update()
+//
+//                return cell
+//            }
+//
+//            cell.timeStreamComposite = TimeStream.Core.composite(for: indexPath)
+//            cell.uuid = TimeStream.Core.compositeUUID(for: indexPath)
+//            cell.update()
+//            /// Setup TimeStream Visualization
+//            /// Composites
+//            /// SpriteNodes
+//
+//            return cell
         } else {
             return UITableViewCell()
         }
@@ -71,33 +71,32 @@ extension ResonanceReportViewController: UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if tableView == timeStreamTableView {
-            if indexPath.row >= TimeStream.Core.compositeCount {
-                // Add New Timestream
-                TimeStreamSelectViewController.presentModally(over: self)
-                return
-            } else if let cell = tableView.cellForRow(at: indexPath) as? TimeStreamCompositeTableViewCell,
-                      let planets = cell.timeStreamComposite?.configuration.nodeTypes {
-                DispatchQueue.main.async {
-                    StarChart.Core.selectedNodeTypes = planets
-                    let point = cell.currentPoint
-                    StarChart.Core.current = StarChartRegistry.main.getStarChart(point: point!)
-                    ResonanceReportViewController.current?.update()
-                    self.update()
-                }
-            }
-        } else if tableView == timeStreamTableView {
-            print("Harmonics Report Selected: \(indexPath.row)")
-        }
+//        if tableView == timeStreamTableView {
+//            if indexPath.row >= TimeStream.Core.compositeCount {
+//                // Add New Timestream
+//                TimeStreamSelectViewController.presentModally(over: self)
+//                return
+//            } else if let cell = tableView.cellForRow(at: indexPath) as? TimeStreamCompositeTableViewCell,
+//                      let planets = cell.timeStreamComposite?.configuration.nodeTypes {
+//                DispatchQueue.main.async {
+//                    StarChart.Core.selectedNodeTypes = planets
+//                    let point = cell.currentPoint
+//                    StarChart.Core.current = StarChartRegistry.main.getStarChart(point: point!)
+//                    ResonanceReportViewController.current?.update()
+//                    self.update()
+//                }
+//            }
+//        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if tableView == timeStreamTableView {
-            if indexPath.row >= TimeStream.Core.compositeCount {
-                return 2*tableView.frame.size.height/3
-            }
-            return tableView.frame.size.height
-        } else if tableView == aspectsResultsTableView {
+//        if tableView == timeStreamTableView {
+//            if indexPath.row >= TimeStream.Core.compositeCount {
+//                return 2*tableView.frame.size.height/3
+//            }
+//            return tableView.frame.size.height
+//        } else
+        if tableView == aspectsResultsTableView {
             return tableView.contentSize.width
         } else {
             return tableView.rowHeight
@@ -110,42 +109,42 @@ extension ResonanceReportViewController: UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        if tableView == timeStreamTableView {
-            /// Update Data Model
-            ///
-            /// Reference TimeStreamCore for Centralized Data Model - single source of truth
-//            let mover = currentTimeStreams.remove(at: sourceIndexPath.row)
-//            currentTimeStreams.insert(mover, at: destinationIndexPath.row)
-        }
+//        if tableView == timeStreamTableView {
+//            /// Update Data Model
+//            ///
+//            /// Reference TimeStreamCore for Centralized Data Model - single source of truth
+////            let mover = currentTimeStreams.remove(at: sourceIndexPath.row)
+////            currentTimeStreams.insert(mover, at: destinationIndexPath.row)
+//        }
     }
 //
-    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        if tableView == timeStreamTableView { // TimeStream Composite
-            /// TimeStream Composite Cell
-            let contextItemEdit = UIContextualAction(style: .normal, title: " Edit \n🛠 ") {  (contextualAction, view, boolValue) in
-                /// Duplicate TimeStream Composite
-                TimeStreamSettingsViewController.presentModally(over: self)
-
-                // TODO: Pre-Focus on Edited TimeStream Composite
-            }
-            let contextItemDelete = UIContextualAction(style: .destructive, title: " Delete \n✖️ ") {  (contextualAction, view, boolValue) in
-                /// Delete TimeStream Composite
-                //TimeStreamCore.deleteTimeStreamComposite()
-                guard let cell = tableView.cellForRow(at: indexPath) as? TimeStreamCompositeTableViewCell,
-                      let composite = cell.timeStreamComposite else {
-                    print("ERROR: missing composite for delete swipe action")
-                    return
-                }
-                TimeStream.Core.delete(timeStreamComposite: composite)
-                DispatchQueue.main.async {
-                    ResonanceReportViewController.current?.timeStreamTableView.reloadData()
-                }
-            }
-            return UISwipeActionsConfiguration(actions: [contextItemEdit, contextItemDelete])
-        } else {
-            return UISwipeActionsConfiguration(actions: [])
-        }
-    }
+//    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+//        if tableView == timeStreamTableView { // TimeStream Composite
+//            /// TimeStream Composite Cell
+//            let contextItemEdit = UIContextualAction(style: .normal, title: " Edit \n🛠 ") {  (contextualAction, view, boolValue) in
+//                /// Duplicate TimeStream Composite
+//                TimeStreamSettingsViewController.presentModally(over: self)
+//
+//                // TODO: Pre-Focus on Edited TimeStream Composite
+//            }
+//            let contextItemDelete = UIContextualAction(style: .destructive, title: " Delete \n✖️ ") {  (contextualAction, view, boolValue) in
+//                /// Delete TimeStream Composite
+//                //TimeStreamCore.deleteTimeStreamComposite()
+//                guard let cell = tableView.cellForRow(at: indexPath) as? TimeStreamCompositeTableViewCell,
+//                      let composite = cell.timeStreamComposite else {
+//                    print("ERROR: missing composite for delete swipe action")
+//                    return
+//                }
+//                TimeStream.Core.delete(timeStreamComposite: composite)
+//                DispatchQueue.main.async {
+//                    ResonanceReportViewController.current?.timeStreamTableView.reloadData()
+//                }
+//            }
+//            return UISwipeActionsConfiguration(actions: [contextItemEdit, contextItemDelete])
+//        } else {
+//            return UISwipeActionsConfiguration(actions: [])
+//        }
+//    }
 
 //    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 //        if tableView == timeStreamTableView {

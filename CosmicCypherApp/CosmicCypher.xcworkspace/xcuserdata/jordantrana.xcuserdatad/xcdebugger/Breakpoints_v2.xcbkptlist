@@ -128,6 +128,38 @@
             endingLineNumber = "69"
             landmarkName = "fetch(uuid:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2530ED4C-AE8A-4AE3-8F43-A61436B97F4B - 97b5972860886460"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () throws -&gt; Swift.Optional&lt;CosmicCypher.TimeStream&gt; in CosmicCypher.TimeStreamArchive.fetch(uuid: Foundation.UUID) async throws -&gt; Swift.Optional&lt;CosmicCypher.TimeStream&gt;"
+                  moduleName = "CosmicCypher"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jordantrana/Documents/gitProjects/CosmicCypher/CosmicCypherApp/ResonantFinder/CoreAstrology/TimeStream/TimeStreamArchive.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "1692">
+               </Location>
+               <Location
+                  uuid = "2530ED4C-AE8A-4AE3-8F43-A61436B97F4B - 97b5972860886460"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () throws -&gt; Swift.Optional&lt;CosmicCypher.TimeStream&gt; in CosmicCypher.TimeStreamArchive.fetch(uuid: Foundation.UUID) async throws -&gt; Swift.Optional&lt;CosmicCypher.TimeStream&gt;"
+                  moduleName = "CosmicCypher"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jordantrana/Documents/gitProjects/CosmicCypher/CosmicCypherApp/ResonantFinder/CoreAstrology/TimeStream/TimeStreamArchive.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "2156">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -144,6 +176,38 @@
             endingLineNumber = "75"
             landmarkName = "fetch(date:nodeType:subType:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "08FDF271-6A28-4160-99F8-21A85D41501F - 522efe34c88a8ff6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CosmicCypher.AstrologicalNodeStateArchive.fetch(date: Foundation.Date, nodeType: CosmicCypher.CoreAstrology.AspectBody.NodeType, subType: CosmicCypher.AstrologicalNodeSubType) -&gt; Swift.Optional&lt;CosmicCypher.AstrologicalNodeState&gt;"
+                  moduleName = "CosmicCypher"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jordantrana/Documents/gitProjects/CosmicCypher/CosmicCypherApp/ResonantFinder/CoreAstrology/AstrologicalNode/AstrologicalNodeStateArchive.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "3336">
+               </Location>
+               <Location
+                  uuid = "08FDF271-6A28-4160-99F8-21A85D41501F - 522efe34c88a8ff6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CosmicCypher.AstrologicalNodeStateArchive.fetch(date: Foundation.Date, nodeType: CosmicCypher.CoreAstrology.AspectBody.NodeType, subType: CosmicCypher.AstrologicalNodeSubType) -&gt; Swift.Optional&lt;CosmicCypher.AstrologicalNodeState&gt;"
+                  moduleName = "CosmicCypher"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jordantrana/Documents/gitProjects/CosmicCypher/CosmicCypherApp/ResonantFinder/CoreAstrology/AstrologicalNode/AstrologicalNodeStateArchive.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "3053">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -192,6 +256,38 @@
             endingLineNumber = "184"
             landmarkName = "addNewComposite(uuid:option:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8870AC17-E226-4AA0-BB62-CB2407F869B7 - 330b9162535b38d6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static CosmicCypher.TimeStream.Core.addNewComposite(uuid: Foundation.UUID, option: CosmicCypher.TimeStream.Generator.Option) -&gt; ()"
+                  moduleName = "CosmicCypher"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jordantrana/Documents/gitProjects/CosmicCypher/CosmicCypherApp/ResonantFinder/CoreAstrology/TimeStream/TimeStreamCore.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "186"
+                  endingLineNumber = "186"
+                  offsetFromSymbolStart = "1060">
+               </Location>
+               <Location
+                  uuid = "8870AC17-E226-4AA0-BB62-CB2407F869B7 - 330b9162535b38d6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static CosmicCypher.TimeStream.Core.addNewComposite(uuid: Foundation.UUID, option: CosmicCypher.TimeStream.Generator.Option) -&gt; ()"
+                  moduleName = "CosmicCypher"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jordantrana/Documents/gitProjects/CosmicCypher/CosmicCypherApp/ResonantFinder/CoreAstrology/TimeStream/TimeStreamCore.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "186"
+                  endingLineNumber = "186"
+                  offsetFromSymbolStart = "1057">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

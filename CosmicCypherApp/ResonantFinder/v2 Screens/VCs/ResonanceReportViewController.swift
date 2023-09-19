@@ -94,7 +94,7 @@ class ResonanceReportViewController: UIViewController {
     var barOne: LevelBarView? = nil
     var barMany: LevelBarView? = nil
     
-    
+    // MARK: Bar Labels
     // Bar Labels
     @IBOutlet weak var resonanceBarAirLabel: UILabel!
     @IBOutlet weak var resonanceBarFireLabel: UILabel!
@@ -121,7 +121,7 @@ class ResonanceReportViewController: UIViewController {
     // Discernment Graph
     @IBOutlet weak var discernmentGraphView: UIView!
     
-    // Modality Indicators
+    // MARK: Modality Indicators
     // Fire
     @IBOutlet weak var modalityIndicatorLeo: UIImageView!
     @IBOutlet weak var modalityIndicatorAries: UIImageView!
@@ -156,9 +156,28 @@ class ResonanceReportViewController: UIViewController {
     @IBOutlet weak var planetSelectButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
     
-    @IBOutlet weak var shareButton: UIButton!
+    // MARK: Text Views
+    // Text View
+    /// (lower text boxes for: console, stats, aspects and nodes)
+    @IBOutlet weak var textViewSelectedAspectSymbols: UITextView!
+    @IBOutlet weak var textViewAspectEventScannerConsole: UITextView!
+    @IBOutlet weak var textViewArchiveStatistics: UITextView!
+    @IBOutlet weak var textViewSelectedPlanetNodeSymbols: UITextView!
     
+    // MARK: Bottom Sheet TimeStream Interface
+    // TimeStream Interface (Bottom Controls
+    @IBOutlet weak var timeStreamInterfaceContainerView: TimeStreamInterfaceContainerView!
+    
+    // MARK: Extra Buttons
+    // Share Button
+    @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var aboutButton: UIButton!
+    
+    // MARK: Mode
+    // Central UI Hide Mode
     var hideCentralUI:Bool = false
+    
+    // Old Update Timer
     var readingUpdateTimer:Timer? = nil
     
     // MARK: Cosmic Disk
@@ -167,7 +186,7 @@ class ResonanceReportViewController: UIViewController {
     var cosmicDiskSprite:CosmicAlignmentSpriteNode = CosmicAlignmentSpriteNode() // Empty
     
     @IBOutlet weak var aspectsResultsTableView: UITableView!
-    @IBOutlet weak var timeStreamTableView: UITableView!
+    //@IBOutlet weak var timeStreamTableView: UITableView!
     
     var discernmentCentralPoint:CAShapeLayer? = nil
     var discernmentCentralBlob:CAShapeLayer? = nil
@@ -186,8 +205,8 @@ class ResonanceReportViewController: UIViewController {
         // Do any additional setup after loading the view.
         aspectsResultsTableView.delegate = self
         aspectsResultsTableView.dataSource = self
-        timeStreamTableView.delegate = self
-        timeStreamTableView.dataSource = self
+        //timeStreamTableView.delegate = self
+        //timeStreamTableView.dataSource = self
         
         TimeStream.Core.add(reactive: self)
         StarChart.Core.add(reactive: self)
@@ -267,10 +286,11 @@ class ResonanceReportViewController: UIViewController {
         ElementalReadingViewController.presentModally(over: self)
     }
     
-    
+    // MARK: Actions - Extra Buttons
+    // Share Button
     @IBAction func shareButtonTouch(_ sender: UIButton) {
         DispatchQueue.main.async {
-            //Set the default sharing message.
+            // Set the default sharing message.
             let message = "Cosmic Cypher App"
             let link = NSURL(string: "https://cosmiccypher.app/")
             // Screenshot:
@@ -279,18 +299,32 @@ class ResonanceReportViewController: UIViewController {
             let img = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
 
-            //Set the link, message, image to share.
+            // Set the link, message, image to share.
             if let link = link, let img = img {
-                let objectsToShare = [message,link,img] as [Any]
+                let objectsToShare = [message, link, img] as [Any]
                 let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+
+                // Check if the device is an iPad and set the sourceView and sourceRect properties accordingly.
+                if let popoverPresentationController = activityVC.popoverPresentationController {
+                    popoverPresentationController.sourceView = self.view
+                    popoverPresentationController.sourceRect = sender.frame
+                }
+
                 activityVC.excludedActivityTypes = [UIActivity.ActivityType.airDrop, UIActivity.ActivityType.addToReadingList]
                 self.present(activityVC, animated: true, completion: nil)
             } else {
                 print("Error: Set the link, message, image to share not working...")
             }
         }
-        
     }
+    
+    // About Button
+    @IBAction func aboutButtonTouch(_ sender: UIButton) {
+        // Present About Page
+        AboutPageViewController.present(from: self)
+    }
+    
+    
     
     
     // MARK: Gesture Recognizers

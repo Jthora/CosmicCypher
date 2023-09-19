@@ -14,7 +14,7 @@ extension TimeStream {
         let name: String?
         @objc let uuid: TimeStreamCompositeUUID
         
-        let imageMap: ImageMap
+        var imageMap: ImageMap? = nil
         let configuration: TimeStream.Configuration
         
         var startDate: Date? { return configuration.startDate }
@@ -22,31 +22,46 @@ extension TimeStream {
         
         var resonanceScores:[StarChart.ResonanceScore] { return configuration.resonanceScores }
         
-        init(name: String? = nil, uuid:UUID? = nil, configuration: TimeStream.Configuration, imageMap: ImageMap? = nil, onComplete:((Composite)->Void)? = nil, onProgress:((_ completion:Double)->Void)? = nil) {
+        // MARK: Init
+        // Main Init
+        public init(name: String? = nil, uuid:UUID? = nil, configuration: TimeStream.Configuration, imageMap: ImageMap? = nil, onComplete:((Composite)->Void)? = nil, onProgress:((_ completion:Double)->Void)? = nil) {
+            // Assign Name
             self.name = name
             
+            // Assign UUID
             if let uuid = uuid {
                 self.uuid = uuid
             } else {
                 self.uuid = UUID()
             }
             
+            // Assign Configuration
             self.configuration = configuration
             
-            
+            // Assign ImageMap
             if let imageMap = imageMap {
+                // Set ImageMap
                 self.imageMap = imageMap
                 onComplete?(self)
             } else {
-                self.imageMap = ImageMap(uuid: self.uuid, configuration: configuration, onProgress: onProgress)
-                onComplete?(self)
+                // Create ImageMap
+                Task {
+                    ImageMap.create(uuid: self.uuid, configuration: self.configuration, onComplete: { imageMap in
+                        self.imageMap = imageMap
+                        onComplete?(self)
+                    }, onProgress: onProgress)
+                }
             }
         }
         
+        // Personal Life Path Init
         /// TimeStream of Personal Life focused onto over a Path
-        init(name: String, uuid:UUID? = nil, primaryChart: StarChart?, secondaryChart: StarChart?, timestreams: [TimeStream], nodeTypes: [CoreAstrology.AspectBody.NodeType], sampleCount:Int, onComplete:((Composite)->Void)? = nil, onProgress:((_ completion:Double)->Void)? = nil) {
+        public init(name: String, uuid:UUID? = nil, primaryChart: StarChart?, secondaryChart: StarChart?, timestreams: [TimeStream], nodeTypes: [CoreAstrology.AspectBody.NodeType], sampleCount:Int, onComplete:((Composite)->Void)? = nil, onProgress:((_ completion:Double)->Void)? = nil) {
+            
+            // Assign Name
             self.name = name
             
+            // Assign UUID
             if let uuid = uuid {
                 self.uuid = uuid
             } else {
@@ -54,47 +69,112 @@ extension TimeStream {
             }
             
             self.configuration = TimeStream.Configuration(sampleCount: sampleCount, primaryChart: primaryChart, secondaryChart: secondaryChart, timeStreams: timestreams, nodeTypes: nodeTypes)
-            self.imageMap = ImageMap(uuid: self.uuid, configuration: self.configuration, onProgress: onProgress)
-            onComplete?(self)
+            
+            // Assign ImageMap
+            if let imageMap = imageMap {
+                // Set ImageMap
+                self.imageMap = imageMap
+                onComplete?(self)
+            } else {
+                // Create ImageMap
+                Task {
+                    ImageMap.create(uuid: self.uuid, configuration: self.configuration, onComplete: { imageMap in
+                        self.imageMap = imageMap
+                        onComplete?(self)
+                    }, onProgress: onProgress)
+                }
+            }
         }
         
+        // Personal Life Path Init (alt)
         /// TimeStream of Personal Life focused onto over a Path
-        init(name: String, birthDate:Date, birthCoordinates: GeographicCoordinates, timeStreamPath:TimeStream.Path, nodeTypes: [CoreAstrology.AspectBody.NodeType], sampleCount:Int, onComplete:((Composite)->Void)? = nil, onProgress:((_ completion:Double)->Void)? = nil) throws {
+        public init(name: String, birthDate:Date, birthCoordinates: GeographicCoordinates, timeStreamPath:TimeStream.Path, nodeTypes: [CoreAstrology.AspectBody.NodeType], sampleCount:Int, onComplete:((Composite)->Void)? = nil, onProgress:((_ completion:Double)->Void)? = nil) throws {
             let primaryChart = StarChart(date: birthDate, coordinates: birthCoordinates)
             let timeStreams:[TimeStream] = [try TimeStream(path: timeStreamPath)]
             
+            // Assign Name and UUID
             self.name = name
             self.uuid = UUID()
             
+            // Assign Configuration
             self.configuration = TimeStream.Configuration(sampleCount: sampleCount, primaryChart: primaryChart, timeStreams: timeStreams, nodeTypes: nodeTypes)
-            self.imageMap = ImageMap(uuid: self.uuid, configuration: self.configuration, onProgress: onProgress)
-            onComplete?(self)
+            
+            // Assign ImageMap
+            if let imageMap = imageMap {
+                // Set ImageMap
+                self.imageMap = imageMap
+                onComplete?(self)
+            } else {
+                // Create ImageMap
+                Task {
+                    ImageMap.create(uuid: self.uuid, configuration: self.configuration, onComplete: { imageMap in
+                        self.imageMap = imageMap
+                        onComplete?(self)
+                    }, onProgress: onProgress)
+                }
+            }
         }
         
+        // Personal Life By Date Range Init
         /// TimeStream of Personal Life focused onto Start and End Date
-        init(name: String, birthDate:Date, birthCoordinates: GeographicCoordinates, currentCoordinates:GeographicCoordinates, startDate: Date, endDate: Date, nodeTypes: [CoreAstrology.AspectBody.NodeType], sampleCount:Int, onComplete:((Composite)->Void)? = nil, onProgress:((_ completion:Double)->Void)? = nil) {
+        public init(name: String, birthDate:Date, birthCoordinates: GeographicCoordinates, currentCoordinates:GeographicCoordinates, startDate: Date, endDate: Date, nodeTypes: [CoreAstrology.AspectBody.NodeType], sampleCount:Int, onComplete:((Composite)->Void)? = nil, onProgress:((_ completion:Double)->Void)? = nil) {
+            
+            // Assign Name and UUID
             self.name = name
             self.uuid = UUID()
             
+            // Setup Timestreams
             let primaryChart = StarChart(date: birthDate, coordinates: birthCoordinates)
             let timeStreams:[TimeStream] = [TimeStream(startDate: startDate, endDate: endDate, coordinates: currentCoordinates)]
             
+            // Create Configuration
             self.configuration = TimeStream.Configuration(sampleCount: sampleCount, primaryChart: primaryChart, timeStreams: timeStreams, nodeTypes: nodeTypes)
-            self.imageMap = ImageMap(uuid: self.uuid, configuration: self.configuration, onProgress: onProgress)
-            onComplete?(self)
+            
+            // Assign ImageMap
+            if let imageMap = imageMap {
+                // Set ImageMap
+                self.imageMap = imageMap
+                onComplete?(self)
+            } else {
+                // Create ImageMap
+                Task {
+                    ImageMap.create(uuid: self.uuid, configuration: self.configuration, onComplete: { imageMap in
+                        self.imageMap = imageMap
+                        onComplete?(self)
+                    }, onProgress: onProgress)
+                }
+            }
         }
         
+        // Personal Life for Current Date
         /// TimeStream of Personal Life until Current Date
-        init(name: String, birthDate:Date, birthCoordinates: GeographicCoordinates, currentCoordinates:GeographicCoordinates, currentDate: Date, nodeTypes: [CoreAstrology.AspectBody.NodeType], sampleCount:Int, onComplete:((Composite)->Void)? = nil, onProgress:((_ completion:Double)->Void)? = nil) {
+        public init(name: String, birthDate:Date, birthCoordinates: GeographicCoordinates, currentCoordinates:GeographicCoordinates, currentDate: Date, nodeTypes: [CoreAstrology.AspectBody.NodeType], sampleCount:Int, onComplete:((Composite)->Void)? = nil, onProgress:((_ completion:Double)->Void)? = nil) {
+            
+            // Assign Name and UUID
             self.name = name
             self.uuid = UUID()
             
+            // Create Timestreams
             let primaryChart = StarChart(date: birthDate, coordinates: birthCoordinates)
             let timeStreams:[TimeStream] = [TimeStream(startDate: birthDate, endDate: currentDate, coordinates: currentCoordinates)]
             
+            // Assign Configuration
             self.configuration = TimeStream.Configuration(sampleCount: sampleCount, primaryChart: primaryChart, timeStreams: timeStreams, nodeTypes: nodeTypes)
-            self.imageMap = ImageMap(uuid: self.uuid, configuration: self.configuration, onProgress: onProgress)
-            onComplete?(self)
+            
+            // Assign ImageMap
+            if let imageMap = imageMap {
+                // Set ImageMap
+                self.imageMap = imageMap
+                onComplete?(self)
+            } else {
+                // Create ImageMap
+                Task {
+                    ImageMap.create(uuid: self.uuid, configuration: self.configuration, onComplete: { imageMap in
+                        self.imageMap = imageMap
+                        onComplete?(self)
+                    }, onProgress: onProgress)
+                }
+            }
         }
     }
 }

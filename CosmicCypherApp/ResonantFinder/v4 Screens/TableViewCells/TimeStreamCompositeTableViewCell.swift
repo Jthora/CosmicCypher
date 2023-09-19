@@ -68,6 +68,8 @@ class TimeStreamCompositeTableViewCell: UITableViewCell {
         
         spriteKitView.presentScene(scene)
         
+        // TimeStreamCoreReactive
+        /// (it's like a delegate observable)
         TimeStream.Core.add(reactive: self)
         
         setup()
@@ -351,6 +353,7 @@ extension TimeStreamCompositeTableViewCell: TimeStreamCoreReactive {
             case .onLoadTimeStream(loadTimeStreamAction: let loadTimeStreamAction):
                 switch loadTimeStreamAction {
                 case .progress(uuid: let uuid, completion: let completion):
+                    print("onLoadTimeStream .progress")
                     guard uuid == self.uuid else { return }
                     self.progressBar.isHidden = false
                     self.calculatingLabel.isHidden = false
@@ -359,12 +362,14 @@ extension TimeStreamCompositeTableViewCell: TimeStreamCoreReactive {
                     self.progressBar.setProgress(Float(completion), animated: true)
                     break
                 case .complete(uuid: let uuid, composite: let composite):
+                    print("onLoadTimeStream .complete")
                     guard uuid == self.uuid else { return }
                     self.timeStreamComposite = composite
                     self.update()
                     self.progressBar.isHidden = true
                     self.calculatingLabel.isHidden = true
                 case .start(uuid: let uuid, name: let name, configuration: let configuration):
+                    print("onLoadTimeStream .start")
                     guard uuid == self.uuid else { return }
                     self.progressBar.isHidden = false
                     self.calculatingLabel.isHidden = false
@@ -377,9 +382,10 @@ extension TimeStreamCompositeTableViewCell: TimeStreamCoreReactive {
                 }
             case .update(updateAction: let updateAction):
                 switch updateAction {
-                case .composites:
+                case .composites(composites: let composites):
                     self.progressBar.isHidden = true
                     self.calculatingLabel.isHidden = true
+                    self.update()
                 }
             }
         }

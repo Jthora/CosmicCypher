@@ -53,7 +53,15 @@ extension TimeStream.Composite {
         }
         
         func addTimeStreams() {
-            let imageMap = composite.imageMap
+            guard let imageMap = composite.imageMap else {
+                print("addTimeStreams failed: no image map yet")
+                return
+            }
+            
+            guard !imageMap.imageStripSets.isEmpty else {
+                print("addTimeStreams failed: no imageStripSets yet")
+                return
+            }
             
             // create Sub-Sprites for Image Strips
             for imageStripSet in imageMap.imageStripSets {
@@ -144,7 +152,7 @@ extension TimeStream.Composite {
             }
             if updateStarChart,
                let point = currentNotch?.point {
-                DispatchQueue.global().async {
+                Task {
                     let starChart = StarChartRegistry.main.getStarChart(point: point)
                     DispatchQueue.main.async {
                         StarChart.Core.current = starChart

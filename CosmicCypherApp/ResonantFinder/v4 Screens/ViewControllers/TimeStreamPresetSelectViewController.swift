@@ -57,7 +57,7 @@ extension TimeStreamPresetSelectViewController: UITableViewDataSource, UITableVi
         }
         let uuid = UUID()
         dismissAllViewControllers(animated: true) {
-            DispatchQueue.global().async {
+            Task {
                 TimeStream.Core.addNewComposite(uuid: uuid, preset: preset)
                 DispatchQueue.main.async {
                     ResonanceReportViewController.current?.timeStreamTableView.reloadData()

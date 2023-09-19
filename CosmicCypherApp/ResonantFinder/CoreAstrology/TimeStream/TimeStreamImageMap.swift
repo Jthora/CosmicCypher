@@ -13,24 +13,21 @@ extension TimeStream.Composite {
         let uuid:UUID
         let imageStripSets:[TimeStreamImageStripSet]
         
+        public static func create(uuid:UUID, configuration:TimeStream.Configuration, onComplete:((ImageMap)->Void)? = nil, onProgress:((_ completion:Double)->Void)? = nil) {
+            var imageStripSets = [TimeStreamImageStripSet]()
+            for timeStream in configuration.timeStreams {
+                timeStream.loadStarCharts(sampleCount: configuration.sampleCount, onComplete: {
+                    print("Timestream Composite ImageMap loaded [\(configuration.sampleCount)] starcharts for ImageMap")
+                    let imageStripSet = timeStream.generateImageStrips(nodeTypes: configuration.nodeTypes)
+                    let imageMap = ImageMap(uuid: uuid, imageStripSets: imageStripSets)
+                    onComplete?(imageMap)
+                }, onProgress: onProgress)
+            }
+        }
+        
         init(uuid:UUID, imageStripSets:[TimeStreamImageStripSet]) {
             self.imageStripSets = imageStripSets
             self.uuid = uuid
-        }
-        
-        init(uuid:UUID, configuration:TimeStream.Configuration, onComplete:((ImageMap)->Void)? = nil, onProgress:((_ completion:Double)->Void)? = nil) {
-            self.uuid = uuid
-            var imageStripSets = [TimeStreamImageStripSet]()
-            
-            for timeStream in configuration.timeStreams {
-                timeStream.loadStarCharts(sampleCount: configuration.sampleCount, onComplete: {
-                    print("timestream loaded")
-                }, onProgress: onProgress)
-                let imageStripSet = timeStream.generateImageStrips(nodeTypes: configuration.nodeTypes)
-                imageStripSets.append(imageStripSet)
-            }
-            self.imageStripSets = imageStripSets
-            onComplete?(self)
         }
     }
 }

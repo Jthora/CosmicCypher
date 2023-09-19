@@ -44,7 +44,7 @@ extension TimeStream {
         }
         
         func setGravimeticData(nodeTypes: [AstrologicalNodeType], onComplete:(()->())? = nil) {
-            DispatchQueue.global().async {
+            Task {
                 guard let starCharts = self.configuration.timeStreams.first?.starCharts else { return }
                 //guard let resonanceScores = self.timeStreamComposite?.resonanceScores else { return }
                 //let globalNetEnergies = resonanceScores.map({ $0.energies.globalNetEnergy })
@@ -96,7 +96,7 @@ extension TimeStream {
         }
         
         func setExaDebData(nodeTypes: [AstrologicalNodeType], onComplete:(()->())? = nil) {
-            DispatchQueue.global().async {
+            Task {
                 guard let starCharts = self.configuration.timeStreams.first?.starCharts else { return }
                 //guard let resonanceScores = self.timeStreamComposite?.resonanceScores else { return }
                 //let globalNetEnergies = resonanceScores.map({ $0.energies.globalNetEnergy })
@@ -148,7 +148,7 @@ extension TimeStream {
         }
         
         func setRiseFallData(nodeTypes: [AstrologicalNodeType], onComplete:(()->())? = nil) {
-            DispatchQueue.global().async {
+            Task {
                 guard let starCharts = self.configuration.timeStreams.first?.starCharts else { return }
                 //guard let resonanceScores = self.timeStreamComposite?.resonanceScores else { return }
                 //let globalNetEnergies = resonanceScores.map({ $0.energies.globalNetEnergy })

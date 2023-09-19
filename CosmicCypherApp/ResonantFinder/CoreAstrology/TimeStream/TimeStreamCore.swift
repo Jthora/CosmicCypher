@@ -211,12 +211,10 @@ extension TimeStream {
         }
         
         static func reloadComposites() {
-            DispatchQueue.global().async {
-                Task {
-                    TimeStreamCompositeRegistry.main.reload {
-                        print("Preload Complete! - \(compositeRegistry.cache.values.count) Composites Loaded")
-                        react(to: .update(updateAction: .composites))
-                    }
+            Task {
+                TimeStreamCompositeRegistry.main.reload {
+                    print("Preload Complete! - \(compositeRegistry.cache.values.count) Composites Loaded")
+                    react(to: .update(updateAction: .composites(composites: compositeRegistry.cache)))
                 }
             }
         }

@@ -9,10 +9,9 @@ import Foundation
 import SwiftAA
 import SwiftUI
 
-/// TimeStream
-///
+// MARK: TimeStream
+// Data Model for displaying Visualizable Timelines of Planetary Harmonics
 /// follows the path of one instance travelling across the surface of earth over time
-
 public final class TimeStream {
     
     let title:String? = nil
@@ -67,15 +66,17 @@ public final class TimeStream {
         let timestamp = Date()
         let count = points.count
         
-        onProgress?(0)
-        for (i,point) in points.enumerated() {
-            onProgress?(Double(i)/Double(count))
-            //print("loading starchart (\(i)/\(count)) [\(timestamp.timeIntervalSinceNow)]")
-            let starChart:StarChart = StarChartRegistry.main.getStarChart(date: point.date, geographicCoordinates: point.coordinates)
-            append(starChart: starChart)
+        Task {
+            onProgress?(0)
+            for (i,point) in points.enumerated() {
+                onProgress?(Double(i)/Double(count))
+                print("loading starchart (\(i)/\(count)) [\(timestamp.timeIntervalSinceNow)]")
+                let starChart:StarChart = StarChartRegistry.main.getStarChart(date: point.date, geographicCoordinates: point.coordinates)
+                self.append(starChart: starChart)
+            }
+            onProgress?(1)
+            onComplete?()
         }
-        onProgress?(1)
-        onComplete?()
     }
     
     func append(starChart:StarChart) {

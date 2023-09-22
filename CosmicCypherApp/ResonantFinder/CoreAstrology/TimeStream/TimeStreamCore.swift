@@ -93,6 +93,17 @@ extension TimeStream {
         static func remove(reactive:TimeStreamCoreReactive) { _reactors.removeAll(where: { $0 === reactive } ) }
         static func react(to action:TimeStream.Core.Action) { for reactor in _reactors { reactor.timeStreamCore(didAction: action) } }
         
+        // MARK: Current TimeStream
+        static private var _current: TimeStream = TimeStream.create(.astroHarmonics3DayForecast)
+        static var current: TimeStream {
+            set {
+                _current = newValue
+            }
+            get {
+                return _current
+            }
+        }
+        
         // MARK: Registry and Archive
         static var registry:TimeStreamRegistry { return TimeStreamRegistry.main }
         static var archive:TimeStreamArchive { return TimeStreamArchive.main }
@@ -125,47 +136,7 @@ extension TimeStream {
         }
         
         static func generateDefaultComposites() -> [TimeStream.Composite] {
-            
-            /// Prepare Composite Array and Load Initial UUIDs
-            var composites:[TimeStream.Composite] = []
-            let uuids = loadCompositeUUIDs()
-            
-            /// Create Default Timestream Composites
-            for (i,option) in TimeStream.Generator.Option.defaultSet.enumerated() {
-                
-                /// Setup
-                let uuid = uuids[i]
-                let name = option.title
-                let timestream  = option.generate()
-                let nodeTypes = option.nodeTypes
-                let sampleCount = option.sampleCount
-                let configuration = TimeStream.Configuration(sampleCount: sampleCount, primaryChart: nil, secondaryChart: nil, timeStreams: [timestream], nodeTypes: nodeTypes)
-                
-                /// React Start
-                DispatchQueue.main.async {
-                    TimeStream.Core.react(to: .onLoadTimeStream(loadTimeStreamAction: .start(uuid: uuid, name: name, configuration: configuration)))
-                }
-                
-                /// Create Composite
-                let composite = TimeStream.Composite(name: name, uuid: uuid, configuration: configuration, onComplete: { _ in
-                    print("timestream composite loaded")
-                } , onProgress: { completion in
-                    /// React Progress
-                    DispatchQueue.main.async {
-                        TimeStream.Core.react(to: .onLoadTimeStream(loadTimeStreamAction: .progress(uuid: uuid, completion: completion)))
-                    }
-                })
-                
-                /// Add Composite to List
-                composites.append(composite)
-                
-                /// React Complete
-                DispatchQueue.main.async {
-                    // Complete Loader Animation and Show TimeStream in Cell
-                    TimeStream.Core.react(to: .onLoadTimeStream(loadTimeStreamAction: .complete(uuid: uuid, composite: composite)))
-                }
-            }
-            return composites
+            return TimeStream.generateDefaultComposites()
         }
         
         static func addNewComposite(uuid:UUID, preset: TimeStream.Preset) { addNewComposite(uuid: uuid, option: preset.timestreamGeneratorOption) }

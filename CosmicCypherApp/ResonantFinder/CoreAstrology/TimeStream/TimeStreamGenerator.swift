@@ -14,10 +14,58 @@ extension TimeStream {
         return option.generate()
     }
     
+    static func generateDefaultComposites() -> [TimeStream.Composite] {
+        let uuids = TimeStream.Core.loadCompositeUUIDs()
+        let composites = Generator.generateComposites(uuids: uuids)
+        return composites
+    }
+    
     public final class Generator {
         
         static func generate(_ option: Option) -> TimeStream {
             return option.generate()
+        }
+        
+        static func generateComposites(uuids:[UUID]) -> [TimeStream.Composite] {
+            
+            /// Prepare Composite Array and Load Initial UUIDs
+            var composites:[TimeStream.Composite] = []
+            
+            /// Create Default Timestream Composites
+            for (i,option) in TimeStream.Generator.Option.defaultSet.enumerated() {
+                
+                /// Setup
+                let uuid = uuids[i]
+                let name = option.title
+                let timestream  = option.generate()
+                let nodeTypes = option.nodeTypes
+                let sampleCount = option.sampleCount
+                let configuration = TimeStream.Configuration(sampleCount: sampleCount, primaryChart: nil, secondaryChart: nil, timeStreams: [timestream], nodeTypes: nodeTypes)
+                
+                /// React Start
+                Task {
+                    TimeStream.Core.react(to: .onLoadTimeStream(loadTimeStreamAction: .start(uuid: uuid, name: name, configuration: configuration)))
+                }
+                
+                /// Create Composite
+                let composite = TimeStream.Composite(name: name, uuid: uuid, configuration: configuration, onComplete: { _ in
+                    print("timestream composite loaded")
+                } , onProgress: { completion in
+                    /// React Progress
+                    Task {
+                        TimeStream.Core.react(to: .onLoadTimeStream(loadTimeStreamAction: .progress(uuid: uuid, completion: completion)))
+                    }
+                })
+                
+                /// Add Composite to List
+                composites.append(composite)
+                
+                /// React Complete
+                Task {
+                    TimeStream.Core.react(to: .onLoadTimeStream(loadTimeStreamAction: .complete(uuid: uuid, composite: composite)))
+                }
+            }
+            return composites
         }
         
         // Default Sets
@@ -68,6 +116,10 @@ extension TimeStream {
             case today(_ dataMetricOption: DataMetricOption? = nil)
             case tomorrow(_ dataMetricOption: DataMetricOption? = nil)
             
+            case dayAfterTomorrow(_ dataMetricOption: DataMetricOption? = nil)
+            case threeDayForecast(_ dataMetricOption: DataMetricOption? = nil)
+            case thisWeek(_ dataMetricOption: DataMetricOption? = nil)
+            
             case earthCentric // Earth Centric (gravimetrics)
             case solarCentric // Solar Centric (gravimetrics)
             case interplanetaryWeb // Interplanetary Web (gravimetrics)
@@ -117,7 +169,18 @@ extension TimeStream {
                                                   startDate: Date.beginningOf(.tomorrow)!,
                                                   endDate: Date.beginningOf(.dayAfterToday(2))!,
                                                   coordinates: .zero)
-                    
+                case .dayAfterTomorrow: return TimeStream(title: title,
+                                                    startDate: Date.beginningOf(.dayAfterToday(1))!,
+                                                    endDate: Date.beginningOf(.dayAfterToday(2))!,
+                                                    coordinates: .zero)
+                case .threeDayForecast: return TimeStream(title: title,
+                                                          startDate: Date.beginningOf(.today)!,
+                                                          endDate: Date.beginningOf(.dayAfterToday(3))!,
+                                                          coordinates: .zero)
+                case .thisWeek: return TimeStream(title: title,
+                                                  startDate: Date.beginningOf(.today)!,
+                                                  endDate: Date.beginningOf(.dayAfterToday(7))!,
+                                                  coordinates: .zero)
                 case .earthCentric: return TimeStream(title: title,
                                                       startDate: Date.beginningOf(.thisYear)!,
                                                       endDate: Date.endOf(.thisYear)!,
@@ -176,6 +239,9 @@ extension TimeStream {
                 case .yesterday: return "Yesterday"
                 case .today: return "Today"
                 case .tomorrow: return "Tomorrow"
+                case .dayAfterTomorrow: return "Day After Tomorrow"
+                case .threeDayForecast: return "3-Day Forecast"
+                case .thisWeek: return "This Week"
                 case .earthCentric: return "Earth Centric"
                 case .solarCentric: return "Solar Centric"
                 case .interplanetaryWeb: return "Interplanetary Web"
@@ -200,6 +266,9 @@ extension TimeStream {
                 case .yesterday: return [.ascendant,.moon,.sun, .mercury, .venus]
                 case .today: return [.ascendant,.moon,.sun, .mercury, .venus]
                 case .tomorrow: return [.ascendant,.moon,.sun, .mercury, .venus]
+                case .dayAfterTomorrow: return [.ascendant,.moon,.sun, .mercury, .venus]
+                case .threeDayForecast: return [.ascendant,.moon,.sun, .mercury, .venus]
+                case .thisWeek: return [.ascendant,.moon,.sun, .mercury, .venus]
                 case .earthCentric: return [.sun,.moon]
                 case .solarCentric: return [.mercury,.sun,.jupiter]
                 case .interplanetaryWeb: return [.ascendant,.moon,.sun]
@@ -242,6 +311,9 @@ extension TimeStream {
 //                }
                 
             }
+            
+            
+            
             
         }
     }

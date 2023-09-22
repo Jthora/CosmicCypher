@@ -242,53 +242,5 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8870AC17-E226-4AA0-BB62-CB2407F869B7"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ResonantFinder/CoreAstrology/TimeStream/TimeStreamCore.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "184"
-            endingLineNumber = "184"
-            landmarkName = "addNewComposite(uuid:option:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "8870AC17-E226-4AA0-BB62-CB2407F869B7 - 330b9162535b38d6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static CosmicCypher.TimeStream.Core.addNewComposite(uuid: Foundation.UUID, option: CosmicCypher.TimeStream.Generator.Option) -&gt; ()"
-                  moduleName = "CosmicCypher"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jordantrana/Documents/gitProjects/CosmicCypher/CosmicCypherApp/ResonantFinder/CoreAstrology/TimeStream/TimeStreamCore.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "186"
-                  endingLineNumber = "186"
-                  offsetFromSymbolStart = "1060">
-               </Location>
-               <Location
-                  uuid = "8870AC17-E226-4AA0-BB62-CB2407F869B7 - 330b9162535b38d6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static CosmicCypher.TimeStream.Core.addNewComposite(uuid: Foundation.UUID, option: CosmicCypher.TimeStream.Generator.Option) -&gt; ()"
-                  moduleName = "CosmicCypher"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jordantrana/Documents/gitProjects/CosmicCypher/CosmicCypherApp/ResonantFinder/CoreAstrology/TimeStream/TimeStreamCore.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "186"
-                  endingLineNumber = "186"
-                  offsetFromSymbolStart = "1057">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

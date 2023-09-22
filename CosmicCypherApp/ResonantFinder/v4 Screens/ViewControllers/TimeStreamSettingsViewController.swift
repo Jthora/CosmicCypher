@@ -11,6 +11,15 @@ import UniformTypeIdentifiers
 
 class TimeStreamSettingsViewController: UIViewController, TimeStreamCoreReactive {
     
+    // Present the TimeStreamInterfaceViewController from a view controller
+    static func present(from parentViewController: UIViewController? = nil) {
+        guard let vc = UIStoryboard(name: "v4", bundle: nil).instantiateViewController(withIdentifier: "TimeStreamSettingsViewController") as? TimeStreamSettingsViewController else {
+            return
+        }
+        if let presentingViewController = parentViewController ?? UIApplication.shared.keyWindow?.rootViewController {
+            presentingViewController.present(vc, animated: true, completion: nil)
+        }
+    }
     
     func timeStreamCore(didAction action: TimeStream.Core.Action) {
         switch action {
@@ -31,17 +40,6 @@ class TimeStreamSettingsViewController: UIViewController, TimeStreamCoreReactive
                 print("onLoadTimeStream start [\(name)]")
             }
         }
-    }
-    
-    
-    static func presentModally(over presentingViewController: UIViewController) {
-        guard let vc = UIStoryboard(name: "v4", bundle: nil).instantiateViewController(withIdentifier: "TimeStreamSettingsViewController") as? TimeStreamSettingsViewController else {
-            return
-        }
-        presentingViewController.present(vc, animated: true) {
-            //vc.delegate = delegate
-        }
-        
     }
     
     @IBOutlet weak var timeStreamCompositeTableView: UITableView!

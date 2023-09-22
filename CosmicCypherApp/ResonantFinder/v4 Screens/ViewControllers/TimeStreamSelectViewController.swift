@@ -9,12 +9,13 @@ import UIKit
 
 class TimeStreamSelectViewController: UIViewController {
     
-    static func presentModally(over presentingViewController: UIViewController) {
+    // Present the TimeStreamInterfaceViewController from a view controller
+    static func present(from parentViewController: UIViewController? = nil) {
         guard let vc = UIStoryboard(name: "TimeStreamSelect", bundle: nil).instantiateViewController(withIdentifier: "TimeStreamSelectViewController") as? TimeStreamSelectViewController else {
             return
         }
-        presentingViewController.present(vc, animated: true) {
-            
+        if let presentingViewController = parentViewController ?? UIApplication.shared.keyWindow?.rootViewController {
+            presentingViewController.present(vc, animated: true, completion: nil)
         }
     }
 }

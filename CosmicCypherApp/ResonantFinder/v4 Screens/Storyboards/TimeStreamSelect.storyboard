@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,16 +17,16 @@
         <!--Time Stream Select-->
         <scene sceneID="bk8-Ui-kX1">
             <objects>
-                <viewController storyboardIdentifier="TimeStreamSelectViewController" title="Time Stream Select" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8ZG-bb-DNe" customClass="TimeStreamSelectViewController" customModule="ResonantFinder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TimeStreamSelectViewController" title="Time Stream Select" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8ZG-bb-DNe" customClass="TimeStreamSelectViewController" customModule="CosmicCypher" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9oJ-yd-3d6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KOh-Ki-r4n">
-                                <rect key="frame" x="0.0" y="44" width="414" height="409"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="407"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0JJ-Wi-5Ml">
-                                        <rect key="frame" x="126.5" y="170.5" width="161" height="68"/>
+                                        <rect key="frame" x="109.5" y="175" width="195" height="57"/>
                                         <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="48"/>
                                         <state key="normal" title="Presets"/>
                                         <connections>
@@ -40,10 +41,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="niq-Zk-rwC">
-                                <rect key="frame" x="0.0" y="453" width="414" height="409"/>
+                                <rect key="frame" x="0.0" y="455" width="414" height="407"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTh-35-XDa">
-                                        <rect key="frame" x="54.5" y="170.5" width="305" height="68"/>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTh-35-XDa">
+                                        <rect key="frame" x="33.5" y="175" width="347" height="57"/>
                                         <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="48"/>
                                         <state key="normal" title="Manual Select"/>
                                         <connections>
@@ -59,7 +60,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.20000000298023224" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TimeStream Select" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Vf-9T-bRp">
-                                <rect key="frame" x="105.5" y="434" width="203.5" height="28"/>
+                                <rect key="frame" x="89" y="437" width="236" height="22.5"/>
                                 <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -91,7 +92,7 @@
             <objects>
                 <viewController id="H6U-qw-q3p" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K1Q-5i-K8Y">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Phg-eQ-Ei6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -104,16 +105,16 @@
         <!--GeoLocation Select-->
         <scene sceneID="TPI-5S-pGE">
             <objects>
-                <viewController storyboardIdentifier="GeoLocationSelectViewController" title="GeoLocation Select" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wEi-IU-yCC" customClass="GeoLocationSelectViewController" customModule="ResonantFinder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GeoLocationSelectViewController" title="GeoLocation Select" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wEi-IU-yCC" customClass="GeoLocationSelectViewController" customModule="CosmicCypher" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OMC-mV-mPe">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R8Y-yZ-6Z8">
-                                <rect key="frame" x="0.0" y="44" width="414" height="399"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="443"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTo-mg-Pb9">
-                                        <rect key="frame" x="64.5" y="165.5" width="285" height="68"/>
+                                        <rect key="frame" x="41" y="193" width="332" height="57"/>
                                         <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="48"/>
                                         <state key="normal" title="Specific Path"/>
                                         <connections>
@@ -129,10 +130,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X8O-fZ-twO">
-                                <rect key="frame" x="0.0" y="443" width="414" height="399"/>
+                                <rect key="frame" x="0.0" y="443" width="414" height="443"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocb-Pu-ffV">
-                                        <rect key="frame" x="80.5" y="165.5" width="253" height="68"/>
+                                        <rect key="frame" x="64" y="193" width="286" height="57"/>
                                         <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="48"/>
                                         <state key="normal" title="Date Range"/>
                                         <connections>
@@ -148,7 +149,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.20000000298023224" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GeoPath Select" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AR1-Po-Ahb">
-                                <rect key="frame" x="123" y="407" width="168" height="28"/>
+                                <rect key="frame" x="111" y="432" width="192.5" height="22.5"/>
                                 <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -179,7 +180,7 @@
             <objects>
                 <viewController id="3ye-Nh-lgZ" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Wa-qE-4rO">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="zMS-Zq-6Sn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -207,24 +208,24 @@
         <!--TimeStream Presets-->
         <scene sceneID="v7A-u2-5Bj">
             <objects>
-                <viewController storyboardIdentifier="TimeStreamPresetSelectViewController" title="TimeStream Presets" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yzA-fw-bnr" customClass="TimeStreamPresetSelectViewController" customModule="ResonantFinder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TimeStreamPresetSelectViewController" title="TimeStream Presets" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yzA-fw-bnr" customClass="TimeStreamPresetSelectViewController" customModule="CosmicCypher" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mef-qz-zvN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Presets" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kiP-7s-AxV">
-                                <rect key="frame" x="0.0" y="44" width="414" height="75"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                 <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="64"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="L5f-Ol-fHH">
-                                <rect key="frame" x="0.0" y="119" width="414" height="723"/>
+                                <rect key="frame" x="0.0" y="60" width="414" height="826"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <inset key="scrollIndicatorInsets" minX="2" minY="2" maxX="2" maxY="2"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TimeStreamPresetTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimeStreamPresetTableViewCell" rowHeight="109" id="2El-AO-Ma4" customClass="TimeStreamPresetTableViewCell" customModule="ResonantFinder" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="109"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TimeStreamPresetTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimeStreamPresetTableViewCell" rowHeight="109" id="2El-AO-Ma4" customClass="TimeStreamPresetTableViewCell" customModule="CosmicCypher" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="414" height="109"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2El-AO-Ma4" id="Mfn-F8-zIJ">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="109"/>

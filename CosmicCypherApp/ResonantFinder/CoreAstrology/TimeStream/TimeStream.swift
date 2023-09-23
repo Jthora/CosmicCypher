@@ -53,7 +53,7 @@ public final class TimeStream {
         path = Path(startDate: startDate, endDate: endDate, startCoordinates: startCoordinates, endCoordinates: endCoordinates)
     }
     
-    func loadStarCharts(sampleCount:Int? = nil, onComplete:(()->Void)? = nil, onProgress:((_ completion:Double)->Void)? = nil) {
+    func loadStarCharts(sampleCount:Int? = nil, onComplete:((_ starCharts:[StarChart])->Void)? = nil, onProgress:((_ completion:Double, _ starchart:StarChart?)->Void)? = nil) {
         print("TimeStream: load StarCharts")
         // TODO: Point Between Points - SAMPLES
         let points:[TimeStream.Point]
@@ -67,15 +67,15 @@ public final class TimeStream {
         let count = points.count
         
         Task {
-            onProgress?(0)
+            onProgress?(0, nil)
             for (i,point) in points.enumerated() {
-                onProgress?(Double(i)/Double(count))
                 print("loading starchart (\(i)/\(count)) [\(timestamp.timeIntervalSinceNow)]")
                 let starChart:StarChart = StarChartRegistry.main.getStarChart(date: point.date, geographicCoordinates: point.coordinates)
                 self.append(starChart: starChart)
+                onProgress?(Double(i)/Double(count), starChart)
             }
-            onProgress?(1)
-            onComplete?()
+            onProgress?(1, nil)
+            onComplete?(starCharts)
         }
     }
     
@@ -98,6 +98,10 @@ public final class TimeStream {
     
     func resonanceScores() -> [StarChart.ResonanceScore] {
         return self.starCharts.map({ $0.resonanceScore() })
+    }
+    
+    var sampleCount:Int {
+        return self.path.points.count
     }
 }
 

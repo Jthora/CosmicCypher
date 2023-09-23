@@ -9,6 +9,10 @@ import Metal
 import MetalKit
 import SpriteKit
 
+protocol TimeStreamCompositeMetalRendererDelegate {
+    
+}
+
 extension TimeStream.Composite {
     
     typealias MetalImageStrip = MTLTexture
@@ -20,7 +24,7 @@ extension TimeStream.Composite {
         var commandQueue: MTLCommandQueue!
         var pipelineState: MTLRenderPipelineState!
         var vertexBuffer: MTLBuffer!
-        var frameBuffer: MTLTexture!
+        var frameBuffer: TimeStreamFrameBuffer!
         var renderPassDescriptor: MTLRenderPassDescriptor!
         var view: MTKView!
         
@@ -35,7 +39,7 @@ extension TimeStream.Composite {
         
         func setup() {
             
-            //createPipelineState() Fuckin Shitty ass dump fucks can't make a god damn basic default shader library work. You think you can do it? fuckin figure it out yourself shitface.
+            //createPipelineState()
             createFrameBuffer()
             createRenderPassDescriptor()
         }
@@ -116,45 +120,15 @@ extension TimeStream.Composite {
             // Handle resizing of the drawable area if needed
         }
         
-        func drawRGBA(_ rgba: RGBAPixel) {
-            // Ensure that x and y coordinates are within the bounds of the frame buffer
-            guard rgba.px >= 0 && rgba.px < Int(view.drawableSize.width) && rgba.py >= 0 && rgba.py < Int(view.drawableSize.height) else {
-                return
-            }
-            
-            // Create a region of size 1x1 to update only the specified pixel
-            let region = MTLRegion(origin: MTLOrigin(x: rgba.px, y: rgba.py, z: 0), size: MTLSize(width: 1, height: 1, depth: 1))
-            
-            // Prepare the pixel data
-            var pixelData = [UInt8](repeating: 0, count: 4)
-            pixelData[0] = rgba.r
-            pixelData[1] = rgba.g
-            pixelData[2] = rgba.b
-            pixelData[3] = rgba.a
-            
-            // Update the frame buffer with the new pixel data
-            frameBuffer.replace(region: region, mipmapLevel: 0, withBytes: pixelData, bytesPerRow: 4)
+        func draw(pixel: RGBYPixel) {
+            self.draw(pixel: pixel.rgba)
+        }
+        
+        func draw(pixel: RGBAPixel) {
+            frameBuffer.draw(pixel: pixel)
             
             // Trigger a redraw of the Metal view
             view.setNeedsDisplay()
         }
     }
-}
-
-struct RGBAPixel {
-    let r: UInt8
-    let g: UInt8
-    let b: UInt8
-    let a: UInt8
-    let px: Int
-    let py: Int
-}
-
-struct RGBYPixel {
-    let r: UInt8
-    let g: UInt8
-    let b: UInt8
-    let y: UInt8
-    let px: Int
-    let py: Int
 }

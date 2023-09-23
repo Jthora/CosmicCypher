@@ -16,12 +16,14 @@ extension TimeStream.Composite {
         public static func create(uuid:UUID, configuration:TimeStream.Configuration, onComplete:((ImageMap)->Void)? = nil, onProgress:((_ completion:Double)->Void)? = nil) {
             var imageStripSets = [TimeStreamImageStripSet]()
             for timeStream in configuration.timeStreams {
-                timeStream.loadStarCharts(sampleCount: configuration.sampleCount, onComplete: {
+                timeStream.loadStarCharts(sampleCount: configuration.sampleCount, onComplete: { starCharts in
                     print("Timestream Composite ImageMap loaded [\(configuration.sampleCount)] starcharts for ImageMap")
                     let imageStripSet = timeStream.generateImageStrips(nodeTypes: configuration.nodeTypes)
                     let imageMap = ImageMap(uuid: uuid, imageStripSets: imageStripSets)
                     onComplete?(imageMap)
-                }, onProgress: onProgress)
+                }) { completion, starchart in
+                    onProgress?(completion)
+                }
             }
         }
         

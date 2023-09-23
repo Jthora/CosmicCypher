@@ -17,6 +17,13 @@ struct RGYBColor
     var yellow:CGFloat = 0
     var blue:CGFloat = 0
     
+    init(r: UInt8, g:UInt8, b:UInt8, y:UInt8) {
+        red = CGFloat(r)/255.0
+        green = CGFloat(g)/255.0
+        blue = CGFloat(b)/255.0
+        yellow = CGFloat(y)/255.0
+    }
+    
     init(degrees:Float, solidColors:Bool = false) {
         
             

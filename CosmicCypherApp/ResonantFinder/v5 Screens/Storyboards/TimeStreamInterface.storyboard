@@ -196,7 +196,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="506.33333333333331" height="308"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W7n-l4-6zH" customClass="TimeStreamCompositeView" customModule="CosmicCypher" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W7n-l4-6zH" customClass="TimeStreamSpectrogramView" customModule="CosmicCypher" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="506.33333333333331" height="308"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
@@ -240,7 +240,6 @@
                         <outlet property="playForwardButton" destination="ezj-2e-M17" id="Rkk-kE-QDb"/>
                         <outlet property="skipBackwardButton" destination="NCG-R2-jO9" id="Cnb-Qr-8iN"/>
                         <outlet property="skipForwardButton" destination="O4m-2e-1o0" id="hEU-hL-Jd1"/>
-                        <outlet property="timeStreamCompositeView" destination="W7n-l4-6zH" id="MVt-rW-3Cc"/>
                         <outlet property="timeStreamConsoleTextView" destination="HmS-5G-Cgd" id="KhV-E8-k5W"/>
                         <outlet property="timeStreamDateRangeLabel" destination="f0a-oH-fJ9" id="rB3-6Y-Fud"/>
                         <outlet property="timeStreamGeoLocationLabel" destination="MH7-gO-Xnn" id="E8s-gP-dQh"/>
@@ -249,6 +248,7 @@
                         <outlet property="timeStreamNameLabel" destination="JUG-HK-Dse" id="aJJ-Yb-bOt"/>
                         <outlet property="timeStreamProgressBar" destination="p1H-YL-qm6" id="19m-S8-s0m"/>
                         <outlet property="timeStreamSettingsButton" destination="Wu2-3W-Sgr" id="OHN-jF-FIo"/>
+                        <outlet property="timeStreamSpectrogramView" destination="W7n-l4-6zH" id="ivK-5k-r3T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pFa-BZ-R42" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

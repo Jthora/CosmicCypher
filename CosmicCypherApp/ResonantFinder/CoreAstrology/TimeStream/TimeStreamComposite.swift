@@ -15,6 +15,7 @@ extension TimeStream {
         @objc let uuid: TimeStreamCompositeUUID
         
         var imageMap: ImageMap? = nil
+        var spectrogram: TimeStreamSpectrogram? = nil
         let configuration: TimeStream.Configuration
         
         var startDate: Date? { return configuration.startDate }
@@ -24,7 +25,7 @@ extension TimeStream {
         
         // MARK: Init
         // Main Init
-        public init(name: String? = nil, uuid:UUID? = nil, configuration: TimeStream.Configuration, imageMap: ImageMap? = nil, onComplete:((Composite)->Void)? = nil, onProgress:((_ completion:Double)->Void)? = nil) {
+        public init(name: String? = nil, uuid:UUID? = nil, configuration: TimeStream.Configuration, imageMap: ImageMap? = nil, spectrogramView: TimeStreamSpectrogramView? = nil, onComplete:((Composite)->Void)? = nil, onProgress:((_ completion:Double)->Void)? = nil) {
             // Assign Name
             self.name = name
             
@@ -45,11 +46,20 @@ extension TimeStream {
                 onComplete?(self)
             } else {
                 // Create ImageMap
-                Task {
-                    ImageMap.create(uuid: self.uuid, configuration: self.configuration, onComplete: { imageMap in
-                        self.imageMap = imageMap
-                        onComplete?(self)
-                    }, onProgress: onProgress)
+                if let spectrogramView = spectrogramView,
+                    let timeStream = self.configuration.timeStreams.first,
+                    let metalView = spectrogramView.metalView {
+                    let selectedNodeTypes = StarChart.Core.selectedNodeTypes
+                    let spectrogram = TimeStreamSpectrogram(timeStream: timeStream,
+                                                            metalView: metalView,
+                                                            selectedNodeTypes: selectedNodeTypes)
+                } else {
+                    Task {
+                        ImageMap.create(uuid: self.uuid, configuration: self.configuration, onComplete: { imageMap in
+                            self.imageMap = imageMap
+                            onComplete?(self)
+                        }, onProgress: onProgress)
+                    }
                 }
             }
         }

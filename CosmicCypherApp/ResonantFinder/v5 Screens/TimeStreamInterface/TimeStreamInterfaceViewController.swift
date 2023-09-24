@@ -44,7 +44,7 @@ class TimeStreamInterfaceViewController: UIViewController {
     @IBOutlet weak var chartSuperView: UIView!
     
     // TimeStream Spectrogram
-    @IBOutlet weak var timeStreamCompositeView: TimeStreamCompositeView!
+    @IBOutlet weak var timeStreamSpectrogramView: TimeStreamSpectrogramView!
     
     // Console
     @IBOutlet weak var timeStreamConsoleTextView: UITextView!
@@ -114,7 +114,7 @@ class TimeStreamInterfaceViewController: UIViewController {
     }
     
     func setupSpectrogram() {
-        timeStreamCompositeView.setup()
+        timeStreamSpectrogramView.setup()
     }
     
     

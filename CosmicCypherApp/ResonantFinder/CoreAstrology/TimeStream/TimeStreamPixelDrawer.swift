@@ -9,26 +9,23 @@ import Foundation
 import Metal
 
 
-class TimeStreamPixelDrawer {
+public class TimeStreamPixelDrawer {
     
-    var timeStream:TimeStream? = nil
-    var renderer:TimeStream.Composite.MetalRenderer? = nil
-    var selectedNodeTypes:[CoreAstrology.AspectBody.NodeType]? = nil
+    public var timeStream:TimeStream
+    public var renderer:TimeStream.MetalRenderer
+    public var selectedNodeTypes:[CoreAstrology.AspectBody.NodeType]
     
-    func setup(timeStream:TimeStream, renderer: TimeStream.Composite.MetalRenderer, selectedNodeTypes:[CoreAstrology.AspectBody.NodeType]) {
+    public init(timeStream:TimeStream, renderer: TimeStream.MetalRenderer, selectedNodeTypes:[CoreAstrology.AspectBody.NodeType]) {
         self.timeStream = timeStream
         self.renderer = renderer
         self.selectedNodeTypes = selectedNodeTypes
     }
     
-    func render(onComplete:((_ starCharts:[StarChart])->Void)? = nil, onProgress:((_ completion:Double, _ starChart:StarChart?)->Void)? = nil) {
-        guard let timeStream = timeStream else {return}
-        guard let renderer = renderer else {return}
-        guard let selectedNodeTypes = selectedNodeTypes else {return}
+    public func render(onComplete:((_ starCharts:[StarChart])->Void)? = nil, onProgress:((_ completion:Double, _ starChart:StarChart?)->Void)? = nil) {
         TimeStreamPixelDrawer.renderTimeStream(timeStream: timeStream, renderer: renderer, selectedNodeTypes: selectedNodeTypes, onComplete: onComplete, onProgress: onProgress)
     }
     
-    static func renderTimeStream(timeStream:TimeStream, renderer:TimeStream.Composite.MetalRenderer, selectedNodeTypes:[CoreAstrology.AspectBody.NodeType], onComplete:((_ starCharts:[StarChart])->Void)? = nil, onProgress:((_ completion:Double, _ starChart:StarChart?)->Void)? = nil) {
+    public static func renderTimeStream(timeStream:TimeStream, renderer:TimeStream.MetalRenderer, selectedNodeTypes:[CoreAstrology.AspectBody.NodeType], onComplete:((_ starCharts:[StarChart])->Void)? = nil, onProgress:((_ completion:Double, _ starChart:StarChart?)->Void)? = nil) {
         guard !selectedNodeTypes.isEmpty else {return}
         let starCharts = timeStream.starCharts
         
@@ -54,7 +51,7 @@ class TimeStreamPixelDrawer {
         }
     }
     
-    static func render(starCharts:[StarChart], renderer:TimeStream.Composite.MetalRenderer, selectedNodeTypes:[CoreAstrology.AspectBody.NodeType], onComplete:((_ starCharts:[StarChart])->Void)? = nil, onProgress:((_ completion:Double, _ starChart:StarChart?)->Void)? = nil) {
+    public static func render(starCharts:[StarChart], renderer:TimeStream.MetalRenderer, selectedNodeTypes:[CoreAstrology.AspectBody.NodeType], onComplete:((_ starCharts:[StarChart])->Void)? = nil, onProgress:((_ completion:Double, _ starChart:StarChart?)->Void)? = nil) {
         
         let frameBufferWidth = starCharts.count
         let frameBufferHeight = selectedNodeTypes.count
@@ -73,8 +70,8 @@ class TimeStreamPixelDrawer {
         }
     }
     
-    func createFrameBuffer(device:MTLDevice, width: Int, height: Int) -> TimeStreamFrameBuffer? {
-        guard let device = self.renderer?.device else {return nil}
+    public func createFrameBuffer(device:MTLDevice, width: Int, height: Int) -> TimeStreamFrameBuffer? {
+        guard let device = self.renderer.device else {return nil}
         let textureDescriptor = MTLTextureDescriptor.texture2DDescriptor(
             pixelFormat: .rgba8Unorm,
             width: width,  // Replace with your texture dimensions

@@ -1,5 +1,5 @@
 //
-//  TimeStreamCompositeMetalRenderer.swift
+//  TimeStreamMetalRenderer.swift
 //  CosmicCypher
 //
 //  Created by Jordan Trana on 9/21/23.
@@ -9,26 +9,26 @@ import Metal
 import MetalKit
 import SpriteKit
 
-protocol TimeStreamCompositeMetalRendererDelegate {
+protocol TimeStreamMetalRendererDelegate {
     
 }
 
-extension TimeStream.Composite {
+extension TimeStream {
     
-    typealias MetalImageStrip = MTLTexture
-    typealias MetalImageStrips = [CoreAstrology.AspectBody.NodeType:MetalImageStrip]
+    public typealias MetalImageStrip = MTLTexture
+    public typealias MetalImageStrips = [CoreAstrology.AspectBody.NodeType:MetalImageStrip]
     
-    class MetalRenderer: NSObject, MTKViewDelegate {
+    public class MetalRenderer: NSObject, MTKViewDelegate {
         
-        var device: MTLDevice!
-        var commandQueue: MTLCommandQueue!
-        var pipelineState: MTLRenderPipelineState!
-        var vertexBuffer: MTLBuffer!
-        var frameBuffer: TimeStreamFrameBuffer!
-        var renderPassDescriptor: MTLRenderPassDescriptor!
-        var view: MTKView!
+        public var device: MTLDevice!
+        public var commandQueue: MTLCommandQueue!
+        public var pipelineState: MTLRenderPipelineState!
+        public var vertexBuffer: MTLBuffer!
+        public var frameBuffer: TimeStreamFrameBuffer!
+        public var renderPassDescriptor: MTLRenderPassDescriptor!
+        public var view: MTKView!
         
-        init(view: MTKView) {
+        public init(view: MTKView) {
             super.init()
             self.view = view
             device = MTLCreateSystemDefaultDevice()
@@ -37,14 +37,14 @@ extension TimeStream.Composite {
             commandQueue = device.makeCommandQueue()
         }
         
-        func setup() {
+        public func setup() {
             
             //createPipelineState()
             createFrameBuffer()
             createRenderPassDescriptor()
         }
         
-        func createPipelineState() {
+        public func createPipelineState() {
             // Create a Metal shader pipeline state
             // Load and compile your vertex and fragment shaders here
             // Create a pipeline descriptor and set shader functions
@@ -71,7 +71,7 @@ extension TimeStream.Composite {
             }
         }
         
-        func createFrameBuffer() {
+        public func createFrameBuffer() {
             // Create a Metal texture as a frame buffer
             // Configure its size and format
             
@@ -83,7 +83,7 @@ extension TimeStream.Composite {
             frameBuffer = device.makeTexture(descriptor: frameBufferDescriptor)
         }
         
-        func createRenderPassDescriptor() {
+        public func createRenderPassDescriptor() {
             renderPassDescriptor = MTLRenderPassDescriptor()
             // Configure color attachment and clear color if needed
             renderPassDescriptor.colorAttachments[0].texture = frameBuffer
@@ -92,7 +92,7 @@ extension TimeStream.Composite {
             renderPassDescriptor.colorAttachments[0].storeAction = .store
         }
         
-        func draw(in view: MTKView) {
+        public func draw(in view: MTKView) {
             // Perform drawing operations
             
             guard let commandBuffer = commandQueue.makeCommandBuffer(),
@@ -116,15 +116,15 @@ extension TimeStream.Composite {
             commandBuffer.commit()
         }
         
-        func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
+        public func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
             // Handle resizing of the drawable area if needed
         }
         
-        func draw(pixel: RGBYPixel) {
+        public func draw(pixel: RGBYPixel) {
             self.draw(pixel: pixel.rgba)
         }
         
-        func draw(pixel: RGBAPixel) {
+        public func draw(pixel: RGBAPixel) {
             frameBuffer.draw(pixel: pixel)
             
             // Trigger a redraw of the Metal view

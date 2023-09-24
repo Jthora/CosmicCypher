@@ -9,16 +9,16 @@ import UIKit
 import Metal
 import SwiftAA
 
-typealias TimeStreamFrameBuffer = MTLTexture
+public typealias TimeStreamFrameBuffer = MTLTexture
 
 
 extension TimeStreamFrameBuffer {
     
-    func draw(pixel rgby: RGBYPixel) {
+    public func draw(pixel rgby: RGBYPixel) {
         draw(pixel: rgby.rgba)
     }
     
-    func draw(pixel rgba: RGBAPixel) {
+    public func draw(pixel rgba: RGBAPixel) {
         // Ensure that x and y coordinates are within the bounds of the frame buffer
         guard rgba.px >= 0 && rgba.px < Int(self.width) && rgba.py >= 0 && rgba.py < Int(self.height) else {
             return
@@ -39,7 +39,7 @@ extension TimeStreamFrameBuffer {
     }
 }
 
-struct RGBAPixel {
+public struct RGBAPixel {
     let r: UInt8
     let g: UInt8
     let b: UInt8
@@ -47,7 +47,7 @@ struct RGBAPixel {
     let px: Int
     let py: Int
     
-    var color:UIColor {
+    public var color:UIColor {
         return UIColor(red: CGFloat(r)/255,
                        green: CGFloat(g)/255,
                        blue: CGFloat(b)/255,
@@ -55,7 +55,7 @@ struct RGBAPixel {
     }
 }
 
-struct RGBYPixel {
+public struct RGBYPixel {
     let r: UInt8
     let g: UInt8
     let b: UInt8
@@ -63,7 +63,7 @@ struct RGBYPixel {
     let px: Int
     let py: Int
     
-    var rgba:RGBAPixel {
+    public var rgba:RGBAPixel {
         // Natural Harmonics Init
         RGBAPixel(r: UInt8(min(r + y, 255)),
                   g: UInt8(min(g + y, 255)),
@@ -73,7 +73,7 @@ struct RGBYPixel {
                   py: py)
     }
     
-    init(degrees:Double, px:Int, py:Int, solidColors:Bool = false) {
+    public init(degrees:Double, px:Int, py:Int, solidColors:Bool = false) {
         
         // set pixel X,Y position
         self.px = px

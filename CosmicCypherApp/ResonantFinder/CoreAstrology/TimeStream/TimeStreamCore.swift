@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MetalKit
 
 extension TimeStream {
     public final class Core: ObservableObject {
@@ -20,6 +21,9 @@ extension TimeStream {
                 UserDefaults.standard.set(true, forKey: _secretInitCompleteKey)
             }
         }
+        
+        // MARK: Spectrograms
+        public static var spectrograms:[TimeStreamCompositeUUID:TimeStreamSpectrogram] = [:]
         
         // MARK: Composite Count
         private static let _compositeCountKey:String = "_lastCompositeCountKey"
@@ -85,6 +89,11 @@ extension TimeStream {
                 saveCompositeUUIDs(uuids: uuids)
                 return uuids
             }
+        }
+        
+        // MARK: TimeStream Spectrogram
+        static func createSpectrogram(timeStream:TimeStream, metalView:MTKView, selectedNodeTypes: [CoreAstrology.AspectBody.NodeType]) {
+            let spectrogram = TimeStreamSpectrogram(timeStream: timeStream, metalView: metalView, selectedNodeTypes: selectedNodeTypes)
         }
         
         // MARK: Action/Reaction Delegates

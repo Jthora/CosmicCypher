@@ -1,19 +1,28 @@
 //
-//  TimeStreamCompositeView.swift
+//  TimeStreamSpectrogramView.swift
 //  CosmicCypher
 //
-//  Created by Jordan Trana on 9/21/23.
+//  Created by Jordan Trana on 9/23/23.
 //
 
 import UIKit
+import Metal
 import MetalKit
 
-class TimeStreamCompositeView: UIView {
-        
-    var renderer:TimeStream.Composite.MetalRenderer? = nil
-    var metalView:MTKView? = nil
+public class TimeStreamSpectrogramView: UIView {
     
-    func setup() {
+    var renderer:TimeStream.MetalRenderer? = nil
+    public var metalView:MTKView? = nil
+    
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    public func setup() {
         
         // Create a Metal view in your view controller
         metalView = MTKView(frame: self.bounds)
@@ -21,7 +30,7 @@ class TimeStreamCompositeView: UIView {
         self.addSubview(metalView!)
 
         // Initialize a MetalKit renderer
-        renderer = TimeStream.Composite.MetalRenderer(view: metalView!)
+        renderer = TimeStream.MetalRenderer(view: metalView!)
         metalView!.delegate = renderer
         
         // Setup Renderer
@@ -38,4 +47,13 @@ class TimeStreamCompositeView: UIView {
             metalView!.trailingAnchor.constraint(equalTo: self.trailingAnchor)
         ])
     }
+    
+    public func render(timeStream:TimeStream, selectedNodeTypes: [CoreAstrology.AspectBody.NodeType]) {
+        guard let renderer = renderer else {return}
+        let pixelDrawer = TimeStreamPixelDrawer(timeStream: timeStream,
+                                                renderer: renderer,
+                                                selectedNodeTypes: selectedNodeTypes)
+        pixelDrawer.render()
+    }
+
 }

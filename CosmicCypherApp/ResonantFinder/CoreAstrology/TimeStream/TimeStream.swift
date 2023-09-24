@@ -95,6 +95,11 @@ public final class TimeStream {
         return TimeStream.ImageGenerator.generateStrips(timestream: self, nodeTypes: nodeTypes)
     }
     
+    func createSpectrogram(view:TimeStreamSpectrogramView, selectedNodeTypes:[CoreAstrology.AspectBody.NodeType] = DEFAULT_SELECTED_NODETYPES) -> TimeStreamSpectrogram? {
+        guard let metalView = view.metalView else {return nil}
+        return TimeStreamSpectrogram(timeStream: self, metalView: metalView, selectedNodeTypes: selectedNodeTypes)
+    }
+    
     
     func resonanceScores() -> [StarChart.ResonanceScore] {
         return self.starCharts.map({ $0.resonanceScore() })

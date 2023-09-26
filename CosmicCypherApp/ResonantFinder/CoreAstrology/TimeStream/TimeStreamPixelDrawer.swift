@@ -11,21 +11,30 @@ import Metal
 
 public class TimeStreamPixelDrawer {
     
-    public var timeStream:TimeStream
+    // Properties
     public var renderer:TimeStream.MetalRenderer
-    public var selectedNodeTypes:[CoreAstrology.AspectBody.NodeType]
     
-    public init(timeStream:TimeStream, renderer: TimeStream.MetalRenderer, selectedNodeTypes:[CoreAstrology.AspectBody.NodeType]) {
-        self.timeStream = timeStream
+    // Init
+    public init(renderer: TimeStream.MetalRenderer) {
         self.renderer = renderer
-        self.selectedNodeTypes = selectedNodeTypes
     }
     
-    public func render(onComplete:((_ starCharts:[StarChart])->Void)? = nil, onProgress:((_ completion:Double, _ starChart:StarChart?)->Void)? = nil) {
-        TimeStreamPixelDrawer.renderTimeStream(timeStream: timeStream, renderer: renderer, selectedNodeTypes: selectedNodeTypes, onComplete: onComplete, onProgress: onProgress)
+    // Render
+    public func render(timeStream:TimeStream, selectedNodeTypes:[CoreAstrology.AspectBody.NodeType], onComplete:((_ starCharts:[StarChart])->Void)? = nil, onProgress:((_ completion:Double, _ starChart:StarChart?)->Void)? = nil) {
+        TimeStreamPixelDrawer.render(timeStream: timeStream,
+                                     renderer: renderer,
+                                     selectedNodeTypes: selectedNodeTypes,
+                                     onComplete: onComplete,
+                                     onProgress: onProgress)
     }
     
-    public static func renderTimeStream(timeStream:TimeStream, renderer:TimeStream.MetalRenderer, selectedNodeTypes:[CoreAstrology.AspectBody.NodeType], onComplete:((_ starCharts:[StarChart])->Void)? = nil, onProgress:((_ completion:Double, _ starChart:StarChart?)->Void)? = nil) {
+    // Global Render TimeStream
+    public static func render(timeStream:TimeStream,
+                              renderer:TimeStream.MetalRenderer,
+                              selectedNodeTypes:[CoreAstrology.AspectBody.NodeType],
+                              onComplete:((_ starCharts:[StarChart])->Void)? = nil,
+                              onProgress:((_ completion:Double, _ starChart:StarChart?)->Void)? = nil) {
+        
         guard !selectedNodeTypes.isEmpty else {return}
         let starCharts = timeStream.starCharts
         
@@ -51,7 +60,12 @@ public class TimeStreamPixelDrawer {
         }
     }
     
-    public static func render(starCharts:[StarChart], renderer:TimeStream.MetalRenderer, selectedNodeTypes:[CoreAstrology.AspectBody.NodeType], onComplete:((_ starCharts:[StarChart])->Void)? = nil, onProgress:((_ completion:Double, _ starChart:StarChart?)->Void)? = nil) {
+    // Global Render StarCharts
+    public static func render(starCharts:[StarChart],
+                              renderer:TimeStream.MetalRenderer,
+                              selectedNodeTypes:[CoreAstrology.AspectBody.NodeType],
+                              onComplete:((_ starCharts:[StarChart])->Void)? = nil,
+                              onProgress:((_ completion:Double, _ starChart:StarChart?)->Void)? = nil) {
         
         let frameBufferWidth = starCharts.count
         let frameBufferHeight = selectedNodeTypes.count

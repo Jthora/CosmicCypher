@@ -24,6 +24,8 @@ public final class TimeStream {
     let dateRange:Range<Date>
     var starCharts:[StarChart] = []
     
+    var spectrogram:TimeStreamSpectrogram? = nil
+    
     // TODO: Confirm order of Points is correct...
     init(uuid:UUID = UUID(), title:String? = nil, path:Path, dateRange:Range<Date>? = nil) throws {
         print("TimeStream:: init with path")
@@ -95,9 +97,9 @@ public final class TimeStream {
         return TimeStream.ImageGenerator.generateStrips(timestream: self, nodeTypes: nodeTypes)
     }
     
-    func createSpectrogram(view:TimeStreamSpectrogramView, selectedNodeTypes:[CoreAstrology.AspectBody.NodeType] = DEFAULT_SELECTED_NODETYPES) -> TimeStreamSpectrogram? {
-        guard let metalView = view.metalView else {return nil}
-        return TimeStreamSpectrogram(timeStream: self, metalView: metalView, selectedNodeTypes: selectedNodeTypes)
+    func renderSpectrogram(view:TimeStreamSpectrogramView, selectedNodeTypes:[CoreAstrology.AspectBody.NodeType] = DEFAULT_SELECTED_NODETYPES) {
+        guard let metalView = view.metalView else {return}
+        self.spectrogram = TimeStreamSpectrogram(metalView: metalView)
     }
     
     

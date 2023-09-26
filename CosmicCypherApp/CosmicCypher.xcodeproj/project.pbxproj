@@ -180,6 +180,14 @@
 		FAD6D6652ABEE914006264C8 /* TimeStreamPixelDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6D6642ABEE914006264C8 /* TimeStreamPixelDrawer.swift */; };
 		FAD6D6672ABF15EB006264C8 /* TimeStreamSpectrogramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6D6662ABF15EB006264C8 /* TimeStreamSpectrogramView.swift */; };
 		FAD6D6692ABF4046006264C8 /* TimeStreamSpectrogram.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6D6682ABF4046006264C8 /* TimeStreamSpectrogram.swift */; };
+		FAD6D66D2AC16385006264C8 /* TimeStreamCompositeSpectrograph.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6D66C2AC16385006264C8 /* TimeStreamCompositeSpectrograph.swift */; };
+		FAD6D66F2AC17287006264C8 /* TimeStreamCompositeMetalRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6D66E2AC17287006264C8 /* TimeStreamCompositeMetalRenderer.swift */; };
+		FAD6D6722AC2E4DF006264C8 /* TimeStreamCompositeGenerateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6D6712AC2E4DF006264C8 /* TimeStreamCompositeGenerateViewController.swift */; };
+		FAD6D6742AC2E4ED006264C8 /* TimeStreamCompositeArchiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6D6732AC2E4ED006264C8 /* TimeStreamCompositeArchiveViewController.swift */; };
+		FAD6D6762AC2E501006264C8 /* TimeStreamCompositeSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6D6752AC2E501006264C8 /* TimeStreamCompositeSettingsViewController.swift */; };
+		FAD6D6782AC2E51A006264C8 /* StarChartCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6D6772AC2E51A006264C8 /* StarChartCreateViewController.swift */; };
+		FAD6D67A2AC2E529006264C8 /* TimeStreamCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6D6792AC2E529006264C8 /* TimeStreamCreateViewController.swift */; };
+		FAD6D67C2AC2E646006264C8 /* CreateTimeStreamComposite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAD6D67B2AC2E646006264C8 /* CreateTimeStreamComposite.storyboard */; };
 		FAE12E472A6C0921002016A3 /* OnlineGeoLocationSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE12E462A6C0921002016A3 /* OnlineGeoLocationSelectViewController.swift */; };
 		FAE12E4A2A6C1371002016A3 /* AspectEventScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE12E492A6C1371002016A3 /* AspectEventScanner.swift */; };
 		FAE12E4E2A6C1432002016A3 /* AspectEventScannerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE12E4D2A6C1432002016A3 /* AspectEventScannerCore.swift */; };
@@ -451,6 +459,14 @@
 		FAD6D6642ABEE914006264C8 /* TimeStreamPixelDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamPixelDrawer.swift; sourceTree = "<group>"; };
 		FAD6D6662ABF15EB006264C8 /* TimeStreamSpectrogramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamSpectrogramView.swift; sourceTree = "<group>"; };
 		FAD6D6682ABF4046006264C8 /* TimeStreamSpectrogram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamSpectrogram.swift; sourceTree = "<group>"; };
+		FAD6D66C2AC16385006264C8 /* TimeStreamCompositeSpectrograph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamCompositeSpectrograph.swift; sourceTree = "<group>"; };
+		FAD6D66E2AC17287006264C8 /* TimeStreamCompositeMetalRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamCompositeMetalRenderer.swift; sourceTree = "<group>"; };
+		FAD6D6712AC2E4DF006264C8 /* TimeStreamCompositeGenerateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamCompositeGenerateViewController.swift; sourceTree = "<group>"; };
+		FAD6D6732AC2E4ED006264C8 /* TimeStreamCompositeArchiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamCompositeArchiveViewController.swift; sourceTree = "<group>"; };
+		FAD6D6752AC2E501006264C8 /* TimeStreamCompositeSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamCompositeSettingsViewController.swift; sourceTree = "<group>"; };
+		FAD6D6772AC2E51A006264C8 /* StarChartCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarChartCreateViewController.swift; sourceTree = "<group>"; };
+		FAD6D6792AC2E529006264C8 /* TimeStreamCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamCreateViewController.swift; sourceTree = "<group>"; };
+		FAD6D67B2AC2E646006264C8 /* CreateTimeStreamComposite.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateTimeStreamComposite.storyboard; sourceTree = "<group>"; };
 		FAE12E462A6C0921002016A3 /* OnlineGeoLocationSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineGeoLocationSelectViewController.swift; sourceTree = "<group>"; };
 		FAE12E492A6C1371002016A3 /* AspectEventScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectEventScanner.swift; sourceTree = "<group>"; };
 		FAE12E4D2A6C1432002016A3 /* AspectEventScannerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectEventScannerCore.swift; sourceTree = "<group>"; };
@@ -987,6 +1003,8 @@
 				FAB069002ABC911E00334B1A /* TimeStreamMetalRenderer.swift */,
 				FAD6D6682ABF4046006264C8 /* TimeStreamSpectrogram.swift */,
 				FAD6D6662ABF15EB006264C8 /* TimeStreamSpectrogramView.swift */,
+				FAD6D66C2AC16385006264C8 /* TimeStreamCompositeSpectrograph.swift */,
+				FAD6D66E2AC17287006264C8 /* TimeStreamCompositeMetalRenderer.swift */,
 				FA35C0852849783A006114AB /* TimeStreamImageGenerator.swift */,
 				FA35C0842849783A006114AB /* TimeStreamImageStrip.swift */,
 				FA35C0EA284A6E2D006114AB /* TimeStreamImageMap.swift */,
@@ -1067,6 +1085,18 @@
 				FA07C9EE25401EBB00683486 /* Main.storyboard */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		FAD6D6702AC2E4B9006264C8 /* CreateTimeStreamComposite */ = {
+			isa = PBXGroup;
+			children = (
+				FAD6D6712AC2E4DF006264C8 /* TimeStreamCompositeGenerateViewController.swift */,
+				FAD6D6732AC2E4ED006264C8 /* TimeStreamCompositeArchiveViewController.swift */,
+				FAD6D6752AC2E501006264C8 /* TimeStreamCompositeSettingsViewController.swift */,
+				FAD6D6772AC2E51A006264C8 /* StarChartCreateViewController.swift */,
+				FAD6D6792AC2E529006264C8 /* TimeStreamCreateViewController.swift */,
+			);
+			path = CreateTimeStreamComposite;
 			sourceTree = "<group>";
 		};
 		FAE12E482A6C1362002016A3 /* AspectEventScanner */ = {
@@ -1169,6 +1199,7 @@
 		FAFB68A72AB8394200FEBDF4 /* v5 Screens */ = {
 			isa = PBXGroup;
 			children = (
+				FAD6D6702AC2E4B9006264C8 /* CreateTimeStreamComposite */,
 				FAB068F02ABA1AAC00334B1A /* About */,
 				FAFB68A82AB8395300FEBDF4 /* TimeStreamInterface */,
 				FAFB68B02AB930D800FEBDF4 /* SwiftUI */,
@@ -1191,6 +1222,7 @@
 			children = (
 				FAFB68AC2AB9308700FEBDF4 /* TimeStreamInterface.storyboard */,
 				FAB068F32ABA1AE700334B1A /* AboutPage.storyboard */,
+				FAD6D67B2AC2E646006264C8 /* CreateTimeStreamComposite.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -1322,6 +1354,7 @@
 				FA33AAFD2864E18E00BC9F76 /* Settings.storyboard in Resources */,
 				FAB068F42ABA1AE700334B1A /* AboutPage.storyboard in Resources */,
 				FAFB68AD2AB9308700FEBDF4 /* TimeStreamInterface.storyboard in Resources */,
+				FAD6D67C2AC2E646006264C8 /* CreateTimeStreamComposite.storyboard in Resources */,
 				FAFE79322A6C029400C56612 /* GeoLocationSelect.storyboard in Resources */,
 				FA33AB0928655DF700BC9F76 /* Instructions.storyboard in Resources */,
 				FA2CC94B287E9E6E0078ECE1 /* ElementalReading.storyboard in Resources */,
@@ -1528,6 +1561,7 @@
 				FA4D1B9C2561FE070043DE9F /* ReadingsScreen.swift in Sources */,
 				FA2CB4922860F664003AD95C /* CGImage+Extension.swift in Sources */,
 				FA35C08E2849783A006114AB /* Earth+Extension.swift in Sources */,
+				FAD6D6722AC2E4DF006264C8 /* TimeStreamCompositeGenerateViewController.swift in Sources */,
 				FA07CA4A25401EBC00683486 /* SpriteKit+Extension.swift in Sources */,
 				FA6101CD286D73AA0000D4D5 /* StarChartSelectViewController.swift in Sources */,
 				FA07CA3925401EBC00683486 /* MainViewController.swift in Sources */,
@@ -1606,6 +1640,7 @@
 				FAB131172873A807000AD7B9 /* AstrologicalNodeType.swift in Sources */,
 				FAFB689C2AB2C17900FEBDF4 /* Cusp.swift in Sources */,
 				FA35C0ED284A7195006114AB /* TimeStreamImageMapRegistry.swift in Sources */,
+				FAD6D6762AC2E501006264C8 /* TimeStreamCompositeSettingsViewController.swift in Sources */,
 				FA35C0AA2849783A006114AB /* TimeStreamImageStrip.swift in Sources */,
 				FA6101E32870B0F10000D4D5 /* TimeStreamChartTableViewCell.swift in Sources */,
 				FAFB688D2AB1C4CC00FEBDF4 /* CosmicAlignmentSpriteNode+Images.swift in Sources */,
@@ -1617,6 +1652,7 @@
 				FA35C0EB284A6E2D006114AB /* TimeStreamImageMap.swift in Sources */,
 				FA35C0E52849AC8F006114AB /* TimeStreamComposite.swift in Sources */,
 				FA35C0C728499195006114AB /* StarKitAssets.swift in Sources */,
+				FAD6D67A2AC2E529006264C8 /* TimeStreamCreateViewController.swift in Sources */,
 				FA35C0DC2849A840006114AB /* TimeStreamMaterial.swift in Sources */,
 				FA07CA4725401EBC00683486 /* SceneKit+Extension.swift in Sources */,
 				FA2CB48E2860EC4F003AD95C /* CIFilter+Extension.swift in Sources */,
@@ -1625,10 +1661,12 @@
 				FA35C09D2849783A006114AB /* Math.swift in Sources */,
 				FA35C0902849783A006114AB /* Astronomy.swift in Sources */,
 				FAB068F62ABB784D00334B1A /* GeographicCoordinates+Extension.swift in Sources */,
+				FAD6D66D2AC16385006264C8 /* TimeStreamCompositeSpectrograph.swift in Sources */,
 				FAEB279D284D2AB5009994B8 /* TimeStreamCore.swift in Sources */,
 				FAEB27B32850BB75009994B8 /* TimeStreamCompositeArchive.swift in Sources */,
 				FA2CB4902860EF49003AD95C /* TimeStreamSpriteMask.swift in Sources */,
 				FA35C0AD2849783A006114AB /* Astrology.swift in Sources */,
+				FAD6D66F2AC17287006264C8 /* TimeStreamCompositeMetalRenderer.swift in Sources */,
 				FAEB27A1284E5831009994B8 /* TimeStreamArchive.swift in Sources */,
 				FAEB27C628523730009994B8 /* CoreData+Extensions.swift in Sources */,
 				FA6101DF286F9F1F0000D4D5 /* TimeStreamCompositeNotchSpriteNode.swift in Sources */,
@@ -1648,6 +1686,7 @@
 				FA35C0E02849A872006114AB /* TimeStreamSpriteNode.swift in Sources */,
 				FA2CC949287DF6010078ECE1 /* LevelBarView.swift in Sources */,
 				FA6101D1286D73C70000D4D5 /* GeoLocationSelectViewController.swift in Sources */,
+				FAD6D6742AC2E4ED006264C8 /* TimeStreamCompositeArchiveViewController.swift in Sources */,
 				FA12D5EF289D7EB200411649 /* ResonanceReportViewController+Setup.swift in Sources */,
 				FA6101DD286F99D20000D4D5 /* CGPoint+Extension.swift in Sources */,
 				FAFB68982AB2A80400FEBDF4 /* AspectLineSpriteNode.swift in Sources */,
@@ -1673,6 +1712,7 @@
 				FA35C0D62849A840006114AB /* TimeStreamScene.swift in Sources */,
 				FA6101CF286D73B70000D4D5 /* TimeStreamSelectViewController.swift in Sources */,
 				FAB069092ABCF6DC00334B1A /* ImageDataConverter.swift in Sources */,
+				FAD6D6782AC2E51A006264C8 /* StarChartCreateViewController.swift in Sources */,
 				FA35C0E32849A984006114AB /* SCNGeometryExtension.swift in Sources */,
 				FAE12E472A6C0921002016A3 /* OnlineGeoLocationSelectViewController.swift in Sources */,
 				FA35C0AF2849783A006114AB /* Ayanamsa.swift in Sources */,

@@ -10,29 +10,33 @@ import MetalKit
 
 public class TimeStreamSpectrogram {
     
-    public var timeStream:TimeStream
+    // Properties
     public var metalView:MTKView
-    public var selectedNodeTypes:[CoreAstrology.AspectBody.NodeType]
-    
     public var renderer:TimeStream.MetalRenderer
     public var pixelDrawer:TimeStreamPixelDrawer
     
-    public init(timeStream: TimeStream, metalView: MTKView, selectedNodeTypes: [CoreAstrology.AspectBody.NodeType]) {
+    // Init
+    public init(metalView: MTKView) {
         
         // Properties
-        self.timeStream = timeStream
-        self.selectedNodeTypes = selectedNodeTypes
         self.metalView = metalView
         
         // Setup Renderer
         self.renderer = TimeStream.MetalRenderer(view: self.metalView)
-        self.pixelDrawer = TimeStreamPixelDrawer(timeStream: timeStream, renderer: renderer, selectedNodeTypes: selectedNodeTypes)
         self.metalView.delegate = renderer
         self.renderer.setup()
+        
+        // Setup Pixel Drawer
+        self.pixelDrawer = TimeStreamPixelDrawer(renderer: renderer)
     }
     
-    public func render(onComplete:((_ starCharts:[StarChart])->Void)? = nil, onProgress:((_ completion:Double, _ starChart:StarChart?)->Void)? = nil) {
-        self.pixelDrawer.render { starCharts in
+    // Render
+    public func render(timeStream:TimeStream,
+                       selectedNodeTypes:[CoreAstrology.AspectBody.NodeType],
+                       onComplete:((_ starCharts:[StarChart])->Void)? = nil,
+                       onProgress:((_ completion:Double, _ starChart:StarChart?)->Void)? = nil) {
+        self.pixelDrawer.render(timeStream: timeStream,
+                                selectedNodeTypes: selectedNodeTypes) { starCharts in
             onComplete?(starCharts)
         } onProgress: { completion, starChart in
             onProgress?(completion, starChart)

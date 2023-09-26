@@ -11,7 +11,7 @@ import MetalKit
 
 public class TimeStreamSpectrogramView: UIView {
     
-    var renderer:TimeStream.MetalRenderer? = nil
+    public var spectrogram:TimeStreamSpectrogram? = nil
     public var metalView:MTKView? = nil
     
     public override init(frame: CGRect) {
@@ -28,13 +28,6 @@ public class TimeStreamSpectrogramView: UIView {
         metalView = MTKView(frame: self.bounds)
         metalView!.device = MTLCreateSystemDefaultDevice()
         self.addSubview(metalView!)
-
-        // Initialize a MetalKit renderer
-        renderer = TimeStream.MetalRenderer(view: metalView!)
-        metalView!.delegate = renderer
-        
-        // Setup Renderer
-        renderer!.setup()
         
         // Create Auto Layout constraints
         metalView!.translatesAutoresizingMaskIntoConstraints = false
@@ -47,13 +40,4 @@ public class TimeStreamSpectrogramView: UIView {
             metalView!.trailingAnchor.constraint(equalTo: self.trailingAnchor)
         ])
     }
-    
-    public func render(timeStream:TimeStream, selectedNodeTypes: [CoreAstrology.AspectBody.NodeType]) {
-        guard let renderer = renderer else {return}
-        let pixelDrawer = TimeStreamPixelDrawer(timeStream: timeStream,
-                                                renderer: renderer,
-                                                selectedNodeTypes: selectedNodeTypes)
-        pixelDrawer.render()
-    }
-
 }

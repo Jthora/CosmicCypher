@@ -93,7 +93,7 @@ extension TimeStream {
         
         // MARK: TimeStream Spectrogram
         static func createSpectrogram(timeStream:TimeStream, metalView:MTKView, selectedNodeTypes: [CoreAstrology.AspectBody.NodeType]) {
-            let spectrogram = TimeStreamSpectrogram(timeStream: timeStream, metalView: metalView, selectedNodeTypes: selectedNodeTypes)
+            let spectrogram = TimeStreamSpectrogram(metalView: metalView)
         }
         
         // MARK: Action/Reaction Delegates

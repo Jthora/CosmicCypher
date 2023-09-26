@@ -9,7 +9,8 @@ import Foundation
 import UIKit
 import SwiftAA
 
-typealias TimeStreamCache = [UUID:TimeStream]
+typealias TimeStreamUUID = UUID
+typealias TimeStreamCache = [TimeStreamUUID:TimeStream]
 
 public final class TimeStreamRegistry {
     
@@ -21,7 +22,7 @@ public final class TimeStreamRegistry {
         // Too many...
     }
     
-    func loadTimeStreamFromArchive(uuid:UUID) {
+    func loadTimeStreamFromArchive(uuid:TimeStreamUUID) {
         if cache[uuid] == nil {
             Task {
                 if let archivedTimeStream = try await TimeStreamArchive.main.fetch(uuid: uuid) {
@@ -32,7 +33,7 @@ public final class TimeStreamRegistry {
     }
     
     func newTimeStream(startDate:Date, endDate:Date, geographicCoordinates:GeographicCoordinates) {
-        let uuid = UUID()
+        let uuid = TimeStreamUUID()
         if cache[uuid] == nil {
             let timeStream = TimeStream(uuid: uuid, startDate: startDate, endDate: endDate, coordinates: geographicCoordinates)
             Task {

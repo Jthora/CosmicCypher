@@ -50,9 +50,7 @@ extension TimeStream {
                     let timeStream = self.configuration.timeStreams.first,
                     let metalView = spectrogramView.metalView {
                     let selectedNodeTypes = StarChart.Core.selectedNodeTypes
-                    let spectrogram = TimeStreamSpectrogram(timeStream: timeStream,
-                                                            metalView: metalView,
-                                                            selectedNodeTypes: selectedNodeTypes)
+                    let spectrogram = TimeStreamSpectrogram(metalView: metalView)
                 } else {
                     Task {
                         ImageMap.create(uuid: self.uuid, configuration: self.configuration, onComplete: { imageMap in

@@ -135,6 +135,8 @@
 		FA35C0E9284A60A2006114AB /* TimeStreamCompositeSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C0E8284A60A2006114AB /* TimeStreamCompositeSpriteNode.swift */; };
 		FA35C0EB284A6E2D006114AB /* TimeStreamImageMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C0EA284A6E2D006114AB /* TimeStreamImageMap.swift */; };
 		FA35C0ED284A7195006114AB /* TimeStreamImageMapRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C0EC284A7195006114AB /* TimeStreamImageMapRegistry.swift */; };
+		FA3A38C82ACCFF1A008907F2 /* TimeStreamSpectrogramShader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A38C72ACCFF1A008907F2 /* TimeStreamSpectrogramShader.swift */; };
+		FA3A38CA2ACE4AC9008907F2 /* MTLTexture+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A38C92ACE4AC9008907F2 /* MTLTexture+Extensions.swift */; };
 		FA4D1B8A2561FBFE0043DE9F /* TimeStreamDisplayScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D1B892561FBFE0043DE9F /* TimeStreamDisplayScreen.swift */; };
 		FA4D1B8F2561FCA00043DE9F /* ControlsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D1B8E2561FCA00043DE9F /* ControlsScreen.swift */; };
 		FA4D1B942561FDA00043DE9F /* ArkanaNaturaDisplayScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D1B932561FDA00043DE9F /* ArkanaNaturaDisplayScreen.swift */; };
@@ -412,6 +414,8 @@
 		FA35C0E8284A60A2006114AB /* TimeStreamCompositeSpriteNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamCompositeSpriteNode.swift; sourceTree = "<group>"; };
 		FA35C0EA284A6E2D006114AB /* TimeStreamImageMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamImageMap.swift; sourceTree = "<group>"; };
 		FA35C0EC284A7195006114AB /* TimeStreamImageMapRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamImageMapRegistry.swift; sourceTree = "<group>"; };
+		FA3A38C72ACCFF1A008907F2 /* TimeStreamSpectrogramShader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamSpectrogramShader.swift; sourceTree = "<group>"; };
+		FA3A38C92ACE4AC9008907F2 /* MTLTexture+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MTLTexture+Extensions.swift"; sourceTree = "<group>"; };
 		FA4D1B892561FBFE0043DE9F /* TimeStreamDisplayScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamDisplayScreen.swift; sourceTree = "<group>"; };
 		FA4D1B8E2561FCA00043DE9F /* ControlsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsScreen.swift; sourceTree = "<group>"; };
 		FA4D1B932561FDA00043DE9F /* ArkanaNaturaDisplayScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArkanaNaturaDisplayScreen.swift; sourceTree = "<group>"; };
@@ -728,6 +732,7 @@
 				FA6101DC286F99D20000D4D5 /* CGPoint+Extension.swift */,
 				FA2CC94C287F797F0078ECE1 /* UIViewController+Extension.swift */,
 				FAB068F52ABB784D00334B1A /* GeographicCoordinates+Extension.swift */,
+				FA3A38C92ACE4AC9008907F2 /* MTLTexture+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1025,6 +1030,7 @@
 				FA6101DE286F9F1F0000D4D5 /* TimeStreamCompositeNotchSpriteNode.swift */,
 				FA6101E02870AE8E0000D4D5 /* TimeStreamChart.swift */,
 				FA6101E62870C8800000D4D5 /* TimeStreamPresets.swift */,
+				FA3A38C72ACCFF1A008907F2 /* TimeStreamSpectrogramShader.swift */,
 			);
 			path = TimeStream;
 			sourceTree = "<group>";
@@ -1600,6 +1606,7 @@
 				FA07CA3825401EBC00683486 /* ResultHistoryTableViewCell.swift in Sources */,
 				FA4D1B8A2561FBFE0043DE9F /* TimeStreamDisplayScreen.swift in Sources */,
 				FAEB27A3284E753B009994B8 /* TimeStreamPath.swift in Sources */,
+				FA3A38CA2ACE4AC9008907F2 /* MTLTexture+Extensions.swift in Sources */,
 				FA07CA2025401EBB00683486 /* Assets.swift in Sources */,
 				FA35C09E2849783A006114AB /* Time.swift in Sources */,
 				FA1FDD98257A0A3A00B51BD2 /* SpriteNodeCosmicEvent.swift in Sources */,
@@ -1711,6 +1718,7 @@
 				FA5CF1822A767A92006CBEB5 /* AspectEventScannerResultsFormatter.swift in Sources */,
 				FA35C0D62849A840006114AB /* TimeStreamScene.swift in Sources */,
 				FA6101CF286D73B70000D4D5 /* TimeStreamSelectViewController.swift in Sources */,
+				FA3A38C82ACCFF1A008907F2 /* TimeStreamSpectrogramShader.swift in Sources */,
 				FAB069092ABCF6DC00334B1A /* ImageDataConverter.swift in Sources */,
 				FAD6D6782AC2E51A006264C8 /* StarChartCreateViewController.swift in Sources */,
 				FA35C0E32849A984006114AB /* SCNGeometryExtension.swift in Sources */,

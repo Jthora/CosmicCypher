@@ -11,8 +11,25 @@ import MetalKit
 
 
 extension TimeStream.Composite {
-    class SpectroGraph {
+    class Spectrograph {
+        // Spectrographic Wrapper for TimeStream Composite
+        /// Metal Shaders and Blend Modes
+        /// Multiple Spectrograms and TimeStreams
+        /// StarChart Personal TimeStream Overlays
+        
+        lazy var metalView:MTKView = MTKView(frame: .zero)
+        lazy var renderer:TimeStream.Composite.MetalRenderer = TimeStream.Composite.MetalRenderer(view: metalView)
+        
+        var starCharts:[StarChartHashKey:StarChart] = [:]
         var spectrograms:[TimeStreamUUID:TimeStreamSpectrogram] = [:]
-        var subFrameBuffers:[TimeStreamUUID:TimeStreamFrameBuffer] { return spectrograms.mapValues({$0.renderer.frameBuffer}) }
+        var frameBuffers:[TimeStreamUUID:TimeStreamFrameBuffer] { return spectrograms.mapValues({$0.renderer.frameBuffer}) }
+        
+        
+        // Dynamic Height
+        /// Counted by Number of Planets or Nodes
+        /// Spectrogram Heights must match SpectrogGraph height
+        
+        // Expandable
     }
 }
+

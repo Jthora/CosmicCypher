@@ -9,6 +9,10 @@ import Foundation
 import MetalKit
 
 public class TimeStreamSpectrogram {
+    // For a single TimeStream
+    /// Includes a framebuffer MTLTexture for a single timestream
+    /// Expands MutableMTLTexture using resizeCanvas()
+    /// Allows for direct draw to a view
     
     // Properties
     public var metalView:MTKView
@@ -42,4 +46,7 @@ public class TimeStreamSpectrogram {
             onProgress?(completion, starChart)
         }
     }
+    
+    
+    
 }

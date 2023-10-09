@@ -5,8 +5,12 @@
 //  Created by Jordan Trana on 9/26/23.
 //
 
-import Foundation
+import UIKit
 
-// Location
-// Date
-// Name
+class StarChartCreateViewController: UIViewController {
+    
+    // Location
+    // Date
+    // Name
+    
+}

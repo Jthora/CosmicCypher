@@ -123,6 +123,7 @@ class TimeStreamInterfaceViewController: UIViewController {
     func showRiseFallClosure(action: UIAction) {
         showRiseFallClosure()
     }
+    
     func showRiseFallClosure() {
         self.chartSuperView.isHidden = false
         self.chartSuperView.alpha = 0

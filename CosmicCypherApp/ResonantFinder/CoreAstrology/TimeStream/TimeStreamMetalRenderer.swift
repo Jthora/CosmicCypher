@@ -39,7 +39,7 @@ extension TimeStream {
         
         public func setup() {
             
-            //createPipelineState()
+            createPipelineState()
             createFrameBuffer()
             createRenderPassDescriptor()
         }
@@ -49,8 +49,15 @@ extension TimeStream {
             // Load and compile your vertex and fragment shaders here
             // Create a pipeline descriptor and set shader functions
             
-            // Example:
-            // Path to your .metal file
+            if let pipelineState = timeStreamCompositePipeline(metalView: view, device: device) {
+                self.pipelineState = pipelineState
+                return
+            }
+        }
+        
+        // MARK: Pipeline
+        // Pipeline from Shader .metal file
+        fileprivate func setPipelineStateFromMetalFile() {
             let shaderFilePath = Bundle.main.path(forResource: "Shaders", ofType: "metal")
             guard let library = try? device.makeLibrary(filepath: shaderFilePath!) else {
                 fatalError("Failed to load Metal library")
@@ -69,6 +76,57 @@ extension TimeStream {
             } catch {
                 fatalError("Failed to create pipeline state: \(error)")
             }
+        }
+        
+        // Pipeline from inline metal source code
+        func timeStreamCompositePipeline(metalView:MTKView, device:MTLDevice) -> MTLRenderPipelineState? {
+            let vertexShaderFunction:MTLFunction
+            let fragmentShaderFunction:MTLFunction
+            do {
+                guard let defaultVertexShaderFunction = try TimeStreamSpectrogram.ShaderScript.defaultShaderFunction(.vertex, device: device) else {
+                    print("failure: defaultShaderFunction(.vertex)")
+                    return nil
+                }
+                guard let defaultFragmentShaderFunction = try TimeStreamSpectrogram.ShaderScript.defaultShaderFunction(.fragment, device: device) else {
+                    print("failure: defaultShaderFunction(.fragment)")
+                    return nil
+                }
+                vertexShaderFunction = defaultVertexShaderFunction
+                fragmentShaderFunction = defaultFragmentShaderFunction
+            } catch {
+                print("error: \(error)")
+                return nil
+            }
+//
+//            guard let fragmentShaderFunction = timeStreamCompositeShaderFunction(device: device) else {
+//                print("failure: timeStreamCompositeShaderFunction")
+//                return nil
+//            }
+            
+            // Create a Metal pipeline
+            let pipelineDescriptor = MTLRenderPipelineDescriptor()
+            pipelineDescriptor.vertexFunction = vertexShaderFunction
+            pipelineDescriptor.fragmentFunction = fragmentShaderFunction
+            pipelineDescriptor.colorAttachments[0].pixelFormat = metalView.colorPixelFormat
+            guard let pipelineState = try? device.makeRenderPipelineState(descriptor: pipelineDescriptor) else {
+                print("failure: makeRenderPipelineState for descriptor: \(pipelineDescriptor)")
+                return nil
+            }
+            return pipelineState
+        }
+        
+        // MARK: Shader Function
+        func timeStreamCompositeShaderFunction(device:MTLDevice) -> MTLFunction? {
+            let shaderSource = TimeStreamSpectrogram.ShaderScript.Source.timeStreamCompositeChannelsFragmentShader
+            guard let library = try? device.makeLibrary(source: shaderSource, options: nil) else {
+                print("failure: timeStreamCompositeShaderFunction: makeLibrary(source: \(shaderSource),")
+                return nil
+            }
+            guard let shaderFunction = library.makeFunction(name: "upgradedFragment") else {
+                print("failure: upgradedFragment doesn't existo ci no ey nada no bien. mal. malo. ")
+                return nil
+            }
+            return shaderFunction
         }
         
         public func createFrameBuffer() {

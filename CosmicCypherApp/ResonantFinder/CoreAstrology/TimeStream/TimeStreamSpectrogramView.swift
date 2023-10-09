@@ -32,6 +32,28 @@ public class TimeStreamSpectrogramView: UIView {
         // Create Auto Layout constraints
         metalView!.translatesAutoresizingMaskIntoConstraints = false
         
+        guard let device = metalView!.device else {
+            print("No Device for Metal View.")
+            return
+        }
+        
+        // Test Bundle Shader Request
+        if let shaderFileURL = Bundle.main.url(forResource: "Shaders", withExtension: "metal") {
+            do {
+                let source = try String(contentsOf: shaderFileURL)
+                let library = try device.makeLibrary(source: source, options: .none)
+            } catch {
+                print("Shader file not able to makeLibrary.")
+            }
+        } else {
+            do {
+                let shaderSource = try String(contentsOfFile: "Shaders.metal", encoding: .utf8)
+                let library = try device.makeLibrary(source: shaderSource, options: .none)
+            } catch {
+                print("Shader file not found in contentsOfFile for String.")
+            }
+        }
+        
         // Add constraints for top, bottom, left, and right edges
         NSLayoutConstraint.activate([
             metalView!.topAnchor.constraint(equalTo: self.topAnchor),
@@ -39,5 +61,10 @@ public class TimeStreamSpectrogramView: UIView {
             metalView!.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             metalView!.trailingAnchor.constraint(equalTo: self.trailingAnchor)
         ])
+        
+        // Setup Spectrogram
+        spectrogram = TimeStreamSpectrogram(metalView: metalView!)
     }
 }
+
+

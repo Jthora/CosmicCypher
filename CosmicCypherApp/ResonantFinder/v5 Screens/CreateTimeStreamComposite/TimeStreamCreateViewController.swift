@@ -5,14 +5,18 @@
 //  Created by Jordan Trana on 9/26/23.
 //
 
-import Foundation
+import UIKit
 
-// Start Location
-// End Location (Optional)
+class TimeStreamCreateViewController: UIViewController {
+    
+    // Start Location
+    // End Location (Optional)
 
-// Start Date
-// End Date (Optional???)
+    // Start Date
+    // End Date (Optional???)
 
-// Name
+    // Name
 
-// Samples
+    // Samples
+    
+}

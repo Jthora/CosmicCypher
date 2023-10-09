@@ -1,30 +1,201 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17150" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17122"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Aldrich-Regular.ttf">
+            <string>Aldrich-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Time Stream Composite Generate View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TimeStreamCompositeGenerateViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="TimeStreamCompositeGenerateViewController" customModule="CosmicCypher" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jM6-Jf-f0J">
+                                <rect key="frame" x="20" y="782.33333333333337" width="353" height="35.666666666666629"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Generate">
+                                            <attributes>
+                                                <font key="NSFont" size="24" name="Aldrich-Regular"/>
+                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3nw-5L-g5i">
+                                <rect key="frame" x="20" y="86.666666666666671" width="159.33333333333334" height="29"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Add TimeStream">
+                                            <attributes>
+                                                <font key="NSFont" size="16" name="Aldrich-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T5h-h2-W2d">
+                                <rect key="frame" x="20" y="218.66666666666666" width="145.66666666666666" height="29"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Add StarChart">
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="16" name="Aldrich-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4B-zf-7tM">
+                                <rect key="frame" x="20" y="350.66666666666669" width="175" height="29"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Select Node Types">
+                                            <attributes>
+                                                <font key="NSFont" size="16" name="Aldrich-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="No TimeStreams (required)" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NUq-u2-zPv">
+                                <rect key="frame" x="20" y="123.66666666666669" width="353" height="87"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="No StarCharts (optional)" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VqL-vQ-aL1">
+                                <rect key="frame" x="20" y="255.66666666666663" width="353" height="87"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Loading Error..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eMN-3f-bbW">
+                                <rect key="frame" x="20" y="387.66666666666669" width="353" height="87"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Generate TimeStream Composite" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z19-d8-563">
+                                <rect key="frame" x="0.0" y="58.999999999999993" width="393" height="19.666666666666664"/>
+                                <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <constraints>
+                            <constraint firstItem="NUq-u2-zPv" firstAttribute="top" secondItem="3nw-5L-g5i" secondAttribute="bottom" constant="8" symbolic="YES" id="1xV-ks-Cwx"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="eMN-3f-bbW" secondAttribute="trailing" constant="20" id="1yg-P7-XPj"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="jM6-Jf-f0J" secondAttribute="trailing" constant="20" id="36J-7q-lcq"/>
+                            <constraint firstItem="NUq-u2-zPv" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="E2z-1x-kQ0"/>
+                            <constraint firstItem="jM6-Jf-f0J" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="Fr8-mJ-qFc"/>
+                            <constraint firstItem="Z19-d8-563" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Kai-Yy-4c0"/>
+                            <constraint firstItem="NUq-u2-zPv" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.102113" id="LxG-mm-ACf"/>
+                            <constraint firstItem="3nw-5L-g5i" firstAttribute="top" secondItem="Z19-d8-563" secondAttribute="bottom" constant="8" symbolic="YES" id="MnA-m3-bwr"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="VqL-vQ-aL1" secondAttribute="trailing" constant="20" id="PcW-bL-4IC"/>
+                            <constraint firstItem="VqL-vQ-aL1" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Uk3-Yt-e3h"/>
+                            <constraint firstItem="VqL-vQ-aL1" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.102113" id="Wmg-Qs-UzY"/>
+                            <constraint firstItem="b4B-zf-7tM" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="bde-cr-YgX"/>
+                            <constraint firstItem="T5h-h2-W2d" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="ciZ-Or-gqM"/>
+                            <constraint firstItem="eMN-3f-bbW" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.102113" id="fZX-1Z-HAZ"/>
+                            <constraint firstItem="T5h-h2-W2d" firstAttribute="top" secondItem="NUq-u2-zPv" secondAttribute="bottom" constant="8" symbolic="YES" id="gpd-vr-niZ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="NUq-u2-zPv" secondAttribute="trailing" constant="20" id="gr2-70-UCq"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Z19-d8-563" secondAttribute="trailing" id="jHO-qm-sGk"/>
+                            <constraint firstItem="eMN-3f-bbW" firstAttribute="top" secondItem="b4B-zf-7tM" secondAttribute="bottom" constant="8" symbolic="YES" id="pZD-uL-5BZ"/>
+                            <constraint firstItem="Z19-d8-563" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ppH-Tn-KsQ"/>
+                            <constraint firstItem="b4B-zf-7tM" firstAttribute="top" secondItem="VqL-vQ-aL1" secondAttribute="bottom" constant="8" symbolic="YES" id="r7j-EC-6kX"/>
+                            <constraint firstItem="jM6-Jf-f0J" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="sRB-xE-7ar"/>
+                            <constraint firstItem="eMN-3f-bbW" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="vKE-YI-Ktr"/>
+                            <constraint firstItem="VqL-vQ-aL1" firstAttribute="top" secondItem="T5h-h2-W2d" secondAttribute="bottom" constant="8" symbolic="YES" id="vPY-FK-Dh7"/>
+                            <constraint firstItem="3nw-5L-g5i" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="vxw-uf-fWv"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="38.931297709923662" y="4.9295774647887329"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="X45-rP-Dgd">
+            <objects>
+                <viewController id="xHE-xB-68c" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Db-Iw-Wws">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="LU0-YZ-gbN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q7Y-wZ-vkc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="953" y="5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="e6x-At-OgX">
+            <objects>
+                <viewController id="oal-0C-b83" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SZZ-QU-Cab">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="8T8-Rj-IYC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gav-xR-xxv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="39" y="723"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tCu-AI-Vxp">
+            <objects>
+                <viewController id="rLa-0U-POI" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aaK-DY-Qn3">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="QEJ-pa-5nJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2OI-G9-R2r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="39" y="-731"/>
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

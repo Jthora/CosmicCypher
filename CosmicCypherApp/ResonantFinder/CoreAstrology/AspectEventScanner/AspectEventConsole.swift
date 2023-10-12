@@ -92,6 +92,10 @@ class AspectEventConsole {
         text = "🌐 Scans: [\(scans)]\n🔮 Scrying: [\(scrying)]\n☑️ Discovered: [\(discovered)]]"
     }
     
+    func detailedScanning(scans:Int, scrying:Int, discovered:Int, currentDate:Date) {
+        text = "🌐 Scans: [\(scans)]\n🔮 Scrying: [\(scrying)]\n☑️ Discovered: [\(discovered)]]"
+    }
+    
     func error(_ errorType:ErrorType, context:String? = nil) {
         let currentText = text
         let contextString = context == nil ? "" : ": \(context!)"

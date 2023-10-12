@@ -7,16 +7,22 @@
 
 import Foundation
 
+protocol StarChartRealTimePlaybackControllerDelegate {
+    func didStep(_ direction:StarChartRealTimePlaybackController.DirectionSetting)
+}
+
 
 class StarChartRealTimePlaybackController {
     
-    let defaultPlaybackSampleRate:TimeInterval = 0.5
+    let defaultPlaybackSampleRate:TimeInterval = 1
     let defaultSpeed:PlaybackMode = .pause
     var mode:PlaybackMode = .pause
     
     var date:Date = Date()
     
     var playbackTimer: Timer?
+    
+    var delegate: StarChartRealTimePlaybackControllerDelegate? = nil
     
     // MARK: Enums
     // Speed Command
@@ -57,7 +63,6 @@ class StarChartRealTimePlaybackController {
             mode = .play(direction)
         case .fast(let direction):
             mode = .fast(direction)
-        default:()
         }
     }
     
@@ -89,33 +94,36 @@ class StarChartRealTimePlaybackController {
     private func handlePlayback() {
         switch mode {
         case .play(.forward):
-            updateStarChartDate(forward: true, fast: false)
+            updateStarChartDate(direction: .forward, fast: false)
         case .play(.backward):
-            updateStarChartDate(forward: false, fast: false)
+            updateStarChartDate(direction: .backward, fast: false)
         case .fast(.forward):
-            updateStarChartDate(forward: true, fast: true)
+            updateStarChartDate(direction: .forward, fast: true)
         case .fast(.backward):
-            updateStarChartDate(forward: false, fast: true)
+            updateStarChartDate(direction: .backward, fast: true)
         default:
             break
         }
     }
     
-    private func updateStarChartDate(forward: Bool, fast: Bool) {
+    private func updateStarChartDate(direction: DirectionSetting, fast: Bool) {
         
         let playbackRate = fast ? 2.0 : 1.0
-        let timeInterval = forward ? (defaultPlaybackSampleRate * playbackRate) : (-defaultPlaybackSampleRate * playbackRate)
+        let timeInterval = direction == .forward ? (defaultPlaybackSampleRate * playbackRate) : (-defaultPlaybackSampleRate * playbackRate)
         
         let updatedDate = date.addingTimeInterval(timeInterval)
         
         // Check Current TimeStream for StarChart
-        TimeStream.Core.currentComposites
         let currentStarChart = StarChart.Core.current
         
         // Check StarChart Registry
         /// Create New StarChart
+        let newStarChart = StarChart(date: updatedDate)
         
         // Add New StarChart to TimeStream
+        StarChart.Core.current = newStarChart
+        
+        self.delegate?.didStep(direction)
     }
 
 }

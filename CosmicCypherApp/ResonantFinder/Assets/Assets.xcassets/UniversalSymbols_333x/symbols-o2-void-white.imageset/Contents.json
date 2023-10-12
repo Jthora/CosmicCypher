@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "symbols-o2-void-white.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

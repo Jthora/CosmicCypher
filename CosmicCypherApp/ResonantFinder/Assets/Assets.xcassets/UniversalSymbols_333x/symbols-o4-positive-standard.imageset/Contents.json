@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "symbols-o4-positive-standard.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "symbols-o1-water-white.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

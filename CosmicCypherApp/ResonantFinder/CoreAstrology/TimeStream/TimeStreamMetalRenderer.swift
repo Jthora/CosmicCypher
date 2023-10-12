@@ -18,8 +18,10 @@ extension TimeStream {
     public typealias MetalImageStrip = MTLTexture
     public typealias MetalImageStrips = [CoreAstrology.AspectBody.NodeType:MetalImageStrip]
     
+    // Renders the TimeStream graphically as a Spectrogram using a TimeStream FrameBuffer
     public class MetalRenderer: NSObject, MTKViewDelegate {
         
+        // MARK: Properties
         public var device: MTLDevice!
         public var commandQueue: MTLCommandQueue!
         public var pipelineState: MTLRenderPipelineState!
@@ -28,6 +30,7 @@ extension TimeStream {
         public var renderPassDescriptor: MTLRenderPassDescriptor!
         public var view: MTKView!
         
+        // MARK: Init
         public init(view: MTKView) {
             super.init()
             self.view = view
@@ -37,6 +40,7 @@ extension TimeStream {
             commandQueue = device.makeCommandQueue()
         }
         
+        // MARK: Setup
         public func setup() {
             
             createPipelineState()
@@ -46,10 +50,7 @@ extension TimeStream {
         
         public func createPipelineState() {
             // Create a Metal shader pipeline state
-            // Load and compile your vertex and fragment shaders here
-            // Create a pipeline descriptor and set shader functions
-            
-            if let pipelineState = timeStreamCompositePipeline(metalView: view, device: device) {
+            if let pipelineState = timeStreamRenderPipeline(metalView: view, device: device) {
                 self.pipelineState = pipelineState
                 return
             }
@@ -79,7 +80,8 @@ extension TimeStream {
         }
         
         // Pipeline from inline metal source code
-        func timeStreamCompositePipeline(metalView:MTKView, device:MTLDevice) -> MTLRenderPipelineState? {
+        func timeStreamRenderPipeline(metalView:MTKView, device:MTLDevice) -> MTLRenderPipelineState? {
+            /// Load and compile your vertex and fragment shaders here
             let vertexShaderFunction:MTLFunction
             let fragmentShaderFunction:MTLFunction
             do {
@@ -97,13 +99,9 @@ extension TimeStream {
                 print("error: \(error)")
                 return nil
             }
-//
-//            guard let fragmentShaderFunction = timeStreamCompositeShaderFunction(device: device) else {
-//                print("failure: timeStreamCompositeShaderFunction")
-//                return nil
-//            }
             
             // Create a Metal pipeline
+            /// Create a pipeline descriptor and set shader functions
             let pipelineDescriptor = MTLRenderPipelineDescriptor()
             pipelineDescriptor.vertexFunction = vertexShaderFunction
             pipelineDescriptor.fragmentFunction = fragmentShaderFunction
@@ -131,13 +129,12 @@ extension TimeStream {
         
         public func createFrameBuffer() {
             // Create a Metal texture as a frame buffer
-            // Configure its size and format
-            
-            // Example:
+            /// Define frameBuffer size and format
             let frameBufferDescriptor = MTLTextureDescriptor.texture2DDescriptor(pixelFormat: .bgra8Unorm,
                                                                                  width: Int(view.drawableSize.width),
                                                                                  height: Int(view.drawableSize.height),
                                                                                  mipmapped: false)
+            /// Use descriptor to make a frameBuffer
             frameBuffer = device.makeTexture(descriptor: frameBufferDescriptor)
         }
         
@@ -159,14 +156,14 @@ extension TimeStream {
                 return
             }
             
-            //renderEncoder.setRenderPipelineState(pipelineState)
+            if let pipelineState = self.pipelineState {
+                renderEncoder.setRenderPipelineState(pipelineState)
+            }
             
-            // Configure vertex and fragment buffers
             
             // Example: configure vertex and fragment buffers here
             
             // Issue drawing commands here
-            
             renderEncoder.endEncoding()
             if let drawable = view.currentDrawable {
                 commandBuffer.present(drawable)
@@ -190,3 +187,14 @@ extension TimeStream {
         }
     }
 }
+
+
+extension TimeStream.MetalRenderer {
+    enum RenderMode: Int, CaseIterable {
+        case timeStream
+        case composite
+        case starChartOnTimeStream
+        case starChartOnComposite
+    }
+}
+

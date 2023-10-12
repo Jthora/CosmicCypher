@@ -218,10 +218,14 @@ extension AspectEventScanViewController: AspectEventConsoleDelegate {
 
 extension AspectEventScanViewController: AspectEventScannerDelegate {
     
-    func scanUpdate(progress: Float, subProgress: Float) {
+    func scanUpdate(progress: Float?, subProgress: Float?) {
         DispatchQueue.main.async {
-            self.progressBar.progress = progress
-            self.subProgressBar.progress = subProgress
+            if let progress = progress {
+                self.progressBar.progress = progress
+            }
+            if let subProgress = subProgress {
+                self.subProgressBar.progress = subProgress
+            }
         }
     }
     

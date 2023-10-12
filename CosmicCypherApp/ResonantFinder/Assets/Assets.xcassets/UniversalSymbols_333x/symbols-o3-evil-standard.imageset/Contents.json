@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "symbols-o3-evil-standard.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

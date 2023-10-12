@@ -9,7 +9,7 @@ import Foundation
 import SwiftAA
 
 protocol AspectEventScannerDelegate {
-    func scanUpdate(progress:Float, subProgress:Float)
+    func scanUpdate(progress:Float?, subProgress:Float?)
     func scanError(error:AspectEventScanner.AspectScanError)
     func scanComplete(aspectsFound:[Date: [CoreAstrology.Aspect]])
 }
@@ -207,6 +207,9 @@ class AspectEventScanner {
             var currentDate = self.startDate
             var scanCount: Float = 0
             
+            var timeDelta: TimeInterval = Date().timeIntervalSinceReferenceDate
+            
+            
             // Scanning Loop
             while currentDate <= self.endDate {
                 // Number of Iterations
@@ -218,16 +221,19 @@ class AspectEventScanner {
                     AspectEventScanner.Core.console.scanning(scans: Int(scanCount),
                                            scrying: self.activelyScanningAspectEvents.count,
                                            discovered: self.lockedInAspects.count)
-                    self.delegate?.scanUpdate(progress: progress, subProgress: 0)
+                    self.delegate?.scanUpdate(progress: progress, subProgress: nil)
+                    //print("timeDelta: \(Date().timeIntervalSinceReferenceDate-timeDelta) (scanUpdate(progress:))")
                 }
                 
                 // Find Aspects within Orb
                 //print("finding aspects for types: \(aspectTypes.map({$0.hash}))")
                 let aspects = self.findAspectsWithinOrb(aspectTypes: aspectTypes, on: currentDate)
                 //print("found aspects: \(aspects.map({$0.hash}))")
+                //print("timeDelta: \(Date().timeIntervalSinceReferenceDate-timeDelta) (findAspectsWithinOrb)")
                 
                 // Calculate Aspects
                 self.calculate(aspects: aspects, on: currentDate)
+                //print("timeDelta: \(Date().timeIntervalSinceReferenceDate-timeDelta) (calculate(aspects:))")
 
                 // determine the next scan date
                 currentDate = Calendar.current.date(byAdding: .day, value: 1, to: currentDate)!
@@ -244,11 +250,22 @@ class AspectEventScanner {
     // Find Aspects for Date based on Types
     private func findAspectsWithinOrb(aspectTypes:[CoreAstrology.AspectType], on date:Date) -> [CoreAstrology.Aspect] {
         var aspects: [CoreAstrology.Aspect] = []
-        for aspectType in aspectTypes {
+        for (i,aspectType) in aspectTypes.enumerated() {
+            
+            // Report Progress Bar
+            DispatchQueue.main.async {
+                let subProgress:Float = Float(i) / Float(aspectTypes.count)
+                self.delegate?.scanUpdate(progress: nil, subProgress: subProgress)
+            }
+            
             //print("checking orb for: \(aspectType.hash)")
             guard let aspect = aspectType.aspect(for: date) else {continue}
             //print("found aspect within orb: \(aspect.hash)")
             aspects.append(aspect)
+        }
+        // Report Progress Bar
+        DispatchQueue.main.async {
+            self.delegate?.scanUpdate(progress: nil, subProgress: 0)
         }
         return aspects
     }
@@ -268,8 +285,15 @@ class AspectEventScanner {
         
         
         // Iterate through Aspects
-        for currentAspect in aspects {
+        let aspectsList = aspects.enumerated()
+        for (i, currentAspect) in aspectsList {
             //print("Iterating: \(currentAspect.hash)")
+            
+            // Report Progress Bar
+            DispatchQueue.main.async {
+                let subProgress:Float = Float(i) / Float(aspects.count)
+                self.delegate?.scanUpdate(progress: nil, subProgress: subProgress)
+            }
             
             // Symbol Hash
             let hash = currentAspect.hash
@@ -347,6 +371,11 @@ class AspectEventScanner {
                 //print("Clearing recently locked in aspect: \(key)")
                 recentlyLockedInAspectTypes.removeValue(forKey: key)
             }
+        }
+        
+        // Reset Progress Bar
+        DispatchQueue.main.async {
+            self.delegate?.scanUpdate(progress: nil, subProgress: 0)
         }
     }
 
@@ -450,7 +479,7 @@ extension AspectEventScanner {
 extension AspectEventScanner {
     // Deep Scanner
     func deepScan(aspect: CoreAstrology.Aspect, for estimatedDate: Date) -> Date {
-        print("deep scan")
+        //print("deep scan")
         // Calculate the exact date and time of the aspect
         let aspectDate = calculateAspectDateTime(estimatedDate: estimatedDate,
                                                  primaryObject: aspect.primaryBody,
@@ -479,7 +508,7 @@ extension AspectEventScanner {
         let targetAspectType = aspectRelation.type
         let targetAspectAngle = targetAspectType.degree.value
         let targetOrbThreshold = 0.01 // Set the target orb threshold to 0.01 degrees
-        print("DeepScan(\(p1Type.symbol)\(targetAspectType.symbol)\(p2Type.symbol))")
+        //print("DeepScan(\(p1Type.symbol)\(targetAspectType.symbol)\(p2Type.symbol))")
         
         // Calculate the TimeInterval for 24 hours
         let halfDay: TimeInterval = 12 * 60 * 60
@@ -487,6 +516,7 @@ extension AspectEventScanner {
         // Calculate the TimeInterval range for 24 hours before and after the estimatedDate
         let startTimeInterval = estimatedDate.timeIntervalSinceReferenceDate - halfDay
         let endTimeInterval = estimatedDate.timeIntervalSinceReferenceDate + halfDay
+        let totalTimeDelta = endTimeInterval - startTimeInterval
         
         var closestDate = estimatedDate
         var minDistance = Double.greatestFiniteMagnitude
@@ -496,7 +526,14 @@ extension AspectEventScanner {
         
         while upperBoundTimeInterval - lowerBoundTimeInterval >= 1.0 {
             
-            print("DeepScan(\(p1Type.symbol)\(targetAspectType.symbol)\(p2Type.symbol)): upper(\(Date(timeIntervalSinceReferenceDate: upperBoundTimeInterval))) lower(\(Date(timeIntervalSinceReferenceDate: lowerBoundTimeInterval)))")
+            // Report to Sub Progress Bar
+            DispatchQueue.main.async {
+                let d = (lowerBoundTimeInterval-upperBoundTimeInterval) / totalTimeDelta
+                let subProgress:Float = Float(1-d)
+                self.delegate?.scanUpdate(progress: nil, subProgress: subProgress)
+            }
+            
+            //print("DeepScan(\(p1Type.symbol)\(targetAspectType.symbol)\(p2Type.symbol)): upper(\(Date(timeIntervalSinceReferenceDate: upperBoundTimeInterval))) lower(\(Date(timeIntervalSinceReferenceDate: lowerBoundTimeInterval)))")
             // Perform a binary search to find the closest aspect date
             
             let midTimeInterval = (lowerBoundTimeInterval + upperBoundTimeInterval) / 2.0
@@ -508,23 +545,23 @@ extension AspectEventScanner {
                 break
             }
             
-            print("DeepScan(\(p1Type.symbol)\(targetAspectType.symbol)\(p2Type.symbol)): longitudeDifference(\(longitudeDifference))(\(targetAspectAngle))")
+            //print("DeepScan(\(p1Type.symbol)\(targetAspectType.symbol)\(p2Type.symbol)): longitudeDifference(\(longitudeDifference))(\(targetAspectAngle))")
             // Calculate the aspect angle between the two planetary bodies
             //.longitudeAngle(relativeTo: b2)
             
             // Calculate the difference between the aspect angle and the orb distance
             let distance = abs(longitudeDifference.value - targetAspectAngle)
-            print("DeepScan(\(p1Type.symbol)\(targetAspectType.symbol)\(p2Type.symbol)): distance(\(distance))")
+            //print("DeepScan(\(p1Type.symbol)\(targetAspectType.symbol)\(p2Type.symbol)): distance(\(distance))")
             
             if distance < minDistance {
-                print("DeepScan(\(p1Type.symbol)\(targetAspectType.symbol)\(p2Type.symbol)): closing in (\(minDistance) -> \(distance))")
+                //print("DeepScan(\(p1Type.symbol)\(targetAspectType.symbol)\(p2Type.symbol)): closing in (\(minDistance) -> \(distance))")
                 minDistance = distance
                 closestDate = midDate
             }
             
             // Check if the aspect angle is within the target orb threshold
             if distance < targetOrbThreshold {
-                print("DeepScan(\(p1Type.symbol)\(targetAspectType.symbol)\(p2Type.symbol)): targetOrbThreshold (\(distance) < \(targetOrbThreshold))")
+                //print("DeepScan(\(p1Type.symbol)\(targetAspectType.symbol)\(p2Type.symbol)): targetOrbThreshold (\(distance) < \(targetOrbThreshold))")
                 // If it is, we found an aspect within the desired orb, so we can exit the loop early
                 break
             }
@@ -548,15 +585,21 @@ extension AspectEventScanner {
             // Instead, just make the deep scanner smart
             
             if longitudeDifference.value < targetAspectAngle {
-                print("DeepScan(\(p1Type.symbol)\(targetAspectType.symbol)\(p2Type.symbol)): moving lower bounds up")
+                //print("DeepScan(\(p1Type.symbol)\(targetAspectType.symbol)\(p2Type.symbol)): moving lower bounds up")
                 lowerBoundTimeInterval = midTimeInterval
             } else {
-                print("DeepScan(\(p1Type.symbol)\(targetAspectType.symbol)\(p2Type.symbol)): moving upper bounds down")
+                //print("DeepScan(\(p1Type.symbol)\(targetAspectType.symbol)\(p2Type.symbol)): moving upper bounds down")
                 upperBoundTimeInterval = midTimeInterval
             }
         }
         
-        print("DeepScan(\(p1Type.symbol)\(targetAspectType.symbol)\(p2Type.symbol)): \(estimatedDate) -> \(closestDate)")
+        // Report Progress Bar
+        DispatchQueue.main.async {
+            self.delegate?.scanUpdate(progress: nil, subProgress: 0)
+        }
+        
+        //print("DeepScan(\(p1Type.symbol)\(targetAspectType.symbol)\(p2Type.symbol)): \(estimatedDate) -> \(closestDate)")
         return closestDate
     }
 }
+

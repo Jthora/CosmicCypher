@@ -137,6 +137,8 @@
 		FA35C0ED284A7195006114AB /* TimeStreamImageMapRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C0EC284A7195006114AB /* TimeStreamImageMapRegistry.swift */; };
 		FA3A38C82ACCFF1A008907F2 /* TimeStreamSpectrogramShader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A38C72ACCFF1A008907F2 /* TimeStreamSpectrogramShader.swift */; };
 		FA3A38CA2ACE4AC9008907F2 /* MTLTexture+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A38C92ACE4AC9008907F2 /* MTLTexture+Extensions.swift */; };
+		FA3A38CC2AD698CA008907F2 /* EnergyLevelDetailsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA3A38CB2AD698CA008907F2 /* EnergyLevelDetailsViewController.storyboard */; };
+		FA3A38CF2AD698E8008907F2 /* EnergyLevelDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A38CE2AD698E8008907F2 /* EnergyLevelDetailsViewController.swift */; };
 		FA4D1B8A2561FBFE0043DE9F /* TimeStreamDisplayScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D1B892561FBFE0043DE9F /* TimeStreamDisplayScreen.swift */; };
 		FA4D1B8F2561FCA00043DE9F /* ControlsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D1B8E2561FCA00043DE9F /* ControlsScreen.swift */; };
 		FA4D1B942561FDA00043DE9F /* ArkanaNaturaDisplayScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D1B932561FDA00043DE9F /* ArkanaNaturaDisplayScreen.swift */; };
@@ -416,6 +418,8 @@
 		FA35C0EC284A7195006114AB /* TimeStreamImageMapRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamImageMapRegistry.swift; sourceTree = "<group>"; };
 		FA3A38C72ACCFF1A008907F2 /* TimeStreamSpectrogramShader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamSpectrogramShader.swift; sourceTree = "<group>"; };
 		FA3A38C92ACE4AC9008907F2 /* MTLTexture+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MTLTexture+Extensions.swift"; sourceTree = "<group>"; };
+		FA3A38CB2AD698CA008907F2 /* EnergyLevelDetailsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EnergyLevelDetailsViewController.storyboard; sourceTree = "<group>"; };
+		FA3A38CE2AD698E8008907F2 /* EnergyLevelDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyLevelDetailsViewController.swift; sourceTree = "<group>"; };
 		FA4D1B892561FBFE0043DE9F /* TimeStreamDisplayScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamDisplayScreen.swift; sourceTree = "<group>"; };
 		FA4D1B8E2561FCA00043DE9F /* ControlsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsScreen.swift; sourceTree = "<group>"; };
 		FA4D1B932561FDA00043DE9F /* ArkanaNaturaDisplayScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArkanaNaturaDisplayScreen.swift; sourceTree = "<group>"; };
@@ -1043,6 +1047,14 @@
 			path = Geometry;
 			sourceTree = "<group>";
 		};
+		FA3A38CD2AD698D5008907F2 /* EnergyLevels */ = {
+			isa = PBXGroup;
+			children = (
+				FA3A38CE2AD698E8008907F2 /* EnergyLevelDetailsViewController.swift */,
+			);
+			path = EnergyLevels;
+			sourceTree = "<group>";
+		};
 		FA4D1B872561FB090043DE9F /* v3 Screens */ = {
 			isa = PBXGroup;
 			children = (
@@ -1205,6 +1217,7 @@
 		FAFB68A72AB8394200FEBDF4 /* v5 Screens */ = {
 			isa = PBXGroup;
 			children = (
+				FA3A38CD2AD698D5008907F2 /* EnergyLevels */,
 				FAD6D6702AC2E4B9006264C8 /* CreateTimeStreamComposite */,
 				FAB068F02ABA1AAC00334B1A /* About */,
 				FAFB68A82AB8395300FEBDF4 /* TimeStreamInterface */,
@@ -1229,6 +1242,7 @@
 				FAFB68AC2AB9308700FEBDF4 /* TimeStreamInterface.storyboard */,
 				FAB068F32ABA1AE700334B1A /* AboutPage.storyboard */,
 				FAD6D67B2AC2E646006264C8 /* CreateTimeStreamComposite.storyboard */,
+				FA3A38CB2AD698CA008907F2 /* EnergyLevelDetailsViewController.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -1351,6 +1365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAB069132ABDBD7E00334B1A /* Shaders.metal in Resources */,
+				FA3A38CC2AD698CA008907F2 /* EnergyLevelDetailsViewController.storyboard in Resources */,
 				FAFE792E2A6AD87200C56612 /* AspectEventScan.storyboard in Resources */,
 				FA07C9BA254019DB00683486 /* LaunchScreen.storyboard in Resources */,
 				FA07C9B7254019DB00683486 /* Assets.xcassets in Resources */,
@@ -1544,6 +1559,7 @@
 				FA07CA2225401EBB00683486 /* SelectDateViewController.swift in Sources */,
 				FAEAFEB62848423B001AEAE0 /* TimeStreamAddTableViewCell.swift in Sources */,
 				FAB1311F2874A328000AD7B9 /* AstrologicalNodeStateArchive.swift in Sources */,
+				FA3A38CF2AD698E8008907F2 /* EnergyLevelDetailsViewController.swift in Sources */,
 				FA35C0BE28497879006114AB /* CosmicAlignment.swift in Sources */,
 				FA07CA3A25401EBC00683486 /* FindLocationViewController.swift in Sources */,
 				FAEAFEB828489FE9001AEAE0 /* TimeStreamSettingsViewController.swift in Sources */,

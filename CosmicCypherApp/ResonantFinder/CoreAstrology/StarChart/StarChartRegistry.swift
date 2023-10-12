@@ -57,11 +57,11 @@ open class StarChartRegistry {
             onComplete?(starChart)
             return starChart
         }
-        if let starChart = StarChartArchive.main.fetch(date: date, geographicCoordinates: geographicCoordinates) {
+        if let fetchedStarChart = StarChartArchive.main.fetch(date: date, geographicCoordinates: geographicCoordinates) {
             //print("loaded starchart from archive [\(timestamp.timeIntervalSinceNow)]")
-            cache[hashKey] = starChart
-            onComplete?(starChart)
-            return starChart
+            cache[hashKey] = fetchedStarChart
+            onComplete?(fetchedStarChart)
+            return fetchedStarChart
         }
         //print("generating new starchart [\(timestamp.timeIntervalSinceNow)]")
         let starChart = StarChart(date: date, coordinates: geographicCoordinates, celestialOffset: .galacticCenter) // Duh, Galactic Center.

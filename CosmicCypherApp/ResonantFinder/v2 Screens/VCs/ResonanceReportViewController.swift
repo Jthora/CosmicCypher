@@ -211,8 +211,7 @@ class ResonanceReportViewController: UIViewController {
         TimeStream.Core.add(reactive: self)
         StarChart.Core.add(reactive: self)
         
-        setup()
-        
+        startup()
     }
     
     // View Will Appear
@@ -225,6 +224,11 @@ class ResonanceReportViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         animateBarLabels()
         update()
+    }
+    
+    // MARK: Startup
+    func startup() {
+        setup()
     }
     
     

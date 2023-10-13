@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -138,6 +139,24 @@
                                             <action selector="exportButtonTap:" destination="ey3-n6-spn" eventType="touchUpInside" id="R6t-9b-ehR"/>
                                         </connections>
                                     </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yIT-Gu-pUb">
+                                        <rect key="frame" x="8" y="7.9999999999999982" width="139.66666666666666" height="19.333333333333329"/>
+                                        <color key="backgroundColor" systemColor="separatorColor"/>
+                                        <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="18"/>
+                                        <menu key="menu" id="zzF-RM-i7X">
+                                            <menuOptions key="menuOptions" singleSelection="YES"/>
+                                            <children>
+                                                <command title="Gravimetrics" discoverabilityTitle="Global/Stellar Net Energy by Gravity" menuElementState="on" id="ipR-V2-wgQ"/>
+                                                <command title="Luminocity" discoverabilityTitle="Planetary brightness in the night sky" id="2sU-zi-fkg"/>
+                                                <command title="Exa/Deb" discoverabilityTitle="Planetary apogee and perigee" id="pkO-jr-YAA"/>
+                                                <command title="Rise/Fall" id="fDu-yh-U1c"/>
+                                            </children>
+                                        </menu>
+                                        <state key="normal" image="chart.line.uptrend.xyaxis.circle.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="chartModeSelectTouch:" destination="ey3-n6-spn" eventType="touchUpInside" id="0Hv-23-tgQ"/>
+                                        </connections>
+                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XED-g2-31K">
                                         <rect key="frame" x="4" y="-10" width="57" height="10"/>
                                         <color key="backgroundColor" systemColor="separatorColor"/>
@@ -176,6 +195,8 @@
                                     <constraint firstAttribute="trailing" secondItem="JIe-oc-IxP" secondAttribute="trailing" id="SgK-Ya-KQc"/>
                                     <constraint firstAttribute="trailing" secondItem="cQ6-L6-6g6" secondAttribute="trailing" constant="8" id="W6O-ZX-gr4"/>
                                     <constraint firstItem="qSc-6Y-o3q" firstAttribute="leading" secondItem="UUL-e3-FOc" secondAttribute="leading" constant="8" id="Zd1-ai-8vg"/>
+                                    <constraint firstItem="yIT-Gu-pUb" firstAttribute="leading" secondItem="UUL-e3-FOc" secondAttribute="leading" constant="8" id="aWC-9Y-Zk8"/>
+                                    <constraint firstItem="yIT-Gu-pUb" firstAttribute="top" secondItem="UUL-e3-FOc" secondAttribute="top" constant="8" id="gEL-YW-JS9"/>
                                     <constraint firstItem="JIe-oc-IxP" firstAttribute="top" secondItem="bBH-28-Y9D" secondAttribute="bottom" id="nn8-aH-z8H"/>
                                     <constraint firstAttribute="bottom" secondItem="W7n-l4-6zH" secondAttribute="bottom" id="r81-J6-Inu"/>
                                     <constraint firstItem="gPh-V3-HNp" firstAttribute="leading" secondItem="ai4-JX-ZAu" secondAttribute="trailing" constant="8" id="s8E-Za-uIe"/>
@@ -201,6 +222,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="chartModeSelectMenu" destination="zzF-RM-i7X" id="zA5-1D-Vde"/>
+                        <outlet property="chartModeSelectPopUpButton" destination="yIT-Gu-pUb" id="fLv-mk-OVL"/>
                         <outlet property="chartSuperView" destination="JIe-oc-IxP" id="k5v-Nf-5z8"/>
                         <outlet property="fastBackwardButton" destination="FHF-Le-D91" id="5r9-lv-kwJ"/>
                         <outlet property="fastForwardButton" destination="cnv-Bs-FXz" id="TKk-HH-soJ"/>
@@ -227,6 +250,7 @@
         <image name="backward.fill" catalog="system" width="128" height="77"/>
         <image name="backward.frame.fill" catalog="system" width="128" height="91"/>
         <image name="barcode" catalog="system" width="128" height="94"/>
+        <image name="chart.line.uptrend.xyaxis.circle.fill" catalog="system" width="128" height="123"/>
         <image name="chart.xyaxis.line" catalog="system" width="128" height="102"/>
         <image name="forward.fill" catalog="system" width="128" height="77"/>
         <image name="forward.frame.fill" catalog="system" width="128" height="91"/>

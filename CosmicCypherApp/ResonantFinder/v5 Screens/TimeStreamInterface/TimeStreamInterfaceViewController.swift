@@ -28,6 +28,10 @@ class TimeStreamInterfaceViewController: UIViewController {
     // View Switch (Spectrograph to Chart)
     @IBOutlet weak var viewSwitchControl: UISegmentedControl!
     
+    // Chart Mode Select Button
+    @IBOutlet weak var chartModeSelectPopUpButton: UIButton!
+    @IBOutlet weak var chartModeSelectMenu: UIMenu!
+    
     
     // Charts Container View
     @IBOutlet weak var chartSuperView: UIView!
@@ -90,12 +94,12 @@ class TimeStreamInterfaceViewController: UIViewController {
     
     // Setup Buttons
     func setupButtons() {
-        
         // drop down for Chart Data Mode Select
         let menu = UIMenu(children: [
-            UIAction(title: "Global Net Energy [Grav]", handler:showGravimetricsClosure),
+            UIAction(title: "Global Net Energy [Gravimetrics]", handler:showGravimetricsClosure),
             UIAction(title: "Exa/Deb Chart", handler:showExaDebClosure),
             UIAction(title: "Rise/Fall Chart", handler:showRiseFallClosure)])
+        chartModeSelectPopUpButton.menu = menu
     }
     
     func setupSpectrogram() {
@@ -174,14 +178,18 @@ class TimeStreamInterfaceViewController: UIViewController {
     // MARK: View Switch
     @IBAction func viewSwitchControlChanged(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
-        case 0: // Chart
+        case 0: // Chart - line chart
             chartSuperView.isHidden = false
+            chartModeSelectPopUpButton.isHidden = false
+            
             timeStreamSpectrogramView.isHidden = true
             spectrographSettingsButton.isHidden = true
             spectrographPresetsButton.isHidden = true
             spectrographExportButton.isHidden = true
-        case 1: // Graph
+        case 1: // Graph - spectrogram
             chartSuperView.isHidden = true
+            chartModeSelectPopUpButton.isHidden = true
+            
             timeStreamSpectrogramView.isHidden = false
             spectrographSettingsButton.isHidden = false
             spectrographPresetsButton.isHidden = false
@@ -220,6 +228,10 @@ class TimeStreamInterfaceViewController: UIViewController {
     }
     
     
+    // MARK: Chart Mode Select
+    @IBAction func chartModeSelectTouch(_ sender: UIButton) {
+        //chartModeSelectMenu.selectedElements
+    }
     
     
     

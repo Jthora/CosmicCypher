@@ -15,8 +15,12 @@ protocol StarChartRealTimePlaybackControllerDelegate {
 class StarChartRealTimePlaybackController {
     
     let defaultPlaybackSampleRate:TimeInterval = 1
-    let defaultSpeed:PlaybackMode = .pause
+    var speed:TimeInterval = 1
+    let defaultMode:PlaybackMode = .pause
     var mode:PlaybackMode = .pause
+    
+    var sampleStep:SampleStep = .seconds
+    var sampleRate:SampleRate = .onePerSecond
     
     var date:Date = Date()
     
@@ -31,7 +35,6 @@ class StarChartRealTimePlaybackController {
         case step(_ direction:DirectionSetting)
         case play(_ direction:DirectionSetting)
         case fast(_ direction:DirectionSetting)
-        
     }
     
     // Direction Setting
@@ -47,6 +50,44 @@ class StarChartRealTimePlaybackController {
         case fast(_ direction:DirectionSetting)
     }
     
+    enum SampleStep:Int, CaseIterable {
+        case seconds
+        case minutes
+        case hours
+        case days
+        case weeks
+        case months
+        case years
+        
+        var timeInterval:TimeInterval {
+            switch self {
+            case .seconds: return 1
+            case .minutes: return 60
+            case .hours: return 3600
+            case .days: return 86400 // 1 day = 24 hours * 60 minutes * 60 seconds
+            case .weeks: return 604800 // 1 week = 7 days * 24 hours * 60 minutes * 60 seconds
+            case .months: return 2628000 // An approximate value for 1 month (30.44 days on average) * 24 hours * 60 minutes * 60 seconds
+            case .years: return 31536000 // 1 year = 365 days * 24 hours * 60 minutes * 60 seconds
+            }
+        }
+    }
+    
+    enum SampleRate:Int, CaseIterable {
+        case onePerSecond
+        case twoPerSecond
+        case fivePerSecond
+        case tenPerSecond
+        
+        var multiplyer:Double {
+            switch self {
+            case .onePerSecond: return 1
+            case .twoPerSecond: return 0.5
+            case .fivePerSecond: return 0.2
+            case .tenPerSecond: return 0.1
+            }
+        }
+    }
+    
     enum ScrubberState {
         case set
         case moving
@@ -57,21 +98,36 @@ class StarChartRealTimePlaybackController {
         case .pause:
             mode = .pause
         case .step(let direction):
-            mode = .pause
             step(direction)
         case .play(let direction):
             mode = .play(direction)
         case .fast(let direction):
             mode = .fast(direction)
         }
+        handlePlayback()
+    }
+    
+    func set(speed:TimeInterval) {
+        
     }
     
     
     // MARK: Playback
+    // Pause
+    func pause() {
+        command(.pause)
+    }
     
+    // Play
+    func play(_ direction:DirectionSetting) {
+        command(.play(direction))
+    }
+    
+    // Step
     func step(_ direction:DirectionSetting, by timeInterval:TimeInterval? = nil) {
-        let timeInterval = timeInterval ?? defaultPlaybackSampleRate
+        let timeInterval = timeInterval ?? speed
         guard timeInterval != 0 else {return}
+        command(.step(direction))
         print("step")
     }
     
@@ -106,6 +162,7 @@ class StarChartRealTimePlaybackController {
         }
     }
     
+    // Update StarChart Date
     private func updateStarChartDate(direction: DirectionSetting, fast: Bool) {
         
         let playbackRate = fast ? 2.0 : 1.0

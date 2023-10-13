@@ -164,6 +164,8 @@
 		FA6101E32870B0F10000D4D5 /* TimeStreamChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6101E22870B0F10000D4D5 /* TimeStreamChartTableViewCell.swift */; };
 		FA6101E52870C4C00000D4D5 /* TimeStreamPresetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6101E42870C4C00000D4D5 /* TimeStreamPresetTableViewCell.swift */; };
 		FA6101E72870C8800000D4D5 /* TimeStreamPresets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6101E62870C8800000D4D5 /* TimeStreamPresets.swift */; };
+		FAA536AB2AD84BD2005A360D /* SpectrographSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA536AA2AD84BD2005A360D /* SpectrographSettings.storyboard */; };
+		FAA536AD2AD84BEE005A360D /* SpectrographSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA536AC2AD84BEE005A360D /* SpectrographSettingsViewController.swift */; };
 		FAB068EF2AB9702100334B1A /* TimeStreamCoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB068EE2AB9702100334B1A /* TimeStreamCoreController.swift */; };
 		FAB068F22ABA1ABE00334B1A /* AboutPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB068F12ABA1ABE00334B1A /* AboutPageViewController.swift */; };
 		FAB068F42ABA1AE700334B1A /* AboutPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB068F32ABA1AE700334B1A /* AboutPage.storyboard */; };
@@ -447,6 +449,8 @@
 		FA6101E42870C4C00000D4D5 /* TimeStreamPresetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamPresetTableViewCell.swift; sourceTree = "<group>"; };
 		FA6101E62870C8800000D4D5 /* TimeStreamPresets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamPresets.swift; sourceTree = "<group>"; };
 		FA82199E27EC2E764D44C775 /* Pods-ResonantFinder-ResonantFinderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ResonantFinder-ResonantFinderUITests.debug.xcconfig"; path = "Target Support Files/Pods-ResonantFinder-ResonantFinderUITests/Pods-ResonantFinder-ResonantFinderUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		FAA536AA2AD84BD2005A360D /* SpectrographSettings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SpectrographSettings.storyboard; sourceTree = "<group>"; };
+		FAA536AC2AD84BEE005A360D /* SpectrographSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectrographSettingsViewController.swift; sourceTree = "<group>"; };
 		FAB068EE2AB9702100334B1A /* TimeStreamCoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamCoreController.swift; sourceTree = "<group>"; };
 		FAB068F12ABA1ABE00334B1A /* AboutPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPageViewController.swift; sourceTree = "<group>"; };
 		FAB068F32ABA1AE700334B1A /* AboutPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutPage.storyboard; sourceTree = "<group>"; };
@@ -1232,6 +1236,7 @@
 			children = (
 				FAFB68B32AB93C9400FEBDF4 /* TimeStreamInterfaceViewController.swift */,
 				FAFB68A92AB8398000FEBDF4 /* TimeStreamInterfaceContainerView.swift */,
+				FAA536AC2AD84BEE005A360D /* SpectrographSettingsViewController.swift */,
 			);
 			path = TimeStreamInterface;
 			sourceTree = "<group>";
@@ -1243,6 +1248,7 @@
 				FAB068F32ABA1AE700334B1A /* AboutPage.storyboard */,
 				FAD6D67B2AC2E646006264C8 /* CreateTimeStreamComposite.storyboard */,
 				FA3A38CB2AD698CA008907F2 /* EnergyLevelDetailsViewController.storyboard */,
+				FAA536AA2AD84BD2005A360D /* SpectrographSettings.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -1386,6 +1392,7 @@
 				FAEAFEBD284927BB001AEAE0 /* v4.storyboard in Resources */,
 				FA6101D7286D78580000D4D5 /* TimeStreamSelect.storyboard in Resources */,
 				FA07CA1F25401EBB00683486 /* NaturaDisk.sks in Resources */,
+				FAA536AB2AD84BD2005A360D /* SpectrographSettings.storyboard in Resources */,
 				FA5CF17C2A765666006CBEB5 /* AspectEventExport.storyboard in Resources */,
 				FA07CA2725401EBB00683486 /* Main.storyboard in Resources */,
 				FAB131222878AD25000AD7B9 /* Iceberg-Regular.ttf in Resources */,
@@ -1693,6 +1700,7 @@
 				FAEB27A1284E5831009994B8 /* TimeStreamArchive.swift in Sources */,
 				FAEB27C628523730009994B8 /* CoreData+Extensions.swift in Sources */,
 				FA6101DF286F9F1F0000D4D5 /* TimeStreamCompositeNotchSpriteNode.swift in Sources */,
+				FAA536AD2AD84BEE005A360D /* SpectrographSettingsViewController.swift in Sources */,
 				FA07CA4925401EBC00683486 /* Dictionary+Extension.swift in Sources */,
 				FA35C0B02849783A006114AB /* PlanetState.swift in Sources */,
 				FA6101D9286E3C9D0000D4D5 /* TimeStreamManualSelectViewController.swift in Sources */,

@@ -34,36 +34,57 @@
                                         <rect key="frame" x="386" y="4" width="42" height="34"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" image="pause.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="pauseButtonTouch:" destination="ey3-n6-spn" eventType="touchUpInside" id="D8x-f3-77k"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4m-2e-1o0">
                                         <rect key="frame" x="436" y="4" width="52" height="34"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" image="forward.frame.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="stepForwardButtonTouch:" destination="ey3-n6-spn" eventType="touchUpInside" id="egq-F6-eQX"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezj-2e-M17">
                                         <rect key="frame" x="496" y="4" width="46" height="34"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" image="arrowtriangle.forward.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="playForwardButtonTouch:" destination="ey3-n6-spn" eventType="touchUpInside" id="tWw-9u-pr7"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cnv-Bs-FXz">
                                         <rect key="frame" x="550" y="4" width="56" height="34"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" image="forward.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="fastForwardButtonTouch:" destination="ey3-n6-spn" eventType="touchUpInside" id="68E-WT-mmr"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NCG-R2-jO9">
                                         <rect key="frame" x="326" y="4" width="52" height="34"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" image="backward.frame.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="stepBackwardTouch:" destination="ey3-n6-spn" eventType="touchUpInside" id="z9N-1j-MLi"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBT-zE-Hvb">
                                         <rect key="frame" x="272" y="4" width="46" height="34"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" image="arrowtriangle.backward.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="playBackwardButtonTouch:" destination="ey3-n6-spn" eventType="touchUpInside" id="aTT-6x-ZTB"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHF-Le-D91">
                                         <rect key="frame" x="208" y="4" width="56" height="34"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" image="backward.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="fastBackwardButtonTouch:" destination="ey3-n6-spn" eventType="touchUpInside" id="7MS-tO-nAf"/>
+                                        </connections>
                                     </button>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="p1H-YL-qm6">
                                         <rect key="frame" x="0.0" y="46" width="814" height="4"/>

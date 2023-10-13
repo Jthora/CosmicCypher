@@ -10,7 +10,7 @@ import UIKit
 
 class TimeStreamInterfaceViewController: UIViewController {
     
-    
+    //MARK: Storyboard IBOutlets
     // Playback Buttons
     @IBOutlet weak var pauseButton: UIButton!
     @IBOutlet weak var skipForwardButton: UIButton!
@@ -49,8 +49,16 @@ class TimeStreamInterfaceViewController: UIViewController {
     // Console
     @IBOutlet weak var timeStreamConsoleTextView: UITextView!
     
+    // MARK: Properties
+    // StarChart RealTime Playback Controller
+    lazy var playbackController = {
+        var controller = StarChartRealTimePlaybackController()
+        controller.date = StarChart.Core.current.date
+        controller.mode = .pause
+        return controller
+    }()
     
-    
+    // MARK: Static
     // Global Instance
     static var global:TimeStreamInterfaceViewController? = {
         guard let viewController = UIStoryboard(name: "TimeStreamInterface", bundle: nil).instantiateViewController(withIdentifier: "TimeStreamInterfaceViewController") as? TimeStreamInterfaceViewController else {
@@ -177,5 +185,38 @@ class TimeStreamInterfaceViewController: UIViewController {
     @IBAction func settingsButtonTap(_ sender: UIButton) {
         TimeStreamSelectViewController.present()
     }
+    
+    @IBAction func pauseButtonTouch(_ sender: UIButton) {
+        playbackController.pause()
+    }
+    
+    
+    @IBAction func stepForwardButtonTouch(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func stepBackwardTouch(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func playForwardButtonTouch(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func playBackwardButtonTouch(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func fastForwardButtonTouch(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func fastBackwardButtonTouch(_ sender: UIButton) {
+    }
+    
+    
+    
+    
+    
     
 }

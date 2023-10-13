@@ -20,34 +20,20 @@ class TimeStreamInterfaceViewController: UIViewController {
     @IBOutlet weak var fastForwardButton: UIButton!
     @IBOutlet weak var fastBackwardButton: UIButton!
     
-    // TimeStream Labels
-    @IBOutlet weak var timeStreamNameLabel: UILabel!
-    @IBOutlet weak var timeStreamDateRangeLabel: UILabel!
-    @IBOutlet weak var timeStreamGeoLocationLabel: UILabel!
+    // Spectrograph Buttons
+    @IBOutlet weak var spectrographSettingsButton: UIButton!
+    @IBOutlet weak var spectrographPresetsButton: UIButton!
+    @IBOutlet weak var spectrographExportButton: UIButton!
     
-    // Settings Button
-    @IBOutlet weak var timeStreamSettingsButton: UIButton!
+    // View Switch (Spectrograph to Chart)
+    @IBOutlet weak var viewSwitchControl: UISegmentedControl!
     
-    // Graph Drop Down Selector Control
-    @IBOutlet weak var timeStreamGraphControl: UIButton!
-    
-    // TimeStream Loading Progress
-    @IBOutlet weak var timeStreamProgressBar: UIProgressView!
-    
-    // TimeStream Data Scrubber
-    @IBOutlet weak var timeStreamHorizontalSlider: UISlider!
-    
-    // ImageMap View
-    @IBOutlet weak var imageMapView: UIImageView!
     
     // Charts Container View
     @IBOutlet weak var chartSuperView: UIView!
     
     // TimeStream Spectrogram
     @IBOutlet weak var timeStreamSpectrogramView: TimeStreamSpectrogramView!
-    
-    // Console
-    @IBOutlet weak var timeStreamConsoleTextView: UITextView!
     
     // MARK: Properties
     // StarChart RealTime Playback Controller
@@ -93,7 +79,6 @@ class TimeStreamInterfaceViewController: UIViewController {
     // Setup
     private func setup() {
         setupButtons()
-        setupConsole()
         setupSpectrogram()
     }
     
@@ -101,21 +86,13 @@ class TimeStreamInterfaceViewController: UIViewController {
         guard let composite = TimeStream.Core.currentComposites.first else {
             return
         }
-        timeStreamNameLabel.text = "\(composite.name ?? "[TimeStream Name]")"
-        timeStreamDateRangeLabel.text = "\(composite.startDate?.formatted(date: .numeric, time: .omitted) ?? "[Date]") to \(composite.endDate?.formatted(date: .numeric, time: .omitted) ?? "[Date]")"
-        timeStreamGeoLocationLabel.text = "\(composite.configuration.timeStreams.first?.path.points.first?.coordinates.labelText ?? "[Geo Coordinates]")"
-    }
-    
-    // Setup
-    func setupConsole() {
-        let consoleText = "TimeStream Console"
-        timeStreamConsoleTextView.text = consoleText
     }
     
     // Setup Buttons
     func setupButtons() {
-        timeStreamGraphControl.menu = UIMenu(children: [ // displayOptionButton.menu
-            UIAction(title: "Harmonics Spectrograph", state: .on, handler:showHarmonicsClosure),
+        
+        // drop down for Chart Data Mode Select
+        let menu = UIMenu(children: [
             UIAction(title: "Global Net Energy [Grav]", handler:showGravimetricsClosure),
             UIAction(title: "Exa/Deb Chart", handler:showExaDebClosure),
             UIAction(title: "Rise/Fall Chart", handler:showRiseFallClosure)])
@@ -181,37 +158,65 @@ class TimeStreamInterfaceViewController: UIViewController {
     }
     
     // MARK: Settings
-    // Settings Button
+    // Settings
     @IBAction func settingsButtonTap(_ sender: UIButton) {
+        SpectrographSettingsViewController.present()
+    }
+    // Presets
+    @IBAction func presetsButtonTap(_ sender: UIButton) {
         TimeStreamSelectViewController.present()
     }
+    // Export
+    @IBAction func exportButtonTap(_ sender: UIButton) {
+        
+    }
     
+    // MARK: View Switch
+    @IBAction func viewSwitchControlChanged(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0: // Chart
+            chartSuperView.isHidden = false
+            timeStreamSpectrogramView.isHidden = true
+            spectrographSettingsButton.isHidden = true
+            spectrographPresetsButton.isHidden = true
+            spectrographExportButton.isHidden = true
+        case 1: // Graph
+            chartSuperView.isHidden = true
+            timeStreamSpectrogramView.isHidden = false
+            spectrographSettingsButton.isHidden = false
+            spectrographPresetsButton.isHidden = false
+            spectrographExportButton.isHidden = false
+        default: ()
+        }
+    }
+    
+    // MARK: Playback Controls
     @IBAction func pauseButtonTouch(_ sender: UIButton) {
         playbackController.pause()
     }
     
-    
     @IBAction func stepForwardButtonTouch(_ sender: UIButton) {
+        playbackController.step(.forward)
     }
-    
     
     @IBAction func stepBackwardTouch(_ sender: UIButton) {
+        playbackController.step(.backward)
     }
-    
     
     @IBAction func playForwardButtonTouch(_ sender: UIButton) {
+        playbackController.play(.forward)
     }
-    
     
     @IBAction func playBackwardButtonTouch(_ sender: UIButton) {
+        playbackController.play(.backward)
     }
-    
     
     @IBAction func fastForwardButtonTouch(_ sender: UIButton) {
+        playbackController.fast(.forward)
     }
     
-    
     @IBAction func fastBackwardButtonTouch(_ sender: UIButton) {
+        playbackController.fast(.backward)
     }
     
     

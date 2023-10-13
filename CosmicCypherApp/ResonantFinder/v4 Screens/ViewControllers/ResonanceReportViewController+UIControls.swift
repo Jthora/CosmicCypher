@@ -22,10 +22,6 @@ extension ResonanceReportViewController {
                         self.planetSelectButton.alpha = 0
                         self.settingsButton.alpha = 0
                         self.shareButton.alpha = 0
-                        self.textViewSelectedAspectSymbols.alpha = 0
-                        self.textViewArchiveStatistics.alpha = 0
-                        self.textViewAspectEventScannerConsole.alpha = 0
-                        self.textViewSelectedPlanetNodeSymbols.alpha = 0
                     }
                 } else {
                     UIView.animate(withDuration: 0.5) {
@@ -35,10 +31,6 @@ extension ResonanceReportViewController {
                         self.planetSelectButton.alpha = 1
                         self.settingsButton.alpha = 1
                         self.shareButton.alpha = 1
-                        self.textViewSelectedAspectSymbols.alpha = 1
-                        self.textViewArchiveStatistics.alpha = 1
-                        self.textViewAspectEventScannerConsole.alpha = 1
-                        self.textViewSelectedPlanetNodeSymbols.alpha = 1
                     }
                 }
             } else {
@@ -49,10 +41,6 @@ extension ResonanceReportViewController {
                     self.planetSelectButton.alpha = 0
                     self.settingsButton.alpha = 0
                     self.shareButton.alpha = 0
-                    self.textViewSelectedAspectSymbols.alpha = 0
-                    self.textViewArchiveStatistics.alpha = 0
-                    self.textViewAspectEventScannerConsole.alpha = 0
-                    self.textViewSelectedPlanetNodeSymbols.alpha = 0
                 } else {
                     self.dateTimeCoordsLabel.alpha = 1
                     self.geoLocationButton.alpha = 1
@@ -60,10 +48,6 @@ extension ResonanceReportViewController {
                     self.planetSelectButton.alpha = 1
                     self.settingsButton.alpha = 1
                     self.shareButton.alpha = 1
-                    self.textViewSelectedAspectSymbols.alpha = 1
-                    self.textViewArchiveStatistics.alpha = 1
-                    self.textViewAspectEventScannerConsole.alpha = 1
-                    self.textViewSelectedPlanetNodeSymbols.alpha = 1
                 }
             }
         }

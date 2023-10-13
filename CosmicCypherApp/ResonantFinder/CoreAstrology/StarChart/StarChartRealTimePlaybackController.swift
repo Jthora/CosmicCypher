@@ -118,17 +118,22 @@ class StarChartRealTimePlaybackController {
         command(.pause)
     }
     
-    // Play
-    func play(_ direction:DirectionSetting) {
-        command(.play(direction))
-    }
-    
     // Step
     func step(_ direction:DirectionSetting, by timeInterval:TimeInterval? = nil) {
         let timeInterval = timeInterval ?? speed
         guard timeInterval != 0 else {return}
         command(.step(direction))
         print("step")
+    }
+    
+    // Play
+    func play(_ direction:DirectionSetting) {
+        command(.play(direction))
+    }
+    
+    // Fast
+    func fast(_ direction:DirectionSetting) {
+        command(.fast(direction))
     }
     
     // Start playback with the current mode and speed

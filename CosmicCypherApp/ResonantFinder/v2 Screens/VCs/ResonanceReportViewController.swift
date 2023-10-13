@@ -156,14 +156,6 @@ class ResonanceReportViewController: UIViewController {
     @IBOutlet weak var planetSelectButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
     
-    // MARK: Text Views
-    // Text View
-    /// (lower text boxes for: console, stats, aspects and nodes)
-    @IBOutlet weak var textViewSelectedAspectSymbols: UITextView!
-    @IBOutlet weak var textViewAspectEventScannerConsole: UITextView!
-    @IBOutlet weak var textViewArchiveStatistics: UITextView!
-    @IBOutlet weak var textViewSelectedPlanetNodeSymbols: UITextView!
-    
     // MARK: Bottom Sheet TimeStream Interface
     // TimeStream Interface (Bottom Controls
     @IBOutlet weak var timeStreamInterfaceContainerView: TimeStreamInterfaceContainerView!

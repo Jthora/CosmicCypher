@@ -33,25 +33,33 @@ extension TimeStream {
             fatalError("init(coder:) has not been implemented")
         }
         
-        func setupChartData(chartMode:ChartMode, onComplete:(()->())? = nil) {
+        func setupChartData(chartMode:ChartMode, 
+                            onProgress:((_ completion:Double)->Void)? = nil,
+                            onComplete:(()->())? = nil) {
             let nodeTypes = configuration.nodeTypes
             
             switch chartMode {
             case .gravimetrics:
-                setGravimeticData(nodeTypes: nodeTypes, onComplete: onComplete)
+                setGravimeticData(nodeTypes: nodeTypes, onProgress: onProgress, onComplete: onComplete)
             case .exaDeb:
-                setExaDebData(nodeTypes: nodeTypes, onComplete: onComplete)
+                setExaDebData(nodeTypes: nodeTypes, onProgress: onProgress, onComplete: onComplete)
             case .riseFall:
-                setRiseFallData(nodeTypes: nodeTypes, onComplete: onComplete)
+                setRiseFallData(nodeTypes: nodeTypes, onProgress: onProgress, onComplete: onComplete)
             }
         }
         
-        func setGravimeticData(nodeTypes: [AstrologicalNodeType], onComplete:(()->())? = nil) {
+        func setGravimeticData(nodeTypes: [AstrologicalNodeType],
+                               onProgress:((_ completion:Double)->Void)? = nil,
+                               onComplete:(()->())? = nil) {
             
             guard let starCharts = self.configuration.timeStreams.first?.starCharts else { return }
             var globalNetGravityEntries: [ChartDataEntry] = []
             var stellarNetGravityEntries: [ChartDataEntry] = []
             var interplanetaryNetGravityEntries: [ChartDataEntry] = []
+            
+            var totalIterations:Double = 300.0
+            var currentIteration:Double = 0.0
+            onProgress?(0)
             
             dataAccessQueue.async {
                 guard let starCharts = self.configuration.timeStreams.first?.starCharts else { return }
@@ -63,6 +71,8 @@ extension TimeStream {
                     let normalizedMagnitude = globalNetGravimetricMagnitudes.normalize(magnitude: magnitude)!
                     let entry = ChartDataEntry(x: Double(i), y: Double(normalizedMagnitude))
                     globalNetGravityEntries.append(entry)
+                    currentIteration += 1
+                    onProgress?(currentIteration / totalIterations)
                 }
                 
                 let stellarNetGravimentricMagnitudes = starCharts.map({ $0.stellarNetGravimentricMagnitude() })
@@ -70,6 +80,8 @@ extension TimeStream {
                     let normalizedMagnitude = stellarNetGravimentricMagnitudes.normalize(magnitude: magnitude)!
                     let entry = ChartDataEntry(x: Double(i), y: Double(normalizedMagnitude))
                     stellarNetGravityEntries.append(entry)
+                    currentIteration += 1
+                    onProgress?(currentIteration / totalIterations)
                 }
                 
                 let interplanetaryAbsoluteGravimentricMagnitudes = starCharts.map({ $0.interplanetaryAbsoluteGravimentricMagnitude(includeSun: true) })
@@ -77,6 +89,8 @@ extension TimeStream {
                     let normalizedMagnitude = interplanetaryAbsoluteGravimentricMagnitudes.normalize(magnitude: magnitude)!
                     let entry = ChartDataEntry(x: Double(i), y: Double(normalizedMagnitude))
                     interplanetaryNetGravityEntries.append(entry)
+                    currentIteration += 1
+                    onProgress?(currentIteration / totalIterations)
                 }
             }
             
@@ -102,11 +116,17 @@ extension TimeStream {
             }
         }
         
-        func setExaDebData(nodeTypes: [AstrologicalNodeType], onComplete:(()->())? = nil) {
+        func setExaDebData(nodeTypes: [AstrologicalNodeType],
+                           onProgress:((_ completion:Double)->Void)? = nil,
+                           onComplete:(()->())? = nil) {
             guard let starCharts = self.configuration.timeStreams.first?.starCharts else { return }
             var globalNetGravityEntries: [ChartDataEntry] = []
             var stellarNetGravityEntries: [ChartDataEntry] = []
             var interplanetaryNetGravityEntries: [ChartDataEntry] = []
+            
+            var totalIterations:Double = 300.0
+            var currentIteration:Double = 0.0
+            onProgress?(0)
             
             dataAccessQueue.async {
                 let globalNetGravimetricMagnitudes:EnergyMagnitudes = starCharts.map({ $0.globalNetGravimetricMagnitude(includeSun: false) })
@@ -114,6 +134,8 @@ extension TimeStream {
                     let normalizedMagnitude = globalNetGravimetricMagnitudes.normalize(magnitude: magnitude)!
                     let entry = ChartDataEntry(x: Double(i), y: Double(normalizedMagnitude))
                     globalNetGravityEntries.append(entry)
+                    currentIteration += 1
+                    onProgress?(currentIteration / totalIterations)
                 }
                 
                 let stellarNetGravimentricMagnitudes:EnergyMagnitudes = starCharts.map({ $0.stellarNetGravimentricMagnitude() })
@@ -121,6 +143,8 @@ extension TimeStream {
                     let normalizedMagnitude = stellarNetGravimentricMagnitudes.normalize(magnitude: magnitude)!
                     let entry = ChartDataEntry(x: Double(i), y: Double(normalizedMagnitude))
                     stellarNetGravityEntries.append(entry)
+                    currentIteration += 1
+                    onProgress?(currentIteration / totalIterations)
                 }
                 
                 let interplanetaryAbsoluteGravimentricMagnitudes:EnergyMagnitudes = starCharts.map({ $0.interplanetaryAbsoluteGravimentricMagnitude(includeSun: true) })
@@ -128,6 +152,8 @@ extension TimeStream {
                     let normalizedMagnitude = interplanetaryAbsoluteGravimentricMagnitudes.normalize(magnitude: magnitude)!
                     let entry = ChartDataEntry(x: Double(i), y: Double(normalizedMagnitude))
                     interplanetaryNetGravityEntries.append(entry)
+                    currentIteration += 1
+                    onProgress?(currentIteration / totalIterations)
                 }
             }
             
@@ -153,11 +179,17 @@ extension TimeStream {
             }
         }
         
-        func setRiseFallData(nodeTypes: [AstrologicalNodeType], onComplete:(()->())? = nil) {
+        func setRiseFallData(nodeTypes: [AstrologicalNodeType], 
+                             onProgress:((_ completion:Double)->Void)? = nil,
+                             onComplete:(()->())? = nil) {
             guard let starCharts = self.configuration.timeStreams.first?.starCharts else { return }
             var globalNetGravityEntries: [ChartDataEntry] = []
             var stellarNetGravityEntries: [ChartDataEntry] = []
             var interplanetaryNetGravityEntries: [ChartDataEntry] = []
+            
+            var totalIterations:Double = 300.0
+            var currentIteration:Double = 0.0
+            onProgress?(0)
             
             dataAccessQueue.async {
                 

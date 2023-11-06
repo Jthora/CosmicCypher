@@ -225,7 +225,7 @@ class OnlineGeoLocationSelectViewController: UIViewController, UISearchBarDelega
             AspectEventScanner.Core.coordinates = coordinates
         case .starChartCore:
             let timeZoneDate = StarChart.Core.current.date
-            StarChart.Core.current = StarChartRegistry.main.getStarChart(date: timeZoneDate, geographicCoordinates: coordinates, onComplete: { starChart in
+            StarChart.Core.current = try! StarChartRegistry.main.getStarChart(date: timeZoneDate, geographicCoordinates: coordinates, onComplete: { starChart in
                 ResonanceReportViewController.current?.update()
             })
         }

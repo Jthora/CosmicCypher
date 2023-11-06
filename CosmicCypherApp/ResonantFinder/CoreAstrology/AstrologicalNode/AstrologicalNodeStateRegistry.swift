@@ -78,7 +78,7 @@ open class AstrologicalNodeStateRegistry {
             return nodeState
         }
         print("generating new nodeState [\(timestamp.timeIntervalSinceNow)]")
-        guard let alignment = StarChartRegistry.main.getStarChart(date: date, geographicCoordinates: .zero).alignments[nodeType] else {throw AstrologicalNodeStateRegistryError.runtimeError("no alignments for starchart")}
+        guard let alignment = try! StarChartRegistry.main.getStarChart(date: date, geographicCoordinates: .zero).alignments[nodeType] else {throw AstrologicalNodeStateRegistryError.runtimeError("no alignments for starchart")}
         let degrees = alignment.longitude.value
         let nodeState = AstrologicalNodeState(nodeType: nodeType, subType: subType, date: date, degrees: degrees) // Duh, Galactic Center.
         print("nodeState generated [\(timestamp.timeIntervalSinceNow)]")

@@ -93,7 +93,7 @@ public extension TimeStream {
         }
         
         func starChart(for subPoint:Point) -> StarChart {
-            return StarChartRegistry.main.getStarChart(date: subPoint.date, geographicCoordinates: subPoint.coordinates)
+            return try! StarChartRegistry.main.getStarChart(date: subPoint.date, geographicCoordinates: subPoint.coordinates)
         }
     }
 }

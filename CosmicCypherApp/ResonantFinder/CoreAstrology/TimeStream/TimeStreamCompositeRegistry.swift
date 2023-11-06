@@ -22,7 +22,7 @@ public final class TimeStreamCompositeRegistry: ObservableObject {
     let queue = DispatchQueue(label: "TimeStreamCompositeRegistryDispatchQueue")
     
     func reload(onComplete:(()->())? = nil) {
-        print("reloading...")
+        print("TimeStreamCompositeRegistry: \"reloading...\"")
         queue.async {
             Task {
                 self.uuidList = try await TimeStreamCompositeArchive.main.fetchUUIDList()

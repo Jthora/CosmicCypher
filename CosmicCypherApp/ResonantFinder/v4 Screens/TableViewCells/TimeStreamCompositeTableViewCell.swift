@@ -373,18 +373,26 @@ extension TimeStreamCompositeTableViewCell: TimeStreamCoreReactive {
                     break
                 case .complete(uuid: let uuid, composite: let composite):
                     print("onLoadTimeStream .complete")
+                    // required UUID
                     guard uuid == self.uuid else { return }
                     self.timeStreamComposite = composite
                     self.update()
-                    self.progressBar.isHidden = true
+                    
+                    // Set Completion Bar
                     self.calculatingLabel.isHidden = true
+                    self.progressBar.isHidden = true
+                    self.progressBar.setProgress(0, animated: false)
+                    
+                    // Prepare UI
+                    self.update(name: composite.name, configuration: composite.configuration)
                 case .start(uuid: let uuid, name: let name, configuration: let configuration):
                     print("onLoadTimeStream .start")
+                    // required UUID
                     guard uuid == self.uuid else { return }
-                    self.progressBar.isHidden = false
-                    self.calculatingLabel.isHidden = false
                     
                     // Animate Completion Bar
+                    self.progressBar.isHidden = false
+                    self.calculatingLabel.isHidden = false
                     self.progressBar.setProgress(0, animated: false)
                     
                     // Prepare UI
@@ -392,10 +400,13 @@ extension TimeStreamCompositeTableViewCell: TimeStreamCoreReactive {
                 }
             case .update(updateAction: let updateAction):
                 switch updateAction {
-                case .composites(composites: let composites):
+                case .composites(composites: _):
                     self.progressBar.isHidden = true
                     self.calculatingLabel.isHidden = true
                     self.update()
+                case .currentComposite(composite: let composite):
+                    // Prepare UI
+                    self.update(name: composite.name, configuration: composite.configuration)
                 }
             }
         }

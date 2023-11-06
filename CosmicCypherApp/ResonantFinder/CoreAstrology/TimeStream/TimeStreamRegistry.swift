@@ -33,6 +33,7 @@ public final class TimeStreamRegistry {
     }
     
     func newTimeStream(startDate:Date, endDate:Date, geographicCoordinates:GeographicCoordinates) {
+        print("❇️ New TimeStream")
         let uuid = TimeStreamUUID()
         if cache[uuid] == nil {
             let timeStream = TimeStream(uuid: uuid, startDate: startDate, endDate: endDate, coordinates: geographicCoordinates)

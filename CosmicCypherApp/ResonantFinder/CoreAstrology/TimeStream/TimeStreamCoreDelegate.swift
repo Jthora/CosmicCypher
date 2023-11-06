@@ -20,6 +20,7 @@ extension TimeStream.Core {
         
         enum UpdateAction {
             case composites(composites:[UUID:TimeStream.Composite])
+            case currentComposite(composite:TimeStream.Composite)
         }
         
         enum LoadTimeStreamAction {

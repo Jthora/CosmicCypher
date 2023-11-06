@@ -11,6 +11,8 @@ import MetalKit
 
 
 extension TimeStreamSpectrogram {
+
+    
     enum ShaderType {
         case blend(_ type: BlendType)
         
@@ -112,6 +114,40 @@ extension TimeStreamSpectrogram {
 
         // Set the fragment color (RGBA), for example, a solid white color
         outFragment.color = half4(1.0, 1.0, 1.0, 1.0);
+
+        return outFragment;
+    }
+    """
+            }
+            
+            static var verticalWhiteLineFragmentShader:String {
+                return """
+    #include <metal_stdlib>
+
+    using namespace metal;
+
+    // Define the output fragment data structure
+    struct FragmentData {
+        half4 color [[color(0)]];
+    };
+
+    // Uniform representing the X position for drawing the line
+    float xPosition [[buffer(0)]];
+
+    // The main function of the fragment shader
+    fragment FragmentData fragment_main() {
+        FragmentData outFragment;
+
+        // Calculate the column index based on the xPosition
+        int columnIndex = int(xPosition);
+
+        // Set the fragment color (RGBA), for example, a solid white color
+        // only for the column specified by xPosition
+        if (columnIndex == gl_FragCoord.x) {
+            outFragment.color = half4(1.0, 1.0, 1.0, 1.0);
+        } else {
+            outFragment.color = half4(0.0, 0.0, 0.0, 0.0); // Transparent
+        }
 
         return outFragment;
     }

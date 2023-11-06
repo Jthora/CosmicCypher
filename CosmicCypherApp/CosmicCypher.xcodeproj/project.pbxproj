@@ -182,6 +182,7 @@
 		FAB1311D2874A319000AD7B9 /* AstrologicalNodeStateRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB1311C2874A319000AD7B9 /* AstrologicalNodeStateRegistry.swift */; };
 		FAB1311F2874A328000AD7B9 /* AstrologicalNodeStateArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB1311E2874A328000AD7B9 /* AstrologicalNodeStateArchive.swift */; };
 		FAB131222878AD25000AD7B9 /* Iceberg-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAB131212878AD24000AD7B9 /* Iceberg-Regular.ttf */; };
+		FAB79EF82ADBD0B500F754AC /* TimeStreamInterfaceCursorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB79EF72ADBD0B500F754AC /* TimeStreamInterfaceCursorView.swift */; };
 		FAD6D6632ABECB2F006264C8 /* TimeStreamFrameBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6D6622ABECB2F006264C8 /* TimeStreamFrameBuffer.swift */; };
 		FAD6D6652ABEE914006264C8 /* TimeStreamPixelDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6D6642ABEE914006264C8 /* TimeStreamPixelDrawer.swift */; };
 		FAD6D6672ABF15EB006264C8 /* TimeStreamSpectrogramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6D6662ABF15EB006264C8 /* TimeStreamSpectrogramView.swift */; };
@@ -467,6 +468,7 @@
 		FAB1311C2874A319000AD7B9 /* AstrologicalNodeStateRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstrologicalNodeStateRegistry.swift; sourceTree = "<group>"; };
 		FAB1311E2874A328000AD7B9 /* AstrologicalNodeStateArchive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstrologicalNodeStateArchive.swift; sourceTree = "<group>"; };
 		FAB131212878AD24000AD7B9 /* Iceberg-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Iceberg-Regular.ttf"; sourceTree = "<group>"; };
+		FAB79EF72ADBD0B500F754AC /* TimeStreamInterfaceCursorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamInterfaceCursorView.swift; sourceTree = "<group>"; };
 		FAD6D6622ABECB2F006264C8 /* TimeStreamFrameBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamFrameBuffer.swift; sourceTree = "<group>"; };
 		FAD6D6642ABEE914006264C8 /* TimeStreamPixelDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamPixelDrawer.swift; sourceTree = "<group>"; };
 		FAD6D6662ABF15EB006264C8 /* TimeStreamSpectrogramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamSpectrogramView.swift; sourceTree = "<group>"; };
@@ -1237,6 +1239,7 @@
 				FAFB68B32AB93C9400FEBDF4 /* TimeStreamInterfaceViewController.swift */,
 				FAFB68A92AB8398000FEBDF4 /* TimeStreamInterfaceContainerView.swift */,
 				FAA536AC2AD84BEE005A360D /* SpectrographSettingsViewController.swift */,
+				FAB79EF72ADBD0B500F754AC /* TimeStreamInterfaceCursorView.swift */,
 			);
 			path = TimeStreamInterface;
 			sourceTree = "<group>";
@@ -1645,6 +1648,7 @@
 				FAEAFEBA28492595001AEAE0 /* EditTimeStreamViewController.swift in Sources */,
 				FA5CF1782A7587FE006CBEB5 /* AspectEventScannerResults.swift in Sources */,
 				FA33AB112868D79900BC9F76 /* AspectCollectionViewCell.swift in Sources */,
+				FAB79EF82ADBD0B500F754AC /* TimeStreamInterfaceCursorView.swift in Sources */,
 				FA6101D3286D73D70000D4D5 /* OffgridGeoLocationSelectViewController.swift in Sources */,
 				FA1FDD92257969E500B51BD2 /* ElementalReadingViewController.swift in Sources */,
 				FA2CB4882859F77B003AD95C /* TimeStreamColorRenderMode.swift in Sources */,

@@ -29,6 +29,8 @@ class TimeStreamSettingsViewController: UIViewController, TimeStreamCoreReactive
                 DispatchQueue.main.async { [weak self] in
                     self?.timeStreamCompositeTableView.reloadData()
                 }
+            case .currentComposite(composite: let composite):
+                self.selectedComposite = composite
             }
         case .onLoadTimeStream(loadTimeStreamAction: let loadTimeStreamAction):
             switch loadTimeStreamAction {
@@ -44,6 +46,8 @@ class TimeStreamSettingsViewController: UIViewController, TimeStreamCoreReactive
     
     @IBOutlet weak var timeStreamCompositeTableView: UITableView!
     @IBOutlet weak var timeStreamConfigurationTableView: UITableView!
+    
+    var selectedComposite:TimeStream.Composite? = nil
     
     // Add New TimeStream Composite Row
     var addNewTimeStreamCompositeCustomRow: Int? = nil

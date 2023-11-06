@@ -147,6 +147,7 @@ extension TimeStream {
             renderPassDescriptor.colorAttachments[0].storeAction = .store
         }
         
+        var isTouchDown:Bool = false
         public func draw(in view: MTKView) {
             // Perform drawing operations
             
@@ -160,8 +161,12 @@ extension TimeStream {
                 renderEncoder.setRenderPipelineState(pipelineState)
             }
             
+            // Configure vertex Bytes and Buffers
+            //renderEncoder.setVertexBytes(&touchPosition, length: MemoryLayout<simd_float2>.stride, index: 0)
             
-            // Example: configure vertex and fragment buffers here
+            
+            // Configure fragment Bytes and Buffers
+            //renderEncoder.setFragmentBytes(&touchPosition, length: MemoryLayout<simd_float2>.stride, index: 0)
             
             // Issue drawing commands here
             renderEncoder.endEncoding()

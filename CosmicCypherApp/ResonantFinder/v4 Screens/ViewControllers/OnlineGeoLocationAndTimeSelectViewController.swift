@@ -275,7 +275,7 @@ class OnlineGeoLocationAndTimeSelectViewController: UIViewController, UISearchBa
             print("OnlineGeoLocate: timePicker time \(timePicker.date) - \(timePicker.date.formatted(date: .numeric, time: .complete))")
             print("OnlineGeoLocate: current starchart changing \(timeZoneDate) - \(timeZoneDate.formatted(date: .numeric, time: .complete))")
             
-            StarChart.Core.current = StarChartRegistry.main.getStarChart(date: timeZoneDate, geographicCoordinates: coordinates, onComplete: { starChart in
+            StarChart.Core.current = try! StarChartRegistry.main.getStarChart(date: timeZoneDate, geographicCoordinates: coordinates, onComplete: { starChart in
                 ResonanceReportViewController.current?.update()
             })
         } else {

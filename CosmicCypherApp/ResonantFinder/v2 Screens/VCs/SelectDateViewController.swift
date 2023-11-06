@@ -110,7 +110,7 @@ class SelectDateViewController: UIViewController, UISearchBarDelegate, UITextFie
         
         if let timeZoneDate = Date(year: datePicker.date.year, month: datePicker.date.month, day: datePicker.date.day, timeZone: timeZone, hour: timePicker.date.hour, minute: timePicker.date.minute, second: timePicker.date.second) {
             print("TimeZone Offset: \(location.timeZone.description)")
-            StarChart.Core.current = StarChartRegistry.main.getStarChart(date: timeZoneDate, geographicCoordinates: coordinates, onComplete: { starChart in
+            StarChart.Core.current = try! StarChartRegistry.main.getStarChart(date: timeZoneDate, geographicCoordinates: coordinates, onComplete: { starChart in
                 ResonanceReportViewController.current?.update()
             })
         } else {

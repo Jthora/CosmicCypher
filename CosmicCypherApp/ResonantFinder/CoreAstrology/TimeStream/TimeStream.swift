@@ -69,15 +69,27 @@ public final class TimeStream {
         let count = points.count
         
         Task {
-            onProgress?(0, nil)
+            DispatchQueue.main.async {
+                onProgress?(0, nil)
+            }
             for (i,point) in points.enumerated() {
                 print("loading starchart (\(i)/\(count)) [\(timestamp.timeIntervalSinceNow)]")
-                let starChart:StarChart = StarChartRegistry.main.getStarChart(date: point.date, geographicCoordinates: point.coordinates)
-                self.append(starChart: starChart)
-                onProgress?(Double(i)/Double(count), starChart)
+                do {
+                    let starChart:StarChart = try StarChartRegistry.main.getStarChart(date: point.date, geographicCoordinates: point.coordinates)
+                    self.append(starChart: starChart)
+                    
+                    DispatchQueue.main.async {
+                        onProgress?(Double(i)/Double(count), starChart)
+                    }
+                }
+                catch {
+                    print("❌ ERROR: \(error)") 
+                }
             }
-            onProgress?(1, nil)
-            onComplete?(starCharts)
+            DispatchQueue.main.async {
+                onProgress?(1, nil)
+                onComplete?(self.starCharts)
+            }
         }
     }
     

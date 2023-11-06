@@ -8,6 +8,8 @@
 import SpriteKit
 import SwiftAA
 
+
+
 let DEFAULT_SELECTED_ASPECTS:[CoreAstrology.AspectRelationType] = [.conjunction,
                                                                    .opposition,
                                                                    .sextile,
@@ -85,42 +87,61 @@ extension StarChart {
         static var selectedNodeTypes: [CoreAstrology.AspectBody.NodeType] = fetchSelectedNodeTypes() {
             didSet {
                 let rawValues = selectedNodeTypes.map { $0.rawValue }
-                guard let encodedData = try? NSKeyedArchiver.archivedData(withRootObject: rawValues, requiringSecureCoding: false) else {
+                let dataArray = NSArray(array: rawValues, copyItems: false)
+                guard let encodedData = try? NSKeyedArchiver.archivedData(withRootObject: dataArray, requiringSecureCoding: false) else {
                     print("selectedPlanets cannot encode data")
                     return
                 }
+                print("encoded selectedNodeTypes data")
                 UserDefaults.standard.set(encodedData, forKey: _selectedNodeTypesKey)
             }
         }
         
         static var selectedAspects: [CoreAstrology.AspectRelationType] = fetchSelectedAspects() {
             didSet {
-                let rawValues = selectedAspects.map { $0.rawValue }
-                guard let encodedData = try? NSKeyedArchiver.archivedData(withRootObject: rawValues, requiringSecureCoding: false) else {
-                    print("selectedAspects cannot encode data")
-                    return
-                }
-                UserDefaults.standard.set(encodedData, forKey: _selectedAspectsKey)
+                storeAspects()
             }
+        }
+        private static func storeAspects() {
+            let rawValues = selectedAspects.map { $0.rawValue }
+            let dataArray = NSArray(array: rawValues, copyItems: false)
+            guard let encodedData = try? NSKeyedArchiver.archivedData(withRootObject: dataArray, requiringSecureCoding: false) else {
+                print("selectedAspects cannot encode data")
+                return
+            }
+            print("encoded selectedAspects data")
+            UserDefaults.standard.set(encodedData, forKey: _selectedAspectsKey)
         }
         
         private static func fetchSelectedNodeTypes() -> [CoreAstrology.AspectBody.NodeType] {
-            guard let decoded  = UserDefaults.standard.object(forKey: _selectedNodeTypesKey) as? Data,
-                  let rawValues = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(decoded) as? [Int] else {
+            guard let decoded  = UserDefaults.standard.object(forKey: _selectedNodeTypesKey) as? Data else {
                 print("cannot decode data: defaulting to DEFAULT_SELECTED_NODETYPES")
+                defer { storeAspects() }
                 return DEFAULT_SELECTED_NODETYPES
             }
-            let selectedPlanets = rawValues.map({ CoreAstrology.AspectBody.NodeType(rawValue: $0)! })
+            guard let rawValues = try? NSKeyedUnarchiver.unarchivedObject(ofClass: NSArray.self, from: decoded) else {
+                print("cannot unarchivedObject data: defaulting to DEFAULT_SELECTED_NODETYPES")
+                defer { storeAspects() }
+                return DEFAULT_SELECTED_NODETYPES
+            }
+            print("decoded data: \(rawValues)")
+            let values = rawValues.toIntArray()
+            let selectedPlanets = values.map({ CoreAstrology.AspectBody.NodeType(rawValue: $0)! })
             return selectedPlanets
         }
         
         private static func fetchSelectedAspects() -> [CoreAstrology.AspectRelationType] {
-            guard let decoded  = UserDefaults.standard.object(forKey: _selectedAspectsKey) as? Data,
-                  let rawValues = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(decoded) as? [Int] else {
+            guard let decoded  = UserDefaults.standard.object(forKey: _selectedAspectsKey) as? Data else {
                 print("cannot decode data: defaulting to DEFAULT_SELECTED_ASPECTS")
                 return DEFAULT_SELECTED_ASPECTS
             }
-            let selectedAspects = rawValues.map({ CoreAstrology.AspectRelationType(rawValue: $0)! })
+            guard let rawValues = try? NSKeyedUnarchiver.unarchivedObject(ofClass: NSArray.self, from: decoded) else {
+                print("cannot unarchivedObject data: defaulting to DEFAULT_SELECTED_ASPECTS")
+                return DEFAULT_SELECTED_ASPECTS
+            }
+            print("decoded data: \(rawValues)")
+            let values = rawValues.toIntArray()
+            let selectedAspects = values.map({ CoreAstrology.AspectRelationType(rawValue: $0)! })
             return selectedAspects
         }
         
@@ -305,4 +326,30 @@ extension StarChart {
     }
     
     
+}
+
+extension StarChart.Core {
+    
+    class SelectedAspects:NSObject, Codable {
+        var selectedAspects:[Int]
+    }
+    
+    class SelectedNodeTypes:NSObject, Codable {
+        var selectedNodeTypes:[Int]
+    }
+}
+
+
+extension NSArray {
+    func toIntArray() -> [Int] {
+        var intArray = [Int]()
+        
+        for element in self {
+            if let intValue = element as? Int {
+                intArray.append(intValue)
+            }
+        }
+        
+        return intArray
+    }
 }

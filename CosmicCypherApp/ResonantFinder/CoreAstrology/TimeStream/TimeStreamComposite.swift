@@ -26,6 +26,8 @@ extension TimeStream {
         // MARK: Init
         // Main Init
         public init(name: String? = nil, uuid:UUID? = nil, configuration: TimeStream.Configuration, imageMap: ImageMap? = nil, spectrogramView: TimeStreamSpectrogramView? = nil, onComplete:((Composite)->Void)? = nil, onProgress:((_ completion:Double)->Void)? = nil) {
+            print("❇️ New TimeStream Composite")
+            
             // Assign Name
             self.name = name
             
@@ -49,6 +51,7 @@ extension TimeStream {
                 if let spectrogramView = spectrogramView,
                     let timeStream = self.configuration.timeStreams.first,
                     let metalView = spectrogramView.metalView {
+                    print("existing timeStream available: \(timeStream.id)")
                     let selectedNodeTypes = StarChart.Core.selectedNodeTypes
                     let spectrogram = TimeStreamSpectrogram(metalView: metalView)
                 } else {
@@ -56,7 +59,9 @@ extension TimeStream {
                         ImageMap.create(uuid: self.uuid, configuration: self.configuration, onComplete: { imageMap in
                             self.imageMap = imageMap
                             onComplete?(self)
-                        }, onProgress: onProgress)
+                        }, onProgress: { completion in
+                            onProgress?(completion)
+                        })
                     }
                 }
             }
@@ -65,6 +70,7 @@ extension TimeStream {
         // Personal Life Path Init
         /// TimeStream of Personal Life focused onto over a Path
         public init(name: String, uuid:UUID? = nil, primaryChart: StarChart?, secondaryChart: StarChart?, timestreams: [TimeStream], nodeTypes: [CoreAstrology.AspectBody.NodeType], sampleCount:Int, onComplete:((Composite)->Void)? = nil, onProgress:((_ completion:Double)->Void)? = nil) {
+            print("❇️ New TimeStream Composite")
             
             // Assign Name
             self.name = name
@@ -97,6 +103,7 @@ extension TimeStream {
         // Personal Life Path Init (alt)
         /// TimeStream of Personal Life focused onto over a Path
         public init(name: String, birthDate:Date, birthCoordinates: GeographicCoordinates, timeStreamPath:TimeStream.Path, nodeTypes: [CoreAstrology.AspectBody.NodeType], sampleCount:Int, onComplete:((Composite)->Void)? = nil, onProgress:((_ completion:Double)->Void)? = nil) throws {
+            print("❇️ New TimeStream Composite")
             let primaryChart = StarChart(date: birthDate, coordinates: birthCoordinates)
             let timeStreams:[TimeStream] = [try TimeStream(path: timeStreamPath)]
             
@@ -126,6 +133,7 @@ extension TimeStream {
         // Personal Life By Date Range Init
         /// TimeStream of Personal Life focused onto Start and End Date
         public init(name: String, birthDate:Date, birthCoordinates: GeographicCoordinates, currentCoordinates:GeographicCoordinates, startDate: Date, endDate: Date, nodeTypes: [CoreAstrology.AspectBody.NodeType], sampleCount:Int, onComplete:((Composite)->Void)? = nil, onProgress:((_ completion:Double)->Void)? = nil) {
+            print("❇️ New TimeStream Composite")
             
             // Assign Name and UUID
             self.name = name
@@ -157,6 +165,7 @@ extension TimeStream {
         // Personal Life for Current Date
         /// TimeStream of Personal Life until Current Date
         public init(name: String, birthDate:Date, birthCoordinates: GeographicCoordinates, currentCoordinates:GeographicCoordinates, currentDate: Date, nodeTypes: [CoreAstrology.AspectBody.NodeType], sampleCount:Int, onComplete:((Composite)->Void)? = nil, onProgress:((_ completion:Double)->Void)? = nil) {
+            print("❇️ New TimeStream Composite")
             
             // Assign Name and UUID
             self.name = name
@@ -214,9 +223,20 @@ extension TimeStream.Composite: Codable {
         let uuid = try container.decode(UUID.self, forKey: .uuid)
         let configuration = try container.decode(TimeStream.Configuration.self, forKey: .configuration)
         
+        // React Start
+        TimeStream.Core.react(to: .onLoadTimeStream(loadTimeStreamAction: .start(uuid: uuid, name: name, configuration: configuration)))
+        
+        // Init
         self.init(name: name,
                   uuid: uuid,
-                  configuration: configuration)
+                  configuration: configuration) { composite in
+            // React Complete
+            TimeStream.Core.react(to: .onLoadTimeStream(loadTimeStreamAction: .complete(uuid: uuid, composite: composite)))
+        } onProgress: { completion in
+            // React Progress
+            TimeStream.Core.react(to: .onLoadTimeStream(loadTimeStreamAction: .progress(uuid: uuid, completion: completion)))
+        }
+
     }
 }
 

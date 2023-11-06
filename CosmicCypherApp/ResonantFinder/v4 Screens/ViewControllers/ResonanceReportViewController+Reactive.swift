@@ -18,6 +18,7 @@ extension ResonanceReportViewController: TimeStreamCoreReactive {
 //                    self.timeStreamTableView.reloadData()
 //                    self.loadingTimeStreamsSpinner.stopAnimating()
                 }
+            default: ()
             }
         case .onLoadTimeStream(loadTimeStreamAction: let loadTimeStreamAction):
             switch loadTimeStreamAction {

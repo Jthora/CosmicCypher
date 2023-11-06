@@ -43,7 +43,7 @@ extension TimeStream {
                 let configuration = TimeStream.Configuration(sampleCount: sampleCount, primaryChart: nil, secondaryChart: nil, timeStreams: [timestream], nodeTypes: nodeTypes)
                 
                 /// React Start
-                Task {
+                DispatchQueue.main.async {
                     TimeStream.Core.react(to: .onLoadTimeStream(loadTimeStreamAction: .start(uuid: uuid, name: name, configuration: configuration)))
                 }
                 
@@ -52,7 +52,8 @@ extension TimeStream {
                     print("timestream composite loaded")
                 } , onProgress: { completion in
                     /// React Progress
-                    Task {
+                    print("TimeStream.Composite: React Progress")
+                    DispatchQueue.main.async {
                         TimeStream.Core.react(to: .onLoadTimeStream(loadTimeStreamAction: .progress(uuid: uuid, completion: completion)))
                     }
                 })

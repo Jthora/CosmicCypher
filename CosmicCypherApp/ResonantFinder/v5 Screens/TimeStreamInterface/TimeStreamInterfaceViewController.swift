@@ -20,6 +20,14 @@ class TimeStreamInterfaceViewController: UIViewController {
     @IBOutlet weak var fastForwardButton: UIButton!
     @IBOutlet weak var fastBackwardButton: UIButton!
     
+    // Feedback
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var progressView: UIProgressView!
+    
+    // Start and End Date Labels
+    @IBOutlet weak var startDateLabel: UILabel!
+    @IBOutlet weak var endDateLabel: UILabel!
+    
     // Spectrograph Buttons
     @IBOutlet weak var spectrographSettingsButton: UIButton!
     @IBOutlet weak var spectrographPresetsButton: UIButton!
@@ -39,7 +47,12 @@ class TimeStreamInterfaceViewController: UIViewController {
     // TimeStream Spectrogram
     @IBOutlet weak var timeStreamSpectrogramView: TimeStreamSpectrogramView!
     
+    
     // MARK: Properties
+    
+    var lineChartView: TimeStream.Chart?
+    var timeStreamComposite:TimeStream.Composite?
+    
     // StarChart RealTime Playback Controller
     lazy var playbackController = {
         var controller = StarChartRealTimePlaybackController()
@@ -76,20 +89,65 @@ class TimeStreamInterfaceViewController: UIViewController {
     // View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        TimeStream.Core.add(reactive: self)
         setup()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super .viewWillDisappear(animated)
+        TimeStream.Core.remove(reactive: self)
     }
 
     // MARK: Setup
     // Setup
     private func setup() {
+        setupViews()
+        setupLabels()
         setupButtons()
         setupSpectrogram()
+        setupCharts()
+    }
+    
+    func setupViews() {
+        switch viewSwitchControl.selectedSegmentIndex {
+        case 0: // Chart - line chart
+            chartSuperView.isHidden = false
+            chartModeSelectPopUpButton.isHidden = false
+            
+            timeStreamSpectrogramView.isHidden = true
+            spectrographSettingsButton.isHidden = true
+            spectrographPresetsButton.isHidden = true
+            spectrographExportButton.isHidden = true
+        case 1: // Graph - spectrogram
+            chartSuperView.isHidden = true
+            chartModeSelectPopUpButton.isHidden = true
+            
+            timeStreamSpectrogramView.isHidden = false
+            spectrographSettingsButton.isHidden = false
+            spectrographPresetsButton.isHidden = false
+            spectrographExportButton.isHidden = false
+        default: ()
+        }
     }
     
     func setupLabels() {
         guard let composite = TimeStream.Core.currentComposites.first else {
+            startDateLabel.text = ""
+            endDateLabel.text = ""
+            statusLabel.text = ""
             return
         }
+        startDateLabel.text = composite.startDate?.formatted() ?? "Start Date"
+        endDateLabel.text = composite.endDate?.formatted() ?? "End Date"
+        statusLabel.text = ""
     }
     
     // Setup Buttons
@@ -106,6 +164,18 @@ class TimeStreamInterfaceViewController: UIViewController {
         timeStreamSpectrogramView.setup()
     }
     
+    func setupCharts(_ composite:TimeStream.Composite? = nil) {
+        // setup view
+        print("Setup Charts (TimeStreamInterfaceViewController)")
+        guard let configuration = composite?.configuration ?? self.timeStreamComposite?.configuration ?? TimeStream.Core.currentComposites.first?.configuration else {return}
+        
+        lineChartView = TimeStream.Chart(frame: self.chartSuperView.frame, configuration: configuration)
+        
+        self.chartSuperView.addSubview(lineChartView!)
+        lineChartView?.centerInSuperview()
+        lineChartView?.width(to: self.chartSuperView)
+        lineChartView?.height(to: self.chartSuperView)
+    }
     
     // MARK: Show / Hide
     // Show
@@ -177,25 +247,7 @@ class TimeStreamInterfaceViewController: UIViewController {
     
     // MARK: View Switch
     @IBAction func viewSwitchControlChanged(_ sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-        case 0: // Chart - line chart
-            chartSuperView.isHidden = false
-            chartModeSelectPopUpButton.isHidden = false
-            
-            timeStreamSpectrogramView.isHidden = true
-            spectrographSettingsButton.isHidden = true
-            spectrographPresetsButton.isHidden = true
-            spectrographExportButton.isHidden = true
-        case 1: // Graph - spectrogram
-            chartSuperView.isHidden = true
-            chartModeSelectPopUpButton.isHidden = true
-            
-            timeStreamSpectrogramView.isHidden = false
-            spectrographSettingsButton.isHidden = false
-            spectrographPresetsButton.isHidden = false
-            spectrographExportButton.isHidden = false
-        default: ()
-        }
+        setupViews()
     }
     
     // MARK: Playback Controls
@@ -236,4 +288,80 @@ class TimeStreamInterfaceViewController: UIViewController {
     
     
     
+}
+
+extension TimeStreamInterfaceViewController: TimeStreamCoreReactive {
+    
+    /// The TimeStream Core has performed an Action
+    func timeStreamCore(didAction action: TimeStream.Core.Action) {
+        print("React: TimeStreamInterfaceViewController(action: \(action)")
+        /// Async Thread
+        DispatchQueue.main.async {
+            // Handle Action
+            switch action {
+            case .onLoadTimeStream(loadTimeStreamAction: let loadTimeStreamAction):
+                switch loadTimeStreamAction {
+                /// Report on progress of loading StarChart data for the timestream
+                case .progress(uuid: _, completion: let completion):
+                    
+                    // Progress Bar
+                    self.progressView.setProgress(Float(completion), animated: true)
+                    break
+                    
+                /// StarCharts all calculated and timestream data is fully loaded.
+                case .complete(uuid: let uuid, composite: let composite):
+                    print("onLoadTimeStream .complete \n - name:\(composite.name ?? "")   \n - uuid:\(uuid)")
+                    
+                    // Set Composite
+                    self.timeStreamComposite = composite
+                    
+                    // Status Label
+                    self.statusLabel.isHidden = true
+                    self.statusLabel.text = ""
+                    
+                    // Date Labels
+                    self.startDateLabel.text = composite.configuration.startDate?.formatted() ?? "Start Date"
+                    self.endDateLabel.text = composite.configuration.endDate?.formatted() ?? "End Date"
+                    
+                    // Set Progress Bar
+                    self.progressView.isHidden = true
+                    self.progressView.setProgress(0, animated: false)
+                    
+                /// Start calculating StarCharts until all the starchart data for the timestream is fully loaded.
+                case .start(uuid: let uuid, name: let name, configuration: let configuration):
+                    print("onLoadTimeStream .start \n - name:\(name)   \n - uuid:\(uuid)")
+                    
+                    // Status Label
+                    self.statusLabel.isHidden = false
+                    self.statusLabel.text = "Scrying..."
+                    
+                    // Date Labels
+                    self.startDateLabel.text = configuration.startDate?.formatted() ?? "Start Date"
+                    self.endDateLabel.text = configuration.endDate?.formatted() ?? "End Date"
+                    
+                    // Progress Bar
+                    self.progressView.isHidden = false
+                    self.progressView.setProgress(0, animated: false)
+                    
+                }
+            case .update(updateAction: let updateAction):
+                switch updateAction {
+                case .currentComposite(composite: let composite):
+                    
+                    // Set Composite
+                    self.timeStreamComposite = composite
+                    
+                    // Status Label
+                    self.statusLabel.isHidden = true
+                    
+                    // Progress Bar
+                    self.progressView.isHidden = true
+                    
+                    // Chart
+                    self.setupCharts(composite)
+                default: ()
+                }
+            }
+        }
+    }
 }

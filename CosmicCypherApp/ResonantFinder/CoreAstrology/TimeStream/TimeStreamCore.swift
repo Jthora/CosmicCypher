@@ -15,8 +15,10 @@ extension TimeStream {
         private static let _secretInitCompleteKey:String = "_secretInitCompleteKey"
         static func initialActivation() {
             if UserDefaults.standard.bool(forKey: _secretInitCompleteKey) == true {
+                print("Returning Activation: Welcome Back")
                 reloadComposites()
             } else {
+                print("Initial Activation: New Install")
                 saveAllDefaultComposites()
                 UserDefaults.standard.set(true, forKey: _secretInitCompleteKey)
             }
@@ -120,6 +122,9 @@ extension TimeStream {
         static var compositeRegistry:TimeStreamCompositeRegistry { return TimeStreamCompositeRegistry.main }
         static var compositeArchive:TimeStreamCompositeArchive { return TimeStreamCompositeArchive.main }
         
+        static var currentComposite: Composite? {
+            return compositeRegistry.cache[current.id]
+        }
         
         static func composite(for indexPath: IndexPath) -> Composite? {
             guard currentComposites.count > indexPath.row else {return nil}
@@ -172,6 +177,7 @@ extension TimeStream {
                 print("timestream composite loaded")
             } , onProgress: { completion in
                 /// React Progress
+                print("TimeStream.Composite: React Progress")
                 DispatchQueue.main.async {
                     TimeStream.Core.react(to: .onLoadTimeStream(loadTimeStreamAction: .progress(uuid: uuid, completion: completion)))
                 }
@@ -195,6 +201,10 @@ extension TimeStream {
                 TimeStreamCompositeRegistry.main.reload {
                     print("Preload Complete! - \(compositeRegistry.cache.values.count) Composites Loaded")
                     react(to: .update(updateAction: .composites(composites: compositeRegistry.cache)))
+                    
+                    if let currentComposite = self.currentComposite {
+                        react(to: .update(updateAction: .currentComposite(composite: currentComposite)))
+                    }
                 }
             }
         }

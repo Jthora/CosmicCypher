@@ -14,6 +14,7 @@ extension TimeStream.Composite {
         let imageStripSets:[TimeStreamImageStripSet]
         
         public static func create(uuid:UUID, configuration:TimeStream.Configuration, onComplete:((ImageMap)->Void)? = nil, onProgress:((_ completion:Double)->Void)? = nil) {
+            print("❇️ New Image Map")
             var imageStripSets = [TimeStreamImageStripSet]()
             for timeStream in configuration.timeStreams {
                 timeStream.loadStarCharts(sampleCount: configuration.sampleCount, onComplete: { starCharts in
@@ -33,3 +34,4 @@ extension TimeStream.Composite {
         }
     }
 }
+

@@ -23,6 +23,7 @@ class TimeStreamInterfaceViewController: UIViewController {
     // Feedback
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var progressView: UIProgressView!
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
     // Start and End Date Labels
     @IBOutlet weak var startDateLabel: UILabel!
@@ -154,7 +155,7 @@ class TimeStreamInterfaceViewController: UIViewController {
     func setupButtons() {
         // drop down for Chart Data Mode Select
         let menu = UIMenu(children: [
-            UIAction(title: "Global Net Energy [Gravimetrics]", handler:showGravimetricsClosure),
+            UIAction(title: "Gravimetrics Chart", handler:showGravimetricsClosure),
             UIAction(title: "Exa/Deb Chart", handler:showExaDebClosure),
             UIAction(title: "Rise/Fall Chart", handler:showRiseFallClosure)])
         chartModeSelectPopUpButton.menu = menu
@@ -169,7 +170,11 @@ class TimeStreamInterfaceViewController: UIViewController {
         print("Setup Charts (TimeStreamInterfaceViewController)")
         guard let configuration = composite?.configuration ?? self.timeStreamComposite?.configuration ?? TimeStream.Core.currentComposites.first?.configuration else {return}
         
-        lineChartView = TimeStream.Chart(frame: self.chartSuperView.frame, configuration: configuration)
+        lineChartView?.removeFromSuperview()
+        lineChartView = nil
+        lineChartView = TimeStream.Chart(frame: self.chartSuperView.frame, configuration: configuration, onComplete: {
+            print("Line Chart Data Loaded")
+        })
         
         self.chartSuperView.addSubview(lineChartView!)
         lineChartView?.centerInSuperview()
@@ -294,7 +299,6 @@ extension TimeStreamInterfaceViewController: TimeStreamCoreReactive {
     
     /// The TimeStream Core has performed an Action
     func timeStreamCore(didAction action: TimeStream.Core.Action) {
-        print("React: TimeStreamInterfaceViewController(action: \(action)")
         /// Async Thread
         DispatchQueue.main.async {
             // Handle Action
@@ -306,11 +310,13 @@ extension TimeStreamInterfaceViewController: TimeStreamCoreReactive {
                     
                     // Progress Bar
                     self.progressView.setProgress(Float(completion), animated: true)
+                    
+                    // Set Activity Indicator
+                    self.activityIndicatorView.isHidden = false
                     break
                     
                 /// StarCharts all calculated and timestream data is fully loaded.
                 case .complete(uuid: let uuid, composite: let composite):
-                    print("onLoadTimeStream .complete \n - name:\(composite.name ?? "")   \n - uuid:\(uuid)")
                     
                     // Set Composite
                     self.timeStreamComposite = composite
@@ -327,9 +333,13 @@ extension TimeStreamInterfaceViewController: TimeStreamCoreReactive {
                     self.progressView.isHidden = true
                     self.progressView.setProgress(0, animated: false)
                     
+                    // Set Activity Indicator
+                    self.activityIndicatorView.isHidden = true
+                    
+                    self.setupCharts(composite)
+                    
                 /// Start calculating StarCharts until all the starchart data for the timestream is fully loaded.
                 case .start(uuid: let uuid, name: let name, configuration: let configuration):
-                    print("onLoadTimeStream .start \n - name:\(name)   \n - uuid:\(uuid)")
                     
                     // Status Label
                     self.statusLabel.isHidden = false
@@ -342,6 +352,9 @@ extension TimeStreamInterfaceViewController: TimeStreamCoreReactive {
                     // Progress Bar
                     self.progressView.isHidden = false
                     self.progressView.setProgress(0, animated: false)
+                    
+                    // Set Activity Indicator
+                    self.activityIndicatorView.isHidden = false
                     
                 }
             case .update(updateAction: let updateAction):

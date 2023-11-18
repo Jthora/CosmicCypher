@@ -6,3 +6,28 @@
 //
 
 import Foundation
+
+// MARK: Extensions
+// State
+extension AspectEventScanner {
+    // State of Scanner
+    enum State {
+        case ready
+        case scanning
+        case paused
+        case done
+        case fail
+        
+        var consoleText: String {
+            switch self {
+            case .ready: return "🟢 Ready"
+            case .scanning: return "▶️ Scanning"
+            case .paused: return "⏸️ Paused"
+            case .done: return "✅ Done"
+            case .fail: return "⚠️ Fail"
+            }
+        }
+    }
+}
+
+

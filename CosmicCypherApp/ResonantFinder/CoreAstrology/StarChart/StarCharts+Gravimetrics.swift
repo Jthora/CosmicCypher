@@ -47,12 +47,17 @@ extension StarChart {
     // MARK: Interplanetary Gravimetric Magnitude
     
     public func interplanetaryAbsoluteGravimentricMagnitude(includeSun: Bool = true) -> Double {
+        let startDate = Date()
         var interplanetaryGravitationalMagnitude: Double = 0
+        //print("Interplanetary Gravimetric Magnitude (start): \(startDate.timeIntervalSinceNow)")
         for p1 in CoreAstrology.AspectBody.NodeType.bodiesWithGravity {
+            //print("Interplanetary Gravimetric Magnitude (\(p1)): \(startDate.timeIntervalSinceNow)")
             for p2 in CoreAstrology.AspectBody.NodeType.bodiesWithGravity where p1 != p2 && (p1 != .moon && p2 != .moon) && !(includeSun == true && (p1 == .sun || p2 == .sun)) {
+                //print("Interplanetary Gravimetric Magnitude (\(p2)): \(startDate.timeIntervalSinceNow)")
                 interplanetaryGravitationalMagnitude += p1.gravimetricForceBetween(otherPlanet: p2, date: self.date) ?? 0
             }
         }
+        //print("Interplanetary Gravimetric Magnitude (end): \(startDate.timeIntervalSinceNow)")
         return interplanetaryGravitationalMagnitude
     }
     

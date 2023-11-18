@@ -362,29 +362,6 @@ extension TimeStreamCompositeTableViewCell: TimeStreamCoreReactive {
             switch action {
             case .onLoadTimeStream(loadTimeStreamAction: let loadTimeStreamAction):
                 switch loadTimeStreamAction {
-                case .progress(uuid: let uuid, completion: let completion):
-                    print("onLoadTimeStream .progress")
-                    guard uuid == self.uuid else { return }
-                    self.progressBar.isHidden = false
-                    self.calculatingLabel.isHidden = false
-                    
-                    // Animate Completion Bar
-                    self.progressBar.setProgress(Float(completion), animated: true)
-                    break
-                case .complete(uuid: let uuid, composite: let composite):
-                    print("onLoadTimeStream .complete")
-                    // required UUID
-                    guard uuid == self.uuid else { return }
-                    self.timeStreamComposite = composite
-                    self.update()
-                    
-                    // Set Completion Bar
-                    self.calculatingLabel.isHidden = true
-                    self.progressBar.isHidden = true
-                    self.progressBar.setProgress(0, animated: false)
-                    
-                    // Prepare UI
-                    self.update(name: composite.name, configuration: composite.configuration)
                 case .start(uuid: let uuid, name: let name, configuration: let configuration):
                     print("onLoadTimeStream .start")
                     // required UUID
@@ -394,9 +371,32 @@ extension TimeStreamCompositeTableViewCell: TimeStreamCoreReactive {
                     self.progressBar.isHidden = false
                     self.calculatingLabel.isHidden = false
                     self.progressBar.setProgress(0, animated: false)
+                    self.progressBar.tintColor = .tintColor
                     
                     // Prepare UI
                     self.update(name: name, configuration: configuration)
+                case .progress(uuid: let uuid, completion: let completion):
+                    print("Cell onLoadTimeStream .progressStarChartGeneration")
+                    guard uuid == self.uuid else { return }
+                    self.progressBar.isHidden = false
+                    self.calculatingLabel.isHidden = false
+                    
+                    // Animate Completion Bar
+                    self.progressBar.setProgress(Float(completion), animated: true)
+                    
+                case .complete(uuid: let uuid, composite: let composite):
+                    print("Cell onLoadTimeStream .completedStarChartGeneration")
+                    // required UUID
+                    guard uuid == self.uuid else { return }
+                    self.timeStreamComposite = composite
+                    self.update()
+                    
+                    // Set Completion Bar
+                    self.progressBar.setProgress(0, animated: false)
+                    self.progressBar.tintColor = .blue
+                    
+                    // Prepare UI
+                    self.update(name: composite.name, configuration: composite.configuration)
                 }
             case .update(updateAction: let updateAction):
                 switch updateAction {

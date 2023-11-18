@@ -206,9 +206,9 @@ extension AspectEventScanViewController: UITextFieldDelegate {
 }
 
 
-// MARK: Scanner & Console Delegates
-
+// MARK: Aspect Event Console Delegate
 extension AspectEventScanViewController: AspectEventConsoleDelegate {
+    // Console Updated
     func consoleUpdated(text: String) {
         DispatchQueue.main.async {
             self.textViewConsole.text = text
@@ -216,19 +216,27 @@ extension AspectEventScanViewController: AspectEventConsoleDelegate {
     }
 }
 
+// MARK: Aspect Event Scanner Delegate
 extension AspectEventScanViewController: AspectEventScannerDelegate {
-    
-    func scanUpdate(progress: Float?, subProgress: Float?) {
+    // Update (Scan)
+    func scanUpdate(scanProgress: Float?) {
         DispatchQueue.main.async {
-            if let progress = progress {
+            if let progress = scanProgress {
                 self.progressBar.progress = progress
             }
-            if let subProgress = subProgress {
+        }
+    }
+    
+    // Update (Deep Scan)
+    func scanUpdate(deepScanProgress: Float?) {
+        DispatchQueue.main.async {
+            if let subProgress = deepScanProgress {
                 self.subProgressBar.progress = subProgress
             }
         }
     }
     
+    // Scan Complete
     func scanComplete(aspectsFound: [Date : [CoreAstrology.Aspect]]) {
         DispatchQueue.main.async {
             self.progressBar.progress = 1.0
@@ -237,7 +245,8 @@ extension AspectEventScanViewController: AspectEventScannerDelegate {
         }
     }
     
-    func scanError(error: AspectEventScanner.AspectScanError) {
+    // Scan Error
+    func scanError(error: AspectEventScanner.ScanError) {
         switch error {
         default:
             DispatchQueue.main.async {
@@ -251,7 +260,6 @@ extension AspectEventScanViewController: AspectEventScannerDelegate {
 
 
 // MARK: Handle Popups and UI Controls for StarChart Cache Warnings
-
 extension AspectEventExportViewController: StarChartRegistryCacheWarningDelegate {
     
     // Delegate function for cache warning

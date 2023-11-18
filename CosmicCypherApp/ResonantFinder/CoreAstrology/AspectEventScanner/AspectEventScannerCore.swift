@@ -33,7 +33,7 @@ extension AspectEventScanner {
             return exporter.currentExportableData
         }
         
-        static var state: State {
+        static var state: AspectEventScanner.State {
             get {
                 return scanner.state
             }

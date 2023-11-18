@@ -173,7 +173,10 @@ extension TimeStream {
             }
             
             /// Create Composite
-            let composite = TimeStream.Composite(name: name, uuid: uuid, configuration: configuration, onComplete: { _ in
+            let composite = TimeStream.Composite(name: name, uuid: uuid, configuration: configuration, onComplete: { composite in
+                DispatchQueue.main.async {
+                    TimeStream.Core.react(to: .onLoadTimeStream(loadTimeStreamAction: .complete(uuid: uuid, composite: composite)))
+                }
                 print("timestream composite loaded")
             } , onProgress: { completion in
                 /// React Progress

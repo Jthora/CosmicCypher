@@ -19,6 +19,7 @@ extension ResonanceReportViewController {
         
         //setupTimeStreamVisualizer()
         setupBars()
+        setupSpeedButton()
         setupSpriteKitScene()
         //setupRenderAnimation()
         resetEnergyLevels()

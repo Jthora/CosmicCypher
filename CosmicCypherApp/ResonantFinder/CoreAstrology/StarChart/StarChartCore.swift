@@ -145,6 +145,15 @@ extension StarChart {
             return selectedAspects
         }
         
+        // MARK: StarChart Playback
+        // StarChart RealTime Playback Controller
+        static var playbackController = {
+            var controller = StarChartRealTimePlaybackController()
+            controller.date = StarChart.Core.current.date
+            controller.mode = .pause
+            return controller
+        }()
+        
         // MARK: Render StarChart
         static var isRendering:Bool = true
         static var cancelComposite:Bool = false

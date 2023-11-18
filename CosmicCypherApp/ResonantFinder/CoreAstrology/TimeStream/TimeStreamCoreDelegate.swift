@@ -8,22 +8,22 @@
 import Foundation
 
 
-protocol TimeStreamCoreReactive: class {
+protocol TimeStreamCoreReactive: AnyObject {
     func timeStreamCore(didAction action:TimeStream.Core.Action)
 }
 
 extension TimeStream.Core {
     
     enum Action {
-        case onLoadTimeStream(loadTimeStreamAction: LoadTimeStreamAction)
-        case update(updateAction: UpdateAction)
+        case onLoadTimeStream(loadTimeStreamAction: LoadTimeStream)
+        case update(updateAction: Update)
         
-        enum UpdateAction {
+        enum Update {
             case composites(composites:[UUID:TimeStream.Composite])
             case currentComposite(composite:TimeStream.Composite)
         }
         
-        enum LoadTimeStreamAction {
+        enum LoadTimeStream {
             case start(uuid:UUID, name:String, configuration:TimeStream.Configuration)
             case progress(uuid:UUID, completion: Double)
             case complete(uuid:UUID, composite:TimeStream.Composite)

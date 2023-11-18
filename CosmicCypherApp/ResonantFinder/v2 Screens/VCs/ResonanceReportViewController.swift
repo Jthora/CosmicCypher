@@ -145,9 +145,6 @@ class ResonanceReportViewController: UIViewController {
     @IBOutlet weak var renderingProgressLabel: UILabel!
     @IBOutlet weak var renderingProgressAnimation: UIImageView!
     
-    // TimeStream Loading
-    @IBOutlet weak var loadingTimeStreamsSpinner: UIActivityIndicatorView!
-    
     // Central UI Elements
     @IBOutlet weak var dateTimeCoordsLabel: UILabel!
     
@@ -155,6 +152,9 @@ class ResonanceReportViewController: UIViewController {
     @IBOutlet weak var instructionsButton: UIButton!
     @IBOutlet weak var planetSelectButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
+    
+    @IBOutlet weak var speedModeLabel: UILabel!
+    @IBOutlet weak var speedButton: UIButton!
     
     // MARK: Bottom Sheet TimeStream Interface
     // TimeStream Interface (Bottom Controls
@@ -208,14 +208,22 @@ class ResonanceReportViewController: UIViewController {
     
     // View Will Appear
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         resetEnergyLevels()
         ResonanceReportViewController.current = self
+        StarChart.Core.playbackController.addDelegate(self)
     }
     
     // View Did Appear
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         animateBarLabels()
         update()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        StarChart.Core.playbackController.removeDelegate(self)
     }
     
     // MARK: Startup
@@ -280,6 +288,11 @@ class ResonanceReportViewController: UIViewController {
     
     @IBAction func barsTouched(_ sender: UIButton) {
         ElementalReadingViewController.presentModally(over: self)
+    }
+    
+    // MARK: Speed Controls
+    @IBAction func speedButtonTouch(_ sender: UIButton) {
+        
     }
     
     // MARK: Actions - Extra Buttons

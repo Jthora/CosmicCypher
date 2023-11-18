@@ -19,14 +19,17 @@ extension TimeStream {
         }
         
         let configuration: TimeStream.Configuration
-        // data?
-        init(frame: CGRect,configuration: TimeStream.Configuration, chartMode:ChartMode = .gravimetrics, onComplete:(()->())? = nil) {
+        
+        init(frame: CGRect,configuration: TimeStream.Configuration,
+             onProgress:((_ completion:Float)->Void)? = nil,
+             chartMode:ChartMode = .gravimetrics,
+             onComplete:(()->())? = nil) {
             self.configuration = configuration
             super.init(frame: frame)
             
             self.setScaleEnabled(true)
             
-            setupChartData(chartMode: chartMode, onComplete:onComplete)
+            setupChartData(chartMode: chartMode, onProgress: onProgress, onComplete:onComplete)
         }
         
         required init?(coder aDecoder: NSCoder) {
@@ -34,9 +37,11 @@ extension TimeStream {
         }
         
         func setupChartData(chartMode:ChartMode, 
-                            onProgress:((_ completion:Double)->Void)? = nil,
+                            onProgress:((_ completion:Float)->Void)? = nil,
                             onComplete:(()->())? = nil) {
             let nodeTypes = configuration.nodeTypes
+            
+            let startDate = Date()
             
             switch chartMode {
             case .gravimetrics:
@@ -46,55 +51,76 @@ extension TimeStream {
             case .riseFall:
                 setRiseFallData(nodeTypes: nodeTypes, onProgress: onProgress, onComplete: onComplete)
             }
+            
+            print("TimeStream Chart Delta: \(startDate.timeIntervalSinceNow)")
         }
         
         func setGravimeticData(nodeTypes: [AstrologicalNodeType],
-                               onProgress:((_ completion:Double)->Void)? = nil,
+                               onProgress:((_ completion:Float)->Void)? = nil,
                                onComplete:(()->())? = nil) {
-            
-            guard let starCharts = self.configuration.timeStreams.first?.starCharts else { return }
-            var globalNetGravityEntries: [ChartDataEntry] = []
-            var stellarNetGravityEntries: [ChartDataEntry] = []
-            var interplanetaryNetGravityEntries: [ChartDataEntry] = []
-            
-            var totalIterations:Double = 300.0
-            var currentIteration:Double = 0.0
-            onProgress?(0)
-            
             dataAccessQueue.async {
-                guard let starCharts = self.configuration.timeStreams.first?.starCharts else { return }
-                //guard let resonanceScores = self.timeStreamComposite?.resonanceScores else { return }
-                //let globalNetEnergies = resonanceScores.map({ $0.energies.globalNetEnergy })
                 
-                let globalNetGravimetricMagnitudes = starCharts.map({ $0.globalNetGravimetricMagnitude(includeSun: false) })
+                let startDate = Date()
+                
+                guard let starCharts = self.configuration.timeStreams.first?.starCharts else { return }
+                var globalNetGravityEntries: [ChartDataEntry] = []
+                var stellarNetGravityEntries: [ChartDataEntry] = []
+                var interplanetaryNetGravityEntries: [ChartDataEntry] = []
+                
+                let totalIterations:Float = 300.0
+                var currentIteration:Float = 0.0
+                onProgress?(0)
+                
+                // Global (Geocentric)
+                var globalNetGravimetricMagnitudes:[Double] = []
+                for chart in starCharts {
+                    /// Calculate
+                    currentIteration += 1
+                    onProgress?(currentIteration / totalIterations)
+                    let magnitude = chart.globalNetGravimetricMagnitude(includeSun: false)
+                    globalNetGravimetricMagnitudes.append(magnitude)
+                }
                 for (i,magnitude) in globalNetGravimetricMagnitudes.enumerated() {
+                    /// Convert
                     let normalizedMagnitude = globalNetGravimetricMagnitudes.normalize(magnitude: magnitude)!
                     let entry = ChartDataEntry(x: Double(i), y: Double(normalizedMagnitude))
                     globalNetGravityEntries.append(entry)
-                    currentIteration += 1
-                    onProgress?(currentIteration / totalIterations)
                 }
                 
-                let stellarNetGravimentricMagnitudes = starCharts.map({ $0.stellarNetGravimentricMagnitude() })
+                // Stellar (Heliocentric)
+                var stellarNetGravimentricMagnitudes:[Double] = []
+                for chart in starCharts {
+                    /// Calculate
+                    currentIteration += 1
+                    onProgress?(currentIteration / totalIterations)
+                    let magnitude = chart.stellarNetGravimentricMagnitude()
+                    stellarNetGravimentricMagnitudes.append(magnitude)
+                }
                 for (i,magnitude) in stellarNetGravimentricMagnitudes.enumerated() {
+                    /// Convert
                     let normalizedMagnitude = stellarNetGravimentricMagnitudes.normalize(magnitude: magnitude)!
                     let entry = ChartDataEntry(x: Double(i), y: Double(normalizedMagnitude))
                     stellarNetGravityEntries.append(entry)
-                    currentIteration += 1
-                    onProgress?(currentIteration / totalIterations)
                 }
                 
-                let interplanetaryAbsoluteGravimentricMagnitudes = starCharts.map({ $0.interplanetaryAbsoluteGravimentricMagnitude(includeSun: true) })
+                // Unified (Interplanetary)
+                var interplanetaryAbsoluteGravimentricMagnitudes:[Double] = []
+                for chart in starCharts {
+                    /// Calculate
+                    currentIteration += 1
+                    onProgress?(currentIteration / totalIterations)
+                    let magnitude = chart.interplanetaryAbsoluteGravimentricMagnitude(includeSun: true)
+                    interplanetaryAbsoluteGravimentricMagnitudes.append(magnitude)
+                }
                 for (i,magnitude) in interplanetaryAbsoluteGravimentricMagnitudes.enumerated() {
+                    /// Convert
                     let normalizedMagnitude = interplanetaryAbsoluteGravimentricMagnitudes.normalize(magnitude: magnitude)!
                     let entry = ChartDataEntry(x: Double(i), y: Double(normalizedMagnitude))
                     interplanetaryNetGravityEntries.append(entry)
-                    currentIteration += 1
-                    onProgress?(currentIteration / totalIterations)
                 }
-            }
-            
-            dataAccessQueue.sync {
+                
+                // Completed
+                onProgress?(1)
                 let set1 = LineChartDataSet(entries: globalNetGravityEntries, label: "global")
                 set1.colors = [.systemMint]
                 set1.circleColors = [.systemMint]
@@ -114,50 +140,91 @@ extension TimeStream {
                     onComplete?()
                 }
             }
+            
         }
         
         func setExaDebData(nodeTypes: [AstrologicalNodeType],
-                           onProgress:((_ completion:Double)->Void)? = nil,
+                           onProgress:((_ completion:Float)->Void)? = nil,
                            onComplete:(()->())? = nil) {
             guard let starCharts = self.configuration.timeStreams.first?.starCharts else { return }
             var globalNetGravityEntries: [ChartDataEntry] = []
             var stellarNetGravityEntries: [ChartDataEntry] = []
             var interplanetaryNetGravityEntries: [ChartDataEntry] = []
             
-            var totalIterations:Double = 300.0
-            var currentIteration:Double = 0.0
-            onProgress?(0)
+            let totalIterations:Float = 300.0
+            var currentIteration:Float = 0.0
+            
+            DispatchQueue.main.async {
+                onProgress?(0)
+            }
             
             dataAccessQueue.async {
-                let globalNetGravimetricMagnitudes:EnergyMagnitudes = starCharts.map({ $0.globalNetGravimetricMagnitude(includeSun: false) })
+                DispatchQueue.main.async {
+                    onProgress?(0)
+                }
+                
+                // Global (Geocentric)
+                var globalNetGravimetricMagnitudes: EnergyMagnitudes = []
+                for chart in starCharts {
+                    /// Calculate
+                    let magnitude = chart.globalNetGravimetricMagnitude(includeSun: false)
+                    globalNetGravimetricMagnitudes.append(magnitude)
+                }
                 for (i,magnitude) in globalNetGravimetricMagnitudes.enumerated() {
+                    /// Convert
                     let normalizedMagnitude = globalNetGravimetricMagnitudes.normalize(magnitude: magnitude)!
                     let entry = ChartDataEntry(x: Double(i), y: Double(normalizedMagnitude))
                     globalNetGravityEntries.append(entry)
+                    /// Iterate
                     currentIteration += 1
-                    onProgress?(currentIteration / totalIterations)
+                    DispatchQueue.main.async {
+                        onProgress?(currentIteration / totalIterations)
+                    }
                 }
                 
-                let stellarNetGravimentricMagnitudes:EnergyMagnitudes = starCharts.map({ $0.stellarNetGravimentricMagnitude() })
+                // Stellar (Heliocentric)
+                var stellarNetGravimentricMagnitudes: EnergyMagnitudes = []
+                for chart in starCharts {
+                    /// Calculate
+                    let magnitude = chart.stellarNetGravimentricMagnitude()
+                    stellarNetGravimentricMagnitudes.append(magnitude)
+                }
                 for (i,magnitude) in stellarNetGravimentricMagnitudes.enumerated() {
+                    /// Convert
                     let normalizedMagnitude = stellarNetGravimentricMagnitudes.normalize(magnitude: magnitude)!
                     let entry = ChartDataEntry(x: Double(i), y: Double(normalizedMagnitude))
                     stellarNetGravityEntries.append(entry)
+                    /// Iterate
                     currentIteration += 1
-                    onProgress?(currentIteration / totalIterations)
+                    DispatchQueue.main.async {
+                        onProgress?(currentIteration / totalIterations)
+                    }
                 }
                 
-                let interplanetaryAbsoluteGravimentricMagnitudes:EnergyMagnitudes = starCharts.map({ $0.interplanetaryAbsoluteGravimentricMagnitude(includeSun: true) })
+                // Unified (Interplanetary)
+                var interplanetaryAbsoluteGravimentricMagnitudes: EnergyMagnitudes = []
+                for chart in starCharts {
+                    /// Calculate
+                    let magnitude = chart.interplanetaryAbsoluteGravimentricMagnitude(includeSun: true)
+                    interplanetaryAbsoluteGravimentricMagnitudes.append(magnitude)
+                }
                 for (i,magnitude) in interplanetaryAbsoluteGravimentricMagnitudes.enumerated() {
+                    /// Convert
                     let normalizedMagnitude = interplanetaryAbsoluteGravimentricMagnitudes.normalize(magnitude: magnitude)!
                     let entry = ChartDataEntry(x: Double(i), y: Double(normalizedMagnitude))
                     interplanetaryNetGravityEntries.append(entry)
+                    /// Iterate
                     currentIteration += 1
-                    onProgress?(currentIteration / totalIterations)
+                    DispatchQueue.main.async {
+                        onProgress?(currentIteration / totalIterations)
+                    }
                 }
             }
             
             dataAccessQueue.sync {
+                DispatchQueue.main.async {
+                    onProgress?(1)
+                }
                 let set1 = LineChartDataSet(entries: globalNetGravityEntries, label: "global")
                 set1.colors = [.systemMint]
                 set1.circleColors = [.systemMint]
@@ -180,16 +247,19 @@ extension TimeStream {
         }
         
         func setRiseFallData(nodeTypes: [AstrologicalNodeType], 
-                             onProgress:((_ completion:Double)->Void)? = nil,
+                             onProgress:((_ completion:Float)->Void)? = nil,
                              onComplete:(()->())? = nil) {
             guard let starCharts = self.configuration.timeStreams.first?.starCharts else { return }
             var globalNetGravityEntries: [ChartDataEntry] = []
             var stellarNetGravityEntries: [ChartDataEntry] = []
             var interplanetaryNetGravityEntries: [ChartDataEntry] = []
             
-            var totalIterations:Double = 300.0
-            var currentIteration:Double = 0.0
-            onProgress?(0)
+            let totalIterations:Float = 300.0
+            var currentIteration:Float = 0.0
+            
+            DispatchQueue.main.async {
+                onProgress?(0)
+            }
             
             dataAccessQueue.async {
                 
@@ -198,6 +268,12 @@ extension TimeStream {
                     let normalizedMagnitude = globalNetGravimetricMagnitudes.normalize(magnitude: magnitude)!
                     let entry = ChartDataEntry(x: Double(i), y: Double(normalizedMagnitude))
                     globalNetGravityEntries.append(entry)
+                    
+                    // Iter
+                    currentIteration += 1
+                    DispatchQueue.main.async {
+                        onProgress?(currentIteration / totalIterations)
+                    }
                 }
                 
                 let stellarNetGravimentricMagnitudes:EnergyMagnitudes = starCharts.map({ $0.stellarNetGravimentricMagnitude() })
@@ -205,6 +281,12 @@ extension TimeStream {
                     let normalizedMagnitude = stellarNetGravimentricMagnitudes.normalize(magnitude: magnitude)!
                     let entry = ChartDataEntry(x: Double(i), y: Double(normalizedMagnitude))
                     stellarNetGravityEntries.append(entry)
+                    
+                    // Iter
+                    currentIteration += 1
+                    DispatchQueue.main.async {
+                        onProgress?(currentIteration / totalIterations)
+                    }
                 }
                 
                 let interplanetaryAbsoluteGravimentricMagnitudes:EnergyMagnitudes = starCharts.map({ $0.interplanetaryAbsoluteGravimentricMagnitude(includeSun: true) })
@@ -212,10 +294,19 @@ extension TimeStream {
                     let normalizedMagnitude = interplanetaryAbsoluteGravimentricMagnitudes.normalize(magnitude: magnitude)!
                     let entry = ChartDataEntry(x: Double(i), y: Double(normalizedMagnitude))
                     interplanetaryNetGravityEntries.append(entry)
+                    
+                    // Iter
+                    currentIteration += 1
+                    DispatchQueue.main.async {
+                        onProgress?(currentIteration / totalIterations)
+                    }
                 }
             }
             
             dataAccessQueue.sync {
+                DispatchQueue.main.async {
+                    onProgress?(1)
+                }
                 let set1 = LineChartDataSet(entries: globalNetGravityEntries, label: "global")
                 set1.colors = [.systemMint]
                 set1.circleColors = [.systemMint]

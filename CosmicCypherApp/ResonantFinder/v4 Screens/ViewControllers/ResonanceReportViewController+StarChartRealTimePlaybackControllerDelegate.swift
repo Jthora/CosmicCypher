@@ -6,3 +6,19 @@
 //
 
 import Foundation
+
+
+extension ResonanceReportViewController: StarChartRealTimePlaybackControllerDelegate {
+    func didStep(_ direction: StarChartRealTimePlaybackController.DirectionSetting) {
+        DispatchQueue.main.async {
+            // TODO: Update ResonanceReport views based on new StarChart.Core.current data
+            self.update()
+        }
+    }
+    
+    func didSet(mode: StarChartRealTimePlaybackController.PlaybackMode) {
+        DispatchQueue.main.async {
+            self.speedModeLabel.text = "Mode: \(mode.text)"
+        }
+    }
+}

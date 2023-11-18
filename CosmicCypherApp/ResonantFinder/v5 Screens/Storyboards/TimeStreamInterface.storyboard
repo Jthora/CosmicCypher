@@ -26,7 +26,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KtE-qt-r19" userLabel="TopView">
                                 <rect key="frame" x="59" y="0.0" width="814" height="46"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdf-ks-E0W">
+                                    <button opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdf-ks-E0W">
                                         <rect key="frame" x="386" y="4" width="42" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="42" id="3ye-6V-TMk"/>
@@ -121,9 +121,6 @@
                                         <rect key="frame" x="0.0" y="0.0" width="814" height="363"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jE3-qn-dsU">
-                                        <rect key="frame" x="0.0" y="0.0" width="814" height="363"/>
-                                    </progressView>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="DYx-PE-mBw">
                                         <rect key="frame" x="388.66666666666669" y="163" width="37" height="37"/>
                                     </activityIndicatorView>
@@ -186,7 +183,7 @@
                                         <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="10"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qSc-6Y-o3q">
+                                    <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qSc-6Y-o3q">
                                         <rect key="frame" x="8" y="324" width="81" height="32"/>
                                         <color key="backgroundColor" systemColor="systemGrayColor"/>
                                         <segments>
@@ -212,7 +209,6 @@
                                     <constraint firstItem="yIT-Gu-pUb" firstAttribute="centerX" secondItem="UUL-e3-FOc" secondAttribute="centerX" id="1dq-uT-Sfj"/>
                                     <constraint firstItem="ai4-JX-ZAu" firstAttribute="top" secondItem="UUL-e3-FOc" secondAttribute="top" constant="8" id="2dk-oj-vXk"/>
                                     <constraint firstItem="JIe-oc-IxP" firstAttribute="top" secondItem="XED-g2-31K" secondAttribute="bottom" id="9e0-Pj-guU"/>
-                                    <constraint firstAttribute="bottom" secondItem="jE3-qn-dsU" secondAttribute="bottom" id="AgY-bk-Zzl"/>
                                     <constraint firstItem="JIe-oc-IxP" firstAttribute="leading" secondItem="UUL-e3-FOc" secondAttribute="leading" id="DMo-tB-Gzl"/>
                                     <constraint firstAttribute="bottom" secondItem="GNd-qf-Me9" secondAttribute="bottom" id="HEg-Rm-rmt"/>
                                     <constraint firstItem="W7n-l4-6zH" firstAttribute="leading" secondItem="UUL-e3-FOc" secondAttribute="leading" id="JZd-hn-VvE"/>
@@ -220,7 +216,6 @@
                                     <constraint firstItem="cQ6-L6-6g6" firstAttribute="top" secondItem="UUL-e3-FOc" secondAttribute="top" constant="8" id="KU8-p1-pD2"/>
                                     <constraint firstItem="W7n-l4-6zH" firstAttribute="top" secondItem="UUL-e3-FOc" secondAttribute="top" id="Kex-jd-jJD"/>
                                     <constraint firstItem="DYx-PE-mBw" firstAttribute="centerY" secondItem="UUL-e3-FOc" secondAttribute="centerY" id="Nh3-Zg-xEc"/>
-                                    <constraint firstAttribute="trailing" secondItem="jE3-qn-dsU" secondAttribute="trailing" id="NyA-kk-5FH"/>
                                     <constraint firstItem="XED-g2-31K" firstAttribute="leading" secondItem="UUL-e3-FOc" secondAttribute="leading" constant="4" id="PsU-la-Hfk"/>
                                     <constraint firstAttribute="bottom" secondItem="qSc-6Y-o3q" secondAttribute="bottom" constant="8" id="SaW-eu-wia"/>
                                     <constraint firstAttribute="trailing" secondItem="JIe-oc-IxP" secondAttribute="trailing" id="SgK-Ya-KQc"/>
@@ -228,8 +223,6 @@
                                     <constraint firstAttribute="trailing" secondItem="cQ6-L6-6g6" secondAttribute="trailing" constant="8" id="W6O-ZX-gr4"/>
                                     <constraint firstItem="qSc-6Y-o3q" firstAttribute="leading" secondItem="UUL-e3-FOc" secondAttribute="leading" constant="8" id="Zd1-ai-8vg"/>
                                     <constraint firstItem="DYx-PE-mBw" firstAttribute="centerX" secondItem="UUL-e3-FOc" secondAttribute="centerX" id="gIp-Xe-7oR"/>
-                                    <constraint firstItem="jE3-qn-dsU" firstAttribute="top" secondItem="UUL-e3-FOc" secondAttribute="top" id="ilc-Pp-2vH"/>
-                                    <constraint firstItem="jE3-qn-dsU" firstAttribute="leading" secondItem="UUL-e3-FOc" secondAttribute="leading" id="l3m-7c-k9i"/>
                                     <constraint firstItem="MHl-5y-pmF" firstAttribute="centerX" secondItem="UUL-e3-FOc" secondAttribute="centerX" id="l5q-0V-FK3"/>
                                     <constraint firstItem="JIe-oc-IxP" firstAttribute="top" secondItem="bBH-28-Y9D" secondAttribute="bottom" id="nn8-aH-z8H"/>
                                     <constraint firstAttribute="bottom" secondItem="W7n-l4-6zH" secondAttribute="bottom" id="r81-J6-Inu"/>
@@ -268,7 +261,7 @@
                         <outlet property="pauseButton" destination="xdf-ks-E0W" id="jHX-Vw-BB5"/>
                         <outlet property="playBackwardButton" destination="fBT-zE-Hvb" id="qyt-LS-Dfq"/>
                         <outlet property="playForwardButton" destination="ezj-2e-M17" id="Rkk-kE-QDb"/>
-                        <outlet property="progressView" destination="jE3-qn-dsU" id="3HJ-gQ-5aN"/>
+                        <outlet property="progressBarView" destination="GNd-qf-Me9" id="Ykl-ZC-f0Y"/>
                         <outlet property="skipBackwardButton" destination="NCG-R2-jO9" id="Cnb-Qr-8iN"/>
                         <outlet property="skipForwardButton" destination="O4m-2e-1o0" id="hEU-hL-Jd1"/>
                         <outlet property="spectrographExportButton" destination="cQ6-L6-6g6" id="KYa-4a-dVa"/>

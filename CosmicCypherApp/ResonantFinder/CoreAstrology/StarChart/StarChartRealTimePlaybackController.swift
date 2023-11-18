@@ -7,8 +7,9 @@
 
 import Foundation
 
-protocol StarChartRealTimePlaybackControllerDelegate {
+protocol StarChartRealTimePlaybackControllerDelegate: AnyObject {
     func didStep(_ direction:StarChartRealTimePlaybackController.DirectionSetting)
+    func didSet(mode:StarChartRealTimePlaybackController.PlaybackMode)
 }
 
 
@@ -17,16 +18,44 @@ class StarChartRealTimePlaybackController {
     let defaultPlaybackSampleRate:TimeInterval = 1
     var speed:TimeInterval = 1
     let defaultMode:PlaybackMode = .pause
-    var mode:PlaybackMode = .pause
+    var mode:PlaybackMode = .pause {
+        didSet {
+            self.didSet(mode: mode)
+        }
+    }
     
-    var sampleStep:SampleStep = .seconds
+    var sampleStep:SampleStep = .days
     var sampleRate:SampleRate = .onePerSecond
     
-    var date:Date = Date()
+    var date:Date = StarChart.Core.current.date
     
     var playbackTimer: Timer?
     
-    var delegate: StarChartRealTimePlaybackControllerDelegate? = nil
+    // MARK: Delegate
+    // Delegates
+    private var _delegates: [StarChartRealTimePlaybackControllerDelegate] = []
+    // Add a delegate
+    func addDelegate(_ delegate: StarChartRealTimePlaybackControllerDelegate) {
+        if !_delegates.contains(where: { $0 === delegate }) {
+            _delegates.append(delegate)
+        }
+    }
+    // Remove a delegate
+    func removeDelegate(_ delegate: StarChartRealTimePlaybackControllerDelegate) {
+        _delegates = _delegates.filter { $0 !== delegate }
+    }
+    // Function to call delegate methods
+    func didStep(_ direction: StarChartRealTimePlaybackController.DirectionSetting) {
+        for delegate in _delegates {
+            delegate.didStep(direction)
+        }
+    }
+
+    func didSet(mode: StarChartRealTimePlaybackController.PlaybackMode) {
+        for delegate in _delegates {
+            delegate.didSet(mode: mode)
+        }
+    }
     
     // MARK: Enums
     // Speed Command
@@ -41,6 +70,13 @@ class StarChartRealTimePlaybackController {
     enum DirectionSetting {
         case forward
         case backward
+        
+        var text:String {
+            switch self {
+            case .forward: return "Forward"
+            case .backward: return "Backward"
+            }
+        }
     }
     
     // Playback Mode
@@ -48,6 +84,14 @@ class StarChartRealTimePlaybackController {
         case pause
         case play(_ direction:DirectionSetting)
         case fast(_ direction:DirectionSetting)
+        
+        var text:String {
+            switch self {
+            case .pause: return "Pause"
+            case .play(let direction): return "Play \(direction.text)"
+            case .fast(let direction): return "Fast \(direction.text)"
+            }
+        }
     }
     
     enum SampleStep:Int, CaseIterable {
@@ -93,22 +137,31 @@ class StarChartRealTimePlaybackController {
         case moving
     }
     
+    // MARK: Commands
     func command(_ command:SpeedCommand) {
+        
+        // Set Date (if changed outside)
+        date = StarChart.Core.current.date
+        
+        // Perform Command
         switch command {
         case .pause:
             mode = .pause
         case .step(let direction):
+            mode = .pause
             step(direction)
         case .play(let direction):
             mode = .play(direction)
         case .fast(let direction):
             mode = .fast(direction)
         }
+        
+        // Handle Playback
         handlePlayback()
     }
     
-    func set(speed:TimeInterval) {
-        
+    func set(speed:SampleStep) {
+        sampleStep = speed
     }
     
     
@@ -119,11 +172,8 @@ class StarChartRealTimePlaybackController {
     }
     
     // Step
-    func step(_ direction:DirectionSetting, by timeInterval:TimeInterval? = nil) {
-        let timeInterval = timeInterval ?? speed
-        guard timeInterval != 0 else {return}
-        command(.step(direction))
-        print("step")
+    func step(_ direction:DirectionSetting) {
+        updateStarChartDate(direction: direction, fast: false)
     }
     
     // Play
@@ -154,16 +204,20 @@ class StarChartRealTimePlaybackController {
     // Handle playback logic
     private func handlePlayback() {
         switch mode {
+        case .pause:
+            stopPlayback()
         case .play(.forward):
+            startPlayback()
             updateStarChartDate(direction: .forward, fast: false)
         case .play(.backward):
+            startPlayback()
             updateStarChartDate(direction: .backward, fast: false)
         case .fast(.forward):
+            startPlayback()
             updateStarChartDate(direction: .forward, fast: true)
         case .fast(.backward):
+            startPlayback()
             updateStarChartDate(direction: .backward, fast: true)
-        default:
-            break
         }
     }
     
@@ -173,19 +227,27 @@ class StarChartRealTimePlaybackController {
         let playbackRate = fast ? 2.0 : 1.0
         let timeInterval = direction == .forward ? (defaultPlaybackSampleRate * playbackRate) : (-defaultPlaybackSampleRate * playbackRate)
         
-        let updatedDate = date.addingTimeInterval(timeInterval)
+        let timeStepInterval = sampleStep.timeInterval * timeInterval
+        
+        let nextDate = date.addingTimeInterval(timeStepInterval)
+        self.date = nextDate
         
         // Check Current TimeStream for StarChart
         let currentStarChart = StarChart.Core.current
         
         // Check StarChart Registry
         /// Create New StarChart
-        let newStarChart = StarChart(date: updatedDate)
-        
-        // Add New StarChart to TimeStream
-        StarChart.Core.current = newStarChart
-        
-        self.delegate?.didStep(direction)
+        do {
+            let nextStarChart = try StarChartRegistry.main.getStarChart(date: nextDate,
+                                                                        geographicCoordinates: currentStarChart.coordinates)
+            
+            // Add New StarChart to TimeStream
+            StarChart.Core.current = nextStarChart
+            
+            self.didStep(direction)
+        } catch {
+            print("❌ StarChartRegistry getStarChart")
+        }
     }
 
 }

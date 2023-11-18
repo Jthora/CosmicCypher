@@ -10,29 +10,30 @@ import UIKit
 
 extension ResonanceReportViewController: TimeStreamCoreReactive {
     func timeStreamCore(didAction action: TimeStream.Core.Action) {
-        switch action {
-        case .update(let updateAction):
-            switch updateAction {
-            case .composites:
-                DispatchQueue.main.async {
-//                    self.timeStreamTableView.reloadData()
-//                    self.loadingTimeStreamsSpinner.stopAnimating()
-                }
-            default: ()
-            }
-        case .onLoadTimeStream(loadTimeStreamAction: let loadTimeStreamAction):
-            switch loadTimeStreamAction {
-                
-            case .progress(completion: let completion):
-                break
-            case .complete:
-                break
-            case .start(uuid: let uuid, name: let name, configuration: let configuration):
-//                self.timeStreamTableView.reloadData()
-//                self.loadingTimeStreamsSpinner.startAnimating()
-                break
-            }
-        }
+//        switch action {
+//        case .update(let updateAction):
+//            switch updateAction {
+//            case .composites:
+//                DispatchQueue.main.async {
+////                    self.timeStreamTableView.reloadData()
+////                    self.loadingTimeStreamsSpinner.stopAnimating()
+//                }
+//            default: ()
+//            }
+//        case .onLoadTimeStream(loadTimeStreamAction: let loadTimeStreamAction):
+//            switch loadTimeStreamAction {
+//            case .start(uuid: let uuid, name: let name, configuration: let configuration):
+//                break
+//            case .progressStarChartGeneration(uuid: let uuid, completion: let completion):
+//                break
+//            case .completedStarChartGeneration(uuid: let uuid, composite: let composite):
+//                break
+//            case .progressGravimetricCalculation(uuid: let uuid, completion: let completion):
+//                break
+//            case .completedGravimetricCalculation(uuid: let uuid, composite: let composite):
+//                break
+//            }
+//        }
     }
 }
 

@@ -22,7 +22,7 @@ class TimeStreamInterfaceViewController: UIViewController {
     
     // Feedback
     @IBOutlet weak var statusLabel: UILabel!
-    @IBOutlet weak var progressView: UIProgressView!
+    @IBOutlet weak var progressBarView: UIView!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
     // Start and End Date Labels
@@ -50,17 +50,9 @@ class TimeStreamInterfaceViewController: UIViewController {
     
     
     // MARK: Properties
-    
     var lineChartView: TimeStream.Chart?
     var timeStreamComposite:TimeStream.Composite?
-    
-    // StarChart RealTime Playback Controller
-    lazy var playbackController = {
-        var controller = StarChartRealTimePlaybackController()
-        controller.date = StarChart.Core.current.date
-        controller.mode = .pause
-        return controller
-    }()
+    var progressBar: LevelBarView?
     
     // MARK: Static
     // Global Instance
@@ -99,22 +91,34 @@ class TimeStreamInterfaceViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         TimeStream.Core.add(reactive: self)
+        StarChart.Core.playbackController.addDelegate(self)
         setup()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super .viewWillDisappear(animated)
         TimeStream.Core.remove(reactive: self)
+        StarChart.Core.playbackController.removeDelegate(self)
     }
 
     // MARK: Setup
     // Setup
     private func setup() {
+        setupBars()
         setupViews()
         setupLabels()
         setupButtons()
         setupSpectrogram()
         setupCharts()
+    }
+    
+    func setupBars() {
+        progressBar = LevelBarView(frame: progressBarView.frame, sideAlignment: .left)
+        progressBarView.addSubview(progressBar!)
+        progressBar!.centerInSuperview()
+        progressBar!.width(to: progressBarView)
+        progressBar!.height(to: progressBarView)
+        progressBar!.setBarColor(uiColor: .tintColor)
     }
     
     func setupViews() {
@@ -165,21 +169,64 @@ class TimeStreamInterfaceViewController: UIViewController {
         timeStreamSpectrogramView.setup()
     }
     
+    // Setup Line Charts
     func setupCharts(_ composite:TimeStream.Composite? = nil) {
         // setup view
         print("Setup Charts (TimeStreamInterfaceViewController)")
         guard let configuration = composite?.configuration ?? self.timeStreamComposite?.configuration ?? TimeStream.Core.currentComposites.first?.configuration else {return}
         
-        lineChartView?.removeFromSuperview()
-        lineChartView = nil
-        lineChartView = TimeStream.Chart(frame: self.chartSuperView.frame, configuration: configuration, onComplete: {
-            print("Line Chart Data Loaded")
-        })
+        // Start
+        DispatchQueue.main.async {
+            /// Progress Bar
+            self.progressBar?.setProgress(0, animated: true)
+            self.progressBar?.isHidden = false
+            self.progressBar?.tintColor = .systemMint
+            
+            /// Activity Indicator
+            self.activityIndicatorView.isHidden = false
+            
+            /// Status Label
+            self.statusLabel.isHidden = false
+            self.statusLabel.text = "Calculating Gravimetrics..."
         
-        self.chartSuperView.addSubview(lineChartView!)
-        lineChartView?.centerInSuperview()
-        lineChartView?.width(to: self.chartSuperView)
-        lineChartView?.height(to: self.chartSuperView)
+            /// Chart View
+            self.lineChartView?.removeFromSuperview()
+            self.lineChartView = nil
+            self.lineChartView = TimeStream.Chart(frame: self.chartSuperView.frame,
+                                             configuration: configuration,
+                                             onProgress: { completion in
+                /// Progress
+                DispatchQueue.main.async {
+                    self.progressBar?.setProgress(Float(completion), animated: true)
+                }
+            },
+                                             onComplete: {
+                print("Line Chart Data Loaded")
+                DispatchQueue.main.async {
+                    /// Progress Bar
+                    self.progressBar?.setProgress(0, animated: true)
+                    self.progressBar?.isHidden = true
+                    self.progressBar?.tintColor = .tintColor
+                    
+                    /// Chart View
+                    self.lineChartView?.isHidden = false
+                    
+                    /// Activity Indicator
+                    self.activityIndicatorView.isHidden = true
+                    
+                    /// Status Label
+                    self.statusLabel.isHidden = true
+                    self.statusLabel.text = ""
+                }
+            })
+        
+            self.chartSuperView.addSubview(self.lineChartView!)
+            self.lineChartView?.centerInSuperview()
+            self.lineChartView?.isHidden = true
+            self.lineChartView?.width(to: self.chartSuperView)
+            self.lineChartView?.height(to: self.chartSuperView)
+            
+        }
     }
     
     // MARK: Show / Hide
@@ -257,31 +304,82 @@ class TimeStreamInterfaceViewController: UIViewController {
     
     // MARK: Playback Controls
     @IBAction func pauseButtonTouch(_ sender: UIButton) {
-        playbackController.pause()
+        StarChart.Core.playbackController.pause()
+        DispatchQueue.main.async {
+            self.pauseButton.isHighlighted = true
+            self.playForwardButton.isHighlighted = false
+            self.playBackwardButton.isHighlighted = false
+            self.fastForwardButton.isHighlighted = false
+            self.fastBackwardButton.isHighlighted = false
+        }
     }
     
     @IBAction func stepForwardButtonTouch(_ sender: UIButton) {
-        playbackController.step(.forward)
+        
+        StarChart.Core.playbackController.step(.forward)
+        
+        DispatchQueue.main.async {
+            self.pauseButton.isHighlighted = true
+            self.playForwardButton.isHighlighted = false
+            self.playBackwardButton.isHighlighted = false
+            self.fastForwardButton.isHighlighted = false
+            self.fastBackwardButton.isHighlighted = false
+        }
     }
     
     @IBAction func stepBackwardTouch(_ sender: UIButton) {
-        playbackController.step(.backward)
+        StarChart.Core.playbackController.step(.backward)
+        DispatchQueue.main.async {
+            self.pauseButton.isHighlighted = true
+            self.playForwardButton.isHighlighted = false
+            self.playBackwardButton.isHighlighted = false
+            self.fastForwardButton.isHighlighted = false
+            self.fastBackwardButton.isHighlighted = false
+        }
     }
     
     @IBAction func playForwardButtonTouch(_ sender: UIButton) {
-        playbackController.play(.forward)
+        StarChart.Core.playbackController.play(.forward)
+        DispatchQueue.main.async {
+            self.pauseButton.isHighlighted = false
+            self.playForwardButton.isHighlighted = true
+            self.playBackwardButton.isHighlighted = false
+            self.fastForwardButton.isHighlighted = false
+            self.fastBackwardButton.isHighlighted = false
+        }
     }
     
     @IBAction func playBackwardButtonTouch(_ sender: UIButton) {
-        playbackController.play(.backward)
+        StarChart.Core.playbackController.play(.backward)
+        DispatchQueue.main.async {
+            self.pauseButton.isHighlighted = false
+            self.playForwardButton.isHighlighted = false
+            self.playBackwardButton.isHighlighted = true
+            self.fastForwardButton.isHighlighted = false
+            self.fastBackwardButton.isHighlighted = false
+        }
     }
     
     @IBAction func fastForwardButtonTouch(_ sender: UIButton) {
-        playbackController.fast(.forward)
+        StarChart.Core.playbackController.fast(.forward)
+        DispatchQueue.main.async {
+            self.pauseButton.isHighlighted = false
+            self.playForwardButton.isHighlighted = false
+            self.playBackwardButton.isHighlighted = false
+            self.fastForwardButton.isHighlighted = true
+            self.fastBackwardButton.isHighlighted = false
+        }
     }
     
     @IBAction func fastBackwardButtonTouch(_ sender: UIButton) {
-        playbackController.fast(.backward)
+        StarChart.Core.playbackController.fast(.backward)
+        DispatchQueue.main.async {
+            self.pauseButton.isHighlighted = false
+            self.playForwardButton.isHighlighted = false
+            self.playBackwardButton.isHighlighted = false
+            self.fastForwardButton.isHighlighted = false
+            self.fastBackwardButton.isHighlighted = true
+        }
     }
     
     
@@ -305,58 +403,59 @@ extension TimeStreamInterfaceViewController: TimeStreamCoreReactive {
             switch action {
             case .onLoadTimeStream(loadTimeStreamAction: let loadTimeStreamAction):
                 switch loadTimeStreamAction {
-                /// Report on progress of loading StarChart data for the timestream
-                case .progress(uuid: _, completion: let completion):
-                    
-                    // Progress Bar
-                    self.progressView.setProgress(Float(completion), animated: true)
-                    
-                    // Set Activity Indicator
-                    self.activityIndicatorView.isHidden = false
-                    break
-                    
-                /// StarCharts all calculated and timestream data is fully loaded.
-                case .complete(uuid: let uuid, composite: let composite):
-                    
-                    // Set Composite
-                    self.timeStreamComposite = composite
-                    
-                    // Status Label
-                    self.statusLabel.isHidden = true
-                    self.statusLabel.text = ""
-                    
-                    // Date Labels
-                    self.startDateLabel.text = composite.configuration.startDate?.formatted() ?? "Start Date"
-                    self.endDateLabel.text = composite.configuration.endDate?.formatted() ?? "End Date"
-                    
-                    // Set Progress Bar
-                    self.progressView.isHidden = true
-                    self.progressView.setProgress(0, animated: false)
-                    
-                    // Set Activity Indicator
-                    self.activityIndicatorView.isHidden = true
-                    
-                    self.setupCharts(composite)
-                    
-                /// Start calculating StarCharts until all the starchart data for the timestream is fully loaded.
-                case .start(uuid: let uuid, name: let name, configuration: let configuration):
-                    
-                    // Status Label
+                // Start calculating StarCharts until all the starchart data for the timestream is fully loaded.
+                case .start(uuid: _, name: _, configuration: let configuration):
+                    /// Status Label
                     self.statusLabel.isHidden = false
-                    self.statusLabel.text = "Scrying..."
+                    self.statusLabel.text = "Calculating Star Charts..."
                     
-                    // Date Labels
+                    /// Date Labels
                     self.startDateLabel.text = configuration.startDate?.formatted() ?? "Start Date"
                     self.endDateLabel.text = configuration.endDate?.formatted() ?? "End Date"
                     
-                    // Progress Bar
-                    self.progressView.isHidden = false
-                    self.progressView.setProgress(0, animated: false)
+                    /// Progress Bar
+                    self.progressBar?.isHidden = false
+                    self.progressBar?.setProgress(0, animated: false)
+                    self.progressBar?.tintColor = .tintColor
                     
-                    // Set Activity Indicator
+                    /// Set Activity Indicator
                     self.activityIndicatorView.isHidden = false
                     
+                // Report on progress of loading StarChart data for the timestream
+                case .progress(uuid: _, completion: let completion):
+                    
+                    /// Progress Bar
+                    self.progressBar?.setProgress(Float(completion), animated: true)
+                    
+                    /// Set Activity Indicator
+                    self.activityIndicatorView.isHidden = false
+                    break
+                    
+                // StarCharts all calculated and timestream data is fully loaded.
+                case .complete(uuid: let uuid, composite: let composite):
+                    print("Completed Star Chart Generation for TimeStream (\(uuid))")
+                    
+                    /// Set Composite
+                    self.timeStreamComposite = composite
+                    
+                    /// Status Label
+                    self.statusLabel.isHidden = true
+                    
+                    /// Date Labels
+                    self.startDateLabel.text = composite.configuration.startDate?.formatted() ?? "Start Date"
+                    self.endDateLabel.text = composite.configuration.endDate?.formatted() ?? "End Date"
+                    
+                    /// Set Progress Bar
+                    self.progressBar?.isHidden = true
+                    self.progressBar?.setProgress(0, animated: false)
+                    self.progressBar?.tintColor = .systemMint
+                    
+                    /// Set Activity Indicator
+                    self.activityIndicatorView.isHidden = true
+                    
+                    self.setupCharts(composite)
                 }
+                
             case .update(updateAction: let updateAction):
                 switch updateAction {
                 case .currentComposite(composite: let composite):
@@ -368,7 +467,7 @@ extension TimeStreamInterfaceViewController: TimeStreamCoreReactive {
                     self.statusLabel.isHidden = true
                     
                     // Progress Bar
-                    self.progressView.isHidden = true
+                    self.progressBar?.isHidden = true
                     
                     // Chart
                     self.setupCharts(composite)
@@ -377,4 +476,17 @@ extension TimeStreamInterfaceViewController: TimeStreamCoreReactive {
             }
         }
     }
+}
+
+
+extension TimeStreamInterfaceViewController: StarChartRealTimePlaybackControllerDelegate {
+    func didStep(_ direction: StarChartRealTimePlaybackController.DirectionSetting) {
+        
+    }
+    
+    func didSet(mode: StarChartRealTimePlaybackController.PlaybackMode) {
+        
+    }
+    
+    
 }

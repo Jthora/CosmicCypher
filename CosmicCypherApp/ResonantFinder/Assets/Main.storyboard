@@ -1317,7 +1317,7 @@ Time:  10:51:55</string>
                                         </constraints>
                                         <state key="normal" image="Button_Settings-512x"/>
                                         <connections>
-                                            <action selector="geoLocationButtonTouch:" destination="0dJ-eA-Nbr" eventType="touchUpInside" id="rZD-U3-Vdc"/>
+                                            <action selector="settingsButtonTouch:" destination="0dJ-eA-Nbr" eventType="touchUpInside" id="2bZ-rn-9KY"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E1d-3W-cqr">
@@ -1337,7 +1337,7 @@ Time:  10:51:55</string>
                                         </constraints>
                                         <state key="normal" image="Button_Advanced-512x"/>
                                         <connections>
-                                            <action selector="settingsButtonTouch:" destination="0dJ-eA-Nbr" eventType="touchUpInside" id="Ccv-X2-7TR"/>
+                                            <action selector="aspectEventScannerButtonTouch:" destination="0dJ-eA-Nbr" eventType="touchUpInside" id="Byl-90-uCF"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mode: Paused" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GVS-mI-gQc">
@@ -1477,6 +1477,7 @@ Time:  10:51:55</string>
                     <navigationItem key="navigationItem" id="x86-si-m68"/>
                     <connections>
                         <outlet property="aboutButton" destination="UGX-Hx-Gw8" id="ECF-C0-wDO"/>
+                        <outlet property="aspectEventScannerButton" destination="rsA-NX-W5Y" id="7um-XD-g9p"/>
                         <outlet property="aspectsResultsTableView" destination="c0T-WX-Uaf" id="X5O-30-oZM"/>
                         <outlet property="barAirView" destination="RZN-bF-uPS" id="4M7-dq-1TI"/>
                         <outlet property="barAlphaPotentialView" destination="FML-k6-30X" id="57Q-ue-08I"/>
@@ -1508,7 +1509,6 @@ Time:  10:51:55</string>
                         <outlet property="dateTimeCoordsLabel" destination="Ija-bO-JsC" id="Boi-Wn-LLe"/>
                         <outlet property="discernmentGraphView" destination="xuL-7g-R20" id="GIR-db-f0U"/>
                         <outlet property="fixedNumberLabel" destination="OqI-fh-SB5" id="M9q-Vd-FLM"/>
-                        <outlet property="geoLocationButton" destination="S8T-cw-Gnc" id="nbo-bJ-N4S"/>
                         <outlet property="instructionsButton" destination="E1d-3W-cqr" id="kmw-uO-ugf"/>
                         <outlet property="modalityIndicatorAquarius" destination="Y3n-tS-OyC" id="9nI-WY-JcO"/>
                         <outlet property="modalityIndicatorAries" destination="Srq-8b-rDU" id="Coi-tx-u9p"/>
@@ -1545,7 +1545,7 @@ Time:  10:51:55</string>
                         <outlet property="resonanceBarVoidLabel" destination="9ZY-af-pjw" id="hAI-u0-mgt"/>
                         <outlet property="resonanceBarWaterLabel" destination="J9t-eL-ncp" id="sOY-hq-3h4"/>
                         <outlet property="resonanceBarsView" destination="TZX-DV-Hap" id="wfc-2S-Zpb"/>
-                        <outlet property="settingsButton" destination="rsA-NX-W5Y" id="cIB-SE-0kr"/>
+                        <outlet property="settingsButton" destination="S8T-cw-Gnc" id="JHw-oA-pAA"/>
                         <outlet property="shareButton" destination="nVK-M8-eDC" id="2RZ-k6-e9K"/>
                         <outlet property="speedButton" destination="745-Va-yPr" id="lhj-1o-eBm"/>
                         <outlet property="speedModeLabel" destination="GVS-mI-gQc" id="4De-xt-1MN"/>

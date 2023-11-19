@@ -1,19 +1,19 @@
 //
-//  PlanetSelectViewController.swift
+//  PlanetNodesAndAspectsViewController.swift
 //  CosmicCypher
 //
-//  Created by Jordan Trana on 6/23/22.
+//  Created by Jordan Trana on 11/19/23.
 //
 
 import Foundation
 import UIKit
 
-class PlanetSelectViewController: UIViewController {
+class PlanetNodesAndAspectsViewController: UIViewController {
     
     var selectionContext:SelectionContext = .starChart
     var onDismiss:(()->())? = nil
     static func presentModally(over presentingViewController: UIViewController, selectionContext: SelectionContext, onDismiss: (()->())? = nil) {
-        guard let vc = UIStoryboard(name: "PlanetSelect", bundle: nil).instantiateViewController(withIdentifier: "PlanetSelectViewController") as? PlanetSelectViewController else {
+        guard let vc = UIStoryboard(name: "PlanetNodesAndAspects", bundle: nil).instantiateViewController(withIdentifier: "PlanetNodesAndAspectsViewController") as? PlanetNodesAndAspectsViewController else {
             return
         }
         vc.selectionContext = selectionContext
@@ -94,7 +94,7 @@ class PlanetSelectViewController: UIViewController {
     }
 }
 
-extension PlanetSelectViewController: UICollectionViewDelegate {
+extension PlanetNodesAndAspectsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) else {
             print("PlanetCollectionViewCell error: no cell for indexPath.row \(indexPath.row)")
@@ -110,7 +110,7 @@ extension PlanetSelectViewController: UICollectionViewDelegate {
     }
 }
 
-extension PlanetSelectViewController: UICollectionViewDataSource {
+extension PlanetNodesAndAspectsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == planetCollectionView {
             return CoreAstrology.AspectBody.NodeType.allCases.count
@@ -121,7 +121,7 @@ extension PlanetSelectViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == planetCollectionView {
-            if let cell: PlanetCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlanetCollectionViewCell", for: indexPath) as? PlanetCollectionViewCell {
+            if let cell: PlanetNodeCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlanetNodeCollectionViewCell", for: indexPath) as? PlanetNodeCollectionViewCell {
                 cell.selectionContext = selectionContext
                 cell.planet = CoreAstrology.AspectBody.NodeType.allCases[indexPath.row]
                 if let planet = cell.planet {
@@ -135,7 +135,7 @@ extension PlanetSelectViewController: UICollectionViewDataSource {
                 }
                 return cell
             } else {
-                let cell = PlanetCollectionViewCell()
+                let cell = PlanetNodeCollectionViewCell()
                 cell.selectionContext = selectionContext
                 cell.planet = CoreAstrology.AspectBody.NodeType.allCases[indexPath.row]
                 if let planet = cell.planet {
@@ -186,7 +186,7 @@ extension PlanetSelectViewController: UICollectionViewDataSource {
 }
 
 
-extension PlanetSelectViewController {
+extension PlanetNodesAndAspectsViewController {
     enum SelectionContext {
         case starChart
         case aspectScanner

@@ -318,3 +318,63 @@ extension Date {
     }
 }
 
+extension Date {
+    enum DateTextFormat {
+        case fullDate
+        case longDate
+        case mediumDate
+        case shortDate
+        case fullTime
+        case longTime
+        case mediumTime
+        case shortTime
+        case day
+        case month
+        case year
+        case custom(String)
+        // Add more cases for additional options as needed
+    }
+    
+    func text(_ format: DateTextFormat) -> String {
+        let formatter = DateFormatter()
+        
+        switch format {
+        case .fullDate:
+            formatter.dateStyle = .full
+            formatter.timeStyle = .none
+        case .longDate:
+            formatter.dateStyle = .long
+            formatter.timeStyle = .none
+        case .mediumDate:
+            formatter.dateStyle = .medium
+            formatter.timeStyle = .none
+        case .shortDate:
+            formatter.dateStyle = .short
+            formatter.timeStyle = .none
+        case .fullTime:
+            formatter.dateStyle = .none
+            formatter.timeStyle = .full
+        case .longTime:
+            formatter.dateStyle = .none
+            formatter.timeStyle = .long
+        case .mediumTime:
+            formatter.dateStyle = .none
+            formatter.timeStyle = .medium
+        case .shortTime:
+            formatter.dateStyle = .none
+            formatter.timeStyle = .short
+        case .day:
+            formatter.dateFormat = "EEEE"
+        case .month:
+            formatter.dateFormat = "MMMM"
+        case .year:
+            formatter.dateFormat = "yyyy"
+        case .custom(let dateFormat):
+            formatter.dateFormat = dateFormat
+        // Add more cases and their respective date formats here
+        }
+        
+        return formatter.string(from: self)
+    }
+}
+

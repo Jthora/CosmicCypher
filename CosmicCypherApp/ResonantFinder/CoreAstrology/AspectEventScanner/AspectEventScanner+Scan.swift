@@ -80,7 +80,7 @@ extension AspectEventScanner {
             scan(startDate: startDate,
                  endDate: endDate,
                  aspectTypes: aspectTypes,
-                 totalScanCount: totalScanCount)//aspectTypes: aspectTypes, totalScanCount: totalScanCount)
+                 totalScanCount: totalScanCount)
         }
         
         
@@ -111,10 +111,7 @@ extension AspectEventScanner {
         func scan(startDate:Date, 
                   endDate:Date,
                   aspectTypes: [CoreAstrology.AspectType],
-                  totalScanCount:Float,
-                  didUpdate:((_ progress:Float)->Void)? = nil,
-                  didComplete:((_ aspectsFound:[Date: [CoreAstrology.Aspect]])->Void)? = nil,
-                  didError:((_ error:AspectEventScanner.ScanError)->Void)? = nil) {
+                  totalScanCount:Float) {
             //print("scanning aspects")
             
             // Perform on Background Thread
@@ -136,9 +133,9 @@ extension AspectEventScanner {
                     // Report progress to Console UI
                     DispatchQueue.main.async {
                         AspectEventScanner.Core.console.scanning(scans: Int(scanCount),
-                                               scrying: self.activelyScanningAspectEvents.count,
-                                               discovered: self.lockedInAspects.count)
-                        didUpdate?(progress)
+                                                                 scrying: self.activelyScanningAspectEvents.count,
+                                                                 discovered: self.lockedInAspects.count)
+                        self.delegate?.scanUpdate(scanProgress: progress)
                         //print("timeDelta: \(Date().timeIntervalSinceReferenceDate-timeDelta) (scanUpdate(progress:))")
                     }
                     
@@ -149,7 +146,8 @@ extension AspectEventScanner {
                     //print("timeDelta: \(Date().timeIntervalSinceReferenceDate-timeDelta) (findAspectsWithinOrb)")
                     
                     // Calculate Aspects
-                    self.calculate(aspects: aspects, on: currentDate)
+                    self.calculate(aspects: aspects, 
+                                   on: currentDate)
                     //print("timeDelta: \(Date().timeIntervalSinceReferenceDate-timeDelta) (calculate(aspects:))")
 
                     // determine the next scan date
@@ -157,23 +155,21 @@ extension AspectEventScanner {
                 }
                 
                 // Report Complete to Delegate
-                didComplete?(self.lockedInAspects)
+                DispatchQueue.main.async {
+                    self.delegate?.scanComplete(aspectsFound: self.lockedInAspects)
+                }
             }
         }
         
         // Find Aspects for Date based on Types
-        func findAspectsWithinOrb(aspectTypes:[CoreAstrology.AspectType],
-                                  on date:Date,
-                                  didUpdate:((_ progress:Float)->Void)? = nil,
-                                  didComplete:((_ aspects:[CoreAstrology.Aspect])->Void)? = nil,
-                                  didError:((_ error:AspectEventScanner.ScanError)->Void)? = nil) -> [CoreAstrology.Aspect] {
+        func findAspectsWithinOrb(aspectTypes:[CoreAstrology.AspectType], on date:Date) -> [CoreAstrology.Aspect] {
             var aspects: [CoreAstrology.Aspect] = []
             for (i,aspectType) in aspectTypes.enumerated() {
                 
                 // Report Progress Bar
                 DispatchQueue.main.async {
-                    let subProgress:Float = Float(i) / Float(aspectTypes.count)
-                    didUpdate?(subProgress)
+                    let subScanProgress:Float = Float(i) / Float(aspectTypes.count)
+                    self.delegate?.scanUpdate(subScanProgress: subScanProgress)
                 }
                 
                 //print("checking orb for: \(aspectType.hash)")
@@ -183,7 +179,7 @@ extension AspectEventScanner {
             }
             // Report Progress Bar
             DispatchQueue.main.async {
-                didUpdate?(0)
+                self.delegate?.scanUpdate(subScanProgress: 0)
             }
             return aspects
         }
@@ -209,8 +205,8 @@ extension AspectEventScanner {
                 
                 // Report Progress Bar
                 DispatchQueue.main.async {
-                    let subProgress:Float = Float(i) / Float(aspects.count)
-                    //self.delegate?.scanUpdate(progress: nil, subProgress: subProgress)
+                    let subScanProgress:Float = Float(i) / Float(aspects.count)
+                    self.delegate?.scanUpdate(subScanProgress: subScanProgress)
                 }
                 
                 // Symbol Hash

@@ -26,7 +26,7 @@ class AspectEventConsole {
         self.delegate = delegate
     }
     
-    func updateDelegate() {
+    func update() {
         let currentText = text
         text = currentText
     }

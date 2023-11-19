@@ -2,8 +2,10 @@
 //  AspectCollectionViewCell.swift
 //  CosmicCypher
 //
-//  Created by Jordan Trana on 6/26/22.
+//  Created by Jordan Trana on 11/19/23.
 //
+
+import Foundation
 
 import UIKit
 
@@ -13,7 +15,7 @@ class AspectCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var aspectLabel: UILabel!
     @IBOutlet weak var aspectSelectedLabel: UILabel!
     
-    var selectionContext:PlanetSelectViewController.SelectionContext = .starChart
+    var selectionContext:PlanetNodesAndAspectsViewController.SelectionContext = .starChart
     
     override func awakeFromNib() {
         super.awakeFromNib()

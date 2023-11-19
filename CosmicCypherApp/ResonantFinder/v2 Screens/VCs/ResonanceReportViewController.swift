@@ -148,10 +148,10 @@ class ResonanceReportViewController: UIViewController {
     // Central UI Elements
     @IBOutlet weak var dateTimeCoordsLabel: UILabel!
     
-    @IBOutlet weak var geoLocationButton: UIButton!
+    @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var instructionsButton: UIButton!
     @IBOutlet weak var planetSelectButton: UIButton!
-    @IBOutlet weak var settingsButton: UIButton!
+    @IBOutlet weak var aspectEventScannerButton: UIButton!
     
     @IBOutlet weak var speedModeLabel: UILabel!
     @IBOutlet weak var speedButton: UIButton!
@@ -267,9 +267,8 @@ class ResonanceReportViewController: UIViewController {
     
     
     // MARK: Buttons
-    @IBAction func settingsButtonTouch(_ sender: UIButton) {
+    @IBAction func aspectEventScannerButtonTouch(_ sender: UIButton) {
         //TimeStreamSettingsViewController.presentModally(over: self)
-        //SettingsViewController.presentModally(over: self)
         AspectEventScanViewController.presentModally(over: self)
     }
     
@@ -278,11 +277,12 @@ class ResonanceReportViewController: UIViewController {
     }
     
     @IBAction func planetSelectButtonTouch(_ sender: UIButton) {
-        PlanetSelectViewController.presentModally(over: self, selectionContext: .starChart)
+        PlanetNodesAndAspectsViewController.presentModally(over: self, selectionContext: .starChart)
     }
     
-    @IBAction func geoLocationButtonTouch(_ sender: UIButton) {
-        StarChartSelectViewController.presentModally(over: self)
+    @IBAction func settingsButtonTouch(_ sender: UIButton) {
+        SettingsViewController.presentModally(over: self)
+        //StarChartSelectViewController.presentModally(over: self)
     }
     
     

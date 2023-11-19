@@ -118,12 +118,13 @@ class AspectEventScanner {
         }
     }
     
-    // MARK: External Main Functions
+    // MARK: Public Main Functions
 
     // External Call to perform a Scan
     public func scan()
     {
         print("scan")
+        scanner.delegate = self
         scanner.startScanner(startDate: startDate,
                              endDate: endDate)
     }

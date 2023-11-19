@@ -54,13 +54,20 @@ class AspectEventScanViewController: UIViewController {
     
     
     // MARK: UI
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        scanner.console?.delegate = self
+        scanner.delegate = self
+    }
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         scanner.console?.delegate = self
         scanner.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         updateUI()
     }
     
@@ -71,17 +78,13 @@ class AspectEventScanViewController: UIViewController {
         textFieldLatitude.text = "\(location.coordinate.latitude)"
         
         // Fill Planets and Nodes
-        let planetNodeSymbols:[String] = scanner.selectedNodeTypes.map { nodeType in
-            return "\(nodeType.symbol) "
-        }
-        let aspectSymbols:[String] = scanner.selectedAspects.map { aspect in
-            return "(\(aspect.symbol)) "
-        }
+        let planetNodeSymbols:[String] = scanner.selectedNodeTypes.map { $0.symbol }
+        let aspectSymbols:[String] = scanner.selectedAspects.map { $0.symbol }
         
         textViewPlanetsAndNodes.text = planetNodeSymbols.joined()
         textViewAspectAngles.text = aspectSymbols.joined()
         
-        scanner.console?.updateDelegate()
+        scanner.console?.update()
     }
     
     
@@ -137,7 +140,7 @@ class AspectEventScanViewController: UIViewController {
     }
     
     @IBAction func buttonSelect(_ sender: UIButton) {
-        PlanetSelectViewController.presentModally(over: self, selectionContext: .aspectScanner) {
+        PlanetNodeAndAspectSelectViewController.presentModally(over: self, selectionContext: .aspectScanner) {
             self.updateUI()
         }
     }
@@ -218,6 +221,8 @@ extension AspectEventScanViewController: AspectEventConsoleDelegate {
 
 // MARK: Aspect Event Scanner Delegate
 extension AspectEventScanViewController: AspectEventScannerDelegate {
+    
+    
     // Update (Scan)
     func scanUpdate(scanProgress: Float?) {
         DispatchQueue.main.async {
@@ -234,6 +239,13 @@ extension AspectEventScanViewController: AspectEventScannerDelegate {
                 self.subProgressBar.progress = subProgress
             }
         }
+    }
+    func scanUpdate(calculateProgress: Float?) {
+        
+    }
+    
+    func scanUpdate(subScanProgress: Float?) {
+        
     }
     
     // Scan Complete

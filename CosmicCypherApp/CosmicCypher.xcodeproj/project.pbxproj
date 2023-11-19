@@ -38,6 +38,10 @@
 		FA07CA4825401EBC00683486 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07CA1C25401EBB00683486 /* String+Extension.swift */; };
 		FA07CA4925401EBC00683486 /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07CA1D25401EBB00683486 /* Dictionary+Extension.swift */; };
 		FA07CA4A25401EBC00683486 /* SpriteKit+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07CA1E25401EBB00683486 /* SpriteKit+Extension.swift */; };
+		FA11EDDA2B0AA7D50013ECA2 /* PlanetNodesAndAspects.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA11EDD92B0AA7D50013ECA2 /* PlanetNodesAndAspects.storyboard */; };
+		FA11EDDD2B0AA82A0013ECA2 /* PlanetNodesAndAspectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11EDDC2B0AA82A0013ECA2 /* PlanetNodesAndAspectsViewController.swift */; };
+		FA11EDDF2B0AA9F40013ECA2 /* PlanetNodeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11EDDE2B0AA9F40013ECA2 /* PlanetNodeCollectionViewCell.swift */; };
+		FA11EDE12B0AAA490013ECA2 /* AspectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11EDE02B0AAA490013ECA2 /* AspectCollectionViewCell.swift */; };
 		FA12D5E5289D7B3500411649 /* ResonanceReportViewController+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12D5E4289D7B3500411649 /* ResonanceReportViewController+Reactive.swift */; };
 		FA12D5E7289D7BA900411649 /* ResonanceReportViewController+TableViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12D5E6289D7BA900411649 /* ResonanceReportViewController+TableViewDelegates.swift */; };
 		FA12D5E9289D7C1A00411649 /* ResonanceReportViewController+UpdateOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12D5E8289D7C1A00411649 /* ResonanceReportViewController+UpdateOperation.swift */; };
@@ -74,13 +78,13 @@
 		FA33AAFD2864E18E00BC9F76 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA33AAFC2864E18E00BC9F76 /* Settings.storyboard */; };
 		FA33AAFF2864E1A000BC9F76 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA33AAFE2864E1A000BC9F76 /* SettingsViewController.swift */; };
 		FA33AB01286557D800BC9F76 /* PlanetSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA33AB00286557D800BC9F76 /* PlanetSelect.swift */; };
-		FA33AB032865582200BC9F76 /* PlanetSelect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA33AB022865582200BC9F76 /* PlanetSelect.storyboard */; };
-		FA33AB052865584D00BC9F76 /* PlanetSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA33AB042865584D00BC9F76 /* PlanetSelectViewController.swift */; };
+		FA33AB032865582200BC9F76 /* PlanetNodeAndAspectSelect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA33AB022865582200BC9F76 /* PlanetNodeAndAspectSelect.storyboard */; };
+		FA33AB052865584D00BC9F76 /* PlanetNodeAndAspectSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA33AB042865584D00BC9F76 /* PlanetNodeAndAspectSelectViewController.swift */; };
 		FA33AB0728655B8500BC9F76 /* StarChartSelect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA33AB0628655B8500BC9F76 /* StarChartSelect.storyboard */; };
 		FA33AB0928655DF700BC9F76 /* Instructions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA33AB0828655DF700BC9F76 /* Instructions.storyboard */; };
 		FA33AB0C2866760700BC9F76 /* CosmicAlignmentSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA33AB0B2866760700BC9F76 /* CosmicAlignmentSpriteNode.swift */; };
-		FA33AB0F2868D66900BC9F76 /* PlanetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA33AB0E2868D66900BC9F76 /* PlanetCollectionViewCell.swift */; };
-		FA33AB112868D79900BC9F76 /* AspectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA33AB102868D79900BC9F76 /* AspectCollectionViewCell.swift */; };
+		FA33AB0F2868D66900BC9F76 /* PlanetNodeSelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA33AB0E2868D66900BC9F76 /* PlanetNodeSelectCollectionViewCell.swift */; };
+		FA33AB112868D79900BC9F76 /* AspectSelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA33AB102868D79900BC9F76 /* AspectSelectCollectionViewCell.swift */; };
 		FA35C08E2849783A006114AB /* Earth+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C05E28497839006114AB /* Earth+Extension.swift */; };
 		FA35C08F2849783A006114AB /* JulianDay+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C05F28497839006114AB /* JulianDay+Extension.swift */; };
 		FA35C0902849783A006114AB /* Astronomy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35C06028497839006114AB /* Astronomy.swift */; };
@@ -332,6 +336,10 @@
 		FA07CA1C25401EBB00683486 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		FA07CA1D25401EBB00683486 /* Dictionary+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
 		FA07CA1E25401EBB00683486 /* SpriteKit+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SpriteKit+Extension.swift"; sourceTree = "<group>"; };
+		FA11EDD92B0AA7D50013ECA2 /* PlanetNodesAndAspects.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlanetNodesAndAspects.storyboard; sourceTree = "<group>"; };
+		FA11EDDC2B0AA82A0013ECA2 /* PlanetNodesAndAspectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetNodesAndAspectsViewController.swift; sourceTree = "<group>"; };
+		FA11EDDE2B0AA9F40013ECA2 /* PlanetNodeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetNodeCollectionViewCell.swift; sourceTree = "<group>"; };
+		FA11EDE02B0AAA490013ECA2 /* AspectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectCollectionViewCell.swift; sourceTree = "<group>"; };
 		FA12D5E4289D7B3500411649 /* ResonanceReportViewController+Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResonanceReportViewController+Reactive.swift"; sourceTree = "<group>"; };
 		FA12D5E6289D7BA900411649 /* ResonanceReportViewController+TableViewDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResonanceReportViewController+TableViewDelegates.swift"; sourceTree = "<group>"; };
 		FA12D5E8289D7C1A00411649 /* ResonanceReportViewController+UpdateOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResonanceReportViewController+UpdateOperation.swift"; sourceTree = "<group>"; };
@@ -368,13 +376,13 @@
 		FA33AAFC2864E18E00BC9F76 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		FA33AAFE2864E1A000BC9F76 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		FA33AB00286557D800BC9F76 /* PlanetSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetSelect.swift; sourceTree = "<group>"; };
-		FA33AB022865582200BC9F76 /* PlanetSelect.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlanetSelect.storyboard; sourceTree = "<group>"; };
-		FA33AB042865584D00BC9F76 /* PlanetSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetSelectViewController.swift; sourceTree = "<group>"; };
+		FA33AB022865582200BC9F76 /* PlanetNodeAndAspectSelect.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlanetNodeAndAspectSelect.storyboard; sourceTree = "<group>"; };
+		FA33AB042865584D00BC9F76 /* PlanetNodeAndAspectSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetNodeAndAspectSelectViewController.swift; sourceTree = "<group>"; };
 		FA33AB0628655B8500BC9F76 /* StarChartSelect.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StarChartSelect.storyboard; sourceTree = "<group>"; };
 		FA33AB0828655DF700BC9F76 /* Instructions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Instructions.storyboard; sourceTree = "<group>"; };
 		FA33AB0B2866760700BC9F76 /* CosmicAlignmentSpriteNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicAlignmentSpriteNode.swift; sourceTree = "<group>"; };
-		FA33AB0E2868D66900BC9F76 /* PlanetCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetCollectionViewCell.swift; sourceTree = "<group>"; };
-		FA33AB102868D79900BC9F76 /* AspectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectCollectionViewCell.swift; sourceTree = "<group>"; };
+		FA33AB0E2868D66900BC9F76 /* PlanetNodeSelectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetNodeSelectCollectionViewCell.swift; sourceTree = "<group>"; };
+		FA33AB102868D79900BC9F76 /* AspectSelectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectSelectCollectionViewCell.swift; sourceTree = "<group>"; };
 		FA35C05E28497839006114AB /* Earth+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Earth+Extension.swift"; sourceTree = "<group>"; };
 		FA35C05F28497839006114AB /* JulianDay+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JulianDay+Extension.swift"; sourceTree = "<group>"; };
 		FA35C06028497839006114AB /* Astronomy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Astronomy.swift; sourceTree = "<group>"; };
@@ -767,6 +775,16 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		FA11EDDB2B0AA8170013ECA2 /* PlanetNodesAndAspects */ = {
+			isa = PBXGroup;
+			children = (
+				FA11EDDC2B0AA82A0013ECA2 /* PlanetNodesAndAspectsViewController.swift */,
+				FA11EDE02B0AAA490013ECA2 /* AspectCollectionViewCell.swift */,
+				FA11EDDE2B0AA9F40013ECA2 /* PlanetNodeCollectionViewCell.swift */,
+			);
+			path = PlanetNodesAndAspects;
+			sourceTree = "<group>";
+		};
 		FA1FDD432570262700B51BD2 /* SubScreens */ = {
 			isa = PBXGroup;
 			children = (
@@ -829,8 +847,8 @@
 		FA33AB0D2868D63500BC9F76 /* CollectionViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				FA33AB0E2868D66900BC9F76 /* PlanetCollectionViewCell.swift */,
-				FA33AB102868D79900BC9F76 /* AspectCollectionViewCell.swift */,
+				FA33AB0E2868D66900BC9F76 /* PlanetNodeSelectCollectionViewCell.swift */,
+				FA33AB102868D79900BC9F76 /* AspectSelectCollectionViewCell.swift */,
 			);
 			path = CollectionViewCells;
 			sourceTree = "<group>";
@@ -841,7 +859,7 @@
 				FAEAFEB928492595001AEAE0 /* EditTimeStreamViewController.swift */,
 				FA2CB4952862A9C6003AD95C /* CosmicCypherInstructionsViewController.swift */,
 				FA33AAFE2864E1A000BC9F76 /* SettingsViewController.swift */,
-				FA33AB042865584D00BC9F76 /* PlanetSelectViewController.swift */,
+				FA33AB042865584D00BC9F76 /* PlanetNodeAndAspectSelectViewController.swift */,
 				FA6101CC286D73AA0000D4D5 /* StarChartSelectViewController.swift */,
 				FA6101D0286D73C70000D4D5 /* GeoLocationSelectViewController.swift */,
 				FAFE792F2A6BE85B00C56612 /* GeoLocationAndTimeSelectViewController.swift */,
@@ -1198,7 +1216,7 @@
 			children = (
 				FAEAFEBC284927BB001AEAE0 /* v4.storyboard */,
 				FA33AAFC2864E18E00BC9F76 /* Settings.storyboard */,
-				FA33AB022865582200BC9F76 /* PlanetSelect.storyboard */,
+				FA33AB022865582200BC9F76 /* PlanetNodeAndAspectSelect.storyboard */,
 				FA33AB0628655B8500BC9F76 /* StarChartSelect.storyboard */,
 				FA6101D6286D78580000D4D5 /* TimeStreamSelect.storyboard */,
 				FA33AB0828655DF700BC9F76 /* Instructions.storyboard */,
@@ -1253,6 +1271,7 @@
 		FAFB68A72AB8394200FEBDF4 /* v5 Screens */ = {
 			isa = PBXGroup;
 			children = (
+				FA11EDDB2B0AA8170013ECA2 /* PlanetNodesAndAspects */,
 				FA3A38CD2AD698D5008907F2 /* EnergyLevels */,
 				FAD6D6702AC2E4B9006264C8 /* CreateTimeStreamComposite */,
 				FAB068F02ABA1AAC00334B1A /* About */,
@@ -1282,6 +1301,7 @@
 				FAD6D67B2AC2E646006264C8 /* CreateTimeStreamComposite.storyboard */,
 				FA3A38CB2AD698CA008907F2 /* EnergyLevelDetailsViewController.storyboard */,
 				FAA536AA2AD84BD2005A360D /* SpectrographSettings.storyboard */,
+				FA11EDD92B0AA7D50013ECA2 /* PlanetNodesAndAspects.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -1407,6 +1427,7 @@
 				FA3A38CC2AD698CA008907F2 /* EnergyLevelDetailsViewController.storyboard in Resources */,
 				FAFE792E2A6AD87200C56612 /* AspectEventScan.storyboard in Resources */,
 				FA07C9BA254019DB00683486 /* LaunchScreen.storyboard in Resources */,
+				FA11EDDA2B0AA7D50013ECA2 /* PlanetNodesAndAspects.storyboard in Resources */,
 				FA07C9B7254019DB00683486 /* Assets.xcassets in Resources */,
 				FA2C44A1286CEEE8009E61B2 /* TimeStreamManualSelect.storyboard in Resources */,
 				FA07CA4425401EBC00683486 /* Aldrich-Regular.ttf in Resources */,
@@ -1421,7 +1442,7 @@
 				FA33AB0728655B8500BC9F76 /* StarChartSelect.storyboard in Resources */,
 				FAEAFEBF28492802001AEAE0 /* v3.storyboard in Resources */,
 				FAEAFEB02847E0D7001AEAE0 /* StarDiskFormation-loaderAnim_2.gif in Resources */,
-				FA33AB032865582200BC9F76 /* PlanetSelect.storyboard in Resources */,
+				FA33AB032865582200BC9F76 /* PlanetNodeAndAspectSelect.storyboard in Resources */,
 				FAEAFEBD284927BB001AEAE0 /* v4.storyboard in Resources */,
 				FA6101D7286D78580000D4D5 /* TimeStreamSelect.storyboard in Resources */,
 				FA07CA1F25401EBB00683486 /* NaturaDisk.sks in Resources */,
@@ -1580,7 +1601,7 @@
 				FAE12E4E2A6C1432002016A3 /* AspectEventScannerCore.swift in Sources */,
 				FAFB68912AB2757C00FEBDF4 /* PlanetaryPlacementsSpriteNode.swift in Sources */,
 				FA35C0972849783A006114AB /* StarChart.swift in Sources */,
-				FA33AB0F2868D66900BC9F76 /* PlanetCollectionViewCell.swift in Sources */,
+				FA33AB0F2868D66900BC9F76 /* PlanetNodeSelectCollectionViewCell.swift in Sources */,
 				FAB1311928749201000AD7B9 /* PlanetNodeState.swift in Sources */,
 				FA12D5E5289D7B3500411649 /* ResonanceReportViewController+Reactive.swift in Sources */,
 				FA35C0922849783A006114AB /* StarChartRegistry.swift in Sources */,
@@ -1590,7 +1611,7 @@
 				FAFB68962AB2938500FEBDF4 /* AspectLinesSpriteNode.swift in Sources */,
 				FA2CB48A285E4E9B003AD95C /* UUID+Extension.swift in Sources */,
 				FA35C0C028497879006114AB /* Arcana.swift in Sources */,
-				FA33AB052865584D00BC9F76 /* PlanetSelectViewController.swift in Sources */,
+				FA33AB052865584D00BC9F76 /* PlanetNodeAndAspectSelectViewController.swift in Sources */,
 				FAFB68AA2AB8398000FEBDF4 /* TimeStreamInterfaceContainerView.swift in Sources */,
 				FA07CA4625401EBC00683486 /* UIImage+Extension.swift in Sources */,
 				FA2CB48C285FFCCE003AD95C /* TimeStreamCoreDelegate.swift in Sources */,
@@ -1685,7 +1706,7 @@
 				FA07CA4525401EBC00683486 /* Date+Extension.swift in Sources */,
 				FAEAFEBA28492595001AEAE0 /* EditTimeStreamViewController.swift in Sources */,
 				FA5CF1782A7587FE006CBEB5 /* AspectEventScannerResults.swift in Sources */,
-				FA33AB112868D79900BC9F76 /* AspectCollectionViewCell.swift in Sources */,
+				FA33AB112868D79900BC9F76 /* AspectSelectCollectionViewCell.swift in Sources */,
 				FAB79EF82ADBD0B500F754AC /* TimeStreamInterfaceCursorView.swift in Sources */,
 				FA6101D3286D73D70000D4D5 /* OffgridGeoLocationSelectViewController.swift in Sources */,
 				FA1FDD92257969E500B51BD2 /* ElementalReadingViewController.swift in Sources */,
@@ -1728,6 +1749,7 @@
 				FA35C0C728499195006114AB /* StarKitAssets.swift in Sources */,
 				FAD6D67A2AC2E529006264C8 /* TimeStreamCreateViewController.swift in Sources */,
 				FA35C0DC2849A840006114AB /* TimeStreamMaterial.swift in Sources */,
+				FA11EDE12B0AAA490013ECA2 /* AspectCollectionViewCell.swift in Sources */,
 				FA07CA4725401EBC00683486 /* SceneKit+Extension.swift in Sources */,
 				FA2CB48E2860EC4F003AD95C /* CIFilter+Extension.swift in Sources */,
 				FA2C449728697B9F009E61B2 /* StarChartComposite.swift in Sources */,
@@ -1777,6 +1799,7 @@
 				FAE12E4A2A6C1371002016A3 /* AspectEventScanner.swift in Sources */,
 				FA5CF17E2A765DE7006CBEB5 /* AspectEventExportViewController.swift in Sources */,
 				FA07CA3B25401EBC00683486 /* ResultTableViewCell.swift in Sources */,
+				FA11EDDF2B0AA9F40013ECA2 /* PlanetNodeCollectionViewCell.swift in Sources */,
 				FA33AAFF2864E1A000BC9F76 /* SettingsViewController.swift in Sources */,
 				FA5CF1802A7672DD006CBEB5 /* AspectEventDataArchive.swift in Sources */,
 				FAFB68B42AB93C9400FEBDF4 /* TimeStreamInterfaceViewController.swift in Sources */,
@@ -1784,6 +1807,7 @@
 				FA07CA4825401EBC00683486 /* String+Extension.swift in Sources */,
 				FAEB27AF284FC51B009994B8 /* StarChartArchive.swift in Sources */,
 				FA5CF1822A767A92006CBEB5 /* AspectEventScannerResultsFormatter.swift in Sources */,
+				FA11EDDD2B0AA82A0013ECA2 /* PlanetNodesAndAspectsViewController.swift in Sources */,
 				FA35C0D62849A840006114AB /* TimeStreamScene.swift in Sources */,
 				FA6101CF286D73B70000D4D5 /* TimeStreamSelectViewController.swift in Sources */,
 				FA3A38C82ACCFF1A008907F2 /* TimeStreamSpectrogramShader.swift in Sources */,

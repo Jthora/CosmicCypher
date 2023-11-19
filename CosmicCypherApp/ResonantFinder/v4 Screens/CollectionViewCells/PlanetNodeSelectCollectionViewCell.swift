@@ -1,5 +1,5 @@
 //
-//  PlanetCollectionViewCell.swift
+//  PlanetNodeSelectCollectionViewCell.swift
 //  CosmicCypher
 //
 //  Created by Jordan Trana on 6/26/22.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PlanetCollectionViewCell: UICollectionViewCell {
+class PlanetNodeSelectCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var planetImageView: UIImageView!
     @IBOutlet weak var planetLabel: UILabel!
@@ -16,7 +16,7 @@ class PlanetCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var topZodiacImageView: UIImageView!
     @IBOutlet weak var bottomZodiacImageView: UIImageView!
     
-    var selectionContext:PlanetSelectViewController.SelectionContext = .starChart
+    var selectionContext:PlanetNodeAndAspectSelectViewController.SelectionContext = .starChart
     
     var planet:CoreAstrology.AspectBody.NodeType? = nil {
         didSet {

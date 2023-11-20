@@ -51,6 +51,40 @@ extension Arcana.Zodiac {
         }
     }
     
+    var emoji: String {
+        switch self {
+        case .aries: return "♈️" // Aries emoji
+        case .taurus: return "♉️" // Taurus emoji
+        case .gemini: return "♊️" // Gemini emoji
+        case .cancer: return "♋️" // Cancer emoji
+        case .leo: return "♌️" // Leo emoji
+        case .virgo: return "♍️" // Virgo emoji
+        case .libra: return "♎️" // Libra emoji
+        case .scorpio: return "♏️" // Scorpio emoji
+        case .sagittarius: return "♐️" // Sagittarius emoji
+        case .capricorn: return "♑️" // Capricorn emoji
+        case .aquarius: return "♒️" // Aquarius emoji
+        case .pisces: return "♓️" // Pisces emoji
+        }
+    }
+    
+    var chineseEmoji: String {
+            switch self {
+            case .aries: return "🐀" // Rat for Aries
+            case .taurus: return "🐂" // Ox for Taurus
+            case .gemini: return "🐅" // Tiger for Gemini
+            case .cancer: return "🐇" // Rabbit for Cancer
+            case .leo: return "🐉" // Dragon for Leo
+            case .virgo: return "🐍" // Snake for Virgo
+            case .libra: return "🐎" // Horse for Libra
+            case .scorpio: return "🐐" // Goat for Scorpio
+            case .sagittarius: return "🐒" // Monkey for Sagittarius
+            case .capricorn: return "🐓" // Rooster for Capricorn
+            case .aquarius: return "🐕" // Dog for Aquarius
+            case .pisces: return "🐖" // Pig for Pisces
+            }
+        }
+    
     // Subtitle
     var subtitle: String {
         switch self {

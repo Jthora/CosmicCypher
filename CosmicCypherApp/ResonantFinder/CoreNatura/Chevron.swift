@@ -110,7 +110,7 @@ open class Chevron {
         return value > 0 ? value : 1 + value
     }
     
-    // Base 12 Distribution
+    // Base 24 Distribution
     public var cuspDistribution:Double {
         return abs(subZodiacDistribution-1)
     }
@@ -167,5 +167,19 @@ open class Chevron {
         return node?.nodeType
     }
     
+    public var topZodiacDistribution:Double {
+        if zodiac == topZodiac {
+            return zodiacDistribution
+        } else {
+            return subZodiacDistribution
+        }
+    }
     
+    public var bottomZodiacDistribution:Double {
+        if zodiac == bottomZodiac {
+            return zodiacDistribution
+        } else {
+            return subZodiacDistribution
+        }
+    }
 }

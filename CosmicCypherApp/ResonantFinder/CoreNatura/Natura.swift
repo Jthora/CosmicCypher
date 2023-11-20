@@ -331,12 +331,57 @@ extension Arcana {
             }
         }
         
-        public var image:StarKitImage {
+        public var uiImage:UIImage {
             switch self {
-            case .fire: return StarKitAssets.Images.NaturaSymbols.fire
-            case .air: return StarKitAssets.Images.NaturaSymbols.air
-            case .water: return StarKitAssets.Images.NaturaSymbols.water
-            case .earth: return StarKitAssets.Images.NaturaSymbols.earth
+            case .fire: return UIImage(named:"AstrologyIcon_Base16_Fire")!
+            case .air: return UIImage(named:"AstrologyIcon_Base16_Air")!
+            case .water: return UIImage(named:"AstrologyIcon_Base16_Water")!
+            case .earth: return UIImage(named:"AstrologyIcon_Base16_Earth")!
+            }
+        }
+        
+        var text:String {
+            switch self {
+            case .fire: return "Fire"
+            case .air: return "Air"
+            case .water: return "Water"
+            case .earth: return "Earth"
+            }
+        }
+        
+        var subtitle: String {
+            switch self {
+            case .fire: return "Passion and Energy"
+            case .air: return "Intellect and Communication"
+            case .water: return "Emotions and Intuition"
+            case .earth: return "Stability and Practicality"
+            }
+        }
+        
+        var keywords: [String] {
+            switch self {
+            case .fire: return ["Passion", "Energy", "Action"]
+            case .air: return ["Intellect", "Communication", "Adaptability"]
+            case .water: return ["Emotions", "Intuition", "Empathy"]
+            case .earth: return ["Stability", "Practicality", "Security"]
+            }
+        }
+        
+        var description: String {
+            switch self {
+            case .fire: return "Fire represents energy, passion, and creativity. It's associated with action and drive."
+            case .air: return "Air embodies intellect, communication, and adaptability. It symbolizes thought and flexibility."
+            case .water: return "Water symbolizes emotions, intuition, and empathy. It reflects sensitivity and depth."
+            case .earth: return "Earth signifies stability, practicality, and security. It represents grounding and reliability."
+            }
+        }
+        
+        var details: String {
+            switch self {
+            case .fire: return "Fire elements are dynamic, enthusiastic, and often adventurous. They are driven by passion and a desire for change."
+            case .air: return "Air elements are intellectual, communicative, and versatile. They thrive on exchanging ideas and adapt well to change."
+            case .water: return "Water elements are emotional, intuitive, and compassionate. They feel deeply and are often empathetic towards others."
+            case .earth: return "Earth elements are practical, reliable, and grounded. They value stability and work diligently towards their goals."
             }
         }
     }
@@ -403,6 +448,54 @@ extension Arcana {
                 case .cardinal: return .tao
                 case .fixed: return .yin
                 case .mutable: return .yang
+            }
+        }
+        
+        var text: String {
+            switch self {
+            case .cardinal: return "Cardinal"
+            case .fixed: return "Fixed"
+            case .mutable: return "Mutable"
+            }
+        }
+        
+        var altText: String {
+            switch self {
+            case .cardinal: return "Active"
+            case .fixed: return "Static"
+            case .mutable: return "Passive"
+            }
+        }
+        
+        var waveformText: String {
+            switch self {
+            case .cardinal: return "Triangle Waves"
+            case .fixed: return "Square Waves"
+            case .mutable: return "Sine Waves"
+            }
+        }
+        
+        var explanationText: String {
+            switch self {
+            case .cardinal: return "Cardinal modality initiates and starts new cycles, embodying the principle of movement and new beginnings."
+            case .fixed: return "Fixed modality represents stability, persistence, and determination, embodying the principle of steadfastness."
+            case .mutable: return "Mutable modality is adaptable, flexible, and changeable, embodying the principle of adaptability and transition."
+            }
+        }
+        
+        var principleText: String {
+            switch self {
+            case .cardinal: return "Movement, Action, and Initiation."
+            case .fixed: return "Stability, Determination, and endurance."
+            case .mutable: return "Principle: The mutable modality embodies the principle of adaptability, flexibility, and change."
+            }
+        }
+        
+        var uiImage: UIImage {
+            switch self {
+            case .cardinal: return UIImage(named: "AstrologyIcon_Base16_Alpha")!
+            case .fixed: return UIImage(named: "AstrologyIcon_Base16_Order")!
+            case .mutable: return UIImage(named: "AstrologyIcon_Base16_Omega")!
             }
         }
     }

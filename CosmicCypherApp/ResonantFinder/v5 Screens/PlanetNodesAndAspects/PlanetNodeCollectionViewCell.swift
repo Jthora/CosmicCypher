@@ -36,6 +36,11 @@ class PlanetNodeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var bottomLabel: UILabel!
     @IBOutlet weak var topPercentLabel: UILabel!
     @IBOutlet weak var bottomPercentLabel: UILabel!
+    @IBOutlet weak var topModalityLabel: UILabel!
+    @IBOutlet weak var topElementLabel: UILabel!
+    @IBOutlet weak var bottomModalityLabel: UILabel!
+    @IBOutlet weak var bottomElementLabel: UILabel!
+    
     
     // MARK: Properties
     // is Selected
@@ -117,11 +122,23 @@ class PlanetNodeCollectionViewCell: UICollectionViewCell {
         }
         topZodiacImageView.image = chevron.topZodiac.image
         bottomZodiacImageView.image = chevron.bottomZodiac.image
-        topLabel.text = "\(chevron.topZodiac.text)\n\(chevron.topZodiac.chineseZodiacText)"
-        bottomLabel.text = "\(chevron.bottomZodiac.text)\n\(chevron.bottomZodiac.chineseZodiacText)"
+        topElementImageView.image = chevron.topZodiac.element.uiImage
+        topModalityImageView.image = chevron.topZodiac.modality.uiImage
+        bottomElementImageView.image = chevron.bottomZodiac.element.uiImage
+        bottomModalityImageView.image = chevron.bottomZodiac.modality.uiImage
         
-        topTextView.text = chevron.topZodiac.description
-        bottomTextView.text = chevron.bottomZodiac.description
+        topPercentLabel.text = "\(Int((chevron.topZodiacDistribution*100).rounded(.toNearestOrEven)))%"
+        bottomPercentLabel.text = "\(Int((chevron.bottomZodiacDistribution*100).rounded(.toNearestOrEven)))%"
+        
+        topLabel.text = "\(chevron.topZodiac.text)"
+        topModalityLabel.text = chevron.topZodiac.modality.text
+        topElementLabel.text = chevron.topZodiac.element.text
+        bottomLabel.text = "\(chevron.bottomZodiac.text)"
+        bottomModalityLabel.text = chevron.bottomZodiac.modality.text
+        bottomElementLabel.text = chevron.bottomZodiac.element.text
+        
+        topTextView.text = "\(chevron.topZodiac.emoji)\(chevron.topZodiac.text):\n\(chevron.topZodiac.chineseZodiacText)\(chevron.topZodiac.chineseEmoji)\n\n\(chevron.topZodiac.subtitle)\n\n\(chevron.topZodiac.modality.text)\n\(chevron.topZodiac.modality.altText)\n\n\(chevron.topZodiac.combinedKeywords)\n\n\(chevron.topZodiac.description)\n\n\(chevron.bottomZodiac.details)"
+        bottomTextView.text = "\(chevron.bottomZodiac.emoji)\(chevron.bottomZodiac.text):\n\(chevron.bottomZodiac.chineseZodiacText)\(chevron.bottomZodiac.chineseEmoji)\n\n\(chevron.bottomZodiac.subtitle)\n\n\(chevron.bottomZodiac.modality.text)\n\(chevron.bottomZodiac.modality.altText)\n\n\(chevron.bottomZodiac.combinedKeywords)\n\n\(chevron.bottomZodiac.description)\n\n\(chevron.bottomZodiac.details)"
     }
     
     // Update
@@ -132,7 +149,7 @@ class PlanetNodeCollectionViewCell: UICollectionViewCell {
             return
         }
         
-        let planetDescripton:String = planet.shortDescription
+        let planetDescripton:String = "\(planet.symbol)\(planet.text):\n\n\(planet.subtitle)\n\n\(planet.attributesCombined)\n\n\(planet.shortDescription)\n\n\(planet.description)\n\n\(planet.description)\n\n\(planet.longDescription)"
         planetDescriptionTextView.text = planetDescripton
         
         

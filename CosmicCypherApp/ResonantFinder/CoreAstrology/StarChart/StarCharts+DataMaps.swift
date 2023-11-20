@@ -11,14 +11,14 @@ import Foundation
 // MARK: Data Maps (for ML Models and Raw Data Translation)
 extension StarChart {
     
-    public func produceGravimetricMap() -> [String:Double] {
-        var gravimetricMap:[String:Double] = [:]
-        for aspectBody in CoreAstrology.AspectBody.NodeType.allCases {
+    public func produceGravimetricMap() -> [String:Newtons] {
+        var gravimetricMap:[String:Newtons] = [:]
+        for nodeType in CoreAstrology.AspectBody.NodeType.allCases {
             
-            guard let gravity = alignments[aspectBody]?.gravity else {
+            guard let gravity = planetNodes[nodeType]?.gravity else {
                 continue
             }
-            gravimetricMap["\(aspectBody.rawValue)Gravity"] = gravity
+            gravimetricMap["\(nodeType.rawValue)Gravity"] = gravity
         }
         return gravimetricMap
     }
@@ -26,19 +26,19 @@ extension StarChart {
     // For Machine Learning and Persistant Store of Alignment Relation Data
     public func produceAlignmentMap(planetsOnly:Bool = false) -> [String:Double] {
         var alignmentMap:[String:Double] = [:]
-        for aspectBody in CoreAstrology.AspectBody.NodeType.allCases {
+        for nodeType in CoreAstrology.AspectBody.NodeType.allCases {
             
             /// Pluto and isNightTime don't calculate well, so skip them.
-            guard aspectBody != .pluto && aspectBody != .partOfSpirit && aspectBody != .partOfFortune else {continue}
+            guard nodeType != .pluto && nodeType != .partOfSpirit && nodeType != .partOfFortune else {continue}
             
-            guard !(planetsOnly && aspectBody.massOfPlanet() == nil) else {
+            guard !(planetsOnly && nodeType.massOfPlanet() == nil) else {
                 continue
             }
-            guard let longitude = alignments[aspectBody]?.longitude else {
-                print("Alignment Map Failed - Missing AspectBody: \(aspectBody)")
+            guard let longitude = planetNodes[nodeType]?.longitude else {
+                print("Alignment Map Failed - Missing AspectBody: \(nodeType)")
                 return [:]
             }
-            alignmentMap["\(aspectBody)Alignment"] = longitude.value
+            alignmentMap["\(nodeType)Alignment"] = longitude.value
         }
         return alignmentMap
     }
@@ -56,8 +56,8 @@ extension StarChart {
                 /// Pluto and isNightTime don't calculate well, so skip them.
                 guard secondaryBody != .pluto && secondaryBody != .partOfSpirit && secondaryBody != .partOfFortune else {continue}
                 
-                guard let primary = alignments[primaryBody],
-                let secondary = alignments[secondaryBody] else {
+                guard let primary = planetNodes[primaryBody],
+                let secondary = planetNodes[secondaryBody] else {
                     print("Alignment Map Failed - Missing AspectBody")
                     return [:]
                 }

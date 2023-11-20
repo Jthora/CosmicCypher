@@ -75,7 +75,7 @@
                                         </connections>
                                     </button>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Qa3-hC-0xs">
-                                        <rect key="frame" x="8" y="546" width="129" height="32"/>
+                                        <rect key="frame" x="8" y="520" width="129" height="32"/>
                                         <segments>
                                             <segment title="Simple"/>
                                             <segment title="Precise"/>
@@ -85,7 +85,7 @@
                                         </connections>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sample Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yon-8F-Cv5">
-                                        <rect key="frame" x="8" y="530" width="115" height="16"/>
+                                        <rect key="frame" x="8" y="504" width="115" height="16"/>
                                         <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -193,7 +193,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mlc-Uv-t8C">
-                                        <rect key="frame" x="8" y="304" width="345" height="218"/>
+                                        <rect key="frame" x="8" y="304" width="345" height="192"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vyJ-SQ-pMr">
                                                 <rect key="frame" x="265" y="8" width="72" height="35"/>
@@ -210,7 +210,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Planets and Nodes" textAlignment="natural" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MGC-p3-76C">
-                                                <rect key="frame" x="8" y="31.999999999999996" width="249" height="54.666666666666643"/>
+                                                <rect key="frame" x="8" y="32" width="249" height="48"/>
                                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                 <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -225,7 +225,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Aspect Angles" textAlignment="natural" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1X7-QP-cf9">
-                                                <rect key="frame" x="8" y="118.66666666666667" width="329" height="54.333333333333329"/>
+                                                <rect key="frame" x="8" y="112" width="329" height="48"/>
                                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                 <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -240,7 +240,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aspect Angles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ykd-jz-Oxd">
-                                                <rect key="frame" x="8.0000000000000071" y="94.666666666666686" width="123.66666666666669" height="16"/>
+                                                <rect key="frame" x="8.0000000000000071" y="88" width="123.66666666666669" height="16"/>
                                                 <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -265,10 +265,10 @@
                                         </constraints>
                                     </view>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IQj-un-zxW">
-                                        <rect key="frame" x="8" y="595" width="345" height="4"/>
+                                        <rect key="frame" x="8" y="563" width="345" height="4"/>
                                     </progressView>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uky-AQ-P3M">
-                                        <rect key="frame" x="8" y="585" width="345" height="4"/>
+                                        <rect key="frame" x="8" y="559" width="345" height="4"/>
                                     </progressView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ready To Scan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzK-nR-C7w">
                                         <rect key="frame" x="256" y="611.66666666666663" width="97" height="11.333333333333371"/>
@@ -282,6 +282,12 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GpQ-5j-aYU">
+                                        <rect key="frame" x="8" y="567" width="345" height="4"/>
+                                    </progressView>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LxC-SR-qSZ">
+                                        <rect key="frame" x="8" y="571" width="345" height="4"/>
+                                    </progressView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
@@ -291,6 +297,8 @@
                                     <constraint firstAttribute="trailing" secondItem="IQj-un-zxW" secondAttribute="trailing" constant="8" id="9ec-tj-5kD"/>
                                     <constraint firstItem="koM-7G-jqp" firstAttribute="top" secondItem="1wE-0M-5SK" secondAttribute="bottom" id="9rz-8x-OPP"/>
                                     <constraint firstAttribute="trailing" secondItem="Sc4-NV-kEr" secondAttribute="trailing" constant="8" id="9vo-a0-Elv"/>
+                                    <constraint firstAttribute="trailing" secondItem="GpQ-5j-aYU" secondAttribute="trailing" constant="8" id="AVd-is-1ko"/>
+                                    <constraint firstAttribute="trailing" secondItem="LxC-SR-qSZ" secondAttribute="trailing" constant="8" id="Abm-aq-2VZ"/>
                                     <constraint firstItem="IQj-un-zxW" firstAttribute="leading" secondItem="Wwf-rD-heC" secondAttribute="leading" constant="8" id="Auy-ZU-6PW"/>
                                     <constraint firstItem="uky-AQ-P3M" firstAttribute="top" secondItem="Qa3-hC-0xs" secondAttribute="bottom" constant="8" symbolic="YES" id="COV-et-Epb"/>
                                     <constraint firstItem="mlc-Uv-t8C" firstAttribute="leading" secondItem="Wwf-rD-heC" secondAttribute="leading" constant="8" id="EKL-rb-5Ws"/>
@@ -302,20 +310,24 @@
                                     <constraint firstItem="C8x-Di-Z8z" firstAttribute="leading" secondItem="VdJ-PK-g7Z" secondAttribute="trailing" constant="8" symbolic="YES" id="JGx-Ve-231"/>
                                     <constraint firstAttribute="trailing" secondItem="mlc-Uv-t8C" secondAttribute="trailing" constant="8" id="Jhx-gL-wIF"/>
                                     <constraint firstItem="Sc4-NV-kEr" firstAttribute="top" secondItem="cEB-FD-iFt" secondAttribute="bottom" constant="8" id="JwD-wQ-0CS"/>
+                                    <constraint firstItem="GpQ-5j-aYU" firstAttribute="top" secondItem="IQj-un-zxW" secondAttribute="bottom" id="KAC-73-cEy"/>
                                     <constraint firstAttribute="trailing" secondItem="VAR-97-Pau" secondAttribute="trailing" constant="8" id="LJ6-Iw-JCK"/>
-                                    <constraint firstItem="r2K-V3-XDR" firstAttribute="top" secondItem="IQj-un-zxW" secondAttribute="bottom" constant="8" symbolic="YES" id="Rtj-gh-4Su"/>
+                                    <constraint firstItem="r2K-V3-XDR" firstAttribute="top" secondItem="IQj-un-zxW" secondAttribute="bottom" constant="40" id="Rtj-gh-4Su"/>
                                     <constraint firstItem="C8x-Di-Z8z" firstAttribute="top" secondItem="eAZ-m3-cGj" secondAttribute="bottom" constant="8" symbolic="YES" id="SK4-lJ-B3N"/>
                                     <constraint firstItem="eAZ-m3-cGj" firstAttribute="leading" secondItem="VdJ-PK-g7Z" secondAttribute="trailing" constant="8" id="Ueq-2l-fh8"/>
                                     <constraint firstAttribute="trailing" secondItem="eAZ-m3-cGj" secondAttribute="trailing" constant="8" id="W36-a3-FCi"/>
                                     <constraint firstItem="1wE-0M-5SK" firstAttribute="leading" secondItem="Wwf-rD-heC" secondAttribute="leading" constant="16" id="X7Z-VV-EcY"/>
-                                    <constraint firstItem="IQj-un-zxW" firstAttribute="top" secondItem="uky-AQ-P3M" secondAttribute="bottom" constant="6" id="Y5N-de-Bts"/>
+                                    <constraint firstItem="IQj-un-zxW" firstAttribute="top" secondItem="uky-AQ-P3M" secondAttribute="bottom" id="Y5N-de-Bts"/>
                                     <constraint firstItem="Yon-8F-Cv5" firstAttribute="top" secondItem="mlc-Uv-t8C" secondAttribute="bottom" constant="8" symbolic="YES" id="Zg9-H9-SA1"/>
                                     <constraint firstAttribute="trailing" secondItem="tzK-nR-C7w" secondAttribute="trailing" constant="8" id="al4-QX-28M"/>
                                     <constraint firstItem="Qa3-hC-0xs" firstAttribute="leading" secondItem="Wwf-rD-heC" secondAttribute="leading" constant="8" id="cE7-NB-Uzt"/>
+                                    <constraint firstItem="GpQ-5j-aYU" firstAttribute="leading" secondItem="Wwf-rD-heC" secondAttribute="leading" constant="8" id="cP1-O5-1e7"/>
                                     <constraint firstItem="VAR-97-Pau" firstAttribute="leading" secondItem="VdJ-PK-g7Z" secondAttribute="trailing" constant="8" symbolic="YES" id="cif-XW-8Hn"/>
+                                    <constraint firstItem="LxC-SR-qSZ" firstAttribute="top" secondItem="GpQ-5j-aYU" secondAttribute="bottom" id="e30-cT-bow"/>
                                     <constraint firstItem="eAZ-m3-cGj" firstAttribute="top" secondItem="tzK-nR-C7w" secondAttribute="bottom" constant="7" id="ehA-qp-yF9"/>
                                     <constraint firstItem="Sc4-NV-kEr" firstAttribute="leading" secondItem="Wwf-rD-heC" secondAttribute="leading" constant="8" id="fHm-Kg-kid"/>
                                     <constraint firstAttribute="trailing" secondItem="1wE-0M-5SK" secondAttribute="trailing" constant="8" id="gew-zB-QhD"/>
+                                    <constraint firstItem="LxC-SR-qSZ" firstAttribute="leading" secondItem="Wwf-rD-heC" secondAttribute="leading" constant="8" id="h6n-eI-rSs"/>
                                     <constraint firstItem="nDG-fQ-SoK" firstAttribute="leading" secondItem="Wwf-rD-heC" secondAttribute="leading" constant="8" id="hHu-FX-oze"/>
                                     <constraint firstItem="cEB-FD-iFt" firstAttribute="leading" secondItem="Wwf-rD-heC" secondAttribute="leading" id="hMi-6L-sqv"/>
                                     <constraint firstAttribute="bottom" secondItem="VdJ-PK-g7Z" secondAttribute="bottom" constant="8" id="hn7-PI-R8P"/>

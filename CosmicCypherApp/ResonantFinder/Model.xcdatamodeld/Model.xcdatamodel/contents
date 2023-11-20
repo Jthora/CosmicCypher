@@ -1,25 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21D49" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="AstrologicalNodeState" representedClassName="ManagedAstrologicalNodeState" syncable="YES" codeGenerationType="class">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22225" systemVersion="23B74" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ImageMap" representedClassName="ManagedImageMap" syncable="YES" codeGenerationType="class">
+        <attribute name="dataBlob" optional="YES" attributeType="Binary"/>
+        <attribute name="uuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+    </entity>
+    <entity name="PlanetNodeState" representedClassName="ManagedPlanetNodeState" syncable="YES" codeGenerationType="class">
         <attribute name="dataBlob" optional="YES" attributeType="Binary"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="nodeType" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="subType" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
-    <entity name="AstrologicalNodeStateTimeline" representedClassName="ManagedAstrologicalNodeStateTimeline" syncable="YES" codeGenerationType="class">
-        <attribute name="dataBlob" optional="YES" attributeType="Binary"/>
-        <attribute name="uuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-    </entity>
-    <entity name="ImageMap" representedClassName="ManagedImageMap" syncable="YES" codeGenerationType="class">
-        <attribute name="dataBlob" optional="YES" attributeType="Binary"/>
-        <attribute name="uuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-    </entity>
-    <entity name="PlanetState" representedClassName="ManagedPlanetState" syncable="YES" codeGenerationType="class">
-        <attribute name="dataBlob" optional="YES" attributeType="Binary" customClassName="."/>
-        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="nodeType" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-    </entity>
-    <entity name="PlanetStateTimeline" representedClassName="ManagedPlanetStateTimeline" syncable="YES" codeGenerationType="class">
+    <entity name="PlanetNodeStateTimeline" representedClassName="ManagedPlanetNodeStateTimeline" syncable="YES" codeGenerationType="class">
         <attribute name="dataBlob" optional="YES" attributeType="Binary"/>
         <attribute name="uuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
     </entity>
@@ -40,15 +31,4 @@
     <entity name="UUIDList" representedClassName="ManagedUUIDList" syncable="YES" codeGenerationType="class">
         <attribute name="dataBlob" optional="YES" attributeType="Binary"/>
     </entity>
-    <elements>
-        <element name="ImageMap" positionX="-9" positionY="45" width="128" height="59"/>
-        <element name="PlanetState" positionX="27" positionY="72" width="128" height="74"/>
-        <element name="PlanetStateTimeline" positionX="0" positionY="54" width="128" height="59"/>
-        <element name="StarChart" positionX="-63" positionY="-18" width="128" height="104"/>
-        <element name="TimeStream" positionX="-36" positionY="9" width="128" height="44"/>
-        <element name="TimeStreamComposite" positionX="0" positionY="45" width="128" height="59"/>
-        <element name="UUIDList" positionX="-18" positionY="36" width="128" height="44"/>
-        <element name="AstrologicalNodeState" positionX="-18" positionY="36" width="128" height="89"/>
-        <element name="AstrologicalNodeStateTimeline" positionX="-9" positionY="99" width="128" height="59"/>
-    </elements>
 </model>

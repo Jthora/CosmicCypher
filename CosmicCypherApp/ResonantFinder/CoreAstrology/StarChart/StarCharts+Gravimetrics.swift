@@ -25,7 +25,7 @@ extension StarChart {
     public func globalAbsoluteGravimetricMagnitude(includeSun:Bool = false) -> Double {
         var absoluteMagnitude:Double = 0
         for aspectBody in CoreAstrology.AspectBody.NodeType.bodiesWithGravity where includeSun ? true : aspectBody != .sun {
-            absoluteMagnitude += aspectBody.gravimetricForceOnEarth(date: date) ?? 0
+            absoluteMagnitude += aspectBody.gravimetricForceOnEarth(date: date)?.value ?? 0
         }
         return absoluteMagnitude
     }
@@ -54,7 +54,7 @@ extension StarChart {
             //print("Interplanetary Gravimetric Magnitude (\(p1)): \(startDate.timeIntervalSinceNow)")
             for p2 in CoreAstrology.AspectBody.NodeType.bodiesWithGravity where p1 != p2 && (p1 != .moon && p2 != .moon) && !(includeSun == true && (p1 == .sun || p2 == .sun)) {
                 //print("Interplanetary Gravimetric Magnitude (\(p2)): \(startDate.timeIntervalSinceNow)")
-                interplanetaryGravitationalMagnitude += p1.gravimetricForceBetween(otherPlanet: p2, date: self.date) ?? 0
+                interplanetaryGravitationalMagnitude += p1.gravimetricForceBetween(otherPlanet: p2, date: self.date)?.value ?? 0
             }
         }
         //print("Interplanetary Gravimetric Magnitude (end): \(startDate.timeIntervalSinceNow)")
@@ -68,7 +68,7 @@ extension StarChart {
         var stellarAbsoluteGravimentricMagnitude: Double = 0
         let p1: CoreAstrology.AspectBody.NodeType = .sun
         for p2 in CoreAstrology.AspectBody.NodeType.bodiesWithGravity {
-            stellarAbsoluteGravimentricMagnitude += p1.gravimetricForceBetween(otherPlanet: p2, date: self.date) ?? 0
+            stellarAbsoluteGravimentricMagnitude += p1.gravimetricForceBetween(otherPlanet: p2, date: self.date)?.value ?? 0
         }
         return stellarAbsoluteGravimentricMagnitude
         

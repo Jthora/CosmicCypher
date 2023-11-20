@@ -97,8 +97,8 @@ public final class TimeStream {
         starCharts.append(starChart)
     }
     
-    func astrologicalNodeStateTimeline(nodeTypes: [CoreAstrology.AspectBody.NodeType] = DEFAULT_SELECTED_NODETYPES) -> AstrologicalNodeStateTimeline {
-        return AstrologicalNodeStateTimeline(starCharts, nodeTypes: nodeTypes)
+    func planetNodeStateTimeline(nodeTypes: [CoreAstrology.AspectBody.NodeType] = DEFAULT_SELECTED_NODETYPES) -> PlanetNodeStateTimeline {
+        return PlanetNodeStateTimeline(starCharts, nodeTypes: nodeTypes)
     }
 //
 //    func planetStateTimeline(nodeTypes: [CoreAstrology.AspectBody.NodeType] = DEFAULT_SELECTED_NODETYPES) -> PlanetStateTimeline {

@@ -147,10 +147,10 @@ extension Arcana {
             public var highestUnlockLevel:Double = 0
             
             
-            public init(alignments: [CoreAstrology.AspectBody.NodeType:AstrologicalNode], limitList:[CoreAstrology.AspectBody.NodeType]? = nil , limitType:[AstrologicalNodeSubType]? = nil) {
+            public init(planetNodes: [CoreAstrology.AspectBody.NodeType:PlanetNode], limitList:[CoreAstrology.AspectBody.NodeType]? = nil , limitType:[PlanetNodeSubType]? = nil) {
                 
                 
-                for (_,alignment) in alignments {
+                for (_,alignment) in planetNodes {
                     
                     if let limitList = limitList {
                         guard limitList.contains(alignment.nodeType) else { continue }

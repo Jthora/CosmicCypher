@@ -39,8 +39,8 @@ class AspectLinesSpriteNode: SKSpriteNode {
             guard selectedNodeTypes.contains(b1) && selectedNodeTypes.contains(b2) else {continue}
             
             // Setup Degrees for Planets 1 and 2
-            guard let l1 = starChart.alignments[b1]?.longitude,
-                  let l2 = starChart.alignments[b2]?.longitude else {
+            guard let l1 = starChart.planetNodes[b1]?.longitude,
+                  let l2 = starChart.planetNodes[b2]?.longitude else {
                 print("⚠️ Longitude Missing")
                 return
             }
@@ -99,8 +99,8 @@ class AspectLinesSpriteNode: SKSpriteNode {
             let b2 = aspect.secondaryBody.type
             
             // Setup Degrees for Planets 1 and 2
-            guard let l1 = starChart.alignments[b1]?.longitude,
-                  let l2 = starChart.alignments[b2]?.longitude else {
+            guard let l1 = starChart.planetNodes[b1]?.longitude,
+                  let l2 = starChart.planetNodes[b2]?.longitude else {
                 print("⚠️ Longitude Missing")
                 return
             }

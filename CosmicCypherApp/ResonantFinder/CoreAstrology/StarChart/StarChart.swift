@@ -17,16 +17,20 @@ public final class StarChart {
     public var date:Date
     public var coordinates:GeographicCoordinates
     public var celestialOffset:CoreAstrology.Ayanamsa = .galacticCenter
-    public var alignments:StarChartAlignmentSet = [:]
+    public var planetNodes:StarChartPlanetNodes = [:]
     public var aspects:[CoreAstrology.Aspect] = []
     public var timeStreamPoint:TimeStream.Point { return TimeStream.Point(date: date, coordinates: coordinates) }
     
     
-    public init(date:Date, coordinates:GeographicCoordinates, celestialOffset:CoreAstrology.Ayanamsa, alignments:StarChartAlignmentSet, aspects:[CoreAstrology.Aspect]) {
+    public init(date:Date, 
+                coordinates:GeographicCoordinates,
+                celestialOffset:CoreAstrology.Ayanamsa = .galacticCenter, 
+                planetNodes:StarChartPlanetNodes,
+                aspects:[CoreAstrology.Aspect]) {
         self.date = date
         self.coordinates = coordinates
         self.celestialOffset = celestialOffset
-        self.alignments = alignments
+        self.planetNodes = planetNodes
         self.aspects = aspects
     }
     
@@ -34,43 +38,43 @@ public final class StarChart {
         self.date = date
         self.coordinates = coordinates ?? GeographicCoordinates(positivelyWestwardLongitude: 0, latitude: 0)
         self.celestialOffset = celestialOffset
-        setupAlignments()
+        setupPlanetNodes()
         setupAspects()
     }
     
-    private func setupAlignments() {
+    private func setupPlanetNodes() {
         for nodeType in CoreAstrology.AspectBody.NodeType.allCases {
             
             /// Pluto and isNightTime don't calculate well, so skip them.
             guard nodeType != .pluto && nodeType != .partOfSpirit && nodeType != .partOfFortune && nodeType != .partOfEros else {continue}
             
-            alignments[nodeType] = AstrologicalNode(nodeType: nodeType,
-                                                      date: date,
-                                                      coordinates: coordinates,
-                                                      ayanamsa:celestialOffset)
+            planetNodes[nodeType] = PlanetNode(nodeType: nodeType,
+                                              date: date,
+                                              coordinates: coordinates,
+                                              ayanamsa:celestialOffset)
         }
     }
     
     private func setupAspects() {
         print("StarChart: setupAspects")
-        for (primaryKey,primaryAlignment) in alignments {
+        for (primaryKey,primaryPlanetNode) in planetNodes {
             //print("primaryKey: \(primaryKey)")
             
-            for (secondaryKey,secondaryAlignment) in alignments where primaryKey != secondaryKey {
+            for (secondaryKey,secondaryPanetNode) in planetNodes where primaryKey != secondaryKey {
                 //print("secondaryKey: \(secondaryKey)")
                 
-                guard !shouldSkipRedundant(primaryAlignment.nodeType, secondaryAlignment.nodeType) else { continue }
+                guard !shouldSkipRedundant(primaryPlanetNode.nodeType, secondaryPanetNode.nodeType) else { continue }
 //
 //                guard !aspects.contains(where: { (aspect) -> Bool in
 //                    return aspect.secondaryBody == primaryAlignment.aspectBody && aspect.primaryBody == secondaryAlignment.aspectBody
 //                }) else {
 //                    continue
 //                }
-                let nodeDistance = abs(primaryAlignment.longitude - secondaryAlignment.longitude)
+                let nodeDistance = abs(primaryPlanetNode.longitude - secondaryPanetNode.longitude)
                 
                 if let relation = CoreAstrology.AspectRelation(nodeDistance: nodeDistance),
-                   let primaryBody = CoreAstrology.AspectBody(type: primaryAlignment.nodeType, date: date),
-                   let secondaryBody = CoreAstrology.AspectBody(type: secondaryAlignment.nodeType, date: date) {
+                   let primaryBody = CoreAstrology.AspectBody(type: primaryPlanetNode.nodeType, date: date),
+                   let secondaryBody = CoreAstrology.AspectBody(type: secondaryPanetNode.nodeType, date: date) {
                     //print("Creating Aspect: \(primaryBody.type.symbol)\(relation.type.symbol)\(secondaryBody.type.symbol) for \(date)")
                     let aspect = CoreAstrology.Aspect(primaryBody: primaryBody,
                                                       relation: relation,
@@ -205,23 +209,23 @@ public final class StarChart {
     }
     
     // Base 8
-    public func produceNaturaIndex(limitList:[CoreAstrology.AspectBody.NodeType]? = nil, limitType:[AstrologicalNodeSubType]? = nil) -> Arcana.Natura.Index {
-        return Arcana.Natura.Index(alignments: self.alignments, limitList: limitList, limitType: limitType)
+    public func produceNaturaIndex(limitList:[CoreAstrology.AspectBody.NodeType]? = nil, limitType:[PlanetNodeSubType]? = nil) -> Arcana.Natura.Index {
+        return Arcana.Natura.Index(planetNodes: self.planetNodes, limitList: limitList, limitType: limitType)
     }
     
     // Base 12
-    public func produceZodiacIndex(limitList:[CoreAstrology.AspectBody.NodeType]? = nil, limitType:[AstrologicalNodeSubType]? = nil) -> Arcana.Zodiac.Index {
-        return Arcana.Zodiac.Index(alignments: self.alignments, limitList: limitList, limitType: limitType)
+    public func produceZodiacIndex(limitList:[CoreAstrology.AspectBody.NodeType]? = nil, limitType:[PlanetNodeSubType]? = nil) -> Arcana.Zodiac.Index {
+        return Arcana.Zodiac.Index(planetNodes: self.planetNodes, limitList: limitList, limitType: limitType)
     }
     
     // Base 24
-    public func produceCuspIndex(limitList:[CoreAstrology.AspectBody.NodeType]? = nil, limitType:[AstrologicalNodeSubType]? = nil) -> Arcana.Cusp.Index {
-        return Arcana.Cusp.Index(alignments: self.alignments, limitList: limitList, limitType: limitType)
+    public func produceCuspIndex(limitList:[CoreAstrology.AspectBody.NodeType]? = nil, limitType:[PlanetNodeSubType]? = nil) -> Arcana.Cusp.Index {
+        return Arcana.Cusp.Index(planetNodes: self.planetNodes, limitList: limitList, limitType: limitType)
     }
     
     // Base 36
-    public func produceDecanIndex(limitList:[CoreAstrology.AspectBody.NodeType]? = nil, limitType:[AstrologicalNodeSubType]? = nil) -> Arcana.Decan.Index {
-        return Arcana.Decan.Index(alignments: self.alignments, limitList: limitList, limitType: limitType)
+    public func produceDecanIndex(limitList:[CoreAstrology.AspectBody.NodeType]? = nil, limitType:[PlanetNodeSubType]? = nil) -> Arcana.Decan.Index {
+        return Arcana.Decan.Index(planetNodes: self.planetNodes, limitList: limitList, limitType: limitType)
     }
     
     public func duplicate(celestialOffset: CoreAstrology.Ayanamsa? = nil) -> StarChart {
@@ -234,13 +238,13 @@ public final class StarChart {
         return CosmicAlignment(self, selectedNodeTypes: selectedNodeTypes)
     }
     
-    public func astrologicalNodeStates() -> [AstrologicalNodeStateHash:AstrologicalNodeState] {
-        var astrologicalNodeStates:[AstrologicalNodeStateHash:AstrologicalNodeState] = [:]
+    public func planetNodeStates() -> [PlanetNodeStateHash:PlanetNodeState] {
+        var planetNodeStates:[PlanetNodeStateHash:PlanetNodeState] = [:]
         for nodeType in CoreAstrology.AspectBody.NodeType.allCases {
             
             /// Degrees
-            guard let alignment = alignments[nodeType] else { continue }
-            let degrees = alignment.longitude.value
+            guard let planetNode = planetNodes[nodeType] else { continue }
+            let degrees = planetNode.longitude.value
             
             /// Planet or AstrologicalNode
             if let planet = nodeType.planet(date: date, highPrecision: true) {
@@ -250,30 +254,28 @@ public final class StarChart {
                 let inclination: Double = planet.inclination().value
                 let eccentricity: Double = planet.eccentricity()
                 
-                let retrogradeState:PlanetRetrogradeState = .direct
-                let speed:Double = 0
+                // Build and Append Planet State
+                let motionState = PlanetNodeMotionState(.stationary, speed: 0)
+                let planetNodeState = PlanetNodeState(nodeType: nodeType,
+                                                      date: date,
+                                                      degrees: degrees,
+                                                      perihelion: perihelion,
+                                                      ascendingNode: ascendingNode,
+                                                      inclination: inclination,
+                                                      eccentricity: eccentricity,
+                                                      motionState: motionState)
                 
-                // Build PlanetState and Append
-                let planetState = PlanetState(nodeType: nodeType,
-                                              date: date,
-                                              degrees: degrees,
-                                              perihelion: perihelion,
-                                              ascendingNode: ascendingNode,
-                                              inclination: inclination,
-                                              eccentricity: eccentricity,
-                                              retrogradeState: retrogradeState,
-                                              speed: speed)
-                astrologicalNodeStates[planetState.hash] = planetState
+                // Add
+                planetNodeStates[planetNodeState.hash] = planetNodeState
             } else {
-                // Build AstrologicalNodeState and Append
-                let astrologicalNodeState = AstrologicalNodeState(nodeType: nodeType,
-                                                                  subType: alignment.subType,
-                                                                  date: date,
-                                                                  degrees: degrees)
-                astrologicalNodeStates[astrologicalNodeState.hash] = astrologicalNodeState
+                // Build, Hash and Append PlanetNodeState
+                guard let planetNodeState = nodeType.generatePlanetNodeState(date: date) else {
+                    continue
+                }
+                planetNodeStates[planetNodeState.hash] = planetNodeState
             }
         }
-        return astrologicalNodeStates
+        return planetNodeStates
     }
 //    
 //    public func planetStates() -> [PlanetStateHash:PlanetState] {
@@ -309,4 +311,4 @@ public final class StarChart {
 //    }
 }
 
-public typealias StarChartAlignmentSet = [CoreAstrology.AspectBody.NodeType:AstrologicalNode]
+public typealias StarChartPlanetNodes = [CoreAstrology.AspectBody.NodeType:PlanetNode]

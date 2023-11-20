@@ -29,6 +29,8 @@ class PlanetNodeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var topTextView: UITextView!
     @IBOutlet weak var bottomTextView: UITextView!
     @IBOutlet weak var planetDescriptionTextView: UITextView!
+    @IBOutlet weak var astronomyTextView: UITextView!
+    @IBOutlet weak var metricsTextView: UITextView!
     
     // Labels
     @IBOutlet weak var planetLabel: UILabel!
@@ -60,9 +62,9 @@ class PlanetNodeCollectionViewCell: UICollectionViewCell {
     }
     
     // Alignment
-    var alignment:AstrologicalNode? {
+    var planetNode:PlanetNode? {
         guard let planet = planet else {return nil}
-        return  StarChart.Core.current.alignments[planet]
+        return  StarChart.Core.current.planetNodes[planet]
     }
     
     // Planet Selected
@@ -108,12 +110,24 @@ class PlanetNodeCollectionViewCell: UICollectionViewCell {
         case .aspectScanner:
             planetSelected = AspectEventScanner.Core.planetsAndNodes.contains(planet)
         }
+        
+        guard let planetNode = planetNode,
+              let alpha = planetNode.coordinates?.alpha,
+              let delta = planetNode.coordinates?.delta,
+              let declination = planetNode.coordinates?.declination,
+              let distance = planetNode.distance,
+              let geocentricGravity = planetNode.nodeType.gravimetricForceOnEarth(date: planetNode.date),
+              let heliocentricGravity = planetNode.nodeType.gravimetricForceOnSun(date: planetNode.date),
+              let mass = planetNode.mass else {return}
+        
+        astronomyTextView.text = "🔭Astronomy:\n\nAlpha:\n[\(alpha)]\n\nDelta:\n[\(delta)]\n\nDeclination:\n[\(declination)]"
+        metricsTextView.text = "📊Metrics:\n\nDistance:\n[\(distance)]\n\nMass:\n[\(mass)]\n\nGravity:\n♁[\(geocentricGravity)]\n☉[\(heliocentricGravity)]"
     }
     
     // Update Zodiac Content
     func updateTopAndBottomDetails() {
         guard let planet = planet,
-              let chevron = alignment?.createChevron() else {
+              let chevron = planetNode?.createChevron() else {
             topZodiacImageView.image = nil
             bottomZodiacImageView.image = nil
             topLabel.text = ""
@@ -137,8 +151,8 @@ class PlanetNodeCollectionViewCell: UICollectionViewCell {
         bottomModalityLabel.text = chevron.bottomZodiac.modality.text
         bottomElementLabel.text = chevron.bottomZodiac.element.text
         
-        topTextView.text = "\(chevron.topZodiac.emoji)\(chevron.topZodiac.text):\n\(chevron.topZodiac.chineseZodiacText)\(chevron.topZodiac.chineseEmoji)\n\n\(chevron.topZodiac.subtitle)\n\n\(chevron.topZodiac.modality.text)\n\(chevron.topZodiac.modality.altText)\n\n\(chevron.topZodiac.combinedKeywords)\n\n\(chevron.topZodiac.description)\n\n\(chevron.bottomZodiac.details)"
-        bottomTextView.text = "\(chevron.bottomZodiac.emoji)\(chevron.bottomZodiac.text):\n\(chevron.bottomZodiac.chineseZodiacText)\(chevron.bottomZodiac.chineseEmoji)\n\n\(chevron.bottomZodiac.subtitle)\n\n\(chevron.bottomZodiac.modality.text)\n\(chevron.bottomZodiac.modality.altText)\n\n\(chevron.bottomZodiac.combinedKeywords)\n\n\(chevron.bottomZodiac.description)\n\n\(chevron.bottomZodiac.details)"
+        topTextView.text = "\(chevron.topZodiac.emoji)\(chevron.topZodiac.text):\n\(chevron.topZodiac.chineseWordFull)\(chevron.topZodiac.chineseEmoji)\n\n\(chevron.topZodiac.subtitle)\n\n\(chevron.topZodiac.modality.text)\n\(chevron.topZodiac.modality.altText)\n\n\(chevron.topZodiac.combinedKeywords)\n\n\(chevron.topZodiac.description)\n\n\(chevron.bottomZodiac.details)"
+        bottomTextView.text = "\(chevron.bottomZodiac.emoji)\(chevron.bottomZodiac.text):\n\(chevron.bottomZodiac.chineseWordFull)\(chevron.bottomZodiac.chineseEmoji)\n\n\(chevron.bottomZodiac.subtitle)\n\n\(chevron.bottomZodiac.modality.text)\n\(chevron.bottomZodiac.modality.altText)\n\n\(chevron.bottomZodiac.combinedKeywords)\n\n\(chevron.bottomZodiac.description)\n\n\(chevron.bottomZodiac.details)"
     }
     
     // Update

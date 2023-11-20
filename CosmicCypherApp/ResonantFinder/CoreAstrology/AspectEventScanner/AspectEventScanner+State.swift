@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: Extensions
+// MARK: State
 // State
 extension AspectEventScanner {
     // State of Scanner

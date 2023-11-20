@@ -25,18 +25,18 @@ extension TimeStream {
         private init() {}
         
         public static func generateStrips(timestream: TimeStream, nodeTypes:[CoreAstrology.AspectBody.NodeType]) -> TimeStreamImageStripSet {
-            return generateStrips(nodeStateTimeline: timestream.astrologicalNodeStateTimeline(nodeTypes: nodeTypes),
+            return generateStrips(planetNodeStateTimeline: timestream.planetNodeStateTimeline(nodeTypes: nodeTypes),
                                   colorRenderMode: timestream.colorRenderMode,
                                   dataMetric: timestream.dataMetric)
         }
         
-        public static func generateStrips(nodeStateTimeline:AstrologicalNodeStateTimeline,
+        public static func generateStrips(planetNodeStateTimeline:PlanetNodeStateTimeline,
                                    colorRenderMode: TimeStream.ColorRenderMode,
                                    dataMetric: TimeStream.DataMetric) -> TimeStreamImageStripSet {
             var timeStreamImageStrips = TimeStreamImageStripSet()
             
-            for (nodeType,planetStates) in nodeStateTimeline {
-                guard let timeStreamImageStrip = generateStrip(nodeStates: planetStates,
+            for (nodeType,planetNodeStates) in planetNodeStateTimeline {
+                guard let timeStreamImageStrip = generateStrip(planetNodeStates: planetNodeStates,
                                                                nodeType: nodeType,
                                                                colorRenderMode: colorRenderMode,
                                                                dataMetric: dataMetric) else {
@@ -47,15 +47,15 @@ extension TimeStream {
             return timeStreamImageStrips
         }
         
-        public static func generateStrip(nodeStates: [AstrologicalNodeState],
+        public static func generateStrip(planetNodeStates: [PlanetNodeState],
                                          nodeType: CoreAstrology.AspectBody.NodeType,
                                   colorRenderMode: TimeStream.ColorRenderMode,
                                   dataMetric: TimeStream.DataMetric) -> TimeStream.ImageStrip? {
-            print("generating ImageStrips [\(nodeStates.count)]")
-            let width = nodeStates.count
+            print("generating ImageStrips [\(planetNodeStates.count)]")
+            let width = planetNodeStates.count
             let height = 1
             
-            var rgbaArray:[RGBAColor] = nodeStates.map { return colorRenderMode.renderColor(dataMetric: dataMetric, nodeState: $0) }
+            var rgbaArray:[RGBAColor] = planetNodeStates.map { return colorRenderMode.renderColor(dataMetric: dataMetric, planetNodeState: $0) }
             let bitmapCount: Int = rgbaArray.count
             let elmentLength: Int = 4 // Bytes
             let render: CGColorRenderingIntent = .defaultIntent//CGColorRenderingIntent.RenderingIntentDefault

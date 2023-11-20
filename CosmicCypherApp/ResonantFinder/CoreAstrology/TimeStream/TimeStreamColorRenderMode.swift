@@ -100,16 +100,15 @@ extension TimeStream {
             return nil
         }
         
-        func renderColor(dataMetric: DataMetric, nodeState: AstrologicalNodeState) -> RGBAColor {
-            let planetState = nodeState as? PlanetState
-            let invert = dataMetric == .retrogrades && planetState?.retrogradeState == .retrograde
+        func renderColor(dataMetric: DataMetric, planetNodeState: PlanetNodeState) -> RGBAColor {
+            let invert = dataMetric == .retrogrades && planetNodeState.motionState?.currentMotion == .retrograde(nil)
             switch self {
             case .clear:
                 return RGBAColor.clear
             case .colorGradient:
-                return RGBAColor(degrees: Float(nodeState.degrees), invert: invert, solidColors: false)
+                return RGBAColor(degrees: Float(planetNodeState.degrees), invert: invert, solidColors: false)
             case .solidColors:
-                return RGBAColor(degrees: Float(nodeState.degrees), invert: invert, solidColors: true)
+                return RGBAColor(degrees: Float(planetNodeState.degrees), invert: invert, solidColors: true)
             case .blackWhite:
                 return invert ? RGBAColor.black : RGBAColor.white
             case .greyscale:

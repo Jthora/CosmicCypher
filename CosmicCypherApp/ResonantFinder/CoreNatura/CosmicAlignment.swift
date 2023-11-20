@@ -23,11 +23,11 @@ open class CosmicAlignment {
     }
     
     public init(_ starChart:StarChart, selectedNodeTypes:[CoreAstrology.AspectBody.NodeType]) {
-        let alignments = starChart.alignments.filter { (nodeType, node) in
+        let planetNodes = starChart.planetNodes.filter { (nodeType, node) in
             return selectedNodeTypes.contains(nodeType)
         }
-        for alignment in alignments {
-            let chevron = alignment.value.createChevron()
+        for planetNode in planetNodes {
+            let chevron = planetNode.value.createChevron()
             switch chevron.element {
             case .fire: fire += chevron.elementDistribution
             case .earth: earth += chevron.elementDistribution

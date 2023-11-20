@@ -28,8 +28,8 @@ extension ResonanceReportViewController: UITableViewDelegate, UITableViewDataSou
             let aspects = StarChart.Core.sortedAspects
             guard indexPath.row < aspects.count else {return UITableViewCell()}
             let aspect = aspects[indexPath.row]
-            guard let pLong = StarChart.Core.current.alignments[aspect.primaryBody.type]?.longitude,
-                  let sLong = StarChart.Core.current.alignments[aspect.secondaryBody.type]?.longitude else { return cell }
+            guard let pLong = StarChart.Core.current.planetNodes[aspect.primaryBody.type]?.longitude,
+                  let sLong = StarChart.Core.current.planetNodes[aspect.secondaryBody.type]?.longitude else { return cell }
             
             cell.setup(with: aspect, primaryBodyLongitude: pLong, secondaryBodyLongitude: sLong)
             

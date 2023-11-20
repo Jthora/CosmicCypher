@@ -46,8 +46,10 @@ extension AspectEventScanner {
             var lowerBoundTimeInterval = startTimeInterval
             var upperBoundTimeInterval = endTimeInterval
             
+            // Binary search loop
             while upperBoundTimeInterval - lowerBoundTimeInterval >= 1.0 {
-                // Perform a binary search to find the closest aspect date
+                
+                /// Perform a binary search to find the closest aspect date
                 let midTimeInterval = (lowerBoundTimeInterval + upperBoundTimeInterval) / 2.0
                 let midDate = Date(timeIntervalSinceReferenceDate: midTimeInterval)
                 
@@ -56,6 +58,9 @@ extension AspectEventScanner {
                       let longitudeDifference: Degree = b1.longitudeDifference(from: b2, on: midDate) else {
                     break
                 }
+                
+                /// Check Retrogrades
+                
                 
                 // Calculate the aspect angle between the two planetary bodies
                 let distance = abs(longitudeDifference.value - targetAspectAngle)
@@ -69,40 +74,15 @@ extension AspectEventScanner {
                 if distance < targetOrbThreshold {
                     break
                 }
-                
-                // Update the bounds based on motion state or other heuristics
-                //updateBoundsBasedOnMotion(&lowerBoundTimeInterval, &upperBoundTimeInterval, distance, targetAspectAngle)
             }
             
             return closestDate
         }
-        
-    //    private func updateBoundsBasedOnMotion(_ lowerBound: inout TimeInterval, _ upperBound: inout TimeInterval, _ currentDistance: Double, _ targetAngle: Double) {
-    //        let motionThreshold = 1.0 // Adjust this threshold as needed
-    //
-    //        // Determine the motion state based on the current distance and target angle
-    //        let motionState: NodeState.Motion
-    //        if currentDistance < motionThreshold {
-    //            motionState = .stationary
-    //        } else if currentDistance < targetAngle {
-    //            motionState = .retrograde
-    //        } else {
-    //            motionState = .direct
-    //        }
-    //
-    //        // Update the bounds based on the motion state
-    //        switch motionState {
-    //        case .stationary:
-    //            // No adjustment needed, the aspect is stationary
-    //        case .retrograde:
-    //            // Adjust the lower bound for retrograde motion
-    //            lowerBound += 1.0 // You may need to fine-tune this value
-    //        case .direct:
-    //            // Adjust the upper bound for direct motion
-    //            upperBound -= 1.0 // You may need to fine-tune this value
-    //        }
-    //    }
     }
     
 
+}
+
+extension CoreAstrology.Aspect {
+    
 }

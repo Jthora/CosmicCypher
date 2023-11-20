@@ -47,7 +47,7 @@ public class TimeStreamPixelDrawer {
                 onProgress?(completion, starChart)
                 guard let starChart = starChart else {return}
                 for (j, nodeType) in selectedNodeTypes.enumerated() {
-                    guard let alignment = starChart.alignments[nodeType] else {continue}
+                    guard let alignment = starChart.planetNodes[nodeType] else {continue}
                     
                     let degrees = alignment.longitude
                     
@@ -73,7 +73,7 @@ public class TimeStreamPixelDrawer {
         onProgress?(0, nil)
         for (i,starChart) in starCharts.enumerated() {
             for (j, nodeType) in selectedNodeTypes.enumerated() {
-                guard let alignment = starChart.alignments[nodeType] else {continue}
+                guard let alignment = starChart.planetNodes[nodeType] else {continue}
                 
                 let degrees = alignment.longitude
                 

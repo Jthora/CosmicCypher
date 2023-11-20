@@ -228,8 +228,8 @@ extension TimeStream {
             return TimeStreamCompositeRegistry.main.cache
         }
         
-        static var planetStates: [PlanetStateHash: PlanetState] {
-            return PlanetStateRegistry.main.cache
+        static var planetNodeStates: [PlanetNodeStateHash: PlanetNodeState] {
+            return PlanetNodeStateRegistry.main.cache
         }
         
 //        static var planetStateTimelines: [PlanetStateTimelineHash: PlanetStateTimeline] {

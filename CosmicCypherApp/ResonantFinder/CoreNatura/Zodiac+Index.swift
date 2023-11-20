@@ -72,20 +72,20 @@ extension Arcana.Zodiac {
             return (gemini.distribution + gemini.subDistribution + virgo.distribution + virgo.subDistribution + sagittarius.distribution + sagittarius.subDistribution + pisces.distribution + pisces.subDistribution)/count
         }
         
-        public init(alignments: [CoreAstrology.AspectBody.NodeType:AstrologicalNode], limitList:[CoreAstrology.AspectBody.NodeType]? = nil , limitType:[AstrologicalNodeSubType]? = nil) {
+        public init(planetNodes: [CoreAstrology.AspectBody.NodeType:PlanetNode], limitList:[CoreAstrology.AspectBody.NodeType]? = nil , limitType:[PlanetNodeSubType]? = nil) {
             
             
-            for (_,alignment) in alignments {
+            for (_,planetNode) in planetNodes {
                 
                 if let limitList = limitList {
-                    guard limitList.contains(alignment.nodeType) else { continue }
+                    guard limitList.contains(planetNode.nodeType) else { continue }
                 }
                 
                 if let limitType = limitType {
-                    guard limitType.contains(alignment.subType) else { continue }
+                    guard limitType.contains(planetNode.nodeType.subType) else { continue }
                 }
                 
-                let chevron = alignment.createChevron()
+                let chevron = planetNode.createChevron()
                 // Distribution
                 add(distribution: chevron.zodiacDistribution, to: chevron.zodiac)
                 add(subDistribution: chevron.subZodiacDistribution, to: chevron.subZodiac)

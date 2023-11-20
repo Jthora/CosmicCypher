@@ -55,7 +55,7 @@ extension TimeStream {
             print("TimeStream Chart Delta: \(startDate.timeIntervalSinceNow)")
         }
         
-        func setGravimeticData(nodeTypes: [AstrologicalNodeType],
+        func setGravimeticData(nodeTypes: [PlanetNodeType],
                                onProgress:((_ completion:Float)->Void)? = nil,
                                onComplete:(()->())? = nil) {
             dataAccessQueue.async {
@@ -143,7 +143,7 @@ extension TimeStream {
             
         }
         
-        func setExaDebData(nodeTypes: [AstrologicalNodeType],
+        func setExaDebData(nodeTypes: [PlanetNodeType],
                            onProgress:((_ completion:Float)->Void)? = nil,
                            onComplete:(()->())? = nil) {
             guard let starCharts = self.configuration.timeStreams.first?.starCharts else { return }
@@ -246,7 +246,7 @@ extension TimeStream {
             }
         }
         
-        func setRiseFallData(nodeTypes: [AstrologicalNodeType], 
+        func setRiseFallData(nodeTypes: [PlanetNodeType], 
                              onProgress:((_ completion:Float)->Void)? = nil,
                              onComplete:(()->())? = nil) {
             guard let starCharts = self.configuration.timeStreams.first?.starCharts else { return }

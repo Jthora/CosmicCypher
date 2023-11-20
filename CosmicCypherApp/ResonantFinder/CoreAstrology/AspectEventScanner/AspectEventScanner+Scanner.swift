@@ -1,5 +1,5 @@
 //
-//  AspectEventScanner+Scan.swift
+//  AspectEventScanner+Scanner.swift
 //  CosmicCypher
 //
 //  Created by Jordan Trana on 11/7/23.
@@ -8,11 +8,10 @@
 import Foundation
 import SwiftAA
 
+// MARK: Scanner
 extension AspectEventScanner {
-    
-    // MARK: Scan
+    // Scanner
     class Scanner {
-        
         // Delegate
         public var delegate:AspectEventScannerDelegate? = nil
         
@@ -28,7 +27,7 @@ extension AspectEventScanner {
         }
         
         // Parsing Buffers
-        var activelyScanningAspectEvents:[CoreAstrology.AspectType.SymbolHash: CoreAstrology.AspectEvent] = [:]
+        var activelyScanningAspectEvents:[CoreAstrology.AspectType.SymbolHash: CoreAstrology.CelestialEvent] = [:]
         var recentlyLockedInAspectTypes:[CoreAstrology.AspectType.SymbolHash: Bool] = [:]
         
         // Locked In Aspects
@@ -244,7 +243,7 @@ extension AspectEventScanner {
                         //print("Closing In on (\(hash)) for [\(currentDate)] at [\(currentDistance)]")
                         
                         // Update Aspect because it's closer to 0º orb
-                        activelyScanningAspectEvents[hash] = CoreAstrology.AspectEvent(aspect: currentAspect, date: currentDate)
+                        activelyScanningAspectEvents[hash] = CoreAstrology.CelestialEvent(aspect: currentAspect, date: currentDate)
                     } else {
                         //print("Locking In (\(hash)) for [\(previousDate)] at [\(previousDistance)]")
                         
@@ -271,7 +270,7 @@ extension AspectEventScanner {
                 } else {
                     // No Previous Aspect Date (initial state) add
                     //print("Newly detected Aspect \(hash)")
-                    activelyScanningAspectEvents[hash] = CoreAstrology.AspectEvent(aspect: currentAspect, date: currentDate)
+                    activelyScanningAspectEvents[hash] = CoreAstrology.CelestialEvent(aspect: currentAspect, date: currentDate)
                 }
             }
 

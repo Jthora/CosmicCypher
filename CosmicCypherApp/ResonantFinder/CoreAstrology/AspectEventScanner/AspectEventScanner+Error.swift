@@ -7,7 +7,7 @@
 
 import Foundation
 
-// Error
+// MARK: Error
 extension AspectEventScanner {
     // Error Types of Scanner
     enum ScanError: Error {

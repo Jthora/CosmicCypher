@@ -276,7 +276,7 @@ class ResonanceReportViewController: UIViewController {
     }
     
     @IBAction func planetSelectButtonTouch(_ sender: UIButton) {
-        PlanetNodesAndAspectsViewController.presentModally(over: self, selectionContext: .starChart)
+        PlanetNodesViewController.presentModally(over: self, selectionContext: .starChart)
     }
     
     @IBAction func settingsButtonTouch(_ sender: UIButton) {

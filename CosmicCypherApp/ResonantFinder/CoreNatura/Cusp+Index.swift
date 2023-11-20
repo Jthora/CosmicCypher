@@ -66,20 +66,20 @@ extension Arcana.Cusp {
         }
         
         // Init
-        public init(alignments: [CoreAstrology.AspectBody.NodeType:AstrologicalNode], limitList:[CoreAstrology.AspectBody.NodeType]? = nil , limitType:[AstrologicalNodeSubType]? = nil) {
+        public init(planetNodes: [CoreAstrology.AspectBody.NodeType:PlanetNode], limitList:[CoreAstrology.AspectBody.NodeType]? = nil , limitType:[PlanetNodeSubType]? = nil) {
             
             
-            for (_,alignment) in alignments {
+            for (_,planetNode) in planetNodes {
                 
                 if let limitList = limitList {
-                    guard limitList.contains(alignment.nodeType) else { continue }
+                    guard limitList.contains(planetNode.nodeType) else { continue }
                 }
                 
                 if let limitType = limitType {
-                    guard limitType.contains(alignment.subType) else { continue }
+                    guard limitType.contains(planetNode.subType) else { continue }
                 }
                 
-                let chevron = alignment.createChevron()
+                let chevron = planetNode.createChevron()
                 // Distribution
                 add(distribution: chevron.cuspDistribution, to: chevron.cusp)
                 add(subDistribution: chevron.subCuspDistribution, to: chevron.subCusp)

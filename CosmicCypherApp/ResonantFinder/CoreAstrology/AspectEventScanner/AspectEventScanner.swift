@@ -8,6 +8,7 @@
 import Foundation
 import SwiftAA
 
+// MARK: Aspect Event Scanner
 class AspectEventScanner {
     
     // Mode

@@ -81,7 +81,7 @@ class StarChartCompositeRenderOperation: Operation {
         // initial cancel check
         if isCancelled { return }
 
-        let alignments = starChart.alignments.values.filter { nodeTypes.contains($0.nodeType) }
+        let alignments = starChart.planetNodes.values.filter { nodeTypes.contains($0.nodeType) }
 
         let width = Int(size.width)
         let height = Int(size.height)

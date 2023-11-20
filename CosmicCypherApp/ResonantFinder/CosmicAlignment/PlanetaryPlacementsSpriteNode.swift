@@ -38,13 +38,13 @@ class PlanetaryPlacementsSpriteNode: SKSpriteNode {
         clear()
         
         // Setup
-        for (nodeType, alignment) in starChart.alignments {
+        for (nodeType, planetNode) in starChart.planetNodes {
             
             // Only Selected Planets
             guard selectedNodeTypes.contains(nodeType) else {continue}
             
             // Setup Values
-            var degree = alignment.longitude
+            var degree = planetNode.longitude
             var radius:CGFloat = defaultRadius
             
             // Check of any symbols are very close and need to have a radius adjustment for legibility
@@ -90,13 +90,13 @@ class PlanetaryPlacementsSpriteNode: SKSpriteNode {
         }
         
         // Update
-        for (nodeType, alignment) in starChart.alignments {
+        for (nodeType, planetNode) in starChart.planetNodes {
             
             // Only Selected Planets
             guard containerSpriteNodes.keys.contains(nodeType) else {continue}
             
             // Setup Degree
-            var degree = alignment.longitude
+            var degree = planetNode.longitude
             
             var radius:CGFloat = defaultRadius
             let tempPlanetSpriteNodes = planetSpriteNodes

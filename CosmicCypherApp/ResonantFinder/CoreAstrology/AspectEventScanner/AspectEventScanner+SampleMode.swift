@@ -7,7 +7,7 @@
 
 import Foundation
 
-// Sample Mode
+// MARK: Sample Mode
 extension AspectEventScanner {
     // Sample Mode of Scanner
     enum SampleMode {

@@ -24,7 +24,7 @@ extension StarChart: Codable {
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(celestialOffset, forKey: .celestialOffset)
-        let nodes:[AstrologicalNode] = alignments.values.map({$0})
+        let nodes:[PlanetNode] = planetNodes.values.map({$0})
         try container.encode(nodes, forKey: .alignments)
         try container.encode(aspects, forKey: .aspects)
         try container.encode(date, forKey: .date)
@@ -35,20 +35,20 @@ extension StarChart: Codable {
         //print("decoding StarChart")
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let celestialOffset:CoreAstrology.Ayanamsa = try container.decode(CoreAstrology.Ayanamsa.self, forKey: .celestialOffset)
-        let nodes:[AstrologicalNode] = try container.decode([AstrologicalNode].self, forKey: .alignments)
+        let nodes:[PlanetNode] = try container.decode([PlanetNode].self, forKey: .alignments)
         let aspects:[CoreAstrology.Aspect] = try container.decode([CoreAstrology.Aspect].self, forKey: .aspects)
         let date:Date = try container.decode(Date.self, forKey: .date)
         let coordinates:GeographicCoordinates = try container.decode(GeographicCoordinates.self, forKey: .coordinates)
         
-        var storedAlignments = StarChartAlignmentSet()
+        var storedPlanetNodes = StarChartPlanetNodes()
         for node in nodes {
-            storedAlignments[node.nodeType] = node
+            storedPlanetNodes[node.nodeType] = node
         }
         
         self.init(date: date,
                   coordinates: coordinates,
                   celestialOffset: celestialOffset,
-                  alignments: storedAlignments,
+                  planetNodes: storedPlanetNodes,
                   aspects: aspects)
     }
     
@@ -56,7 +56,7 @@ extension StarChart: Codable {
         self.init(date: starChart.date,
                   coordinates: starChart.coordinates,
                   celestialOffset: starChart.celestialOffset,
-                  alignments: starChart.alignments,
+                  planetNodes: starChart.planetNodes,
                   aspects: starChart.aspects)
     }
 }

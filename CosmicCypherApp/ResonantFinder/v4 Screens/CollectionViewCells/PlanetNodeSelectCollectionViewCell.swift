@@ -24,9 +24,9 @@ class PlanetNodeSelectCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    var alignment:AstrologicalNode? {
+    var alignment:PlanetNode? {
         guard let planet = planet else {return nil}
-        return  StarChart.Core.current.alignments[planet]
+        return  StarChart.Core.current.planetNodes[planet]
     }
     
     override func awakeFromNib() {

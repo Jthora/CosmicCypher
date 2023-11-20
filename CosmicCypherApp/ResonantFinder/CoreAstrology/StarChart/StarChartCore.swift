@@ -199,9 +199,9 @@ extension StarChart {
                 starChart = current
             }
             
-            var alignments = Array(starChart.alignments.values)
-            alignments.removeAll { (alignment) -> Bool in
-                return !StarChart.Core.selectedNodeTypes.contains(alignment.nodeType)
+            var planetNodes = Array(starChart.planetNodes.values)
+            planetNodes.removeAll { (planetNode) -> Bool in
+                return !StarChart.Core.selectedNodeTypes.contains(planetNode.nodeType)
             }
             
             StarChart.Composite.render(starChart: starChart,
@@ -219,50 +219,49 @@ extension StarChart {
         }
         
         
-        static var selectedPlanetStates: [PlanetState] {
-            var planetStates: [PlanetState] = []
+        static var selectedPlanetNodeStates: [PlanetNodeState] {
+            var planetNodeStates: [PlanetNodeState] = []
             for nodeType in selectedPlanets {
                 do {
-                    guard let planetState = PlanetStateRegistry.main.getPlanetState(starChart: current, nodeType: nodeType) else {
-                       continue
-                    }
-                    planetStates.append(planetState)
+                    let planetNodeState = try PlanetNodeStateRegistry.main.getPlanetNodeState(starChart: current, nodeType: nodeType)
+                    planetNodeStates.append(planetNodeState)
                 } catch let error {
                     print("ERROR: \(error)")
+                    continue
                 }
             }
-            return planetStates
+            return planetNodeStates
         }
         
         // MARK: Max - Exa/Deb/Rise/Fall
         static var maxExaltation:Double {
             var maxExaltation: Double = 0
-            for planetState in selectedPlanetStates {
-                maxExaltation = max(maxExaltation,planetState.exaltation)
+            for planetNodeState in selectedPlanetNodeStates {
+                maxExaltation = max(maxExaltation,planetNodeState.exaltation)
             }
             return maxExaltation
         }
         
         static var maxDebilitation:Double {
             var maxDebilitation: Double = 0
-            for planetState in selectedPlanetStates {
-                maxDebilitation = max(maxDebilitation,planetState.debilitation)
+            for planetNodeState in selectedPlanetNodeStates {
+                maxDebilitation = max(maxDebilitation,planetNodeState.debilitation)
             }
             return maxDebilitation
         }
         
         static var maxRise:Double {
             var maxRise: Double = 0
-            for planetState in selectedPlanetStates {
-                maxRise = max(maxRise,planetState.rise)
+            for planetNodeState in selectedPlanetNodeStates {
+                maxRise = max(maxRise,planetNodeState.rise)
             }
             return maxRise
         }
         
         static var maxFall:Double {
             var maxFall: Double = 0
-            for planetState in selectedPlanetStates {
-                maxFall = max(maxFall,planetState.fall)
+            for planetNodeState in selectedPlanetNodeStates {
+                maxFall = max(maxFall,planetNodeState.fall)
             }
             return maxFall
         }
@@ -270,65 +269,65 @@ extension StarChart {
         // MARK: Average - Exa/Deb/Rise/Fall
         static var averageExaltation:Double {
             var maxExaltation: Double = 0
-            for planetState in selectedPlanetStates {
-                maxExaltation += planetState.exaltation
+            for planetNodeState in selectedPlanetNodeStates {
+                maxExaltation += planetNodeState.exaltation
             }
-            return maxExaltation/Double(selectedPlanetStates.count)
+            return maxExaltation/Double(selectedPlanetNodeStates.count)
         }
         
         static var averageDebilitation:Double {
             var maxDebilitation: Double = 0
-            for planetState in selectedPlanetStates {
-                maxDebilitation += planetState.debilitation
+            for planetNodeState in selectedPlanetNodeStates {
+                maxDebilitation += planetNodeState.debilitation
             }
-            return maxDebilitation/Double(selectedPlanetStates.count)
+            return maxDebilitation/Double(selectedPlanetNodeStates.count)
         }
         
         static var averageRise:Double {
             var averageRise: Double = 0
-            for planetState in selectedPlanetStates {
-                averageRise += planetState.rise
+            for planetNodeState in selectedPlanetNodeStates {
+                averageRise += planetNodeState.rise
             }
-            return averageRise/Double(selectedPlanetStates.count)
+            return averageRise/Double(selectedPlanetNodeStates.count)
         }
         
         static var averageFall:Double {
             var averageFall: Double = 0
-            for planetState in selectedPlanetStates {
-                averageFall += planetState.fall
+            for planetNodeState in selectedPlanetNodeStates {
+                averageFall += planetNodeState.fall
             }
-            return averageFall/Double(selectedPlanetStates.count)
+            return averageFall/Double(selectedPlanetNodeStates.count)
         }
         
         // MARK: Min - Exa/Deb/Rise/Fall
         static var minExaltation:Double {
             var maxExaltation: Double = 0
-            for planetState in selectedPlanetStates {
-                maxExaltation = max(maxExaltation,planetState.exaltation)
+            for planetNodeState in selectedPlanetNodeStates {
+                maxExaltation = max(maxExaltation,planetNodeState.exaltation)
             }
             return maxExaltation
         }
         
         static var minDebilitation:Double {
             var maxDebilitation: Double = 0
-            for planetState in selectedPlanetStates {
-                maxDebilitation = max(maxDebilitation,planetState.debilitation)
+            for planetNodeState in selectedPlanetNodeStates {
+                maxDebilitation = max(maxDebilitation,planetNodeState.debilitation)
             }
             return maxDebilitation
         }
         
         static var minRise:Double {
             var maxRise: Double = 0
-            for planetState in selectedPlanetStates {
-                maxRise = max(maxRise,planetState.rise)
+            for planetNodeState in selectedPlanetNodeStates {
+                maxRise = max(maxRise,planetNodeState.rise)
             }
             return maxRise
         }
         
         static var minFall:Double {
             var maxFall: Double = 0
-            for planetState in selectedPlanetStates {
-                maxFall = max(maxFall,planetState.fall)
+            for planetNodeState in selectedPlanetNodeStates {
+                maxFall = max(maxFall,planetNodeState.fall)
             }
             return maxFall
         }

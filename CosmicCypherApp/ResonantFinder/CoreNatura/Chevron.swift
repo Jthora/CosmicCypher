@@ -12,10 +12,10 @@ import SwiftAA
 
 open class Chevron {
     
-    public let node:AstrologicalNode?
+    public let node:PlanetNode?
     public var longitude:Degree
     
-    public init(node:AstrologicalNode) {
+    public init(node:PlanetNode) {
         self.node = node
         longitude = node.longitude
     }

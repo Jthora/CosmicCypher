@@ -15,7 +15,7 @@ extension Arcana.Zodiac {
     var stringValue:String { return "\(self)".capitalized }
     
     // MARK: Text
-    // Text
+    // Greek Zodiac
     var text:String {
         switch self {
         case .aries: return "Aries"
@@ -32,25 +32,6 @@ extension Arcana.Zodiac {
         case .pisces: return "Pisces"
         }
     }
-    
-    // Chinese
-    var chineseZodiacText: String {
-        switch self {
-        case .aries: return "Sheep"
-        case .taurus: return "Rooster"
-        case .gemini: return "Dog"
-        case .cancer: return "Pig"
-        case .leo: return "Rat"
-        case .virgo: return "Ox"
-        case .libra: return "Tiger"
-        case .scorpio: return "Rabbit"
-        case .sagittarius: return "Dragon"
-        case .capricorn: return "Snake"
-        case .aquarius: return "Horse"
-        case .pisces: return "Monkey"
-        }
-    }
-    
     var emoji: String {
         switch self {
         case .aries: return "♈️" // Aries emoji
@@ -67,24 +48,219 @@ extension Arcana.Zodiac {
         case .pisces: return "♓️" // Pisces emoji
         }
     }
-    
+    // MARK: Chinese Zodiac
     var chineseEmoji: String {
-            switch self {
-            case .aries: return "🐀" // Rat for Aries
-            case .taurus: return "🐂" // Ox for Taurus
-            case .gemini: return "🐅" // Tiger for Gemini
-            case .cancer: return "🐇" // Rabbit for Cancer
-            case .leo: return "🐉" // Dragon for Leo
-            case .virgo: return "🐍" // Snake for Virgo
-            case .libra: return "🐎" // Horse for Libra
-            case .scorpio: return "🐐" // Goat for Scorpio
-            case .sagittarius: return "🐒" // Monkey for Sagittarius
-            case .capricorn: return "🐓" // Rooster for Capricorn
-            case .aquarius: return "🐕" // Dog for Aquarius
-            case .pisces: return "🐖" // Pig for Pisces
-            }
+        switch self {
+        case .aries: return "🐀" // Rat for Aries
+        case .taurus: return "🐂" // Ox for Taurus
+        case .gemini: return "🐅" // Tiger for Gemini
+        case .cancer: return "🐇" // Rabbit for Cancer
+        case .leo: return "🐉" // Dragon for Leo
+        case .virgo: return "🐍" // Snake for Virgo
+        case .libra: return "🐎" // Horse for Libra
+        case .scorpio: return "🐐" // Goat for Scorpio
+        case .sagittarius: return "🐒" // Monkey for Sagittarius
+        case .capricorn: return "🐓" // Rooster for Capricorn
+        case .aquarius: return "🐕" // Dog for Aquarius
+        case .pisces: return "🐖" // Pig for Pisces
         }
-    
+    }
+    var chineseSymbol: String {
+        switch self {
+        case .aries: return "鼠" // Rat (鼠 shǔ)
+        case .taurus: return "牛" // Ox (牛 niú)
+        case .gemini: return "虎" // Tiger (虎 hǔ)
+        case .cancer: return "兔" // Rabbit (兔 tù)
+        case .leo: return "龙" // Dragon (龙 lóng)
+        case .virgo: return "蛇" // Snake (蛇 shé)
+        case .libra: return "马" // Horse (马 mǎ)
+        case .scorpio: return "羊" // Goat (羊 yáng)
+        case .sagittarius: return "猴" // Monkey (猴 hóu)
+        case .capricorn: return "鸡" // Rooster (鸡 jī)
+        case .aquarius: return "狗" // Dog (狗 gǒu)
+        case .pisces: return "猪" // Pig (猪 zhū)
+        }
+    }
+    var chineseZodiacAnimal: String {
+        switch self {
+        case .aries: return "Rat"
+        case .taurus: return "Ox"
+        case .gemini: return "Tiger"
+        case .cancer: return "Rabbit"
+        case .leo: return "Dragon"
+        case .virgo: return "Snake"
+        case .libra: return "Horse"
+        case .scorpio: return "Goat"
+        case .sagittarius: return "Monkey"
+        case .capricorn: return "Rooster"
+        case .aquarius: return "Dog"
+        case .pisces: return "Pig"
+        }
+    }
+    var chinesePronunciation: String {
+        switch self {
+        case .aries: return "Shǔ" // Rat (鼠 shǔ)
+        case .taurus: return "Niú" // Ox (牛 niú)
+        case .gemini: return "Hǔ" // Tiger (虎 hǔ)
+        case .cancer: return "Tù" // Rabbit (兔 tù)
+        case .leo: return "Lóng" // Dragon (龙 lóng)
+        case .virgo: return "Shé" // Snake (蛇 shé)
+        case .libra: return "Mǎ" // Horse (马 mǎ)
+        case .scorpio: return "Yáng" // Goat (羊 yáng)
+        case .sagittarius: return "Hóu" // Monkey (猴 hóu)
+        case .capricorn: return "Jī" // Rooster (鸡 jī)
+        case .aquarius: return "Gǒu" // Dog (狗 gǒu)
+        case .pisces: return "Zhū" // Pig (猪 zhū)
+        }
+    }
+    var chineseWordIPA: String {
+        switch self {
+        case .aries: return "ʂu˥" // Rat (鼠 shǔ)
+        case .taurus: return "njoʊ˥" // Ox (牛 niú)
+        case .gemini: return "xu˥" // Tiger (虎 hǔ)
+        case .cancer: return "thu˥" // Rabbit (兔 tù)
+        case .leo: return "lʊŋ˥" // Dragon (龙 lóng)
+        case .virgo: return "ʂɤ˥" // Snake (蛇 shé)
+        case .libra: return "ma˥" // Horse (马 mǎ)
+        case .scorpio: return "jæŋ˥" // Goat (羊 yáng)
+        case .sagittarius: return "hoʊ˥" // Monkey (猴 hóu)
+        case .capricorn: return "d͡ʒi˥" // Rooster (鸡 jī)
+        case .aquarius: return "goʊ˥" // Dog (狗 gǒu)
+        case .pisces: return "d͡ʒu˥" // Pig (猪 zhū)
+        }
+    }
+    var chinesePronunciationIPA: String {
+        switch self {
+        case .aries: return "/ʂu˥/ (shǔ)" // Rat (鼠 shǔ)
+        case .taurus: return "/njoʊ˥/ (niú)" // Ox (牛 niú)
+        case .gemini: return "/xu˥/ (hǔ)" // Tiger (虎 hǔ)
+        case .cancer: return "/thu˥/ (tù)" // Rabbit (兔 tù)
+        case .leo: return "/lʊŋ˥/ (lóng)" // Dragon (龙 lóng)
+        case .virgo: return "/ʂɤ˥/ (shé)" // Snake (蛇 shé)
+        case .libra: return "/ma˥/ (mǎ)" // Horse (马 mǎ)
+        case .scorpio: return "/jæŋ˥/ (yáng)" // Goat (羊 yáng)
+        case .sagittarius: return "/hoʊ˥/ (hóu)" // Monkey (猴 hóu)
+        case .capricorn: return "/d͡ʒi˥/ (jī)" // Rooster (鸡 jī)
+        case .aquarius: return "/goʊ˥/ (gǒu)" // Dog (狗 gǒu)
+        case .pisces: return "/d͡ʒu˥/ (zhū)" // Pig (猪 zhū)
+        }
+    }
+    var chineseWordFull: String {
+        switch self {
+        case .aries: return "Rat (鼠 shǔ) /ʂu˥/"
+        case .taurus: return "Ox (牛 niú) /njoʊ˥/"
+        case .gemini: return "Tiger (虎 hǔ) /xu˥/"
+        case .cancer: return "Rabbit (兔 tù) /thu˥/"
+        case .leo: return "Dragon (龙 lóng) /lʊŋ˥/"
+        case .virgo: return "Snake (蛇 shé) /ʂɤ˥/"
+        case .libra: return "Horse (马 mǎ) /ma˥/"
+        case .scorpio: return "Goat (羊 yáng) /jæŋ˥/"
+        case .sagittarius: return "Monkey (猴 hóu) /hoʊ˥/"
+        case .capricorn: return "Rooster (鸡 jī) /d͡ʒi˥/"
+        case .aquarius: return "Dog (狗 gǒu) /goʊ˥/"
+        case .pisces: return "Pig (猪 zhū) /d͡ʒu˥/"
+        }
+    }
+
+    // MARK: Other Languages
+    var greekWordIPA: String {
+        switch self {
+        case .aries: return "ˈkrioʊs" // Aries word IPA in Greek
+        case .taurus: return "ˈtoɾos" // Taurus word IPA in Greek
+        case .gemini: return "ˈdʒemini" // Gemini word IPA in Greek
+        case .cancer: return "ˈkarkinos" // Cancer word IPA in Greek
+        case .leo: return "ˈleːo" // Leo word IPA in Greek
+        case .virgo: return "ˈpsefthɪs" // Virgo word IPA in Greek
+        case .libra: return "ˈzʊɣos" // Libra word IPA in Greek
+        case .scorpio: return "ˈskorpi.os" // Scorpio word IPA in Greek
+        case .sagittarius: return "ˌtoxotis" // Sagittarius word IPA in Greek
+        case .capricorn: return "ˈkriːnos" // Capricorn word IPA in Greek
+        case .aquarius: return "ˈidroxoos" // Aquarius word IPA in Greek
+        case .pisces: return "ˈiχθues" // Pisces word IPA in Greek
+        }
+    }
+    var americanEnglishWordIPA: String {
+        switch self {
+        case .aries: return "ˈɛəriːz" // Aries word IPA in American English
+        case .taurus: return "ˈtɔːrəs" // Taurus word IPA in American English
+        case .gemini: return "ˈdʒɛmɪnaɪ" // Gemini word IPA in American English
+        case .cancer: return "ˈkænsər" // Cancer word IPA in American English
+        case .leo: return "ˈliːoʊ" // Leo word IPA in American English
+        case .virgo: return "ˈvɜːrɡoʊ" // Virgo word IPA in American English
+        case .libra: return "ˈliːbrə" // Libra word IPA in American English
+        case .scorpio: return "ˈskɔːrpioʊ" // Scorpio word IPA in American English
+        case .sagittarius: return "ˌsædʒɪˈtɛriəs" // Sagittarius word IPA in American English
+        case .capricorn: return "ˈkæprɪˌkɔːrn" // Capricorn word IPA in American English
+        case .aquarius: return "əˈkwɛriəs" // Aquarius word IPA in American English
+        case .pisces: return "ˈpaɪsiːz" // Pisces word IPA in American English
+        }
+    }
+    var aproximateAncientEgyptianWordIPA: String { // may not be accurate...
+        switch self {
+        case .aries: return "Hery" // Aries word IPA in Ancient Egyptian
+        case .taurus: return "Meskhety" // Taurus word IPA in Ancient Egyptian
+        case .gemini: return "Pekhati" // Gemini word IPA in Ancient Egyptian
+        case .cancer: return "Xaty" // Cancer word IPA in Ancient Egyptian
+        case .leo: return "Sesh" // Leo word IPA in Ancient Egyptian
+        case .virgo: return "Spd" // Virgo word IPA in Ancient Egyptian
+        case .libra: return "Smau" // Libra word IPA in Ancient Egyptian
+        case .scorpio: return "I͗qr" // Scorpio word IPA in Ancient Egyptian
+        case .sagittarius: return "Kerket" // Sagittarius word IPA in Ancient Egyptian
+        case .capricorn: return "Kap" // Capricorn word IPA in Ancient Egyptian
+        case .aquarius: return "Hapi" // Aquarius word IPA in Ancient Egyptian
+        case .pisces: return "Aar" // Pisces word IPA in Ancient Egyptian
+        }
+    }
+    var spanishWordIPA: String {
+        switch self {
+        case .aries: return "ˈaɾjes"
+        case .taurus: return "ˈtauɾo"
+        case .gemini: return "ˈxeminis"
+        case .cancer: return "ˈkanθer"
+        case .leo: return "ˈle.o"
+        case .virgo: return "ˈbiɾɣo"
+        case .libra: return "ˈliβɾa"
+        case .scorpio: return "esˈkoɾpjo"
+        case .sagittarius: return "saxiˈtaɾjo"
+        case .capricorn: return "kapɾikoɾˈnjo"
+        case .aquarius: return "aˈkwjaɾjo"
+        case .pisces: return "ˈpiskis"
+        }
+    }
+    var frenchWordIPA: String {
+        switch self {
+        case .aries: return "bɛlje"
+        case .taurus: return "toʁo"
+        case .gemini: return "ʒemo"
+        case .cancer: return "kɑ̃sɛʁ"
+        case .leo: return "ljɔ̃"
+        case .virgo: return "vjɛʁʒ"
+        case .libra: return "balɑ̃s"
+        case .scorpio: return "skɔʁpjɔ̃"
+        case .sagittarius: return "saʒitɛʁ"
+        case .capricorn: return "kapʁikɔʁn"
+        case .aquarius: return "vɛʁso"
+        case .pisces: return "pwasɔ̃"
+        }
+    }
+    var germanWordIPA: String {
+        switch self {
+        case .aries: return "ˈvɪdɐ"
+        case .taurus: return "ʃtiːɐ̯"
+        case .gemini: return "ˈt͡svɪlɪŋə"
+        case .cancer: return "kʁɛps"
+        case .leo: return "ˈløːvə"
+        case .virgo: return "ˈjʊŋfraʊ"
+        case .libra: return "ˈvaːɡə"
+        case .scorpio: return "skoˈʁpi̯oːn"
+        case .sagittarius: return "ˈʃʏtsə"
+        case .capricorn: return "ˈʃtaɪn.bɔk"
+        case .aquarius: return "ˈvasɐman"
+        case .pisces: return "ˈfɪʃə"
+        }
+    }
+
+    // MARK: Copy Text
     // Subtitle
     var subtitle: String {
         switch self {
@@ -164,15 +340,15 @@ extension Arcana.Zodiac {
     }
     
     // MARK: Transit Experience Text
-    // Version
-    enum TransitExperienceVersion {
+    // Transit Experiences
+    enum TransitExperienceOption {
         case traits
         case emotional
         case practical
     }
     
     // Transit Experience String
-    func transitExperience(_ version:TransitExperienceVersion) -> String {
+    func transitExperience(_ version:TransitExperienceOption) -> String {
         switch version {
         case .traits:
             switch self {

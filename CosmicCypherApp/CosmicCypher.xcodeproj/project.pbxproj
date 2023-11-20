@@ -42,6 +42,7 @@
 		FA11EDDD2B0AA82A0013ECA2 /* PlanetNodesAndAspectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11EDDC2B0AA82A0013ECA2 /* PlanetNodesAndAspectsViewController.swift */; };
 		FA11EDDF2B0AA9F40013ECA2 /* PlanetNodeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11EDDE2B0AA9F40013ECA2 /* PlanetNodeCollectionViewCell.swift */; };
 		FA11EDE12B0AAA490013ECA2 /* AspectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11EDE02B0AAA490013ECA2 /* AspectCollectionViewCell.swift */; };
+		FA11EDE32B0ACD1D0013ECA2 /* Zodiac+Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11EDE22B0ACD1D0013ECA2 /* Zodiac+Text.swift */; };
 		FA12D5E5289D7B3500411649 /* ResonanceReportViewController+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12D5E4289D7B3500411649 /* ResonanceReportViewController+Reactive.swift */; };
 		FA12D5E7289D7BA900411649 /* ResonanceReportViewController+TableViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12D5E6289D7BA900411649 /* ResonanceReportViewController+TableViewDelegates.swift */; };
 		FA12D5E9289D7C1A00411649 /* ResonanceReportViewController+UpdateOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12D5E8289D7C1A00411649 /* ResonanceReportViewController+UpdateOperation.swift */; };
@@ -340,6 +341,7 @@
 		FA11EDDC2B0AA82A0013ECA2 /* PlanetNodesAndAspectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetNodesAndAspectsViewController.swift; sourceTree = "<group>"; };
 		FA11EDDE2B0AA9F40013ECA2 /* PlanetNodeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetNodeCollectionViewCell.swift; sourceTree = "<group>"; };
 		FA11EDE02B0AAA490013ECA2 /* AspectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectCollectionViewCell.swift; sourceTree = "<group>"; };
+		FA11EDE22B0ACD1D0013ECA2 /* Zodiac+Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Zodiac+Text.swift"; sourceTree = "<group>"; };
 		FA12D5E4289D7B3500411649 /* ResonanceReportViewController+Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResonanceReportViewController+Reactive.swift"; sourceTree = "<group>"; };
 		FA12D5E6289D7BA900411649 /* ResonanceReportViewController+TableViewDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResonanceReportViewController+TableViewDelegates.swift"; sourceTree = "<group>"; };
 		FA12D5E8289D7C1A00411649 /* ResonanceReportViewController+UpdateOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResonanceReportViewController+UpdateOperation.swift"; sourceTree = "<group>"; };
@@ -1018,6 +1020,7 @@
 				FA35C0B828497879006114AB /* Arcana.swift */,
 				FA35C0BA28497879006114AB /* Chevron.swift */,
 				FA35C0B928497879006114AB /* Zodiac.swift */,
+				FA11EDE22B0ACD1D0013ECA2 /* Zodiac+Text.swift */,
 				FAFB68A12AB431F700FEBDF4 /* Zodiac+Index.swift */,
 				FA35C0BB28497879006114AB /* Decan.swift */,
 				FAFB689F2AB431E500FEBDF4 /* Decan+Index.swift */,
@@ -1678,6 +1681,7 @@
 				FA07C9B2254019D800683486 /* ViewController.swift in Sources */,
 				FA07C9AE254019D800683486 /* AppDelegate.swift in Sources */,
 				FA35C0DD2849A840006114AB /* TimeStreamGeometryType.swift in Sources */,
+				FA11EDE32B0ACD1D0013ECA2 /* Zodiac+Text.swift in Sources */,
 				FA9C9CC52AFA92050055C93E /* AspectEventScanner+SampleMode.swift in Sources */,
 				FAEB27A7284E81CF009994B8 /* StarChart+Codable.swift in Sources */,
 				FA07CA2625401EBB00683486 /* SetDateViewController.swift in Sources */,

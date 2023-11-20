@@ -16,6 +16,7 @@ import TinyConstraints
 
 class ResonanceReportViewController: UIViewController {
     
+    // MARK: Present View
     static var current:ResonanceReportViewController? = nil
     
     static func presentModally(over presentingViewController: UIViewController) {
@@ -27,7 +28,6 @@ class ResonanceReportViewController: UIViewController {
         }
         
     }
-    
     
     // MARK: Bars
     // Bar View
@@ -265,7 +265,6 @@ class ResonanceReportViewController: UIViewController {
         StarChart.Core.renderStarChart(size: scene.size)
     }
     
-    
     // MARK: Buttons
     @IBAction func aspectEventScannerButtonTouch(_ sender: UIButton) {
         //TimeStreamSettingsViewController.presentModally(over: self)
@@ -284,7 +283,6 @@ class ResonanceReportViewController: UIViewController {
         SettingsViewController.presentModally(over: self)
         //StarChartSelectViewController.presentModally(over: self)
     }
-    
     
     @IBAction func barsTouched(_ sender: UIButton) {
         ElementalReadingViewController.presentModally(over: self)

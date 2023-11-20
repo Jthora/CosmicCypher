@@ -10,7 +10,11 @@
 import SwiftAA
 import Darwin
 
-open class CoreAstrology {
+// MARK: Namespace
+open class CoreAstrology {}
+
+// MARK: Aspect Relation
+extension CoreAstrology {
     public final class AspectRelation {
         
         public var type:AspectRelationType
@@ -81,7 +85,10 @@ open class CoreAstrology {
             return type.defaultDescription
         }
     }
-    
+}
+ 
+// MARK: Aspect Relation Type
+extension CoreAstrology {
     public enum AspectRelationType: Int, CaseIterable, Codable {
         
         // init AspectRelationType (based on distance between AspectBodies)
@@ -130,34 +137,34 @@ open class CoreAstrology {
         
         case conjunction
         case opposition
-
+        
         case sextile
         case trine
-
+        
         case semisquare
         case square
         case bisemisquare
-
+        
         case quintile
         case biquintile
-
+        
         case septile
         case biseptile
         case triseptile
-
+        
         case novile
         case binovile
         case quadranovile
-
+        
         case oneTenth
         case threeTenth
-
+        
         case oneEleventh
         case twoEleventh
         case threeEleventh
         case fourEleventh
         case fiveEleventh
-
+        
         case oneTwelfth // semisextile
         case fiveTwelfth
         
@@ -165,34 +172,34 @@ open class CoreAstrology {
             switch self {
             case .conjunction: return 0
             case .opposition: return 180
-            
+                
             case .sextile: return 60
             case .trine: return 120
-            
+                
             case .semisquare: return 45
             case .square: return 90
             case .bisemisquare: return 135
-            
+                
             case .quintile: return 72
             case .biquintile: return 144
-            
+                
             case .septile: return 51.4285714286
             case .biseptile: return 102.857142857
             case .triseptile: return 154.285714286
-            
+                
             case .novile: return 40
             case .binovile: return 80
             case .quadranovile: return 160
-            
+                
             case .oneTenth: return 36
             case .threeTenth: return 108
-            
+                
             case .oneEleventh: return 32.72727272727
             case .twoEleventh: return 65.45454545455
             case .threeEleventh: return 98.18181818182
             case .fourEleventh: return 130.90909090909
             case .fiveEleventh: return 163.63636363636
-            
+                
             case .oneTwelfth: return 30 // semisextile
             case .fiveTwelfth: return 150 // fiveTwelfth
             }
@@ -379,7 +386,7 @@ open class CoreAstrology {
             case .semisquare: return "Friction, prompt action to reduce friction"
             case .square: return "Tension, expect difficulty and growth"
             case .bisemisquare: return ""
-
+                
             case .oneTwelfth: return "Dissociation, helping another"
             case .fiveTwelfth: return "Challenging, misunderstanding and difference"
                 
@@ -398,7 +405,11 @@ open class CoreAstrology {
             }
         }
     }
-    
+}
+
+// MARK: AspectBody
+extension CoreAstrology {
+    // Planet Node
     public struct AspectBody: Hashable, Equatable {
         
         public let equatorialCoordinates:EquatorialCoordinates
@@ -590,38 +601,159 @@ open class CoreAstrology {
                 }
             }
             
-            public var defaultDescription:String {
+            // Short Description
+            var shortDescription: String {
                 switch self {
-                case .moon: return "Feelings, moods and senses"
-                case .sun: return "Core, self and identity"
-                case .mercury: return "Communication, thinking and reason"
-                case .venus: return "Favorite, attraction, pleasure"
-                case .mars: return "Action, bravery and agression"
-                case .jupiter: return "Motivation, abundance and growth"
-                case .saturn: return "Authority, boundaries and rules"
-                case .uranus: return "Surpise, reversals and breakthroughs"
-                case .neptune: return "Romance, avoidance and fantasy"
-                case .pluto: return "Destruction, reincarnation and regeneration"
-                default: return ""
+                case .sun: return "Vitality, ego, and the core self."
+                case .moon: return "Emotions, instincts, and the subconscious."
+                case .mercury: return "Communication, intellect, and adaptability."
+                case .venus: return "Love, beauty, and harmony."
+                case .mars: return "Energy, passion, and assertiveness."
+                case .jupiter: return "Expansion, growth, and opportunity."
+                case .saturn: return "Discipline, responsibility, and challenges."
+                case .uranus: return "Innovation, change, and disruption."
+                case .neptune: return "Dreams, illusions, and spirituality."
+                case .pluto: return "Transformation, power, and regeneration."
+                case .ascendant: return "Persona, outer self, and beginnings."
+                case .decendant: return "Relationships, partnerships, and others."
+                case .midheaven: return "Career, ambitions, and public image."
+                case .imumCoeli: return "Roots, home, and private life."
+                case .lunarAscendingNode: return "Growth, connections, and karma."
+                case .lunarDecendingNode: return "Release, closure, and letting go."
+                case .lunarApogee: return "Farthest point in the Moon's orbit."
+                case .lunarPerigee: return "Nearest point in the Moon's orbit."
+                case .partOfFortune: return "Harmony, success, and well-being."
+                case .partOfSpirit: return "Inner strength, wisdom, and resilience."
+                case .partOfEros: return "Passionate connections and desires."
+                }
+            }
+            
+            // Description
+            var description: String {
+                switch self {
+                case .sun: return "The Sun represents vitality, ego, and the core self. It symbolizes one's conscious identity, ego, and willpower."
+                case .moon: return "The Moon symbolizes emotions, instincts, and the subconscious. It represents feelings, intuition, and the nurturing side of us."
+                case .mercury: return "Mercury signifies communication, intellect, and adaptability. It influences how we express ourselves, think, and learn."
+                case .venus: return "Venus represents love, beauty, and harmony. It influences relationships, aesthetics, and our appreciation of beauty."
+                case .mars: return "Mars symbolizes energy, passion, and assertiveness. It drives ambition, desire, and how we assert ourselves."
+                case .jupiter: return "Jupiter signifies expansion, growth, and opportunity. It brings luck, abundance, and a philosophical outlook."
+                case .saturn: return "Saturn represents discipline, responsibility, and challenges. It brings structure, lessons, and tests our endurance."
+                case .uranus: return "Uranus symbolizes innovation, change, and disruption. It brings sudden shifts, innovation, and rebellion."
+                case .neptune: return "Neptune represents dreams, illusions, and spirituality. It inspires creativity, imagination, and higher ideals."
+                case .pluto: return "Pluto signifies transformation, power, and regeneration. It represents deep change, hidden power, and rebirth."
+                case .ascendant: return "The Ascendant marks the beginning, the persona, and the outer self. It represents how others see us and our first impressions."
+                case .decendant: return "The Descendant represents relationships, partnerships, and others. It indicates our approach to others and our needs in relationships."
+                case .midheaven: return "The Midheaven signifies career, ambitions, and public image. It represents our aspirations, achievements, and reputation."
+                case .imumCoeli: return "The Imum Coeli symbolizes roots, home, and private life. It represents our family, heritage, and emotional foundation."
+                case .lunarAscendingNode: return "The Lunar Ascending Node signifies growth, connections, and karma. It indicates our life's path, connections, and karmic lessons."
+                case .lunarDecendingNode: return "The Lunar Descending Node represents release, closure, and letting go. It indicates what we need to release and learn from in this lifetime."
+                case .lunarApogee: return "The Lunar Apogee marks the point farthest from the Earth in the Moon's orbit. It influences emotional extremes and intensity."
+                case .lunarPerigee: return "The Lunar Perigee marks the point nearest to the Earth in the Moon's orbit. It influences heightened emotions and sensitivity."
+                case .partOfFortune: return "The Part of Fortune signifies harmony, success, and well-being. It represents the area of life where we find joy and fulfillment."
+                case .partOfSpirit: return "The Part of Spirit represents inner strength, wisdom, and resilience. It indicates our ability to overcome challenges and find purpose."
+                case .partOfEros: return "The Part of Eros signifies passionate connections and desires. It represents our erotic nature, desires, and intense attractions."
+                }
+            }
+            
+            // Long Description
+            var longDescription: String {
+                switch self {
+                case .sun: return "The Sun represents vitality, ego, and the core self. It embodies one's drive, ambitions, and life force, illuminating the path toward self-discovery and expression. It signifies the essence of identity, guiding individuality and purpose."
+                case .moon: return "The Moon symbolizes emotions, instincts, and the subconscious. It reflects our inner self, nurturing qualities, and intuitive nature. It guides our emotional responses and unveils the depths of our desires, fostering a sense of comfort and familiarity."
+                case .mercury: return "Mercury signifies communication, intellect, and adaptability. It governs thought processes, intellectual pursuits, and the exchange of ideas. Mercury encourages flexibility, sharp wit, and the art of expression, influencing how we perceive and convey information."
+                case .venus: return "Venus represents love, beauty, and harmony. It embodies our affections, aesthetic sensibilities, and relationships. Venus governs pleasures, attracting and nurturing bonds while fostering an appreciation for art, beauty, and romantic connections."
+                case .mars: return "Mars symbolizes energy, passion, and assertiveness. It embodies our drive for action, determination, and physical vitality. Mars inspires courage, fuels desires, and influences our ability to pursue goals with vigor and resilience."
+                case .jupiter: return "Jupiter signifies expansion, growth, and opportunity. It represents abundance, wisdom, and the pursuit of higher knowledge. Jupiter encourages optimism, broadening horizons, and fostering a sense of purposeful exploration."
+                case .saturn: return "Saturn represents discipline, responsibility, and challenges. It embodies structure, limitations, and the pursuit of long-term goals. Saturn teaches invaluable lessons through trials, fostering resilience, and promoting accountability."
+                case .uranus: return "Uranus symbolizes innovation, change, and disruption. It governs unconventional thinking, originality, and sudden shifts. Uranus sparks revolutions, encourages independence, and inspires breakthroughs in technology and ideologies."
+                case .neptune: return "Neptune represents dreams, illusions, and spirituality. It embodies imagination, intuition, and the subconscious realms. Neptune blurs boundaries, evoking compassion, creativity, and a deep connection to the mystical and divine."
+                case .pluto: return "Pluto signifies transformation, power, and regeneration. It governs profound changes, inner evolution, and rebirth. Pluto unearths hidden truths, facilitating growth through the process of letting go and embracing renewal."
+                case .ascendant: return "The Ascendant marks the beginning, the persona, and the outer self. It represents the lens through which the world perceives us and influences our initial impressions. The Ascendant shapes our approach to life and impacts how others perceive our identity."
+                case .decendant: return "The Descendant represents relationships, partnerships, and others. It embodies collaboration, balance, and the quest for companionship. The Descendant guides the qualities we seek in others and influences our approach to forming meaningful connections."
+                case .midheaven: return "The Midheaven signifies career, ambitions, and public image. It embodies aspirations, achievements, and one's place in the world. The Midheaven guides our professional pursuits and shapes how we are perceived in the public sphere."
+                case .imumCoeli: return "The Imum Coeli symbolizes roots, home, and private life. It represents our emotional foundation, ancestry, and sense of security. The Imum Coeli influences our connection to family, heritage, and the nurturing aspects of our lives."
+                case .lunarAscendingNode: return "The Lunar Ascending Node signifies growth, connections, and karma. It represents significant encounters, destiny, and the lessons we are meant to learn. The Lunar Ascending Node guides us toward personal evolution and meaningful relationships."
+                case .lunarDecendingNode: return "The Lunar Descending Node represents release, closure, and letting go. It embodies endings, karmic debts, and the culmination of experiences. The Lunar Descending Node encourages us to relinquish what no longer serves our growth."
+                case .lunarApogee: return "The Lunar Apogee marks the point farthest from the Earth in the Moon's orbit. It signifies a heightened emotional sensitivity and an inward-focused energy. The Lunar Apogee influences periods of introspection and spiritual exploration."
+                case .lunarPerigee: return "The Lunar Perigee marks the point nearest to the Earth in the Moon's orbit. It embodies intensified emotions and a stronger connection to the external world. The Lunar Perigee may heighten intuitive abilities and emotional responsiveness."
+                case .partOfFortune: return "The Part of Fortune signifies harmony, success, and well-being. It embodies blessings, prosperity, and the alignment of destiny. The Part of Fortune guides us toward experiences that foster joy, fulfillment, and a sense of abundance."
+                case .partOfSpirit: return "The Part of Spirit represents inner strength, wisdom, and resilience. It embodies the essence of the soul's journey, spiritual growth, and enlightenment. The Part of Spirit encourages us to embrace challenges as opportunities for growth."
+                case .partOfEros: return "The Part of Eros signifies passionate connections and desires. It embodies eroticism, romantic inclinations, and the pursuit of intimacy. The Part of Eros guides us toward fulfilling relationships that ignite passion and deep emotional bonds."
+                }
+            }
+            
+            var subtitle: String {
+                switch self {
+                case .sun: return "The Center of the Solar System"
+                case .moon: return "Earth's Natural Satellite"
+                case .mercury: return "The Swift Messenger"
+                case .venus: return "The Evening Star"
+                case .mars: return "The Red Planet"
+                case .jupiter: return "The Giant of the Solar System"
+                case .saturn: return "The Ringed Planet"
+                case .uranus: return "The Sideways Planet"
+                case .neptune: return "The Mystic Planet"
+                case .pluto: return "The Dwarf Planet"
+                case .ascendant: return "The Mask You Present to the World"
+                case .decendant: return "The Mirror to Your Ascendant"
+                case .midheaven: return "Your Public Persona"
+                case .imumCoeli: return "Your Roots and Foundations"
+                case .lunarAscendingNode: return "Your Path Towards Growth"
+                case .lunarDecendingNode: return "What You Leave Behind"
+                case .lunarApogee: return "The Farthest Point of the Moon's Orbit"
+                case .lunarPerigee: return "The Closest Point of the Moon's Orbit"
+                case .partOfFortune: return "Harmony and Prosperity"
+                case .partOfSpirit: return "Your Inner Essence"
+                case .partOfEros: return "Passion and Desire"
+                }
+            }
+            
+            var attributesCombined: String {
+                let allAttributes = attributes.joined(separator: ", ")
+                return "Attributes: \(allAttributes)"
+            }
+            var attributes: [String] {
+                switch self {
+                case .sun: return ["Vitality", "Leadership", "Confidence"]
+                case .moon: return ["Emotions", "Intuition", "Nurturing"]
+                case .mercury: return ["Communication", "Curiosity", "Adaptability"]
+                case .venus: return ["Love", "Harmony", "Creativity"]
+                case .mars: return ["Action", "Courage", "Passion"]
+                case .jupiter: return ["Expansion", "Opportunity", "Abundance"]
+                case .saturn: return ["Discipline", "Responsibility", "Structure"]
+                case .uranus: return ["Innovation", "Originality", "Independence"]
+                case .neptune: return ["Imagination", "Sensitivity", "Spirituality"]
+                case .pluto: return ["Transformation", "Power", "Rebirth"]
+                case .ascendant: return ["First impressions", "Outward demeanor", "Appearance"]
+                case .decendant: return ["Partnerships", "Relationships", "Collaboration"]
+                case .midheaven: return ["Career", "Public image", "Ambition"]
+                case .imumCoeli: return ["Roots", "Family", "Heritage"]
+                case .lunarAscendingNode: return ["Growth", "Learning", "Evolution"]
+                case .lunarDecendingNode: return ["Release", "Letting go", "Karmic tendencies"]
+                case .lunarApogee: return ["Farthest point of emotional expression"]
+                case .lunarPerigee: return ["Closest point of emotional expression"]
+                case .partOfFortune: return ["Harmony", "Prosperity", "Happiness"]
+                case .partOfSpirit: return ["Inner essence", "Soul", "Core values"]
+                case .partOfEros: return ["Passion", "Desire", "Intimacy"]
                 }
             }
             
             public var hasGravity:Bool {
                 switch self {
-                    case .moon, .sun, .mercury, .venus, .mars, .jupiter, .saturn, .uranus, .neptune: return true
+                case .moon, .sun, .mercury, .venus, .mars, .jupiter, .saturn, .uranus, .neptune: return true
                 default: return false
                 }
             }
             
             public static var bodiesWithGravity:[AspectBody.NodeType] = [.moon,
-                                                         .sun,
-                                                         .mercury,
-                                                         .venus,
-                                                         .mars,
-                                                         .jupiter,
-                                                         .saturn,
-                                                         .uranus,
-                                                         .neptune]
+                                                                         .sun,
+                                                                         .mercury,
+                                                                         .venus,
+                                                                         .mars,
+                                                                         .jupiter,
+                                                                         .saturn,
+                                                                         .uranus,
+                                                                         .neptune]
             
             public func generatePlanetState(date:Date, highPrecision:Bool = true) -> PlanetState? {
                 if let planet: Planet = planet(date: date, highPrecision: highPrecision) {
@@ -682,7 +814,7 @@ open class CoreAstrology {
                 }
                 
             }
-
+            
             public func equatorialCoordinates(date:Date, highPrecision:Bool = true) -> EquatorialCoordinates? {
                 let julianDay = JulianDay(date)
                 switch self {
@@ -736,7 +868,7 @@ open class CoreAstrology {
                 default: return nil
                 }
             }
-
+            
             public func geocentricLongitude(date:Date, coords:GeographicCoordinates = GeographicCoordinates(positivelyWestwardLongitude: 0, latitude: 0), highPrecision:Bool = true) -> Degree? {
                 let julianDay = JulianDay(date)
                 switch self {
@@ -841,8 +973,8 @@ open class CoreAstrology {
                 /// Guard for Radius Vectors (required for trig)
                 guard let a:Double = self.radiusVector(date: date, highPrecision: highPrecision)?.value,
                       let b:Double = otherPlanet.radiusVector(date: date, highPrecision: highPrecision)?.value else {
-                          return nil
-                      }
+                    return nil
+                }
                 
                 /// Catch for Basic Values
                 switch self {
@@ -875,7 +1007,7 @@ open class CoreAstrology {
                 guard let p1mass = massOfPlanet(),
                       let p2mass = otherPlanet.massOfPlanet(),
                       let distanceInMeters = self.distance(from: otherPlanet, date: date)?.value else {
-                        return nil
+                    return nil
                 }
                 let universalGravityConstant:Double = 6.673e-11
                 return (universalGravityConstant*p1mass*p2mass)/(distanceInMeters*distanceInMeters)
@@ -887,8 +1019,8 @@ open class CoreAstrology {
             
             public func gravimetricForceOnEarth(date:Date) -> Double? {
                 guard let mass = massOfPlanet(),
-                    let distanceInMeters = distanceFromEarth(date: date)?.inMeters.value else {
-                        return nil
+                      let distanceInMeters = distanceFromEarth(date: date)?.inMeters.value else {
+                    return nil
                 }
                 let earthMass:Kilogram = 5.97237e24
                 let universalGravityConstant:Double = 6.673e-11
@@ -897,8 +1029,8 @@ open class CoreAstrology {
             
             public func gravimetricForce(on geographicCoordinate:GeographicCoordinates, date:Date) -> Double? {
                 guard let mass = massOfPlanet(),
-                    let distanceInMeters = distanceFromEarth(date: date)?.inMeters.value else {
-                        return nil
+                      let distanceInMeters = distanceFromEarth(date: date)?.inMeters.value else {
+                    return nil
                 }
                 let earthMass:Kilogram = 5.97237e24
                 let universalGravityConstant:Double = 6.673e-11
@@ -910,7 +1042,7 @@ open class CoreAstrology {
                 
                 let phi   = (90.0-coords.alpha.inDegrees.value)*(Double.pi/180);
                 let theta = (coords.delta.value+180.0)*(Double.pi/180);
-
+                
                 let x = (sin(phi)*cos(theta));
                 let z = (sin(phi)*sin(theta));
                 let y = (cos(phi));
@@ -923,7 +1055,7 @@ open class CoreAstrology {
                 
                 let phi   = (90.0-coords.alpha.inDegrees.value)*(Double.pi/180);
                 let theta = (coords.delta.value+180.0)*(Double.pi/180);
-
+                
                 let x = (sin(phi)*cos(theta));
                 let z = (sin(phi)*sin(theta));
                 let y = (cos(phi));
@@ -944,25 +1076,11 @@ open class CoreAstrology {
             }
         }
     }
+}
     
-    
-    
-    public struct Vector3 {
-        let x:Double
-        let y:Double
-        let z:Double
-        
-        public init(_ x:Double, _ y:Double, _ z:Double) {
-            self.x = x
-            self.y = y
-            self.z = z
-        }
-        
-        public static var empty:Vector3 {
-            return Vector3(0, 0, 0)
-        }
-    }
-    
+// MARK: GravimetricTensor
+extension CoreAstrology {
+    // Gravimetric Tensor
     public struct GravimetricTensor {
         
         enum Orientation {
@@ -1019,11 +1137,25 @@ open class CoreAstrology {
         }
     }
     
-    public struct AspectEvent {
-        public var aspect:Aspect
-        public var date:Date
+    // Vector 3
+    public struct Vector3 {
+        let x:Double
+        let y:Double
+        let z:Double
+        
+        public init(_ x:Double, _ y:Double, _ z:Double) {
+            self.x = x
+            self.y = y
+            self.z = z
+        }
+        
+        public static var empty:Vector3 {
+            return Vector3(0, 0, 0)
+        }
     }
-    
+}
+
+extension CoreAstrology {
     public final class Aspect {
         // properties
         public var relation:AspectRelation
@@ -1092,10 +1224,23 @@ open class CoreAstrology {
             return strength
         }
         
+        // MARK: Description
+        // Description
         public var description:String {
-            return primaryBody.type.defaultDescription + relation.defaultDescription + secondaryBody.type.defaultDescription
+            return primaryBody.type.description + relation.defaultDescription + secondaryBody.type.description
         }
         
+        // Short Description
+        public var shortDescription:String {
+            return primaryBody.type.shortDescription + relation.defaultDescription + secondaryBody.type.shortDescription
+        }
+        
+        // Long Description
+        public var longDescription:String {
+            return primaryBody.type.longDescription + relation.defaultDescription + secondaryBody.type.longDescription
+        }
+        
+        // Planetary Effect Description
         public func planetaryEffectDescription(flipPlanets:Bool = false) -> String {
             
             let relation = self.relation.type
@@ -1584,8 +1729,13 @@ open class CoreAstrology {
         }
     }
     
+    public struct AspectEvent {
+        public var aspect:Aspect
+        public var date:Date
+    }
 }
 
+// MARK: Gravimetric Tensor Operators
 func +=(left: inout CoreAstrology.GravimetricTensor, right: CoreAstrology.GravimetricTensor) {
     left.x += right.x
     left.y += right.y

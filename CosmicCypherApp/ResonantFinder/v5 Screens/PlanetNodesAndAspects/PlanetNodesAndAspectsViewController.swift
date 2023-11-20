@@ -10,6 +10,7 @@ import UIKit
 
 class PlanetNodesAndAspectsViewController: UIViewController {
     
+    // MARK: Present View
     var selectionContext:SelectionContext = .starChart
     var onDismiss:(()->())? = nil
     static func presentModally(over presentingViewController: UIViewController, selectionContext: SelectionContext, onDismiss: (()->())? = nil) {
@@ -23,12 +24,18 @@ class PlanetNodesAndAspectsViewController: UIViewController {
         }
     }
     
+    // MARK: Outlets
+    // Collection Views
     @IBOutlet weak var planetCollectionView: UICollectionView!
     @IBOutlet weak var aspectCollectionView: UICollectionView!
     
+    // MARK: Properties
+    // PlanetNodes and Aspects
     var initialSelectedAspectAngles: [CoreAstrology.AspectRelationType] = []
     var initialSelectedNodeTypes: [CoreAstrology.AspectBody.NodeType] = []
     
+    // MARK: View Life Cycle
+    // View Did Load
     override func viewDidLoad() {
         planetCollectionView.delegate = self
         aspectCollectionView.delegate = self
@@ -48,6 +55,8 @@ class PlanetNodesAndAspectsViewController: UIViewController {
             initialSelectedNodeTypes = AspectEventScanner.Core.planetsAndNodes
         }
     }
+    
+    // View Will Disappear
     override func viewWillDisappear(_ animated: Bool) {
         switch selectionContext {
         case .starChart:
@@ -69,6 +78,7 @@ class PlanetNodesAndAspectsViewController: UIViewController {
         onDismiss?()
     }
     
+    // View Did Disappear
     override func viewDidDisappear(_ animated: Bool) {
         DispatchQueue.main.async {
             ResonanceReportViewController.current?.update()
@@ -76,14 +86,14 @@ class PlanetNodesAndAspectsViewController: UIViewController {
     }
     
     func createGridLayout() -> UICollectionViewCompositionalLayout {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.2),
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5),
                                              heightDimension: .fractionalHeight(1.0))
         
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
         
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                              heightDimension: .fractionalWidth(0.2))
+                                              heightDimension: .fractionalWidth(0.5))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
                                                          subitems: [item])
         
@@ -94,6 +104,7 @@ class PlanetNodesAndAspectsViewController: UIViewController {
     }
 }
 
+// UICollectionViewDelegate
 extension PlanetNodesAndAspectsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) else {
@@ -110,6 +121,7 @@ extension PlanetNodesAndAspectsViewController: UICollectionViewDelegate {
     }
 }
 
+// UICollectionViewDataSource
 extension PlanetNodesAndAspectsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == planetCollectionView {
@@ -185,7 +197,8 @@ extension PlanetNodesAndAspectsViewController: UICollectionViewDataSource {
     }
 }
 
-
+// MARK: Selection Context
+// Selection Context
 extension PlanetNodesAndAspectsViewController {
     enum SelectionContext {
         case starChart

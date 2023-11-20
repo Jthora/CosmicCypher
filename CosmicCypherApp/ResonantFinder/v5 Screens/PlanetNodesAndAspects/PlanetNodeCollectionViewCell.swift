@@ -11,32 +11,56 @@ import UIKit
 
 class PlanetNodeCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var planetImageView: UIImageView!
-    @IBOutlet weak var planetLabel: UILabel!
-    @IBOutlet weak var planetSelectedLabel: UILabel!
-    
-    @IBOutlet weak var topZodiacImageView: UIImageView!
-    @IBOutlet weak var bottomZodiacImageView: UIImageView!
-    
+    // MARK: Context
     var selectionContext:PlanetNodesAndAspectsViewController.SelectionContext = .starChart
     
+    
+    // MARK: Outlets
+    // Image Views
+    @IBOutlet weak var planetImageView: UIImageView!
+    @IBOutlet weak var topZodiacImageView: UIImageView!
+    @IBOutlet weak var topElementImageView: UIImageView!
+    @IBOutlet weak var topModalityImageView: UIImageView!
+    @IBOutlet weak var bottomZodiacImageView: UIImageView!
+    @IBOutlet weak var bottomElementImageView: UIImageView!
+    @IBOutlet weak var bottomModalityImageView: UIImageView!
+    
+    //Text Views
+    @IBOutlet weak var topTextView: UITextView!
+    @IBOutlet weak var bottomTextView: UITextView!
+    @IBOutlet weak var planetDescriptionTextView: UITextView!
+    
+    // Labels
+    @IBOutlet weak var planetLabel: UILabel!
+    @IBOutlet weak var topLabel: UILabel!
+    @IBOutlet weak var bottomLabel: UILabel!
+    @IBOutlet weak var topPercentLabel: UILabel!
+    @IBOutlet weak var bottomPercentLabel: UILabel!
+    
+    // MARK: Properties
+    // is Selected
+    override var isSelected: Bool {
+        didSet {
+            if isSelected {
+                planetSelected = !planetSelected
+            }
+        }
+    }
+    
+    // Planet
     var planet:CoreAstrology.AspectBody.NodeType? = nil {
         didSet {
             update()
         }
     }
     
+    // Alignment
     var alignment:AstrologicalNode? {
         guard let planet = planet else {return nil}
         return  StarChart.Core.current.alignments[planet]
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        setSelectedState(selected:planetSelected)
-    }
-    
-    
+    // Planet Selected
     var planetSelected:Bool = true {
         didSet {
             updateCore()
@@ -44,6 +68,78 @@ class PlanetNodeCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    // MARK: View Life Cycle
+    // Load from Storyboard
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setup()
+    }
+    
+    // Setup
+    func setup() {
+        setSelectedState(selected:planetSelected)
+    }
+    
+    // MARK: Update
+    // Update
+    func update() {
+        updatePlanetNodeDetails()
+        updateTopAndBottomDetails()
+        updateAstronomyDetails()
+    }
+    
+    // Update Planet Node Content
+    func updatePlanetNodeDetails() {
+        guard let planet = planet else {
+            planetImageView.image = nil
+            planetLabel.text = ""
+            return
+        }
+        planetImageView.image = planet.image
+        planetLabel.text = planet.text
+        switch selectionContext {
+        case .starChart:
+            planetSelected = StarChart.Core.selectedNodeTypes.contains(planet)
+        case .aspectScanner:
+            planetSelected = AspectEventScanner.Core.planetsAndNodes.contains(planet)
+        }
+    }
+    
+    // Update Zodiac Content
+    func updateTopAndBottomDetails() {
+        guard let planet = planet,
+              let chevron = alignment?.createChevron() else {
+            topZodiacImageView.image = nil
+            bottomZodiacImageView.image = nil
+            topLabel.text = ""
+            bottomLabel.text = ""
+            return
+        }
+        topZodiacImageView.image = chevron.topZodiac.image
+        bottomZodiacImageView.image = chevron.bottomZodiac.image
+        topLabel.text = "\(chevron.topZodiac.text)\n\(chevron.topZodiac.chineseZodiacText)"
+        bottomLabel.text = "\(chevron.bottomZodiac.text)\n\(chevron.bottomZodiac.chineseZodiacText)"
+        
+        topTextView.text = chevron.topZodiac.description
+        bottomTextView.text = chevron.bottomZodiac.description
+    }
+    
+    // Update
+    func updateAstronomyDetails() {
+        guard let planet = planet else {
+            planetImageView.image = nil
+            planetLabel.text = ""
+            return
+        }
+        
+        let planetDescripton:String = planet.shortDescription
+        planetDescriptionTextView.text = planetDescripton
+        
+        
+    }
+    
+    // MARK: StarChart Core
+    // Update Core
     func updateCore() {
         guard let planet = planet else { return }
         switch selectionContext {
@@ -74,22 +170,25 @@ class PlanetNodeCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    // MARK: Settings
+    // Set State
     func setSelectedState(selected:Bool) {
         if selected {
             self.alpha = 1
             self.backgroundColor = .systemBackground
             self.borderWidth = 1
             self.borderColor = .label
-            self.planetSelectedLabel.alpha = 1
         } else {
             self.alpha = 0.5
             self.backgroundColor = .clear
             self.borderWidth = 0
             self.borderColor = .clear
-            self.planetSelectedLabel.alpha = 0
         }
     }
     
+    
+    // MARK: Animate
+    // Animate Planets when Selected
     func animatePlanetSelected() {
         if planetSelected {
             // animate selection
@@ -98,14 +197,12 @@ class PlanetNodeCollectionViewCell: UICollectionViewCell {
                 self.backgroundColor = .systemBackground
                 self.borderWidth = 1
                 self.borderColor = .label
-                self.planetSelectedLabel.alpha = 1
                 
             } completion: { _ in
                 self.alpha = 1
                 self.backgroundColor = .systemBackground
                 self.borderWidth = 1
                 self.borderColor = .label
-                self.planetSelectedLabel.alpha = 1
             }
         } else {
             // animate deselection
@@ -114,43 +211,11 @@ class PlanetNodeCollectionViewCell: UICollectionViewCell {
                 self.backgroundColor = .clear
                 self.borderWidth = 0
                 self.borderColor = .clear
-                self.planetSelectedLabel.alpha = 0
             } completion: { _ in
                 self.alpha = 0.5
                 self.backgroundColor = .clear
                 self.borderWidth = 0
                 self.borderColor = .clear
-                self.planetSelectedLabel.alpha = 0
-            }
-        }
-    }
-    
-    
-    func update() {
-        guard let planet = planet else {
-            planetImageView.image = nil
-            planetLabel.text = ""
-            return
-        }
-        planetImageView.image = planet.image
-        planetLabel.text = planet.text
-        switch selectionContext {
-        case .starChart:
-            planetSelected = StarChart.Core.selectedNodeTypes.contains(planet)
-        case .aspectScanner:
-            planetSelected = AspectEventScanner.Core.planetsAndNodes.contains(planet)
-        }
-        
-        if let chevron = alignment?.createChevron() {
-            topZodiacImageView.image = chevron.topZodiac.image
-            bottomZodiacImageView.image = chevron.bottomZodiac.image
-        }
-    }
-    
-    override var isSelected: Bool {
-        didSet {
-            if isSelected {
-                planetSelected = !planetSelected
             }
         }
     }

@@ -13,7 +13,7 @@ extension Arcana {
     /// 12 Zodiac Signs - Greek
     public enum Zodiac:Int, CaseIterable {
         
-        case aries
+        case aries = 0
         case taurus
         case gemini
         case cancer

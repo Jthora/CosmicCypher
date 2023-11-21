@@ -255,7 +255,7 @@ public final class StarChart {
                 let eccentricity: Double = planet.eccentricity()
                 
                 // Build and Append Planet State
-                let motionState = PlanetNodeMotionState(.stationary, speed: 0)
+                let motionState = PlanetNodeState.MotionState(.stationary, speed: 0)
                 let planetNodeState = PlanetNodeState(nodeType: nodeType,
                                                       date: date,
                                                       degrees: degrees,

@@ -38,6 +38,9 @@ class AspectEventScanViewController: UIViewController {
     
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var subProgressBar: UIProgressView!
+    @IBOutlet weak var calculateProgressBar: UIProgressView!
+    @IBOutlet weak var deepScanProgressBar: UIProgressView!
+    
     
     @IBOutlet weak var textViewConsole: UITextView!
     
@@ -89,7 +92,7 @@ class AspectEventScanViewController: UIViewController {
     
     
     // MARK: IBAction Button Press Responders
-    
+    // Start Date Picker
     @IBAction func startDatePickerDidChange(_ sender: UIDatePicker) {
         // Update Scanner
         scanner.startDate = sender.date
@@ -100,7 +103,7 @@ class AspectEventScanViewController: UIViewController {
             scanner.endDate = endDatePicker.date
         }
     }
-    
+    // End Date Picker
     @IBAction func endDatePickerDidChange(_ sender: UIDatePicker) {
         // check date if it's before End Date
         if sender.date < startDatePicker.date {
@@ -111,7 +114,7 @@ class AspectEventScanViewController: UIViewController {
         // Update Scanner
         scanner.endDate = sender.date
     }
-    
+    // Longitude Text Field Edited
     @IBAction func longitudeDidChange(_ sender: UITextField) {
         guard sender.text?.isEmpty == false,
               let string = sender.text,
@@ -122,7 +125,7 @@ class AspectEventScanViewController: UIViewController {
         }
         
     }
-    
+    // Latitude Text Field Edited
     @IBAction func latitudeDidChange(_ sender: UITextField) {
         guard sender.text?.isEmpty == false,
               let string = sender.text,
@@ -132,35 +135,34 @@ class AspectEventScanViewController: UIViewController {
             return
         }
     }
-    
+    // Set Location Button Action
     @IBAction func buttonSetLocation(_ sender: UIButton) {
         GeoLocationSelectViewController.presentModally(over: self, originViewController: self) {
             self.updateUI()
         }
     }
-    
+    // Select Button Action
     @IBAction func buttonSelect(_ sender: UIButton) {
         PlanetNodeAndAspectSelectViewController.presentModally(over: self, selectionContext: .aspectScanner) {
             self.updateUI()
         }
     }
-    
+    // Sample Mode Control Changed
     @IBAction func segmentedControlChanged(_ sender: UISegmentedControl) {
         // Changes the mode so Aspect Events are more accurately scanned for
         // Simple sets it to only look at which Day the aspect event occurs
         // Precise sets it to look down to the Second when the aspect event occurs on that Day
     }
-    
-    
+    // Scan Button Action
     @IBAction func buttonScan(_ sender: UIButton) {
         // Activates the Scanner
         AspectEventScanner.Core.scan()
         buttonScan.isEnabled = false
     }
-    
+    // Parse Button Action
     @IBAction func buttonParse(_ sender: UIButton) {
     }
-    
+    // Export Button Action
     @IBAction func buttonExport(_ sender: UIButton) {
         AspectEventExportViewController.presentModally(over: self)
     }
@@ -222,7 +224,6 @@ extension AspectEventScanViewController: AspectEventConsoleDelegate {
 // MARK: Aspect Event Scanner Delegate
 extension AspectEventScanViewController: AspectEventScannerDelegate {
     
-    
     // Update (Scan)
     func scanUpdate(scanProgress: Float?) {
         DispatchQueue.main.async {
@@ -231,21 +232,29 @@ extension AspectEventScanViewController: AspectEventScannerDelegate {
             }
         }
     }
-    
-    // Update (Deep Scan)
-    func scanUpdate(deepScanProgress: Float?) {
+    // Update (Sub Scan)
+    func scanUpdate(subScanProgress: Float?) {
         DispatchQueue.main.async {
-            if let subProgress = deepScanProgress {
-                self.subProgressBar.progress = subProgress
+            if let subScanProgress = subScanProgress {
+                self.subProgressBar.progress = subScanProgress
             }
         }
     }
+    // Update (Calculate)
     func scanUpdate(calculateProgress: Float?) {
-        
+        DispatchQueue.main.async {
+            if let calculateProgress = calculateProgress {
+                self.calculateProgressBar.progress = calculateProgress
+            }
+        }
     }
-    
-    func scanUpdate(subScanProgress: Float?) {
-        
+    // Update (Deep Scan)
+    func scanUpdate(deepScanProgress: Float?) {
+        DispatchQueue.main.async {
+            if let deepScanProgress = deepScanProgress {
+                self.deepScanProgressBar.progress = deepScanProgress
+            }
+        }
     }
     
     // Scan Complete
@@ -253,6 +262,15 @@ extension AspectEventScanViewController: AspectEventScannerDelegate {
         DispatchQueue.main.async {
             self.progressBar.progress = 1.0
             self.subProgressBar.progress = 1.0
+            self.buttonScan.isEnabled = true
+        }
+    }
+    
+    // Deep Scan Complete
+    func deepScanComplete(date: Date) {
+        DispatchQueue.main.async {
+            self.deepScanProgressBar.progress = 0
+            self.deepScanProgressBar.isHidden = true
             self.buttonScan.isEnabled = true
         }
     }

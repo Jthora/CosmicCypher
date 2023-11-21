@@ -357,6 +357,8 @@
                         <outlet property="buttonExport" destination="VAR-97-Pau" id="RX4-cb-YO7"/>
                         <outlet property="buttonParse" destination="C8x-Di-Z8z" id="Rqc-5R-F1G"/>
                         <outlet property="buttonScan" destination="eAZ-m3-cGj" id="cZK-Kd-1R9"/>
+                        <outlet property="calculateProgressBar" destination="GpQ-5j-aYU" id="qHC-cG-hqD"/>
+                        <outlet property="deepScanProgressBar" destination="LxC-SR-qSZ" id="lEV-L9-nJj"/>
                         <outlet property="endDatePicker" destination="nIV-qB-R0l" id="Xwi-1Y-6zi"/>
                         <outlet property="labelStatus" destination="tzK-nR-C7w" id="blj-eM-VIY"/>
                         <outlet property="progressBar" destination="uky-AQ-P3M" id="AJh-Dp-1U9"/>

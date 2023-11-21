@@ -13,6 +13,7 @@ protocol AspectEventScannerDelegate {
     func scanUpdate(calculateProgress:Float?)
     func scanUpdate(deepScanProgress:Float?)
     func scanComplete(aspectsFound:[Date: [CoreAstrology.Aspect]])
+    func deepScanComplete(date:Date)
     func scanError(error:AspectEventScanner.ScanError)
 }
 
@@ -43,6 +44,11 @@ extension AspectEventScanner: AspectEventScannerDelegate {
     // Complete
     func scanComplete(aspectsFound: [Date : [CoreAstrology.Aspect]]) {
         handle(scanComplete: aspectsFound)
+    }
+    
+    // Deep Scan Complete
+    func deepScanComplete(date: Date) {
+        handle(deepScanComplete: date)
     }
     
     // Error
@@ -79,9 +85,14 @@ extension AspectEventScanner: AspectEventScannerDelegate {
         self.archiveResults(aspectsFound: aspectsFound)
     }
     
+    func handle(deepScanComplete date: Date) {
+        self.delegate?.deepScanComplete(date: date)
+    }
+    
     // Scan Error
     func handle(scanError:ScanError) {
         self.delegate?.scanError(error: scanError)
+        // Report Error on Console
         self.console?.error(.scanner, context: scanError.text)
     }
     

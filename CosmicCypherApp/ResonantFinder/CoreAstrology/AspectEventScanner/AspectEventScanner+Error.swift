@@ -14,24 +14,40 @@ extension AspectEventScanner {
         case startAndEndDateAreSame
         case cannotGetTotalScanCountFromDates
         case failureToGetRealDate
+        case failureToGetRealAspect
+        case recentlyLockedInAspectTypesMissing
+        case skippingHashFailureToGetLongitudeDifferenceForPreviousAspectOnPreviousDate(_ hash:String)
+        case failureToGetAspectTypeForDate(_ aspectType:String, _ date:Date)
+        case failureToGetDaysForDateComponentsDay
         
         var text:String {
             switch self {
-            case .startAndEndDateAreSame: return "Start Date == End Date"
-            case .cannotGetTotalScanCountFromDates: return "Cannot get Total Scan Count from Dates"
-            case .failureToGetRealDate: return "FailureToGetRealDate from previousAspect via realDate"
+            case .startAndEndDateAreSame: 
+                return "StartDate and EndDate are the same"
+            case .cannotGetTotalScanCountFromDates:
+                return "Cannot get Total Scan Count from Dates"
+            case .failureToGetRealDate:
+                return "FailureToGetRealDate from previousAspect via realDate"
+            case .failureToGetRealAspect:
+                return "FailureToGetRealAspect from previousAspect via realDate"
+            case .recentlyLockedInAspectTypesMissing:
+                return "Recently Locked In AspectTypes are Missing"
+            case .skippingHashFailureToGetLongitudeDifferenceForPreviousAspectOnPreviousDate(let hash):
+                return "Skipping Hash[\(hash)] - Failure to get longitudeDifference for previous aspect on previousDate"
+            case .failureToGetAspectTypeForDate(let aspectType, let date):
+                return "Failure to get AspectType[\(aspectType)] for Date\(date)"
+            case .failureToGetDaysForDateComponentsDay:
+                return "Failure to get days for dateComponents.day"
             }
         }
     }
 }
 
+// MARK: Handle Error
 extension AspectEventScanner {
     // Handle Error
     public func handleScanError(error: ScanError) {
         console?.error(.scanner, context: error.text)
         delegate?.scanError(error: error)
     }
-}
-
-extension AspectEventScanner.Scanner {
 }

@@ -17,8 +17,8 @@ extension AspectEventScanner {
         // Track retrograde status
         var isP1Retrograde = false
         var isP2Retrograde = false
-        var lastP1Motion: PlanetNodeMotionState.Motion = .stationary // Assuming an initial direct motion
-        var lastP2Motion: PlanetNodeMotionState.Motion = .stationary // Assuming an initial direct motion
+        var lastP1Motion: PlanetNodeState.MotionState.Motion = .stationary // Assuming an initial direct motion
+        var lastP2Motion: PlanetNodeState.MotionState.Motion = .stationary // Assuming an initial direct motion
         
         // MARK: Methods
         func isRetrograde(planetNode: PlanetNodeType, date: Date) -> Bool {

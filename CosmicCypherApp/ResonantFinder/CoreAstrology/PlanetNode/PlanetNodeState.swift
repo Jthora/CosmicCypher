@@ -19,7 +19,7 @@ public class PlanetNodeState {
     public var inclination: Double
     public var eccentricity: Double
     
-    public var motionState:PlanetNodeMotionState?
+    public var motionState:PlanetNodeState.MotionState?
     
     // MARK: Init
     // init
@@ -30,7 +30,7 @@ public class PlanetNodeState {
          ascendingNode: Double,
          inclination: Double,
          eccentricity: Double,
-         motionState: PlanetNodeMotionState?) {
+         motionState: PlanetNodeState.MotionState?) {
         
         self.nodeType = nodeType
         self.date = date
@@ -56,7 +56,7 @@ public class PlanetNodeState {
         let inclination:Double = try container.decode(Double.self, forKey: .inclination)
         let eccentricity:Double = try container.decode(Double.self, forKey: .eccentricity)
         
-        let motionState:PlanetNodeMotionState = try container.decode(PlanetNodeMotionState.self, forKey: .motionState)
+        let motionState:PlanetNodeState.MotionState = try container.decode(PlanetNodeState.MotionState.self, forKey: .motionState)
         
         self.init(nodeType: nodeType,
                   date: date,
@@ -68,7 +68,7 @@ public class PlanetNodeState {
                   motionState: motionState)
     }
     // StarChart Init
-    convenience init?(starChart: StarChart, nodeType: PlanetNodeType, motionState:PlanetNodeMotionState? = nil) {
+    convenience init?(starChart: StarChart, nodeType: PlanetNodeType, motionState:PlanetNodeState.MotionState? = nil) {
         
         guard let planetNode = starChart.planetNodes[nodeType],
               let planet = planetNode.nodeType.planet(starChart: starChart) else { return nil }

@@ -51,7 +51,7 @@ extension PlanetNodeStateTimeline {
                     let inclination = planet.inclination().value
                     let eccentricity = planet.eccentricity()
                     
-                    let motion:PlanetNodeMotionState.Motion
+                    let motion:PlanetNodeState.MotionState.Motion
                     let speed:Degree
                     
                     /// Retrograde and Speed
@@ -72,7 +72,7 @@ extension PlanetNodeStateTimeline {
                     }
                     
                     // Create Motion State and Planet State
-                    let motionState = PlanetNodeMotionState(motion, speed: speed)
+                    let motionState = PlanetNodeState.MotionState(motion, speed: speed)
                     let planetNodeState = PlanetNodeState(nodeType: nodeType,
                                                   date: starChart.date,
                                                   degrees: degrees,

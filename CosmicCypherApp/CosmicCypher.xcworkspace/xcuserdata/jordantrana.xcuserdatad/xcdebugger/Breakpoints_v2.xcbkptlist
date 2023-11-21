@@ -291,112 +291,80 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "62CFA7C8-4A53-44BF-B998-9793FCAD9FDF"
+            uuid = "D53A49DF-FF52-4587-9BFE-020B67C8C401"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ResonantFinder/CoreAstrology/AspectEventScanner/AspectEventScanner+Scanner.swift"
+            filePath = "ResonantFinder/CoreAstrology/AspectEventScanner/AspectEventScanner+Delegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "startScanner(startDate:endDate:)"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "handle(deepScanComplete:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "53D892A7-A350-4185-875F-B227EF585E6E"
+            uuid = "4B2639D3-FBF0-4308-A927-6E80E8CE183B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ResonantFinder/CoreAstrology/AspectEventScanner/AspectEventScanner+Scanner.swift"
+            filePath = "ResonantFinder/v4 Screens/ViewControllers/AspectEventScanViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "startScanner(startDate:endDate:)"
+            startingLineNumber = "271"
+            endingLineNumber = "271"
+            landmarkName = "deepScanComplete(date:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4B2639D3-FBF0-4308-A927-6E80E8CE183B - b30ab75bb17acc53"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CosmicCypher.AspectEventScanViewController.deepScanComplete(date: Foundation.Date) -&gt; ()"
+                  moduleName = "CosmicCypher"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jordantrana/Documents/gitProjects/CosmicCypher/CosmicCypherApp/ResonantFinder/v4%20Screens/ViewControllers/AspectEventScanViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "271"
+                  endingLineNumber = "271"
+                  offsetFromSymbolStart = "204">
+               </Location>
+               <Location
+                  uuid = "4B2639D3-FBF0-4308-A927-6E80E8CE183B - bf6248851b3b883"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in CosmicCypher.AspectEventScanViewController.deepScanComplete(date: Foundation.Date) -&gt; ()"
+                  moduleName = "CosmicCypher"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jordantrana/Documents/gitProjects/CosmicCypher/CosmicCypherApp/ResonantFinder/v4%20Screens/ViewControllers/AspectEventScanViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "272"
+                  endingLineNumber = "272"
+                  offsetFromSymbolStart = "84">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C25D9CF5-6306-4B14-A8A4-6FC08E5C092F"
+            uuid = "4D661F56-BC24-45F8-8544-A49BDB9143A3"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ResonantFinder/CoreAstrology/AspectEventScanner/AspectEventScanner+Scanner.swift"
+            filePath = "ResonantFinder/CoreAstrology/AspectEventScanner/AspectEventScanner+Delegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "startScanner(startDate:endDate:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "614D7597-A1C8-4FCA-A9DC-765CEB08E8B0"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ResonantFinder/CoreAstrology/AspectEventScanner/AspectEventScanner+Scanner.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "startScanner(startDate:endDate:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7D8A91FD-B914-460A-909E-09B8FDDB4C76"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ResonantFinder/CoreAstrology/AspectEventScanner/AspectEventScanner+Scanner.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
-            landmarkName = "scan(startDate:endDate:aspectTypes:totalScanCount:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "58EEBD53-9CB4-445A-B728-4E74DECA384A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ResonantFinder/CoreAstrology/AspectEventScanner/AspectEventScanner+Scanner.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
-            landmarkName = "scan(startDate:endDate:aspectTypes:totalScanCount:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "03ED0A95-5F78-43ED-AC65-FE9EA3C155D2"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ResonantFinder/CoreAstrology/AspectEventScanner/AspectEventScanner+Scanner.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
-            landmarkName = "scan(startDate:endDate:aspectTypes:totalScanCount:)"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "deepScanComplete(date:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -118,7 +118,6 @@ extension AspectEventScanner {
                 
                 var timeDelta: TimeInterval = Date().timeIntervalSinceReferenceDate
                 
-                
                 // Scanning Loop
                 while currentDate <= endDate {
                     // Number of Iterations
@@ -127,9 +126,6 @@ extension AspectEventScanner {
                     
                     // Report progress to Console UI
                     DispatchQueue.main.async {
-                        AspectEventScanner.Core.console.scanning(scans: Int(scanCount),
-                                                                 scrying: self.activelyScanningAspectEvents.count,
-                                                                 discovered: self.lockedInAspects.count)
                         self.delegate?.scanUpdate(scanProgress: progress)
                     }
                     
@@ -137,7 +133,9 @@ extension AspectEventScanner {
                     let aspects = self.findAspectsWithinOrb(aspectTypes: aspectTypes, on: currentDate)
                     
                     // Calculate Aspects
-                    self.calculate(aspects: aspects, on: currentDate)
+                    self.calculate(aspects: aspects, on: currentDate) { realDate in
+                        self.delegate?.deepScanComplete(date: realDate)
+                    }
 
                     // determine the next scan date
                     currentDate = Calendar.current.date(byAdding: .day, value: 1, to: currentDate)!
@@ -165,7 +163,6 @@ extension AspectEventScanner {
                 
                 /// Aspect
                 guard let aspect = aspectType.aspect(for: date) else {
-                    delegate?.scanError(error: .cannotGetTotalScanCountFromDates)
                     continue
                 }
                 aspects.append(aspect)
@@ -202,7 +199,7 @@ extension AspectEventScanner {
                 
                 // Ensure that aspect isn't Recently Locked In
                 guard recentlyLockedInAspectTypes[hash] == nil else {
-                    delegate?.scanError(error: .recentlyLockedInAspectTypesMissing)
+                    //delegate?.scanError(error: .recentlyLockedInAspectTypesMissing)
                     continue // Skip to next aspect
                 }
                 
@@ -213,7 +210,6 @@ extension AspectEventScanner {
                     let previousDate = previousAspectEvent.date
                     let previousAspect = previousAspectEvent.aspect
                     guard let previousDistance = previousAspect.longitudeDifference(for: previousDate) else {
-                        delegate?.scanError(error: .recentlyLockedInAspectTypesMissing)
                         continue
                     }
                     
@@ -277,7 +273,7 @@ extension AspectEventScanner {
             let calendar = Calendar.current
             let dateComponents = calendar.dateComponents([.day], from: startDate, to: endDate)
             guard let days = dateComponents.day else {
-                self.delegate?.scanError(error: .cannotGetTotalScanCountFromDates)
+                self.delegate?.scanError(error: .failureToGetDaysForDateComponentsDay)
                 return nil
             }
             return Float(days)
@@ -290,7 +286,11 @@ extension AspectEventScanner {
                              onComplete:((_ date:Date) -> Void)? = nil) {
             deepScanner.deepScan(aspect: aspect,
                                  for: estimatedDate,
-                                 onProgress: { progress in DispatchQueue.main.async { self.delegate?.scanUpdate(deepScanProgress: progress) } },
+                                 onProgress: { progress in 
+                DispatchQueue.main.async {
+                    self.delegate?.scanUpdate(deepScanProgress: progress)
+                }
+            },
                                  onComplete: onComplete)
         }
     }

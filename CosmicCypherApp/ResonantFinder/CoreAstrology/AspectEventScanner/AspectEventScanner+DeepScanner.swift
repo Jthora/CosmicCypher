@@ -69,6 +69,8 @@ extension AspectEventScanner {
                 // Total
                 let total = upperBoundTimeInterval - lowerBoundTimeInterval
                 
+                onProgress?(0)
+                
                 // Binary search loop
                 while upperBoundTimeInterval - lowerBoundTimeInterval >= 1.0 {
                     

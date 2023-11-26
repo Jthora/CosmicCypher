@@ -307,54 +307,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4B2639D3-FBF0-4308-A927-6E80E8CE183B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ResonantFinder/v4 Screens/ViewControllers/AspectEventScanViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "271"
-            endingLineNumber = "271"
-            landmarkName = "deepScanComplete(date:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "4B2639D3-FBF0-4308-A927-6E80E8CE183B - b30ab75bb17acc53"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CosmicCypher.AspectEventScanViewController.deepScanComplete(date: Foundation.Date) -&gt; ()"
-                  moduleName = "CosmicCypher"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jordantrana/Documents/gitProjects/CosmicCypher/CosmicCypherApp/ResonantFinder/v4%20Screens/ViewControllers/AspectEventScanViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "271"
-                  endingLineNumber = "271"
-                  offsetFromSymbolStart = "204">
-               </Location>
-               <Location
-                  uuid = "4B2639D3-FBF0-4308-A927-6E80E8CE183B - bf6248851b3b883"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in CosmicCypher.AspectEventScanViewController.deepScanComplete(date: Foundation.Date) -&gt; ()"
-                  moduleName = "CosmicCypher"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jordantrana/Documents/gitProjects/CosmicCypher/CosmicCypherApp/ResonantFinder/v4%20Screens/ViewControllers/AspectEventScanViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "272"
-                  endingLineNumber = "272"
-                  offsetFromSymbolStart = "84">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "4D661F56-BC24-45F8-8544-A49BDB9143A3"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"

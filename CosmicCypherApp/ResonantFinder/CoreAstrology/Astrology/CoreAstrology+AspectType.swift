@@ -21,11 +21,6 @@ extension CoreAstrology {
             return "\(primaryBodyType.symbol) \(relationType.symbol) \(secondaryBodyType.symbol)"
         }
         
-        public func aspectEvent(for date:Date) -> CelestialEvent? {
-            guard let aspect = aspect(for: date) else { return nil }
-            return CelestialEvent(aspect: aspect, date: date)
-        }
-        
         public func aspect(for date:Date) -> Aspect? {
             //print("creating aspect for: \(hash)")
             guard let b1 = AspectBody(type: primaryBodyType, date: date),

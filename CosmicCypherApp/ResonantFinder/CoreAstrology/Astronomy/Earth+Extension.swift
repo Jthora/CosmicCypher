@@ -11,8 +11,7 @@ import SwiftAA
 import ObjCAA
 import Darwin
 
-extension Earth {
-    
+extension Arcana {
     public enum House:Double {
         case first = 3  // ASC
         case second = 4
@@ -48,6 +47,11 @@ extension Earth {
             }
         }
     }
+}
+
+extension Earth {
+    
+    
     
     
     public func getLocalSiderealTime(coords:GeographicCoordinates) -> Degree {
@@ -125,7 +129,7 @@ extension Earth {
         }
     }
     
-    public func getCelestialLongitudeOfHouseCusp(house: House, coords:GeographicCoordinates) -> Degree {
+    public func getCelestialLongitudeOfHouseCusp(house: Arcana.House, coords:GeographicCoordinates) -> Degree {
         
         if house == .first { return getASC(coords: coords) }
         else if house == .seventh { return Degree((getASC(coords: coords).value + 180).truncatingRemainder(dividingBy: 360)) }

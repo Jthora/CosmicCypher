@@ -48,8 +48,8 @@ class PlanetNodesViewController: UIViewController {
         switch selectionContext {
         case .starChart:
             initialSelectedNodeTypes = StarChart.Core.selectedNodeTypes
-        case .aspectScanner:
-            initialSelectedNodeTypes = AspectEventScanner.Core.planetsAndNodes
+        case .scanner:
+            initialSelectedNodeTypes = CelestialEventScanner.Core.planetsAndNodes
         }
     }
     
@@ -60,10 +60,10 @@ class PlanetNodesViewController: UIViewController {
             DispatchQueue.main.async {
                 ResonanceReportViewController.current?.renderStarChart()
             }
-        case .aspectScanner:
-            if initialSelectedNodeTypes != AspectEventScanner.Core.planetsAndNodes {
+        case .scanner:
+            if initialSelectedNodeTypes != CelestialEventScanner.Core.planetsAndNodes {
                 DispatchQueue.main.async {
-                    AspectEventScanner.Core.console.updatedPlanetsAndNodes()
+                    CelestialEventScanner.Core.console.updatedPlanetsAndNodes()
                 }
             }
         }
@@ -108,7 +108,7 @@ extension PlanetNodesViewController: UICollectionViewDelegate {
             DispatchQueue.main.async {
                 ResonanceReportViewController.current?.update()
             }
-        case .aspectScanner: ()
+        case .scanner: ()
         }
     }
 }
@@ -132,8 +132,8 @@ extension PlanetNodesViewController: UICollectionViewDataSource {
                     switch selectionContext {
                     case .starChart:
                         cell.planetSelected = StarChart.Core.selectedNodeTypes.contains(planet)
-                    case .aspectScanner:
-                        cell.planetSelected = AspectEventScanner.Core.planetsAndNodes.contains(planet)
+                    case .scanner:
+                        cell.planetSelected = CelestialEventScanner.Core.planetsAndNodes.contains(planet)
                     }
                     cell.setSelectedState(selected: cell.planetSelected)
                 }
@@ -146,8 +146,8 @@ extension PlanetNodesViewController: UICollectionViewDataSource {
                     switch selectionContext {
                     case .starChart:
                         cell.planetSelected = StarChart.Core.selectedNodeTypes.contains(planet)
-                    case .aspectScanner:
-                        cell.planetSelected = AspectEventScanner.Core.planetsAndNodes.contains(planet)
+                    case .scanner:
+                        cell.planetSelected = CelestialEventScanner.Core.planetsAndNodes.contains(planet)
                     }
                     cell.setSelectedState(selected: cell.planetSelected)
                 }

@@ -43,9 +43,9 @@ class PlanetNodeAndAspectSelectViewController: UIViewController {
         case .starChart:
             initialSelectedAspectAngles = StarChart.Core.selectedAspects
             initialSelectedNodeTypes = StarChart.Core.selectedNodeTypes
-        case .aspectScanner:
-            initialSelectedAspectAngles = AspectEventScanner.Core.aspectAngles
-            initialSelectedNodeTypes = AspectEventScanner.Core.planetsAndNodes
+        case .scanner:
+            initialSelectedAspectAngles = CelestialEventScanner.Core.aspectAngles
+            initialSelectedNodeTypes = CelestialEventScanner.Core.planetsAndNodes
         }
     }
     override func viewWillDisappear(_ animated: Bool) {
@@ -54,15 +54,15 @@ class PlanetNodeAndAspectSelectViewController: UIViewController {
             DispatchQueue.main.async {
                 ResonanceReportViewController.current?.renderStarChart()
             }
-        case .aspectScanner:
-            if initialSelectedAspectAngles != AspectEventScanner.Core.aspectAngles {
+        case .scanner:
+            if initialSelectedAspectAngles != CelestialEventScanner.Core.aspectAngles {
                 DispatchQueue.main.async {
-                    AspectEventScanner.Core.console.updatedAspectAngles()
+                    CelestialEventScanner.Core.console.updatedAspectAngles()
                 }
             }
-            if initialSelectedNodeTypes != AspectEventScanner.Core.planetsAndNodes {
+            if initialSelectedNodeTypes != CelestialEventScanner.Core.planetsAndNodes {
                 DispatchQueue.main.async {
-                    AspectEventScanner.Core.console.updatedPlanetsAndNodes()
+                    CelestialEventScanner.Core.console.updatedPlanetsAndNodes()
                 }
             }
         }
@@ -105,7 +105,7 @@ extension PlanetNodeAndAspectSelectViewController: UICollectionViewDelegate {
             DispatchQueue.main.async {
                 ResonanceReportViewController.current?.update()
             }
-        case .aspectScanner: ()
+        case .scanner: ()
         }
     }
 }
@@ -128,8 +128,8 @@ extension PlanetNodeAndAspectSelectViewController: UICollectionViewDataSource {
                     switch selectionContext {
                     case .starChart:
                         cell.planetSelected = StarChart.Core.selectedNodeTypes.contains(planet)
-                    case .aspectScanner:
-                        cell.planetSelected = AspectEventScanner.Core.planetsAndNodes.contains(planet)
+                    case .scanner:
+                        cell.planetSelected = CelestialEventScanner.Core.planetsAndNodes.contains(planet)
                     }
                     cell.setSelectedState(selected: cell.planetSelected)
                 }
@@ -142,8 +142,8 @@ extension PlanetNodeAndAspectSelectViewController: UICollectionViewDataSource {
                     switch selectionContext {
                     case .starChart:
                         cell.planetSelected = StarChart.Core.selectedNodeTypes.contains(planet)
-                    case .aspectScanner:
-                        cell.planetSelected = AspectEventScanner.Core.planetsAndNodes.contains(planet)
+                    case .scanner:
+                        cell.planetSelected = CelestialEventScanner.Core.planetsAndNodes.contains(planet)
                     }
                     cell.setSelectedState(selected: cell.planetSelected)
                 }
@@ -157,8 +157,8 @@ extension PlanetNodeAndAspectSelectViewController: UICollectionViewDataSource {
                     switch selectionContext {
                     case .starChart:
                         cell.aspectSelected = StarChart.Core.selectedAspects.contains(aspectRelationType)
-                    case .aspectScanner:
-                        cell.aspectSelected = AspectEventScanner.Core.aspectAngles.contains(aspectRelationType)
+                    case .scanner:
+                        cell.aspectSelected = CelestialEventScanner.Core.aspectAngles.contains(aspectRelationType)
                     }
                     cell.setSelectedState(selected: cell.aspectSelected)
                 }
@@ -171,8 +171,8 @@ extension PlanetNodeAndAspectSelectViewController: UICollectionViewDataSource {
                     switch selectionContext {
                     case .starChart:
                         cell.aspectSelected = StarChart.Core.selectedAspects.contains(aspectRelationType)
-                    case .aspectScanner:
-                        cell.aspectSelected = AspectEventScanner.Core.aspectAngles.contains(aspectRelationType)
+                    case .scanner:
+                        cell.aspectSelected = CelestialEventScanner.Core.aspectAngles.contains(aspectRelationType)
                     }
                     cell.setSelectedState(selected: cell.aspectSelected)
                 }
@@ -189,6 +189,6 @@ extension PlanetNodeAndAspectSelectViewController: UICollectionViewDataSource {
 extension PlanetNodeAndAspectSelectViewController {
     enum SelectionContext {
         case starChart
-        case aspectScanner
+        case scanner
     }
 }

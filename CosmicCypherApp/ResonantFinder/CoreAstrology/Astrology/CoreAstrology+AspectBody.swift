@@ -39,6 +39,10 @@ extension CoreAstrology {
             hasher.combine(equatorialCoordinates.delta)
         }
         
+        public var equatorialLongitude:Degree {
+            return equatorialCoordinates.alpha.inDegrees
+        }
+        
         public func positionAngle(relativeTo secondBody:AspectBody) -> Degree {
             equatorialCoordinates.positionAngle(relativeTo: secondBody.equatorialCoordinates)
         }

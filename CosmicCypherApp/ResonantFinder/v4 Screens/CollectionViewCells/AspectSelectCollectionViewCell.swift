@@ -48,14 +48,14 @@ class AspectSelectCollectionViewCell: UICollectionViewCell {
                     }
                 }
             }
-        case .aspectScanner:
+        case .scanner:
             if aspectSelected {
-                if !AspectEventScanner.Core.aspectAngles.contains(aspectRelationType) {
-                    AspectEventScanner.Core.aspectAngles.append(aspectRelationType)
+                if !CelestialEventScanner.Core.aspectAngles.contains(aspectRelationType) {
+                    CelestialEventScanner.Core.aspectAngles.append(aspectRelationType)
                 }
             } else {
-                if AspectEventScanner.Core.aspectAngles.contains(aspectRelationType) {
-                    AspectEventScanner.Core.aspectAngles.removeAll { aspectType in
+                if CelestialEventScanner.Core.aspectAngles.contains(aspectRelationType) {
+                    CelestialEventScanner.Core.aspectAngles.removeAll { aspectType in
                         aspectRelationType == aspectType
                     }
                 }
@@ -125,8 +125,8 @@ class AspectSelectCollectionViewCell: UICollectionViewCell {
         switch selectionContext {
         case .starChart:
             aspectSelected = StarChart.Core.selectedAspects.contains(aspectRelationType)
-        case .aspectScanner:
-            aspectSelected = AspectEventScanner.Core.aspectAngles.contains(aspectRelationType)
+        case .scanner:
+            aspectSelected = CelestialEventScanner.Core.aspectAngles.contains(aspectRelationType)
         }
     }
     

@@ -10,13 +10,13 @@
 		454F04E8FCE5C1E3C47DABCD /* Pods_CosmicCypher_CosmicCypherUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E40E340033B175EDED4394C /* Pods_CosmicCypher_CosmicCypherUITests.framework */; };
 		62A1CE25761D766F526FF0B4 /* Pods_CosmicCypher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64EF9314ECA183C508527135 /* Pods_CosmicCypher.framework */; };
 		DB2E1B570816F8FA7F4E6208 /* Pods_CosmicCypherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D84C4B7FFCB993BE3E5D99BA /* Pods_CosmicCypherTests.framework */; };
-		FA00505E2B0BADC900540CD5 /* AspectEventScanner+RetrogradeCompensator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00505D2B0BADC900540CD5 /* AspectEventScanner+RetrogradeCompensator.swift */; };
+		FA00505E2B0BADC900540CD5 /* CelestialEventScanner+RetrogradeDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00505D2B0BADC900540CD5 /* CelestialEventScanner+RetrogradeDetector.swift */; };
 		FA0050622B0BB2FF00540CD5 /* CoreAstrology+Aspect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0050612B0BB2FF00540CD5 /* CoreAstrology+Aspect.swift */; };
 		FA0050642B0BB33100540CD5 /* CoreAstrology+AspectRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0050632B0BB33100540CD5 /* CoreAstrology+AspectRelation.swift */; };
 		FA0050662B0BB37200540CD5 /* CoreAstrology+AspectRelationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0050652B0BB37200540CD5 /* CoreAstrology+AspectRelationType.swift */; };
 		FA0050682B0BB3E200540CD5 /* CoreAstrology+AspectBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0050672B0BB3E200540CD5 /* CoreAstrology+AspectBody.swift */; };
 		FA00506A2B0BB40B00540CD5 /* CoreAstrology+GravimetricTensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0050692B0BB40B00540CD5 /* CoreAstrology+GravimetricTensor.swift */; };
-		FA00506C2B0BB5AF00540CD5 /* CoreAstrology+CelestialEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00506B2B0BB5AF00540CD5 /* CoreAstrology+CelestialEvent.swift */; };
+		FA00506C2B0BB5AF00540CD5 /* CelestialEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00506B2B0BB5AF00540CD5 /* CelestialEvent.swift */; };
 		FA00506E2B0BB60B00540CD5 /* CoreAstrology+Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00506D2B0BB60B00540CD5 /* CoreAstrology+Vector3.swift */; };
 		FA0050702B0BB62700540CD5 /* CoreAstrology+AspectType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00506F2B0BB62700540CD5 /* CoreAstrology+AspectType.swift */; };
 		FA0050722B0BC90D00540CD5 /* PlanetNodeRetrogradeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0050712B0BC90D00540CD5 /* PlanetNodeRetrogradeState.swift */; };
@@ -59,6 +59,7 @@
 		FA12D5EB289D7C6F00411649 /* ResonanceReportViewController+DiscernmentChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12D5EA289D7C6F00411649 /* ResonanceReportViewController+DiscernmentChart.swift */; };
 		FA12D5ED289D7CE600411649 /* ResonanceReportViewController+UIControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12D5EC289D7CE600411649 /* ResonanceReportViewController+UIControls.swift */; };
 		FA12D5EF289D7EB200411649 /* ResonanceReportViewController+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12D5EE289D7EB200411649 /* ResonanceReportViewController+Setup.swift */; };
+		FA17BA4C2B0E974D00158735 /* DegreesPerSecond.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA17BA4B2B0E974D00158735 /* DegreesPerSecond.swift */; };
 		FA1FDD452570262700B51BD2 /* ReadingsSubScreenCOEH.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1FDD442570262700B51BD2 /* ReadingsSubScreenCOEH.swift */; };
 		FA1FDD4A257026CA00B51BD2 /* ReadingsSubScreenSSSB.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1FDD49257026CA00B51BD2 /* ReadingsSubScreenSSSB.swift */; };
 		FA1FDD4F257026F700B51BD2 /* ReadingsSubScreenPNPA.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1FDD4E257026F700B51BD2 /* ReadingsSubScreenPNPA.swift */; };
@@ -152,23 +153,36 @@
 		FA3A38CA2ACE4AC9008907F2 /* MTLTexture+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A38C92ACE4AC9008907F2 /* MTLTexture+Extensions.swift */; };
 		FA3A38CC2AD698CA008907F2 /* EnergyLevelDetailsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA3A38CB2AD698CA008907F2 /* EnergyLevelDetailsViewController.storyboard */; };
 		FA3A38CF2AD698E8008907F2 /* EnergyLevelDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A38CE2AD698E8008907F2 /* EnergyLevelDetailsViewController.swift */; };
+		FA3A435E2B13042700B4EED1 /* CelestialEventScanner+TransitDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A435D2B13042700B4EED1 /* CelestialEventScanner+TransitDetector.swift */; };
 		FA4D1B8A2561FBFE0043DE9F /* TimeStreamDisplayScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D1B892561FBFE0043DE9F /* TimeStreamDisplayScreen.swift */; };
 		FA4D1B8F2561FCA00043DE9F /* ControlsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D1B8E2561FCA00043DE9F /* ControlsScreen.swift */; };
 		FA4D1B942561FDA00043DE9F /* ArkanaNaturaDisplayScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D1B932561FDA00043DE9F /* ArkanaNaturaDisplayScreen.swift */; };
 		FA4D1B9C2561FE070043DE9F /* ReadingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D1B9B2561FE070043DE9F /* ReadingsScreen.swift */; };
+		FA4E2F262B0FDD6E0040ADE6 /* TimeMapTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4E2F252B0FDD6E0040ADE6 /* TimeMapTableViewController.swift */; };
+		FA4E2F282B0FDE6A0040ADE6 /* TimeMapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4E2F272B0FDE6A0040ADE6 /* TimeMapTableViewCell.swift */; };
+		FA4E2F2A2B0FE0B50040ADE6 /* TimeMaps.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA4E2F292B0FE0B50040ADE6 /* TimeMaps.storyboard */; };
+		FA4E2F2D2B0FE1EA0040ADE6 /* TimeMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4E2F2C2B0FE1EA0040ADE6 /* TimeMap.swift */; };
+		FA4E2F2F2B0FE8AB0040ADE6 /* TimeWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4E2F2E2B0FE8AB0040ADE6 /* TimeWindow.swift */; };
+		FA4E2F312B1010DD0040ADE6 /* TimeLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4E2F302B1010DD0040ADE6 /* TimeLine.swift */; };
+		FA4E2F342B101D1C0040ADE6 /* AspectEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4E2F332B101D1C0040ADE6 /* AspectEvent.swift */; };
+		FA4E2F372B101D920040ADE6 /* RetrogradeEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4E2F362B101D920040ADE6 /* RetrogradeEvent.swift */; };
+		FA4E2F392B101DCE0040ADE6 /* OctiveEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4E2F382B101DCE0040ADE6 /* OctiveEvent.swift */; };
+		FA4E2F3B2B101E020040ADE6 /* FormationEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4E2F3A2B101E020040ADE6 /* FormationEvent.swift */; };
+		FA4E2F3F2B1127BD0040ADE6 /* PlanetNodeSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4E2F3E2B1127BD0040ADE6 /* PlanetNodeSequence.swift */; };
+		FA4E2F412B11600F0040ADE6 /* CelestialEventScanner+FormationDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4E2F402B11600F0040ADE6 /* CelestialEventScanner+FormationDetector.swift */; };
 		FA52CE082B0AFE1F002C675C /* PlanetNodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA52CE072B0AFE1F002C675C /* PlanetNodesViewController.swift */; };
 		FA52CE0A2B0AFECF002C675C /* PlanetNodes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA52CE092B0AFECF002C675C /* PlanetNodes.storyboard */; };
 		FA52CE0C2B0B088E002C675C /* Newtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA52CE0B2B0B088E002C675C /* Newtons.swift */; };
 		FA52CE0F2B0B08E7002C675C /* PoundForce.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA52CE0E2B0B08E7002C675C /* PoundForce.swift */; };
 		FA52CE112B0B0C50002C675C /* EarthGravity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA52CE102B0B0C50002C675C /* EarthGravity.swift */; };
 		FA52CE132B0B0F7C002C675C /* GravitationalAcceleration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA52CE122B0B0F7C002C675C /* GravitationalAcceleration.swift */; };
-		FA5CF1762A757B29006CBEB5 /* AspectEventConsole.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5CF1752A757B29006CBEB5 /* AspectEventConsole.swift */; };
-		FA5CF1782A7587FE006CBEB5 /* AspectEventScannerResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5CF1772A7587FE006CBEB5 /* AspectEventScannerResults.swift */; };
-		FA5CF17A2A75881D006CBEB5 /* AspectEventExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5CF1792A75881D006CBEB5 /* AspectEventExporter.swift */; };
+		FA5CF1762A757B29006CBEB5 /* CelestialEventConsole.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5CF1752A757B29006CBEB5 /* CelestialEventConsole.swift */; };
+		FA5CF1782A7587FE006CBEB5 /* CelestialEventScanner+Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5CF1772A7587FE006CBEB5 /* CelestialEventScanner+Results.swift */; };
+		FA5CF17A2A75881D006CBEB5 /* CelestialEventExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5CF1792A75881D006CBEB5 /* CelestialEventExporter.swift */; };
 		FA5CF17C2A765666006CBEB5 /* AspectEventExport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA5CF17B2A765666006CBEB5 /* AspectEventExport.storyboard */; };
-		FA5CF17E2A765DE7006CBEB5 /* AspectEventExportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5CF17D2A765DE7006CBEB5 /* AspectEventExportViewController.swift */; };
-		FA5CF1802A7672DD006CBEB5 /* AspectEventDataArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5CF17F2A7672DD006CBEB5 /* AspectEventDataArchive.swift */; };
-		FA5CF1822A767A92006CBEB5 /* AspectEventScannerResultsFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5CF1812A767A92006CBEB5 /* AspectEventScannerResultsFormatter.swift */; };
+		FA5CF17E2A765DE7006CBEB5 /* CelestialEventExportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5CF17D2A765DE7006CBEB5 /* CelestialEventExportViewController.swift */; };
+		FA5CF1802A7672DD006CBEB5 /* CelestialEventDataArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5CF17F2A7672DD006CBEB5 /* CelestialEventDataArchive.swift */; };
+		FA5CF1822A767A92006CBEB5 /* CelestialEventScannerResultsFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5CF1812A767A92006CBEB5 /* CelestialEventScannerResultsFormatter.swift */; };
 		FA6101CD286D73AA0000D4D5 /* StarChartSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6101CC286D73AA0000D4D5 /* StarChartSelectViewController.swift */; };
 		FA6101CF286D73B70000D4D5 /* TimeStreamSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6101CE286D73B70000D4D5 /* TimeStreamSelectViewController.swift */; };
 		FA6101D1286D73C70000D4D5 /* GeoLocationSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6101D0286D73C70000D4D5 /* GeoLocationSelectViewController.swift */; };
@@ -183,14 +197,29 @@
 		FA6101E32870B0F10000D4D5 /* TimeStreamChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6101E22870B0F10000D4D5 /* TimeStreamChartTableViewCell.swift */; };
 		FA6101E52870C4C00000D4D5 /* TimeStreamPresetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6101E42870C4C00000D4D5 /* TimeStreamPresetTableViewCell.swift */; };
 		FA6101E72870C8800000D4D5 /* TimeStreamPresets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6101E62870C8800000D4D5 /* TimeStreamPresets.swift */; };
-		FA9C9CC32AFA91B90055C93E /* AspectEventScanner+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C9CC22AFA91B90055C93E /* AspectEventScanner+Error.swift */; };
-		FA9C9CC52AFA92050055C93E /* AspectEventScanner+SampleMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C9CC42AFA92050055C93E /* AspectEventScanner+SampleMode.swift */; };
-		FA9C9CC72AFA921D0055C93E /* AspectEventScanner+DeepScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C9CC62AFA921D0055C93E /* AspectEventScanner+DeepScanner.swift */; };
-		FA9C9CC92AFA92360055C93E /* AspectEventScanner+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C9CC82AFA92360055C93E /* AspectEventScanner+State.swift */; };
-		FA9C9CCB2AFA93860055C93E /* AspectEventScanner+NodeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C9CCA2AFA93860055C93E /* AspectEventScanner+NodeState.swift */; };
-		FA9C9CCD2AFA9AEE0055C93E /* AspectEventScanner+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C9CCC2AFA9AEE0055C93E /* AspectEventScanner+Delegate.swift */; };
-		FA9C9CCF2AFA9B350055C93E /* AspectEventScanner+Archive.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C9CCE2AFA9B350055C93E /* AspectEventScanner+Archive.swift */; };
-		FA9C9CD12AFA9B890055C93E /* AspectEventScanner+Scanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C9CD02AFA9B890055C93E /* AspectEventScanner+Scanner.swift */; };
+		FA879C932B1380E400B68447 /* CelestialEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA879C922B1380E400B68447 /* CelestialEventType.swift */; };
+		FA879C9B2B139C3F00B68447 /* TransitEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA879C9A2B139C3F00B68447 /* TransitEvent.swift */; };
+		FA879C9D2B13A20000B68447 /* CelestialEventScanner+TransitEventScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA879C9C2B13A20000B68447 /* CelestialEventScanner+TransitEventScanner.swift */; };
+		FA879CA22B13A37300B68447 /* CelestialEventScanner+RetrogradeEventScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA879CA12B13A37300B68447 /* CelestialEventScanner+RetrogradeEventScanner.swift */; };
+		FA879CA42B13A38900B68447 /* CelestialEventScanner+AspectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA879CA32B13A38900B68447 /* CelestialEventScanner+AspectDetector.swift */; };
+		FA879CA62B13A3B000B68447 /* CelestialEventScanner+FormationEventScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA879CA52B13A3B000B68447 /* CelestialEventScanner+FormationEventScanner.swift */; };
+		FA879CA92B13A46B00B68447 /* CelestialEventScanner+RetrogradeDeepScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA879CA82B13A46B00B68447 /* CelestialEventScanner+RetrogradeDeepScanner.swift */; };
+		FA879CAB2B13A47E00B68447 /* CelestialEventScanner+TransitDeepScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA879CAA2B13A47E00B68447 /* CelestialEventScanner+TransitDeepScanner.swift */; };
+		FA879CAD2B13A49700B68447 /* CelestialEventScanner+FormationDeepScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA879CAC2B13A49700B68447 /* CelestialEventScanner+FormationDeepScanner.swift */; };
+		FA879CAF2B13A63D00B68447 /* CelestialEventScanner+ResonanceDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA879CAE2B13A63D00B68447 /* CelestialEventScanner+ResonanceDetector.swift */; };
+		FA879CB12B13A66900B68447 /* CelestialEventScanner+ResonanceEventScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA879CB02B13A66900B68447 /* CelestialEventScanner+ResonanceEventScanner.swift */; };
+		FA879CB32B13A69E00B68447 /* CelestialEventScanner+ResonanceDeepScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA879CB22B13A69E00B68447 /* CelestialEventScanner+ResonanceDeepScanner.swift */; };
+		FA879CB62B13AD2A00B68447 /* ResonanceEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA879CB52B13AD2A00B68447 /* ResonanceEvent.swift */; };
+		FA879CB82B13B18900B68447 /* CelestialEventScanner+OctiveDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA879CB72B13B18900B68447 /* CelestialEventScanner+OctiveDetector.swift */; };
+		FA879CBA2B13B1AC00B68447 /* CelestialEventScanner+OctiveEventScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA879CB92B13B1AC00B68447 /* CelestialEventScanner+OctiveEventScanner.swift */; };
+		FA879CBC2B13B1C800B68447 /* CelestialEventScanner+OctiveDeepScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA879CBB2B13B1C800B68447 /* CelestialEventScanner+OctiveDeepScanner.swift */; };
+		FA9C9CC32AFA91B90055C93E /* CelestialEventScanner+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C9CC22AFA91B90055C93E /* CelestialEventScanner+Error.swift */; };
+		FA9C9CC52AFA92050055C93E /* CelestialEventScanner+SampleMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C9CC42AFA92050055C93E /* CelestialEventScanner+SampleMode.swift */; };
+		FA9C9CC72AFA921D0055C93E /* CelestialEventScanner+AspectDeepScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C9CC62AFA921D0055C93E /* CelestialEventScanner+AspectDeepScanner.swift */; };
+		FA9C9CC92AFA92360055C93E /* CelestialEventScanner+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C9CC82AFA92360055C93E /* CelestialEventScanner+State.swift */; };
+		FA9C9CCD2AFA9AEE0055C93E /* CelestialEventScanner+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C9CCC2AFA9AEE0055C93E /* CelestialEventScanner+Delegate.swift */; };
+		FA9C9CCF2AFA9B350055C93E /* CelestialEventScanner+Archive.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C9CCE2AFA9B350055C93E /* CelestialEventScanner+Archive.swift */; };
+		FA9C9CD12AFA9B890055C93E /* CelestialEventScanner+AspectEventScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C9CD02AFA9B890055C93E /* CelestialEventScanner+AspectEventScanner.swift */; };
 		FAA536AB2AD84BD2005A360D /* SpectrographSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA536AA2AD84BD2005A360D /* SpectrographSettings.storyboard */; };
 		FAA536AD2AD84BEE005A360D /* SpectrographSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA536AC2AD84BEE005A360D /* SpectrographSettingsViewController.swift */; };
 		FAB068EF2AB9702100334B1A /* TimeStreamCoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB068EE2AB9702100334B1A /* TimeStreamCoreController.swift */; };
@@ -224,8 +253,8 @@
 		FAD6D67A2AC2E529006264C8 /* TimeStreamCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6D6792AC2E529006264C8 /* TimeStreamCreateViewController.swift */; };
 		FAD6D67C2AC2E646006264C8 /* CreateTimeStreamComposite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAD6D67B2AC2E646006264C8 /* CreateTimeStreamComposite.storyboard */; };
 		FAE12E472A6C0921002016A3 /* OnlineGeoLocationSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE12E462A6C0921002016A3 /* OnlineGeoLocationSelectViewController.swift */; };
-		FAE12E4A2A6C1371002016A3 /* AspectEventScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE12E492A6C1371002016A3 /* AspectEventScanner.swift */; };
-		FAE12E4E2A6C1432002016A3 /* AspectEventScannerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE12E4D2A6C1432002016A3 /* AspectEventScannerCore.swift */; };
+		FAE12E4A2A6C1371002016A3 /* CelestialEventScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE12E492A6C1371002016A3 /* CelestialEventScanner.swift */; };
+		FAE12E4E2A6C1432002016A3 /* CelestialEventScanner+Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE12E4D2A6C1432002016A3 /* CelestialEventScanner+Core.swift */; };
 		FAEAFEAC2847DC88001AEAE0 /* UIImage+GIF+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEAFEAB2847DC88001AEAE0 /* UIImage+GIF+Extension.swift */; };
 		FAEAFEB02847E0D7001AEAE0 /* StarDiskFormation-loaderAnim_2.gif in Resources */ = {isa = PBXBuildFile; fileRef = FAEAFEAF2847E0D6001AEAE0 /* StarDiskFormation-loaderAnim_2.gif */; };
 		FAEAFEB4284841CC001AEAE0 /* TimeStreamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEAFEB3284841CC001AEAE0 /* TimeStreamTableViewCell.swift */; };
@@ -275,8 +304,8 @@
 		FAFB68AD2AB9308700FEBDF4 /* TimeStreamInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAFB68AC2AB9308700FEBDF4 /* TimeStreamInterface.storyboard */; };
 		FAFB68AF2AB930D000FEBDF4 /* TimeStreamInterfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB68AE2AB930D000FEBDF4 /* TimeStreamInterfaceView.swift */; };
 		FAFB68B42AB93C9400FEBDF4 /* TimeStreamInterfaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB68B32AB93C9400FEBDF4 /* TimeStreamInterfaceViewController.swift */; };
-		FAFE792C2A6AD84000C56612 /* AspectEventScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE792B2A6AD84000C56612 /* AspectEventScanViewController.swift */; };
-		FAFE792E2A6AD87200C56612 /* AspectEventScan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAFE792D2A6AD87200C56612 /* AspectEventScan.storyboard */; };
+		FAFE792C2A6AD84000C56612 /* CelestialEventScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE792B2A6AD84000C56612 /* CelestialEventScanViewController.swift */; };
+		FAFE792E2A6AD87200C56612 /* CelestialEventScan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAFE792D2A6AD87200C56612 /* CelestialEventScan.storyboard */; };
 		FAFE79302A6BE85B00C56612 /* GeoLocationAndTimeSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE792F2A6BE85B00C56612 /* GeoLocationAndTimeSelectViewController.swift */; };
 		FAFE79322A6C029400C56612 /* GeoLocationSelect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAFE79312A6C029400C56612 /* GeoLocationSelect.storyboard */; };
 /* End PBXBuildFile section */
@@ -313,13 +342,13 @@
 		AD025F5C6AE57EA49DBDED89 /* Pods-CosmicCypher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CosmicCypher.debug.xcconfig"; path = "Target Support Files/Pods-CosmicCypher/Pods-CosmicCypher.debug.xcconfig"; sourceTree = "<group>"; };
 		D84C4B7FFCB993BE3E5D99BA /* Pods_CosmicCypherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CosmicCypherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E44DAD6AFC67C48066A9E053 /* Pods-ResonantFinderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ResonantFinderTests.debug.xcconfig"; path = "Target Support Files/Pods-ResonantFinderTests/Pods-ResonantFinderTests.debug.xcconfig"; sourceTree = "<group>"; };
-		FA00505D2B0BADC900540CD5 /* AspectEventScanner+RetrogradeCompensator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AspectEventScanner+RetrogradeCompensator.swift"; sourceTree = "<group>"; };
+		FA00505D2B0BADC900540CD5 /* CelestialEventScanner+RetrogradeDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CelestialEventScanner+RetrogradeDetector.swift"; sourceTree = "<group>"; };
 		FA0050612B0BB2FF00540CD5 /* CoreAstrology+Aspect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreAstrology+Aspect.swift"; sourceTree = "<group>"; };
 		FA0050632B0BB33100540CD5 /* CoreAstrology+AspectRelation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreAstrology+AspectRelation.swift"; sourceTree = "<group>"; };
 		FA0050652B0BB37200540CD5 /* CoreAstrology+AspectRelationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreAstrology+AspectRelationType.swift"; sourceTree = "<group>"; };
 		FA0050672B0BB3E200540CD5 /* CoreAstrology+AspectBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreAstrology+AspectBody.swift"; sourceTree = "<group>"; };
 		FA0050692B0BB40B00540CD5 /* CoreAstrology+GravimetricTensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreAstrology+GravimetricTensor.swift"; sourceTree = "<group>"; };
-		FA00506B2B0BB5AF00540CD5 /* CoreAstrology+CelestialEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreAstrology+CelestialEvent.swift"; sourceTree = "<group>"; };
+		FA00506B2B0BB5AF00540CD5 /* CelestialEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestialEvent.swift; sourceTree = "<group>"; };
 		FA00506D2B0BB60B00540CD5 /* CoreAstrology+Vector3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreAstrology+Vector3.swift"; sourceTree = "<group>"; };
 		FA00506F2B0BB62700540CD5 /* CoreAstrology+AspectType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreAstrology+AspectType.swift"; sourceTree = "<group>"; };
 		FA0050712B0BC90D00540CD5 /* PlanetNodeRetrogradeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetNodeRetrogradeState.swift; sourceTree = "<group>"; };
@@ -368,6 +397,7 @@
 		FA12D5EA289D7C6F00411649 /* ResonanceReportViewController+DiscernmentChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResonanceReportViewController+DiscernmentChart.swift"; sourceTree = "<group>"; };
 		FA12D5EC289D7CE600411649 /* ResonanceReportViewController+UIControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResonanceReportViewController+UIControls.swift"; sourceTree = "<group>"; };
 		FA12D5EE289D7EB200411649 /* ResonanceReportViewController+Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResonanceReportViewController+Setup.swift"; sourceTree = "<group>"; };
+		FA17BA4B2B0E974D00158735 /* DegreesPerSecond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegreesPerSecond.swift; sourceTree = "<group>"; };
 		FA1FDD442570262700B51BD2 /* ReadingsSubScreenCOEH.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadingsSubScreenCOEH.swift; sourceTree = "<group>"; };
 		FA1FDD49257026CA00B51BD2 /* ReadingsSubScreenSSSB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingsSubScreenSSSB.swift; sourceTree = "<group>"; };
 		FA1FDD4E257026F700B51BD2 /* ReadingsSubScreenPNPA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingsSubScreenPNPA.swift; sourceTree = "<group>"; };
@@ -461,10 +491,23 @@
 		FA3A38C92ACE4AC9008907F2 /* MTLTexture+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MTLTexture+Extensions.swift"; sourceTree = "<group>"; };
 		FA3A38CB2AD698CA008907F2 /* EnergyLevelDetailsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EnergyLevelDetailsViewController.storyboard; sourceTree = "<group>"; };
 		FA3A38CE2AD698E8008907F2 /* EnergyLevelDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyLevelDetailsViewController.swift; sourceTree = "<group>"; };
+		FA3A435D2B13042700B4EED1 /* CelestialEventScanner+TransitDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CelestialEventScanner+TransitDetector.swift"; sourceTree = "<group>"; };
 		FA4D1B892561FBFE0043DE9F /* TimeStreamDisplayScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamDisplayScreen.swift; sourceTree = "<group>"; };
 		FA4D1B8E2561FCA00043DE9F /* ControlsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsScreen.swift; sourceTree = "<group>"; };
 		FA4D1B932561FDA00043DE9F /* ArkanaNaturaDisplayScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArkanaNaturaDisplayScreen.swift; sourceTree = "<group>"; };
 		FA4D1B9B2561FE070043DE9F /* ReadingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingsScreen.swift; sourceTree = "<group>"; };
+		FA4E2F252B0FDD6E0040ADE6 /* TimeMapTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeMapTableViewController.swift; sourceTree = "<group>"; };
+		FA4E2F272B0FDE6A0040ADE6 /* TimeMapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeMapTableViewCell.swift; sourceTree = "<group>"; };
+		FA4E2F292B0FE0B50040ADE6 /* TimeMaps.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TimeMaps.storyboard; sourceTree = "<group>"; };
+		FA4E2F2C2B0FE1EA0040ADE6 /* TimeMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeMap.swift; sourceTree = "<group>"; };
+		FA4E2F2E2B0FE8AB0040ADE6 /* TimeWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeWindow.swift; sourceTree = "<group>"; };
+		FA4E2F302B1010DD0040ADE6 /* TimeLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLine.swift; sourceTree = "<group>"; };
+		FA4E2F332B101D1C0040ADE6 /* AspectEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectEvent.swift; sourceTree = "<group>"; };
+		FA4E2F362B101D920040ADE6 /* RetrogradeEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrogradeEvent.swift; sourceTree = "<group>"; };
+		FA4E2F382B101DCE0040ADE6 /* OctiveEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OctiveEvent.swift; sourceTree = "<group>"; };
+		FA4E2F3A2B101E020040ADE6 /* FormationEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormationEvent.swift; sourceTree = "<group>"; };
+		FA4E2F3E2B1127BD0040ADE6 /* PlanetNodeSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetNodeSequence.swift; sourceTree = "<group>"; };
+		FA4E2F402B11600F0040ADE6 /* CelestialEventScanner+FormationDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CelestialEventScanner+FormationDetector.swift"; sourceTree = "<group>"; };
 		FA52CE072B0AFE1F002C675C /* PlanetNodesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetNodesViewController.swift; sourceTree = "<group>"; };
 		FA52CE092B0AFECF002C675C /* PlanetNodes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlanetNodes.storyboard; sourceTree = "<group>"; };
 		FA52CE0B2B0B088E002C675C /* Newtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Newtons.swift; sourceTree = "<group>"; };
@@ -472,13 +515,13 @@
 		FA52CE102B0B0C50002C675C /* EarthGravity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthGravity.swift; sourceTree = "<group>"; };
 		FA52CE122B0B0F7C002C675C /* GravitationalAcceleration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GravitationalAcceleration.swift; sourceTree = "<group>"; };
 		FA545E61289C1DBD007E66A1 /* CosmicCypher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CosmicCypher.entitlements; sourceTree = "<group>"; };
-		FA5CF1752A757B29006CBEB5 /* AspectEventConsole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectEventConsole.swift; sourceTree = "<group>"; };
-		FA5CF1772A7587FE006CBEB5 /* AspectEventScannerResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectEventScannerResults.swift; sourceTree = "<group>"; };
-		FA5CF1792A75881D006CBEB5 /* AspectEventExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectEventExporter.swift; sourceTree = "<group>"; };
+		FA5CF1752A757B29006CBEB5 /* CelestialEventConsole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestialEventConsole.swift; sourceTree = "<group>"; };
+		FA5CF1772A7587FE006CBEB5 /* CelestialEventScanner+Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CelestialEventScanner+Results.swift"; sourceTree = "<group>"; };
+		FA5CF1792A75881D006CBEB5 /* CelestialEventExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestialEventExporter.swift; sourceTree = "<group>"; };
 		FA5CF17B2A765666006CBEB5 /* AspectEventExport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AspectEventExport.storyboard; sourceTree = "<group>"; };
-		FA5CF17D2A765DE7006CBEB5 /* AspectEventExportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectEventExportViewController.swift; sourceTree = "<group>"; };
-		FA5CF17F2A7672DD006CBEB5 /* AspectEventDataArchive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectEventDataArchive.swift; sourceTree = "<group>"; };
-		FA5CF1812A767A92006CBEB5 /* AspectEventScannerResultsFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectEventScannerResultsFormatter.swift; sourceTree = "<group>"; };
+		FA5CF17D2A765DE7006CBEB5 /* CelestialEventExportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestialEventExportViewController.swift; sourceTree = "<group>"; };
+		FA5CF17F2A7672DD006CBEB5 /* CelestialEventDataArchive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestialEventDataArchive.swift; sourceTree = "<group>"; };
+		FA5CF1812A767A92006CBEB5 /* CelestialEventScannerResultsFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestialEventScannerResultsFormatter.swift; sourceTree = "<group>"; };
 		FA6101CC286D73AA0000D4D5 /* StarChartSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarChartSelectViewController.swift; sourceTree = "<group>"; };
 		FA6101CE286D73B70000D4D5 /* TimeStreamSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamSelectViewController.swift; sourceTree = "<group>"; };
 		FA6101D0286D73C70000D4D5 /* GeoLocationSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoLocationSelectViewController.swift; sourceTree = "<group>"; };
@@ -494,14 +537,29 @@
 		FA6101E42870C4C00000D4D5 /* TimeStreamPresetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamPresetTableViewCell.swift; sourceTree = "<group>"; };
 		FA6101E62870C8800000D4D5 /* TimeStreamPresets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamPresets.swift; sourceTree = "<group>"; };
 		FA82199E27EC2E764D44C775 /* Pods-ResonantFinder-ResonantFinderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ResonantFinder-ResonantFinderUITests.debug.xcconfig"; path = "Target Support Files/Pods-ResonantFinder-ResonantFinderUITests/Pods-ResonantFinder-ResonantFinderUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		FA9C9CC22AFA91B90055C93E /* AspectEventScanner+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AspectEventScanner+Error.swift"; sourceTree = "<group>"; };
-		FA9C9CC42AFA92050055C93E /* AspectEventScanner+SampleMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AspectEventScanner+SampleMode.swift"; sourceTree = "<group>"; };
-		FA9C9CC62AFA921D0055C93E /* AspectEventScanner+DeepScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AspectEventScanner+DeepScanner.swift"; sourceTree = "<group>"; };
-		FA9C9CC82AFA92360055C93E /* AspectEventScanner+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AspectEventScanner+State.swift"; sourceTree = "<group>"; };
-		FA9C9CCA2AFA93860055C93E /* AspectEventScanner+NodeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AspectEventScanner+NodeState.swift"; sourceTree = "<group>"; };
-		FA9C9CCC2AFA9AEE0055C93E /* AspectEventScanner+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AspectEventScanner+Delegate.swift"; sourceTree = "<group>"; };
-		FA9C9CCE2AFA9B350055C93E /* AspectEventScanner+Archive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AspectEventScanner+Archive.swift"; sourceTree = "<group>"; };
-		FA9C9CD02AFA9B890055C93E /* AspectEventScanner+Scanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AspectEventScanner+Scanner.swift"; sourceTree = "<group>"; };
+		FA879C922B1380E400B68447 /* CelestialEventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestialEventType.swift; sourceTree = "<group>"; };
+		FA879C9A2B139C3F00B68447 /* TransitEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitEvent.swift; sourceTree = "<group>"; };
+		FA879C9C2B13A20000B68447 /* CelestialEventScanner+TransitEventScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CelestialEventScanner+TransitEventScanner.swift"; sourceTree = "<group>"; };
+		FA879CA12B13A37300B68447 /* CelestialEventScanner+RetrogradeEventScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CelestialEventScanner+RetrogradeEventScanner.swift"; sourceTree = "<group>"; };
+		FA879CA32B13A38900B68447 /* CelestialEventScanner+AspectDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CelestialEventScanner+AspectDetector.swift"; sourceTree = "<group>"; };
+		FA879CA52B13A3B000B68447 /* CelestialEventScanner+FormationEventScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CelestialEventScanner+FormationEventScanner.swift"; sourceTree = "<group>"; };
+		FA879CA82B13A46B00B68447 /* CelestialEventScanner+RetrogradeDeepScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CelestialEventScanner+RetrogradeDeepScanner.swift"; sourceTree = "<group>"; };
+		FA879CAA2B13A47E00B68447 /* CelestialEventScanner+TransitDeepScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CelestialEventScanner+TransitDeepScanner.swift"; sourceTree = "<group>"; };
+		FA879CAC2B13A49700B68447 /* CelestialEventScanner+FormationDeepScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CelestialEventScanner+FormationDeepScanner.swift"; sourceTree = "<group>"; };
+		FA879CAE2B13A63D00B68447 /* CelestialEventScanner+ResonanceDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CelestialEventScanner+ResonanceDetector.swift"; sourceTree = "<group>"; };
+		FA879CB02B13A66900B68447 /* CelestialEventScanner+ResonanceEventScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CelestialEventScanner+ResonanceEventScanner.swift"; sourceTree = "<group>"; };
+		FA879CB22B13A69E00B68447 /* CelestialEventScanner+ResonanceDeepScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CelestialEventScanner+ResonanceDeepScanner.swift"; sourceTree = "<group>"; };
+		FA879CB52B13AD2A00B68447 /* ResonanceEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResonanceEvent.swift; sourceTree = "<group>"; };
+		FA879CB72B13B18900B68447 /* CelestialEventScanner+OctiveDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CelestialEventScanner+OctiveDetector.swift"; sourceTree = "<group>"; };
+		FA879CB92B13B1AC00B68447 /* CelestialEventScanner+OctiveEventScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CelestialEventScanner+OctiveEventScanner.swift"; sourceTree = "<group>"; };
+		FA879CBB2B13B1C800B68447 /* CelestialEventScanner+OctiveDeepScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CelestialEventScanner+OctiveDeepScanner.swift"; sourceTree = "<group>"; };
+		FA9C9CC22AFA91B90055C93E /* CelestialEventScanner+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CelestialEventScanner+Error.swift"; sourceTree = "<group>"; };
+		FA9C9CC42AFA92050055C93E /* CelestialEventScanner+SampleMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CelestialEventScanner+SampleMode.swift"; sourceTree = "<group>"; };
+		FA9C9CC62AFA921D0055C93E /* CelestialEventScanner+AspectDeepScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CelestialEventScanner+AspectDeepScanner.swift"; sourceTree = "<group>"; };
+		FA9C9CC82AFA92360055C93E /* CelestialEventScanner+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CelestialEventScanner+State.swift"; sourceTree = "<group>"; };
+		FA9C9CCC2AFA9AEE0055C93E /* CelestialEventScanner+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CelestialEventScanner+Delegate.swift"; sourceTree = "<group>"; };
+		FA9C9CCE2AFA9B350055C93E /* CelestialEventScanner+Archive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CelestialEventScanner+Archive.swift"; sourceTree = "<group>"; };
+		FA9C9CD02AFA9B890055C93E /* CelestialEventScanner+AspectEventScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CelestialEventScanner+AspectEventScanner.swift"; sourceTree = "<group>"; };
 		FAA536AA2AD84BD2005A360D /* SpectrographSettings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SpectrographSettings.storyboard; sourceTree = "<group>"; };
 		FAA536AC2AD84BEE005A360D /* SpectrographSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectrographSettingsViewController.swift; sourceTree = "<group>"; };
 		FAB068EE2AB9702100334B1A /* TimeStreamCoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamCoreController.swift; sourceTree = "<group>"; };
@@ -535,8 +593,8 @@
 		FAD6D6792AC2E529006264C8 /* TimeStreamCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamCreateViewController.swift; sourceTree = "<group>"; };
 		FAD6D67B2AC2E646006264C8 /* CreateTimeStreamComposite.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateTimeStreamComposite.storyboard; sourceTree = "<group>"; };
 		FAE12E462A6C0921002016A3 /* OnlineGeoLocationSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineGeoLocationSelectViewController.swift; sourceTree = "<group>"; };
-		FAE12E492A6C1371002016A3 /* AspectEventScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectEventScanner.swift; sourceTree = "<group>"; };
-		FAE12E4D2A6C1432002016A3 /* AspectEventScannerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectEventScannerCore.swift; sourceTree = "<group>"; };
+		FAE12E492A6C1371002016A3 /* CelestialEventScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestialEventScanner.swift; sourceTree = "<group>"; };
+		FAE12E4D2A6C1432002016A3 /* CelestialEventScanner+Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CelestialEventScanner+Core.swift"; sourceTree = "<group>"; };
 		FAEAFEAB2847DC88001AEAE0 /* UIImage+GIF+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+GIF+Extension.swift"; sourceTree = "<group>"; };
 		FAEAFEAF2847E0D6001AEAE0 /* StarDiskFormation-loaderAnim_2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "StarDiskFormation-loaderAnim_2.gif"; sourceTree = "<group>"; };
 		FAEAFEB3284841CC001AEAE0 /* TimeStreamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamTableViewCell.swift; sourceTree = "<group>"; };
@@ -589,8 +647,8 @@
 		FAFB68AC2AB9308700FEBDF4 /* TimeStreamInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TimeStreamInterface.storyboard; sourceTree = "<group>"; };
 		FAFB68AE2AB930D000FEBDF4 /* TimeStreamInterfaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamInterfaceView.swift; sourceTree = "<group>"; };
 		FAFB68B32AB93C9400FEBDF4 /* TimeStreamInterfaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStreamInterfaceViewController.swift; sourceTree = "<group>"; };
-		FAFE792B2A6AD84000C56612 /* AspectEventScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectEventScanViewController.swift; sourceTree = "<group>"; };
-		FAFE792D2A6AD87200C56612 /* AspectEventScan.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AspectEventScan.storyboard; sourceTree = "<group>"; };
+		FAFE792B2A6AD84000C56612 /* CelestialEventScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestialEventScanViewController.swift; sourceTree = "<group>"; };
+		FAFE792D2A6AD87200C56612 /* CelestialEventScan.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CelestialEventScan.storyboard; sourceTree = "<group>"; };
 		FAFE792F2A6BE85B00C56612 /* GeoLocationAndTimeSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoLocationAndTimeSelectViewController.swift; sourceTree = "<group>"; };
 		FAFE79312A6C029400C56612 /* GeoLocationSelect.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GeoLocationSelect.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -901,8 +959,8 @@
 				FA12D5EC289D7CE600411649 /* ResonanceReportViewController+UIControls.swift */,
 				FAFB68A32AB664B600FEBDF4 /* ResonanceReportViewController+CosmicDisk.swift */,
 				FA12D5EE289D7EB200411649 /* ResonanceReportViewController+Setup.swift */,
-				FAFE792B2A6AD84000C56612 /* AspectEventScanViewController.swift */,
-				FA5CF17D2A765DE7006CBEB5 /* AspectEventExportViewController.swift */,
+				FAFE792B2A6AD84000C56612 /* CelestialEventScanViewController.swift */,
+				FA5CF17D2A765DE7006CBEB5 /* CelestialEventExportViewController.swift */,
 				FAB806222B05558F00BCBFC1 /* ResonanceReportViewController+Speed.swift */,
 				FAB806242B056F5000BCBFC1 /* ResonanceReportViewController+StarChartRealTimePlaybackControllerDelegate.swift */,
 			);
@@ -912,13 +970,10 @@
 		FA35C05C28497839006114AB /* CoreAstrology */ = {
 			isa = PBXGroup;
 			children = (
-				FAE12E482A6C1362002016A3 /* AspectEventScanner */,
-				FAEB27AD284FC4A8009994B8 /* PlanetNode */,
+				FA4E2F352B101D770040ADE6 /* CelestialEvent */,
 				FA35C0E12849A984006114AB /* Geometry */,
-				FA35C0CA2849A828006114AB /* TimeStream */,
 				FA35C05D28497839006114AB /* Astronomy */,
 				FA35C06128497839006114AB /* TextureGeneration */,
-				FA35C06328497839006114AB /* StarChart */,
 				FA35C06E28497839006114AB /* Regex */,
 				FA35C07028497839006114AB /* Math */,
 				FAB068FB2ABC08A700334B1A /* Render */,
@@ -941,6 +996,7 @@
 				FA52CE0E2B0B08E7002C675C /* PoundForce.swift */,
 				FA52CE102B0B0C50002C675C /* EarthGravity.swift */,
 				FA52CE122B0B0F7C002C675C /* GravitationalAcceleration.swift */,
+				FA17BA4B2B0E974D00158735 /* DegreesPerSecond.swift */,
 			);
 			path = Astronomy;
 			sourceTree = "<group>";
@@ -1025,6 +1081,9 @@
 		FA35C0882849783A006114AB /* Astrology */ = {
 			isa = PBXGroup;
 			children = (
+				FA35C06328497839006114AB /* StarChart */,
+				FA4E2F2B2B0FE1D80040ADE6 /* TimeMap */,
+				FAEB27AD284FC4A8009994B8 /* PlanetNode */,
 				FA35C0892849783A006114AB /* CoreAstrology.swift */,
 				FA35C06528497839006114AB /* ResonanceScore.swift */,
 				FA35C06A28497839006114AB /* EnergyLevels.swift */,
@@ -1039,7 +1098,6 @@
 				FA0050652B0BB37200540CD5 /* CoreAstrology+AspectRelationType.swift */,
 				FA0050672B0BB3E200540CD5 /* CoreAstrology+AspectBody.swift */,
 				FA0050692B0BB40B00540CD5 /* CoreAstrology+GravimetricTensor.swift */,
-				FA00506B2B0BB5AF00540CD5 /* CoreAstrology+CelestialEvent.swift */,
 				FA00506D2B0BB60B00540CD5 /* CoreAstrology+Vector3.swift */,
 			);
 			path = Astrology;
@@ -1077,48 +1135,40 @@
 			isa = PBXGroup;
 			children = (
 				FA35C0CD2849A83F006114AB /* TimeStream.swift */,
-				FAEB27A8284E9DA9009994B8 /* TimeStreamGenerator.swift */,
-				FAEB279E284E5668009994B8 /* TimeStreamRegistry.swift */,
 				FAEB27A0284E5831009994B8 /* TimeStreamArchive.swift */,
-				FAEB27A2284E753B009994B8 /* TimeStreamPath.swift */,
-				FA35C0DF2849A872006114AB /* TimeStreamSpriteNode.swift */,
-				FA35C0D12849A840006114AB /* TimeStreamGeometry.swift */,
-				FA35C0D32849A840006114AB /* TimeStreamGeometryType.swift */,
-				FA35C0D22849A840006114AB /* TimeStreamMaterial.swift */,
-				FA35C0D02849A840006114AB /* TimeStreamMaterialType.swift */,
-				FA35C0CF2849A840006114AB /* TimeStreamNode.swift */,
-				FA35C0D42849A840006114AB /* TimeStreamNodeType.swift */,
-				FA35C0CC2849A83F006114AB /* TimeStreamScene.swift */,
-				FA35C0CB2849A83F006114AB /* TimeStreamSceneView.swift */,
-				FA35C0CE2849A83F006114AB /* TimeStreamView.swift */,
-				FAD6D6642ABEE914006264C8 /* TimeStreamPixelDrawer.swift */,
-				FAD6D6622ABECB2F006264C8 /* TimeStreamFrameBuffer.swift */,
-				FAB069002ABC911E00334B1A /* TimeStreamMetalRenderer.swift */,
-				FAD6D6682ABF4046006264C8 /* TimeStreamSpectrogram.swift */,
-				FAD6D6662ABF15EB006264C8 /* TimeStreamSpectrogramView.swift */,
-				FAD6D66C2AC16385006264C8 /* TimeStreamCompositeSpectrograph.swift */,
-				FAD6D66E2AC17287006264C8 /* TimeStreamCompositeMetalRenderer.swift */,
-				FA35C0852849783A006114AB /* TimeStreamImageGenerator.swift */,
-				FA35C0842849783A006114AB /* TimeStreamImageStrip.swift */,
-				FA35C0EA284A6E2D006114AB /* TimeStreamImageMap.swift */,
-				FA35C0EC284A7195006114AB /* TimeStreamImageMapRegistry.swift */,
+				FA6101E02870AE8E0000D4D5 /* TimeStreamChart.swift */,
+				FA2CB4872859F77B003AD95C /* TimeStreamColorRenderMode.swift */,
+				FA6101DE286F9F1F0000D4D5 /* TimeStreamCompositeNotchSpriteNode.swift */,
 				FAEB27C9285612DC009994B8 /* TimeStreamConfiguration.swift */,
-				FA35C0E42849AC8F006114AB /* TimeStreamComposite.swift */,
-				FAEB27B42850C0A4009994B8 /* TimeStreamCompositeGenerator.swift */,
-				FA35C0E62849B932006114AB /* TimeStreamCompositeRegistry.swift */,
-				FAEB27B22850BB75009994B8 /* TimeStreamCompositeArchive.swift */,
-				FA35C0E8284A60A2006114AB /* TimeStreamCompositeSpriteNode.swift */,
-				FAEB279A284D1FF1009994B8 /* TimeStreamCompositePresets.swift */,
 				FAEB279C284D2AB5009994B8 /* TimeStreamCore.swift */,
 				FAB068EE2AB9702100334B1A /* TimeStreamCoreController.swift */,
 				FA2CB48B285FFCCE003AD95C /* TimeStreamCoreDelegate.swift */,
-				FA2CB4872859F77B003AD95C /* TimeStreamColorRenderMode.swift */,
-				FA2CB48F2860EF49003AD95C /* TimeStreamSpriteMask.swift */,
+				FAD6D6622ABECB2F006264C8 /* TimeStreamFrameBuffer.swift */,
+				FAEB27A8284E9DA9009994B8 /* TimeStreamGenerator.swift */,
+				FA35C0D12849A840006114AB /* TimeStreamGeometry.swift */,
+				FA35C0D32849A840006114AB /* TimeStreamGeometryType.swift */,
+				FA35C0852849783A006114AB /* TimeStreamImageGenerator.swift */,
+				FA35C0EA284A6E2D006114AB /* TimeStreamImageMap.swift */,
 				FA2CB49328629725003AD95C /* TimeStreamImageMapArchive.swift */,
-				FA6101DE286F9F1F0000D4D5 /* TimeStreamCompositeNotchSpriteNode.swift */,
-				FA6101E02870AE8E0000D4D5 /* TimeStreamChart.swift */,
+				FA35C0EC284A7195006114AB /* TimeStreamImageMapRegistry.swift */,
+				FA35C0842849783A006114AB /* TimeStreamImageStrip.swift */,
+				FA35C0D22849A840006114AB /* TimeStreamMaterial.swift */,
+				FA35C0D02849A840006114AB /* TimeStreamMaterialType.swift */,
+				FAB069002ABC911E00334B1A /* TimeStreamMetalRenderer.swift */,
+				FA35C0CF2849A840006114AB /* TimeStreamNode.swift */,
+				FA35C0D42849A840006114AB /* TimeStreamNodeType.swift */,
+				FAEB27A2284E753B009994B8 /* TimeStreamPath.swift */,
+				FAD6D6642ABEE914006264C8 /* TimeStreamPixelDrawer.swift */,
 				FA6101E62870C8800000D4D5 /* TimeStreamPresets.swift */,
+				FAEB279E284E5668009994B8 /* TimeStreamRegistry.swift */,
+				FA35C0CC2849A83F006114AB /* TimeStreamScene.swift */,
+				FA35C0CB2849A83F006114AB /* TimeStreamSceneView.swift */,
+				FAD6D6682ABF4046006264C8 /* TimeStreamSpectrogram.swift */,
 				FA3A38C72ACCFF1A008907F2 /* TimeStreamSpectrogramShader.swift */,
+				FAD6D6662ABF15EB006264C8 /* TimeStreamSpectrogramView.swift */,
+				FA2CB48F2860EF49003AD95C /* TimeStreamSpriteMask.swift */,
+				FA35C0DF2849A872006114AB /* TimeStreamSpriteNode.swift */,
+				FA35C0CE2849A83F006114AB /* TimeStreamView.swift */,
 			);
 			path = TimeStream;
 			sourceTree = "<group>";
@@ -1162,6 +1212,119 @@
 			path = VCs;
 			sourceTree = "<group>";
 		};
+		FA4E2F242B0FDD520040ADE6 /* TimeMaps */ = {
+			isa = PBXGroup;
+			children = (
+				FA4E2F252B0FDD6E0040ADE6 /* TimeMapTableViewController.swift */,
+				FA4E2F272B0FDE6A0040ADE6 /* TimeMapTableViewCell.swift */,
+			);
+			path = TimeMaps;
+			sourceTree = "<group>";
+		};
+		FA4E2F2B2B0FE1D80040ADE6 /* TimeMap */ = {
+			isa = PBXGroup;
+			children = (
+				FA4E2F322B1016570040ADE6 /* Composite */,
+				FA35C0CA2849A828006114AB /* TimeStream */,
+				FA4E2F2C2B0FE1EA0040ADE6 /* TimeMap.swift */,
+				FA4E2F2E2B0FE8AB0040ADE6 /* TimeWindow.swift */,
+				FA4E2F302B1010DD0040ADE6 /* TimeLine.swift */,
+			);
+			path = TimeMap;
+			sourceTree = "<group>";
+		};
+		FA4E2F322B1016570040ADE6 /* Composite */ = {
+			isa = PBXGroup;
+			children = (
+				FAD6D66C2AC16385006264C8 /* TimeStreamCompositeSpectrograph.swift */,
+				FAD6D66E2AC17287006264C8 /* TimeStreamCompositeMetalRenderer.swift */,
+				FA35C0E42849AC8F006114AB /* TimeStreamComposite.swift */,
+				FAEB27B42850C0A4009994B8 /* TimeStreamCompositeGenerator.swift */,
+				FA35C0E62849B932006114AB /* TimeStreamCompositeRegistry.swift */,
+				FAEB27B22850BB75009994B8 /* TimeStreamCompositeArchive.swift */,
+				FA35C0E8284A60A2006114AB /* TimeStreamCompositeSpriteNode.swift */,
+				FAEB279A284D1FF1009994B8 /* TimeStreamCompositePresets.swift */,
+			);
+			path = Composite;
+			sourceTree = "<group>";
+		};
+		FA4E2F352B101D770040ADE6 /* CelestialEvent */ = {
+			isa = PBXGroup;
+			children = (
+				FA00506B2B0BB5AF00540CD5 /* CelestialEvent.swift */,
+				FA879C922B1380E400B68447 /* CelestialEventType.swift */,
+				FA879CB42B13AA4A00B68447 /* SubEvents */,
+				FAE12E482A6C1362002016A3 /* CelestialEventScanner */,
+			);
+			path = CelestialEvent;
+			sourceTree = "<group>";
+		};
+		FA879C9E2B13A2F700B68447 /* SubScanners */ = {
+			isa = PBXGroup;
+			children = (
+				FA879CA12B13A37300B68447 /* CelestialEventScanner+RetrogradeEventScanner.swift */,
+				FA879C9C2B13A20000B68447 /* CelestialEventScanner+TransitEventScanner.swift */,
+				FA9C9CD02AFA9B890055C93E /* CelestialEventScanner+AspectEventScanner.swift */,
+				FA879CA52B13A3B000B68447 /* CelestialEventScanner+FormationEventScanner.swift */,
+				FA879CB92B13B1AC00B68447 /* CelestialEventScanner+OctiveEventScanner.swift */,
+				FA879CB02B13A66900B68447 /* CelestialEventScanner+ResonanceEventScanner.swift */,
+			);
+			path = SubScanners;
+			sourceTree = "<group>";
+		};
+		FA879C9F2B13A30800B68447 /* Detectors */ = {
+			isa = PBXGroup;
+			children = (
+				FA00505D2B0BADC900540CD5 /* CelestialEventScanner+RetrogradeDetector.swift */,
+				FA3A435D2B13042700B4EED1 /* CelestialEventScanner+TransitDetector.swift */,
+				FA879CA32B13A38900B68447 /* CelestialEventScanner+AspectDetector.swift */,
+				FA4E2F402B11600F0040ADE6 /* CelestialEventScanner+FormationDetector.swift */,
+				FA879CB72B13B18900B68447 /* CelestialEventScanner+OctiveDetector.swift */,
+				FA879CAE2B13A63D00B68447 /* CelestialEventScanner+ResonanceDetector.swift */,
+			);
+			path = Detectors;
+			sourceTree = "<group>";
+		};
+		FA879CA02B13A34100B68447 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FA9C9CC82AFA92360055C93E /* CelestialEventScanner+State.swift */,
+				FA9C9CC42AFA92050055C93E /* CelestialEventScanner+SampleMode.swift */,
+				FA9C9CC22AFA91B90055C93E /* CelestialEventScanner+Error.swift */,
+				FA9C9CCE2AFA9B350055C93E /* CelestialEventScanner+Archive.swift */,
+				FA9C9CCC2AFA9AEE0055C93E /* CelestialEventScanner+Delegate.swift */,
+				FAE12E4D2A6C1432002016A3 /* CelestialEventScanner+Core.swift */,
+				FA5CF1772A7587FE006CBEB5 /* CelestialEventScanner+Results.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FA879CA72B13A43E00B68447 /* DeepScanners */ = {
+			isa = PBXGroup;
+			children = (
+				FA879CA82B13A46B00B68447 /* CelestialEventScanner+RetrogradeDeepScanner.swift */,
+				FA879CAA2B13A47E00B68447 /* CelestialEventScanner+TransitDeepScanner.swift */,
+				FA9C9CC62AFA921D0055C93E /* CelestialEventScanner+AspectDeepScanner.swift */,
+				FA879CAC2B13A49700B68447 /* CelestialEventScanner+FormationDeepScanner.swift */,
+				FA879CBB2B13B1C800B68447 /* CelestialEventScanner+OctiveDeepScanner.swift */,
+				FA879CB22B13A69E00B68447 /* CelestialEventScanner+ResonanceDeepScanner.swift */,
+			);
+			path = DeepScanners;
+			sourceTree = "<group>";
+		};
+		FA879CB42B13AA4A00B68447 /* SubEvents */ = {
+			isa = PBXGroup;
+			children = (
+				FA4E2F332B101D1C0040ADE6 /* AspectEvent.swift */,
+				FA879C9A2B139C3F00B68447 /* TransitEvent.swift */,
+				FA4E2F362B101D920040ADE6 /* RetrogradeEvent.swift */,
+				FA4E2F3A2B101E020040ADE6 /* FormationEvent.swift */,
+				FA4E2F382B101DCE0040ADE6 /* OctiveEvent.swift */,
+				FA879CB52B13AD2A00B68447 /* ResonanceEvent.swift */,
+			);
+			path = SubEvents;
+			sourceTree = "<group>";
+		};
 		FAB068F02ABA1AAC00334B1A /* About */ = {
 			isa = PBXGroup;
 			children = (
@@ -1201,27 +1364,20 @@
 			path = CreateTimeStreamComposite;
 			sourceTree = "<group>";
 		};
-		FAE12E482A6C1362002016A3 /* AspectEventScanner */ = {
+		FAE12E482A6C1362002016A3 /* CelestialEventScanner */ = {
 			isa = PBXGroup;
 			children = (
-				FAE12E492A6C1371002016A3 /* AspectEventScanner.swift */,
-				FA9C9CC82AFA92360055C93E /* AspectEventScanner+State.swift */,
-				FA9C9CCA2AFA93860055C93E /* AspectEventScanner+NodeState.swift */,
-				FA9C9CC42AFA92050055C93E /* AspectEventScanner+SampleMode.swift */,
-				FA9C9CD02AFA9B890055C93E /* AspectEventScanner+Scanner.swift */,
-				FA9C9CC62AFA921D0055C93E /* AspectEventScanner+DeepScanner.swift */,
-				FA00505D2B0BADC900540CD5 /* AspectEventScanner+RetrogradeCompensator.swift */,
-				FA9C9CC22AFA91B90055C93E /* AspectEventScanner+Error.swift */,
-				FA9C9CCE2AFA9B350055C93E /* AspectEventScanner+Archive.swift */,
-				FA9C9CCC2AFA9AEE0055C93E /* AspectEventScanner+Delegate.swift */,
-				FAE12E4D2A6C1432002016A3 /* AspectEventScannerCore.swift */,
-				FA5CF1752A757B29006CBEB5 /* AspectEventConsole.swift */,
-				FA5CF1772A7587FE006CBEB5 /* AspectEventScannerResults.swift */,
-				FA5CF1792A75881D006CBEB5 /* AspectEventExporter.swift */,
-				FA5CF17F2A7672DD006CBEB5 /* AspectEventDataArchive.swift */,
-				FA5CF1812A767A92006CBEB5 /* AspectEventScannerResultsFormatter.swift */,
+				FAE12E492A6C1371002016A3 /* CelestialEventScanner.swift */,
+				FA5CF1752A757B29006CBEB5 /* CelestialEventConsole.swift */,
+				FA5CF1792A75881D006CBEB5 /* CelestialEventExporter.swift */,
+				FA5CF17F2A7672DD006CBEB5 /* CelestialEventDataArchive.swift */,
+				FA5CF1812A767A92006CBEB5 /* CelestialEventScannerResultsFormatter.swift */,
+				FA879CA02B13A34100B68447 /* Extensions */,
+				FA879C9F2B13A30800B68447 /* Detectors */,
+				FA879C9E2B13A2F700B68447 /* SubScanners */,
+				FA879CA72B13A43E00B68447 /* DeepScanners */,
 			);
-			path = AspectEventScanner;
+			path = CelestialEventScanner;
 			sourceTree = "<group>";
 		};
 		FAEAFEB128484195001AEAE0 /* v4 Screens */ = {
@@ -1262,7 +1418,6 @@
 				FA2C449E286CEEDC009E61B2 /* TimeStreamPresetSelect.storyboard */,
 				FA2C44A0286CEEE8009E61B2 /* TimeStreamManualSelect.storyboard */,
 				FA2CC94A287E9E6E0078ECE1 /* ElementalReading.storyboard */,
-				FAFE792D2A6AD87200C56612 /* AspectEventScan.storyboard */,
 				FAFE79312A6C029400C56612 /* GeoLocationSelect.storyboard */,
 				FA5CF17B2A765666006CBEB5 /* AspectEventExport.storyboard */,
 				FAFB68A52AB8330100FEBDF4 /* TimestreamInterface.swift */,
@@ -1282,6 +1437,7 @@
 			isa = PBXGroup;
 			children = (
 				FA35C08A2849783A006114AB /* PlanetNode.swift */,
+				FA4E2F3E2B1127BD0040ADE6 /* PlanetNodeSequence.swift */,
 				FAB131142873A7E8000AD7B9 /* PlanetNodeState.swift */,
 				FAB131162873A807000AD7B9 /* PlanetNodeType.swift */,
 				FAB1311A28749B3E000AD7B9 /* PlanetNodeStateTimeline.swift */,
@@ -1295,6 +1451,7 @@
 		FAFB68A72AB8394200FEBDF4 /* v5 Screens */ = {
 			isa = PBXGroup;
 			children = (
+				FA4E2F242B0FDD520040ADE6 /* TimeMaps */,
 				FA11EDDB2B0AA8170013ECA2 /* PlanetNodesAndAspects */,
 				FA3A38CD2AD698D5008907F2 /* EnergyLevels */,
 				FAD6D6702AC2E4B9006264C8 /* CreateTimeStreamComposite */,
@@ -1327,6 +1484,8 @@
 				FAA536AA2AD84BD2005A360D /* SpectrographSettings.storyboard */,
 				FA11EDD92B0AA7D50013ECA2 /* PlanetNodesAndAspects.storyboard */,
 				FA52CE092B0AFECF002C675C /* PlanetNodes.storyboard */,
+				FAFE792D2A6AD87200C56612 /* CelestialEventScan.storyboard */,
+				FA4E2F292B0FE0B50040ADE6 /* TimeMaps.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -1450,8 +1609,9 @@
 			files = (
 				FAB069132ABDBD7E00334B1A /* Shaders.metal in Resources */,
 				FA3A38CC2AD698CA008907F2 /* EnergyLevelDetailsViewController.storyboard in Resources */,
-				FAFE792E2A6AD87200C56612 /* AspectEventScan.storyboard in Resources */,
+				FAFE792E2A6AD87200C56612 /* CelestialEventScan.storyboard in Resources */,
 				FA07C9BA254019DB00683486 /* LaunchScreen.storyboard in Resources */,
+				FA4E2F2A2B0FE0B50040ADE6 /* TimeMaps.storyboard in Resources */,
 				FA52CE0A2B0AFECF002C675C /* PlanetNodes.storyboard in Resources */,
 				FA11EDDA2B0AA7D50013ECA2 /* PlanetNodesAndAspects.storyboard in Resources */,
 				FA07C9B7254019DB00683486 /* Assets.xcassets in Resources */,
@@ -1622,8 +1782,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA879CAB2B13A47E00B68447 /* CelestialEventScanner+TransitDeepScanner.swift in Sources */,
 				FAEB27C22851D286009994B8 /* StarChartCore.swift in Sources */,
-				FAE12E4E2A6C1432002016A3 /* AspectEventScannerCore.swift in Sources */,
+				FAE12E4E2A6C1432002016A3 /* CelestialEventScanner+Core.swift in Sources */,
 				FAFB68912AB2757C00FEBDF4 /* PlanetaryPlacementsSpriteNode.swift in Sources */,
 				FA35C0972849783A006114AB /* StarChart.swift in Sources */,
 				FA33AB0F2868D66900BC9F76 /* PlanetNodeSelectCollectionViewCell.swift in Sources */,
@@ -1641,11 +1802,13 @@
 				FAFB68AA2AB8398000FEBDF4 /* TimeStreamInterfaceContainerView.swift in Sources */,
 				FA07CA4625401EBC00683486 /* UIImage+Extension.swift in Sources */,
 				FA2CB48C285FFCCE003AD95C /* TimeStreamCoreDelegate.swift in Sources */,
+				FA17BA4C2B0E974D00158735 /* DegreesPerSecond.swift in Sources */,
 				FAB1311B28749B3E000AD7B9 /* PlanetNodeStateTimeline.swift in Sources */,
 				FA35C0BF28497879006114AB /* Personology.swift in Sources */,
 				FA12D5E7289D7BA900411649 /* ResonanceReportViewController+TableViewDelegates.swift in Sources */,
 				FA07CA2225401EBB00683486 /* SelectDateViewController.swift in Sources */,
-				FA9C9CCD2AFA9AEE0055C93E /* AspectEventScanner+Delegate.swift in Sources */,
+				FA9C9CCD2AFA9AEE0055C93E /* CelestialEventScanner+Delegate.swift in Sources */,
+				FA4E2F412B11600F0040ADE6 /* CelestialEventScanner+FormationDetector.swift in Sources */,
 				FAEAFEB62848423B001AEAE0 /* TimeStreamAddTableViewCell.swift in Sources */,
 				FAB1311F2874A328000AD7B9 /* PlanetNodeStateArchive.swift in Sources */,
 				FA3A38CF2AD698E8008907F2 /* EnergyLevelDetailsViewController.swift in Sources */,
@@ -1653,18 +1816,19 @@
 				FA07CA3A25401EBC00683486 /* FindLocationViewController.swift in Sources */,
 				FA52CE082B0AFE1F002C675C /* PlanetNodesViewController.swift in Sources */,
 				FAEAFEB828489FE9001AEAE0 /* TimeStreamSettingsViewController.swift in Sources */,
-				FA9C9CCB2AFA93860055C93E /* AspectEventScanner+NodeState.swift in Sources */,
 				FAB131152873A7E8000AD7B9 /* PlanetNodeState.swift in Sources */,
-				FA9C9CC32AFA91B90055C93E /* AspectEventScanner+Error.swift in Sources */,
+				FA879C9B2B139C3F00B68447 /* TransitEvent.swift in Sources */,
+				FA9C9CC32AFA91B90055C93E /* CelestialEventScanner+Error.swift in Sources */,
 				FAB068FA2ABBEE8300334B1A /* TimeStreamSettingsViewController+TableView.swift in Sources */,
 				FA0050722B0BC90D00540CD5 /* PlanetNodeRetrogradeState.swift in Sources */,
 				FAFB688F2AB1C50700FEBDF4 /* CosmicAlignmentSpriteNode+Setup.swift in Sources */,
-				FA9C9CC72AFA921D0055C93E /* AspectEventScanner+DeepScanner.swift in Sources */,
+				FA9C9CC72AFA921D0055C93E /* CelestialEventScanner+AspectDeepScanner.swift in Sources */,
 				FA52CE112B0B0C50002C675C /* EarthGravity.swift in Sources */,
 				FA6101DB286E3CAC0000D4D5 /* TimeStreamPresetSelectViewController.swift in Sources */,
 				FA6101E72870C8800000D4D5 /* TimeStreamPresets.swift in Sources */,
 				FA1FDD4F257026F700B51BD2 /* ReadingsSubScreenPNPA.swift in Sources */,
 				FA1FDD542570270800B51BD2 /* ReadingsSubScreenEDED.swift in Sources */,
+				FA879CB32B13A69E00B68447 /* CelestialEventScanner+ResonanceDeepScanner.swift in Sources */,
 				FAB068EF2AB9702100334B1A /* TimeStreamCoreController.swift in Sources */,
 				FAFB68A22AB431F700FEBDF4 /* Zodiac+Index.swift in Sources */,
 				FA07CA2325401EBB00683486 /* ResonanceReportViewController.swift in Sources */,
@@ -1678,8 +1842,8 @@
 				FA2CB4922860F664003AD95C /* CGImage+Extension.swift in Sources */,
 				FA35C08E2849783A006114AB /* Earth+Extension.swift in Sources */,
 				FAD6D6722AC2E4DF006264C8 /* TimeStreamCompositeGenerateViewController.swift in Sources */,
-				FA9C9CC92AFA92360055C93E /* AspectEventScanner+State.swift in Sources */,
-				FA9C9CD12AFA9B890055C93E /* AspectEventScanner+Scanner.swift in Sources */,
+				FA9C9CC92AFA92360055C93E /* CelestialEventScanner+State.swift in Sources */,
+				FA9C9CD12AFA9B890055C93E /* CelestialEventScanner+AspectEventScanner.swift in Sources */,
 				FA07CA4A25401EBC00683486 /* SpriteKit+Extension.swift in Sources */,
 				FA6101CD286D73AA0000D4D5 /* StarChartSelectViewController.swift in Sources */,
 				FA07CA3925401EBC00683486 /* MainViewController.swift in Sources */,
@@ -1689,10 +1853,11 @@
 				FAFB68A02AB431E500FEBDF4 /* Decan+Index.swift in Sources */,
 				FAEB27C828527AAC009994B8 /* Data+Extension.swift in Sources */,
 				FA35C0D82849A840006114AB /* TimeStreamView.swift in Sources */,
-				FA5CF17A2A75881D006CBEB5 /* AspectEventExporter.swift in Sources */,
+				FA5CF17A2A75881D006CBEB5 /* CelestialEventExporter.swift in Sources */,
 				FAEB2795284D12DA009994B8 /* TimeStreamAddNewCompositeTableViewCell.swift in Sources */,
+				FA879CB62B13AD2A00B68447 /* ResonanceEvent.swift in Sources */,
 				FAB1311D2874A319000AD7B9 /* PlanetNodeStateRegistry.swift in Sources */,
-				FA5CF1762A757B29006CBEB5 /* AspectEventConsole.swift in Sources */,
+				FA5CF1762A757B29006CBEB5 /* CelestialEventConsole.swift in Sources */,
 				FA35C08F2849783A006114AB /* JulianDay+Extension.swift in Sources */,
 				FA35C0932849783A006114AB /* ResonanceScore.swift in Sources */,
 				FA0050682B0BB3E200540CD5 /* CoreAstrology+AspectBody.swift in Sources */,
@@ -1704,59 +1869,70 @@
 				FA4D1B8F2561FCA00043DE9F /* ControlsScreen.swift in Sources */,
 				FA2CC94D287F797F0078ECE1 /* UIViewController+Extension.swift in Sources */,
 				FA35C0992849783A006114AB /* StarChartSprite.swift in Sources */,
-				FA00506C2B0BB5AF00540CD5 /* CoreAstrology+CelestialEvent.swift in Sources */,
+				FA00506C2B0BB5AF00540CD5 /* CelestialEvent.swift in Sources */,
 				FA2CB4962862A9C7003AD95C /* CosmicCypherInstructionsViewController.swift in Sources */,
 				FA07C9B2254019D800683486 /* ViewController.swift in Sources */,
 				FA07C9AE254019D800683486 /* AppDelegate.swift in Sources */,
 				FA35C0DD2849A840006114AB /* TimeStreamGeometryType.swift in Sources */,
 				FA11EDE32B0ACD1D0013ECA2 /* Zodiac+Text.swift in Sources */,
-				FA9C9CC52AFA92050055C93E /* AspectEventScanner+SampleMode.swift in Sources */,
+				FA9C9CC52AFA92050055C93E /* CelestialEventScanner+SampleMode.swift in Sources */,
 				FAEB27A7284E81CF009994B8 /* StarChart+Codable.swift in Sources */,
 				FA07CA2625401EBB00683486 /* SetDateViewController.swift in Sources */,
+				FA4E2F392B101DCE0040ADE6 /* OctiveEvent.swift in Sources */,
 				FA2C449328696071009E61B2 /* StarChartCoreReactive.swift in Sources */,
 				FA33AB0C2866760700BC9F76 /* CosmicAlignmentSpriteNode.swift in Sources */,
 				FAFB68A62AB8330100FEBDF4 /* TimestreamInterface.swift in Sources */,
 				FA35C0912849783A006114AB /* TextureGeneration.swift in Sources */,
+				FA879CB12B13A66900B68447 /* CelestialEventScanner+ResonanceEventScanner.swift in Sources */,
 				FAFE79302A6BE85B00C56612 /* GeoLocationAndTimeSelectViewController.swift in Sources */,
+				FA3A435E2B13042700B4EED1 /* CelestialEventScanner+TransitDetector.swift in Sources */,
 				FAEB27B52850C0A4009994B8 /* TimeStreamCompositeGenerator.swift in Sources */,
 				FA35C0E9284A60A2006114AB /* TimeStreamCompositeSpriteNode.swift in Sources */,
 				FA07CA3825401EBC00683486 /* ResultHistoryTableViewCell.swift in Sources */,
 				FA0050702B0BB62700540CD5 /* CoreAstrology+AspectType.swift in Sources */,
 				FA4D1B8A2561FBFE0043DE9F /* TimeStreamDisplayScreen.swift in Sources */,
 				FAEB27A3284E753B009994B8 /* TimeStreamPath.swift in Sources */,
+				FA879CBC2B13B1C800B68447 /* CelestialEventScanner+OctiveDeepScanner.swift in Sources */,
+				FA4E2F262B0FDD6E0040ADE6 /* TimeMapTableViewController.swift in Sources */,
 				FA3A38CA2ACE4AC9008907F2 /* MTLTexture+Extensions.swift in Sources */,
 				FA07CA2025401EBB00683486 /* Assets.swift in Sources */,
 				FA35C09E2849783A006114AB /* Time.swift in Sources */,
 				FA1FDD98257A0A3A00B51BD2 /* SpriteNodeCosmicEvent.swift in Sources */,
+				FA4E2F342B101D1C0040ADE6 /* AspectEvent.swift in Sources */,
 				FA35C0962849783A006114AB /* PlanetaryHarmonics.swift in Sources */,
 				FAB069012ABC911E00334B1A /* TimeStreamMetalRenderer.swift in Sources */,
 				FA35C0AE2849783A006114AB /* PlanetNode.swift in Sources */,
-				FAFE792C2A6AD84000C56612 /* AspectEventScanViewController.swift in Sources */,
+				FAFE792C2A6AD84000C56612 /* CelestialEventScanViewController.swift in Sources */,
 				FAFB68942AB2817A00FEBDF4 /* PlanetSpriteNode.swift in Sources */,
 				FAFB68A42AB664B600FEBDF4 /* ResonanceReportViewController+CosmicDisk.swift in Sources */,
 				FA00506E2B0BB60B00540CD5 /* CoreAstrology+Vector3.swift in Sources */,
 				FA00506A2B0BB40B00540CD5 /* CoreAstrology+GravimetricTensor.swift in Sources */,
 				FA33AAFB2864E12E00BC9F76 /* Settings.swift in Sources */,
 				FAD6D6672ABF15EB006264C8 /* TimeStreamSpectrogramView.swift in Sources */,
+				FA879CAF2B13A63D00B68447 /* CelestialEventScanner+ResonanceDetector.swift in Sources */,
 				FA07CA4525401EBC00683486 /* Date+Extension.swift in Sources */,
+				FA4E2F3F2B1127BD0040ADE6 /* PlanetNodeSequence.swift in Sources */,
 				FAEAFEBA28492595001AEAE0 /* EditTimeStreamViewController.swift in Sources */,
-				FA5CF1782A7587FE006CBEB5 /* AspectEventScannerResults.swift in Sources */,
+				FA5CF1782A7587FE006CBEB5 /* CelestialEventScanner+Results.swift in Sources */,
 				FA33AB112868D79900BC9F76 /* AspectSelectCollectionViewCell.swift in Sources */,
 				FAB79EF82ADBD0B500F754AC /* TimeStreamInterfaceCursorView.swift in Sources */,
 				FA6101D3286D73D70000D4D5 /* OffgridGeoLocationSelectViewController.swift in Sources */,
 				FA1FDD92257969E500B51BD2 /* ElementalReadingViewController.swift in Sources */,
 				FA2CB4882859F77B003AD95C /* TimeStreamColorRenderMode.swift in Sources */,
 				FA35C0C228497879006114AB /* Chevron.swift in Sources */,
+				FA879CA92B13A46B00B68447 /* CelestialEventScanner+RetrogradeDeepScanner.swift in Sources */,
 				FA12D5ED289D7CE600411649 /* ResonanceReportViewController+UIControls.swift in Sources */,
 				FA35C0D52849A840006114AB /* TimeStreamSceneView.swift in Sources */,
 				FA33AB01286557D800BC9F76 /* PlanetSelect.swift in Sources */,
 				FAEAFEB4284841CC001AEAE0 /* TimeStreamTableViewCell.swift in Sources */,
 				FA35C09A2849783A006114AB /* StarChartGenerator.swift in Sources */,
 				FAEB27BC2851CB2D009994B8 /* Model.xcdatamodeld in Sources */,
+				FA4E2F312B1010DD0040ADE6 /* TimeLine.swift in Sources */,
+				FA4E2F282B0FDE6A0040ADE6 /* TimeMapTableViewCell.swift in Sources */,
 				FAEB27A5284E7F44009994B8 /* SwiftAA+Codable.swift in Sources */,
 				FA35C0DB2849A840006114AB /* TimeStreamGeometry.swift in Sources */,
 				FAB068F82ABB9F3B00334B1A /* StarChartRealTimePlaybackController.swift in Sources */,
-				FA9C9CCF2AFA9B350055C93E /* AspectEventScanner+Archive.swift in Sources */,
+				FA9C9CCF2AFA9B350055C93E /* CelestialEventScanner+Archive.swift in Sources */,
 				FA35C0DA2849A840006114AB /* TimeStreamMaterialType.swift in Sources */,
 				FAEB27CC28572DFB009994B8 /* SKSpriteNode+Extension.swift in Sources */,
 				FA35C0D92849A840006114AB /* TimeStreamNode.swift in Sources */,
@@ -1772,6 +1948,8 @@
 				FA35C0AA2849783A006114AB /* TimeStreamImageStrip.swift in Sources */,
 				FA6101E32870B0F10000D4D5 /* TimeStreamChartTableViewCell.swift in Sources */,
 				FAFB688D2AB1C4CC00FEBDF4 /* CosmicAlignmentSpriteNode+Images.swift in Sources */,
+				FA4E2F372B101D920040ADE6 /* RetrogradeEvent.swift in Sources */,
+				FA879CAD2B13A49700B68447 /* CelestialEventScanner+FormationDeepScanner.swift in Sources */,
 				FAEB27CA285612DC009994B8 /* TimeStreamConfiguration.swift in Sources */,
 				FA1FDD452570262700B51BD2 /* ReadingsSubScreenCOEH.swift in Sources */,
 				FAEB2797284D12EC009994B8 /* TimeStreamAddNewConfigurationTableViewCell.swift in Sources */,
@@ -1785,6 +1963,7 @@
 				FA35C0DC2849A840006114AB /* TimeStreamMaterial.swift in Sources */,
 				FA11EDE12B0AAA490013ECA2 /* AspectCollectionViewCell.swift in Sources */,
 				FA07CA4725401EBC00683486 /* SceneKit+Extension.swift in Sources */,
+				FA879CA62B13A3B000B68447 /* CelestialEventScanner+FormationEventScanner.swift in Sources */,
 				FA2CB48E2860EC4F003AD95C /* CIFilter+Extension.swift in Sources */,
 				FA2C449728697B9F009E61B2 /* StarChartComposite.swift in Sources */,
 				FA07C9B0254019D800683486 /* SceneDelegate.swift in Sources */,
@@ -1804,9 +1983,11 @@
 				FAA536AD2AD84BEE005A360D /* SpectrographSettingsViewController.swift in Sources */,
 				FA07CA4925401EBC00683486 /* Dictionary+Extension.swift in Sources */,
 				FA6101D9286E3C9D0000D4D5 /* TimeStreamManualSelectViewController.swift in Sources */,
+				FA879C9D2B13A20000B68447 /* CelestialEventScanner+TransitEventScanner.swift in Sources */,
 				FA1FDD4A257026CA00B51BD2 /* ReadingsSubScreenSSSB.swift in Sources */,
 				FA35C0C128497879006114AB /* Zodiac.swift in Sources */,
 				FA6101E12870AE8E0000D4D5 /* TimeStreamChart.swift in Sources */,
+				FA4E2F2D2B0FE1EA0040ADE6 /* TimeMap.swift in Sources */,
 				FA35C0BD28497879006114AB /* Natura.swift in Sources */,
 				FA35C0AC2849783A006114AB /* AstrologyCompositeAlignment.swift in Sources */,
 				FAD6D6652ABEE914006264C8 /* TimeStreamPixelDrawer.swift in Sources */,
@@ -1823,39 +2004,46 @@
 				FAFB68982AB2A80400FEBDF4 /* AspectLineSpriteNode.swift in Sources */,
 				FA07CA2525401EBB00683486 /* ResonanceReportTableViewCell.swift in Sources */,
 				FAEB27C02851D21D009994B8 /* Codable+Extension.swift in Sources */,
+				FA4E2F3B2B101E020040ADE6 /* FormationEvent.swift in Sources */,
 				FAEB279F284E5668009994B8 /* TimeStreamRegistry.swift in Sources */,
 				FA35C0BC28497879006114AB /* Color.swift in Sources */,
 				FA35C09C2849783A006114AB /* Regex.swift in Sources */,
 				FAEB27AB284EA1E0009994B8 /* SwiftAA+Hashable.swift in Sources */,
 				FAEB27A9284E9DA9009994B8 /* TimeStreamGenerator.swift in Sources */,
 				FAD6D6632ABECB2F006264C8 /* TimeStreamFrameBuffer.swift in Sources */,
-				FAE12E4A2A6C1371002016A3 /* AspectEventScanner.swift in Sources */,
-				FA5CF17E2A765DE7006CBEB5 /* AspectEventExportViewController.swift in Sources */,
-				FA00505E2B0BADC900540CD5 /* AspectEventScanner+RetrogradeCompensator.swift in Sources */,
+				FAE12E4A2A6C1371002016A3 /* CelestialEventScanner.swift in Sources */,
+				FA5CF17E2A765DE7006CBEB5 /* CelestialEventExportViewController.swift in Sources */,
+				FA00505E2B0BADC900540CD5 /* CelestialEventScanner+RetrogradeDetector.swift in Sources */,
 				FA07CA3B25401EBC00683486 /* ResultTableViewCell.swift in Sources */,
 				FA11EDDF2B0AA9F40013ECA2 /* PlanetNodeCollectionViewCell.swift in Sources */,
 				FA33AAFF2864E1A000BC9F76 /* SettingsViewController.swift in Sources */,
-				FA5CF1802A7672DD006CBEB5 /* AspectEventDataArchive.swift in Sources */,
+				FA5CF1802A7672DD006CBEB5 /* CelestialEventDataArchive.swift in Sources */,
+				FA879C932B1380E400B68447 /* CelestialEventType.swift in Sources */,
 				FAFB68B42AB93C9400FEBDF4 /* TimeStreamInterfaceViewController.swift in Sources */,
 				FA35C0C5284979DB006114AB /* StarKitImage.swift in Sources */,
 				FA07CA4825401EBC00683486 /* String+Extension.swift in Sources */,
 				FAEB27AF284FC51B009994B8 /* StarChartArchive.swift in Sources */,
-				FA5CF1822A767A92006CBEB5 /* AspectEventScannerResultsFormatter.swift in Sources */,
+				FA5CF1822A767A92006CBEB5 /* CelestialEventScannerResultsFormatter.swift in Sources */,
 				FA11EDDD2B0AA82A0013ECA2 /* PlanetNodesAndAspectsViewController.swift in Sources */,
 				FA35C0D62849A840006114AB /* TimeStreamScene.swift in Sources */,
 				FA6101CF286D73B70000D4D5 /* TimeStreamSelectViewController.swift in Sources */,
+				FA4E2F2F2B0FE8AB0040ADE6 /* TimeWindow.swift in Sources */,
 				FA3A38C82ACCFF1A008907F2 /* TimeStreamSpectrogramShader.swift in Sources */,
 				FAB069092ABCF6DC00334B1A /* ImageDataConverter.swift in Sources */,
 				FAD6D6782AC2E51A006264C8 /* StarChartCreateViewController.swift in Sources */,
 				FA52CE0F2B0B08E7002C675C /* PoundForce.swift in Sources */,
+				FA879CA22B13A37300B68447 /* CelestialEventScanner+RetrogradeEventScanner.swift in Sources */,
 				FA35C0E32849A984006114AB /* SCNGeometryExtension.swift in Sources */,
 				FAE12E472A6C0921002016A3 /* OnlineGeoLocationSelectViewController.swift in Sources */,
+				FA879CBA2B13B1AC00B68447 /* CelestialEventScanner+OctiveEventScanner.swift in Sources */,
 				FA35C0AF2849783A006114AB /* Ayanamsa.swift in Sources */,
 				FA52CE132B0B0F7C002C675C /* GravitationalAcceleration.swift in Sources */,
 				FA6101D5286D73E80000D4D5 /* OnlineGeoLocationAndTimeSelectViewController.swift in Sources */,
 				FA35C0D72849A840006114AB /* TimeStream.swift in Sources */,
 				FA6101E52870C4C00000D4D5 /* TimeStreamPresetTableViewCell.swift in Sources */,
+				FA879CB82B13B18900B68447 /* CelestialEventScanner+OctiveDetector.swift in Sources */,
 				FA35C09B2849783A006114AB /* StarChart+ChartData.swift in Sources */,
+				FA879CA42B13A38900B68447 /* CelestialEventScanner+AspectDetector.swift in Sources */,
 				FAEB2799284D16CC009994B8 /* UITableView+Extension.swift in Sources */,
 				FA12D5EB289D7C6F00411649 /* ResonanceReportViewController+DiscernmentChart.swift in Sources */,
 				FAFB68AF2AB930D000FEBDF4 /* TimeStreamInterfaceView.swift in Sources */,

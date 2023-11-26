@@ -32,7 +32,7 @@ class OnlineGeoLocationSelectViewController: UIViewController, UISearchBarDelega
     @IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
     @IBOutlet weak var selectDateButton: UIButton!
     
-    var dataMode:DataMode = .aspectEventScannerCore
+    var dataMode:DataMode = .celestialEventScannerCore
     
     var searchController:UISearchController? = nil
     var annotation:MKAnnotation? = nil
@@ -202,9 +202,9 @@ class OnlineGeoLocationSelectViewController: UIViewController, UISearchBarDelega
             long = longitude
         } else {
             switch dataMode {
-            case .aspectEventScannerCore:
-                lat = AspectEventScanner.Core.coordinates.location.coordinate.latitude
-                long = AspectEventScanner.Core.coordinates.location.coordinate.longitude
+            case .celestialEventScannerCore:
+                lat = CelestialEventScanner.Core.coordinates.location.coordinate.latitude
+                long = CelestialEventScanner.Core.coordinates.location.coordinate.longitude
             case .starChartCore:
                 lat = StarChart.Core.current.coordinates.location.coordinate.latitude
                 long = StarChart.Core.current.coordinates.location.coordinate.longitude
@@ -221,8 +221,8 @@ class OnlineGeoLocationSelectViewController: UIViewController, UISearchBarDelega
         print(cityTitle)
         
         switch dataMode {
-        case .aspectEventScannerCore:
-            AspectEventScanner.Core.coordinates = coordinates
+        case .celestialEventScannerCore:
+            CelestialEventScanner.Core.coordinates = coordinates
         case .starChartCore:
             let timeZoneDate = StarChart.Core.current.date
             StarChart.Core.current = try! StarChartRegistry.main.getStarChart(date: timeZoneDate, geographicCoordinates: coordinates, onComplete: { starChart in
@@ -235,13 +235,13 @@ class OnlineGeoLocationSelectViewController: UIViewController, UISearchBarDelega
 
 extension OnlineGeoLocationSelectViewController {
     enum DataMode {
-        case aspectEventScannerCore
+        case celestialEventScannerCore
         case starChartCore
     }
                 
     func modeFor(_ object:AnyObject) -> OnlineGeoLocationSelectViewController.DataMode {
-        if object is AspectEventScanner.Core {
-            return .aspectEventScannerCore
+        if object is CelestialEventScanner.Core {
+            return .celestialEventScannerCore
         } else {
             return .starChartCore
         }

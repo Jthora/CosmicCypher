@@ -107,8 +107,8 @@ class PlanetNodeCollectionViewCell: UICollectionViewCell {
         switch selectionContext {
         case .starChart:
             planetSelected = StarChart.Core.selectedNodeTypes.contains(planet)
-        case .aspectScanner:
-            planetSelected = AspectEventScanner.Core.planetsAndNodes.contains(planet)
+        case .scanner:
+            planetSelected = CelestialEventScanner.Core.planetsAndNodes.contains(planet)
         }
         
         guard let planetNode = planetNode,
@@ -186,14 +186,14 @@ class PlanetNodeCollectionViewCell: UICollectionViewCell {
                     }
                 }
             }
-        case .aspectScanner:
+        case .scanner:
             if planetSelected {
-                if !AspectEventScanner.Core.planetsAndNodes.contains(planet) {
-                    AspectEventScanner.Core.planetsAndNodes.append(planet)
+                if !CelestialEventScanner.Core.planetsAndNodes.contains(planet) {
+                    CelestialEventScanner.Core.planetsAndNodes.append(planet)
                 }
             } else {
-                if AspectEventScanner.Core.planetsAndNodes.contains(planet) {
-                    AspectEventScanner.Core.planetsAndNodes.removeAll { planetType in
+                if CelestialEventScanner.Core.planetsAndNodes.contains(planet) {
+                    CelestialEventScanner.Core.planetsAndNodes.removeAll { planetType in
                         planet == planetType
                     }
                 }

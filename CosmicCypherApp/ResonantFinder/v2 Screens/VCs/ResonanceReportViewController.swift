@@ -268,7 +268,7 @@ class ResonanceReportViewController: UIViewController {
     // MARK: Buttons
     @IBAction func aspectEventScannerButtonTouch(_ sender: UIButton) {
         //TimeStreamSettingsViewController.presentModally(over: self)
-        AspectEventScanViewController.presentModally(over: self)
+        CelestialEventScanViewController.presentModally(over: self)
     }
     
     @IBAction func instructionsButtonTouch(_ sender: UIButton) {
@@ -297,21 +297,21 @@ class ResonanceReportViewController: UIViewController {
     // Share Button
     @IBAction func shareButtonTouch(_ sender: UIButton) {
         DispatchQueue.main.async {
-            // Set the default sharing message.
+            /// Sharing Message.
             let message = "Cosmic Cypher App"
             let link = NSURL(string: "https://cosmiccypher.app/")
-            // Screenshot:
+            /// Screenshot:
             UIGraphicsBeginImageContextWithOptions(self.view.frame.size, true, 0.0)
             self.view.drawHierarchy(in: self.view.frame, afterScreenUpdates: false)
             let img = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
 
-            // Set the link, message, image to share.
+            /// Set the link, message, image to share.
             if let link = link, let img = img {
                 let objectsToShare = [message, link, img] as [Any]
                 let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
 
-                // Check if the device is an iPad and set the sourceView and sourceRect properties accordingly.
+                /// Check if the device is an iPad and set the sourceView and sourceRect properties accordingly.
                 if let popoverPresentationController = activityVC.popoverPresentationController {
                     popoverPresentationController.sourceView = self.view
                     popoverPresentationController.sourceRect = sender.frame
@@ -327,7 +327,7 @@ class ResonanceReportViewController: UIViewController {
     
     // About Button
     @IBAction func aboutButtonTouch(_ sender: UIButton) {
-        // Present About Page
+        /// Present About Page
         AboutPageViewController.present(from: self)
     }
     

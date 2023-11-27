@@ -320,5 +320,53 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "37A918B1-439E-4B61-889A-EDD45772A932"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ResonantFinder/v4 Screens/ViewControllers/CelestialEventScanViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "284"
+            endingLineNumber = "284"
+            landmarkName = "optionsMenuButtonTouch(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "37A918B1-439E-4B61-889A-EDD45772A932 - f71bfa79cebfe4b4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CosmicCypher.CelestialEventScanViewController.deepScanSwitchChanged(__C.UISwitch) -&gt; ()"
+                  moduleName = "CosmicCypher"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jordantrana/Documents/gitProjects/CosmicCypher/CosmicCypherApp/ResonantFinder/v4%20Screens/ViewControllers/CelestialEventScanViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "285"
+                  endingLineNumber = "285"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "37A918B1-439E-4B61-889A-EDD45772A932 - 41e68b9363577d98"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CosmicCypher.CelestialEventScanViewController.optionsMenuButtonTouch(__C.UIButton) -&gt; ()"
+                  moduleName = "CosmicCypher"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jordantrana/Documents/gitProjects/CosmicCypher/CosmicCypherApp/ResonantFinder/v4%20Screens/ViewControllers/CelestialEventScanViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "285"
+                  endingLineNumber = "285"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

@@ -18,6 +18,9 @@ extension CoreAstrology {
         case octive(_ type: OctiveEvent.OctiveType)
         case resonance(_ type:ResonanceEventType)
         
+        static func systemImage(_ type:CelestialEventType) -> UIImage {
+            return type.systemImage
+        }
         var systemImage:UIImage {
             switch self {
             case .aspect(_): return UIImage(systemName: "point.3.connected.trianglepath.dotted")!
@@ -29,6 +32,9 @@ extension CoreAstrology {
             }
         }
         
+        static func menuItemTitle(_ type:CelestialEventType) -> String {
+            return type.menuItemTitle
+        }
         var menuItemTitle:String {
             switch self {
             case .retrograde(_): return "Retrograde"

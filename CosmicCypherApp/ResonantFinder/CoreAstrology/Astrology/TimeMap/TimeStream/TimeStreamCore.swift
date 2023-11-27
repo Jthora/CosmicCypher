@@ -19,7 +19,7 @@ extension TimeStream {
                 reloadComposites()
             } else {
                 print("Initial Activation: New Install")
-                saveAllDefaultComposites()
+                //saveAllDefaultComposites()
                 UserDefaults.standard.set(true, forKey: _secretInitCompleteKey)
             }
         }

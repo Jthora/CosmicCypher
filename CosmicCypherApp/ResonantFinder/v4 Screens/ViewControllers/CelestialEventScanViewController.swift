@@ -94,6 +94,7 @@ class CelestialEventScanViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateUI()
+        setupOptionButton()
     }
     
     func updateUI() {
@@ -114,43 +115,113 @@ class CelestialEventScanViewController: UIViewController {
     
     // MARK: Setup Options
     // Setup Option Buttons
+    var retrogradeMenuItemAction:UIAction? = nil
+    var transitMenuItemAction:UIAction? = nil
+    var aspectMenuItemAction:UIAction? = nil
+    var formationMenuItemAction:UIAction? = nil
+    var octiveMenuItemAction:UIAction? = nil
+    var resonanceMenuItemAction:UIAction? = nil
+    
     func setupOptionButton() {
-        // drop down for Chart Data Mode Select
+        retrogradeMenuItemAction = UIAction(title: CoreAstrology.CelestialEventType.menuItemTitle(.retrograde(.stationary)),
+                                            image: CoreAstrology.CelestialEventType.systemImage(.retrograde(.stationary)),
+                                            state: CelestialEventScanner.Core.retrogradeScanEnabled ? .on : .off,
+                                            handler:toggleRetrogradeScan)
+        transitMenuItemAction = UIAction(title: CoreAstrology.CelestialEventType.menuItemTitle(.transit(.zodiac(.aries))),
+                                         image: CoreAstrology.CelestialEventType.systemImage(.transit(.zodiac(.aries))),
+                                         state: CelestialEventScanner.Core.transitScanEnabled ? .on : .off,
+                                         handler:toggleTransitScan)
+        aspectMenuItemAction = UIAction(title: CoreAstrology.CelestialEventType.menuItemTitle(.aspect(.conjunction)),
+                                        image: CoreAstrology.CelestialEventType.systemImage(.aspect(.conjunction)),
+                                        state: CelestialEventScanner.Core.aspectScanEnabled ? .on : .off,
+                                        handler:toggleAspectScan)
+        formationMenuItemAction = UIAction(title: CoreAstrology.CelestialEventType.menuItemTitle(.formation(.grandTrine)),
+                                           image: CoreAstrology.CelestialEventType.systemImage(.formation(.grandTrine)),
+                                           state: CelestialEventScanner.Core.formationScanEnabled ? .on : .off,
+                                           handler:toggleFormationScan)
+        octiveMenuItemAction = UIAction(title: CoreAstrology.CelestialEventType.menuItemTitle(.octive(.triangle)),
+                                        image: CoreAstrology.CelestialEventType.systemImage(.octive(.triangle)),
+                                        state: CelestialEventScanner.Core.octiveScanEnabled ? .on : .off,
+                                        handler:toggleOctiveScan)
+        resonanceMenuItemAction = UIAction(title: CoreAstrology.CelestialEventType.menuItemTitle(.resonance(.harmonics(.global))),
+                                           image: CoreAstrology.CelestialEventType.systemImage(.resonance(.harmonics(.global))),
+                                           state: CelestialEventScanner.Core.resonanceScanEnabled ? .on : .off,
+                                           handler:toggleResonanceScan)
+        updateMenus()
+    }
+    
+    func updateMenus() {
         
-        let menu = UIMenu(children: [
-            UIAction(title: "Retrogrades", handler:toggleRetrogradeScan)])
+        var menuActions = [UIAction]()
+        if let retrogradeMenuItemAction = retrogradeMenuItemAction { menuActions.append(retrogradeMenuItemAction) }
+        if let transitMenuItemAction = transitMenuItemAction { menuActions.append(transitMenuItemAction) }
+        if let aspectMenuItemAction = aspectMenuItemAction { menuActions.append(aspectMenuItemAction) }
+        if let formationMenuItemAction = formationMenuItemAction { menuActions.append(formationMenuItemAction) }
+        if let octiveMenuItemAction = octiveMenuItemAction { menuActions.append(octiveMenuItemAction) }
+        if let resonanceMenuItemAction = resonanceMenuItemAction { menuActions.append(resonanceMenuItemAction) }
+        
+        // drop down for Chart Data Mode Select
+        let menu = UIMenu(title: "Sub Scan Options",
+                          options: [],
+                          children: menuActions)
         optionsMenuButton.menu = menu
     }
     
+    
     // MARK: Scan Option Toggle Functions
     // Retrograde Scan Option
-    func toggleRetrogradeScan(action: UIAction) {
-        CelestialEventScanner.Core.retrogradeScanEnabled = action.state == .on
+    func toggleRetrogradeScan(action: UIAction) -> Void {
+        DispatchQueue.main.async {
+            CelestialEventScanner.Core.retrogradeScanEnabled.toggle()
+            self.retrogradeMenuItemAction?.state = CelestialEventScanner.Core.retrogradeScanEnabled ? .on : .off
+            self.updateMenus()
+        }
+    }
+    
+    // Transit Scan Option
+    func toggleTransitScan(action: UIAction) {
+        DispatchQueue.main.async {
+            CelestialEventScanner.Core.transitScanEnabled.toggle()
+            self.transitMenuItemAction?.state = CelestialEventScanner.Core.transitScanEnabled ? .on : .off
+            self.updateMenus()
+        }
     }
     
     // Aspect Scan Option
     func toggleAspectScan(action: UIAction) {
-        CelestialEventScanner.Core.aspectScanEnabled = action.state == .on
+        DispatchQueue.main.async {
+            CelestialEventScanner.Core.aspectScanEnabled.toggle()
+            self.aspectMenuItemAction?.state = CelestialEventScanner.Core.aspectScanEnabled ? .on : .off
+            self.updateMenus()
+        }
     }
     
-    // Retrograde Scan Option
-    func toggleTransitScan(action: UIAction) {
-        CelestialEventScanner.Core.transitScanEnabled = action.state == .on
-    }
-    
-    // Retrograde Scan Option
+    // Formation Scan Option
     func toggleFormationScan(action: UIAction) {
-        CelestialEventScanner.Core.formationScanEnabled = action.state == .on
+        DispatchQueue.main.async {
+            CelestialEventScanner.Core.formationScanEnabled.toggle()
+            self.formationMenuItemAction?.state = CelestialEventScanner.Core.formationScanEnabled ? .on : .off
+            self.updateMenus()
+        }
     }
     
-    // Retrograde Scan Option
+    // Octive Scan Option
     func toggleOctiveScan(action: UIAction) {
-        CelestialEventScanner.Core.octiveScanEnabled = action.state == .on
+        DispatchQueue.main.async {
+            CelestialEventScanner.Core.octiveScanEnabled.toggle()
+            self.octiveMenuItemAction?.state = CelestialEventScanner.Core.octiveScanEnabled ? .on : .off
+            self.updateMenus()
+        }
     }
-    // Retrograde Scan Option
+    // Resonance Scan Option
     func toggleResonanceScan(action: UIAction) {
-        CelestialEventScanner.Core.resonanceScanEnabled = action.state == .on
+        DispatchQueue.main.async {
+            CelestialEventScanner.Core.resonanceScanEnabled.toggle()
+            self.resonanceMenuItemAction?.state = CelestialEventScanner.Core.resonanceScanEnabled ? .on : .off
+            self.updateMenus()
+        }
     }
+    
     
     // MARK: IBAction Button Press Responders
     // Start Date Picker

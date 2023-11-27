@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
@@ -40,7 +41,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Console" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r2K-V3-XDR">
-                                        <rect key="frame" x="8" y="607" width="68" height="16"/>
+                                        <rect key="frame" x="7.9999999999999964" y="603" width="62.666666666666657" height="20"/>
                                         <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -77,7 +78,7 @@
                                         </connections>
                                     </button>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Qa3-hC-0xs">
-                                        <rect key="frame" x="8" y="520" width="149" height="32"/>
+                                        <rect key="frame" x="8" y="516" width="149" height="32"/>
                                         <segments>
                                             <segment title="Min"/>
                                             <segment title="Hour"/>
@@ -88,34 +89,34 @@
                                         </connections>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sample Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yon-8F-Cv5">
-                                        <rect key="frame" x="8" y="504" width="115" height="16"/>
+                                        <rect key="frame" x="8" y="496" width="106.33333333333333" height="20"/>
                                         <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sc4-NV-kEr">
-                                        <rect key="frame" x="8" y="36" width="345" height="128"/>
+                                        <rect key="frame" x="8" y="36" width="345" height="136"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wE-0M-5SK">
-                                                <rect key="frame" x="8" y="8" width="337" height="16"/>
+                                                <rect key="frame" x="8" y="8" width="337" height="20"/>
                                                 <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <datePicker contentMode="left" contentHorizontalAlignment="leading" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="koM-7G-jqp">
-                                                <rect key="frame" x="0.0" y="24" width="345" height="36"/>
+                                                <rect key="frame" x="0.0" y="28" width="345" height="36"/>
                                                 <connections>
                                                     <action selector="startDatePickerDidChange:" destination="Y6W-OH-hqX" eventType="valueChanged" id="HKS-PO-FaG"/>
                                                 </connections>
                                             </datePicker>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Bb-Ew-pis">
-                                                <rect key="frame" x="8" y="68" width="337" height="16"/>
+                                                <rect key="frame" x="8" y="72" width="337" height="20"/>
                                                 <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <datePicker contentMode="left" contentHorizontalAlignment="leading" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="nIV-qB-R0l">
-                                                <rect key="frame" x="0.0" y="84" width="345" height="36"/>
+                                                <rect key="frame" x="0.0" y="92" width="345" height="36"/>
                                                 <connections>
                                                     <action selector="endDatePickerDidChange:" destination="Y6W-OH-hqX" eventType="valueChanged" id="HbX-CL-TnC"/>
                                                 </connections>
@@ -139,10 +140,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nDG-fQ-SoK">
-                                        <rect key="frame" x="8" y="172" width="345" height="101"/>
+                                        <rect key="frame" x="8" y="180" width="345" height="105"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="otC-82-JVz">
-                                                <rect key="frame" x="20" y="8" width="305" height="31"/>
+                                                <rect key="frame" x="20" y="8" width="305" height="35"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Longitude and Latitude">
                                                     <fontDescription key="titleFontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="18"/>
@@ -152,7 +153,7 @@
                                                 </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hgc-S0-SMD">
-                                                <rect key="frame" x="187" y="47" width="138" height="34"/>
+                                                <rect key="frame" x="187" y="51" width="138" height="34"/>
                                                 <fontDescription key="fontDescription" name="Iceberg-Regular" family="Iceberg" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                 <connections>
@@ -160,7 +161,7 @@
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vWB-tD-BRz">
-                                                <rect key="frame" x="20" y="47" width="138" height="34"/>
+                                                <rect key="frame" x="20" y="51" width="138" height="34"/>
                                                 <fontDescription key="fontDescription" name="Iceberg-Regular" family="Iceberg" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                 <connections>
@@ -183,10 +184,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mlc-Uv-t8C">
-                                        <rect key="frame" x="8" y="281" width="345" height="118.66666666666669"/>
+                                        <rect key="frame" x="8" y="293" width="345" height="122.66666666666669"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vyJ-SQ-pMr">
-                                                <rect key="frame" x="8" y="8" width="329" height="31"/>
+                                                <rect key="frame" x="8" y="8" width="329" height="35"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Planet Nodes and Aspect Angles">
                                                     <fontDescription key="titleFontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="18"/>
@@ -196,7 +197,7 @@
                                                 </connections>
                                             </button>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Planet Nodes" textAlignment="natural" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MGC-p3-76C">
-                                                <rect key="frame" x="8" y="47" width="155.33333333333334" height="51.666666666666657"/>
+                                                <rect key="frame" x="8" y="51" width="155.33333333333334" height="51.666666666666657"/>
                                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="MGC-p3-76C" secondAttribute="height" multiplier="3:1" id="Xs8-ey-HdY"/>
@@ -214,7 +215,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Aspect Angles" textAlignment="natural" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1X7-QP-cf9">
-                                                <rect key="frame" x="181.66666666666663" y="47" width="155.33333333333337" height="51.666666666666657"/>
+                                                <rect key="frame" x="181.66666666666663" y="51" width="155.33333333333337" height="51.666666666666657"/>
                                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="1X7-QP-cf9" secondAttribute="height" multiplier="3:1" id="0AB-SL-7if"/>
@@ -247,13 +248,13 @@
                                         </constraints>
                                     </view>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IQj-un-zxW">
-                                        <rect key="frame" x="8" y="563" width="345" height="4"/>
-                                    </progressView>
-                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uky-AQ-P3M">
                                         <rect key="frame" x="8" y="559" width="345" height="4"/>
                                     </progressView>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uky-AQ-P3M">
+                                        <rect key="frame" x="8" y="555" width="345" height="4"/>
+                                    </progressView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ready To Scan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzK-nR-C7w">
-                                        <rect key="frame" x="256" y="611.66666666666663" width="97" height="11.333333333333371"/>
+                                        <rect key="frame" x="256" y="609" width="97" height="14"/>
                                         <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="12"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -265,25 +266,25 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GpQ-5j-aYU">
-                                        <rect key="frame" x="8" y="567" width="345" height="4"/>
+                                        <rect key="frame" x="8" y="563" width="345" height="4"/>
                                     </progressView>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LxC-SR-qSZ">
-                                        <rect key="frame" x="8" y="571" width="345" height="4"/>
+                                        <rect key="frame" x="8" y="567" width="345" height="4"/>
                                     </progressView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deep Scan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="meZ-XY-6yg">
-                                        <rect key="frame" x="248.66666666666671" y="504" width="92.333333333333343" height="16"/>
+                                        <rect key="frame" x="257" y="496" width="84" height="20"/>
                                         <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yPA-0Z-jtp">
-                                        <rect key="frame" x="292" y="520" width="51" height="31"/>
+                                        <rect key="frame" x="292" y="516" width="51" height="31"/>
                                         <connections>
                                             <action selector="deepScanSwitchChanged:" destination="Y6W-OH-hqX" eventType="valueChanged" id="Jj8-8o-8wf"/>
                                         </connections>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Date:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqu-ox-JpJ">
-                                        <rect key="frame" x="8" y="579" width="72.333333333333329" height="9.3333333333333712"/>
+                                        <rect key="frame" x="8" y="575" width="60" height="11.666666666666629"/>
                                         <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="10"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -301,17 +302,22 @@
                                             <action selector="buttonClear:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="RLA-XW-rTe"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VDD-ro-bOM">
-                                        <rect key="frame" x="20" y="407.66666666666669" width="75" height="21"/>
+                                    <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDD-ro-bOM">
+                                        <rect key="frame" x="20" y="423.66666666666669" width="169.66666666666666" height="21"/>
                                         <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="18"/>
                                         <menu key="menu" title="Astrological Formations" id="EO2-fl-shL">
                                             <children>
-                                                <command title="Item 1" menuElementState="on" id="3MB-7s-wfj"/>
-                                                <command title="Item 2" menuElementState="on" id="Qes-Fc-asu"/>
+                                                <command title="Retrograde" menuElementState="on" id="3MB-7s-wfj"/>
+                                                <command title="Transit" menuElementState="on" id="Qes-Fc-asu"/>
+                                                <command title="Aspect" menuElementState="on" id="5Qv-aW-cEF"/>
+                                                <command title="Formation" menuElementState="on" id="en8-K3-kn8"/>
+                                                <command title="Octive" menuElementState="on" id="sLz-mv-iUb"/>
+                                                <command title="Resonance" menuElementState="on" id="EJ1-uV-BlG"/>
                                             </children>
                                         </menu>
-                                        <state key="normal" title="Button" image="star.slash" catalog="system">
+                                        <state key="normal" title="Sub Scan Options">
                                             <color key="titleColor" systemColor="labelColor"/>
+                                            <imageReference key="image" image="checklist" catalog="system" symbolScale="default"/>
                                         </state>
                                         <connections>
                                             <action selector="optionsMenuButtonTouch:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="7Vu-5t-pSc"/>
@@ -420,8 +426,8 @@
     </scenes>
     <resources>
         <image name="arrow.up.doc" catalog="system" width="115" height="128"/>
+        <image name="checklist" catalog="system" width="128" height="107"/>
         <image name="map" catalog="system" width="128" height="112"/>
-        <image name="star.slash" catalog="system" width="128" height="118"/>
         <image name="text.magnifyingglass.rtl" catalog="system" width="128" height="117"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

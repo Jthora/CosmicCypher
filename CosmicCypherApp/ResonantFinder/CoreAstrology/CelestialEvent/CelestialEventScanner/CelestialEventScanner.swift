@@ -11,7 +11,8 @@ import SwiftAA
 // MARK: Aspect Event Scanner
 class CelestialEventScanner {
     
-    // MARK: Properties
+    // MARK: Settings
+    // Options
     var useRetrogradeScanner:Bool = true
     var useAspectScanner:Bool = true
     var useTransitScanner:Bool = true
@@ -22,6 +23,20 @@ class CelestialEventScanner {
     var useDeepScan:Bool = true
     
     // MARK: Scanners
+    // Retrograde Event Scanner
+    public lazy var retrogradeEventScanner:RetrogradeEventScanner = {
+        var scanner = RetrogradeEventScanner()
+        //scanner.delegate = self
+        scanner.useDeepScan = useDeepScan
+        return RetrogradeEventScanner()
+    }()
+    // Aspect Event Scanner
+    public lazy var transitEventScanner:TransitEventScanner = {
+        var scanner = TransitEventScanner()
+        //scanner.delegate = self
+        scanner.useDeepScan = useDeepScan
+        return TransitEventScanner()
+    }()
     // Aspect Event Scanner
     public lazy var aspectEventScanner:AspectEventScanner = {
         var scanner = AspectEventScanner()
@@ -30,56 +45,70 @@ class CelestialEventScanner {
         return AspectEventScanner()
     }()
     // Formation Event Scanner
-    public lazy var formationEventScanner:AspectEventScanner = {
-        var scanner = AspectEventScanner()
-        scanner.delegate = self
+    public lazy var formationEventScanner:FormationEventScanner = {
+        var scanner = FormationEventScanner()
+        //scanner.delegate = self
         scanner.useDeepScan = useDeepScan
-        return AspectEventScanner()
+        return FormationEventScanner()
     }()
+    // Formation Event Scanner
+    public lazy var octiveEventScanner:OctiveEventScanner = {
+        var scanner = OctiveEventScanner()
+        //scanner.delegate = self
+        scanner.useDeepScan = useDeepScan
+        return OctiveEventScanner()
+    }()
+    // Formation Event Scanner
+    public lazy var resonanceEventScanner:ResonanceEventScanner = {
+        var scanner = ResonanceEventScanner()
+        //scanner.delegate = self
+        scanner.useDeepScan = useDeepScan
+        return ResonanceEventScanner()
+    }()
+    
+    // MARK: Operation Queue
+    // Operation Queue
+    private let operationQueue: OperationQueue = {
+        let queue = OperationQueue()
+        queue.maxConcurrentOperationCount = 1 // Ensure one operation runs at a time
+        return queue
+    }()
+    
+    
+    // MARK: Properties
     // Sample Mode
-    public var sampleMode:SampleMode {
-        get {
-            return aspectEventScanner.sampleMode
-        }
-        set {
-            aspectEventScanner.sampleMode = newValue
+    public var sampleMode:SampleMode = .hour {
+        didSet {
             DispatchQueue.main.async {
-                self.console?.updated(sampleMode: newValue)
+                self.console?.updated(sampleMode: self.sampleMode)
             }
         }
     }
-    
     // Delegate
     public var delegate:CelestialEventScannerDelegate? = nil
     // References
     public weak var console:CelestialEventConsole? = nil
     public weak var exporter:CelestialEventExporter? = nil
     public weak var archive:CelestialEventDataArchive? = nil
-    
     // State
-    var state: CelestialEventScanner.State {
-        get {
-            return aspectEventScanner.state
-        }
-        set {
-            aspectEventScanner.state = newValue
-        }
-    }
+    var state: CelestialEventScanner.State = .ready
     
-    // DateTime
-    public lazy var startDate: Date = StarChart.Core.current.date {
+    // Start Date
+    public lazy var startDate: Date = Date.beginningOf(.thisYear)! { // StarChart.Core.current.date
         didSet {
             DispatchQueue.main.async {
                 self.console?.updated(startDate: self.startDate)
             }
         }
     }
-    public lazy var currentDate: Date = StarChart.Core.current.date{
+    // Current Date
+    public lazy var currentDate: Date = StarChart.Core.current.date {
         didSet {
             //console?.updatedDates()
         }
     }
-    public lazy var endDate: Date = StarChart.Core.current.date{
+    // End Date
+    public lazy var endDate: Date = Date.endOf(.thisYear)! { // StarChart.Core.current.date
         didSet {
             DispatchQueue.main.async {
                 self.console?.updated(endDate: self.endDate)
@@ -145,15 +174,41 @@ class CelestialEventScanner {
         }
     }
     
-    // MARK: Public Main Functions
-
-    // External Call to perform a Scan
+    // MARK: Main Scan
+    // Scan
     public func scan()
     {
         print("scan")
-        aspectEventScanner.delegate = self
-        aspectEventScanner.startScanner(startDate: startDate,
-                             endDate: endDate)
+        if useRetrogradeScanner {
+            let retrogradeOperation = RetrogradeScanOperation()
+            retrogradeOperation.scanner = retrogradeEventScanner
+            operationQueue.addOperation(retrogradeOperation)
+        }
+        if useTransitScanner {
+            let transitOperation = TransitScanOperation()
+            transitOperation.scanner = transitEventScanner
+            operationQueue.addOperation(transitOperation)
+        }
+        if useAspectScanner {
+            let aspectOperation = AspectScanOperation()
+            aspectOperation.scanner = aspectEventScanner
+            operationQueue.addOperation(aspectOperation)
+        }
+        if useFormationScanner {
+            let formationOperation = FormationScanOperation()
+            formationOperation.scanner = formationEventScanner
+            operationQueue.addOperation(formationOperation)
+        }
+        if useOctiveScanner {
+            let octiveOperation = OctiveScanOperation()
+            octiveOperation.scanner = octiveEventScanner
+            operationQueue.addOperation(octiveOperation)
+        }
+        if useResonanceScanner {
+            let resonanceOperation = ResonanceScanOperation()
+            resonanceOperation.scanner = resonanceEventScanner
+            operationQueue.addOperation(resonanceOperation)
+        }
     }
     
     // External Call to Reset the Scanner
@@ -167,4 +222,27 @@ class CelestialEventScanner {
     }
 }
 
+// MARK: Sub Scanner
+extension CelestialEventScanner {
+    // Sub Scanner
+    class SubScanner {}
+}
 
+
+// MARK: ScanResults
+extension CelestialEventScanner {
+    // Scan Results
+    class ScanResults {
+        /// Events
+        var events:[CoreAstrology.CelestialEventType:[CoreAstrology.CelestialEvent]] = [:]
+        /// Add
+        func add(event:CoreAstrology.CelestialEvent) {
+            if var typeEvents = self.events[event.type] {
+                typeEvents.append(event)
+                self.events[event.type] = typeEvents
+            } else {
+                self.events[event.type] = [event]
+            }
+        }
+    }
+}

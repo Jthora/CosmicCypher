@@ -10,8 +10,9 @@ import Foundation
 // MARK: Resonance Scanner
 extension CelestialEventScanner {
     // Resonance Scanner
-    class ResonanceEventScanner {
+    class ResonanceEventScanner: SubScanner {
         // TODO: What is Resonance?
         // Figure it out and then do this.
+        public var useDeepScan: Bool = true
     }
 }

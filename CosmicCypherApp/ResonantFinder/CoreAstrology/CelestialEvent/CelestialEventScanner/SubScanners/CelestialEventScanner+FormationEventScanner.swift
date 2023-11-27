@@ -10,6 +10,7 @@ import Foundation
 // MARK: Formation Scanner
 extension CelestialEventScanner {
     // Formation Scanner
-    class FormationEventScanner {
+    class FormationEventScanner: SubScanner {
+        public var useDeepScan: Bool = true
     }
 }

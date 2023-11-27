@@ -10,6 +10,7 @@ import Foundation
 // MARK: Retrograde Scanner
 extension CelestialEventScanner {
     // Retrograde Scanner
-    class RetrogradeEventScanner {
+    class RetrogradeEventScanner: SubScanner {
+        public var useDeepScan: Bool = true
     }
 }

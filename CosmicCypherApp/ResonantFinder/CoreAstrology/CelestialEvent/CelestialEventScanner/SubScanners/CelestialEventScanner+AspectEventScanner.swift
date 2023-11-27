@@ -11,7 +11,7 @@ import SwiftAA
 // MARK: Aspect Scanner
 extension CelestialEventScanner {
     // Aspect Scanner
-    class AspectEventScanner {
+    class AspectEventScanner: SubScanner {
         // Delegate
         public var delegate:CelestialEventScannerDelegate? = nil
         public var deepScanner = DeepScanner()

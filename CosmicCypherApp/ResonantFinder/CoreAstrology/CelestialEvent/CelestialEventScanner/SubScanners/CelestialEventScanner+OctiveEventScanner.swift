@@ -10,6 +10,7 @@ import Foundation
 // MARK: Octive Event Scanner
 extension CelestialEventScanner {
     // Octive Event Scanner
-    class OctiveEventScanner {
+    class OctiveEventScanner: SubScanner {
+        public var useDeepScan: Bool = true
     }
 }

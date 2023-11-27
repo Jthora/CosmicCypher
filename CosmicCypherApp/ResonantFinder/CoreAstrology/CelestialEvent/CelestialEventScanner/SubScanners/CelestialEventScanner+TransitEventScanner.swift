@@ -10,6 +10,7 @@ import Foundation
 // MARK: Transit Scanner
 extension CelestialEventScanner {
     // Transit Scanner
-    class TransitEventScanner {
+    class TransitEventScanner: SubScanner {
+        public var useDeepScan: Bool = true
     }
 }

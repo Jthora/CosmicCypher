@@ -283,7 +283,7 @@
                                         </connections>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Date:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqu-ox-JpJ">
-                                        <rect key="frame" x="8" y="579" width="73" height="10"/>
+                                        <rect key="frame" x="8" y="579" width="72.333333333333329" height="9.3333333333333712"/>
                                         <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="10"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -301,18 +301,6 @@
                                             <action selector="buttonClear:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="RLA-XW-rTe"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Octive Scan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KyG-ym-k66">
-                                        <rect key="frame" x="236" y="449" width="105" height="16"/>
-                                        <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PIv-4N-eCt">
-                                        <rect key="frame" x="292" y="465" width="51" height="31"/>
-                                        <connections>
-                                            <action selector="deepScanSwitchChanged:" destination="Y6W-OH-hqX" eventType="valueChanged" id="f4X-aq-clc"/>
-                                        </connections>
-                                    </switch>
                                     <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VDD-ro-bOM">
                                         <rect key="frame" x="20" y="407.66666666666669" width="75" height="21"/>
                                         <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="18"/>
@@ -332,7 +320,6 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
-                                    <constraint firstItem="PIv-4N-eCt" firstAttribute="top" secondItem="KyG-ym-k66" secondAttribute="bottom" id="1Oz-7C-21q"/>
                                     <constraint firstItem="tzK-nR-C7w" firstAttribute="width" secondItem="eAZ-m3-cGj" secondAttribute="width" id="1rO-wm-31p"/>
                                     <constraint firstAttribute="trailing" secondItem="yPA-0Z-jtp" secondAttribute="trailing" constant="20" symbolic="YES" id="1yZ-5i-lml"/>
                                     <constraint firstItem="VDD-ro-bOM" firstAttribute="leading" secondItem="Wwf-rD-heC" secondAttribute="leading" constant="20" symbolic="YES" id="4i8-pB-9gK"/>
@@ -346,12 +333,10 @@
                                     <constraint firstItem="uky-AQ-P3M" firstAttribute="top" secondItem="Qa3-hC-0xs" secondAttribute="bottom" constant="8" symbolic="YES" id="COV-et-Epb"/>
                                     <constraint firstItem="mlc-Uv-t8C" firstAttribute="leading" secondItem="Wwf-rD-heC" secondAttribute="leading" constant="8" id="EKL-rb-5Ws"/>
                                     <constraint firstItem="Yon-8F-Cv5" firstAttribute="leading" secondItem="Wwf-rD-heC" secondAttribute="leading" constant="8" id="Ef2-s5-1Xi"/>
-                                    <constraint firstAttribute="trailing" secondItem="PIv-4N-eCt" secondAttribute="trailing" constant="20" symbolic="YES" id="FLG-eK-A9Z"/>
                                     <constraint firstAttribute="trailing" secondItem="cEB-FD-iFt" secondAttribute="trailing" id="Guf-1J-J4z"/>
                                     <constraint firstItem="VdJ-PK-g7Z" firstAttribute="leading" secondItem="Wwf-rD-heC" secondAttribute="leading" constant="8" id="IZY-Kp-s0u"/>
                                     <constraint firstItem="cEB-FD-iFt" firstAttribute="top" secondItem="Wwf-rD-heC" secondAttribute="top" constant="8" id="IiV-NA-oGW"/>
                                     <constraint firstItem="Qa3-hC-0xs" firstAttribute="top" secondItem="Yon-8F-Cv5" secondAttribute="bottom" id="Ivd-kz-966"/>
-                                    <constraint firstItem="meZ-XY-6yg" firstAttribute="top" secondItem="PIv-4N-eCt" secondAttribute="bottom" constant="8" symbolic="YES" id="J97-dF-37t"/>
                                     <constraint firstItem="C8x-Di-Z8z" firstAttribute="leading" secondItem="VdJ-PK-g7Z" secondAttribute="trailing" constant="8" symbolic="YES" id="JGx-Ve-231"/>
                                     <constraint firstAttribute="trailing" secondItem="mlc-Uv-t8C" secondAttribute="trailing" constant="8" id="Jhx-gL-wIF"/>
                                     <constraint firstItem="Sc4-NV-kEr" firstAttribute="top" secondItem="cEB-FD-iFt" secondAttribute="bottom" constant="8" id="JwD-wQ-0CS"/>
@@ -389,7 +374,6 @@
                                     <constraint firstItem="VdJ-PK-g7Z" firstAttribute="width" secondItem="Wwf-rD-heC" secondAttribute="width" multiplier="0.66482" id="sfe-hT-Ucr"/>
                                     <constraint firstAttribute="trailing" secondItem="uky-AQ-P3M" secondAttribute="trailing" constant="8" id="tFV-TJ-ZlI"/>
                                     <constraint firstAttribute="trailing" secondItem="nDG-fQ-SoK" secondAttribute="trailing" constant="8" id="vFc-UM-eTV"/>
-                                    <constraint firstAttribute="trailing" secondItem="KyG-ym-k66" secondAttribute="trailing" constant="20" symbolic="YES" id="vT3-er-EqA"/>
                                     <constraint firstItem="KJ2-bm-O3q" firstAttribute="trailing" secondItem="VdJ-PK-g7Z" secondAttribute="trailing" id="wCo-UR-gUZ"/>
                                     <constraint firstItem="nDG-fQ-SoK" firstAttribute="top" secondItem="Sc4-NV-kEr" secondAttribute="bottom" constant="8" id="x6e-w2-f7V"/>
                                     <constraint firstAttribute="trailing" secondItem="C8x-Di-Z8z" secondAttribute="trailing" constant="8" id="xjg-fq-wVZ"/>

@@ -11,6 +11,16 @@ import Foundation
 extension CelestialEventScanner {
     // Transit Scanner
     class TransitEventScanner: SubScanner {
+        var detector = TransitDetector()
         public var useDeepScan: Bool = true
     }
+}
+
+extension CelestialEventScanner.TransitEventScanner {
+    // RetrogradeEvent Scan Results
+    typealias ScanResults = [PlanetNodeType:[Date:CoreAstrology.TransitEvent]]
+}
+
+extension CelestialEventScanner.TransitEventScanner.ScanResults {
+    
 }

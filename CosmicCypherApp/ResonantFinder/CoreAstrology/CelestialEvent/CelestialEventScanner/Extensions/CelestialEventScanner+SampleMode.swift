@@ -15,6 +15,14 @@ extension CelestialEventScanner {
         case hour
         case day
         
+        var timeInterval: TimeInterval {
+            switch self {
+            case .minute: 60
+            case .hour: 3600
+            case .day: 86400
+            }
+        }
+        
         // Console Text
         var consoleText: String {
             switch self {

@@ -7,9 +7,11 @@
 
 import Foundation
 
-class FormationScanOperation: Operation {
-    var scanner:CelestialEventScanner.FormationEventScanner? = nil
-    override func main() {
-        // Implement formation scanning logic
+extension CelestialEventScanner {
+    class FormationScanOperation: Operation {
+        var scanner:FormationEventScanner? = nil
+        override func main() {
+            // Implement formation scanning logic
+        }
     }
 }

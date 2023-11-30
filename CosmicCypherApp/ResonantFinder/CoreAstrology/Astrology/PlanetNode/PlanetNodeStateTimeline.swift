@@ -8,23 +8,26 @@
 import Foundation
 import SwiftAA
 
-// Timeline
+// Timeline Declaration
 public typealias PlanetNodeStateTimeline = [PlanetNodeType:[PlanetNodeState]]
 
+// Timeline Functionality
 extension PlanetNodeStateTimeline {
-    
+    // Init
     init(_ starCharts:[StarChart], nodeTypes:[PlanetNodeType]) {
-        self = PlanetNodeStateTimeline.from(starCharts, nodeTypes: nodeTypes)
+        self = PlanetNodeStateTimeline.generate(starCharts, nodeTypes: nodeTypes)
     }
-    
-    
-    public static func from(_ starCharts:[StarChart], nodeTypes:[PlanetNodeType]) -> PlanetNodeStateTimeline {
+    // Generate
+    public static func generate(_ starCharts:[StarChart], nodeTypes:[PlanetNodeType]) -> PlanetNodeStateTimeline {
         
         // Ensure StarCharts are Ordered
         let orderedStarCharts = starCharts.sorted(by: { $0.date.compare($1.date) == .orderedAscending })
         
         // Prepare PlanetNodeState List
         var planetNodeStateTimeline:PlanetNodeStateTimeline = [:]
+        
+        // Retrograde Detector
+        let retrogradeDetector = CelestialEventScanner.RetrogradeDetector()
         
         // Iterate through StarCharts
         for starChart in orderedStarCharts {
@@ -43,38 +46,20 @@ extension PlanetNodeStateTimeline {
                 guard let planetNode = starChart.planetNodes[nodeType] else {continue}
                 let degrees = planetNode.longitude.value
                 
-                
                 /// Planet State
                 if let planet = nodeType.planet(starChart: starChart) {
                     print("new planet state [\(nodeType.text)]")
                     
+                    /// Planet Properties
                     let perihelion = planet.longitudeOfPerihelion().value
                     let ascendingNode = planet.longitudeOfAscendingNode().value
                     let inclination = planet.inclination().value
                     let eccentricity = planet.eccentricity()
                     
-                    let motion:PlanetNodeState.MotionState.Motion
-                    let speed:Degree
+                    /// Cycle Motion State (takes 3 starters to rev-up)
+                    let motionState = retrogradeDetector.cycleMotionState(l: degrees, t: starChart.date.timeIntervalSinceReferenceDate)
                     
-                    /// Retrograde and Speed
-                    if let planetState = planetNodeStateTimeline[nodeType]?.last as? PlanetNodeState {
-                        let lastDegrees = planetState.degrees.value
-                        let lastMotion = planetState.motionState?.currentMotion ?? .stationary
-                        if lastDegrees < degrees {
-                            motion = .direct(.constant)
-                        } else if lastDegrees > degrees {
-                            motion = .retrograde(.constant)
-                        } else {
-                            motion = .stationary
-                        }
-                        speed = Degree(degrees - lastDegrees.degrees.value)
-                    } else {
-                        motion = .stationary
-                        speed = 0
-                    }
-                    
-                    // Create Motion State and Planet State
-                    let motionState = PlanetNodeState.MotionState(motion, speed: speed)
+                    /// Planet Node State
                     let planetNodeState = PlanetNodeState(nodeType: nodeType,
                                                   date: starChart.date,
                                                   degrees: Degree(degrees),
@@ -84,12 +69,12 @@ extension PlanetNodeStateTimeline {
                                                   eccentricity: eccentricity,
                                                   motionState: motionState)
                     
-                    // Store Planet State
+                    /// Store Planet State
                     PlanetNodeStateRegistry.main.save(planetNodeState: planetNodeState)
                     planetNodeStateTimeline[nodeType]?.append(planetNodeState)
                     
                 } else {
-                    // Build, Save and Append PlanetNodeState
+                    /// Build, Save and Append PlanetNodeState
                     guard let planetNodeState = PlanetNodeState(starChart: starChart, nodeType: nodeType) else {continue}
                     PlanetNodeStateRegistry.main.save(planetNodeState: planetNodeState)
                     planetNodeStateTimeline[nodeType]?.append(planetNodeState)

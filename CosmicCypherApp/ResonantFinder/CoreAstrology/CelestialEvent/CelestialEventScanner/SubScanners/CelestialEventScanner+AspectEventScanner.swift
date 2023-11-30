@@ -278,3 +278,12 @@ extension CelestialEventScanner {
         }
     }
 }
+
+extension CelestialEventScanner.AspectEventScanner {
+    // RetrogradeEvent Scan Results
+    typealias ScanResults = [PlanetNodeType:[Date:CoreAstrology.AspectEvent]]
+}
+
+extension CelestialEventScanner.AspectEventScanner.ScanResults {
+    
+}

@@ -70,7 +70,7 @@ extension CelestialEventScanner {
 extension CelestialEventScanner.TransitDetector {
     // Detector Results
     struct Results {
-        var transits: [CoreAstrology.TransitEvent.TransitType: [PlanetNode]] = [:]
+        var transits: [CoreAstrology.TransitEvent.TransitType: PlanetNodeSequence] = [:]
         // Merge function
         mutating func merge(with other: Results) {
             for (transitType, planetNodes) in other.transits {
@@ -78,12 +78,12 @@ extension CelestialEventScanner.TransitDetector {
             }
         }
         // Function to retrieve formations of a specific type
-        func formations(ofType type: CoreAstrology.TransitEvent.TransitType) -> [PlanetNode]? {
+        func formations(ofType type: CoreAstrology.TransitEvent.TransitType) -> PlanetNodeSequence? {
             return transits[type]
         }
         // Function to filter formations based on a condition
-        func filterFormations(by filter: (CoreAstrology.TransitEvent.TransitType, [PlanetNode]) -> Bool) -> [CoreAstrology.TransitEvent.TransitType: [PlanetNode]] {
-            var filteredTransits: [CoreAstrology.TransitEvent.TransitType: [PlanetNode]] = [:]
+        func filterFormations(by filter: (CoreAstrology.TransitEvent.TransitType, [PlanetNode]) -> Bool) -> [CoreAstrology.TransitEvent.TransitType: PlanetNodeSequence] {
+            var filteredTransits: [CoreAstrology.TransitEvent.TransitType: PlanetNodeSequence] = [:]
             for (transitType, planetNodes) in transits {
                 if filter(transitType, planetNodes) {
                     filteredTransits[transitType] = planetNodes
@@ -92,7 +92,7 @@ extension CelestialEventScanner.TransitDetector {
             return filteredTransits
         }
         // Add Transit
-        mutating func add(transit: CoreAstrology.TransitEvent.TransitType, _ planetNodes: [PlanetNode]) {
+        mutating func add(transit: CoreAstrology.TransitEvent.TransitType, _ planetNodes: PlanetNodeSequence) {
             transits[transit, default: []].append(contentsOf: planetNodes)
         }
     }

@@ -11,6 +11,16 @@ import Foundation
 extension CelestialEventScanner {
     // Octive Event Scanner
     class OctiveEventScanner: SubScanner {
+        var detector = OctiveDetector()
         public var useDeepScan: Bool = true
     }
+}
+
+extension CelestialEventScanner.OctiveEventScanner {
+    // RetrogradeEvent Scan Results
+    typealias ScanResults = [PlanetNodeType:[Date:CoreAstrology.OctiveEvent]]
+}
+
+extension CelestialEventScanner.OctiveEventScanner.ScanResults {
+    
 }

@@ -101,7 +101,7 @@ extension TimeStream {
         }
         
         func renderColor(dataMetric: DataMetric, planetNodeState: PlanetNodeState) -> RGBAColor {
-            let invert = dataMetric == .retrogrades && planetNodeState.motionState?.currentMotion == .retrograde(.none)
+            let invert = dataMetric == .retrogrades && planetNodeState.motionState?.motion == .retrograde(.none)
             switch self {
             case .clear:
                 return RGBAColor.clear

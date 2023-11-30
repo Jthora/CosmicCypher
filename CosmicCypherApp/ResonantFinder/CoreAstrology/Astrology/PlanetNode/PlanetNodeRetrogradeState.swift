@@ -11,14 +11,16 @@ import SwiftAA
 // MARK: Motion State
 extension PlanetNodeState {
     // Direct or Retrograde State
-    public class MotionState: Codable {
-        public var currentMotion:Motion
+    public class MotionState: Codable, Equatable {
+        public var motion:Motion
         public var speed:DegreesPerSecond
+        public var speedDelta:DegreesPerSecondPerSecond
         
         // MARK: Init
-        public init(_ initialMotion: Motion, speed:Degree) {
-            self.currentMotion = initialMotion
+        public init(_ initialMotion: Motion, speed:DegreesPerSecond, speedDelta:DegreesPerSecondPerSecond) {
+            self.motion = initialMotion
             self.speed = speed
+            self.speedDelta = speedDelta
         }
         
         // MARK: Methods
@@ -29,7 +31,7 @@ extension PlanetNodeState {
         
         // MARK: Accessors
         public var isRetrograde: Bool {
-            if case .retrograde = currentMotion {
+            if case .retrograde = motion {
                 return true
             } else {
                 return false
@@ -38,7 +40,7 @@ extension PlanetNodeState {
         
         // MARK: Equatable
         public static func == (lhs: PlanetNodeState.MotionState, rhs: PlanetNodeState.MotionState) -> Bool {
-            return lhs.currentMotion == lhs.currentMotion
+            return lhs.motion == lhs.motion && lhs.speed == lhs.speed && lhs.speedDelta == rhs.speedDelta
         }
     }
 }

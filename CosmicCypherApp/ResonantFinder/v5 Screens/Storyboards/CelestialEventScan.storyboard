@@ -307,7 +307,9 @@
                                         <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="18"/>
                                         <menu key="menu" title="Astrological Formations" id="EO2-fl-shL">
                                             <children>
-                                                <command title="Retrograde" menuElementState="on" id="3MB-7s-wfj"/>
+                                                <command title="Retrograde" menuElementState="on" id="3MB-7s-wfj">
+                                                    <menuElementAttributes key="attributes" disabled="YES"/>
+                                                </command>
                                                 <command title="Transit" menuElementState="on" id="Qes-Fc-asu"/>
                                                 <command title="Aspect" menuElementState="on" id="5Qv-aW-cEF"/>
                                                 <command title="Formation" menuElementState="on" id="en8-K3-kn8"/>

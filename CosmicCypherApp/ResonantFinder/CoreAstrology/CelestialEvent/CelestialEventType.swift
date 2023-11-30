@@ -37,11 +37,11 @@ extension CoreAstrology {
         }
         var menuItemTitle:String {
             switch self {
-            case .retrograde(_): return "Retrograde"
-            case .transit(_): return "Transit"
-            case .aspect(_): return "Aspect"
-            case .formation(_): return "Formation"
-            case .octive(_): return "Octive"
+            case .retrograde(_): return "Retrogrades"
+            case .transit(_): return "Transits"
+            case .aspect(_): return "Aspects"
+            case .formation(_): return "Formations"
+            case .octive(_): return "Octives"
             case .resonance(_): return "Resonance"
             }
         }

@@ -219,6 +219,8 @@
 		FA879CB82B13B18900B68447 /* CelestialEventScanner+OctiveDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA879CB72B13B18900B68447 /* CelestialEventScanner+OctiveDetector.swift */; };
 		FA879CBA2B13B1AC00B68447 /* CelestialEventScanner+OctiveEventScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA879CB92B13B1AC00B68447 /* CelestialEventScanner+OctiveEventScanner.swift */; };
 		FA879CBC2B13B1C800B68447 /* CelestialEventScanner+OctiveDeepScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA879CBB2B13B1C800B68447 /* CelestialEventScanner+OctiveDeepScanner.swift */; };
+		FA9A1E9A2B166A1700A1C11B /* PlanetNodePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9A1E992B166A1700A1C11B /* PlanetNodePosition.swift */; };
+		FA9A1E9D2B16857500A1C11B /* CelestialEventScanner+ScanResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9A1E9C2B16857500A1C11B /* CelestialEventScanner+ScanResults.swift */; };
 		FA9C9CC32AFA91B90055C93E /* CelestialEventScanner+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C9CC22AFA91B90055C93E /* CelestialEventScanner+Error.swift */; };
 		FA9C9CC52AFA92050055C93E /* CelestialEventScanner+SampleMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C9CC42AFA92050055C93E /* CelestialEventScanner+SampleMode.swift */; };
 		FA9C9CC72AFA921D0055C93E /* CelestialEventScanner+AspectDeepScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C9CC62AFA921D0055C93E /* CelestialEventScanner+AspectDeepScanner.swift */; };
@@ -565,6 +567,8 @@
 		FA879CB72B13B18900B68447 /* CelestialEventScanner+OctiveDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CelestialEventScanner+OctiveDetector.swift"; sourceTree = "<group>"; };
 		FA879CB92B13B1AC00B68447 /* CelestialEventScanner+OctiveEventScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CelestialEventScanner+OctiveEventScanner.swift"; sourceTree = "<group>"; };
 		FA879CBB2B13B1C800B68447 /* CelestialEventScanner+OctiveDeepScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CelestialEventScanner+OctiveDeepScanner.swift"; sourceTree = "<group>"; };
+		FA9A1E992B166A1700A1C11B /* PlanetNodePosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetNodePosition.swift; sourceTree = "<group>"; };
+		FA9A1E9C2B16857500A1C11B /* CelestialEventScanner+ScanResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CelestialEventScanner+ScanResults.swift"; sourceTree = "<group>"; };
 		FA9C9CC22AFA91B90055C93E /* CelestialEventScanner+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CelestialEventScanner+Error.swift"; sourceTree = "<group>"; };
 		FA9C9CC42AFA92050055C93E /* CelestialEventScanner+SampleMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CelestialEventScanner+SampleMode.swift"; sourceTree = "<group>"; };
 		FA9C9CC62AFA921D0055C93E /* CelestialEventScanner+AspectDeepScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CelestialEventScanner+AspectDeepScanner.swift"; sourceTree = "<group>"; };
@@ -1287,6 +1291,7 @@
 		FA879C9E2B13A2F700B68447 /* SubScanners */ = {
 			isa = PBXGroup;
 			children = (
+				FA9A1E9B2B16855900A1C11B /* ScanResults */,
 				FA07BCD52B14636500EEEB8C /* Operations */,
 				FA879CA12B13A37300B68447 /* CelestialEventScanner+RetrogradeEventScanner.swift */,
 				FA879C9C2B13A20000B68447 /* CelestialEventScanner+TransitEventScanner.swift */,
@@ -1349,6 +1354,14 @@
 				FA879CB52B13AD2A00B68447 /* ResonanceEvent.swift */,
 			);
 			path = SubEvents;
+			sourceTree = "<group>";
+		};
+		FA9A1E9B2B16855900A1C11B /* ScanResults */ = {
+			isa = PBXGroup;
+			children = (
+				FA9A1E9C2B16857500A1C11B /* CelestialEventScanner+ScanResults.swift */,
+			);
+			path = ScanResults;
 			sourceTree = "<group>";
 		};
 		FAB068F02ABA1AAC00334B1A /* About */ = {
@@ -1470,6 +1483,7 @@
 				FAB1311C2874A319000AD7B9 /* PlanetNodeStateRegistry.swift */,
 				FAB1311E2874A328000AD7B9 /* PlanetNodeStateArchive.swift */,
 				FA0050712B0BC90D00540CD5 /* PlanetNodeRetrogradeState.swift */,
+				FA9A1E992B166A1700A1C11B /* PlanetNodePosition.swift */,
 			);
 			path = PlanetNode;
 			sourceTree = "<group>";
@@ -1856,6 +1870,7 @@
 				FA1FDD4F257026F700B51BD2 /* ReadingsSubScreenPNPA.swift in Sources */,
 				FA1FDD542570270800B51BD2 /* ReadingsSubScreenEDED.swift in Sources */,
 				FA879CB32B13A69E00B68447 /* CelestialEventScanner+ResonanceDeepScanner.swift in Sources */,
+				FA9A1E9D2B16857500A1C11B /* CelestialEventScanner+ScanResults.swift in Sources */,
 				FAB068EF2AB9702100334B1A /* TimeStreamCoreController.swift in Sources */,
 				FAFB68A22AB431F700FEBDF4 /* Zodiac+Index.swift in Sources */,
 				FA07CA2325401EBB00683486 /* ResonanceReportViewController.swift in Sources */,
@@ -1938,6 +1953,7 @@
 				FA00506A2B0BB40B00540CD5 /* CoreAstrology+GravimetricTensor.swift in Sources */,
 				FA33AAFB2864E12E00BC9F76 /* Settings.swift in Sources */,
 				FAD6D6672ABF15EB006264C8 /* TimeStreamSpectrogramView.swift in Sources */,
+				FA9A1E9A2B166A1700A1C11B /* PlanetNodePosition.swift in Sources */,
 				FA879CAF2B13A63D00B68447 /* CelestialEventScanner+ResonanceDetector.swift in Sources */,
 				FA07CA4525401EBC00683486 /* Date+Extension.swift in Sources */,
 				FA4E2F3F2B1127BD0040ADE6 /* PlanetNodeSequence.swift in Sources */,

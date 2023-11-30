@@ -11,8 +11,16 @@ import Foundation
 extension CelestialEventScanner {
     // Resonance Scanner
     class ResonanceEventScanner: SubScanner {
-        // TODO: What is Resonance?
-        // Figure it out and then do this.
+        var detector = ResonanceDetector()
         public var useDeepScan: Bool = true
     }
+}
+
+extension CelestialEventScanner.ResonanceEventScanner {
+    // RetrogradeEvent Scan Results
+    typealias ScanResults = [PlanetNodeType:[Date:CoreAstrology.ResonanceEvent]]
+}
+
+extension CelestialEventScanner.ResonanceEventScanner.ScanResults {
+    
 }

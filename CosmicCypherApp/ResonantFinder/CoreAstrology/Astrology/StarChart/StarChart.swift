@@ -238,46 +238,8 @@ public final class StarChart {
         return CosmicAlignment(self, selectedNodeTypes: selectedNodeTypes)
     }
     
-    public func planetNodeStates() -> [PlanetNodeStateHash:PlanetNodeState] {
-        var planetNodeStates:[PlanetNodeStateHash:PlanetNodeState] = [:]
-        for nodeType in CoreAstrology.AspectBody.NodeType.allCases {
-            
-            /// Degrees
-            guard let planetNode = planetNodes[nodeType] else { continue }
-            let degrees = planetNode.longitude
-            
-            /// Planet or AstrologicalNode
-            if let planet = nodeType.planet(date: date, highPrecision: true) {
-                
-                let perihelion: Double = planet.longitudeOfPerihelion().value
-                let ascendingNode: Double = planet.longitudeOfAscendingNode().value
-                let inclination: Double = planet.inclination().value
-                let eccentricity: Double = planet.eccentricity()
-                
-                // Build and Append Planet State
-                let motionState = PlanetNodeState.MotionState(.stationary, speed: 0)
-                let planetNodeState = PlanetNodeState(nodeType: nodeType,
-                                                      date: date,
-                                                      degrees: degrees,
-                                                      perihelion: perihelion,
-                                                      ascendingNode: ascendingNode,
-                                                      inclination: inclination,
-                                                      eccentricity: eccentricity,
-                                                      motionState: motionState)
-                
-                // Add
-                planetNodeStates[planetNodeState.hash] = planetNodeState
-            } else {
-                // Build, Hash and Append PlanetNodeState
-                guard let planetNodeState = nodeType.generatePlanetNodeState(date: date) else {
-                    continue
-                }
-                planetNodeStates[planetNodeState.hash] = planetNodeState
-            }
-        }
-        return planetNodeStates
-    }
-//    
+    
+//
 //    public func planetStates() -> [PlanetStateHash:PlanetState] {
 //        var planetStates:[PlanetStateHash:PlanetState] = [:]
 //        for nodeType in CoreAstrology.AspectBody.NodeType.allCases {

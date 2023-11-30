@@ -11,6 +11,10 @@ import SwiftAA
 // MARK: Aspect Event Scanner
 class CelestialEventScanner {
     
+    // MARK: Results
+    // Scan Results
+    var scanResults:ScanResults = ScanResults()
+    
     // MARK: Settings
     // Options
     var useRetrogradeScanner:Bool = true
@@ -20,7 +24,17 @@ class CelestialEventScanner {
     var useOctiveScanner:Bool = true
     var useResonanceScanner:Bool = true
     
-    var useDeepScan:Bool = true
+    // Deep Scan Setting
+    var useDeepScan:Bool = true {
+        didSet {
+            retrogradeEventScanner.useDeepScan = self.useDeepScan
+            transitEventScanner.useDeepScan = self.useDeepScan
+            aspectEventScanner.useDeepScan = self.useDeepScan
+            formationEventScanner.useDeepScan = self.useDeepScan
+            octiveEventScanner.useDeepScan = self.useDeepScan
+            resonanceEventScanner.useDeepScan = self.useDeepScan
+        }
+    }
     
     // MARK: Scanners
     // Retrograde Event Scanner
@@ -178,37 +192,49 @@ class CelestialEventScanner {
     // Scan
     public func scan()
     {
-        print("scan")
+        /// Startup
+        let startupOperation = StartupOperation()
+        operationQueue.addOperation(startupOperation)
+        /// Retrograde Scan
         if useRetrogradeScanner {
             let retrogradeOperation = RetrogradeScanOperation()
             retrogradeOperation.scanner = retrogradeEventScanner
             operationQueue.addOperation(retrogradeOperation)
         }
+        /// Transit Scan
         if useTransitScanner {
             let transitOperation = TransitScanOperation()
             transitOperation.scanner = transitEventScanner
             operationQueue.addOperation(transitOperation)
         }
+        /// Aspect Scan
         if useAspectScanner {
             let aspectOperation = AspectScanOperation()
             aspectOperation.scanner = aspectEventScanner
             operationQueue.addOperation(aspectOperation)
         }
+        /// Formation Scan
         if useFormationScanner {
             let formationOperation = FormationScanOperation()
             formationOperation.scanner = formationEventScanner
             operationQueue.addOperation(formationOperation)
         }
+        /// Octive Scan
         if useOctiveScanner {
             let octiveOperation = OctiveScanOperation()
             octiveOperation.scanner = octiveEventScanner
             operationQueue.addOperation(octiveOperation)
         }
+        /// Resonance Scan
         if useResonanceScanner {
             let resonanceOperation = ResonanceScanOperation()
             resonanceOperation.scanner = resonanceEventScanner
             operationQueue.addOperation(resonanceOperation)
         }
+        /// Complete
+        let completeOperation = CompletionOperation()
+        operationQueue.addOperation(completeOperation)
+        
     }
     
     // External Call to Reset the Scanner
@@ -228,21 +254,20 @@ extension CelestialEventScanner {
     class SubScanner {}
 }
 
-
-// MARK: ScanResults
+// MARK: Startup and Complete Operations
 extension CelestialEventScanner {
-    // Scan Results
-    class ScanResults {
-        /// Events
-        var events:[CoreAstrology.CelestialEventType:[CoreAstrology.CelestialEvent]] = [:]
-        /// Add
-        func add(event:CoreAstrology.CelestialEvent) {
-            if var typeEvents = self.events[event.type] {
-                typeEvents.append(event)
-                self.events[event.type] = typeEvents
-            } else {
-                self.events[event.type] = [event]
-            }
+    class StartupOperation: Operation {
+        override func main() {
+            // Perform startup tasks here before other operations start
+            print("Startup tasks completed")
         }
     }
+
+    class CompletionOperation: Operation {
+        override func main() {
+            // Perform completion tasks here after all other operations finish
+            print("All operations completed")
+        }
+    }
+
 }

@@ -24,7 +24,7 @@ extension CelestialEventScanner {
 extension CelestialEventScanner.FormationDetector {
     // Detector Results
     struct Results {
-        var formations: [CoreAstrology.FormationEvent.FormationType: [PlanetNode]] = [:]
+        var formations: [CoreAstrology.FormationEvent.FormationType: PlanetNodeSequence] = [:]
         // Merge function
         mutating func merge(with other: Results) {
             for (formationType, planetNodes) in other.formations {
@@ -32,12 +32,12 @@ extension CelestialEventScanner.FormationDetector {
             }
         }
         // Function to retrieve formations of a specific type
-        func formations(ofType type: CoreAstrology.FormationEvent.FormationType) -> [PlanetNode]? {
+        func formations(ofType type: CoreAstrology.FormationEvent.FormationType) -> PlanetNodeSequence? {
             return formations[type]
         }
         // Function to filter formations based on a condition
-        func filterFormations(by filter: (CoreAstrology.FormationEvent.FormationType, [PlanetNode]) -> Bool) -> [CoreAstrology.FormationEvent.FormationType: [PlanetNode]] {
-            var filteredFormations: [CoreAstrology.FormationEvent.FormationType: [PlanetNode]] = [:]
+        func filterFormations(by filter: (CoreAstrology.FormationEvent.FormationType, PlanetNodeSequence) -> Bool) -> [CoreAstrology.FormationEvent.FormationType: PlanetNodeSequence] {
+            var filteredFormations: [CoreAstrology.FormationEvent.FormationType: PlanetNodeSequence] = [:]
             for (formationType, planetNodes) in formations {
                 if filter(formationType, planetNodes) {
                     filteredFormations[formationType] = planetNodes
@@ -45,7 +45,7 @@ extension CelestialEventScanner.FormationDetector {
             }
             return filteredFormations
         }
-        mutating func add(formation: CoreAstrology.FormationEvent.FormationType, _ planetNodes: [PlanetNode]) {
+        mutating func add(formation: CoreAstrology.FormationEvent.FormationType, _ planetNodes: PlanetNodeSequence) {
             formations[formation, default: []].append(contentsOf: planetNodes)
         }
     }
@@ -54,12 +54,12 @@ extension CelestialEventScanner.FormationDetector {
 // MARK: Formation Detection
 extension CelestialEventScanner.FormationDetector {
     // Detect for any and all of the major Astrological Formations
-    func detect(for planetNodes: [PlanetNode]) -> Results {
+    func detect(for planetNodes: PlanetNodeSequence) -> Results {
         return detect(formations: CoreAstrology.FormationEvent.FormationType.allCases, for: planetNodes)
     }
     
     // Detect a Group
-    func detect(formations:[CoreAstrology.FormationEvent.FormationType], for planetNodes: [PlanetNode]) -> Results {
+    func detect(formations:[CoreAstrology.FormationEvent.FormationType], for planetNodes: PlanetNodeSequence) -> Results {
         var results = Results()
         for formation in formations {
             results.merge(with: detect(formation: formation, for: planetNodes))
@@ -68,7 +68,7 @@ extension CelestialEventScanner.FormationDetector {
     }
     
     // Detect Specific
-    func detect(formation:CoreAstrology.FormationEvent.FormationType, for planetNodes: [PlanetNode]) -> Results {
+    func detect(formation:CoreAstrology.FormationEvent.FormationType, for planetNodes: PlanetNodeSequence) -> Results {
         switch formation {
         case .grandTrine:
             return detectGrandTrine(planetNodes)
@@ -94,44 +94,44 @@ extension CelestialEventScanner.FormationDetector {
 extension CelestialEventScanner.FormationDetector {
     // Functions to detect each formation
     
-    func detectGrandTrine(_ planetNodes: [PlanetNode]) -> Results {
+    func detectGrandTrine(_ planetNodes: PlanetNodeSequence) -> Results {
         // Logic to detect a grand trine formation
         return detectMultipleGrandTrines(planetNodes) // Placeholder
     }
     
-    func detectMysticRectangle(_ planetNodes: [PlanetNode]) -> Results {
+    func detectMysticRectangle(_ planetNodes: PlanetNodeSequence) -> Results {
         // Logic to detect a mystic rectangle formation
         let degrees = planetNodes.map { $0.longitude }
         detectMultipleMysticRectangles(degrees)
         return Results() // Placeholder
     }
     
-    func detectKite(_ planetNodes: [PlanetNode]) -> Results {
+    func detectKite(_ planetNodes: PlanetNodeSequence) -> Results {
         // Logic to detect a kite formation
         return Results() // Placeholder
     }
     
-    func detectTSquare(_ planetNodes: [PlanetNode]) -> Results {
+    func detectTSquare(_ planetNodes: PlanetNodeSequence) -> Results {
         // Logic to detect a T-square formation
         return Results() // Placeholder
     }
     
-    func detectStellium(_ planetNodes: [PlanetNode]) -> Results {
+    func detectStellium(_ planetNodes: PlanetNodeSequence) -> Results {
         // Logic to detect a stellium formation
         return Results() // Placeholder
     }
     
-    func detectYod(_ planetNodes: [PlanetNode]) -> Results {
+    func detectYod(_ planetNodes: PlanetNodeSequence) -> Results {
         // Logic to detect a Yod formation
         return Results() // Placeholder
     }
     
-    func detectMysticCross(_ planetNodes: [PlanetNode]) -> Results {
+    func detectMysticCross(_ planetNodes: PlanetNodeSequence) -> Results {
         // Logic to detect a mystic cross formation
         return Results() // Placeholder
     }
     
-    func detectGrandSextile(_ planetNodes: [PlanetNode]) -> Results {
+    func detectGrandSextile(_ planetNodes: PlanetNodeSequence) -> Results {
         // Logic to detect a grand sextile formation
         return Results() // Placeholder
     }
@@ -140,7 +140,7 @@ extension CelestialEventScanner.FormationDetector {
 // MARK: Detect Triangles
 extension CelestialEventScanner.FormationDetector {
     // Detect Multiple Grand Trines
-    func detectMultipleGrandTrines(_ planetNodes: [PlanetNode]) -> Results {
+    func detectMultipleGrandTrines(_ planetNodes: PlanetNodeSequence) -> Results {
         var results:Results = Results()
         guard planetNodes.count >= 3 else { return results }
         let count = planetNodes.count

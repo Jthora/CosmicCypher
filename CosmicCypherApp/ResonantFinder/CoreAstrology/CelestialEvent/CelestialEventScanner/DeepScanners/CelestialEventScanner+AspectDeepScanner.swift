@@ -89,42 +89,40 @@ extension CelestialEventScanner.AspectEventScanner {
                     let progress = Float((total-current)/total)
                     onProgress?(progress)
                     
-                    // Planet Motions (retrogrades)
-                    /// Perform a binary search to find the closest aspect date
-                    // Motion
+                    // MidTime
                     let midTimeInterval = (lowerBoundTimeInterval + upperBoundTimeInterval) / 2.0
-                    guard let motion1 = retrogradeDetector1.cycleMotionState(for: p1Type, timeInterval: midTimeInterval),
-                          let motion2 = retrogradeDetector2.cycleMotionState(for: p2Type, timeInterval: midTimeInterval) else {
-                        continue
-                    }
-                    var speed1:DegreesPerSecond = motion1.speed
-                    var speed2:DegreesPerSecond = motion2.speed
-                    switch motion1.currentMotion {
-                    case .direct(let momentum):
-                        // Expand Upper Bounds
-                        break
-                    case .retrograde(let momentum):
-                        // Expand Lower Bounds
-                        break
-                    case .stationary:
-                        break
-                    }
-                    switch motion2.currentMotion {
-                    case .direct(let momentum):
-                        // Expand Upper Bounds
-                        break
-                    case .retrograde(let momentum):
-                        // Expand Lower Bounds
-                        break
-                    case .stationary:
-                        break
-                    }
                     
                     // Body
                     let midDate = Date(timeIntervalSinceReferenceDate: midTimeInterval)
                     guard let b1 = CoreAstrology.AspectBody(type: p1Type, date: midDate),
                           let b2 = CoreAstrology.AspectBody(type: p2Type, date: midDate) else {
                         continue
+                    }
+                    
+                    // Motion
+                    guard let motionState1 = retrogradeDetector1.cycleMotionState(l: b1.equatorialLongitude.value, t: midTimeInterval),
+                          let motionState2 = retrogradeDetector2.cycleMotionState(l: b2.equatorialLongitude.value, t: midTimeInterval) else {
+                        continue
+                    }
+                    switch motionState1.motion {
+                    case .direct(let momentum):
+                        // Expand Upper Bounds
+                        break
+                    case .retrograde(let momentum):
+                        // Expand Lower Bounds
+                        break
+                    case .stationary:
+                        break
+                    }
+                    switch motionState2.motion {
+                    case .direct(let momentum):
+                        // Expand Upper Bounds
+                        break
+                    case .retrograde(let momentum):
+                        // Expand Lower Bounds
+                        break
+                    case .stationary:
+                        break
                     }
                     // Longitude Difference
                     guard let longitudeDifference: Degree = b1.longitudeDifference(from: b2, on: midDate) else {continue}

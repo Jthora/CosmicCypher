@@ -185,7 +185,7 @@
 		FA5CF1762A757B29006CBEB5 /* CelestialEventConsole.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5CF1752A757B29006CBEB5 /* CelestialEventConsole.swift */; };
 		FA5CF1782A7587FE006CBEB5 /* CelestialEventScanner+Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5CF1772A7587FE006CBEB5 /* CelestialEventScanner+Results.swift */; };
 		FA5CF17A2A75881D006CBEB5 /* CelestialEventExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5CF1792A75881D006CBEB5 /* CelestialEventExporter.swift */; };
-		FA5CF17C2A765666006CBEB5 /* AspectEventExport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA5CF17B2A765666006CBEB5 /* AspectEventExport.storyboard */; };
+		FA5CF17C2A765666006CBEB5 /* CelestialEventExport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA5CF17B2A765666006CBEB5 /* CelestialEventExport.storyboard */; };
 		FA5CF17E2A765DE7006CBEB5 /* CelestialEventExportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5CF17D2A765DE7006CBEB5 /* CelestialEventExportViewController.swift */; };
 		FA5CF1802A7672DD006CBEB5 /* CelestialEventDataArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5CF17F2A7672DD006CBEB5 /* CelestialEventDataArchive.swift */; };
 		FA5CF1822A767A92006CBEB5 /* CelestialEventScannerResultsFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5CF1812A767A92006CBEB5 /* CelestialEventScannerResultsFormatter.swift */; };
@@ -532,7 +532,7 @@
 		FA5CF1752A757B29006CBEB5 /* CelestialEventConsole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestialEventConsole.swift; sourceTree = "<group>"; };
 		FA5CF1772A7587FE006CBEB5 /* CelestialEventScanner+Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CelestialEventScanner+Results.swift"; sourceTree = "<group>"; };
 		FA5CF1792A75881D006CBEB5 /* CelestialEventExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestialEventExporter.swift; sourceTree = "<group>"; };
-		FA5CF17B2A765666006CBEB5 /* AspectEventExport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AspectEventExport.storyboard; sourceTree = "<group>"; };
+		FA5CF17B2A765666006CBEB5 /* CelestialEventExport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CelestialEventExport.storyboard; sourceTree = "<group>"; };
 		FA5CF17D2A765DE7006CBEB5 /* CelestialEventExportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestialEventExportViewController.swift; sourceTree = "<group>"; };
 		FA5CF17F2A7672DD006CBEB5 /* CelestialEventDataArchive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestialEventDataArchive.swift; sourceTree = "<group>"; };
 		FA5CF1812A767A92006CBEB5 /* CelestialEventScannerResultsFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestialEventScannerResultsFormatter.swift; sourceTree = "<group>"; };
@@ -1458,7 +1458,6 @@
 				FA2C44A0286CEEE8009E61B2 /* TimeStreamManualSelect.storyboard */,
 				FA2CC94A287E9E6E0078ECE1 /* ElementalReading.storyboard */,
 				FAFE79312A6C029400C56612 /* GeoLocationSelect.storyboard */,
-				FA5CF17B2A765666006CBEB5 /* AspectEventExport.storyboard */,
 				FAFB68A52AB8330100FEBDF4 /* TimestreamInterface.swift */,
 			);
 			path = Storyboards;
@@ -1525,6 +1524,7 @@
 				FA11EDD92B0AA7D50013ECA2 /* PlanetNodesAndAspects.storyboard */,
 				FA52CE092B0AFECF002C675C /* PlanetNodes.storyboard */,
 				FAFE792D2A6AD87200C56612 /* CelestialEventScan.storyboard */,
+				FA5CF17B2A765666006CBEB5 /* CelestialEventExport.storyboard */,
 				FA4E2F292B0FE0B50040ADE6 /* TimeMaps.storyboard */,
 			);
 			path = Storyboards;
@@ -1673,7 +1673,7 @@
 				FA6101D7286D78580000D4D5 /* TimeStreamSelect.storyboard in Resources */,
 				FA07CA1F25401EBB00683486 /* NaturaDisk.sks in Resources */,
 				FAA536AB2AD84BD2005A360D /* SpectrographSettings.storyboard in Resources */,
-				FA5CF17C2A765666006CBEB5 /* AspectEventExport.storyboard in Resources */,
+				FA5CF17C2A765666006CBEB5 /* CelestialEventExport.storyboard in Resources */,
 				FA07CA2725401EBB00683486 /* Main.storyboard in Resources */,
 				FAB131222878AD25000AD7B9 /* Iceberg-Regular.ttf in Resources */,
 				FA1FDD6B2577144700B51BD2 /* TimeStream.storyboard in Resources */,

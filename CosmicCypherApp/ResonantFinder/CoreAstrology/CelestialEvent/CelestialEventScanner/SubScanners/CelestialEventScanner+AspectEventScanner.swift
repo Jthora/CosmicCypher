@@ -116,9 +116,7 @@ extension CelestialEventScanner {
                 // Scanning Properties
                 var currentDate = startDate
                 var scanCount: Float = 0
-                
                 var timeDelta: TimeInterval = Date().timeIntervalSinceReferenceDate
-                
                 var subScanResults = CelestialEventScanner.SubScanResults()
                 
                 // Scanning Loop
@@ -126,24 +124,20 @@ extension CelestialEventScanner {
                     // Number of Iterations
                     scanCount += 1
                     let progress = scanCount / totalScanCount
-                    
                     // Report progress to Console UI
                     DispatchQueue.main.async {
                         self.delegate?.subScanUpdate(progress: progress, type: .aspect())
                     }
-                    
                     // Find Aspects within Orb
                     let aspects = AspectDetector.findAspectsWithinOrb(aspectTypes: aspectTypes, on: currentDate) { subScanProgress in
                         self.delegate?.subScanUpdate(progress: progress, type: .aspect())
                     }
-                    
                     // Calculate Aspects
                     self.calculate(aspects: aspects, on: currentDate) { aspect, realDate in
                         //self.delegate?.deepScanComplete(date: realDate)
                         let aspectEvent = CoreAstrology.AspectEvent(date: realDate, aspect: aspect)
                         subScanResults.add(event: aspectEvent)
                     }
-
                     // determine the next scan date
                     currentDate = Calendar.current.date(byAdding: .day, value: 1, to: currentDate)!
                 }

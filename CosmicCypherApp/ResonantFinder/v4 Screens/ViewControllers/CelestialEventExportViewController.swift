@@ -16,9 +16,7 @@ class CelestialEventExportViewController: UIViewController {
         guard let vc = UIStoryboard(name: "CelestialEventExport", bundle: nil).instantiateViewController(withIdentifier: "CelestialEventExportViewController") as? CelestialEventExportViewController else {
             return
         }
-        presentingViewController.present(vc, animated: true) {
-            
-        }
+        presentingViewController.present(vc, animated: true) {  }
     }
     
     // MARK: IBOutlets

@@ -13,7 +13,7 @@ class CelestialEventScanner {
     
     // MARK: Results
     // Scan Results
-    var scanResults:ScanResults = ScanResults()
+    var results:Results = Results()
     
     // MARK: Settings
     // Options

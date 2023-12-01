@@ -22,17 +22,21 @@ extension CoreAstrology {
             self.resonanceEventType = resonanceEventType
             super.init(startDate: startDate, endDate: endDate, date: date, planetNodeTypes: planetNodeTypes)
         }
+        
+        required init(from decoder: Decoder) throws {
+            fatalError("init(from:) has not been implemented")
+        }
     }
 }
 
 // MARK: Resonance Event Type
 extension CoreAstrology {
-    enum ResonanceEventType:Hashable {
+    enum ResonanceEventType:Hashable, Codable {
         //case gravimetric(_ focalPoint: FocalPoint) // Global Net Energy (Solar Net Energy, Unified Net Energy)
         //case alignment(_ focalPoint: FocalPoint) // Global Energy Alignment (Solar Energy Alignment, Unified Energy Alignment)
         case harmonics(_ focalPoint: FocalPoint) // Global Frequency Harmonics (Solar Frequency Harmonics, Unified Frequency Harmonics)
         
-        enum FocalPoint:Int, CaseIterable {
+        enum FocalPoint:Int, CaseIterable, Codable {
             case global // Geocentric
             case solar // Heliocentric
             case unified // Interplanetary

@@ -19,6 +19,8 @@ extension CelestialEventScanner {
         }
 
         // MARK: inits
+        init() {}
+        
         init(data: [String: Any], hashKey:HashKey) {
             self.hashKey = hashKey
             self.data = data

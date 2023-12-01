@@ -22,6 +22,10 @@ extension CoreAstrology {
             self.aspect = aspect
             super.init(startDate: startDate, endDate: endDate, date: date, planetNodeTypes: [aspect.primaryBody.type, aspect.secondaryBody.type])
         }
+        
+        required init(from decoder: Decoder) throws {
+            fatalError("init(from:) has not been implemented")
+        }
     }
 }
 

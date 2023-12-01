@@ -17,7 +17,7 @@ extension CoreAstrology {
             return .octive(octiveType)
         }
         // Geometric Type
-        enum OctiveType: Int, CaseIterable {
+        enum OctiveType: Int, CaseIterable, Codable {
             case triangle // Sum of angles = 180 degrees
             case square // Sum of angles = 360 degrees
             case pentagon // Sum of angles = 540 degrees
@@ -77,6 +77,9 @@ extension CoreAstrology {
             self.octiveType = octiveType
             super.init(startDate: startDate, endDate: endDate, date: date, planetNodeTypes: planetNodeTypes)
         }
+        
+        required init(from decoder: Decoder) throws {
+            fatalError("init(from:) has not been implemented")
+        }
     }
 }
-

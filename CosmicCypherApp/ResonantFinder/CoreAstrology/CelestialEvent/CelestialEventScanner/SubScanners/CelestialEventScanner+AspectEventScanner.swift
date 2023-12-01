@@ -119,6 +119,8 @@ extension CelestialEventScanner {
                 
                 var timeDelta: TimeInterval = Date().timeIntervalSinceReferenceDate
                 
+                var subScanResults = CelestialEventScanner.SubScanResults()
+                
                 // Scanning Loop
                 while currentDate <= endDate {
                     // Number of Iterations
@@ -127,17 +129,19 @@ extension CelestialEventScanner {
                     
                     // Report progress to Console UI
                     DispatchQueue.main.async {
-                        self.delegate?.scanUpdate(scanProgress: progress)
+                        self.delegate?.subScanUpdate(progress: progress, type: .aspect())
                     }
                     
                     // Find Aspects within Orb
                     let aspects = AspectDetector.findAspectsWithinOrb(aspectTypes: aspectTypes, on: currentDate) { subScanProgress in
-                        self.delegate?.scanUpdate(subScanProgress: subScanProgress)
+                        self.delegate?.subScanUpdate(progress: progress, type: .aspect())
                     }
                     
                     // Calculate Aspects
-                    self.calculate(aspects: aspects, on: currentDate) { realDate in
-                        self.delegate?.deepScanComplete(date: realDate)
+                    self.calculate(aspects: aspects, on: currentDate) { aspect, realDate in
+                        //self.delegate?.deepScanComplete(date: realDate)
+                        let aspectEvent = CoreAstrology.AspectEvent(date: realDate, aspect: aspect)
+                        subScanResults.add(event: aspectEvent)
                     }
 
                     // determine the next scan date
@@ -146,7 +150,8 @@ extension CelestialEventScanner {
                 
                 // Report Complete to Delegate
                 DispatchQueue.main.async {
-                    self.delegate?.scanComplete(aspectsFound: self.lockedInAspects)
+                    // TODO: need to convert scanResults into data for CelestialEventScanner.Results
+                    self.delegate?.subScanComplete(results: subScanResults, type: .aspect(.none))
                 }
             }
         }
@@ -155,16 +160,16 @@ extension CelestialEventScanner {
         // Cycle through Aspects and Planets looking for Orbs at 0º
         func calculate(aspects:[CoreAstrology.Aspect],
                        on currentDate:Date,
-                       onComplete:((_ date:Date) -> Void)? = nil) {
+                       onComplete:((_ aspect: CoreAstrology.Aspect, _ date:Date) -> Void)? = nil) {
             // Iterate through Aspects
             let aspectsList = aspects.enumerated()
             for (i, currentAspect) in aspectsList {
                 
-                // Report Progress Bar
-                DispatchQueue.main.async {
-                    let subScanProgress:Float = Float(i) / Float(aspects.count)
-                    self.delegate?.scanUpdate(subScanProgress: subScanProgress)
-                }
+//                // Report Progress Bar
+//                DispatchQueue.main.async {
+//                    let subScanProgress:Float = Float(i) / Float(aspects.count)
+//                    self.delegate?.scanUpdate(subScanProgress: subScanProgress)
+//                }
                 
                 // Symbol Hash
                 let hash = currentAspect.hash
@@ -215,7 +220,7 @@ extension CelestialEventScanner {
                             self.lockIn(aspect: realAspect, for: realDate)
                             
                             // Back call
-                            onComplete?(realDate)
+                            onComplete?(realAspect, realDate)
                         })
                         
                         // Set that the Aspect was recently Locked in
@@ -241,7 +246,7 @@ extension CelestialEventScanner {
             
             // Reset Progress Bar
             DispatchQueue.main.async {
-                self.delegate?.scanUpdate(scanProgress: nil)
+                //self.delegate?.subScanUpdate(progress: <#T##Float#>, type: <#T##CoreAstrology.CelestialEventType#>)
             }
         }
         
@@ -271,7 +276,7 @@ extension CelestialEventScanner {
                                  for: estimatedDate,
                                  onProgress: { progress in 
                 DispatchQueue.main.async {
-                    self.delegate?.scanUpdate(deepScanProgress: progress)
+                    //self.delegate?.scanUpdate(deepScanProgress: progress)
                 }
             },
                                  onComplete: onComplete)
@@ -281,9 +286,20 @@ extension CelestialEventScanner {
 
 extension CelestialEventScanner.AspectEventScanner {
     // RetrogradeEvent Scan Results
-    typealias ScanResults = [PlanetNodeType:[Date:CoreAstrology.AspectEvent]]
+    typealias ScanResults = [Date:[CoreAstrology.AspectEvent]]
 }
 
 extension CelestialEventScanner.AspectEventScanner.ScanResults {
+    // Add Results
+    func addTo(results: inout CelestialEventScanner.Results) {
+        for (date,list) in self {
+            results.data[date.hashKey] = list
+        }
+    }
     
+    mutating func add(event: CoreAstrology.AspectEvent, on date: Date) {
+        var list = self[date] ?? []
+        list.append(event)
+        self[date] = list
+    }
 }

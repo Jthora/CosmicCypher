@@ -8,7 +8,6 @@
 import Foundation
 import SwiftAA
 
-
 extension GeographicCoordinates: Codable {
     enum CodingKeys: CodingKey {
         case longitude

@@ -12,7 +12,7 @@ import SwiftAA
 extension Arcana {
     
     /// 36 Decans - Egyptian Conversion
-    public enum Decan: Int, CaseIterable {
+    public enum Decan: Int, CaseIterable, Codable {
         
         public static let count:Double = 36
         

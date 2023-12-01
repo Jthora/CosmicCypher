@@ -93,11 +93,17 @@ class CelestialEventScanViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        updateUI()
+        update()
         setupOptionButton()
     }
     
-    func updateUI() {
+    func update() {
+        updateText()
+        updateConsole()
+        updateStartAndEndDates()
+    }
+    
+    func updateText() {
         // Fill Longitude and Latitude
         let location = CLLocation(latitude: scanner.latitude, longitude: scanner.longitude)
         textFieldLongitude.text = "\(location.coordinate.longitude)"
@@ -109,8 +115,15 @@ class CelestialEventScanViewController: UIViewController {
         
         textViewPlanetsAndNodes.text = planetNodeSymbols.joined()
         textViewAspectAngles.text = aspectSymbols.joined()
-        
+    }
+    
+    func updateConsole() {
         scanner.console?.update()
+    }
+    
+    func updateStartAndEndDates() {
+        startDatePicker.date = scanner.startDate
+        endDatePicker.date = scanner.endDate
     }
     
     // MARK: Setup Sub Scan Options
@@ -274,13 +287,17 @@ class CelestialEventScanViewController: UIViewController {
     // Set Location Button Action
     @IBAction func buttonSetLocation(_ sender: UIButton) {
         GeoLocationSelectViewController.presentModally(over: self, originViewController: self) {
-            self.updateUI()
+            DispatchQueue.main.async {
+                self.update()
+            }
         }
     }
     // Select Button Action
     @IBAction func buttonSelect(_ sender: UIButton) {
         PlanetNodeAndAspectSelectViewController.presentModally(over: self, selectionContext: .scanner) {
-            self.updateUI()
+            DispatchQueue.main.async {
+                self.update()
+            }
         }
     }
     
@@ -302,9 +319,6 @@ class CelestialEventScanViewController: UIViewController {
     @IBAction func buttonScan(_ sender: UIButton) {
         // Activates the Scanner
         CelestialEventScanner.Core.scan()
-        buttonScan.isEnabled = false
-        
-        // TODO: While Scanning, the Scan Button turns into a Red Stop Button.
     }
     // Time Maps
     @IBAction func buttonMaps(_ sender: UIButton) {
@@ -376,58 +390,50 @@ extension CelestialEventScanViewController: CelestialEventConsoleDelegate {
 // MARK: Aspect Event Scanner Delegate
 extension CelestialEventScanViewController: CelestialEventScannerDelegate {
     
-    // Update (Scan)
-    func scanUpdate(scanProgress: Float?) {
+    // Scan Update (Main)
+    func scanUpdate(progress: Float) {
         DispatchQueue.main.async {
-            if let progress = scanProgress {
-                self.progressBar.progress = progress
-            }
+            self.progressBar.progress = progress
+            self.progressBar.isHidden = false
         }
     }
-    // Update (Sub Scan)
-    func scanUpdate(subScanProgress: Float?) {
+    // Scan Update (Sub)
+    func subScanUpdate(progress: Float, type: CoreAstrology.CelestialEventType) {
         DispatchQueue.main.async {
-            if let subScanProgress = subScanProgress {
-                self.subProgressBar.progress = subScanProgress
-            }
+            self.subProgressBar.progress = progress
+            self.subProgressBar.isHidden = false
         }
     }
-    // Update (Calculate)
-    func scanUpdate(calculateProgress: Float?) {
+    // Scan Update (Deep)
+    func deepScanUpdate(progress: Float, type: CoreAstrology.CelestialEventType) {
         DispatchQueue.main.async {
-            if let calculateProgress = calculateProgress {
-                self.calculateProgressBar.progress = calculateProgress
-            }
+            self.deepScanProgressBar.progress = progress
+            self.deepScanProgressBar.isHidden = false
         }
     }
-    // Update (Deep Scan)
-    func scanUpdate(deepScanProgress: Float?) {
+    // Scan Complete (Main)
+    func scanComplete(results: CelestialEventScanner.Results) {
         DispatchQueue.main.async {
-            if let deepScanProgress = deepScanProgress {
-                self.deepScanProgressBar.progress = deepScanProgress
-            }
-        }
-    }
-    
-    // Scan Complete
-    func scanComplete(aspectsFound: [Date : [CoreAstrology.Aspect]]) {
-        DispatchQueue.main.async {
-            self.progressBar.progress = 1.0
-            self.subProgressBar.progress = 1.0
+            self.progressBar.progress = 0
+            self.progressBar.isHidden = true
             self.buttonScan.isEnabled = true
         }
     }
-    
-    // Deep Scan Complete
-    func deepScanComplete(date: Date) {
+    // Scan Complete (Sub)
+    func subScanComplete(results: CelestialEventScanner.SubScanResults, type: CoreAstrology.CelestialEventType) {
+        DispatchQueue.main.async {
+            self.subProgressBar.progress = 0
+            self.subProgressBar.isHidden = true
+        }
+    }
+    // Scan Complete (Deep)
+    func deepScanComplete(event: CoreAstrology.CelestialEvent, type: CoreAstrology.CelestialEventType) {
         DispatchQueue.main.async {
             self.deepScanProgressBar.progress = 0
             self.deepScanProgressBar.isHidden = true
-            self.buttonScan.isEnabled = true
         }
     }
-    
-    // Scan Error
+    // Scan Error (Main)
     func scanError(error: CelestialEventScanner.ScanError) {
         switch error {
         default:
@@ -438,6 +444,29 @@ extension CelestialEventScanViewController: CelestialEventScannerDelegate {
             }
         }
     }
+    // Scan Error (Sub)
+    func subScanError(error: CelestialEventScanner.ScanError) {
+        switch error {
+        default:
+            DispatchQueue.main.async {
+                self.progressBar.progress = 0
+                self.subProgressBar.progress = 0
+                self.buttonScan.isEnabled = true
+            }
+        }
+    }
+    // Scan Error (Deep)
+    func deepScanError(error: CelestialEventScanner.ScanError) {
+        switch error {
+        default:
+            DispatchQueue.main.async {
+                self.progressBar.progress = 0
+                self.subProgressBar.progress = 0
+                self.buttonScan.isEnabled = true
+            }
+        }
+    }
+    
 }
 
 

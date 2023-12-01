@@ -12,7 +12,7 @@ import ObjCAA
 import Darwin
 
 extension Arcana {
-    public enum House:Double {
+    public enum House:Double, Codable {
         case first = 3  // ASC
         case second = 4
         case third = 5

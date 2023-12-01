@@ -10,13 +10,13 @@ import UIKit
 // MARK: Celestial Event
 extension CoreAstrology {
     // Celestial Event
-    enum CelestialEventType: Hashable {
-        case retrograde(_ type: RetrogradeEvent.RetrogradeType)
-        case transit(_ type: TransitEvent.TransitType)
-        case aspect(_ type: AspectEventType)
-        case formation(_ type: FormationEvent.FormationType)
-        case octive(_ type: OctiveEvent.OctiveType)
-        case resonance(_ type:ResonanceEventType)
+    enum CelestialEventType: Hashable, Codable {
+        case retrograde(_ type: RetrogradeEvent.RetrogradeType? = nil)
+        case transit(_ type: TransitEvent.TransitType? = nil)
+        case aspect(_ type: AspectEventType? = nil)
+        case formation(_ type: FormationEvent.FormationType? = nil)
+        case octive(_ type: OctiveEvent.OctiveType? = nil)
+        case resonance(_ type:ResonanceEventType? = nil)
         
         static func systemImage(_ type:CelestialEventType) -> UIImage {
             return type.systemImage

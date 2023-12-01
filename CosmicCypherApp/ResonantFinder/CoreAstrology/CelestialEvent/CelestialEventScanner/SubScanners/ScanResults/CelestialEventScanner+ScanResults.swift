@@ -10,7 +10,7 @@ import Foundation
 // MARK: ScanResults
 extension CelestialEventScanner {
     // Scan Results
-    class ScanResults {
+    class SubScanResults {
         /// Events
         var events:[CoreAstrology.CelestialEventType:[CoreAstrology.CelestialEvent]] = [:]
         /// Add
@@ -25,6 +25,11 @@ extension CelestialEventScanner {
         
         func add(retrogradeScanResults:RetrogradeEventScanner.ScanResults) {
             
+        }
+        
+        func convert() -> CelestialEventScanner.Results {
+            var results = CelestialEventScanner.Results()
+            return results
         }
     }
     

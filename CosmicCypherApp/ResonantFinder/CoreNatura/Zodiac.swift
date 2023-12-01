@@ -11,7 +11,7 @@ import SwiftAA
 
 extension Arcana {
     /// 12 Zodiac Signs - Greek
-    public enum Zodiac:Int, CaseIterable {
+    public enum Zodiac:Int, CaseIterable, Codable {
         
         case aries = 0
         case taurus

@@ -23,13 +23,17 @@ extension CoreAstrology {
             super.init(date: date, planetNodeTypes: [planetNode.nodeType])
         }
         
+        required init(from decoder: Decoder) throws {
+            fatalError("init(from:) has not been implemented")
+        }
+        
     }
 }
     
 // MARK: Transit Event
 extension CoreAstrology.TransitEvent {
     // Transit Event Type
-    enum TransitType: Hashable {
+    enum TransitType: Hashable, Codable {
         case zodiac(_ zodiac:Arcana.Zodiac)
         case cusps(_ cusp:Arcana.Cusp)
         case decans(_ decan:Arcana.Decan)

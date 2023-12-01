@@ -10,7 +10,7 @@ import SwiftAA
 
 // Base24 (12 Cusps)
 extension Arcana {
-    public enum Cusp: Int, CaseIterable {
+    public enum Cusp: Int, CaseIterable, Codable {
         case rebirth
         case power
         case energy

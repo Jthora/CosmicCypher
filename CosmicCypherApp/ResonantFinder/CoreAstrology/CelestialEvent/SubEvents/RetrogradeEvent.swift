@@ -23,6 +23,10 @@ extension CoreAstrology {
             self.retrogradeType = retrogradeType
             super.init(startDate: startDate, endDate: endDate, date: date, planetNodeTypes: [planetNodeType])
         }
+        
+        required init(from decoder: Decoder) throws {
+            fatalError("init(from:) has not been implemented")
+        }
     }
 }
 

@@ -24,8 +24,12 @@ extension CoreAstrology {
             super.init(date: date, planetNodeTypes: planetNodeTypes)
         }
         
+        required init(from decoder: Decoder) throws {
+            fatalError("init(from:) has not been implemented")
+        }
+        
         // MARK: Formation Event Type
-        enum FormationType: Int, CaseIterable {
+        enum FormationType: Int, CaseIterable, Codable {
             case grandTrine
             case mysticRectangle
             case kite

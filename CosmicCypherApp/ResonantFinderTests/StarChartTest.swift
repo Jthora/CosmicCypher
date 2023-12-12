@@ -10,7 +10,7 @@ import SwiftAA
 import TimeZoneLocate
 import CoreLocation
 
-@testable import ResonantFinder
+@testable import CosmicCypher
 
 class StarChartTests: XCTestCase {
     

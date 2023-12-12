@@ -56,7 +56,7 @@ public final class StarChart {
     }
     
     private func setupAspects() {
-        print("StarChart: setupAspects")
+        //print("StarChart: setupAspects")
         for (primaryKey,primaryPlanetNode) in planetNodes {
             //print("primaryKey: \(primaryKey)")
             

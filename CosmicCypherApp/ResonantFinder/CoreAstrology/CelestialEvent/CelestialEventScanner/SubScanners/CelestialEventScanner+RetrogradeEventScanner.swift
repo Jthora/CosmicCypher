@@ -60,7 +60,11 @@ extension CelestialEventScanner {
                     if pMotion != motion {
                         if self.useDeepScan {
                             /// Binary Search Tree
-                            self.deepScanner
+                            self.deepScanner.deepScan(motion: pMotion,
+                                                      changedTo: motion,
+                                                      planetNodeType: planetNodeType,
+                                                      startDate: Date(timeIntervalSinceReferenceDate: t-td),
+                                                      endDate: Date(timeIntervalSinceReferenceDate: t+td))
                         } else {
                             /// Add Retrograde Event
                             let retrogradeEvent = CoreAstrology.RetrogradeEvent(date: date,

@@ -378,3 +378,36 @@ extension Date {
     }
 }
 
+extension Date {
+    static func midDate(between date1: Date, and date2: Date) -> Date {
+        let timeInterval1 = date1.timeIntervalSince1970
+        let timeInterval2 = date2.timeIntervalSince1970
+        
+        let midTimeInterval = (timeInterval1 + timeInterval2) / 2
+        return Date(timeIntervalSince1970: midTimeInterval)
+    }
+    
+    
+}
+
+extension Date {
+    func daysBetweenDate(_ toDate: Date) -> Int {
+        let calendar = Calendar.current
+        let startDate = calendar.startOfDay(for: self)
+        let endDate = calendar.startOfDay(for: toDate)
+        let components = calendar.dateComponents([.day], from: startDate, to: endDate)
+        return components.day ?? 0
+    }
+}
+
+extension Date {
+    var isInFuture: Bool {
+        return self > Date()
+    }
+}
+
+extension Date {
+    var startOfDay: Date {
+        return Calendar.current.startOfDay(for: self)
+    }
+}

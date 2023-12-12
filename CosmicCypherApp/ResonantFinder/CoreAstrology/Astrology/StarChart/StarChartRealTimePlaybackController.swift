@@ -15,7 +15,7 @@ protocol StarChartRealTimePlaybackControllerDelegate: AnyObject {
 
 class StarChartRealTimePlaybackController {
     
-    let defaultPlaybackSampleRate:TimeInterval = 1
+    let defaultPlaybackSampleRate:TimeInterval = 0.2
     var speed:TimeInterval = 1
     let defaultMode:PlaybackMode = .pause
     var mode:PlaybackMode = .pause {
@@ -24,7 +24,7 @@ class StarChartRealTimePlaybackController {
         }
     }
     
-    var sampleStep:SampleStep = .days
+    var sampleStep:SampleStep = .hours
     var sampleRate:SampleRate = .onePerSecond
     
     var date:Date = StarChart.Core.current.date

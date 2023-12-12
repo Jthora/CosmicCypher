@@ -12,13 +12,21 @@ import SwiftAA
 extension PlanetNodeState {
     // Direct or Retrograde State
     public class MotionState: Codable, Equatable {
+        // MARK: Properties
         public var motion:Motion
+        public var distance:Degree
         public var speed:DegreesPerSecond
         public var speedDelta:DegreesPerSecondPerSecond
+        
+        // MARK: Accessors
+        public var time:TimeInterval {
+            return distance.value*speed.value
+        }
         
         // MARK: Init
         public init(_ initialMotion: Motion, speed:DegreesPerSecond, speedDelta:DegreesPerSecondPerSecond) {
             self.motion = initialMotion
+            self.distance = speed
             self.speed = speed
             self.speedDelta = speedDelta
         }
@@ -45,6 +53,30 @@ extension PlanetNodeState {
     }
 }
 
+
+// MARK: Retrograde Event
+enum PlanetNodeRetrogradeEvent {
+    case enterDirect
+    case enterRetrograde
+    case peakDirect
+    case peakRetrogradeccc
+}
+
+// MARK: Retrograde State
+enum PlanetNodeRetrogradeState {
+    case direct
+    case retrograde
+    case stationary
+    
+    func motion(_ momentum: PlanetNodeState.MotionState.Motion.Momentum?) -> PlanetNodeState.MotionState.Motion {
+        switch self {
+        case .direct: return .direct(momentum)
+        case .retrograde: return .retrograde(momentum)
+        case .stationary: return .stationary
+        }
+    }
+}
+
 // MARK: Motion
 extension PlanetNodeState.MotionState {
     // Motion
@@ -65,6 +97,14 @@ extension PlanetNodeState.MotionState {
                 return .stationary
             } else {
                 return .retrograde(momentum)
+            }
+        }
+        
+        func retrogradeState() -> PlanetNodeRetrogradeState {
+            switch self {
+            case .direct: return .direct
+            case .retrograde: return .retrograde
+            case .stationary: return .stationary
             }
         }
     }

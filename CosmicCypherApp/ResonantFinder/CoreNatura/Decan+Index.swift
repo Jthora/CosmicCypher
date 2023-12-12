@@ -79,13 +79,14 @@ extension Arcana.Decan {
                 
                 let chevron = planetNode.createChevron()
                 // Distribution
-                add(distribution: chevron.decanDistribution, to: chevron.decan)
-                add(subDistribution: chevron.subDecanDistribution, to: chevron.subDecan)
+                let distribution = chevron.calculateDistribution()
+                
+                add(distribution: distribution.decanPercentage/100, to: distribution.decan)
+                add(subDistribution: distribution.subDecanPercentage/100, to: distribution.subDecan)
                 
                 count += 1
             }
         }
-        
         
         // Add
         public func add(power:Double, to decan:Arcana.Decan) {

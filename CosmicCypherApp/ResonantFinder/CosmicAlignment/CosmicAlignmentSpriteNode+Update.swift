@@ -107,8 +107,12 @@ extension CosmicAlignmentSpriteNode {
         // Setup Alpha Levels Buffer for Sprites
         for decan in Arcana.Decan.allCases {
             alphaLevels[decan] = 0
-            let grossAlpha = decanIndex.distribution(for: decan) + decanIndex.subDistribution(for: decan)
-            alphaLevels[decan] = min(1, grossAlpha)
+            let distribution = decanIndex.distribution(for: decan)
+            let subDistribution = decanIndex.subDistribution(for: decan)
+            let grossAlpha = distribution + subDistribution
+            if grossAlpha > 0 {
+                alphaLevels[decan] = min(1, grossAlpha)
+            }
         }
         
         // Change Alpha (with animation)

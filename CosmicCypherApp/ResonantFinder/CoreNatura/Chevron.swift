@@ -111,6 +111,15 @@ open class Chevron {
     }
     
     // Base 24 Distribution
+    struct CuspDistribution {
+        let cusp: Arcana.Cusp
+        let subCusp: Arcana.Cusp
+        let cuspPercentage: Double
+        let subCuspPercentage: Double
+    }
+    
+    
+    
     public var cuspDistribution:Double {
         return abs(subZodiacDistribution-1)
     }
@@ -132,13 +141,44 @@ open class Chevron {
         return value > 0 ? value : 1 + value
     }
     
-    // Base 36 Distribution
-    public var decanDistribution:Double {
-        return 1-subNaturaDistribution
+    // Base 36 Decan Distribution
+    public struct DecanDistribution {
+        let decan: Arcana.Decan
+        let subDecan: Arcana.Decan
+        let decanPercentage: Double
+        let subDecanPercentage: Double
     }
-    public var subDecanDistribution:Double {
-        let value = ((longitude.value.truncatingRemainder(dividingBy: 360/36)-(360/72))/(360/72))
-        return value > 0 ? value : 1 + value
+    let totalDegrees:Double = 360
+    let decansCount:Double = 36
+    let degreePerDecan:Double = 10
+    public func calculateDistribution() -> DecanDistribution {
+        
+        var degrees = longitude.value.truncatingRemainder(dividingBy: 360)
+        if degrees < 0 {
+            degrees += 360
+        }
+        
+        var distribution: DecanDistribution
+        
+        var decan1Index = (degrees / degreePerDecan).truncatingRemainder(dividingBy: decansCount)
+        var decan2Index = (decan1Index + 1).truncatingRemainder(dividingBy: decansCount)
+        
+        if decan1Index < 0 { decan1Index += decansCount }
+        if decan2Index < 0 { decan2Index += decansCount }
+        
+        let remainder = degrees.truncatingRemainder(dividingBy: degreePerDecan)
+        let percentageForDecan1 = 1.0 - Double(remainder) / Double(degreePerDecan)
+        let percentageForDecan2 = 1.0 - percentageForDecan1
+        
+        let decan1Enum = Arcana.Decan(rawValue: Int(decan1Index))!
+        let decan2Enum = Arcana.Decan(rawValue: Int(decan2Index))!
+        
+        distribution = DecanDistribution(decan: decan1Enum,
+                                        subDecan: decan2Enum,
+                                        decanPercentage: percentageForDecan1 * 100,
+                                        subDecanPercentage: percentageForDecan2 * 100)
+        
+        return distribution
     }
     
     public var elementDistribution:Double {

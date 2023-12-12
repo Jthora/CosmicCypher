@@ -14,28 +14,31 @@ extension Arcana {
     /// 36 Decans - Egyptian Conversion
     public enum Decan: Int, CaseIterable, Codable {
         
-        public static let count:Double = 36
-        
-        public static func from(degree:Degree) -> Decan {
-            var decanAccurate = (((degree.value)/360)*count).truncatingRemainder(dividingBy: count)
-            if decanAccurate < 0 { decanAccurate += count }
-            let decan = Decan(rawValue: Int(decanAccurate))!
-            //print("creating Decan(\(decan)) degree(\(degree))")
-            return decan
+        public static let count:Int = 36
+        public static func from(degree: Degree) -> Decan {
+            let totalDegrees = 360
+            let degreeValue = degree.value
+            let decanAccurate = (Double(degreeValue) / Double(totalDegrees)) * Double(count)
+            var decanIndex = Int(decanAccurate.truncatingRemainder(dividingBy: Double(count)))
+            if decanIndex < 0 { decanIndex += count }
+            return Decan(rawValue: decanIndex)!
         }
-        
+
         public static func subFrom(degree: Degree) -> Decan {
-            var decanAccurate = (((degree.value)/360)*count).truncatingRemainder(dividingBy: count)
-            if decanAccurate < 0 { decanAccurate += count }
-            if decanAccurate.truncatingRemainder(dividingBy: 1) > 0.5 {
-                var index = abs(Int(decanAccurate)+1)
-                if index > Int(count)-1 { index = 0 }
-                return Decan(rawValue: index)!
+            let totalDegrees = 360
+            let degreeValue = degree.value
+            let decanAccurate = (Double(degreeValue) / Double(totalDegrees)) * Double(count)
+            var decanIndex = Int(decanAccurate.truncatingRemainder(dividingBy: Double(count)))
+            if decanIndex < 0 { decanIndex += count }
+            
+            let isUpperHalf = decanAccurate.truncatingRemainder(dividingBy: 1) > 0.5
+            if isUpperHalf {
+                decanIndex = (decanIndex + 1) % count
             } else {
-                var index = Int(decanAccurate)-1
-                if index < 0 { index = Int(count)-1 }
-                return Decan(rawValue: index)!
+                decanIndex = (decanIndex - 1 + count) % count
             }
+            
+            return Decan(rawValue: decanIndex)!
         }
         
         /// Aries
@@ -99,7 +102,7 @@ extension Arcana {
         case dancersAndDreamers
         
         public var degrees:Double {
-            return Double(self.rawValue) * (360/Decan.count)
+            return Double(self.rawValue) * (360/Double(Decan.count))
         }
         
         public var zodiac:Zodiac {

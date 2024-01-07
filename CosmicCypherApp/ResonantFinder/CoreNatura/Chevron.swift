@@ -120,6 +120,7 @@ open class Chevron {
     
     
     
+    
     public var cuspDistribution:Double {
         return abs(subZodiacDistribution-1)
     }
@@ -151,7 +152,7 @@ open class Chevron {
     let totalDegrees:Double = 360
     let decansCount:Double = 36
     let degreePerDecan:Double = 10
-    public func calculateDistribution() -> DecanDistribution {
+    public func calculateDecanDistribution() -> DecanDistribution {
         
         var degrees = longitude.value.truncatingRemainder(dividingBy: 360)
         if degrees < 0 {

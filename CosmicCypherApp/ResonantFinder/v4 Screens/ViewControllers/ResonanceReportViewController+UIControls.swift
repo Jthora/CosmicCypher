@@ -22,6 +22,7 @@ extension ResonanceReportViewController {
                         self.planetSelectButton.alpha = 0
                         self.settingsButton.alpha = 0
                         self.shareButton.alpha = 0
+                        self.aboutButton.alpha = 0
                     }
                 } else {
                     UIView.animate(withDuration: 0.5) {
@@ -31,6 +32,7 @@ extension ResonanceReportViewController {
                         self.planetSelectButton.alpha = 1
                         self.settingsButton.alpha = 1
                         self.shareButton.alpha = 1
+                        self.aboutButton.alpha = 1
                     }
                 }
             } else {
@@ -41,6 +43,7 @@ extension ResonanceReportViewController {
                     self.planetSelectButton.alpha = 0
                     self.settingsButton.alpha = 0
                     self.shareButton.alpha = 0
+                    self.aboutButton.alpha = 0
                 } else {
                     self.dateTimeCoordsLabel.alpha = 1
                     self.aspectEventScannerButton.alpha = 1
@@ -48,6 +51,7 @@ extension ResonanceReportViewController {
                     self.planetSelectButton.alpha = 1
                     self.settingsButton.alpha = 1
                     self.shareButton.alpha = 1
+                    self.aboutButton.alpha = 1
                 }
             }
         }

@@ -1,12 +1,12 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
-      "filename" : "NaturaIcons_Elements_Water.png"
+      "filename" : "NaturaIcons_Elements_Water.png",
+      "idiom" : "universal"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }

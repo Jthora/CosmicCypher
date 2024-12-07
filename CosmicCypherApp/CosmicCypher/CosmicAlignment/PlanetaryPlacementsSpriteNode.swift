@@ -11,7 +11,7 @@ import SwiftAA
 
 class PlanetaryPlacementsSpriteNode: SKSpriteNode {
     
-    lazy var defaultRadius:CGFloat = size.height/2.4
+    lazy var defaultRadius:CGFloat = size.height/2.3
     
     // MARK: Sprites
     private var planetSpriteNodes:[CoreAstrology.AspectBody.NodeType:PlanetSpriteNode] = [:]
@@ -60,7 +60,9 @@ class PlanetaryPlacementsSpriteNode: SKSpriteNode {
             let spriteSize = CGSize(width: size.width/20, height: size.height/20)
             let planetSprite = PlanetSpriteNode.create(nodeType: nodeType, size: spriteSize, degree: degree)
             planetSprite.position = CGPoint(x: 0, y: radius)
+            planetSprite.anchorPoint = CGPoint(x: 0.5, y: 0.5)
             let containerSprite = SKSpriteNode(texture: nil, color: .clear, size: spriteSize)
+            containerSprite.anchorPoint = CGPoint(x: 0.5, y: 0.5)
             
             // Rotate Sprite
             degree += 180
@@ -68,6 +70,8 @@ class PlanetaryPlacementsSpriteNode: SKSpriteNode {
             degree = 360 - degree
             containerSprite.zRotation = CGFloat(degree.inRadians.value)
             planetSprite.zRotation = CGFloat((-degree).inRadians.value)
+            
+            containerSprite.position = CGPoint(x: containerSprite.position.x, y: containerSprite.position.y-8)
             
             // Add Sprite
             containerSprite.addChild(planetSprite)

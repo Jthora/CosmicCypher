@@ -838,14 +838,14 @@
                                                                                                     </constraints>
                                                                                                 </imageView>
                                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="○ 0.9375" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6nf-tj-lFz">
-                                                                                                    <rect key="frame" x="21.333333333333329" y="43" width="51" height="6"/>
-                                                                                                    <fontDescription key="fontDescription" name="Iceberg-Regular" family="Iceberg" pointSize="12"/>
+                                                                                                    <rect key="frame" x="21.333333333333329" y="41" width="51" height="8"/>
+                                                                                                    <fontDescription key="fontDescription" name="Iceberg-Regular" family="Iceberg" pointSize="17"/>
                                                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                     <nil key="highlightedColor"/>
                                                                                                 </label>
                                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;5/11&gt;" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Adf-J6-u7F">
                                                                                                     <rect key="frame" x="21.666666666666668" y="0.0" width="50.666666666666657" height="9"/>
-                                                                                                    <fontDescription key="fontDescription" name="Iceberg-Regular" family="Iceberg" pointSize="12"/>
+                                                                                                    <fontDescription key="fontDescription" name="Iceberg-Regular" family="Iceberg" pointSize="18"/>
                                                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                     <nil key="highlightedColor"/>
                                                                                                 </label>
@@ -869,7 +869,7 @@
                                                                                                 <constraint firstItem="k54-wP-vsv" firstAttribute="centerY" secondItem="HMn-56-rYr" secondAttribute="centerY" id="ek4-ZT-aoN"/>
                                                                                                 <constraint firstItem="dO2-Sc-cMS" firstAttribute="leading" secondItem="HMn-56-rYr" secondAttribute="leading" constant="2" id="fsv-B2-OfQ"/>
                                                                                                 <constraint firstAttribute="bottom" secondItem="6nf-tj-lFz" secondAttribute="bottom" id="hHr-03-QK7"/>
-                                                                                                <constraint firstItem="6nf-tj-lFz" firstAttribute="top" secondItem="Pri-e2-dYw" secondAttribute="bottom" constant="-5" id="jU9-Xq-llu"/>
+                                                                                                <constraint firstItem="6nf-tj-lFz" firstAttribute="top" secondItem="Pri-e2-dYw" secondAttribute="bottom" constant="-7" id="jU9-Xq-llu"/>
                                                                                                 <constraint firstItem="Adf-J6-u7F" firstAttribute="top" secondItem="HMn-56-rYr" secondAttribute="top" id="jXv-7V-vnU"/>
                                                                                                 <constraint firstItem="jpK-zc-Y0e" firstAttribute="top" secondItem="HMn-56-rYr" secondAttribute="top" id="koG-SD-cXy"/>
                                                                                                 <constraint firstItem="k54-wP-vsv" firstAttribute="centerX" secondItem="huh-pE-WkL" secondAttribute="centerX" id="lX3-uv-kcl"/>
@@ -892,9 +892,9 @@
                                                                                                     <nil key="textColor"/>
                                                                                                     <nil key="highlightedColor"/>
                                                                                                 </label>
-                                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12.134%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hT8-rp-lDQ">
+                                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12.134%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hT8-rp-lDQ">
                                                                                                     <rect key="frame" x="0.0" y="12.333333333333336" width="93.666666666666671" height="11.666666666666664"/>
-                                                                                                    <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="8"/>
+                                                                                                    <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="10"/>
                                                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                     <nil key="highlightedColor"/>
                                                                                                 </label>
@@ -1117,19 +1117,19 @@
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100.0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OqI-fh-SB5">
                                                                 <rect key="frame" x="47.333333333333329" y="42" width="46.333333333333329" height="9.3333333333333357"/>
-                                                                <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="11"/>
+                                                                <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="18"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100.0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IyM-Ay-0Gf">
                                                                 <rect key="frame" x="0.0" y="42" width="47.333333333333336" height="9.3333333333333357"/>
-                                                                <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="11"/>
+                                                                <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="18"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100.0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eFH-wu-enF">
                                                                 <rect key="frame" x="93.666666666666671" y="42" width="47.000000000000014" height="9.3333333333333357"/>
-                                                                <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="11"/>
+                                                                <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="18"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -1558,14 +1558,14 @@ Time:  10:51:55</string>
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="103.125" y="214.34846266471448"/>
+            <point key="canvasLocation" x="101.86046511627907" y="213.73390557939916"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ymG-hk-9I9">
             <objects>
                 <viewController id="tAa-J7-vOA" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2gW-pM-HjO">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="250"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="207"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="rLg-MM-wQE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1618,22 +1618,22 @@ Time:  10:51:55</string>
         <image name="questionmark.app" catalog="system" width="128" height="114"/>
         <image name="speedometer" catalog="system" width="128" height="123"/>
         <systemColor name="separatorColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray3Color">
-            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray4Color">
-            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29803921570000003" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

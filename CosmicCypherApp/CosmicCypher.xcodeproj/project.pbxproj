@@ -746,7 +746,7 @@
 			isa = PBXGroup;
 			children = (
 				FA545E61289C1DBD007E66A1 /* CosmicCypher.entitlements */,
-				FA07C9AC254019D800683486 /* ResonantFinder */,
+				FA07C9AC254019D800683486 /* CosmicCypher */,
 				FA07C9C3254019DC00683486 /* ResonantFinderTests */,
 				FA07C9CE254019DC00683486 /* ResonantFinderUITests */,
 				FA07C9AB254019D800683486 /* Products */,
@@ -765,7 +765,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FA07C9AC254019D800683486 /* ResonantFinder */ = {
+		FA07C9AC254019D800683486 /* CosmicCypher */ = {
 			isa = PBXGroup;
 			children = (
 				FA2CC947287DF5E80078ECE1 /* UI */,
@@ -791,7 +791,7 @@
 				FAB0690E2ABDB75B00334B1A /* Shaders.metal */,
 				FAEB27BA2851CB2D009994B8 /* Model.xcdatamodeld */,
 			);
-			path = ResonantFinder;
+			path = CosmicCypher;
 			sourceTree = "<group>";
 		};
 		FA07C9C3254019DC00683486 /* ResonantFinderTests */ = {
@@ -2269,12 +2269,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "Build and Version set by Build Phase Shell Script";
 				DEVELOPMENT_TEAM = H4H7UN3F3K;
-				INFOPLIST_FILE = ResonantFinder/Info.plist;
+				INFOPLIST_FILE = CosmicCypher/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Cosmic Cypher";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.puzzle-games";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 3.0.0;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = app.thora.cosmiccypher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2296,12 +2299,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "Build and Version set by Build Phase Shell Script";
 				DEVELOPMENT_TEAM = H4H7UN3F3K;
-				INFOPLIST_FILE = ResonantFinder/Info.plist;
+				INFOPLIST_FILE = CosmicCypher/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Cosmic Cypher";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.puzzle-games";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 3.0.0;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = app.thora.cosmiccypher;
 				PRODUCT_NAME = "$(TARGET_NAME)";

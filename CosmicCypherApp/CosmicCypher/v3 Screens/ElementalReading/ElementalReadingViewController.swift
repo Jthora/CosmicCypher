@@ -194,3 +194,20 @@ class ElementalReadingViewController: UIViewController {
     */
 
 }
+
+
+
+
+extension ElementalReadingViewController {
+    
+    override var keyCommands: [UIKeyCommand]? {
+        let commandH = UIKeyCommand(input: "H", modifierFlags: [.control], action: #selector(dismissEnergyScreen))
+        commandH.discoverabilityTitle = "Dismiss Energy Level Screen"
+
+        return [commandH]
+    }
+    
+    @objc func dismissEnergyScreen() {
+        self.dismiss(animated: false)
+    }
+}

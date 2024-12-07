@@ -12,16 +12,39 @@ public typealias TimeStreamCompositeSpriteNode = TimeStream.Composite.SpriteNode
 extension TimeStream.Composite {
     public class SpriteNode: SKSpriteNode {
         
+        // MARK: Static
+        // Default Configuration
+        static let defaultConfiguration = TimeStream.Configuration(
+            sampleCount: 100,
+            primaryChart: nil,
+            secondaryChart: nil,
+            timeStreams: [],
+            nodeTypes: []
+        )
+        
+        // MARK: Properties
         var composite:TimeStream.Composite
         var timeStreamSpriteNodes:[TimeStreamSpriteNode] = []
         
         var currentNotch: TimeStreamCompositeNotchSpriteNode? = nil
         var notchSprites:[TimeStreamCompositeNotchSpriteNode] = []
         
-        var scrubberSprite:SKSpriteNode = {
+        // Scrubber Sprite
+        var scrubberSprite: SKSpriteNode = {
             let sprite = SKSpriteNode(imageNamed: "scrubber_indicator.png")
+            sprite.size = CGSize(width: 16, height: 32)
+            sprite.alpha = 0.75
+            sprite.position = .zero
             return sprite
         }()
+        
+        // Throttling Variables
+        private var lastUpdateTimestamp: TimeInterval = 0
+        private let renderThrottleInterval: TimeInterval = 0.1 // 10 renders per second
+        
+        // Timeline Information
+        var timelineStartDate: Date = Date(timeIntervalSince1970: 0) // Default to epoch
+        var timelineEndDate: Date = Date() // Default to now
         
         func closestNotch() -> TimeStreamCompositeNotchSpriteNode? {
             var distanceArray = [Int]()
@@ -38,12 +61,27 @@ extension TimeStream.Composite {
             return closestNode
         }
         
+        // MARK: Init
+        // Custom Initializer
+        public init(size: CGSize) {
+            self.composite = TimeStream.Composite(name: "default", uuid: UUID(), configuration: TimeStreamCompositeSpriteNode.defaultConfiguration)
+            super.init(texture: nil, color: .clear, size: size)
+            self.setupNode()
+        }
+        
+        required init?(coder aDecoder: NSCoder) {
+            self.composite = TimeStream.Composite(name: "default", uuid: UUID(), configuration: TimeStreamCompositeSpriteNode.defaultConfiguration)
+            super.init(coder: aDecoder)
+            self.setupNode()
+        }
+        
         init(timeStreamComposite:TimeStream.Composite, size: CGSize) {
             self.composite = timeStreamComposite
             super.init(texture: nil, color: .black, size: size)
             setup()
         }
         
+        // MARK: Setup
         func setup() {
             self.removeAllChildren()
             addTimeStreams()
@@ -133,8 +171,15 @@ extension TimeStream.Composite {
             setScrubber(x: scrubberSprite.position.x)
         }
         
-        required init?(coder aDecoder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
+        
+        
+        private func setupNode() {
+            // Initialize scrubber sprite or other properties
+            let scrubberSprite = SKSpriteNode(imageNamed: "scrubber_indicator.png")
+            scrubberSprite.size = CGSize(width: 16, height: 32)
+            scrubberSprite.alpha = 0.75
+            scrubberSprite.position = .zero
+            self.addChild(scrubberSprite)
         }
         
         func scrubberCloseTo(x:CGFloat, range:CGFloat = 3) -> Bool {
@@ -146,19 +191,40 @@ extension TimeStream.Composite {
             return  xmin && xmax
         }
         
-        func setScrubber(x:CGFloat, updateStarChart:Bool = true) {
-            DispatchQueue.main.async {
-                self.setScrubber(position: CGPoint(x: x, y: self.scrubberSprite.position.y))
-            }
-            if updateStarChart,
-               let point = currentNotch?.point {
-                Task {
-                    let starChart = StarChartRegistry.main.getStarChart(point: point)
-                    DispatchQueue.main.async {
-                        StarChart.Core.current = starChart
-                        ResonanceReportViewController.current?.update()
-                    }
+        // Scrubber Position Update
+        func setScrubber(x: CGFloat, updateStarChart: Bool = true) {
+            // Ensure the scrubber position stays within bounds
+            scrubberSprite.position.x = max(0, min(x, self.size.width))
+            
+            if updateStarChart {
+                // Throttle StarChart updates
+                let currentTime = CACurrentMediaTime()
+                if currentTime - lastUpdateTimestamp >= renderThrottleInterval {
+                    lastUpdateTimestamp = currentTime
+                    
+                    // Convert scrubber position to a date
+                    let scrubberDate = dateFromPosition(x)
+                    applyStarChartUpdate(date: scrubberDate)
                 }
+            }
+        }
+        
+        // Convert Scrubber Position to Timeline Date
+        private func dateFromPosition(_ x: CGFloat) -> Date {
+            let timelineWidth = self.size.width
+            let normalizedPosition = x / timelineWidth
+            let timelineDuration = timelineEndDate.timeIntervalSince(timelineStartDate)
+            let timeOffset = normalizedPosition * timelineDuration
+            return timelineStartDate.addingTimeInterval(timeOffset)
+        }
+        
+        // Update the StarChart Based on Date
+        private func applyStarChartUpdate(date: Date) {
+            if let starChart = try? StarChartRegistry.main.getStarChart(date: date, geographicCoordinates: StarChart.Core.current.coordinates) {
+                StarChart.Core.current = starChart
+                ResonanceReportViewController.current?.update()
+            } else {
+                print("StarChart not available for date: \(date)")
             }
         }
         

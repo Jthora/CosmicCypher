@@ -22,6 +22,71 @@ extension CosmicAlignmentSpriteNode {
         }
     }
     
+    func blackout() {
+        // Set all Zodiac Sprites to alpha 0
+        for zodiac in Arcana.Zodiac.allCases {
+            if let sprite = self.spritesBase12[zodiac] {
+                sprite.alpha = 0
+            }
+        }
+
+        // Set all Cusp Sprites to alpha 0
+        for cusp in Arcana.Cusp.allCases {
+            if let sprite = self.spritesBase24[cusp] {
+                sprite.alpha = 0
+            }
+        }
+
+        // Set all Decan Sprites to alpha 0
+        for decan in Arcana.Decan.allCases {
+            if let sprite = self.spritesBase36[decan] {
+                sprite.alpha = 0
+            }
+        }
+
+        // Set planetary positions to alpha 0
+        self.planetaryPlacementSpriteNode.alpha = 0
+
+        // Set aspect lines to alpha 0
+        self.aspectLinesSpriteNode.alpha = 0
+
+        // Additional cleanup: ensure no animations are running
+        self.removeAllActions()
+    }
+    
+    // Reset
+    func reset() {
+        // Hide all Zodiac Sprites
+        for zodiac in Arcana.Zodiac.allCases {
+            if let sprite = self.spritesBase12[zodiac] {
+                sprite.alpha = 1 // Hide by setting alpha to 0
+            }
+        }
+
+        // Hide all Cusp Sprites
+        for cusp in Arcana.Cusp.allCases {
+            if let sprite = self.spritesBase24[cusp] {
+                sprite.alpha = 1 // Hide by setting alpha to 0
+            }
+        }
+
+        // Hide all Decan Sprites
+        for decan in Arcana.Decan.allCases {
+            if let sprite = self.spritesBase36[decan] {
+                sprite.alpha = 1 // Hide by setting alpha to 0
+            }
+        }
+
+        // Hide all planetary positions
+        self.planetaryPlacementSpriteNode.alpha = 0
+
+        // Hide all aspect lines
+        self.aspectLinesSpriteNode.alpha = 0
+
+        // Additional cleanup: ensure no animations are running
+        self.removeAllActions()
+    }
+    
     // Base 12 Zodiac
     func updateZodiac(starChart:StarChart, selectedNodeTypes:[CoreAstrology.AspectBody.NodeType], animate:Bool = true) {
         // set the alpha of each Zodiac Sprite
@@ -57,6 +122,14 @@ extension CosmicAlignmentSpriteNode {
                 self.spritesBase12[zodiac]?.alpha = targetAlpha
             }
         }
+        
+        // Animate planetary positions back to alpha 1
+        let planetaryFadeIn = SKAction.fadeAlpha(to: 1, duration: 0.5)
+        self.planetaryPlacementSpriteNode.run(planetaryFadeIn)
+
+        // Animate aspect lines back to alpha 1
+        let aspectLinesFadeIn = SKAction.fadeAlpha(to: 1, duration: 0.5)
+        self.aspectLinesSpriteNode.run(aspectLinesFadeIn)
     }
     
     // Base 24(12) Cusps

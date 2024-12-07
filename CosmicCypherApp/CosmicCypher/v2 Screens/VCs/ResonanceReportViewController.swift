@@ -361,16 +361,129 @@ extension ResonanceReportViewController {
     
     // Define the key commands
     override var keyCommands: [UIKeyCommand]? {
-        let commandA = UIKeyCommand(input: "A", modifierFlags: [.control], action: #selector(triggerButtonA))
-        commandA.discoverabilityTitle = "Settings"
+        let commandA = UIKeyCommand(input: "A", modifierFlags: [.control], action: #selector(setToTomorrow))
+        commandA.discoverabilityTitle = "Tomorrow"
+        
+        let commandB = UIKeyCommand(input: "B", modifierFlags: [.control], action: #selector(setToTwoDaysAhead))
+        commandB.discoverabilityTitle = "Two Days Ahead"
+        
+        let commandC = UIKeyCommand(input: "C", modifierFlags: [.control], action: #selector(setToThreeDaysAhead))
+        commandC.discoverabilityTitle = "Three Days Ahead"
+        
+        let commandD = UIKeyCommand(input: "D", modifierFlags: [.control], action: #selector(setToPlayAtHourSpeed))
+        commandD.discoverabilityTitle = "Play"
+        
+        let commandE = UIKeyCommand(input: "E", modifierFlags: [.control], action: #selector(setToStartAnimateIntro))
+        commandE.discoverabilityTitle = "Start StarDisk Animation"
+        
+        let commandF = UIKeyCommand(input: "F", modifierFlags: [.control], action: #selector(setToStopAnimateIntro))
+        commandF.discoverabilityTitle = "Stop StarDisk Animation"
+        
+        let commandG = UIKeyCommand(input: "G", modifierFlags: [.control], action: #selector(setToBlackoutStarDisk))
+        commandG.discoverabilityTitle = "Blackout StarDisk Animation"
+        
+        let commandH = UIKeyCommand(input: "H", modifierFlags: [.control], action: #selector(setToShowEnergyScreen))
+        commandH.discoverabilityTitle = "Show Energy Level Screen"
 
-        return [commandA]
+        return [commandA, commandB, commandC, commandD, commandE, commandF, commandG, commandH]
     }
     
-    // Actions for key commands
-    @objc func triggerButtonA() {
-        // Simulate button A's action
-        settingsButton.sendActions(for: .touchUpInside)
-        //buttonA.sendActions(for: .touchUpInside)
+    @objc func setToTomorrow() {
+        guard let date = Date.beginningOf(.tomorrow) else {
+            print("FAILED: tomorrowButtonTouch")
+            return
+        }
+        
+        StarChart.Core.current = StarChart(date: date, coordinates: StarChart.Core.current.coordinates)
+        ResonanceReportViewController.current?.update()
+        ResonanceReportViewController.current?.renderStarChart()
+    }
+    
+    @objc func setToTwoDaysAhead() {
+        guard let date = Date.beginningOf(.dayAfterToday(2)) else {
+            print("FAILED: threeDaysAheadButtonTouch")
+            return
+        }
+        
+        StarChart.Core.current = StarChart(date: date, coordinates: StarChart.Core.current.coordinates)
+        ResonanceReportViewController.current?.update()
+        ResonanceReportViewController.current?.renderStarChart()
+    }
+    
+    @objc func setToThreeDaysAhead() {
+        guard let date = Date.beginningOf(.dayAfterToday(3)) else {
+            print("FAILED: threeDaysAheadButtonTouch")
+            return
+        }
+        
+        StarChart.Core.current = StarChart(date: date, coordinates: StarChart.Core.current.coordinates)
+        ResonanceReportViewController.current?.update()
+        ResonanceReportViewController.current?.renderStarChart()
+    }
+    
+    @objc func setToPlayAtHourSpeed() {
+        StarChart.Core.playbackController.play(.forward)
+        StarChart.Core.playbackController.sampleRate = .fivePerSecond
+        StarChart.Core.playbackController.sampleStep = .minutes
+        StarChart.Core.playbackController.startPlayback()
+    }
+    
+    @objc func setToBlackoutStarDisk() {
+        DispatchQueue.main.async {
+            self.blackoutCosmicDisk()
+        }
+    }
+    
+    
+    @objc func setToStartAnimateIntro() {
+        DispatchQueue.main.async {
+            self.resetCosmicDisk()
+            self.view.bringSubviewToFront(self.renderingProgressAnimation)
+
+            // Load the GIF as an animated image
+            guard let gifImage = UIImage.gifImageWithName("StarDiskFormation-loaderAnim_2") else { return }
+
+            // Extract the animation frames and duration
+            guard let frames = gifImage.images else { return }
+            let duration = gifImage.duration
+            
+            // Configure the UIImageView to play the animation once
+            self.renderingProgressAnimation.animationImages = frames
+            self.renderingProgressAnimation.animationDuration = duration
+            self.renderingProgressAnimation.animationRepeatCount = 1 // Play once
+            
+            // Start the animation
+            self.renderingProgressAnimation.startAnimating()
+            self.renderingProgressAnimation.isHidden = false
+
+            // Animate alpha to make it visible
+            UIView.animate(withDuration: 0, delay: 0, options: .curveEaseInOut) {
+                self.renderingProgressAnimation.alpha = 1
+            } completion: { _ in
+                // Schedule the action after the animation completes
+                DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
+                    self.renderingProgressAnimation.stopAnimating() // Stop the animation
+                    //self.renderingProgressAnimation.animationImages = nil // Clear the frames
+                    self.setToStopAnimateIntro() // Call the completion function
+                }
+            }
+        }
+    }
+    
+    @objc func setToStopAnimateIntro() {
+        DispatchQueue.main.async {
+            self.view.bringSubviewToFront(self.renderingProgressAnimation)
+            self.renderingProgressAnimation.isHidden = false
+            self.updateCosmicDisk()
+            UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut) {
+                self.renderingProgressAnimation.alpha = 0
+            } completion: { _ in
+                self.renderingProgressAnimation.isHidden = true
+            }
+        }
+    }
+    
+    @objc func setToShowEnergyScreen() {
+        ElementalReadingViewController.presentModally(over: self)
     }
 }

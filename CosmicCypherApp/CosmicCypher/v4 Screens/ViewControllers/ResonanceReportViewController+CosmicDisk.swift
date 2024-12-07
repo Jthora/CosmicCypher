@@ -19,4 +19,12 @@ extension ResonanceReportViewController {
         
         self.cosmicDiskSprite.update(starChart: starChart, selectedNodeTypes: selectedNodeTypes, selectedAspects: selectedAspects)
     }
+    
+    func resetCosmicDisk() {
+        self.cosmicDiskSprite.reset()
+    }
+    
+    func blackoutCosmicDisk() {
+        self.cosmicDiskSprite.blackout()
+    }
 }

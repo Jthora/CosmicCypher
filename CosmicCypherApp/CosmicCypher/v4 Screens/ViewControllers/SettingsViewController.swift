@@ -82,4 +82,36 @@ class SettingsViewController: UIViewController {
     @IBAction func setPlanetNodesAndAspectsButtonAction(_ sender: UIButton) {
         PlanetNodeAndAspectSelectViewController.presentModally(over: self, selectionContext: .starChart)
     }
+    
+    
+    
+    // Allow the view controller to handle key commands
+    override var canBecomeFirstResponder: Bool {
+        return true
+    }
+
+    // Define the key commands
+    override var keyCommands: [UIKeyCommand]? {
+        let commandA = UIKeyCommand(input: "A", modifierFlags: [.control], action: #selector(triggerButtonA))
+        commandA.discoverabilityTitle = "Set Time and GeoLocation"
+        
+        let commandB = UIKeyCommand(input: "B", modifierFlags: [.control], action: #selector(triggerButtonB))
+        commandA.discoverabilityTitle = "Dismiss"
+
+        return [commandA, commandB]
+    }
+    
+    // Actions for key commands
+    @objc func triggerButtonA() {
+        setTimeAndGeoLocationButton.sendActions(for: .touchUpInside)
+    }
+    
+    // Actions for key commands
+    @objc func triggerButtonB() {
+        DispatchQueue.main.async {
+            self.dismiss(animated: false)
+        }
+    }
+    
+    
 }

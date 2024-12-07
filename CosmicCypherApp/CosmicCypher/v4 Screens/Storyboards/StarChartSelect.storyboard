@@ -33,53 +33,44 @@
                                             <action selector="rightNowButtonTouch:" destination="8ZG-bb-DNe" eventType="touchUpInside" id="pHT-GD-vab"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IPd-Ll-ZJn">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IPd-Ll-ZJn" userLabel="Tomorrow">
                                         <rect key="frame" x="133.5" y="128.5" width="147" height="36.5"/>
+                                        <accessibility key="accessibilityConfiguration" hint="Tomorrow" identifier="Tomorrow" label="Tomorrow"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" subtitle="">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Tomorrow">
-                                                    <attributes>
-                                                        <font key="NSFont" size="24" name="Aldrich-Regular"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
+                                        <buttonConfiguration key="configuration" style="plain" title="Tomorrow" subtitle="">
+                                            <fontDescription key="titleFontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="24"/>
                                         </buttonConfiguration>
+                                        <attributedString key="userComments">
+                                            <fragment content="Tomorrow"/>
+                                        </attributedString>
                                         <connections>
-                                            <action selector="tomorrowButtonTouch:" destination="8ZG-bb-DNe" eventType="touchUpInside" id="7nr-Vj-Gg4"/>
+                                            <action selector="tomorrowButtonTouch:" destination="8ZG-bb-DNe" eventType="touchUpInside" id="S00-hs-McB"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKV-So-Wt0">
-                                        <rect key="frame" x="112" y="81.5" width="190" height="37"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKV-So-Wt0" userLabel="TwoDaysAhead">
+                                        <rect key="frame" x="112" y="82" width="190" height="36.5"/>
+                                        <accessibility key="accessibilityConfiguration" hint="TwoDaysAhead" identifier="TwoDaysAhead" label="TwoDaysAhead"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" subtitle="">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="2 Days Ahead">
-                                                    <attributes>
-                                                        <font key="NSFont" size="24" name="Aldrich-Regular"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
+                                        <buttonConfiguration key="configuration" style="plain" title="2 Days Ahead" subtitle="">
+                                            <fontDescription key="titleFontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="24"/>
                                         </buttonConfiguration>
+                                        <attributedString key="userComments">
+                                            <fragment content="TwoDaysAhead"/>
+                                        </attributedString>
                                         <connections>
                                             <action selector="twoDaysAheadButtonTouch:" destination="8ZG-bb-DNe" eventType="touchUpInside" id="jTD-fv-Kb1"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fO-Rh-Lsa">
-                                        <rect key="frame" x="112.5" y="34.5" width="189" height="37"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fO-Rh-Lsa" userLabel="ThreeDaysAhead">
+                                        <rect key="frame" x="109.5" y="35.5" width="195" height="36.5"/>
+                                        <accessibility key="accessibilityConfiguration" hint="ThreeDaysAhead" identifier="ThreeDaysAhead" label="ThreeDaysAhead"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" subtitle="">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="3 Days Ahead">
-                                                    <attributes>
-                                                        <font key="NSFont" size="24" name="Aldrich-Regular"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
+                                        <buttonConfiguration key="configuration" style="plain" title="3 Days Ahead" subtitle="">
+                                            <fontDescription key="titleFontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="24"/>
                                         </buttonConfiguration>
+                                        <attributedString key="userComments">
+                                            <fragment content="ThreeDaysAhead"/>
+                                        </attributedString>
                                         <connections>
                                             <action selector="threeDaysAheadButtonTouch:" destination="8ZG-bb-DNe" eventType="touchUpInside" id="gzv-wM-KLG"/>
                                         </connections>
@@ -87,11 +78,14 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="IPd-Ll-ZJn" firstAttribute="width" secondItem="0JJ-Wi-5Ml" secondAttribute="width" multiplier="0.581028" id="FsJ-sa-psA"/>
+                                    <constraint firstItem="aKV-So-Wt0" firstAttribute="width" secondItem="0JJ-Wi-5Ml" secondAttribute="width" multiplier="0.750988" id="Kxw-EK-3gc"/>
                                     <constraint firstItem="aKV-So-Wt0" firstAttribute="centerX" secondItem="IPd-Ll-ZJn" secondAttribute="centerX" id="R1Y-b7-cC4"/>
                                     <constraint firstItem="IPd-Ll-ZJn" firstAttribute="top" secondItem="aKV-So-Wt0" secondAttribute="bottom" constant="10" id="ZD4-kR-Xoa"/>
                                     <constraint firstItem="aKV-So-Wt0" firstAttribute="top" secondItem="7fO-Rh-Lsa" secondAttribute="bottom" constant="10" id="a7V-KG-eaD"/>
                                     <constraint firstItem="0JJ-Wi-5Ml" firstAttribute="centerY" secondItem="KOh-Ki-r4n" secondAttribute="centerY" id="aqu-19-fCs"/>
                                     <constraint firstItem="7fO-Rh-Lsa" firstAttribute="centerX" secondItem="aKV-So-Wt0" secondAttribute="centerX" id="jbK-sZ-mRI"/>
+                                    <constraint firstItem="7fO-Rh-Lsa" firstAttribute="width" secondItem="0JJ-Wi-5Ml" secondAttribute="width" multiplier="0.771111" id="roY-Lj-Zzu"/>
                                     <constraint firstItem="IPd-Ll-ZJn" firstAttribute="centerX" secondItem="0JJ-Wi-5Ml" secondAttribute="centerX" id="rpK-bp-hbT"/>
                                     <constraint firstItem="0JJ-Wi-5Ml" firstAttribute="top" secondItem="IPd-Ll-ZJn" secondAttribute="bottom" constant="10" id="rqG-Fh-Vra"/>
                                     <constraint firstItem="0JJ-Wi-5Ml" firstAttribute="centerX" secondItem="KOh-Ki-r4n" secondAttribute="centerX" id="vJa-Yu-toQ"/>
@@ -116,7 +110,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.20000000298023224" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="StarChart Select" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Vf-9T-bRp">
-                                <rect key="frame" x="99.5" y="436.5" width="215" height="23"/>
+                                <rect key="frame" x="99.5" y="437" width="215" height="22.5"/>
                                 <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -138,6 +132,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="F5q-Nv-dar"/>
+                    <connections>
+                        <outlet property="buttonThreeDaysAhead" destination="7fO-Rh-Lsa" id="rik-Ie-TFi"/>
+                        <outlet property="buttonTomorrow" destination="IPd-Ll-ZJn" id="NZu-k3-RcZ"/>
+                        <outlet property="buttonTwoDaysAhead" destination="aKV-So-Wt0" id="BHt-LN-dGe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ylB-Mp-2t6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

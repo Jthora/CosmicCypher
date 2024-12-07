@@ -18,6 +18,12 @@ class StarChartSelectViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var buttonTomorrow: UIButton!
+    @IBOutlet weak var buttonTwoDaysAhead: UIButton!
+    @IBOutlet weak var buttonThreeDaysAhead: UIButton!
+    
+    
+    
     @IBAction func rightNowButtonTouch(_ sender: UIButton) {
         
         //ResonanceReportViewController.current?.isLive = true
@@ -85,5 +91,33 @@ class StarChartSelectViewController: UIViewController {
     }
     
     
+    // Allow the view controller to handle key commands
+    override var canBecomeFirstResponder: Bool {
+        return true
+    }
+
+    // Define the key commands
+    override var keyCommands: [UIKeyCommand]? {
+        let commandA = UIKeyCommand(input: "A", modifierFlags: [.control], action: #selector(triggerButtonA))
+        commandA.discoverabilityTitle = "Tomorrow"
+
+        let commandB = UIKeyCommand(input: "B", modifierFlags: [.control], action: #selector(triggerButtonB))
+        commandB.discoverabilityTitle = "Three Days Ahead"
+
+        return [commandA, commandB]
+    }
+
+    // Actions for key commands
+    @objc func triggerButtonA() {
+        // Simulate button A's action
+        buttonTomorrow.sendActions(for: .touchUpInside)
+        //buttonA.sendActions(for: .touchUpInside)
+    }
+
+    @objc func triggerButtonB() {
+        // Simulate button B's action
+        buttonThreeDaysAhead.sendActions(for: .touchUpInside)
+        //buttonB.sendActions(for: .touchUpInside)
+    }
     
 }

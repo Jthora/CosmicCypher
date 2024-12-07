@@ -355,3 +355,22 @@ class ResonanceReportViewController: UIViewController {
     }
     
 }
+
+
+extension ResonanceReportViewController {
+    
+    // Define the key commands
+    override var keyCommands: [UIKeyCommand]? {
+        let commandA = UIKeyCommand(input: "A", modifierFlags: [.control], action: #selector(triggerButtonA))
+        commandA.discoverabilityTitle = "Settings"
+
+        return [commandA]
+    }
+    
+    // Actions for key commands
+    @objc func triggerButtonA() {
+        // Simulate button A's action
+        settingsButton.sendActions(for: .touchUpInside)
+        //buttonA.sendActions(for: .touchUpInside)
+    }
+}

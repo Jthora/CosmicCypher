@@ -155,7 +155,8 @@ open class Chevron {
     let degreePerDecan:Double = 10
     public func calculateDecanDistribution() -> DecanDistribution {
         
-        var degrees = longitude.value.truncatingRemainder(dividingBy: 360)
+        let long = longitude.value - 5
+        var degrees = long.truncatingRemainder(dividingBy: 360)
         if degrees < 0 {
             degrees += 360
         }

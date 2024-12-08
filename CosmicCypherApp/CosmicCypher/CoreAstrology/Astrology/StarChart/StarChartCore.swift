@@ -8,27 +8,6 @@
 import SpriteKit
 import SwiftAA
 
-
-
-let DEFAULT_SELECTED_ASPECTS:[CoreAstrology.AspectRelationType] = [.conjunction,
-                                                                   .opposition,
-                                                                   .sextile,
-                                                                   .trine,
-                                                                   .square]
-let DEFAULT_SELECTED_NODETYPES:[CoreAstrology.AspectBody.NodeType] = [.ascendant,
-                                                                    .midheaven,
-                                                                    .lunarAscendingNode,
-                                                                    .lunarPerigee,
-                                                                    .moon,
-                                                                    .sun,
-                                                                    .mercury,
-                                                                    .venus,
-                                                                    .mars,
-                                                                    .jupiter,
-                                                                    .saturn,
-                                                                    .uranus,
-                                                                    .neptune]
-
 extension StarChart {
     class Core {
         

@@ -15,6 +15,7 @@ extension ResonanceReportViewController {
         let menu = UIMenu(children: [
             UIAction(title: "Speed: Seconds", state: .off, handler:setSpeedToSeconds),
             UIAction(title: "Speed: Minutes", state: .off, handler:setSpeedToMinutes),
+            UIAction(title: "Speed: 10 Minutes", state: .off, handler:setSpeedToTenMinutes),
             UIAction(title: "Speed: Hours", state: .on, handler:setSpeedToHours),
             UIAction(title: "Speed: Days", state: .off, handler:setSpeedToDays),
             UIAction(title: "Speed: Weeks", state: .off, handler:setSpeedToWeeks),
@@ -37,6 +38,12 @@ extension ResonanceReportViewController {
     func setSpeedToMinutes(action: UIAction) { setSpeedToMinutes() }
     func setSpeedToMinutes() {
         StarChart.Core.playbackController.set(speed: .minutes)
+    }
+    
+    // Ten Minutes
+    func setSpeedToTenMinutes(action: UIAction) { setSpeedToTenMinutes() }
+    func setSpeedToTenMinutes() {
+        StarChart.Core.playbackController.set(speed: .tenMinutes)
     }
     
     // Hours

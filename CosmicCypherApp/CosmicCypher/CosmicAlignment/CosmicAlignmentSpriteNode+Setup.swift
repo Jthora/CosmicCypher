@@ -58,33 +58,33 @@ extension CosmicAlignmentSpriteNode {
         }
     }
     
+    // Setup the positions of the Cusps
     func setupBase24() {
         // Base24 (15 degrees)
-        // Mid
         for i in 0...11 {
             // Get Cusp Sprite Type
-            var degree:Degree = Degree((Double(i)*30.0))-0.1
-            let radius:CGFloat = size.height/3.8
+            var degree: Degree = Degree((Double(i) * 30.0))
+            let radius: CGFloat = size.height / 3.8
             let force = Arcana.Force.from(degree: degree)
             let zodiac = Arcana.Zodiac.from(degree: degree)
             let cusp = Arcana.Cusp.from(degree: degree)
             let subZodiac = Arcana.Zodiac.subFrom(degree: degree)
             let topZodiac = zodiac.duality == .yang ? zodiac : subZodiac
             let bottomZodiac = subZodiac.duality == .yang ? zodiac : subZodiac
-            
+
             // Setup Cusp Sprite and Container Sprite
             let cuspSprite = getBase24CuspSprite(force, topZodiac.modality, bottomZodiac.modality, glow: true)
-            cuspSprite.size = CGSize(width: size.width/10, height: size.height/10)
+            cuspSprite.size = CGSize(width: size.width / 10, height: size.height / 10)
             cuspSprite.position = CGPoint(x: 0, y: radius)
             let containerSprite = SKSpriteNode(texture: nil, color: .clear, size: size)
             self.spritesBase24[cusp] = cuspSprite
-            
+
             // Rotate Sprite
             degree += 180
             degree = Degree(degree.value.truncatingRemainder(dividingBy: 360))
             degree = 360 - degree
             containerSprite.zRotation = CGFloat(degree.inRadians.value)
-            
+
             // Add Sprite
             containerSprite.addChild(cuspSprite)
             addChild(containerSprite)

@@ -1357,6 +1357,7 @@ Time:  10:51:55</string>
                                             <children>
                                                 <command title="Speed: Seconds" id="QEd-46-REc"/>
                                                 <command title="Speed: Minutes" id="dN3-OW-MZ0"/>
+                                                <command title="Speed: 10 Minutes" id="GOt-fb-7ru" userLabel="Speed: 10 Minutes"/>
                                                 <command title="Speed: Hours" id="hd6-sP-nwi"/>
                                                 <command title="Speed: Days" id="ggN-ea-xaA"/>
                                                 <command title="Speed: Weeks" id="XAD-r3-hry"/>

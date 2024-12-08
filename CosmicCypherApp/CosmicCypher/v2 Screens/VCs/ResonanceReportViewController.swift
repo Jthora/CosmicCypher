@@ -384,8 +384,17 @@ extension ResonanceReportViewController {
         
         let commandH = UIKeyCommand(input: "H", modifierFlags: [.control], action: #selector(setToShowEnergyScreen))
         commandH.discoverabilityTitle = "Show Energy Level Screen"
+        
+        let commandI = UIKeyCommand(input: "I", modifierFlags: [.control], action: #selector(setToDayToDayPlanetSelect))
+        commandI.discoverabilityTitle = "Day to Day Planet Select"
+        
+        let commandJ = UIKeyCommand(input: "J", modifierFlags: [.control], action: #selector(setToOneDayScrubPlanetSelect))
+        commandJ.discoverabilityTitle = "One Day Scrub Planet Select"
+        
+        let commandK = UIKeyCommand(input: "K", modifierFlags: [.control], action: #selector(setToRevealEachPlanetIndividually))
+        commandK.discoverabilityTitle = "Reveal Each Planet Individually"
 
-        return [commandA, commandB, commandC, commandD, commandE, commandF, commandG, commandH]
+        return [commandA, commandB, commandC, commandD, commandE, commandF, commandG, commandH, commandI, commandJ, commandK]
     }
     
     @objc func setToTomorrow() {
@@ -481,9 +490,58 @@ extension ResonanceReportViewController {
                 self.renderingProgressAnimation.isHidden = true
             }
         }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { // Adjust delay as needed (e.g., 1.0 seconds)
+            self.revealNodesRecursively(index: 0)
+        }
     }
     
     @objc func setToShowEnergyScreen() {
         ElementalReadingViewController.presentModally(over: self)
     }
+    
+    @objc func setToDayToDayPlanetSelect() {
+        StarChart.Core.selectedNodeTypes = DAYTODAY_SELECTED_NODETYPES
+        StarChart.Core.selectedAspects = DAYTODAY_SELECTED_ASPECTS
+        ResonanceReportViewController.current?.update()
+        ResonanceReportViewController.current?.renderStarChart()
+    }
+    
+    @objc func setToOneDayScrubPlanetSelect() {
+        StarChart.Core.selectedNodeTypes = ONEDAYSCRUB_SELECTED_NODETYPES
+        StarChart.Core.selectedAspects = ONEDAYSCRUB_SELECTED_ASPECTS
+        ResonanceReportViewController.current?.update()
+        ResonanceReportViewController.current?.renderStarChart()
+    }
+    
+    @objc func setToRevealEachPlanetIndividually() {
+        self.revealNodesRecursively(index: 0)
+    }
+
+    private func revealNodesRecursively(index: Int) {
+        // Ensure the index is within bounds
+        guard index < ONEDAYSCRUB_SELECTED_NODETYPES.count else {
+            setToOneDayScrubPlanetSelect()
+            return
+        }
+        
+        // Get the current node type
+        let nodeType = ONEDAYSCRUB_SELECTED_NODETYPES[index]
+        
+        // Update the selected node type to include only the current one
+        StarChart.Core.selectedNodeTypes = [nodeType]
+        
+        // Update and render the star chart for the current nodeType
+        ResonanceReportViewController.current?.update()
+        ResonanceReportViewController.current?.renderStarChart()
+        
+        // Print for debugging purposes
+        print("Revealed \(nodeType)")
+        
+        // Add a delay before revealing the next node
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { // Adjust delay as needed (e.g., 1.0 seconds)
+            self.revealNodesRecursively(index: index + 1)
+        }
+    }
+    
+    
 }

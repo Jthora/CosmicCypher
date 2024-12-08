@@ -316,6 +316,7 @@
 		FAFE792E2A6AD87200C56612 /* CelestialEventScan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAFE792D2A6AD87200C56612 /* CelestialEventScan.storyboard */; };
 		FAFE79302A6BE85B00C56612 /* GeoLocationAndTimeSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE792F2A6BE85B00C56612 /* GeoLocationAndTimeSelectViewController.swift */; };
 		FAFE79322A6C029400C56612 /* GeoLocationSelect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAFE79312A6C029400C56612 /* GeoLocationSelect.storyboard */; };
+		FB8388612D04FB1000A5A37C /* StarChart+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8388602D04FB1000A5A37C /* StarChart+Defaults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -667,6 +668,7 @@
 		FAFE792D2A6AD87200C56612 /* CelestialEventScan.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CelestialEventScan.storyboard; sourceTree = "<group>"; };
 		FAFE792F2A6BE85B00C56612 /* GeoLocationAndTimeSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoLocationAndTimeSelectViewController.swift; sourceTree = "<group>"; };
 		FAFE79312A6C029400C56612 /* GeoLocationSelect.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GeoLocationSelect.storyboard; sourceTree = "<group>"; };
+		FB8388602D04FB1000A5A37C /* StarChart+Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StarChart+Defaults.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1056,6 +1058,7 @@
 				FA2C449428697B4E009E61B2 /* StarChartCompositeRenderer.swift */,
 				FA2C449628697B9F009E61B2 /* StarChartComposite.swift */,
 				FAB068F72ABB9F3B00334B1A /* StarChartRealTimePlaybackController.swift */,
+				FB8388602D04FB1000A5A37C /* StarChart+Defaults.swift */,
 			);
 			path = StarChart;
 			sourceTree = "<group>";
@@ -2010,6 +2013,7 @@
 				FA11EDE12B0AAA490013ECA2 /* AspectCollectionViewCell.swift in Sources */,
 				FA07CA4725401EBC00683486 /* SceneKit+Extension.swift in Sources */,
 				FA879CA62B13A3B000B68447 /* CelestialEventScanner+FormationEventScanner.swift in Sources */,
+				FB8388612D04FB1000A5A37C /* StarChart+Defaults.swift in Sources */,
 				FA2CB48E2860EC4F003AD95C /* CIFilter+Extension.swift in Sources */,
 				FA2C449728697B9F009E61B2 /* StarChartComposite.swift in Sources */,
 				FA07C9B0254019D800683486 /* SceneDelegate.swift in Sources */,

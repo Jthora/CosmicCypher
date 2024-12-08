@@ -8,7 +8,6 @@
 import Foundation
 import SwiftAA
 
-// Base24 (12 Cusps)
 extension Arcana {
     public enum Cusp: Int, CaseIterable, Codable {
         case rebirth
@@ -23,34 +22,44 @@ extension Arcana {
         case prophecy
         case imagination
         case sensitivity
-        
-        private static let count:Double = 12
-        
+
+        private static let count: Double = 12
+
         public static func from(degree: Degree) -> Cusp {
+            // Normalize degree to 0-360
             var deg = degree.value+15
-            if deg < 0 { deg += 360 }
-            let d = ((deg).truncatingRemainder(dividingBy: 360))/30
-            let i = d.truncatingRemainder(dividingBy: count)
-            let c = Cusp(rawValue: Int(i))!
-            //print("creating Cusp(\(c)) degree(\(degree)) deg(\(deg)) d(\(d)) i(\(i))")
-            return c
+            deg = (deg.truncatingRemainder(dividingBy: 360) + 360).truncatingRemainder(dividingBy: 360)
+            
+            // Apply consistent offset to match setupBase24 logic
+            deg = (deg).truncatingRemainder(dividingBy: 360)
+            
+            // Calculate cusp index
+            let index = Int(deg / 30) % Int(count)
+            return Cusp(rawValue: index)!
         }
-        
+
         public static func subFrom(degree: Degree) -> Cusp {
+            // Normalize degree to 0-360
             var deg = degree.value+15
-            if deg < 0 { deg += 360 }
-            let d = ((deg).truncatingRemainder(dividingBy: 360))/30
-            var i = d.truncatingRemainder(dividingBy: count)
-            if i < 0 { i += count }
-            if i.truncatingRemainder(dividingBy: 1) > 0.5 {
-                var index = abs(Int(i)+1)
-                if index > Int(count)-1 { index = 0 }
-                return Cusp(rawValue: index)!
+            deg = (deg.truncatingRemainder(dividingBy: 360) + 360).truncatingRemainder(dividingBy: 360)
+            
+            // Apply consistent offset to match setupBase24 logic
+            deg = (deg).truncatingRemainder(dividingBy: 360)
+            
+            // Calculate main index and fractional part
+            let d = deg / 30
+            let fraction = d.truncatingRemainder(dividingBy: 1)
+            let baseIndex = Int(d)
+
+            // Adjust index based on fractional part
+            let index: Int
+            if fraction > 0.5 {
+                index = (baseIndex + 1) % Int(count)
             } else {
-                var index = Int(i)-1
-                if index < 0 { index = Int(count)-1 }
-                return Cusp(rawValue: index)!
+                index = (baseIndex - 1 + Int(count)) % Int(count)
             }
+            
+            return Cusp(rawValue: index)!
         }
     }
 }

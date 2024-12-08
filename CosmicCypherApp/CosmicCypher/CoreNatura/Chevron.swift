@@ -127,10 +127,11 @@ open class Chevron {
     public var subCuspDistribution:Double {
         
         let l:Double
-        if longitude.value < 0 {
-            l = longitude.value+360
+        let long = longitude.value + 15
+        if long < 0 {
+            l = long+360
         } else {
-            l = longitude.value.truncatingRemainder(dividingBy: 360)
+            l = long.truncatingRemainder(dividingBy: 360)
         }
         let a = l/360
         let b = a*12

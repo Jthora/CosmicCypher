@@ -97,6 +97,7 @@ class StarChartRealTimePlaybackController {
     enum SampleStep:Int, CaseIterable {
         case seconds
         case minutes
+        case tenMinutes
         case hours
         case days
         case weeks
@@ -107,6 +108,7 @@ class StarChartRealTimePlaybackController {
             switch self {
             case .seconds: return 1
             case .minutes: return 60
+            case .tenMinutes: return 600
             case .hours: return 3600
             case .days: return 86400 // 1 day = 24 hours * 60 minutes * 60 seconds
             case .weeks: return 604800 // 1 week = 7 days * 24 hours * 60 minutes * 60 seconds

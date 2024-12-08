@@ -65,10 +65,10 @@ open class Chevron {
     
     // Base 12(24) [odd] 30º
     public var cusp:Arcana.Cusp {
-        return Arcana.Cusp.from(degree: longitude)
+        return Arcana.Cusp.from(degree: longitude+15)
     }
     public var subCusp:Arcana.Cusp {
-        return Arcana.Cusp.subFrom(degree: longitude)
+        return Arcana.Cusp.subFrom(degree: longitude+15)
     }
     
     // Base 36 [even] 10º
@@ -118,16 +118,14 @@ open class Chevron {
         let subCuspPercentage: Double
     }
     
-    
-    
-    
-    public var cuspDistribution:Double {
-        return abs(subZodiacDistribution-1)
+    public var cuspDistribution: Double {
+        return abs(subCuspDistribution - 1)
     }
-    public var subCuspDistribution:Double {
+
+    public var subCuspDistribution: Double {
         
-        let l:Double
         let long = longitude.value + 15
+        let l:Double
         if long < 0 {
             l = long+360
         } else {

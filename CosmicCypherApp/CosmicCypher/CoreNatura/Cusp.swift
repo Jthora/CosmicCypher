@@ -27,7 +27,7 @@ extension Arcana {
 
         public static func from(degree: Degree) -> Cusp {
             // Normalize degree to 0-360
-            var deg = degree.value+15
+            var deg = degree.value
             deg = (deg.truncatingRemainder(dividingBy: 360) + 360).truncatingRemainder(dividingBy: 360)
             
             // Apply consistent offset to match setupBase24 logic
@@ -40,7 +40,7 @@ extension Arcana {
 
         public static func subFrom(degree: Degree) -> Cusp {
             // Normalize degree to 0-360
-            var deg = degree.value+15
+            var deg = degree.value
             deg = (deg.truncatingRemainder(dividingBy: 360) + 360).truncatingRemainder(dividingBy: 360)
             
             // Apply consistent offset to match setupBase24 logic

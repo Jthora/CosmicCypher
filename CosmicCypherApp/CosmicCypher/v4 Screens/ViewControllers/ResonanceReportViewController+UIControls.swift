@@ -23,7 +23,7 @@ extension ResonanceReportViewController {
             if animate {
                 if hide {
                     UIView.animate(withDuration: 0.5) {
-                        self.dateTimeCoordsLabel.alpha = 0
+                        //self.dateTimeCoordsLabel.alpha = 0
                         self.aspectEventScannerButton.alpha = 0
                         self.instructionsButton.alpha = 0
                         self.planetSelectButton.alpha = 0
@@ -35,7 +35,7 @@ extension ResonanceReportViewController {
                     }
                 } else {
                     UIView.animate(withDuration: 0.5) {
-                        self.dateTimeCoordsLabel.alpha = 1
+                        //self.dateTimeCoordsLabel.alpha = 1
                         self.aspectEventScannerButton.alpha = 1
                         self.instructionsButton.alpha = 1
                         self.planetSelectButton.alpha = 1
@@ -48,7 +48,7 @@ extension ResonanceReportViewController {
                 }
             } else {
                 if hide {
-                    self.dateTimeCoordsLabel.alpha = 0
+                    //self.dateTimeCoordsLabel.alpha = 0
                     self.aspectEventScannerButton.alpha = 0
                     self.instructionsButton.alpha = 0
                     self.planetSelectButton.alpha = 0
@@ -58,7 +58,7 @@ extension ResonanceReportViewController {
                     self.speedButton.alpha = 0
                     self.speedModeLabel.alpha = 0
                 } else {
-                    self.dateTimeCoordsLabel.alpha = 1
+                    //self.dateTimeCoordsLabel.alpha = 1
                     self.aspectEventScannerButton.alpha = 1
                     self.instructionsButton.alpha = 1
                     self.planetSelectButton.alpha = 1

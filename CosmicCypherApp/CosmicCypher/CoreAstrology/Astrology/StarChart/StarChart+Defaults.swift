@@ -6,6 +6,12 @@
 //
 
 import Foundation
+import SwiftAA
+import CoreLocation
+
+let DEFAULT_GEOLOCATION = GeographicCoordinates(CLLocation(latitude: 47.49442617153722, longitude: -122.2749018855393))
+
+let DEFAULT_STARCHART = StarChart(date: Date(), coordinates: DEFAULT_GEOLOCATION)
 
 let DEFAULT_SELECTED_ASPECTS:[CoreAstrology.AspectRelationType] = [.conjunction,
                                                                    .opposition,

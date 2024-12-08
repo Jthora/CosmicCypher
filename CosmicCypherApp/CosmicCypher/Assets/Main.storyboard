@@ -1296,17 +1296,15 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ija-bO-JsC">
-                                        <rect key="frame" x="89" y="258.33333333333331" width="200" height="70"/>
+                                        <rect key="frame" x="89" y="258.33333333333331" width="350" height="70"/>
                                         <color key="backgroundColor" systemColor="tertiaryLabelColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="6FD-lX-KIi"/>
+                                            <constraint firstAttribute="width" constant="350" id="8Kv-nD-zD4"/>
                                             <constraint firstAttribute="height" constant="70" id="nB5-cK-JQ5"/>
                                         </constraints>
-                                        <string key="text">Latitude:  0.0
-Longitude:  0.0
-Date:  12/21/2020
+                                        <string key="text">Date:  12/21/2020
 Time:  10:51:55</string>
-                                        <fontDescription key="fontDescription" name="Iceberg-Regular" family="Iceberg" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Aldrich-Regular" family="Aldrich" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>

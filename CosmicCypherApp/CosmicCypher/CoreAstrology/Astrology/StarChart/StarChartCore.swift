@@ -7,8 +7,10 @@
 
 import SpriteKit
 import SwiftAA
+import CoreLocation
 
 extension StarChart {
+    
     class Core {
         
         // Stored Values
@@ -19,7 +21,12 @@ extension StarChart {
         }
         
         static func loadPreferredCoordinates() -> GeographicCoordinates {
-            let long = UserDefaults.standard.double(forKey: _preferredCoordinatesLongitudeKey)
+            let long:Double
+            if UserDefaults.standard.object(forKey: _preferredCoordinatesLongitudeKey) == nil {
+                long = DEFAULT_GEOLOCATION.longitude.value
+            } else {
+                long = UserDefaults.standard.double(forKey: _preferredCoordinatesLongitudeKey)
+            }
             let lat = UserDefaults.standard.double(forKey: _preferredCoordinatesLatitudeKey)
             let alt = UserDefaults.standard.double(forKey: _preferredCoordinatesAltitudeKey)
             return GeographicCoordinates(positivelyWestwardLongitude: Degree(long), latitude: Degree(lat), altitude: Meter(alt))

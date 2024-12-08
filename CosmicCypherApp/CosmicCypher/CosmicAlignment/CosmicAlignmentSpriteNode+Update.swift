@@ -55,33 +55,57 @@ extension CosmicAlignmentSpriteNode {
     }
     
     // Reset
-    func reset() {
+    func reset(animate: Bool = true) {
+        // Define the fade-out action if animation is enabled
+        let fadeOutAction = SKAction.fadeOut(withDuration: 0.5)
+        let fadeInAction = SKAction.fadeIn(withDuration: 0.5)
+        
         // Hide all Zodiac Sprites
         for zodiac in Arcana.Zodiac.allCases {
             if let sprite = self.spritesBase12[zodiac] {
-                sprite.alpha = 1 // Hide by setting alpha to 0
+                if animate {
+                    sprite.run(fadeOutAction) // Animate alpha to 0
+                } else {
+                    sprite.alpha = 0 // Instantly hide
+                }
             }
         }
 
         // Hide all Cusp Sprites
         for cusp in Arcana.Cusp.allCases {
             if let sprite = self.spritesBase24[cusp] {
-                sprite.alpha = 1 // Hide by setting alpha to 0
+                if animate {
+                    sprite.run(fadeOutAction) // Animate alpha to 0
+                } else {
+                    sprite.alpha = 0 // Instantly hide
+                }
             }
         }
 
         // Hide all Decan Sprites
         for decan in Arcana.Decan.allCases {
             if let sprite = self.spritesBase36[decan] {
-                sprite.alpha = 1 // Hide by setting alpha to 0
+                if animate {
+                    sprite.run(fadeOutAction) // Animate alpha to 0
+                } else {
+                    sprite.alpha = 0 // Instantly hide
+                }
             }
         }
 
-        // Hide all planetary positions
-        self.planetaryPlacementSpriteNode.alpha = 0
+        // Hide planetary positions
+        if animate {
+            self.planetaryPlacementSpriteNode.run(fadeOutAction)
+        } else {
+            self.planetaryPlacementSpriteNode.alpha = 0
+        }
 
         // Hide all aspect lines
-        self.aspectLinesSpriteNode.alpha = 0
+        if animate {
+            self.aspectLinesSpriteNode.run(fadeOutAction)
+        } else {
+            self.aspectLinesSpriteNode.alpha = 0
+        }
 
         // Additional cleanup: ensure no animations are running
         self.removeAllActions()

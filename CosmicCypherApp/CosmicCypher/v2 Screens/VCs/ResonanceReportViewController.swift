@@ -427,13 +427,26 @@ extension ResonanceReportViewController {
         
         StarChart.Core.current = StarChart(date: date, coordinates: StarChart.Core.current.coordinates)
         ResonanceReportViewController.current?.update()
-        ResonanceReportViewController.current?.renderStarChart()
+        ResonanceReportViewController.current?.renderStarChart() }
+    
+    @objc func setToPlayAtWeekSpeed() {
+        StarChart.Core.playbackController.play(.forward)
+        StarChart.Core.playbackController.sampleRate = .fivePerSecond
+        StarChart.Core.playbackController.sampleStep = .weeks
+        StarChart.Core.playbackController.startPlayback()
     }
     
     @objc func setToPlayAtHourSpeed() {
         StarChart.Core.playbackController.play(.forward)
         StarChart.Core.playbackController.sampleRate = .fivePerSecond
-        StarChart.Core.playbackController.sampleStep = .minutes
+        StarChart.Core.playbackController.sampleStep = .hours
+        StarChart.Core.playbackController.startPlayback()
+    }
+    
+    @objc func setToPlayAtDaySpeed() {
+        StarChart.Core.playbackController.play(.forward)
+        StarChart.Core.playbackController.sampleRate = .fivePerSecond
+        StarChart.Core.playbackController.sampleStep = .days
         StarChart.Core.playbackController.startPlayback()
     }
     
@@ -511,6 +524,11 @@ extension ResonanceReportViewController {
         StarChart.Core.selectedAspects = ONEDAYSCRUB_SELECTED_ASPECTS
         ResonanceReportViewController.current?.update()
         ResonanceReportViewController.current?.renderStarChart()
+        
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { // Adjust delay as needed (e.g., 1.0 seconds)
+            self.setToPlayAtHourSpeed()
+        }
     }
     
     @objc func setToRevealEachPlanetIndividually() {
@@ -545,3 +563,4 @@ extension ResonanceReportViewController {
     
     
 }
+

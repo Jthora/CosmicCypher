@@ -29,7 +29,9 @@ extension ResonanceReportViewController {
                 let location = CLLocation(latitude: StarChart.Core.current.coordinates.latitude.value, longitude: -StarChart.Core.current.coordinates.longitude.value)
 
                 /// Text Fields
-                self.vc.dateTimeCoordsLabel.text = "Latitude: \(starChart.coordinates.latitude)\nLongitude: \(-starChart.coordinates.longitude)\nDate: \(starChart.date.formatted(date: .numeric, time: .omitted))\nTime: \(starChart.date.formattedTime(for: starChart.coordinates))"
+                self.vc.dateTimeCoordsLabel.text = "Date: \(starChart.date.formatted(date: .numeric, time: .omitted))\nTime: \(starChart.date.formattedTime(for: starChart.coordinates))"
+                // Old Text Field
+                //self.vc.dateTimeCoordsLabel.text = "Latitude: \(starChart.coordinates.latitude)\nLongitude: \(-starChart.coordinates.longitude)\nDate: \(starChart.date.formatted(date: .numeric, time: .omitted))\nTime: \(starChart.date.formattedTime(for: starChart.coordinates))"
                 self.vc.aspectsResultsTableView.reloadData()
                 
                 /// Cosmic Alignment Sprite Node (Central Disk)

@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		454F04E8FCE5C1E3C47DABCD /* Pods_CosmicCypher_CosmicCypherUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E40E340033B175EDED4394C /* Pods_CosmicCypher_CosmicCypherUITests.framework */; };
 		62A1CE25761D766F526FF0B4 /* Pods_CosmicCypher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64EF9314ECA183C508527135 /* Pods_CosmicCypher.framework */; };
-		DB2E1B570816F8FA7F4E6208 /* Pods_CosmicCypherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D84C4B7FFCB993BE3E5D99BA /* Pods_CosmicCypherTests.framework */; };
 		FA00505E2B0BADC900540CD5 /* CelestialEventScanner+RetrogradeDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00505D2B0BADC900540CD5 /* CelestialEventScanner+RetrogradeDetector.swift */; };
 		FA0050622B0BB2FF00540CD5 /* CoreAstrology+Aspect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0050612B0BB2FF00540CD5 /* CoreAstrology+Aspect.swift */; };
 		FA0050642B0BB33100540CD5 /* CoreAstrology+AspectRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0050632B0BB33100540CD5 /* CoreAstrology+AspectRelation.swift */; };
@@ -336,19 +334,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		004DE039B33A4DA979B6312F /* Pods-CosmicCypherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CosmicCypherTests.debug.xcconfig"; path = "Target Support Files/Pods-CosmicCypherTests/Pods-CosmicCypherTests.debug.xcconfig"; sourceTree = "<group>"; };
 		170BFF1D5642CC611EA954C7 /* Pods-ResonantFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ResonantFinder.release.xcconfig"; path = "Target Support Files/Pods-ResonantFinder/Pods-ResonantFinder.release.xcconfig"; sourceTree = "<group>"; };
 		2A94E4E23317CBF122824BA0 /* Pods-CosmicCypher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CosmicCypher.release.xcconfig"; path = "Target Support Files/Pods-CosmicCypher/Pods-CosmicCypher.release.xcconfig"; sourceTree = "<group>"; };
-		312083545866CDAEDF59EBB9 /* Pods-CosmicCypher-CosmicCypherUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CosmicCypher-CosmicCypherUITests.debug.xcconfig"; path = "Target Support Files/Pods-CosmicCypher-CosmicCypherUITests/Pods-CosmicCypher-CosmicCypherUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		54EB57E55B6D96D2CB28CEC5 /* Pods-CosmicCypher-CosmicCypherUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CosmicCypher-CosmicCypherUITests.release.xcconfig"; path = "Target Support Files/Pods-CosmicCypher-CosmicCypherUITests/Pods-CosmicCypher-CosmicCypherUITests.release.xcconfig"; sourceTree = "<group>"; };
 		64EF9314ECA183C508527135 /* Pods_CosmicCypher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CosmicCypher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		727DC80FE1543DB1F3D684A6 /* Pods-ResonantFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ResonantFinder.debug.xcconfig"; path = "Target Support Files/Pods-ResonantFinder/Pods-ResonantFinder.debug.xcconfig"; sourceTree = "<group>"; };
-		8E40E340033B175EDED4394C /* Pods_CosmicCypher_CosmicCypherUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CosmicCypher_CosmicCypherUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0BA924699052F7F2DD90957 /* Pods-ResonantFinder-ResonantFinderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ResonantFinder-ResonantFinderUITests.release.xcconfig"; path = "Target Support Files/Pods-ResonantFinder-ResonantFinderUITests/Pods-ResonantFinder-ResonantFinderUITests.release.xcconfig"; sourceTree = "<group>"; };
-		A24A9659B97D6DEF26AD8C0D /* Pods-CosmicCypherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CosmicCypherTests.release.xcconfig"; path = "Target Support Files/Pods-CosmicCypherTests/Pods-CosmicCypherTests.release.xcconfig"; sourceTree = "<group>"; };
 		A89F8DF0B1032D53596D143A /* Pods-ResonantFinderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ResonantFinderTests.release.xcconfig"; path = "Target Support Files/Pods-ResonantFinderTests/Pods-ResonantFinderTests.release.xcconfig"; sourceTree = "<group>"; };
 		AD025F5C6AE57EA49DBDED89 /* Pods-CosmicCypher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CosmicCypher.debug.xcconfig"; path = "Target Support Files/Pods-CosmicCypher/Pods-CosmicCypher.debug.xcconfig"; sourceTree = "<group>"; };
-		D84C4B7FFCB993BE3E5D99BA /* Pods_CosmicCypherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CosmicCypherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E44DAD6AFC67C48066A9E053 /* Pods-ResonantFinderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ResonantFinderTests.debug.xcconfig"; path = "Target Support Files/Pods-ResonantFinderTests/Pods-ResonantFinderTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FA00505D2B0BADC900540CD5 /* CelestialEventScanner+RetrogradeDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CelestialEventScanner+RetrogradeDetector.swift"; sourceTree = "<group>"; };
 		FA0050612B0BB2FF00540CD5 /* CoreAstrology+Aspect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreAstrology+Aspect.swift"; sourceTree = "<group>"; };
@@ -682,7 +674,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB2E1B570816F8FA7F4E6208 /* Pods_CosmicCypherTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -690,7 +681,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				454F04E8FCE5C1E3C47DABCD /* Pods_CosmicCypher_CosmicCypherUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -708,10 +698,6 @@
 				A89F8DF0B1032D53596D143A /* Pods-ResonantFinderTests.release.xcconfig */,
 				AD025F5C6AE57EA49DBDED89 /* Pods-CosmicCypher.debug.xcconfig */,
 				2A94E4E23317CBF122824BA0 /* Pods-CosmicCypher.release.xcconfig */,
-				312083545866CDAEDF59EBB9 /* Pods-CosmicCypher-CosmicCypherUITests.debug.xcconfig */,
-				54EB57E55B6D96D2CB28CEC5 /* Pods-CosmicCypher-CosmicCypherUITests.release.xcconfig */,
-				004DE039B33A4DA979B6312F /* Pods-CosmicCypherTests.debug.xcconfig */,
-				A24A9659B97D6DEF26AD8C0D /* Pods-CosmicCypherTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -723,8 +709,6 @@
 				FAFA40732AB05D1B00455D97 /* Charts.framework */,
 				FAFA406F2AB05C2800455D97 /* Charts.framework */,
 				64EF9314ECA183C508527135 /* Pods_CosmicCypher.framework */,
-				8E40E340033B175EDED4394C /* Pods_CosmicCypher_CosmicCypherUITests.framework */,
-				D84C4B7FFCB993BE3E5D99BA /* Pods_CosmicCypherTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1565,7 +1549,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA07C9D7254019DC00683486 /* Build configuration list for PBXNativeTarget "CosmicCypherTests" */;
 			buildPhases = (
-				C5878268495F5C829543C31A /* [CP] Check Pods Manifest.lock */,
 				FA07C9BC254019DC00683486 /* Sources */,
 				FA07C9BD254019DC00683486 /* Frameworks */,
 				FA07C9BE254019DC00683486 /* Resources */,
@@ -1584,11 +1567,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA07C9DA254019DC00683486 /* Build configuration list for PBXNativeTarget "CosmicCypherUITests" */;
 			buildPhases = (
-				7A0B29F91AE7CEF931AEF884 /* [CP] Check Pods Manifest.lock */,
 				FA07C9C7254019DC00683486 /* Sources */,
 				FA07C9C8254019DC00683486 /* Frameworks */,
 				FA07C9C9254019DC00683486 /* Resources */,
-				1092D4C593235136E41C8EF2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1697,23 +1678,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1092D4C593235136E41C8EF2 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CosmicCypher-CosmicCypherUITests/Pods-CosmicCypher-CosmicCypherUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CosmicCypher-CosmicCypherUITests/Pods-CosmicCypher-CosmicCypherUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CosmicCypher-CosmicCypherUITests/Pods-CosmicCypher-CosmicCypherUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		16C900163CCF61D7F4944E76 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1751,50 +1715,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CosmicCypher/Pods-CosmicCypher-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7A0B29F91AE7CEF931AEF884 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CosmicCypher-CosmicCypherUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C5878268495F5C829543C31A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CosmicCypherTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FA2CC945287CA7A50078ECE1 /* Run Script - Set Build Number */ = {
@@ -2314,7 +2234,6 @@
 		};
 		FA07C9D8254019DC00683486 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 004DE039B33A4DA979B6312F /* Pods-CosmicCypherTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -2337,7 +2256,6 @@
 		};
 		FA07C9D9254019DC00683486 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A24A9659B97D6DEF26AD8C0D /* Pods-CosmicCypherTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -2360,7 +2278,6 @@
 		};
 		FA07C9DB254019DC00683486 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 312083545866CDAEDF59EBB9 /* Pods-CosmicCypher-CosmicCypherUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -2381,7 +2298,6 @@
 		};
 		FA07C9DC254019DC00683486 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 54EB57E55B6D96D2CB28CEC5 /* Pods-CosmicCypher-CosmicCypherUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

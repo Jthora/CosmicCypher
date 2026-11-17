@@ -1,7 +1,0 @@
-${PODS_ROOT}/Target Support Files/Pods-CosmicCypher-CosmicCypherUITests/Pods-CosmicCypher-CosmicCypherUITests-frameworks.sh
-${BUILT_PRODUCTS_DIR}/Charts/Charts.framework
-${BUILT_PRODUCTS_DIR}/ObjCAA/ObjCAA.framework
-${BUILT_PRODUCTS_DIR}/SwiftAA/SwiftAA.framework
-${BUILT_PRODUCTS_DIR}/SwiftAlgorithms/Algorithms.framework
-${BUILT_PRODUCTS_DIR}/TimeZoneLocate/TimeZoneLocate.framework
-${BUILT_PRODUCTS_DIR}/TinyConstraints/TinyConstraints.framework

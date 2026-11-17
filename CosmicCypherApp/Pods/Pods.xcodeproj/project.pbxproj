@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -146,7 +146,6 @@
 		3DFE17438C672F1E198A175907D2FC7F /* KPCAAGlobe.h in Headers */ = {isa = PBXBuildFile; fileRef = 691138F05F531A5B58F1FC9E220C0987 /* KPCAAGlobe.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3F383CFFCDB8AFFEB91183AFEE99D5C5 /* KPCAARefraction.mm in Sources */ = {isa = PBXBuildFile; fileRef = 589AE1309FA502182BB4A711D5D6A4FF /* KPCAARefraction.mm */; };
 		3F7DE7DD33C07E28ABBF80B3AFBCDF44 /* HorizontalBarChartRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E68416FFB16CF22B848A2F6F87C547 /* HorizontalBarChartRenderer.swift */; };
-		3FDF3324A90F36B7C06E11491798FE34 /* Pods-CosmicCypher-CosmicCypherUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C4B9EB0B50425FC3304675EEB6E6863B /* Pods-CosmicCypher-CosmicCypherUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		40F11E238347C2254FD28B51617AAC94 /* FirstNonNil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77B05EFAD4FC2F4DFE7468E23DBBF2B /* FirstNonNil.swift */; };
 		42361A518637B458CBB971D21E43346E /* CombinedChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCBD87017B5C6BD6A570EFAD36D8FAA /* CombinedChartView.swift */; };
 		42E931D7544D6E93A5833B214CACB0A0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5718ED8B2A619A50D245A73687A6D721 /* UIKit.framework */; };
@@ -305,7 +304,7 @@
 		7EAC5A064A1938EE8FA0D56B4CEF97B1 /* stdafx.h in Headers */ = {isa = PBXBuildFile; fileRef = 87E8A45B2DB27C562D12E30F9219C2E7 /* stdafx.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		7F3C1EEA7E0714FC8E691BA8CA54DDE5 /* KPCAAParabolic.mm in Sources */ = {isa = PBXBuildFile; fileRef = 54CE4D8DB061A1EC9CE2EC7CED9B377D /* KPCAAParabolic.mm */; };
 		7FB177AB554E22D9689DAE705CE33032 /* AAMercury.h in Headers */ = {isa = PBXBuildFile; fileRef = 18E2292BEA435577CFA6FE2AB0F35A29 /* AAMercury.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		7FB375BC625BDEA09E63512C72ED8444 /* Pods-CosmicCypher-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 69C0BD9E438DED9201D4D11685B2F6AD /* Pods-CosmicCypher-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7FB375BC625BDEA09E63512C72ED8444 /* Pods-CosmicCypher-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 21C677253FDFBA2116F89F7251C09AB3 /* Pods-CosmicCypher-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8000BC8B6ED342755030DD960DED699E /* KPCAAEclipses.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8BC2F6D899A03B92A89F0FEB408BD12A /* KPCAAEclipses.mm */; };
 		80D28ACCBD13892C39A25894320228ED /* AAInterpolate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97571F90057903BA4BCF127C9F70CF50 /* AAInterpolate.cpp */; };
 		80E88D848625ADD942D49552233940C3 /* XAxisRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E91493D70465ED14C0514D8336CDABD /* XAxisRenderer.swift */; };
@@ -414,7 +413,6 @@
 		B16420935AE5E5CB7F55D4A7E409CBFD /* AAVSOP87C_JUP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0BB0C9C2DAD254DE68F9FF0964BF3F8A /* AAVSOP87C_JUP.cpp */; };
 		B193BD29ABA26706E860137A490CE9E6 /* KPCAAEquinoxesAndSolstices.h in Headers */ = {isa = PBXBuildFile; fileRef = E89CB45F1E822DD9DCCEE84886CE15C5 /* KPCAAEquinoxesAndSolstices.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B2162A26B36709F6F1B6976DF1A65DAB /* DataRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D280BFE884BB114432276643D6EC915 /* DataRenderer.swift */; };
-		B254C76FB838B7AB19E7DAC2D9DD1655 /* Pods-CosmicCypher-CosmicCypherUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 75087FA2059063F541E230194559437D /* Pods-CosmicCypher-CosmicCypherUITests-dummy.m */; };
 		B2928C648F43035E31034051AFAED7AB /* TimeZoneLocate-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0340934B6898C2D6DEABD9430F6C8617 /* TimeZoneLocate-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B2C05F3EEC7A18906EC13C3CEE7A85C6 /* AAVSOP87A_VEN.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11F20B00A07137E13A881B50E45B86BF /* AAVSOP87A_VEN.cpp */; };
 		B2DD7CF96035374C7AC80D88B8904691 /* ShapeRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4337BFC8F4A47AAEFF422F6CB3308F19 /* ShapeRenderer.swift */; };
@@ -441,7 +439,7 @@
 		BA960839247BCD249B31EA7B366DE1CC /* KPCAADynamicalTime.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DB4A11579D0BE06A5BABFDC0AEA3552 /* KPCAADynamicalTime.mm */; };
 		BAB91A62EFE75286954F02271A697D1E /* KPCAAKepler.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F073FF1EBDFF307B8295783B598B5 /* KPCAAKepler.mm */; };
 		BB01F8A3F80FBB3161F3504736DD46D4 /* KPCAARefraction.h in Headers */ = {isa = PBXBuildFile; fileRef = 0EC376D6A1B3EF69EB9089E004531A6B /* KPCAARefraction.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BB27116EC53269DA76CBE355559B37DB /* TimeZoneLocate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 65AAFED18F518E23E1C4FCD6B61035D3 /* TimeZoneLocate.bundle */; };
+		BB27116EC53269DA76CBE355559B37DB /* TimeZoneLocate-TimeZoneLocate in Resources */ = {isa = PBXBuildFile; fileRef = 65AAFED18F518E23E1C4FCD6B61035D3 /* TimeZoneLocate-TimeZoneLocate */; };
 		BB4ABAE97954D8833011E35A0599319D /* AAVSOP87B_NEP.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B60BFFDD187B6AC524E516DFC469333 /* AAVSOP87B_NEP.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		BC6E2BF729CDA0FFDFCBFF175F2BC747 /* SwiftAlgorithms-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F14A204EBFE835878DE6BE72F6B48F8F /* SwiftAlgorithms-dummy.m */; };
 		BC8C5A90A14FCBC3A78AF8AAE4903443 /* Venus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA656B16521C0D310F7C473F72FA6AB /* Venus.swift */; };
@@ -473,7 +471,6 @@
 		C472373DFA73FC416CCDB97CFA586249 /* ChartAnimationEasing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862140E23065F5C04E8D84B556F1E949 /* ChartAnimationEasing.swift */; };
 		C4D2C19687D1AFE337F9B44446AEFEC6 /* AADynamicalTime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E79D7637FE381D4BAF18E2808C5EE234 /* AADynamicalTime.cpp */; };
 		C594A52D7B2874C5D11632D454148B82 /* AAVSOP87E_URA.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4ECC1E7F3BFEF59764FAB579C057A52D /* AAVSOP87E_URA.cpp */; };
-		C5ADB7A4C759772EE03491B7629190F9 /* Pods-CosmicCypherTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 92B43D16E3D2067BE34D053657F15300 /* Pods-CosmicCypherTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C5AEC92BFE8AF519441AE69A7691A246 /* AAVSOP87_VEN.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DC153FA993DEBF03FAF36E744209DB3 /* AAVSOP87_VEN.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		C6FA87B24A0602383843705C671FB171 /* AAPlanetPerihelionAphelion2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDE20720F6F3EE06B9D651D3CCFD8A49 /* AAPlanetPerihelionAphelion2.cpp */; };
 		C7E4A381095F15F90606D7C157BD9ABA /* ChartUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D94B7777803000146ECEDFAB21CC9CE /* ChartUtils.swift */; };
@@ -504,7 +501,6 @@
 		D2EFCDDD034AF8786F1BC64BD9AC4F54 /* AAVSOP87C_MER.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B5292F381867464DD2CD6E307E1B46F /* AAVSOP87C_MER.cpp */; };
 		D432057E9E83768DA40B526FB66D439E /* AAMoonPhases.h in Headers */ = {isa = PBXBuildFile; fileRef = D37FB3E153820A40B23DDF979DC36D72 /* AAMoonPhases.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		D44078A1F1CDB70D6EE87689EE274CAD /* AnimatedMoveViewJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D1C725B45CA716507A8C0CA759E5B5 /* AnimatedMoveViewJob.swift */; };
-		D4956396FD75B3D2A2E4D2DC1D3A644F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8468981A0F1717108B3D1DAE12F9BF0 /* Foundation.framework */; };
 		D569DC10A10A365658105910B9E28C90 /* AADiameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EFDFFCE52EFACF15C8127B3F78862A9 /* AADiameters.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		D5DBAB0B00C6BE27479465A6FA1B48E5 /* AAVSOP87.h in Headers */ = {isa = PBXBuildFile; fileRef = DE3DA3E547E0540704E68145B4C6F0AF /* AAVSOP87.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		D5EC46E1D03B934982CE3A9A446FC2B5 /* AAPlanetaryPhenomena.h in Headers */ = {isa = PBXBuildFile; fileRef = 876A0500F3C3C93251545391BDC46864 /* AAPlanetaryPhenomena.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -541,7 +537,7 @@
 		E0A8811A529D73DC77BF5305E836CC55 /* AAMoon.h in Headers */ = {isa = PBXBuildFile; fileRef = 59FE21C9C5BAECDBE0C66F5B16CD0E15 /* AAMoon.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		E0B8C1B3C25E624638B2C2FD105BAD35 /* YAxisRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8FAF51AD881FF43D368DFE02304072 /* YAxisRenderer.swift */; };
 		E0C8CFE39BA0D706F759E929033C0091 /* DefaultValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97326FC36F5CDC53B256800B85F5C4C /* DefaultValueFormatter.swift */; };
-		E177D0154E2D2640A2B3161AD14E8B54 /* Pods-CosmicCypher-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3107081EEE808AB99486B2F74A3E7CC5 /* Pods-CosmicCypher-dummy.m */; };
+		E177D0154E2D2640A2B3161AD14E8B54 /* Pods-CosmicCypher-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B74B1B485D21F2DE7E6BD810724C541 /* Pods-CosmicCypher-dummy.m */; };
 		E2618C372D7762C1796CE24D6AAAFC37 /* Charts-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F06A34CEF6CAC1531AAFB2B3770A48 /* Charts-dummy.m */; };
 		E2AE7EEC6B0899433B39E391B1035CFB /* AAVSOP87C_MAR.h in Headers */ = {isa = PBXBuildFile; fileRef = EC4E9173419F6DF70C9FEF0DC81B1B13 /* AAVSOP87C_MAR.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		E3067F6D7497512AA27BE94AF8C50A4D /* AARefraction.h in Headers */ = {isa = PBXBuildFile; fileRef = 76E97B82F70FBD633315EE8B6DF2EFBD /* AARefraction.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -553,7 +549,6 @@
 		E4465C942848B98723C8F3D642B92BC0 /* ScatterChartDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73973237CDB53B2CC200040FC6CCA183 /* ScatterChartDataProvider.swift */; };
 		E4EBF682663347EA117FC9D5D673981E /* ObjCAA-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DD04EBFEDD594331D07745E1B793BEF5 /* ObjCAA-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E54931767043ACE93CE5BA517D904732 /* AAVSOP87_MAR.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D877B69955F19185CF808F40212EA6EA /* AAVSOP87_MAR.cpp */; };
-		E662E1BD1911654651A23627508E59C0 /* Pods-CosmicCypherTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FFBDCC4C5F21475C990F7FC51586A67 /* Pods-CosmicCypherTests-dummy.m */; };
 		E69CD213DED94FE9B7697B2935956529 /* Mercury.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544CC9E42E2E38BAD923EB0B7DD4B711 /* Mercury.swift */; };
 		E6EA1D656A2BF05437BA150A0959156B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8468981A0F1717108B3D1DAE12F9BF0 /* Foundation.framework */; };
 		E7387700BA7D5E57154572AB25C1347F /* AAVSOP87D_JUP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E969707A7CC88BB530FFFEAE69CF53A2 /* AAVSOP87D_JUP.cpp */; };
@@ -563,7 +558,6 @@
 		E88238FD7E2E80EE94ED33332FA745C8 /* AAVSOP87E_SAT.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 105A9E3E2D72BC6FF53EC72C9597166C /* AAVSOP87E_SAT.cpp */; };
 		E91ABF4FF1105B2C7E0C812E8AF4B7EE /* PieChartRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50D7312F85866C4FCC5795CE40A4C6C /* PieChartRenderer.swift */; };
 		E95EA2841D37DFBF3466B135E5230EE8 /* Highlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0062FE886C42D1024E28CFFF1392CA /* Highlight.swift */; };
-		E9ED8FB7C1AF6BF8964A62B2387C3FBD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8468981A0F1717108B3D1DAE12F9BF0 /* Foundation.framework */; };
 		EA0E0BD288D85D78D452BFF979D5961E /* SwiftAA-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 706276955C4BBDE2A6E5DB02DD603252 /* SwiftAA-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EAA8CD3642DE980894657D87C0387389 /* AAPhysicalMoon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5931D8DFA0208C7AC41D24EAFD92679D /* AAPhysicalMoon.cpp */; };
 		EAED453972AC1583C649AB1A2B1E02E4 /* Fill.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FA315B05606EB0DBC233F19B766F90 /* Fill.swift */; };
@@ -618,40 +612,12 @@
 			remoteGlobalIDString = A7F5E21E120ADBCE23D792D682E8656F;
 			remoteInfo = ObjCAA;
 		};
-		20D96636EED23BC4D7F296A936602DAA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2C511EE63C6E7D5843B971D1E441119E;
-			remoteInfo = SwiftAlgorithms;
-		};
-		3B70F43006824E21CB3EE7C09F0BED93 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6EAC7DA2D6FCD779ADD80C958D5CA743;
-			remoteInfo = "Pods-CosmicCypher";
-		};
-		440B7B92C40E30F9E91544693A14925D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A23E630FB2CC2397D706C6DD1763E128;
-			remoteInfo = SwiftAA;
-		};
 		49B2386F2AF7D38904B20CE83FBD330A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2C511EE63C6E7D5843B971D1E441119E;
 			remoteInfo = SwiftAlgorithms;
-		};
-		4EF3C68662F4FCD582C1640166ABA184 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 45C4E325E7851DD54CC3AD44C7A71935;
-			remoteInfo = TinyConstraints;
 		};
 		570DFB839E4FCF6227D7C675A7664142 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -674,33 +640,12 @@
 			remoteGlobalIDString = A23E630FB2CC2397D706C6DD1763E128;
 			remoteInfo = SwiftAA;
 		};
-		74E3AE59107194D75564BA9AD2E22738 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A7F5E21E120ADBCE23D792D682E8656F;
-			remoteInfo = ObjCAA;
-		};
-		87E48FF97A9B8529A5DF76B59EA2489E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5A112BC0A2DE1BFC3BF71FFFDCE26411;
-			remoteInfo = TimeZoneLocate;
-		};
 		91F7D32C48B789790E82A9A1CBCB58BA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 45C4E325E7851DD54CC3AD44C7A71935;
 			remoteInfo = TinyConstraints;
-		};
-		99C623792F910959ADF5BA905C519184 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BF03B0B2B8B052092CB5F90CC5FB3757;
-			remoteInfo = Charts;
 		};
 		9F6B368AF7ECF433B118B0323B38891E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -739,7 +684,7 @@
 		0340934B6898C2D6DEABD9430F6C8617 /* TimeZoneLocate-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TimeZoneLocate-umbrella.h"; sourceTree = "<group>"; };
 		03E40482F996EBC131644A0E36832A56 /* Platform+Color.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Platform+Color.swift"; path = "Source/Charts/Utils/Platform+Color.swift"; sourceTree = "<group>"; };
 		03E55E4B86971996D10FD07F020DB68F /* ChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartDataSet.swift; path = Source/Charts/Data/Implementations/Standard/ChartDataSet.swift; sourceTree = "<group>"; };
-		040608FA86356E3DE3F628177AFE68E0 /* KPCAAAberration.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAAberration.mm; path = Sources/ObjCAA/KPCAAAberration.mm; sourceTree = "<group>"; };
+		040608FA86356E3DE3F628177AFE68E0 /* KPCAAAberration.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAAAberration.mm; path = Sources/ObjCAA/KPCAAAberration.mm; sourceTree = "<group>"; };
 		04B89718B4DD050E8CA65D5D4AA52AFE /* AAEclipses.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAEclipses.h; path = "Sources/aaplus-v2.44/include/AAEclipses.h"; sourceTree = "<group>"; };
 		053D82CABC3936D1C3DF2F38B9AD0C34 /* Constraints.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constraints.swift; path = TinyConstraints/Classes/Constraints.swift; sourceTree = "<group>"; };
 		05659237B30597BA6C60842E57A55A69 /* ViewPortJob.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewPortJob.swift; path = Source/Charts/Jobs/ViewPortJob.swift; sourceTree = "<group>"; };
@@ -760,17 +705,17 @@
 		0BD779B8F72FE2159CBC9923DE9BD229 /* AAVSOP87_EMB.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAVSOP87_EMB.cpp; path = "Sources/aaplus-v2.44/AAVSOP87_EMB.cpp"; sourceTree = "<group>"; };
 		0C7C4008770DCBF4A91CAE61A488C894 /* Intersperse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Intersperse.swift; path = Sources/Algorithms/Intersperse.swift; sourceTree = "<group>"; };
 		0C84AE96BA56EB689E37717DFE0A25AA /* AAVSOP87C_SAT.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAVSOP87C_SAT.cpp; path = "Sources/aaplus-v2.44/AAVSOP87C_SAT.cpp"; sourceTree = "<group>"; };
-		0CE15BA27783124544366FCE294DC08B /* KPCAAMercury.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAMercury.mm; path = Sources/ObjCAA/KPCAAMercury.mm; sourceTree = "<group>"; };
+		0CE15BA27783124544366FCE294DC08B /* KPCAAMercury.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAAMercury.mm; path = Sources/ObjCAA/KPCAAMercury.mm; sourceTree = "<group>"; };
 		0D495670811358467F1487F2DE1516A8 /* AAMoonPerigeeApogee2.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAMoonPerigeeApogee2.cpp; path = "Sources/aaplus-v2.44/AAMoonPerigeeApogee2.cpp"; sourceTree = "<group>"; };
-		0DB4A11579D0BE06A5BABFDC0AEA3552 /* KPCAADynamicalTime.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAADynamicalTime.mm; path = Sources/ObjCAA/KPCAADynamicalTime.mm; sourceTree = "<group>"; };
+		0DB4A11579D0BE06A5BABFDC0AEA3552 /* KPCAADynamicalTime.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAADynamicalTime.mm; path = Sources/ObjCAA/KPCAADynamicalTime.mm; sourceTree = "<group>"; };
 		0E30ECBBDFBD5351EDC2D8422DC221B9 /* Abstraction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Abstraction.swift; path = TinyConstraints/Classes/Abstraction.swift; sourceTree = "<group>"; };
 		0E457A03AF4C6D4C268768E55579539F /* AAVSOP87C_JUP.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAVSOP87C_JUP.h; path = "Sources/aaplus-v2.44/include/AAVSOP87C_JUP.h"; sourceTree = "<group>"; };
 		0EAC4DCA7D0B066E4B57A649AB95F40A /* ScatterChartData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScatterChartData.swift; path = Source/Charts/Data/Implementations/Standard/ScatterChartData.swift; sourceTree = "<group>"; };
 		0EC376D6A1B3EF69EB9089E004531A6B /* KPCAARefraction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KPCAARefraction.h; path = Sources/ObjCAA/include/KPCAARefraction.h; sourceTree = "<group>"; };
 		0EE5EDEF842C255FEA572C97C47F0285 /* RadarChartDataSetProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadarChartDataSetProtocol.swift; path = Source/Charts/Data/Interfaces/RadarChartDataSetProtocol.swift; sourceTree = "<group>"; };
-		0F4EF53C0A03D63F2C072937CCE48DA1 /* KPCAAGlobe.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAGlobe.mm; path = Sources/ObjCAA/KPCAAGlobe.mm; sourceTree = "<group>"; };
+		0F4EF53C0A03D63F2C072937CCE48DA1 /* KPCAAGlobe.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAAGlobe.mm; path = Sources/ObjCAA/KPCAAGlobe.mm; sourceTree = "<group>"; };
 		0FD5FCF7EDA9E068279AD04E996490BA /* DefaultFillFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultFillFormatter.swift; path = Source/Charts/Formatters/DefaultFillFormatter.swift; sourceTree = "<group>"; };
-		10062EF4923CA7950225E0D28CA6F59C /* KPCAARiseTransitSet.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAARiseTransitSet.mm; path = Sources/ObjCAA/KPCAARiseTransitSet.mm; sourceTree = "<group>"; };
+		10062EF4923CA7950225E0D28CA6F59C /* KPCAARiseTransitSet.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAARiseTransitSet.mm; path = Sources/ObjCAA/KPCAARiseTransitSet.mm; sourceTree = "<group>"; };
 		105A9E3E2D72BC6FF53EC72C9597166C /* AAVSOP87E_SAT.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAVSOP87E_SAT.cpp; path = "Sources/aaplus-v2.44/AAVSOP87E_SAT.cpp"; sourceTree = "<group>"; };
 		10A523596D13B12285C0761F8911D4AB /* AAVSOP87_JUP.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAVSOP87_JUP.cpp; path = "Sources/aaplus-v2.44/AAVSOP87_JUP.cpp"; sourceTree = "<group>"; };
 		11673747739ED87A4CB41AAA6074B511 /* Pluto.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Pluto.swift; path = Sources/SwiftAA/Pluto.swift; sourceTree = "<group>"; };
@@ -780,7 +725,7 @@
 		126BAD35244BCE47F6143E5375389073 /* AANodes.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AANodes.cpp; path = "Sources/aaplus-v2.44/AANodes.cpp"; sourceTree = "<group>"; };
 		127B30CA8EE2DE025E5A812B24080DE8 /* AAMoonMaxDeclinations.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAMoonMaxDeclinations.h; path = "Sources/aaplus-v2.44/include/AAMoonMaxDeclinations.h"; sourceTree = "<group>"; };
 		12C2CD224F55968F6CAD964768044C1C /* KPCAAEarth.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KPCAAEarth.h; path = Sources/ObjCAA/include/KPCAAEarth.h; sourceTree = "<group>"; };
-		12E1A91C1EAEEFFCD90A2BF5C893D582 /* KPCAAPhysicalJupiter.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAPhysicalJupiter.mm; path = Sources/ObjCAA/KPCAAPhysicalJupiter.mm; sourceTree = "<group>"; };
+		12E1A91C1EAEEFFCD90A2BF5C893D582 /* KPCAAPhysicalJupiter.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAAPhysicalJupiter.mm; path = Sources/ObjCAA/KPCAAPhysicalJupiter.mm; sourceTree = "<group>"; };
 		13838F653AF7487AB0BFC842903C57C8 /* AAVSOP87C_NEP.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAVSOP87C_NEP.h; path = "Sources/aaplus-v2.44/include/AAVSOP87C_NEP.h"; sourceTree = "<group>"; };
 		13F93B204184BAA045D7B30F7251A92A /* AAVSOP87B_EAR.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAVSOP87B_EAR.h; path = "Sources/aaplus-v2.44/include/AAVSOP87B_EAR.h"; sourceTree = "<group>"; };
 		1477D978626CEE1C3D15AD9E2413B3A8 /* ObjCAA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ObjCAA.release.xcconfig; sourceTree = "<group>"; };
@@ -794,7 +739,6 @@
 		18957540BBCC66B9854CA49DF9187185 /* AAPhysicalJupiter.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAPhysicalJupiter.cpp; path = "Sources/aaplus-v2.44/AAPhysicalJupiter.cpp"; sourceTree = "<group>"; };
 		18E2292BEA435577CFA6FE2AB0F35A29 /* AAMercury.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAMercury.h; path = "Sources/aaplus-v2.44/include/AAMercury.h"; sourceTree = "<group>"; };
 		190822A3700F401E790D4D309D6B2A9A /* AASaturnMoons.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AASaturnMoons.h; path = "Sources/aaplus-v2.44/include/AASaturnMoons.h"; sourceTree = "<group>"; };
-		195EF211C82BED70EBF64A7A648CA5C9 /* Pods-CosmicCypher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CosmicCypher.debug.xcconfig"; sourceTree = "<group>"; };
 		198C40C8932CBBF0B5633C5737E42479 /* KPCAAElliptical.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KPCAAElliptical.h; path = Sources/ObjCAA/include/KPCAAElliptical.h; sourceTree = "<group>"; };
 		19928659EF08A85E6FCE76962A0919CC /* AAVSOP87B_JUP.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAVSOP87B_JUP.cpp; path = "Sources/aaplus-v2.44/AAVSOP87B_JUP.cpp"; sourceTree = "<group>"; };
 		19E2982285A8D477DE9FBCBA7438801D /* AAVSOP87D_MER.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAVSOP87D_MER.h; path = "Sources/aaplus-v2.44/include/AAVSOP87D_MER.h"; sourceTree = "<group>"; };
@@ -807,7 +751,7 @@
 		1B64A8D2FB7D5F08FF6C41FCAB98CF20 /* LineChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LineChartDataSet.swift; path = Source/Charts/Data/Implementations/Standard/LineChartDataSet.swift; sourceTree = "<group>"; };
 		1C0FC543E4099F58FD275D2033E1AF81 /* KPCAAPhysicalMoon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KPCAAPhysicalMoon.h; path = Sources/ObjCAA/include/KPCAAPhysicalMoon.h; sourceTree = "<group>"; };
 		1C2ECF73D299508E74DABD20EEC787A3 /* TimeZoneLocate-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TimeZoneLocate-prefix.pch"; sourceTree = "<group>"; };
-		1C42BED0DBCB2184B8164A6FC76450B0 /* KPCAACoordinateTransformation.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAACoordinateTransformation.mm; path = Sources/ObjCAA/KPCAACoordinateTransformation.mm; sourceTree = "<group>"; };
+		1C42BED0DBCB2184B8164A6FC76450B0 /* KPCAACoordinateTransformation.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAACoordinateTransformation.mm; path = Sources/ObjCAA/KPCAACoordinateTransformation.mm; sourceTree = "<group>"; };
 		1C87C1198B6770D70A6893A58AD4A89B /* AAJupiter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAJupiter.h; path = "Sources/aaplus-v2.44/include/AAJupiter.h"; sourceTree = "<group>"; };
 		1D173A7EB135F7DB5713EB8F34B04673 /* TinyEdgeInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TinyEdgeInsets.swift; path = TinyConstraints/Classes/TinyEdgeInsets.swift; sourceTree = "<group>"; };
 		1D280BFE884BB114432276643D6EC915 /* DataRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataRenderer.swift; path = Source/Charts/Renderers/DataRenderer.swift; sourceTree = "<group>"; };
@@ -821,6 +765,7 @@
 		21A5D17F9D0C82442ADFF46D6D383BB6 /* AAMoslemCalendar.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAMoslemCalendar.cpp; path = "Sources/aaplus-v2.44/AAMoslemCalendar.cpp"; sourceTree = "<group>"; };
 		21B34E8A4E36B01BCA4E92CAADA8722E /* AAMoonPhases2.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAMoonPhases2.cpp; path = "Sources/aaplus-v2.44/AAMoonPhases2.cpp"; sourceTree = "<group>"; };
 		21BDCB312E8F6AF23F96EDEC78A73638 /* KPCAAEclipticalElements.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KPCAAEclipticalElements.h; path = Sources/ObjCAA/include/KPCAAEclipticalElements.h; sourceTree = "<group>"; };
+		21C677253FDFBA2116F89F7251C09AB3 /* Pods-CosmicCypher-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CosmicCypher-umbrella.h"; sourceTree = "<group>"; };
 		22A382947DE19355AAA5DEA102201A62 /* AAElliptical.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAElliptical.h; path = "Sources/aaplus-v2.44/include/AAElliptical.h"; sourceTree = "<group>"; };
 		22AB29216EDB67C9D270396D381D68C3 /* LegendEntry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LegendEntry.swift; path = Source/Charts/Components/LegendEntry.swift; sourceTree = "<group>"; };
 		234E55104303E65F650C9C8A4DA5C869 /* YAxisRendererRadarChart.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YAxisRendererRadarChart.swift; path = Source/Charts/Renderers/YAxisRendererRadarChart.swift; sourceTree = "<group>"; };
@@ -835,7 +780,6 @@
 		267D1CE4B2716E69ED138823DBF19D00 /* AAVSOP87E_EAR.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAVSOP87E_EAR.cpp; path = "Sources/aaplus-v2.44/AAVSOP87E_EAR.cpp"; sourceTree = "<group>"; };
 		272045D94D1895D061E1617F92A61B73 /* AAVSOP87_EMB.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAVSOP87_EMB.h; path = "Sources/aaplus-v2.44/include/AAVSOP87_EMB.h"; sourceTree = "<group>"; };
 		2764C06DB5560736C954C5653C26ECAD /* AAVSOP87B_MAR.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAVSOP87B_MAR.cpp; path = "Sources/aaplus-v2.44/AAVSOP87B_MAR.cpp"; sourceTree = "<group>"; };
-		2770C1FB99FE18A2C9226FB4859C76A2 /* Pods-CosmicCypher-CosmicCypherUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CosmicCypher-CosmicCypherUITests.release.xcconfig"; sourceTree = "<group>"; };
 		27F7EC0DCCDD7BC9273FA3632A232F35 /* AAMoonNodes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAMoonNodes.h; path = "Sources/aaplus-v2.44/include/AAMoonNodes.h"; sourceTree = "<group>"; };
 		28221DAF1763BE27DEEE2BF2A1DF37BF /* AAVSOP87D_VEN.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAVSOP87D_VEN.cpp; path = "Sources/aaplus-v2.44/AAVSOP87D_VEN.cpp"; sourceTree = "<group>"; };
 		2847A907D8447D8F099DFE4F0ABA6517 /* AARiseTransitSet.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AARiseTransitSet.cpp; path = "Sources/aaplus-v2.44/AARiseTransitSet.cpp"; sourceTree = "<group>"; };
@@ -845,9 +789,10 @@
 		2A7ED76CD3E06E45603890831FB43B8B /* Planets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Planets.swift; path = Sources/SwiftAA/Planets.swift; sourceTree = "<group>"; };
 		2A8F31F22F9400F34D7E031498079ABE /* PlanetaryPhysicalDetails.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PlanetaryPhysicalDetails.swift; path = Sources/SwiftAA/PlanetaryPhysicalDetails.swift; sourceTree = "<group>"; };
 		2B0062FE886C42D1024E28CFFF1392CA /* Highlight.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Highlight.swift; path = Source/Charts/Highlight/Highlight.swift; sourceTree = "<group>"; };
+		2B0B0B50058CDDFC45871CDD8C5FB216 /* Pods-CosmicCypher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CosmicCypher.debug.xcconfig"; sourceTree = "<group>"; };
 		2B60BFFDD187B6AC524E516DFC469333 /* AAVSOP87B_NEP.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAVSOP87B_NEP.h; path = "Sources/aaplus-v2.44/include/AAVSOP87B_NEP.h"; sourceTree = "<group>"; };
 		2BFB5FE0D24E5D6EDB4179196E27CC91 /* AAPlanetaryPhenomena.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAPlanetaryPhenomena.cpp; path = "Sources/aaplus-v2.44/AAPlanetaryPhenomena.cpp"; sourceTree = "<group>"; };
-		2C70F2DD337ED76D4D4B69C50070D909 /* KPCAAStellarMagnitudes.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAStellarMagnitudes.mm; path = Sources/ObjCAA/KPCAAStellarMagnitudes.mm; sourceTree = "<group>"; };
+		2C70F2DD337ED76D4D4B69C50070D909 /* KPCAAStellarMagnitudes.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAAStellarMagnitudes.mm; path = Sources/ObjCAA/KPCAAStellarMagnitudes.mm; sourceTree = "<group>"; };
 		2C7E808DA72611C3552B7FBBED84FAFF /* AAPrecession.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAPrecession.cpp; path = "Sources/aaplus-v2.44/AAPrecession.cpp"; sourceTree = "<group>"; };
 		2CFD33142C391B33D5FB67790C5600D5 /* Times.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Times.swift; path = Sources/SwiftAA/Times.swift; sourceTree = "<group>"; };
 		2D15FBFE7701E9E6710CDEA8DE1403CE /* AAVSOP87C_EAR.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAVSOP87C_EAR.h; path = "Sources/aaplus-v2.44/include/AAVSOP87C_EAR.h"; sourceTree = "<group>"; };
@@ -856,14 +801,13 @@
 		2E65218A30CE93D077470323138E1563 /* AAPlanetPerihelionAphelion2.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAPlanetPerihelionAphelion2.h; path = "Sources/aaplus-v2.44/include/AAPlanetPerihelionAphelion2.h"; sourceTree = "<group>"; };
 		2E7A0F2D490998E23D654715469B86F7 /* Distances.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Distances.swift; path = Sources/SwiftAA/Distances.swift; sourceTree = "<group>"; };
 		2E954CFDB0D696DF598E900C9AEAEFAC /* AAPrecession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAPrecession.h; path = "Sources/aaplus-v2.44/include/AAPrecession.h"; sourceTree = "<group>"; };
+		2E9A20CA24FFB6179885D1F1B285A72D /* Pods-CosmicCypher.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CosmicCypher.modulemap"; sourceTree = "<group>"; };
 		2F759CDFEF64E723AD8D3B21CCE4A827 /* SwiftAA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftAA.debug.xcconfig; sourceTree = "<group>"; };
-		2FA180118B1336153DD471F50068F024 /* KPCAAParallax.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAParallax.mm; path = Sources/ObjCAA/KPCAAParallax.mm; sourceTree = "<group>"; };
+		2FA180118B1336153DD471F50068F024 /* KPCAAParallax.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAAParallax.mm; path = Sources/ObjCAA/KPCAAParallax.mm; sourceTree = "<group>"; };
 		2FDB85217BD6C2C18D0667FAF81BF32C /* SwiftAlgorithms.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftAlgorithms.debug.xcconfig; sourceTree = "<group>"; };
-		2FF0BBD8E600498ACB9DB78308ED9F52 /* Pods-CosmicCypher-CosmicCypherUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CosmicCypher-CosmicCypherUITests-frameworks.sh"; sourceTree = "<group>"; };
 		30370BDE0F21F6F1A3C31B3B1C948642 /* KPCAAEclipses.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KPCAAEclipses.h; path = Sources/ObjCAA/include/KPCAAEclipses.h; sourceTree = "<group>"; };
-		3107081EEE808AB99486B2F74A3E7CC5 /* Pods-CosmicCypher-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CosmicCypher-dummy.m"; sourceTree = "<group>"; };
 		318E801C2790E3DAE3216AD98604964A /* AAVSOP87D_URA.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAVSOP87D_URA.cpp; path = "Sources/aaplus-v2.44/AAVSOP87D_URA.cpp"; sourceTree = "<group>"; };
-		333025FCB3CFD1A833E72E69993E28EF /* KPCAAElliptical.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAElliptical.mm; path = Sources/ObjCAA/KPCAAElliptical.mm; sourceTree = "<group>"; };
+		333025FCB3CFD1A833E72E69993E28EF /* KPCAAElliptical.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAAElliptical.mm; path = Sources/ObjCAA/KPCAAElliptical.mm; sourceTree = "<group>"; };
 		33526D5E22BCDCBF0F8997A985ABD833 /* PieHighlighter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PieHighlighter.swift; path = Source/Charts/Highlight/PieHighlighter.swift; sourceTree = "<group>"; };
 		3439BA7B4D51F481F866BF2CD21A752E /* AAElliptical.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAElliptical.cpp; path = "Sources/aaplus-v2.44/AAElliptical.cpp"; sourceTree = "<group>"; };
 		344B94E7841F09015712C1E3D6427DF1 /* Joined.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Joined.swift; path = Sources/Algorithms/Joined.swift; sourceTree = "<group>"; };
@@ -877,8 +821,8 @@
 		378E938B8304D6F7FB0C914B77CE7117 /* HorizontalBarChartView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HorizontalBarChartView.swift; path = Source/Charts/Charts/HorizontalBarChartView.swift; sourceTree = "<group>"; };
 		3796735E808B640594C3468CE0E102F0 /* AAVSOP87_NEP.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAVSOP87_NEP.cpp; path = "Sources/aaplus-v2.44/AAVSOP87_NEP.cpp"; sourceTree = "<group>"; };
 		37FE5B1F0D0C7447275954F5FD36AEE9 /* SwiftAA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftAA.release.xcconfig; sourceTree = "<group>"; };
-		383D643A99AC5E8779A505BD1C5BBDBA /* KPCAABinaryStar.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAABinaryStar.mm; path = Sources/ObjCAA/KPCAABinaryStar.mm; sourceTree = "<group>"; };
-		38DF3A987BDD4DDF9E3CDCC86A02DCCE /* KPCAANearParabolic.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAANearParabolic.mm; path = Sources/ObjCAA/KPCAANearParabolic.mm; sourceTree = "<group>"; };
+		383D643A99AC5E8779A505BD1C5BBDBA /* KPCAABinaryStar.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAABinaryStar.mm; path = Sources/ObjCAA/KPCAABinaryStar.mm; sourceTree = "<group>"; };
+		38DF3A987BDD4DDF9E3CDCC86A02DCCE /* KPCAANearParabolic.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAANearParabolic.mm; path = Sources/ObjCAA/KPCAANearParabolic.mm; sourceTree = "<group>"; };
 		39CE8C2CD0C4F4D730ABDFCF2DE5C1C4 /* ValueFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValueFormatter.swift; path = Source/Charts/Formatters/ValueFormatter.swift; sourceTree = "<group>"; };
 		39D09969B631422DEC74B6826D0FDBDE /* AAVSOP87B_EAR.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAVSOP87B_EAR.cpp; path = "Sources/aaplus-v2.44/AAVSOP87B_EAR.cpp"; sourceTree = "<group>"; };
 		39DCF9E512FFD4E269C8E93DE6A0A864 /* ScatterChartDataSetProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScatterChartDataSetProtocol.swift; path = Source/Charts/Data/Interfaces/ScatterChartDataSetProtocol.swift; sourceTree = "<group>"; };
@@ -886,16 +830,16 @@
 		3C098A3EF4468AB48E7C0BB08B95ED5E /* AAVSOP87D_EAR.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAVSOP87D_EAR.cpp; path = "Sources/aaplus-v2.44/AAVSOP87D_EAR.cpp"; sourceTree = "<group>"; };
 		3C54D0F6A5459159F86EDF5F3093770D /* CandleStickChartRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CandleStickChartRenderer.swift; path = Source/Charts/Renderers/CandleStickChartRenderer.swift; sourceTree = "<group>"; };
 		3C68D2A27BD5A3BF5A489A1EFDE0C9B1 /* AAVSOP87A_MAR.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAVSOP87A_MAR.cpp; path = "Sources/aaplus-v2.44/AAVSOP87A_MAR.cpp"; sourceTree = "<group>"; };
-		3C8A65C9C50D018006DCBA925763015B /* KPCAADiameters.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAADiameters.mm; path = Sources/ObjCAA/KPCAADiameters.mm; sourceTree = "<group>"; };
+		3C8A65C9C50D018006DCBA925763015B /* KPCAADiameters.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAADiameters.mm; path = Sources/ObjCAA/KPCAADiameters.mm; sourceTree = "<group>"; };
 		3CABAEFF85F4C0F7D02B5688278A6561 /* PlanetaryDetails.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PlanetaryDetails.swift; path = Sources/SwiftAA/PlanetaryDetails.swift; sourceTree = "<group>"; };
 		3CEB963F4BF4ED9404CE5BB3A7D58CAD /* AARiseTransitSet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AARiseTransitSet.h; path = "Sources/aaplus-v2.44/include/AARiseTransitSet.h"; sourceTree = "<group>"; };
 		3DA90FA66EDB2258D3ED1F745D315AA9 /* Partition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Partition.swift; path = Sources/Algorithms/Partition.swift; sourceTree = "<group>"; };
 		3E083256EF458AA8860DD6D165004FCF /* AstronomicalObject.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AstronomicalObject.swift; path = Sources/SwiftAA/AstronomicalObject.swift; sourceTree = "<group>"; };
+		3E25735780AE6195C7CC2EC245D576F3 /* Pods-CosmicCypher-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CosmicCypher-frameworks.sh"; sourceTree = "<group>"; };
 		3E87FEDA4978AD7E7A10AD079D5C54B8 /* PieChartView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PieChartView.swift; path = Source/Charts/Charts/PieChartView.swift; sourceTree = "<group>"; };
 		3EDBC7DA5695B590741DB317202C1AB7 /* GeographicCoordinates.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeographicCoordinates.swift; path = Sources/SwiftAA/GeographicCoordinates.swift; sourceTree = "<group>"; };
-		3F9281E35AB098485580FF3DEB605897 /* KPCAASidereal.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAASidereal.mm; path = Sources/ObjCAA/KPCAASidereal.mm; sourceTree = "<group>"; };
+		3F9281E35AB098485580FF3DEB605897 /* KPCAASidereal.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAASidereal.mm; path = Sources/ObjCAA/KPCAASidereal.mm; sourceTree = "<group>"; };
 		3FE8D858E32ED714387AB83CB6BA5E55 /* AAVSOP87A_EMB.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAVSOP87A_EMB.cpp; path = "Sources/aaplus-v2.44/AAVSOP87A_EMB.cpp"; sourceTree = "<group>"; };
-		3FFBDCC4C5F21475C990F7FC51586A67 /* Pods-CosmicCypherTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CosmicCypherTests-dummy.m"; sourceTree = "<group>"; };
 		40D23567F5D5AFF4363C4D9652FDB5B8 /* AAVSOP87A_URA.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAVSOP87A_URA.cpp; path = "Sources/aaplus-v2.44/AAVSOP87A_URA.cpp"; sourceTree = "<group>"; };
 		41B8775FF30C1A564CC0ACAD0062BF04 /* AAVSOP87A_SAT.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAVSOP87A_SAT.cpp; path = "Sources/aaplus-v2.44/AAVSOP87A_SAT.cpp"; sourceTree = "<group>"; };
 		42DE2159186F2106B9C3BA4B49E22ECF /* SwiftAlgorithms.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftAlgorithms.modulemap; sourceTree = "<group>"; };
@@ -903,6 +847,7 @@
 		4337BFC8F4A47AAEFF422F6CB3308F19 /* ShapeRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShapeRenderer.swift; path = Source/Charts/Renderers/Scatter/ShapeRenderer.swift; sourceTree = "<group>"; };
 		436E5E4E8D4C07DC2222932D21D50CCF /* KPCAASaturn.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KPCAASaturn.h; path = Sources/ObjCAA/include/KPCAASaturn.h; sourceTree = "<group>"; };
 		4377E0114B05D4CD4FB0202C32DD45AE /* Charts-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Charts-Info.plist"; sourceTree = "<group>"; };
+		441461F9141E5DC0B4F005356B74B541 /* Pods-CosmicCypher-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CosmicCypher-Info.plist"; sourceTree = "<group>"; };
 		44B07C222B987EDA1BA2F3134974EAD1 /* DataApproximator+N.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DataApproximator+N.swift"; path = "Source/Charts/Filters/DataApproximator+N.swift"; sourceTree = "<group>"; };
 		45A465375EAF4074A7046A93FA7F3853 /* KPCAAParallactic.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KPCAAParallactic.h; path = Sources/ObjCAA/include/KPCAAParallactic.h; sourceTree = "<group>"; };
 		46662D7609AD12FFAB695915DD4D569B /* AnimatedZoomViewJob.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatedZoomViewJob.swift; path = Source/Charts/Jobs/AnimatedZoomViewJob.swift; sourceTree = "<group>"; };
@@ -913,10 +858,9 @@
 		47AC12861BED0A545C89FCEE14126F87 /* AADynamicalTime.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AADynamicalTime.h; path = "Sources/aaplus-v2.44/include/AADynamicalTime.h"; sourceTree = "<group>"; };
 		47C832C50433F2445EC3548F03755EBC /* AxisBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AxisBase.swift; path = Source/Charts/Components/AxisBase.swift; sourceTree = "<group>"; };
 		480639AF06BD29C76B61538AC5BE7DA4 /* AAJewishCalendar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAJewishCalendar.h; path = "Sources/aaplus-v2.44/include/AAJewishCalendar.h"; sourceTree = "<group>"; };
-		48984E20EFF613D2E3DE7E3019482F17 /* Pods-CosmicCypherTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CosmicCypherTests.modulemap"; sourceTree = "<group>"; };
 		49DA3927EB254D20E135FDA26FFA22F2 /* AAVSOP87D_JUP.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAVSOP87D_JUP.h; path = "Sources/aaplus-v2.44/include/AAVSOP87D_JUP.h"; sourceTree = "<group>"; };
 		49DA478F74859884BD075B14FFECD516 /* ViewPortHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewPortHandler.swift; path = Source/Charts/Utils/ViewPortHandler.swift; sourceTree = "<group>"; };
-		49F8B2C1332977F5471AEE761713DCA9 /* KPCAAEclipticalElements.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAEclipticalElements.mm; path = Sources/ObjCAA/KPCAAEclipticalElements.mm; sourceTree = "<group>"; };
+		49F8B2C1332977F5471AEE761713DCA9 /* KPCAAEclipticalElements.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAAEclipticalElements.mm; path = Sources/ObjCAA/KPCAAEclipticalElements.mm; sourceTree = "<group>"; };
 		4A3F3855DB9D68A993200A1260AF9160 /* Stack.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Stack.swift; path = TinyConstraints/Classes/Stack.swift; sourceTree = "<group>"; };
 		4A6752C77104A18AC6D210A31712D48E /* AAVSOP87.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAVSOP87.cpp; path = "Sources/aaplus-v2.44/AAVSOP87.cpp"; sourceTree = "<group>"; };
 		4BBD3C37786D3EC8FE2DC0D1A56D6D3E /* Platform+Gestures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Platform+Gestures.swift"; path = "Source/Charts/Utils/Platform+Gestures.swift"; sourceTree = "<group>"; };
@@ -934,8 +878,7 @@
 		5035BEE62425EDFB81D0F19BF54AC7BD /* AAELP2000.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAELP2000.h; path = "Sources/aaplus-v2.44/include/AAELP2000.h"; sourceTree = "<group>"; };
 		50642FF06A54F4B94EFEB9039F3B9993 /* ObjCAA.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ObjCAA.modulemap; sourceTree = "<group>"; };
 		506A306BC2B3D95E219F8FD8D9604557 /* Moon.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Moon.swift; path = Sources/SwiftAA/Moon.swift; sourceTree = "<group>"; };
-		51A0D09609B5A4418CEBC19737B2FE61 /* KPCAADate.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAADate.mm; path = Sources/ObjCAA/KPCAADate.mm; sourceTree = "<group>"; };
-		51B173E8A8C9B6A372B74F3803FE6866 /* Pods-CosmicCypher-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CosmicCypher-frameworks.sh"; sourceTree = "<group>"; };
+		51A0D09609B5A4418CEBC19737B2FE61 /* KPCAADate.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAADate.mm; path = Sources/ObjCAA/KPCAADate.mm; sourceTree = "<group>"; };
 		51C13BC06F1C652F6D0AB5FDB3094F0A /* TriangleShapeRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TriangleShapeRenderer.swift; path = Source/Charts/Renderers/Scatter/TriangleShapeRenderer.swift; sourceTree = "<group>"; };
 		51E6A702C587DA9777EAFABBEE8EF925 /* CircleShapeRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CircleShapeRenderer.swift; path = Source/Charts/Renderers/Scatter/CircleShapeRenderer.swift; sourceTree = "<group>"; };
 		524EFC5992500E2278041019EAF93C59 /* YAxisRendererHorizontalBarChart.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YAxisRendererHorizontalBarChart.swift; path = Source/Charts/Renderers/YAxisRendererHorizontalBarChart.swift; sourceTree = "<group>"; };
@@ -945,16 +888,16 @@
 		5400242E5218C9476E892D859798A158 /* SwiftAA */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftAA; path = SwiftAA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		544CC9E42E2E38BAD923EB0B7DD4B711 /* Mercury.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Mercury.swift; path = Sources/SwiftAA/Mercury.swift; sourceTree = "<group>"; };
 		549C2954528C09264693647163B54005 /* KPCAAPhysicalMars.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KPCAAPhysicalMars.h; path = Sources/ObjCAA/include/KPCAAPhysicalMars.h; sourceTree = "<group>"; };
-		54CE4D8DB061A1EC9CE2EC7CED9B377D /* KPCAAParabolic.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAParabolic.mm; path = Sources/ObjCAA/KPCAAParabolic.mm; sourceTree = "<group>"; };
+		54CE4D8DB061A1EC9CE2EC7CED9B377D /* KPCAAParabolic.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAAParabolic.mm; path = Sources/ObjCAA/KPCAAParabolic.mm; sourceTree = "<group>"; };
 		559F9A596038D70260E77BC2B8AB8EEB /* AADate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AADate.h; path = "Sources/aaplus-v2.44/include/AADate.h"; sourceTree = "<group>"; };
 		56AB91EE13459EBE584373825808F990 /* AAVSOP87B_MER.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAVSOP87B_MER.h; path = "Sources/aaplus-v2.44/include/AAVSOP87B_MER.h"; sourceTree = "<group>"; };
 		56E15E6F8033BF877730C928060AEE5B /* AASaturnRings.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AASaturnRings.h; path = "Sources/aaplus-v2.44/include/AASaturnRings.h"; sourceTree = "<group>"; };
 		5718ED8B2A619A50D245A73687A6D721 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		57D3CCC793FAD36F1155830FCA4552FA /* KPCAAPhysicalMoon.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAPhysicalMoon.mm; path = Sources/ObjCAA/KPCAAPhysicalMoon.mm; sourceTree = "<group>"; };
+		57D3CCC793FAD36F1155830FCA4552FA /* KPCAAPhysicalMoon.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAAPhysicalMoon.mm; path = Sources/ObjCAA/KPCAAPhysicalMoon.mm; sourceTree = "<group>"; };
 		586988D369E595EAE69669A4E4D87DDD /* ChevronUpShapeRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChevronUpShapeRenderer.swift; path = Source/Charts/Renderers/Scatter/ChevronUpShapeRenderer.swift; sourceTree = "<group>"; };
 		586C03BA80C6FEFC10402B61E6C61CDF /* AAVSOP87C_NEP.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAVSOP87C_NEP.cpp; path = "Sources/aaplus-v2.44/AAVSOP87C_NEP.cpp"; sourceTree = "<group>"; };
 		586C29A76A01F4D421CE5C0E828F74D6 /* Split.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Split.swift; path = Sources/Algorithms/Split.swift; sourceTree = "<group>"; };
-		589AE1309FA502182BB4A711D5D6A4FF /* KPCAARefraction.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAARefraction.mm; path = Sources/ObjCAA/KPCAARefraction.mm; sourceTree = "<group>"; };
+		589AE1309FA502182BB4A711D5D6A4FF /* KPCAARefraction.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAARefraction.mm; path = Sources/ObjCAA/KPCAARefraction.mm; sourceTree = "<group>"; };
 		58AB4BD5C0E7DC281F57199568F86FF2 /* Charts.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Charts.modulemap; sourceTree = "<group>"; };
 		58DC977FE38BC5C6495A101D205D8B70 /* ObjCAA */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ObjCAA; path = ObjCAA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5931D8DFA0208C7AC41D24EAFD92679D /* AAPhysicalMoon.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAPhysicalMoon.cpp; path = "Sources/aaplus-v2.44/AAPhysicalMoon.cpp"; sourceTree = "<group>"; };
@@ -967,34 +910,33 @@
 		5D15759DE8D89FD3E3C086201315C3A6 /* TinyConstraints+superview.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "TinyConstraints+superview.swift"; path = "TinyConstraints/Classes/TinyConstraints+superview.swift"; sourceTree = "<group>"; };
 		5E6161EEE7F06C438C09700D2AC2A1D9 /* EitherSequence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EitherSequence.swift; path = Sources/Algorithms/EitherSequence.swift; sourceTree = "<group>"; };
 		5E8179448B81188A935307638252EE8B /* KPCAASwiftAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KPCAASwiftAdditions.h; path = Sources/ObjCAA/include/KPCAASwiftAdditions.h; sourceTree = "<group>"; };
-		5EB1A45FF6D52BB3316C83DFA8D54943 /* KPCAAGalileanMoons.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAGalileanMoons.mm; path = Sources/ObjCAA/KPCAAGalileanMoons.mm; sourceTree = "<group>"; };
+		5EB1A45FF6D52BB3316C83DFA8D54943 /* KPCAAGalileanMoons.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAAGalileanMoons.mm; path = Sources/ObjCAA/KPCAAGalileanMoons.mm; sourceTree = "<group>"; };
 		5EBA8E1C4B7B39530EF281897506B3B7 /* DataApproximator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataApproximator.swift; path = Source/Charts/Filters/DataApproximator.swift; sourceTree = "<group>"; };
-		6007F79ECA1FB73882907E72758606F8 /* KPCAAPhysicalMars.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAPhysicalMars.mm; path = Sources/ObjCAA/KPCAAPhysicalMars.mm; sourceTree = "<group>"; };
+		6007F79ECA1FB73882907E72758606F8 /* KPCAAPhysicalMars.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAAPhysicalMars.mm; path = Sources/ObjCAA/KPCAAPhysicalMars.mm; sourceTree = "<group>"; };
 		609A91E5AEFC2364235DE35BE35738EF /* KPCAAUranus.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KPCAAUranus.h; path = Sources/ObjCAA/include/KPCAAUranus.h; sourceTree = "<group>"; };
 		610433B7C5B65CBFED432A7AF8467119 /* SwiftAA.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftAA.modulemap; sourceTree = "<group>"; };
 		61A05C5D6F423E5CE941959E19EDC3F6 /* AAPlanetPerihelionAphelion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAPlanetPerihelionAphelion.h; path = "Sources/aaplus-v2.44/include/AAPlanetPerihelionAphelion.h"; sourceTree = "<group>"; };
 		6278F706034F8F7580F3A65B3CB86124 /* AAVSOP87A_MAR.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAVSOP87A_MAR.h; path = "Sources/aaplus-v2.44/include/AAVSOP87A_MAR.h"; sourceTree = "<group>"; };
 		62F01B11BCA1CB3601A8333C0DCDF541 /* TimeZoneLocate.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TimeZoneLocate.modulemap; sourceTree = "<group>"; };
-		6303EFBB031EC4B1287569F36E789B1F /* TimeZoneLocate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TimeZoneLocate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6303EFBB031EC4B1287569F36E789B1F /* TimeZoneLocate */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TimeZoneLocate; path = TimeZoneLocate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6323D070B1E1CA0797CD47D26AB2D5EB /* KPCAAFK5.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KPCAAFK5.h; path = Sources/ObjCAA/include/KPCAAFK5.h; sourceTree = "<group>"; };
 		641EB0085E963A5E34F862C536440480 /* SwiftAA-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftAA-dummy.m"; sourceTree = "<group>"; };
 		645027D8972EAB1F26EF98E45FF02B8B /* KPCAAPrecession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KPCAAPrecession.h; path = Sources/ObjCAA/include/KPCAAPrecession.h; sourceTree = "<group>"; };
 		651706B103CB540F3337D7F07F0952E0 /* SwiftAlgorithms-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftAlgorithms-prefix.pch"; sourceTree = "<group>"; };
 		65250E45A88E301CF093C9B33D371C56 /* AAVSOP87D_MER.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAVSOP87D_MER.cpp; path = "Sources/aaplus-v2.44/AAVSOP87D_MER.cpp"; sourceTree = "<group>"; };
 		659D1726B2EDA109E856E25BE8AEB4B6 /* KPCAAGalileanMoons.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KPCAAGalileanMoons.h; path = Sources/ObjCAA/include/KPCAAGalileanMoons.h; sourceTree = "<group>"; };
-		65AAFED18F518E23E1C4FCD6B61035D3 /* TimeZoneLocate.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeZoneLocate.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		65B53D1E4BF6CC30B38D7FCC2876ECB8 /* Pods-CosmicCypherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CosmicCypherTests.release.xcconfig"; sourceTree = "<group>"; };
+		65AAFED18F518E23E1C4FCD6B61035D3 /* TimeZoneLocate-TimeZoneLocate */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "TimeZoneLocate-TimeZoneLocate"; path = TimeZoneLocate.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		665F46EED169EE84CC56763D02268353 /* AA+.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "AA+.h"; path = "Sources/aaplus-v2.44/include/AA+.h"; sourceTree = "<group>"; };
 		668154A3BFF9BC090B6D270A005E0DED /* ChevronDownShapeRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChevronDownShapeRenderer.swift; path = Source/Charts/Renderers/Scatter/ChevronDownShapeRenderer.swift; sourceTree = "<group>"; };
 		6700D4A75B970C6EA447C283D6B1AABE /* Constrainable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constrainable.swift; path = TinyConstraints/Classes/Constrainable.swift; sourceTree = "<group>"; };
 		6785B07D7C61CD5366AC9808E9683677 /* KPCAANutation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KPCAANutation.h; path = Sources/ObjCAA/include/KPCAANutation.h; sourceTree = "<group>"; };
 		691138F05F531A5B58F1FC9E220C0987 /* KPCAAGlobe.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KPCAAGlobe.h; path = Sources/ObjCAA/include/KPCAAGlobe.h; sourceTree = "<group>"; };
 		693AF90D50A2E241ADEC371F207B0CE7 /* Platform+Graphics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Platform+Graphics.swift"; path = "Source/Charts/Utils/Platform+Graphics.swift"; sourceTree = "<group>"; };
-		69C0BD9E438DED9201D4D11685B2F6AD /* Pods-CosmicCypher-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CosmicCypher-umbrella.h"; sourceTree = "<group>"; };
-		69F45D2382EFAF81EC4E504212C6F5C7 /* KPCAASaturnMoons.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAASaturnMoons.mm; path = Sources/ObjCAA/KPCAASaturnMoons.mm; sourceTree = "<group>"; };
+		69F45D2382EFAF81EC4E504212C6F5C7 /* KPCAASaturnMoons.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAASaturnMoons.mm; path = Sources/ObjCAA/KPCAASaturnMoons.mm; sourceTree = "<group>"; };
 		6A238291916FB977A175E92A669CD9D7 /* AAVSOP87E_SUN.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAVSOP87E_SUN.cpp; path = "Sources/aaplus-v2.44/AAVSOP87E_SUN.cpp"; sourceTree = "<group>"; };
 		6A7E821E5A99DC905C1F298A1D1F6F66 /* AAEclipses.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAEclipses.cpp; path = "Sources/aaplus-v2.44/AAEclipses.cpp"; sourceTree = "<group>"; };
-		6B7F460AC7BD6397F5B990344918DF8C /* KPCAAPhysicalSun.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAPhysicalSun.mm; path = Sources/ObjCAA/KPCAAPhysicalSun.mm; sourceTree = "<group>"; };
+		6B74B1B485D21F2DE7E6BD810724C541 /* Pods-CosmicCypher-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CosmicCypher-dummy.m"; sourceTree = "<group>"; };
+		6B7F460AC7BD6397F5B990344918DF8C /* KPCAAPhysicalSun.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAAPhysicalSun.mm; path = Sources/ObjCAA/KPCAAPhysicalSun.mm; sourceTree = "<group>"; };
 		6B937FC6FB4DE4ED32E39CF203F3428A /* TinyConstraints-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "TinyConstraints-Info.plist"; sourceTree = "<group>"; };
 		6C55E4B3E7E8D235361AE6DCFF53D1C9 /* Fluxes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Fluxes.swift; path = Sources/SwiftAA/Fluxes.swift; sourceTree = "<group>"; };
 		6C9A1BD6C69248122D419CB459E8CF22 /* AAPhysicalJupiter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAPhysicalJupiter.h; path = "Sources/aaplus-v2.44/include/AAPhysicalJupiter.h"; sourceTree = "<group>"; };
@@ -1003,8 +945,7 @@
 		6D2CCFF891A8A1C23E13198EF881683E /* Charts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Charts.release.xcconfig; sourceTree = "<group>"; };
 		6D7ED58B00025AC9EE69F126414EEA03 /* AAVSOP87B_MER.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAVSOP87B_MER.cpp; path = "Sources/aaplus-v2.44/AAVSOP87B_MER.cpp"; sourceTree = "<group>"; };
 		6DC153FA993DEBF03FAF36E744209DB3 /* AAVSOP87_VEN.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAVSOP87_VEN.h; path = "Sources/aaplus-v2.44/include/AAVSOP87_VEN.h"; sourceTree = "<group>"; };
-		6DEFFDD99A5B50FBD0AF9EEE1AD28C0E /* timezones.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; name = timezones.json; path = Pod/Assets/timezones.json; sourceTree = "<group>"; };
-		6E855AD4C0EC2F94812937CEB2EEA95A /* Pods-CosmicCypher-CosmicCypherUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CosmicCypher-CosmicCypherUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6DEFFDD99A5B50FBD0AF9EEE1AD28C0E /* timezones.json */ = {isa = PBXFileReference; includeInIndex = 1; name = timezones.json; path = Pod/Assets/timezones.json; sourceTree = "<group>"; };
 		6E8A303BB0FB5B44A14AD5E5180CFBAA /* Range.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Range.swift; path = Source/Charts/Highlight/Range.swift; sourceTree = "<group>"; };
 		6EFDFFCE52EFACF15C8127B3F78862A9 /* AADiameters.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AADiameters.h; path = "Sources/aaplus-v2.44/include/AADiameters.h"; sourceTree = "<group>"; };
 		6F7098739710E019307432CBF20DFE15 /* KPCAAParallax.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KPCAAParallax.h; path = Sources/ObjCAA/include/KPCAAParallax.h; sourceTree = "<group>"; };
@@ -1020,35 +961,31 @@
 		73973237CDB53B2CC200040FC6CCA183 /* ScatterChartDataProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScatterChartDataProvider.swift; path = Source/Charts/Interfaces/ScatterChartDataProvider.swift; sourceTree = "<group>"; };
 		7425163FC3D8AF7821C54783E129FB37 /* AAVSOP87_URA.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAVSOP87_URA.h; path = "Sources/aaplus-v2.44/include/AAVSOP87_URA.h"; sourceTree = "<group>"; };
 		7483D6B6222DF2781B90E6BAEE4FC927 /* AAVSOP87A_EMB.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAVSOP87A_EMB.h; path = "Sources/aaplus-v2.44/include/AAVSOP87A_EMB.h"; sourceTree = "<group>"; };
-		75087FA2059063F541E230194559437D /* Pods-CosmicCypher-CosmicCypherUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CosmicCypher-CosmicCypherUITests-dummy.m"; sourceTree = "<group>"; };
 		75942D41A20AED7389E06056108F91E4 /* BarChartRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarChartRenderer.swift; path = Source/Charts/Renderers/BarChartRenderer.swift; sourceTree = "<group>"; };
 		759CAD684760D5E849E562AC83B98318 /* SwiftAA-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftAA-Info.plist"; sourceTree = "<group>"; };
-		75B835BF2B2CBBC02E431387E8C34865 /* Pods-CosmicCypher-CosmicCypherUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CosmicCypher-CosmicCypherUITests.modulemap"; sourceTree = "<group>"; };
 		76E97B82F70FBD633315EE8B6DF2EFBD /* AARefraction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AARefraction.h; path = "Sources/aaplus-v2.44/include/AARefraction.h"; sourceTree = "<group>"; };
 		77355513AF280C0FB46FE3BC860FC99F /* AAAngularSeparation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAAngularSeparation.h; path = "Sources/aaplus-v2.44/include/AAAngularSeparation.h"; sourceTree = "<group>"; };
 		77602C6D18FB6BF2242E3C676D1AB022 /* AAVSOP87D_MAR.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAVSOP87D_MAR.h; path = "Sources/aaplus-v2.44/include/AAVSOP87D_MAR.h"; sourceTree = "<group>"; };
 		77FBB3F26E5F71310A444A5D5C3B9ADE /* BubbleChartDataEntry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BubbleChartDataEntry.swift; path = Source/Charts/Data/Implementations/Standard/BubbleChartDataEntry.swift; sourceTree = "<group>"; };
-		783D20EFC07AD523AB04B521BA99D6B9 /* KPCAAMoonIlluminatedFraction.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAMoonIlluminatedFraction.mm; path = Sources/ObjCAA/KPCAAMoonIlluminatedFraction.mm; sourceTree = "<group>"; };
+		783D20EFC07AD523AB04B521BA99D6B9 /* KPCAAMoonIlluminatedFraction.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAAMoonIlluminatedFraction.mm; path = Sources/ObjCAA/KPCAAMoonIlluminatedFraction.mm; sourceTree = "<group>"; };
 		79290CC43BB5F2B5591ADF3E29F6E6CE /* KPCAAEquationOfTime.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KPCAAEquationOfTime.h; path = Sources/ObjCAA/include/KPCAAEquationOfTime.h; sourceTree = "<group>"; };
 		7947CC560F58BDE365E05F9B9DCEE432 /* AAELPMPP02.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAELPMPP02.h; path = "Sources/aaplus-v2.44/include/AAELPMPP02.h"; sourceTree = "<group>"; };
 		797A9C67EE9857DA9322EDAEF52A4789 /* KPCAARiseTransitSet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KPCAARiseTransitSet.h; path = Sources/ObjCAA/include/KPCAARiseTransitSet.h; sourceTree = "<group>"; };
 		798844214B2F70A22A8B70094819170E /* KPCAAPlanetPerihelionAphelion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KPCAAPlanetPerihelionAphelion.h; path = Sources/ObjCAA/include/KPCAAPlanetPerihelionAphelion.h; sourceTree = "<group>"; };
 		7A442DE28128A0A6FD77E502D83A8D2E /* ChartLimitLine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartLimitLine.swift; path = Source/Charts/Components/ChartLimitLine.swift; sourceTree = "<group>"; };
-		7A55AD23FCE45F05BC90341B9E18F4D2 /* KPCAAMoonPhases.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAMoonPhases.mm; path = Sources/ObjCAA/KPCAAMoonPhases.mm; sourceTree = "<group>"; };
+		7A55AD23FCE45F05BC90341B9E18F4D2 /* KPCAAMoonPhases.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAAMoonPhases.mm; path = Sources/ObjCAA/KPCAAMoonPhases.mm; sourceTree = "<group>"; };
 		7A5FA28E3754A5F146EAB0406CF19987 /* BarLineChartViewBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarLineChartViewBase.swift; path = Source/Charts/Charts/BarLineChartViewBase.swift; sourceTree = "<group>"; };
 		7A9073C453E471DFC71B293B0D174A66 /* AAVSOP87B_VEN.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAVSOP87B_VEN.cpp; path = "Sources/aaplus-v2.44/AAVSOP87B_VEN.cpp"; sourceTree = "<group>"; };
 		7AD3547F11D6A024F0ECAD67F1A3FD1B /* KPCAANodes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KPCAANodes.h; path = Sources/ObjCAA/include/KPCAANodes.h; sourceTree = "<group>"; };
 		7B5804391F788A40CCB4F07EECF86690 /* AAPhysicalSun.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAPhysicalSun.h; path = "Sources/aaplus-v2.44/include/AAPhysicalSun.h"; sourceTree = "<group>"; };
 		7B5DACF644EDB50F2FA30BB09DF72A7A /* Product.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Product.swift; path = Sources/Algorithms/Product.swift; sourceTree = "<group>"; };
 		7BD96292798BF0516FB45449F45EBAD9 /* stdafx.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = stdafx.cpp; path = "Sources/aaplus-v2.44/stdafx.cpp"; sourceTree = "<group>"; };
-		7C71DAE671A07D278C020D3A65C37A49 /* Pods-CosmicCypher-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CosmicCypher-Info.plist"; sourceTree = "<group>"; };
-		7C82C440A4C7A4EFC5E2D2C677EE5FC6 /* KPCAASun.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAASun.mm; path = Sources/ObjCAA/KPCAASun.mm; sourceTree = "<group>"; };
+		7C82C440A4C7A4EFC5E2D2C677EE5FC6 /* KPCAASun.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAASun.mm; path = Sources/ObjCAA/KPCAASun.mm; sourceTree = "<group>"; };
 		7C8A494F7353B132EC1BCF062AE9C79C /* Suffix.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Suffix.swift; path = Sources/Algorithms/Suffix.swift; sourceTree = "<group>"; };
 		7D0ECE382B8276DE4FA63F89529AFAC5 /* AAVSOP87E_SUN.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAVSOP87E_SUN.h; path = "Sources/aaplus-v2.44/include/AAVSOP87E_SUN.h"; sourceTree = "<group>"; };
 		7D278816AD0375D6E28859F2BCB17C23 /* SquareShapeRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SquareShapeRenderer.swift; path = Source/Charts/Renderers/Scatter/SquareShapeRenderer.swift; sourceTree = "<group>"; };
 		7D3076CF1ADE7AF83FB26E0B55571DC0 /* AABinaryStar.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AABinaryStar.cpp; path = "Sources/aaplus-v2.44/AABinaryStar.cpp"; sourceTree = "<group>"; };
-		7E157A62577A354A49CA0CFE695D86FF /* Pods-CosmicCypher-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CosmicCypher-acknowledgements.plist"; sourceTree = "<group>"; };
-		7E1918E73A272D54A33A1FBF71C3C72A /* KPCAANutation.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAANutation.mm; path = Sources/ObjCAA/KPCAANutation.mm; sourceTree = "<group>"; };
+		7E1918E73A272D54A33A1FBF71C3C72A /* KPCAANutation.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAANutation.mm; path = Sources/ObjCAA/KPCAANutation.mm; sourceTree = "<group>"; };
 		7F351FE8D2DCC68E6DF036F025C6018E /* AAVSOP87B_NEP.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAVSOP87B_NEP.cpp; path = "Sources/aaplus-v2.44/AAVSOP87B_NEP.cpp"; sourceTree = "<group>"; };
 		7F65820DF338F9F7EDB27511854634F6 /* BarLineScatterCandleBubbleChartDataProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarLineScatterCandleBubbleChartDataProvider.swift; path = Source/Charts/Interfaces/BarLineScatterCandleBubbleChartDataProvider.swift; sourceTree = "<group>"; };
 		801AB9EC7EF7BAAFB56B9C70AE74FC7D /* KPCAAStellarMagnitudes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KPCAAStellarMagnitudes.h; path = Sources/ObjCAA/include/KPCAAStellarMagnitudes.h; sourceTree = "<group>"; };
@@ -1074,6 +1011,7 @@
 		87E8A45B2DB27C562D12E30F9219C2E7 /* stdafx.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = stdafx.h; path = "Sources/aaplus-v2.44/include/stdafx.h"; sourceTree = "<group>"; };
 		883FCFE6325C1B7009F10649A13A6B02 /* TimeZoneLocate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TimeZoneLocate.swift; path = Pod/Classes/TimeZoneLocate.swift; sourceTree = "<group>"; };
 		88CD60E59E1A8808762DD5FE98D5F70B /* AANearParabolic.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AANearParabolic.h; path = "Sources/aaplus-v2.44/include/AANearParabolic.h"; sourceTree = "<group>"; };
+		893C40B16B09A12BF28D372EED774A42 /* Pods-CosmicCypher-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CosmicCypher-acknowledgements.markdown"; sourceTree = "<group>"; };
 		894655906542C12050606410DE9AB02D /* AAVSOP87D_URA.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAVSOP87D_URA.h; path = "Sources/aaplus-v2.44/include/AAVSOP87D_URA.h"; sourceTree = "<group>"; };
 		8953972645414BE254D1DBFAC429BECD /* LineChartRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LineChartRenderer.swift; path = Source/Charts/Renderers/LineChartRenderer.swift; sourceTree = "<group>"; };
 		89C5C4D623122B958AD941D383F99135 /* XAxisRendererRadarChart.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XAxisRendererRadarChart.swift; path = Source/Charts/Renderers/XAxisRendererRadarChart.swift; sourceTree = "<group>"; };
@@ -1081,7 +1019,7 @@
 		8A544BDF8A2FA3CC1FD64AAC5B07E868 /* TimeZoneLocate-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "TimeZoneLocate-Info.plist"; sourceTree = "<group>"; };
 		8AE4F10EBE35977D3D45C588310AC969 /* RadarHighlighter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadarHighlighter.swift; path = Source/Charts/Highlight/RadarHighlighter.swift; sourceTree = "<group>"; };
 		8B6C1BF6521261C863702D1030250162 /* AAVSOP87A_MER.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAVSOP87A_MER.h; path = "Sources/aaplus-v2.44/include/AAVSOP87A_MER.h"; sourceTree = "<group>"; };
-		8BC2F6D899A03B92A89F0FEB408BD12A /* KPCAAEclipses.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAEclipses.mm; path = Sources/ObjCAA/KPCAAEclipses.mm; sourceTree = "<group>"; };
+		8BC2F6D899A03B92A89F0FEB408BD12A /* KPCAAEclipses.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAAEclipses.mm; path = Sources/ObjCAA/KPCAAEclipses.mm; sourceTree = "<group>"; };
 		8BCBD87017B5C6BD6A570EFAD36D8FAA /* CombinedChartView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CombinedChartView.swift; path = Source/Charts/Charts/CombinedChartView.swift; sourceTree = "<group>"; };
 		8BE76718CD37680682FB24E00C642A62 /* AAVenus.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAVenus.h; path = "Sources/aaplus-v2.44/include/AAVenus.h"; sourceTree = "<group>"; };
 		8C77837F78ABBE401210D7D9CD392A24 /* AAVSOP87D_SAT.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAVSOP87D_SAT.h; path = "Sources/aaplus-v2.44/include/AAVSOP87D_SAT.h"; sourceTree = "<group>"; };
@@ -1096,18 +1034,15 @@
 		8E9E4F13BAF7E2D9880F82818CED9DCD /* ChartViewBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartViewBase.swift; path = Source/Charts/Charts/ChartViewBase.swift; sourceTree = "<group>"; };
 		8EAAAF59432DCFD0612B32851A131690 /* TimeZoneLocate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TimeZoneLocate.debug.xcconfig; sourceTree = "<group>"; };
 		8ED1A9B2FB2CCB8CC9A46645ED634875 /* AARiseTransitSet2.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AARiseTransitSet2.h; path = "Sources/aaplus-v2.44/include/AARiseTransitSet2.h"; sourceTree = "<group>"; };
-		8F7F073FF1EBDFF307B8295783B598B5 /* KPCAAKepler.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAKepler.mm; path = Sources/ObjCAA/KPCAAKepler.mm; sourceTree = "<group>"; };
+		8F7F073FF1EBDFF307B8295783B598B5 /* KPCAAKepler.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAAKepler.mm; path = Sources/ObjCAA/KPCAAKepler.mm; sourceTree = "<group>"; };
 		8FE0310407456C4CF9FEA9ED5C7D4124 /* LineScatterCandleRadarChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LineScatterCandleRadarChartDataSet.swift; path = Source/Charts/Data/Implementations/Standard/LineScatterCandleRadarChartDataSet.swift; sourceTree = "<group>"; };
 		9026AE96AEE9DB33212B1B32ADD6F418 /* TransformerHorizontalBarChart.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransformerHorizontalBarChart.swift; path = Source/Charts/Utils/TransformerHorizontalBarChart.swift; sourceTree = "<group>"; };
 		903B00301428FCCC80AF6A955D05F043 /* PlanetaryPhenomena.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PlanetaryPhenomena.swift; path = Sources/SwiftAA/PlanetaryPhenomena.swift; sourceTree = "<group>"; };
 		90B473E5F6E4DEE5A6B72D2C399357C8 /* KPCAAElementsPlanetaryOrbit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KPCAAElementsPlanetaryOrbit.h; path = Sources/ObjCAA/include/KPCAAElementsPlanetaryOrbit.h; sourceTree = "<group>"; };
-		9115502E8DEC0B72C572710BA6569C5F /* KPCAAAngularSeparation.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAAngularSeparation.mm; path = Sources/ObjCAA/KPCAAAngularSeparation.mm; sourceTree = "<group>"; };
+		9115502E8DEC0B72C572710BA6569C5F /* KPCAAAngularSeparation.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAAAngularSeparation.mm; path = Sources/ObjCAA/KPCAAAngularSeparation.mm; sourceTree = "<group>"; };
 		91591884EC9643A9C0B6192F336756F1 /* AAFK5.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAFK5.h; path = "Sources/aaplus-v2.44/include/AAFK5.h"; sourceTree = "<group>"; };
-		92B43D16E3D2067BE34D053657F15300 /* Pods-CosmicCypherTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CosmicCypherTests-umbrella.h"; sourceTree = "<group>"; };
-		93075B8DBDCCE125BD3F76A787821244 /* Pods-CosmicCypherTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CosmicCypherTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		930F3E99B69FA7A38054AB2A8B38E352 /* Pods-CosmicCypher.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CosmicCypher.modulemap"; sourceTree = "<group>"; };
 		9356657E5BE231DAFA09E53F91AAB7B8 /* AAVSOP87C_MER.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAVSOP87C_MER.h; path = "Sources/aaplus-v2.44/include/AAVSOP87C_MER.h"; sourceTree = "<group>"; };
-		937EF686D64B1E7F97E8A8BEB1F38731 /* KPCAAEquinoxesAndSolstices.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAEquinoxesAndSolstices.mm; path = Sources/ObjCAA/KPCAAEquinoxesAndSolstices.mm; sourceTree = "<group>"; };
+		937EF686D64B1E7F97E8A8BEB1F38731 /* KPCAAEquinoxesAndSolstices.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAAEquinoxesAndSolstices.mm; path = Sources/ObjCAA/KPCAAEquinoxesAndSolstices.mm; sourceTree = "<group>"; };
 		9569AA9EF98BDB8F724CD8245C7F6508 /* PlanetaryOrbits.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PlanetaryOrbits.swift; path = Sources/SwiftAA/PlanetaryOrbits.swift; sourceTree = "<group>"; };
 		966BE673F27EFE914B2BA6CBA2D6F759 /* AAGalileanMoons.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAGalileanMoons.h; path = "Sources/aaplus-v2.44/include/AAGalileanMoons.h"; sourceTree = "<group>"; };
 		968DAA4F4715EA552A8D8CE1BA4F84C6 /* DateExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateExtensions.swift; path = Sources/SwiftAA/DateExtensions.swift; sourceTree = "<group>"; };
@@ -1118,7 +1053,7 @@
 		98965F0C5533616E4E466B9AC7B83F3B /* BinaryStars.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BinaryStars.swift; path = Sources/SwiftAA/BinaryStars.swift; sourceTree = "<group>"; };
 		997C022FFBDBD495F1FCE45991F8E60B /* BarHighlighter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarHighlighter.swift; path = Source/Charts/Highlight/BarHighlighter.swift; sourceTree = "<group>"; };
 		998B174C6CF8FBB65C9DF9276188DECA /* TinyConstraints-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TinyConstraints-prefix.pch"; sourceTree = "<group>"; };
-		99B7BC1C74AABBA76A8492998249DCE3 /* KPCAAMars.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAMars.mm; path = Sources/ObjCAA/KPCAAMars.mm; sourceTree = "<group>"; };
+		99B7BC1C74AABBA76A8492998249DCE3 /* KPCAAMars.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAAMars.mm; path = Sources/ObjCAA/KPCAAMars.mm; sourceTree = "<group>"; };
 		9A47DAF4038D9039387626FC01689F40 /* TinyConstraints.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TinyConstraints.swift; path = TinyConstraints/Classes/TinyConstraints.swift; sourceTree = "<group>"; };
 		9A60335E5DFA1A65B98F5503E41766FF /* AASidereal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AASidereal.h; path = "Sources/aaplus-v2.44/include/AASidereal.h"; sourceTree = "<group>"; };
 		9A836E301FB2D0E1B6AA387990D49CBA /* AAElementsPlanetaryOrbit.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAElementsPlanetaryOrbit.cpp; path = "Sources/aaplus-v2.44/AAElementsPlanetaryOrbit.cpp"; sourceTree = "<group>"; };
@@ -1127,10 +1062,10 @@
 		9B24B47BF6647986A5AAE341A820450A /* AASidereal.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AASidereal.cpp; path = "Sources/aaplus-v2.44/AASidereal.cpp"; sourceTree = "<group>"; };
 		9B7D05A30E11F38D4308BE0689A8B78B /* AAKepler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAKepler.h; path = "Sources/aaplus-v2.44/include/AAKepler.h"; sourceTree = "<group>"; };
 		9C5E867C53A59FA64451A66DAFB8C8A8 /* ObjCAA.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ObjCAA.h; path = Sources/ObjCAA/ObjCAA.h; sourceTree = "<group>"; };
-		9CB649D0551F2F8970AA1E61C6382005 /* KPCAANeptune.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAANeptune.mm; path = Sources/ObjCAA/KPCAANeptune.mm; sourceTree = "<group>"; };
+		9CB649D0551F2F8970AA1E61C6382005 /* KPCAANeptune.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAANeptune.mm; path = Sources/ObjCAA/KPCAANeptune.mm; sourceTree = "<group>"; };
 		9CCE2E08A509DD720886B988A5189016 /* ScatterChartView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScatterChartView.swift; path = Source/Charts/Charts/ScatterChartView.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9F02EAB68743EB8E49F4BA998874E110 /* KPCAAUranus.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAUranus.mm; path = Sources/ObjCAA/KPCAAUranus.mm; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9F02EAB68743EB8E49F4BA998874E110 /* KPCAAUranus.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAAUranus.mm; path = Sources/ObjCAA/KPCAAUranus.mm; sourceTree = "<group>"; };
 		9F3E4E9B093D97B3E5EA0A6E32A224DB /* Mars.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Mars.swift; path = Sources/SwiftAA/Mars.swift; sourceTree = "<group>"; };
 		9F46C28E85BBB5E0146585A87D36EF83 /* AAAngularSeparation.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAAngularSeparation.cpp; path = "Sources/aaplus-v2.44/AAAngularSeparation.cpp"; sourceTree = "<group>"; };
 		9FA12278807D6FC996C577DC741E4422 /* AAVSOP87E_SAT.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAVSOP87E_SAT.h; path = "Sources/aaplus-v2.44/include/AAVSOP87E_SAT.h"; sourceTree = "<group>"; };
@@ -1139,12 +1074,11 @@
 		A06A782EFF7CFA34B06612617B0D70FF /* AANearParabolic.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AANearParabolic.cpp; path = "Sources/aaplus-v2.44/AANearParabolic.cpp"; sourceTree = "<group>"; };
 		A0E465FBC1FBAB1BFAEA35CDAF8402D9 /* Sequence+KeyPath.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Sequence+KeyPath.swift"; path = "Source/Charts/Utils/Sequence+KeyPath.swift"; sourceTree = "<group>"; };
 		A1A172F42E9BD6BEB5D38E4255BF280F /* KPCAASaturnRings.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KPCAASaturnRings.h; path = Sources/ObjCAA/include/KPCAASaturnRings.h; sourceTree = "<group>"; };
-		A1C1B977ED8804E8AEEC884E7359EE58 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1C1B977ED8804E8AEEC884E7359EE58 /* Charts */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Charts; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1D81C6E87D452BDD78895D65DFC17F6 /* AnimatedViewPortJob.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatedViewPortJob.swift; path = Source/Charts/Jobs/AnimatedViewPortJob.swift; sourceTree = "<group>"; };
-		A1E7AE193AAA4BA9F86FCE4FDEA451FE /* KPCAAPlanetaryPhenomena.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAPlanetaryPhenomena.mm; path = Sources/ObjCAA/KPCAAPlanetaryPhenomena.mm; sourceTree = "<group>"; };
+		A1E7AE193AAA4BA9F86FCE4FDEA451FE /* KPCAAPlanetaryPhenomena.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAAPlanetaryPhenomena.mm; path = Sources/ObjCAA/KPCAAPlanetaryPhenomena.mm; sourceTree = "<group>"; };
 		A26A9ACAFD972AD0BB424EBB83D9D0E1 /* AASaturnMoons.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AASaturnMoons.cpp; path = "Sources/aaplus-v2.44/AASaturnMoons.cpp"; sourceTree = "<group>"; };
 		A2B386468352F73D9C8CB2AC1B983605 /* AAVSOP87A_SAT.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAVSOP87A_SAT.h; path = "Sources/aaplus-v2.44/include/AAVSOP87A_SAT.h"; sourceTree = "<group>"; };
-		A2CC016E7F0D65F991FD0B84175A29D8 /* Pods-CosmicCypher-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CosmicCypher-acknowledgements.markdown"; sourceTree = "<group>"; };
 		A2E86BA83BC22C03C28F4CE4666C7A4F /* Renderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Renderer.swift; path = Source/Charts/Renderers/Renderer.swift; sourceTree = "<group>"; };
 		A3241F2259E2D0B794659720080E1E9D /* JupiterMoons.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JupiterMoons.swift; path = Sources/SwiftAA/JupiterMoons.swift; sourceTree = "<group>"; };
 		A32598181ABBB22C3F320141E32DBDFB /* HorizontalBarHighlighter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HorizontalBarHighlighter.swift; path = Source/Charts/Highlight/HorizontalBarHighlighter.swift; sourceTree = "<group>"; };
@@ -1159,8 +1093,7 @@
 		A8F233D01695540708665477AAC29448 /* ObjCAA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ObjCAA.debug.xcconfig; sourceTree = "<group>"; };
 		A90B00207EAF31AC8C1160FCEED3A880 /* AAVSOP87E_URA.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAVSOP87E_URA.h; path = "Sources/aaplus-v2.44/include/AAVSOP87E_URA.h"; sourceTree = "<group>"; };
 		A9537E0869C1A26AFAE022843EFBF3BE /* ObjCAA-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ObjCAA-prefix.pch"; sourceTree = "<group>"; };
-		A973D6F5631D898CF8C0060F0E293876 /* KPCAAPlanetPerihelionAphelion.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAPlanetPerihelionAphelion.mm; path = Sources/ObjCAA/KPCAAPlanetPerihelionAphelion.mm; sourceTree = "<group>"; };
-		A999F80F351A4E63C23F8D436BFAE85D /* Pods-CosmicCypher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CosmicCypher.release.xcconfig"; sourceTree = "<group>"; };
+		A973D6F5631D898CF8C0060F0E293876 /* KPCAAPlanetPerihelionAphelion.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAAPlanetPerihelionAphelion.mm; path = Sources/ObjCAA/KPCAAPlanetPerihelionAphelion.mm; sourceTree = "<group>"; };
 		A9D175CC73B25051FC4D96344AD05C16 /* AAMoonIlluminatedFraction.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAMoonIlluminatedFraction.cpp; path = "Sources/aaplus-v2.44/AAMoonIlluminatedFraction.cpp"; sourceTree = "<group>"; };
 		AA12117AE65E8FFCCE1CF7502D10666F /* AADate.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AADate.cpp; path = "Sources/aaplus-v2.44/AADate.cpp"; sourceTree = "<group>"; };
 		AA5E1DC4028BCB54872DAB09F592B7E3 /* AAPlanetaryPhenomena2.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAPlanetaryPhenomena2.h; path = "Sources/aaplus-v2.44/include/AAPlanetaryPhenomena2.h"; sourceTree = "<group>"; };
@@ -1168,7 +1101,6 @@
 		AAA07375B227ADBA951A6F87F9C9E6BE /* AAVSOP87A_URA.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAVSOP87A_URA.h; path = "Sources/aaplus-v2.44/include/AAVSOP87A_URA.h"; sourceTree = "<group>"; };
 		AAF9FF810C44EF711FB8BE45A07B05C0 /* TinyConstraints.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TinyConstraints.debug.xcconfig; sourceTree = "<group>"; };
 		ABD2179710BE2DA7CAF592E15D2C0847 /* AAParallactic.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAParallactic.cpp; path = "Sources/aaplus-v2.44/AAParallactic.cpp"; sourceTree = "<group>"; };
-		ABDC6710E90C5776F63920307CF003CF /* Pods-CosmicCypherTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-CosmicCypherTests"; path = Pods_CosmicCypherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABE679961216CAAA35AC47E5046AF046 /* AAMoonNodes2.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAMoonNodes2.cpp; path = "Sources/aaplus-v2.44/AAMoonNodes2.cpp"; sourceTree = "<group>"; };
 		AC02632C1C3F78F42DF0D8B6DE83C865 /* Saturn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Saturn.swift; path = Sources/SwiftAA/Saturn.swift; sourceTree = "<group>"; };
 		AC0A2FE8CA2AE4DB2FA2B2BF31ACCE53 /* LineRadarChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LineRadarChartDataSet.swift; path = Source/Charts/Data/Implementations/Standard/LineRadarChartDataSet.swift; sourceTree = "<group>"; };
@@ -1203,16 +1135,15 @@
 		B58F71C39E5E5F7A85F2DFFBC9F5B1E6 /* ScatterChartRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScatterChartRenderer.swift; path = Source/Charts/Renderers/ScatterChartRenderer.swift; sourceTree = "<group>"; };
 		B669F7A1F17F8117BA320755761D46A9 /* AAParabolic.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAParabolic.h; path = "Sources/aaplus-v2.44/include/AAParabolic.h"; sourceTree = "<group>"; };
 		B6B6323C9DABAB491BD93A135A9EA9DE /* MinMax.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MinMax.swift; path = Sources/Algorithms/MinMax.swift; sourceTree = "<group>"; };
-		B730EB0E5CD3D3228DC6924551C47788 /* KPCAANodes.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAANodes.mm; path = Sources/ObjCAA/KPCAANodes.mm; sourceTree = "<group>"; };
-		B7E284C50D3193E70E0C51FDCCA9E28A /* KPCAAParallactic.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAParallactic.mm; path = Sources/ObjCAA/KPCAAParallactic.mm; sourceTree = "<group>"; };
+		B730EB0E5CD3D3228DC6924551C47788 /* KPCAANodes.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAANodes.mm; path = Sources/ObjCAA/KPCAANodes.mm; sourceTree = "<group>"; };
+		B7E284C50D3193E70E0C51FDCCA9E28A /* KPCAAParallactic.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAAParallactic.mm; path = Sources/ObjCAA/KPCAAParallactic.mm; sourceTree = "<group>"; };
 		B8068C2D9C344A6979542B6FF3982E07 /* KPCAAParabolic.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KPCAAParabolic.h; path = Sources/ObjCAA/include/KPCAAParabolic.h; sourceTree = "<group>"; };
 		B8F47BB1F6DD497E899CA4F39E48C4E5 /* Charts-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Charts-umbrella.h"; sourceTree = "<group>"; };
-		B9D4383A8C52048867E3C67AE1DF3278 /* KPCAAPrecession.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAPrecession.mm; path = Sources/ObjCAA/KPCAAPrecession.mm; sourceTree = "<group>"; };
+		B9D4383A8C52048867E3C67AE1DF3278 /* KPCAAPrecession.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAAPrecession.mm; path = Sources/ObjCAA/KPCAAPrecession.mm; sourceTree = "<group>"; };
 		B9EF7A9362E4B38069F1C61A7A21A2B4 /* KPCAAAngularSeparation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KPCAAAngularSeparation.h; path = Sources/ObjCAA/include/KPCAAAngularSeparation.h; sourceTree = "<group>"; };
 		BB09319D71D9A910D8CC058C0633FF66 /* ChartBaseDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartBaseDataSet.swift; path = Source/Charts/Data/Implementations/ChartBaseDataSet.swift; sourceTree = "<group>"; };
-		BBE5EC346E670AB390826633B720A3FF /* KPCAAMoonMaxDeclinations.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAMoonMaxDeclinations.mm; path = Sources/ObjCAA/KPCAAMoonMaxDeclinations.mm; sourceTree = "<group>"; };
+		BBE5EC346E670AB390826633B720A3FF /* KPCAAMoonMaxDeclinations.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAAMoonMaxDeclinations.mm; path = Sources/ObjCAA/KPCAAMoonMaxDeclinations.mm; sourceTree = "<group>"; };
 		BC1AFC14588AEAE412B4A63BC58A2FAD /* ScientificConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScientificConstants.swift; path = Sources/SwiftAA/ScientificConstants.swift; sourceTree = "<group>"; };
-		BCCE7732CB502241D2D0C011E87686CF /* Pods-CosmicCypher-CosmicCypherUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CosmicCypher-CosmicCypherUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		BCED1B3949415B3E3DE752ACA55F1AFD /* TinyConstraints.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TinyConstraints.modulemap; sourceTree = "<group>"; };
 		BE4F871D49810209B8B767E18AB60022 /* AAVSOP87A_EAR.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAVSOP87A_EAR.cpp; path = "Sources/aaplus-v2.44/AAVSOP87A_EAR.cpp"; sourceTree = "<group>"; };
 		BEC8A8AC566F1C51F3D7DD960C7E58E8 /* Stride.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Stride.swift; path = Sources/Algorithms/Stride.swift; sourceTree = "<group>"; };
@@ -1227,10 +1158,9 @@
 		C2F87A8AF4C28931386FCC68719C742D /* AAVSOP87D_NEP.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAVSOP87D_NEP.cpp; path = "Sources/aaplus-v2.44/AAVSOP87D_NEP.cpp"; sourceTree = "<group>"; };
 		C32AC09F3BC009CDD0EEB01BBC2D6EF6 /* AAVSOP87_SAT.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAVSOP87_SAT.cpp; path = "Sources/aaplus-v2.44/AAVSOP87_SAT.cpp"; sourceTree = "<group>"; };
 		C3E1E17B54448F8377A8EA1D918BC329 /* AAMoonPerigeeApogee.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAMoonPerigeeApogee.h; path = "Sources/aaplus-v2.44/include/AAMoonPerigeeApogee.h"; sourceTree = "<group>"; };
-		C41E0CC46FE31847951DBD11972E4792 /* KPCAAMoonPerigeeApogee.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAMoonPerigeeApogee.mm; path = Sources/ObjCAA/KPCAAMoonPerigeeApogee.mm; sourceTree = "<group>"; };
+		C41E0CC46FE31847951DBD11972E4792 /* KPCAAMoonPerigeeApogee.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAAMoonPerigeeApogee.mm; path = Sources/ObjCAA/KPCAAMoonPerigeeApogee.mm; sourceTree = "<group>"; };
 		C4AF6EF998F4FB3F490AE775571568BD /* AAStellarMagnitudes.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAStellarMagnitudes.cpp; path = "Sources/aaplus-v2.44/AAStellarMagnitudes.cpp"; sourceTree = "<group>"; };
-		C4B9EB0B50425FC3304675EEB6E6863B /* Pods-CosmicCypher-CosmicCypherUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CosmicCypher-CosmicCypherUITests-umbrella.h"; sourceTree = "<group>"; };
-		C4BB548C4579AF9C3F026FEB78C901DB /* KPCAAJupiter.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAJupiter.mm; path = Sources/ObjCAA/KPCAAJupiter.mm; sourceTree = "<group>"; };
+		C4BB548C4579AF9C3F026FEB78C901DB /* KPCAAJupiter.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAAJupiter.mm; path = Sources/ObjCAA/KPCAAJupiter.mm; sourceTree = "<group>"; };
 		C698F88BBD0CB624A40064192A78D0CA /* Neptune.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Neptune.swift; path = Sources/SwiftAA/Neptune.swift; sourceTree = "<group>"; };
 		C6A49BA373031ED43A45FCF452B3AE02 /* AAVSOP87C_VEN.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAVSOP87C_VEN.h; path = "Sources/aaplus-v2.44/include/AAVSOP87C_VEN.h"; sourceTree = "<group>"; };
 		C6ABCD13260BA2C4D57C44F992985E5F /* AAVSOP87E_NEP.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAVSOP87E_NEP.h; path = "Sources/aaplus-v2.44/include/AAVSOP87E_NEP.h"; sourceTree = "<group>"; };
@@ -1250,12 +1180,11 @@
 		CE3B554C6C00F18B34C069E35FB0F009 /* AAVSOP87D_NEP.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAVSOP87D_NEP.h; path = "Sources/aaplus-v2.44/include/AAVSOP87D_NEP.h"; sourceTree = "<group>"; };
 		CE64CCC4E789A8886667CBD8BFD4E2E2 /* AAVSOP87D_VEN.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAVSOP87D_VEN.h; path = "Sources/aaplus-v2.44/include/AAVSOP87D_VEN.h"; sourceTree = "<group>"; };
 		CEE3D21322BE217BB62E0202A42EF862 /* Pods-CosmicCypher */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-CosmicCypher"; path = Pods_CosmicCypher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CF05BF98A1B68F698CBC9006ECF33F20 /* KPCAAMoonNodes.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAMoonNodes.mm; path = Sources/ObjCAA/KPCAAMoonNodes.mm; sourceTree = "<group>"; };
+		CF05BF98A1B68F698CBC9006ECF33F20 /* KPCAAMoonNodes.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAAMoonNodes.mm; path = Sources/ObjCAA/KPCAAMoonNodes.mm; sourceTree = "<group>"; };
 		CFC1555B39562D5AFE876E14B35428AD /* PlanetConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PlanetConstants.swift; path = Sources/SwiftAA/PlanetConstants.swift; sourceTree = "<group>"; };
 		CFE1654BFE8C17D0E242AA57101959A7 /* AAVSOP87E_MAR.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAVSOP87E_MAR.h; path = "Sources/aaplus-v2.44/include/AAVSOP87E_MAR.h"; sourceTree = "<group>"; };
 		D034A9A25B12BD4935DA3276AC6AB136 /* Highlighter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Highlighter.swift; path = Source/Charts/Highlight/Highlighter.swift; sourceTree = "<group>"; };
 		D134454EEA101B0DCACE8BE85F0FA36E /* ObjectBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ObjectBase.swift; path = Sources/SwiftAA/ObjectBase.swift; sourceTree = "<group>"; };
-		D266535146264C503B59134BBF226238 /* Pods-CosmicCypherTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CosmicCypherTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		D29E641DF1214E333355DD6695FDA7B6 /* AAEarth.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAEarth.h; path = "Sources/aaplus-v2.44/include/AAEarth.h"; sourceTree = "<group>"; };
 		D2C24E848EBBFC5E3EE2CBE11CBBC9F8 /* AAVSOP87_MAR.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAVSOP87_MAR.h; path = "Sources/aaplus-v2.44/include/AAVSOP87_MAR.h"; sourceTree = "<group>"; };
 		D2EBF64ADBD8E172D30C9C7266AF41CD /* AthmosphericRefraction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AthmosphericRefraction.swift; path = Sources/SwiftAA/AthmosphericRefraction.swift; sourceTree = "<group>"; };
@@ -1273,13 +1202,14 @@
 		D7C8BA070CDDA666ED9840BC41A4A636 /* BubbleChartDataProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BubbleChartDataProvider.swift; path = Source/Charts/Interfaces/BubbleChartDataProvider.swift; sourceTree = "<group>"; };
 		D8468981A0F1717108B3D1DAE12F9BF0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		D877B69955F19185CF808F40212EA6EA /* AAVSOP87_MAR.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAVSOP87_MAR.cpp; path = "Sources/aaplus-v2.44/AAVSOP87_MAR.cpp"; sourceTree = "<group>"; };
-		D87898A4C914AB33FA99B0365C4B4468 /* KPCAAEquationOfTime.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAEquationOfTime.mm; path = Sources/ObjCAA/KPCAAEquationOfTime.mm; sourceTree = "<group>"; };
+		D87898A4C914AB33FA99B0365C4B4468 /* KPCAAEquationOfTime.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAAEquationOfTime.mm; path = Sources/ObjCAA/KPCAAEquationOfTime.mm; sourceTree = "<group>"; };
 		D8A7F243914B475131EC401915337873 /* Chain.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Chain.swift; path = Sources/Algorithms/Chain.swift; sourceTree = "<group>"; };
 		D9BC5AE71B5D1223CEB83D65774413A9 /* AAIlluminatedFraction.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAIlluminatedFraction.cpp; path = "Sources/aaplus-v2.44/AAIlluminatedFraction.cpp"; sourceTree = "<group>"; };
-		DA15683AC241856C480E0D6B61E06C91 /* KPCAAMoon.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAMoon.mm; path = Sources/ObjCAA/KPCAAMoon.mm; sourceTree = "<group>"; };
+		DA15683AC241856C480E0D6B61E06C91 /* KPCAAMoon.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAAMoon.mm; path = Sources/ObjCAA/KPCAAMoon.mm; sourceTree = "<group>"; };
 		DA198B6F355E0C846D72B96875166541 /* ChartData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartData.swift; path = Source/Charts/Data/Implementations/Standard/ChartData.swift; sourceTree = "<group>"; };
 		DA1FCF01DDE27B6AF3C7BBA43161F8E8 /* BubbleChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BubbleChartDataSet.swift; path = Source/Charts/Data/Implementations/Standard/BubbleChartDataSet.swift; sourceTree = "<group>"; };
-		DA436F0EB54E26464842370252942DE9 /* KPCAAEarth.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAEarth.mm; path = Sources/ObjCAA/KPCAAEarth.mm; sourceTree = "<group>"; };
+		DA25777A5A959D36420F3F52EF5A9108 /* Pods-CosmicCypher-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CosmicCypher-acknowledgements.plist"; sourceTree = "<group>"; };
+		DA436F0EB54E26464842370252942DE9 /* KPCAAEarth.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAAEarth.mm; path = Sources/ObjCAA/KPCAAEarth.mm; sourceTree = "<group>"; };
 		DA9423B0F641E6711F87D63229BB88CD /* AAKepler.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAKepler.cpp; path = "Sources/aaplus-v2.44/AAKepler.cpp"; sourceTree = "<group>"; };
 		DAF838467F7D9C6A3D91C9716C1C710B /* KPCAAAberration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KPCAAAberration.h; path = Sources/ObjCAA/include/KPCAAAberration.h; sourceTree = "<group>"; };
 		DBC16C39F57C90C0557219DC9D256ABC /* ChartColorTemplates.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartColorTemplates.swift; path = Source/Charts/Utils/ChartColorTemplates.swift; sourceTree = "<group>"; };
@@ -1300,26 +1230,26 @@
 		E28A09E8EAC326CA409D6D7131B506D2 /* Charts-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Charts-prefix.pch"; sourceTree = "<group>"; };
 		E3493309BB77E01E64CF779C8F765051 /* AABinaryStar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AABinaryStar.h; path = "Sources/aaplus-v2.44/include/AABinaryStar.h"; sourceTree = "<group>"; };
 		E36E14DA23B5481ED77C9FBEFE69C347 /* Chunked.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Chunked.swift; path = Sources/Algorithms/Chunked.swift; sourceTree = "<group>"; };
-		E464441496ED43F38CD90402CFB22572 /* KPCAASaturn.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAASaturn.mm; path = Sources/ObjCAA/KPCAASaturn.mm; sourceTree = "<group>"; };
+		E464441496ED43F38CD90402CFB22572 /* KPCAASaturn.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAASaturn.mm; path = Sources/ObjCAA/KPCAASaturn.mm; sourceTree = "<group>"; };
 		E4728C9A4783199D8A6973A5DC4794CB /* LineScatterCandleRadarRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LineScatterCandleRadarRenderer.swift; path = Source/Charts/Renderers/LineScatterCandleRadarRenderer.swift; sourceTree = "<group>"; };
 		E4C34D6D343863142568A35FC365040C /* AAVSOP87C_EAR.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAVSOP87C_EAR.cpp; path = "Sources/aaplus-v2.44/AAVSOP87C_EAR.cpp"; sourceTree = "<group>"; };
+		E4E48197A2950D55F42F07DDBDC5F4F4 /* Pods-CosmicCypher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CosmicCypher.release.xcconfig"; sourceTree = "<group>"; };
 		E4F8F296CFB08CD75DB09F845B9E0DB2 /* Marker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Marker.swift; path = Source/Charts/Components/Marker.swift; sourceTree = "<group>"; };
 		E50D5F4FE073E4D5FBD3E7F8C391C719 /* AAJupiter.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAJupiter.cpp; path = "Sources/aaplus-v2.44/AAJupiter.cpp"; sourceTree = "<group>"; };
 		E632381D6514BE45CE205D8EF8CDE92B /* AAVSOP87_MER.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAVSOP87_MER.cpp; path = "Sources/aaplus-v2.44/AAVSOP87_MER.cpp"; sourceTree = "<group>"; };
-		E65E24FB2E2F5BC20B7126A77D5A8AC5 /* KPCAA3DCoordinate.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAA3DCoordinate.mm; path = Sources/ObjCAA/KPCAA3DCoordinate.mm; sourceTree = "<group>"; };
+		E65E24FB2E2F5BC20B7126A77D5A8AC5 /* KPCAA3DCoordinate.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAA3DCoordinate.mm; path = Sources/ObjCAA/KPCAA3DCoordinate.mm; sourceTree = "<group>"; };
 		E66A482065F8942F113D7193D9D6BDD0 /* AASun.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AASun.h; path = "Sources/aaplus-v2.44/include/AASun.h"; sourceTree = "<group>"; };
 		E693BFE5C17C8033C18A02B937E198C3 /* CandleChartDataSetProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CandleChartDataSetProtocol.swift; path = Source/Charts/Data/Interfaces/CandleChartDataSetProtocol.swift; sourceTree = "<group>"; };
 		E71B3881780F332A5A493ED3D30BC6DD /* NumericType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NumericType.swift; path = Sources/SwiftAA/NumericType.swift; sourceTree = "<group>"; };
 		E7468191CA2A254D368038B6945BC4C7 /* AAElementsPlanetaryOrbit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAElementsPlanetaryOrbit.h; path = "Sources/aaplus-v2.44/include/AAElementsPlanetaryOrbit.h"; sourceTree = "<group>"; };
 		E79D7637FE381D4BAF18E2808C5EE234 /* AADynamicalTime.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AADynamicalTime.cpp; path = "Sources/aaplus-v2.44/AADynamicalTime.cpp"; sourceTree = "<group>"; };
 		E7B933751DA5D42D0F9DD29D2D6966E9 /* AAVSOP87_SAT.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAVSOP87_SAT.h; path = "Sources/aaplus-v2.44/include/AAVSOP87_SAT.h"; sourceTree = "<group>"; };
-		E85D4895CD61176FD8B123B2D323789F /* KPCAAPluto.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAPluto.mm; path = Sources/ObjCAA/KPCAAPluto.mm; sourceTree = "<group>"; };
+		E85D4895CD61176FD8B123B2D323789F /* KPCAAPluto.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAAPluto.mm; path = Sources/ObjCAA/KPCAAPluto.mm; sourceTree = "<group>"; };
 		E89CB45F1E822DD9DCCEE84886CE15C5 /* KPCAAEquinoxesAndSolstices.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KPCAAEquinoxesAndSolstices.h; path = Sources/ObjCAA/include/KPCAAEquinoxesAndSolstices.h; sourceTree = "<group>"; };
 		E8FCE8574B88BFFD9FCBE2D915668067 /* Legend.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Legend.swift; path = Source/Charts/Components/Legend.swift; sourceTree = "<group>"; };
 		E969707A7CC88BB530FFFEAE69CF53A2 /* AAVSOP87D_JUP.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAVSOP87D_JUP.cpp; path = "Sources/aaplus-v2.44/AAVSOP87D_JUP.cpp"; sourceTree = "<group>"; };
-		EA024E31D98351C6B48B0944537CFAA0 /* KPCAAFK5.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAFK5.mm; path = Sources/ObjCAA/KPCAAFK5.mm; sourceTree = "<group>"; };
+		EA024E31D98351C6B48B0944537CFAA0 /* KPCAAFK5.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAAFK5.mm; path = Sources/ObjCAA/KPCAAFK5.mm; sourceTree = "<group>"; };
 		EB36B8C10A0461C4460C2984F958F4CB /* AAELPMPP02.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAELPMPP02.cpp; path = "Sources/aaplus-v2.44/AAELPMPP02.cpp"; sourceTree = "<group>"; };
-		EC1D74876D0CF4E5F7D67138514EF4C8 /* Pods-CosmicCypherTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CosmicCypherTests-Info.plist"; sourceTree = "<group>"; };
 		EC4E9173419F6DF70C9FEF0DC81B1B13 /* AAVSOP87C_MAR.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAVSOP87C_MAR.h; path = "Sources/aaplus-v2.44/include/AAVSOP87C_MAR.h"; sourceTree = "<group>"; };
 		ECFA3ABBB5A728DA98A6A768621DC5C5 /* KPCAAVenus.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KPCAAVenus.h; path = Sources/ObjCAA/include/KPCAAVenus.h; sourceTree = "<group>"; };
 		ED8A7D3C4BD0AEF41372B03E13A4B2A1 /* KPCAAJupiter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KPCAAJupiter.h; path = Sources/ObjCAA/include/KPCAAJupiter.h; sourceTree = "<group>"; };
@@ -1332,15 +1262,13 @@
 		EEA6E927FFD495976463DFC73EE92876 /* CandleChartDataProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CandleChartDataProvider.swift; path = Source/Charts/Interfaces/CandleChartDataProvider.swift; sourceTree = "<group>"; };
 		EEE0B42017E0418B0578873DDAB4BC29 /* AACoordinateTransformation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AACoordinateTransformation.h; path = "Sources/aaplus-v2.44/include/AACoordinateTransformation.h"; sourceTree = "<group>"; };
 		EF7D9CFC10665FB289CDF10BB9B8BF50 /* LineRadarChartDataSetProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LineRadarChartDataSetProtocol.swift; path = Source/Charts/Data/Interfaces/LineRadarChartDataSetProtocol.swift; sourceTree = "<group>"; };
-		EFEB369A8F053B04E527C1DB069A31EA /* KPCAAElementsPlanetaryOrbit.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAElementsPlanetaryOrbit.mm; path = Sources/ObjCAA/KPCAAElementsPlanetaryOrbit.mm; sourceTree = "<group>"; };
+		EFEB369A8F053B04E527C1DB069A31EA /* KPCAAElementsPlanetaryOrbit.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAAElementsPlanetaryOrbit.mm; path = Sources/ObjCAA/KPCAAElementsPlanetaryOrbit.mm; sourceTree = "<group>"; };
 		F0E064814EC63878C37AA30EE0BC8EDD /* AAVSOP87A_JUP.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAVSOP87A_JUP.h; path = "Sources/aaplus-v2.44/include/AAVSOP87A_JUP.h"; sourceTree = "<group>"; };
 		F144DFBE1485E918FE39AFEE4313F5A0 /* BarChartView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarChartView.swift; path = Source/Charts/Charts/BarChartView.swift; sourceTree = "<group>"; };
 		F14A204EBFE835878DE6BE72F6B48F8F /* SwiftAlgorithms-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftAlgorithms-dummy.m"; sourceTree = "<group>"; };
 		F14D0DB80E2570A23235D607BA1DC1CD /* ChartDataEntryBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartDataEntryBase.swift; path = Source/Charts/Data/Implementations/Standard/ChartDataEntryBase.swift; sourceTree = "<group>"; };
 		F1AB9059EED3F76CD20AC72F75C87155 /* AAAberration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAAberration.h; path = "Sources/aaplus-v2.44/include/AAAberration.h"; sourceTree = "<group>"; };
-		F211C9BA0AD57723A3C5BACA95C3F63F /* Pods-CosmicCypher-CosmicCypherUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CosmicCypher-CosmicCypherUITests-Info.plist"; sourceTree = "<group>"; };
 		F21A5A2618A932C9DD9884A98A066503 /* AAVSOP87A_NEP.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAVSOP87A_NEP.cpp; path = "Sources/aaplus-v2.44/AAVSOP87A_NEP.cpp"; sourceTree = "<group>"; };
-		F22D81E3ACEE1A7E4741074C272898DE /* Pods-CosmicCypherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CosmicCypherTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F25CB29F5AE28E18F04287BC246251A1 /* MarkerImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MarkerImage.swift; path = Source/Charts/Components/MarkerImage.swift; sourceTree = "<group>"; };
 		F318740964A93A2DEFB970A1C306AB5A /* AAPhysicalMars.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAPhysicalMars.h; path = "Sources/aaplus-v2.44/include/AAPhysicalMars.h"; sourceTree = "<group>"; };
 		F31990F152EE365C61F01CCAD0DB0AB8 /* AAMoslemCalendar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAMoslemCalendar.h; path = "Sources/aaplus-v2.44/include/AAMoslemCalendar.h"; sourceTree = "<group>"; };
@@ -1352,30 +1280,28 @@
 		F50D7312F85866C4FCC5795CE40A4C6C /* PieChartRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PieChartRenderer.swift; path = Source/Charts/Renderers/PieChartRenderer.swift; sourceTree = "<group>"; };
 		F52FD3D4B7695BA8E2676527C6E841C9 /* AAMoonPerigeeApogee2.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAMoonPerigeeApogee2.h; path = "Sources/aaplus-v2.44/include/AAMoonPerigeeApogee2.h"; sourceTree = "<group>"; };
 		F5570FBFD48B4689E56374995974C1E3 /* CrossShapeRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CrossShapeRenderer.swift; path = Source/Charts/Renderers/Scatter/CrossShapeRenderer.swift; sourceTree = "<group>"; };
-		F59EA6E730389A0B5139BB1C2A8D10EB /* Pods-CosmicCypher-CosmicCypherUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CosmicCypher-CosmicCypherUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		F5FDBC4E9B164470D45010754B41C324 /* AARefraction.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AARefraction.cpp; path = "Sources/aaplus-v2.44/AARefraction.cpp"; sourceTree = "<group>"; };
 		F649C5A61942173A7CFD568A39550D6F /* Trim.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Trim.swift; path = Sources/Algorithms/Trim.swift; sourceTree = "<group>"; };
 		F69435DDF7B80600E5C3D116F9B4C7E3 /* PlanetaryBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PlanetaryBase.swift; path = Sources/SwiftAA/PlanetaryBase.swift; sourceTree = "<group>"; };
 		F73EF8DE22A628EFDA94C010133534F0 /* AAVSOP87E_MAR.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAVSOP87E_MAR.cpp; path = "Sources/aaplus-v2.44/AAVSOP87E_MAR.cpp"; sourceTree = "<group>"; };
 		F77B05EFAD4FC2F4DFE7468E23DBBF2B /* FirstNonNil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FirstNonNil.swift; path = Sources/Algorithms/FirstNonNil.swift; sourceTree = "<group>"; };
-		F78FB6EC6D91F16E62E3D88D962F03DC /* KPCAA2DCoordinate.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAA2DCoordinate.mm; path = Sources/ObjCAA/KPCAA2DCoordinate.mm; sourceTree = "<group>"; };
+		F78FB6EC6D91F16E62E3D88D962F03DC /* KPCAA2DCoordinate.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAA2DCoordinate.mm; path = Sources/ObjCAA/KPCAA2DCoordinate.mm; sourceTree = "<group>"; };
 		F7D1C725B45CA716507A8C0CA759E5B5 /* AnimatedMoveViewJob.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatedMoveViewJob.swift; path = Source/Charts/Jobs/AnimatedMoveViewJob.swift; sourceTree = "<group>"; };
 		F8470536AA08D8AC89C180A62951FEA7 /* AAPhysicalMoon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AAPhysicalMoon.h; path = "Sources/aaplus-v2.44/include/AAPhysicalMoon.h"; sourceTree = "<group>"; };
-		F87E12DF58FA36748CC6FB19E5EBB8F3 /* KPCAAInterpolate.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAInterpolate.mm; path = Sources/ObjCAA/KPCAAInterpolate.mm; sourceTree = "<group>"; };
+		F87E12DF58FA36748CC6FB19E5EBB8F3 /* KPCAAInterpolate.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAAInterpolate.mm; path = Sources/ObjCAA/KPCAAInterpolate.mm; sourceTree = "<group>"; };
 		F9523F79A34485C7100412C7366CB1A4 /* BarLineScatterCandleBubbleChartData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarLineScatterCandleBubbleChartData.swift; path = Source/Charts/Data/Implementations/Standard/BarLineScatterCandleBubbleChartData.swift; sourceTree = "<group>"; };
 		F962AB6AC6D94EA7E05AD20A66FA25A7 /* BarChartDataProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarChartDataProvider.swift; path = Source/Charts/Interfaces/BarChartDataProvider.swift; sourceTree = "<group>"; };
 		F9FE312F9131EBEF25FEF788923752B6 /* AdjacentPairs.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AdjacentPairs.swift; path = Sources/Algorithms/AdjacentPairs.swift; sourceTree = "<group>"; };
 		FA498D9A33834274A0DB31B0BAE31AC0 /* KPCAASaturnMoons.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KPCAASaturnMoons.h; path = Sources/ObjCAA/include/KPCAASaturnMoons.h; sourceTree = "<group>"; };
 		FA5F53434CFB12D61336DD149470D906 /* Windows.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Windows.swift; path = Sources/Algorithms/Windows.swift; sourceTree = "<group>"; };
-		FA95CC1667FFC3613642C98DB0757E07 /* KPCAAVenus.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAVenus.mm; path = Sources/ObjCAA/KPCAAVenus.mm; sourceTree = "<group>"; };
+		FA95CC1667FFC3613642C98DB0757E07 /* KPCAAVenus.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAAVenus.mm; path = Sources/ObjCAA/KPCAAVenus.mm; sourceTree = "<group>"; };
 		FA9A9907774BE29E5BF72A99F4F691B2 /* AxisValueFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AxisValueFormatter.swift; path = Source/Charts/Formatters/AxisValueFormatter.swift; sourceTree = "<group>"; };
 		FAE29B90D87CEE016327D46356321032 /* AAParabolic.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAParabolic.cpp; path = "Sources/aaplus-v2.44/AAParabolic.cpp"; sourceTree = "<group>"; };
 		FD7A4B55FE25A51F4D6CB503694AB384 /* RadarChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadarChartDataSet.swift; path = Source/Charts/Data/Implementations/Standard/RadarChartDataSet.swift; sourceTree = "<group>"; };
 		FDAAA462AB716366F324F45ED5E98B6A /* AAFK5.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAFK5.cpp; path = "Sources/aaplus-v2.44/AAFK5.cpp"; sourceTree = "<group>"; };
-		FDF1AC316C0911822BC2A348E05B024B /* Pods-CosmicCypher-CosmicCypherUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-CosmicCypher-CosmicCypherUITests"; path = Pods_CosmicCypher_CosmicCypherUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FDF9252244AD303D126DECE66E1D37DF /* KPCAASaturnRings.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAASaturnRings.mm; path = Sources/ObjCAA/KPCAASaturnRings.mm; sourceTree = "<group>"; };
+		FDF9252244AD303D126DECE66E1D37DF /* KPCAASaturnRings.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAASaturnRings.mm; path = Sources/ObjCAA/KPCAASaturnRings.mm; sourceTree = "<group>"; };
 		FE3E295090D3B9D17BBF2F0D40F18F8D /* XShapeRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XShapeRenderer.swift; path = Source/Charts/Renderers/Scatter/XShapeRenderer.swift; sourceTree = "<group>"; };
-		FEA924276AE42EE73F616FDAF0D92E0B /* KPCAAIlluminatedFraction.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAIlluminatedFraction.mm; path = Sources/ObjCAA/KPCAAIlluminatedFraction.mm; sourceTree = "<group>"; };
+		FEA924276AE42EE73F616FDAF0D92E0B /* KPCAAIlluminatedFraction.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = KPCAAIlluminatedFraction.mm; path = Sources/ObjCAA/KPCAAIlluminatedFraction.mm; sourceTree = "<group>"; };
 		FEAD08268A4FDE1F61E770961310CE0D /* SaturnMoons.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SaturnMoons.swift; path = Sources/SwiftAA/SaturnMoons.swift; sourceTree = "<group>"; };
 		FED3424AD6D1D06FF85F8B896B4C05C1 /* AA2DCoordinate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AA2DCoordinate.h; path = "Sources/aaplus-v2.44/include/AA2DCoordinate.h"; sourceTree = "<group>"; };
 		FF88D42C358EAB89F51339E49AA4880C /* AAMoonMaxDeclinations.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = AAMoonMaxDeclinations.cpp; path = "Sources/aaplus-v2.44/AAMoonMaxDeclinations.cpp"; sourceTree = "<group>"; };
@@ -1383,14 +1309,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0AF9AF6B139C157A8E4A2C0499E36CB9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D4956396FD75B3D2A2E4D2DC1D3A644F /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1AAF7444A2C24D9AC5A0BEFACEF51ADC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1405,14 +1323,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		48B536D26F649548C430282EFB90FD80 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E9ED8FB7C1AF6BF8964A62B2387C3FBD /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1522,6 +1432,7 @@
 				FA5F53434CFB12D61336DD149470D906 /* Windows.swift */,
 				C49416CCA96E6C899A186239183C89F6 /* Support Files */,
 			);
+			name = SwiftAlgorithms;
 			path = SwiftAlgorithms;
 			sourceTree = "<group>";
 		};
@@ -1538,22 +1449,6 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/TinyConstraints";
-			sourceTree = "<group>";
-		};
-		2F7B15CBCA6DE8D3B1531FF826F73102 /* Pods-CosmicCypherTests */ = {
-			isa = PBXGroup;
-			children = (
-				48984E20EFF613D2E3DE7E3019482F17 /* Pods-CosmicCypherTests.modulemap */,
-				D266535146264C503B59134BBF226238 /* Pods-CosmicCypherTests-acknowledgements.markdown */,
-				93075B8DBDCCE125BD3F76A787821244 /* Pods-CosmicCypherTests-acknowledgements.plist */,
-				3FFBDCC4C5F21475C990F7FC51586A67 /* Pods-CosmicCypherTests-dummy.m */,
-				EC1D74876D0CF4E5F7D67138514EF4C8 /* Pods-CosmicCypherTests-Info.plist */,
-				92B43D16E3D2067BE34D053657F15300 /* Pods-CosmicCypherTests-umbrella.h */,
-				F22D81E3ACEE1A7E4741074C272898DE /* Pods-CosmicCypherTests.debug.xcconfig */,
-				65B53D1E4BF6CC30B38D7FCC2876ECB8 /* Pods-CosmicCypherTests.release.xcconfig */,
-			);
-			name = "Pods-CosmicCypherTests";
-			path = "Target Support Files/Pods-CosmicCypherTests";
 			sourceTree = "<group>";
 		};
 		33C62F5C1E330728228179B14FB1CE34 /* Support Files */ = {
@@ -1718,23 +1613,6 @@
 				B41D4B07A3AB15B6E95202FF255E5619 /* ZoomViewJob.swift */,
 			);
 			name = Core;
-			sourceTree = "<group>";
-		};
-		5508F65D360D1C515D96786525B235A3 /* Pods-CosmicCypher-CosmicCypherUITests */ = {
-			isa = PBXGroup;
-			children = (
-				75B835BF2B2CBBC02E431387E8C34865 /* Pods-CosmicCypher-CosmicCypherUITests.modulemap */,
-				BCCE7732CB502241D2D0C011E87686CF /* Pods-CosmicCypher-CosmicCypherUITests-acknowledgements.markdown */,
-				F59EA6E730389A0B5139BB1C2A8D10EB /* Pods-CosmicCypher-CosmicCypherUITests-acknowledgements.plist */,
-				75087FA2059063F541E230194559437D /* Pods-CosmicCypher-CosmicCypherUITests-dummy.m */,
-				2FF0BBD8E600498ACB9DB78308ED9F52 /* Pods-CosmicCypher-CosmicCypherUITests-frameworks.sh */,
-				F211C9BA0AD57723A3C5BACA95C3F63F /* Pods-CosmicCypher-CosmicCypherUITests-Info.plist */,
-				C4B9EB0B50425FC3304675EEB6E6863B /* Pods-CosmicCypher-CosmicCypherUITests-umbrella.h */,
-				6E855AD4C0EC2F94812937CEB2EEA95A /* Pods-CosmicCypher-CosmicCypherUITests.debug.xcconfig */,
-				2770C1FB99FE18A2C9226FB4859C76A2 /* Pods-CosmicCypher-CosmicCypherUITests.release.xcconfig */,
-			);
-			name = "Pods-CosmicCypher-CosmicCypherUITests";
-			path = "Target Support Files/Pods-CosmicCypher-CosmicCypherUITests";
 			sourceTree = "<group>";
 		};
 		572D0F8FFBD04EA0157AB312DAD6CC8E /* ObjCAA */ = {
@@ -2098,6 +1976,7 @@
 				87E8A45B2DB27C562D12E30F9219C2E7 /* stdafx.h */,
 				5C3898B11862CE2434A1EBABC42EF52B /* Support Files */,
 			);
+			name = ObjCAA;
 			path = ObjCAA;
 			sourceTree = "<group>";
 		};
@@ -2116,21 +1995,12 @@
 			path = "../Target Support Files/ObjCAA";
 			sourceTree = "<group>";
 		};
-		75B7D76F544C312F9E62297C9A86940D /* Pods-CosmicCypher */ = {
+		6EF98B0E21C5E73946141865CEE8B4FE /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				930F3E99B69FA7A38054AB2A8B38E352 /* Pods-CosmicCypher.modulemap */,
-				A2CC016E7F0D65F991FD0B84175A29D8 /* Pods-CosmicCypher-acknowledgements.markdown */,
-				7E157A62577A354A49CA0CFE695D86FF /* Pods-CosmicCypher-acknowledgements.plist */,
-				3107081EEE808AB99486B2F74A3E7CC5 /* Pods-CosmicCypher-dummy.m */,
-				51B173E8A8C9B6A372B74F3803FE6866 /* Pods-CosmicCypher-frameworks.sh */,
-				7C71DAE671A07D278C020D3A65C37A49 /* Pods-CosmicCypher-Info.plist */,
-				69C0BD9E438DED9201D4D11685B2F6AD /* Pods-CosmicCypher-umbrella.h */,
-				195EF211C82BED70EBF64A7A648CA5C9 /* Pods-CosmicCypher.debug.xcconfig */,
-				A999F80F351A4E63C23F8D436BFAE85D /* Pods-CosmicCypher.release.xcconfig */,
+				C83ECDECE4055EA881FF0259C1327C68 /* Pods-CosmicCypher */,
 			);
-			name = "Pods-CosmicCypher";
-			path = "Target Support Files/Pods-CosmicCypher";
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		7A2A398C67DB53A4740EC522BCD82AD9 /* Charts */ = {
@@ -2139,6 +2009,7 @@
 				34F265AF78853DFDBF6518F5BB3AA20F /* Core */,
 				A76760F679C63C3E51CF581D7306FC85 /* Support Files */,
 			);
+			name = Charts;
 			path = Charts;
 			sourceTree = "<group>";
 		};
@@ -2154,17 +2025,8 @@
 				1D173A7EB135F7DB5713EB8F34B04673 /* TinyEdgeInsets.swift */,
 				1D461ABD2631452675E1FD3CD5801FF2 /* Support Files */,
 			);
+			name = TinyConstraints;
 			path = TinyConstraints;
-			sourceTree = "<group>";
-		};
-		A4D4FD5019AC7C4693D6199FF8891214 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				75B7D76F544C312F9E62297C9A86940D /* Pods-CosmicCypher */,
-				5508F65D360D1C515D96786525B235A3 /* Pods-CosmicCypher-CosmicCypherUITests */,
-				2F7B15CBCA6DE8D3B1531FF826F73102 /* Pods-CosmicCypherTests */,
-			);
-			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		A76760F679C63C3E51CF581D7306FC85 /* Support Files */ = {
@@ -2180,6 +2042,21 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Charts";
+			sourceTree = "<group>";
+		};
+		AFF1E81E26721C64EB3325069F3BEE21 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1C1B977ED8804E8AEEC884E7359EE58 /* Charts */,
+				58DC977FE38BC5C6495A101D205D8B70 /* ObjCAA */,
+				CEE3D21322BE217BB62E0202A42EF862 /* Pods-CosmicCypher */,
+				5400242E5218C9476E892D859798A158 /* SwiftAA */,
+				F3E7458F7D38C89A9DE4BBACD3450C88 /* SwiftAlgorithms */,
+				6303EFBB031EC4B1287569F36E789B1F /* TimeZoneLocate */,
+				65AAFED18F518E23E1C4FCD6B61035D3 /* TimeZoneLocate-TimeZoneLocate */,
+				248EB203AE249596FFC55952F5590D95 /* TinyConstraints */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		B996ED12A5DE09D8732D02201C7CA804 /* SwiftAA */ = {
@@ -2228,6 +2105,7 @@
 				DCA656B16521C0D310F7C473F72FA6AB /* Venus.swift */,
 				CFFD7842968E3E2211990AA613F88E15 /* Support Files */,
 			);
+			name = SwiftAA;
 			path = SwiftAA;
 			sourceTree = "<group>";
 		};
@@ -2246,6 +2124,23 @@
 			path = "../Target Support Files/SwiftAlgorithms";
 			sourceTree = "<group>";
 		};
+		C83ECDECE4055EA881FF0259C1327C68 /* Pods-CosmicCypher */ = {
+			isa = PBXGroup;
+			children = (
+				2E9A20CA24FFB6179885D1F1B285A72D /* Pods-CosmicCypher.modulemap */,
+				893C40B16B09A12BF28D372EED774A42 /* Pods-CosmicCypher-acknowledgements.markdown */,
+				DA25777A5A959D36420F3F52EF5A9108 /* Pods-CosmicCypher-acknowledgements.plist */,
+				6B74B1B485D21F2DE7E6BD810724C541 /* Pods-CosmicCypher-dummy.m */,
+				3E25735780AE6195C7CC2EC245D576F3 /* Pods-CosmicCypher-frameworks.sh */,
+				441461F9141E5DC0B4F005356B74B541 /* Pods-CosmicCypher-Info.plist */,
+				21C677253FDFBA2116F89F7251C09AB3 /* Pods-CosmicCypher-umbrella.h */,
+				2B0B0B50058CDDFC45871CDD8C5FB216 /* Pods-CosmicCypher.debug.xcconfig */,
+				E4E48197A2950D55F42F07DDBDC5F4F4 /* Pods-CosmicCypher.release.xcconfig */,
+			);
+			name = "Pods-CosmicCypher";
+			path = "Target Support Files/Pods-CosmicCypher";
+			sourceTree = "<group>";
+		};
 		C9A49434170647E0925AC113A05F208B /* TimeZoneLocate */ = {
 			isa = PBXGroup;
 			children = (
@@ -2253,6 +2148,7 @@
 				052CD31D605A2C647F3B7FA16F3BD3B9 /* Resources */,
 				33C62F5C1E330728228179B14FB1CE34 /* Support Files */,
 			);
+			name = TimeZoneLocate;
 			path = TimeZoneLocate;
 			sourceTree = "<group>";
 		};
@@ -2262,8 +2158,8 @@
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				03C5C200A0787E300053CFA8F53CA094 /* Frameworks */,
 				E0858BA84C82CD4E70F3CE6DDDC20898 /* Pods */,
-				E20D8A5F06081D939AAD96A10D9552E4 /* Products */,
-				A4D4FD5019AC7C4693D6199FF8891214 /* Targets Support Files */,
+				AFF1E81E26721C64EB3325069F3BEE21 /* Products */,
+				6EF98B0E21C5E73946141865CEE8B4FE /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -2293,23 +2189,6 @@
 				9E1BA0E5863ED2929F70D441A2AD62E7 /* TinyConstraints */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		E20D8A5F06081D939AAD96A10D9552E4 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A1C1B977ED8804E8AEEC884E7359EE58 /* Charts.framework */,
-				58DC977FE38BC5C6495A101D205D8B70 /* ObjCAA */,
-				CEE3D21322BE217BB62E0202A42EF862 /* Pods-CosmicCypher */,
-				FDF1AC316C0911822BC2A348E05B024B /* Pods-CosmicCypher-CosmicCypherUITests */,
-				ABDC6710E90C5776F63920307CF003CF /* Pods-CosmicCypherTests */,
-				5400242E5218C9476E892D859798A158 /* SwiftAA */,
-				F3E7458F7D38C89A9DE4BBACD3450C88 /* SwiftAlgorithms */,
-				6303EFBB031EC4B1287569F36E789B1F /* TimeZoneLocate.framework */,
-				65AAFED18F518E23E1C4FCD6B61035D3 /* TimeZoneLocate.bundle */,
-				248EB203AE249596FFC55952F5590D95 /* TinyConstraints */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2529,22 +2408,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		79DB0124C77A036729634E3CC7376C11 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3FDF3324A90F36B7C06E11491798FE34 /* Pods-CosmicCypher-CosmicCypherUITests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7B78B84AD1AFBD23624699ACCEE18D8B /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C5ADB7A4C759772EE03491B7629190F9 /* Pods-CosmicCypherTests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		BAC758A0C4E8F07560F9836B2EB0FD93 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -2572,30 +2435,6 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		0138F9AE54E9E48B6F10EB0861FEC976 /* Pods-CosmicCypher-CosmicCypherUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9F9B0C1F1F9113AC5D1B87CC2D9C4A4F /* Build configuration list for PBXNativeTarget "Pods-CosmicCypher-CosmicCypherUITests" */;
-			buildPhases = (
-				79DB0124C77A036729634E3CC7376C11 /* Headers */,
-				AD1429562CBAEC40BE37AC26308DC649 /* Sources */,
-				48B536D26F649548C430282EFB90FD80 /* Frameworks */,
-				D2C2117C2C8F51A9FE874E9F46098D63 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C0D3862B817CECBBD068B7AF904A24E5 /* PBXTargetDependency */,
-				3C2F06B5EEC708CE78C545A30DFD3246 /* PBXTargetDependency */,
-				7EF4594F43BE3A610F62D375BABE2D5E /* PBXTargetDependency */,
-				468A19AE469B56F7B466BC33A73E52DA /* PBXTargetDependency */,
-				77EA6B731031EE6735FC6D01EAAEA224 /* PBXTargetDependency */,
-				08F2489D4A1C95812DEE4329EFCD6B4D /* PBXTargetDependency */,
-			);
-			name = "Pods-CosmicCypher-CosmicCypherUITests";
-			productName = Pods_CosmicCypher_CosmicCypherUITests;
-			productReference = FDF1AC316C0911822BC2A348E05B024B /* Pods-CosmicCypher-CosmicCypherUITests */;
-			productType = "com.apple.product-type.framework";
-		};
 		106B0B0016727009DE5CA581DA9B9A8D /* TimeZoneLocate-TimeZoneLocate */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 49789594165C35CFA568B418412B01B5 /* Build configuration list for PBXNativeTarget "TimeZoneLocate-TimeZoneLocate" */;
@@ -2610,7 +2449,7 @@
 			);
 			name = "TimeZoneLocate-TimeZoneLocate";
 			productName = TimeZoneLocate;
-			productReference = 65AAFED18F518E23E1C4FCD6B61035D3 /* TimeZoneLocate.bundle */;
+			productReference = 65AAFED18F518E23E1C4FCD6B61035D3 /* TimeZoneLocate-TimeZoneLocate */;
 			productType = "com.apple.product-type.bundle";
 		};
 		2C511EE63C6E7D5843B971D1E441119E /* SwiftAlgorithms */ = {
@@ -2665,7 +2504,7 @@
 			);
 			name = TimeZoneLocate;
 			productName = TimeZoneLocate;
-			productReference = 6303EFBB031EC4B1287569F36E789B1F /* TimeZoneLocate.framework */;
+			productReference = 6303EFBB031EC4B1287569F36E789B1F /* TimeZoneLocate */;
 			productType = "com.apple.product-type.framework";
 		};
 		6EAC7DA2D6FCD779ADD80C958D5CA743 /* Pods-CosmicCypher */ = {
@@ -2729,25 +2568,6 @@
 			productReference = 58DC977FE38BC5C6495A101D205D8B70 /* ObjCAA */;
 			productType = "com.apple.product-type.framework";
 		};
-		BEABBA76E804051B051810EED432B6FA /* Pods-CosmicCypherTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 799E35A1C38BA376937E833D3CF744EE /* Build configuration list for PBXNativeTarget "Pods-CosmicCypherTests" */;
-			buildPhases = (
-				7B78B84AD1AFBD23624699ACCEE18D8B /* Headers */,
-				3E5369487ABA1831351850D3FA7C7ECC /* Sources */,
-				0AF9AF6B139C157A8E4A2C0499E36CB9 /* Frameworks */,
-				B8939A4F59FFFD51B263CBF0172FFCDC /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B59FAB2F998E34D509E706EFE4B02C56 /* PBXTargetDependency */,
-			);
-			name = "Pods-CosmicCypherTests";
-			productName = Pods_CosmicCypherTests;
-			productReference = ABDC6710E90C5776F63920307CF003CF /* Pods-CosmicCypherTests */;
-			productType = "com.apple.product-type.framework";
-		};
 		BF03B0B2B8B052092CB5F90CC5FB3757 /* Charts */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3C9F1E8CC2EB7C944989DFC3E98E9033 /* Build configuration list for PBXNativeTarget "Charts" */;
@@ -2764,7 +2584,7 @@
 			);
 			name = Charts;
 			productName = Charts;
-			productReference = A1C1B977ED8804E8AEEC884E7359EE58 /* Charts.framework */;
+			productReference = A1C1B977ED8804E8AEEC884E7359EE58 /* Charts */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -2773,11 +2593,11 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1300;
-				LastUpgradeCheck = 1300;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 10.0";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -2785,15 +2605,13 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = E20D8A5F06081D939AAD96A10D9552E4 /* Products */;
+			productRefGroup = AFF1E81E26721C64EB3325069F3BEE21 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				BF03B0B2B8B052092CB5F90CC5FB3757 /* Charts */,
 				A7F5E21E120ADBCE23D792D682E8656F /* ObjCAA */,
 				6EAC7DA2D6FCD779ADD80C958D5CA743 /* Pods-CosmicCypher */,
-				0138F9AE54E9E48B6F10EB0861FEC976 /* Pods-CosmicCypher-CosmicCypherUITests */,
-				BEABBA76E804051B051810EED432B6FA /* Pods-CosmicCypherTests */,
 				A23E630FB2CC2397D706C6DD1763E128 /* SwiftAA */,
 				2C511EE63C6E7D5843B971D1E441119E /* SwiftAlgorithms */,
 				5A112BC0A2DE1BFC3BF71FFFDCE26411 /* TimeZoneLocate */,
@@ -2837,7 +2655,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB27116EC53269DA76CBE355559B37DB /* TimeZoneLocate.bundle in Resources */,
+				BB27116EC53269DA76CBE355559B37DB /* TimeZoneLocate-TimeZoneLocate in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2849,20 +2667,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B633938A4BD8E3F1694414E8A0B28A47 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B8939A4F59FFFD51B263CBF0172FFCDC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D2C2117C2C8F51A9FE874E9F46098D63 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -3266,14 +3070,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3E5369487ABA1831351850D3FA7C7ECC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E662E1BD1911654651A23627508E59C0 /* Pods-CosmicCypherTests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		93D6769B56F0F8EA93A044EC41DBFA7B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -3288,14 +3084,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E177D0154E2D2640A2B3161AD14E8B54 /* Pods-CosmicCypher-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AD1429562CBAEC40BE37AC26308DC649 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B254C76FB838B7AB19E7DAC2D9DD1655 /* Pods-CosmicCypher-CosmicCypherUITests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3355,12 +3143,6 @@
 			target = 2C511EE63C6E7D5843B971D1E441119E /* SwiftAlgorithms */;
 			targetProxy = 570DFB839E4FCF6227D7C675A7664142 /* PBXContainerItemProxy */;
 		};
-		08F2489D4A1C95812DEE4329EFCD6B4D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = TinyConstraints;
-			target = 45C4E325E7851DD54CC3AD44C7A71935 /* TinyConstraints */;
-			targetProxy = 4EF3C68662F4FCD582C1640166ABA184 /* PBXContainerItemProxy */;
-		};
 		10C824EA5CA8ED76328A4F0E1A53449C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = TinyConstraints;
@@ -3373,23 +3155,11 @@
 			target = A23E630FB2CC2397D706C6DD1763E128 /* SwiftAA */;
 			targetProxy = 6654EBD6AEDA2DE82DAE6E911BA65618 /* PBXContainerItemProxy */;
 		};
-		3C2F06B5EEC708CE78C545A30DFD3246 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = ObjCAA;
-			target = A7F5E21E120ADBCE23D792D682E8656F /* ObjCAA */;
-			targetProxy = 74E3AE59107194D75564BA9AD2E22738 /* PBXContainerItemProxy */;
-		};
 		3C38D66C976CC3A7E384D74DC0F232BF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = TimeZoneLocate;
 			target = 5A112BC0A2DE1BFC3BF71FFFDCE26411 /* TimeZoneLocate */;
 			targetProxy = 9F6B368AF7ECF433B118B0323B38891E /* PBXContainerItemProxy */;
-		};
-		468A19AE469B56F7B466BC33A73E52DA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SwiftAlgorithms;
-			target = 2C511EE63C6E7D5843B971D1E441119E /* SwiftAlgorithms */;
-			targetProxy = 20D96636EED23BC4D7F296A936602DAA /* PBXContainerItemProxy */;
 		};
 		50C1A6F0D4D8BD806094FB5F1BE59AE6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -3397,35 +3167,11 @@
 			target = 106B0B0016727009DE5CA581DA9B9A8D /* TimeZoneLocate-TimeZoneLocate */;
 			targetProxy = D083314DFE110D278066D47E22F43954 /* PBXContainerItemProxy */;
 		};
-		77EA6B731031EE6735FC6D01EAAEA224 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = TimeZoneLocate;
-			target = 5A112BC0A2DE1BFC3BF71FFFDCE26411 /* TimeZoneLocate */;
-			targetProxy = 87E48FF97A9B8529A5DF76B59EA2489E /* PBXContainerItemProxy */;
-		};
-		7EF4594F43BE3A610F62D375BABE2D5E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SwiftAA;
-			target = A23E630FB2CC2397D706C6DD1763E128 /* SwiftAA */;
-			targetProxy = 440B7B92C40E30F9E91544693A14925D /* PBXContainerItemProxy */;
-		};
-		B59FAB2F998E34D509E706EFE4B02C56 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-CosmicCypher";
-			target = 6EAC7DA2D6FCD779ADD80C958D5CA743 /* Pods-CosmicCypher */;
-			targetProxy = 3B70F43006824E21CB3EE7C09F0BED93 /* PBXContainerItemProxy */;
-		};
 		C071C7E35B7DD3033BBD206AD87E0D23 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SwiftAlgorithms;
 			target = 2C511EE63C6E7D5843B971D1E441119E /* SwiftAlgorithms */;
 			targetProxy = 49B2386F2AF7D38904B20CE83FBD330A /* PBXContainerItemProxy */;
-		};
-		C0D3862B817CECBBD068B7AF904A24E5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Charts;
-			target = BF03B0B2B8B052092CB5F90CC5FB3757 /* Charts */;
-			targetProxy = 99C623792F910959ADF5BA905C519184 /* PBXContainerItemProxy */;
 		};
 		C8B5FF7400CF142DFABB873B7B3341C6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -3448,43 +3194,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		2144D7B616130F89AA50D24654D104E6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F22D81E3ACEE1A7E4741074C272898DE /* Pods-CosmicCypherTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-CosmicCypherTests/Pods-CosmicCypherTests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-CosmicCypherTests/Pods-CosmicCypherTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		501B1AB6BD6781E5C49BB481501E221B /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A8491593F9A1573060C96A4AF6F041A6 /* TinyConstraints.release.xcconfig */;
@@ -3525,11 +3234,11 @@
 			baseConfigurationReference = 479B15017024D25FDB33C248B407A1ED /* TimeZoneLocate.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -3545,7 +3254,6 @@
 				MODULEMAP_FILE = "Target Support Files/TimeZoneLocate/TimeZoneLocate.modulemap";
 				PRODUCT_MODULE_NAME = TimeZoneLocate;
 				PRODUCT_NAME = TimeZoneLocate;
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
@@ -3828,7 +3536,7 @@
 		};
 		9A8682CA9B13ED5CDDAF8A69A99B36F9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A999F80F351A4E63C23F8D436BFAE85D /* Pods-CosmicCypher.release.xcconfig */;
+			baseConfigurationReference = E4E48197A2950D55F42F07DDBDC5F4F4 /* Pods-CosmicCypher.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -3870,7 +3578,6 @@
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/TimeZoneLocate";
-				DEVELOPMENT_TEAM = H4H7UN3F3K;
 				IBSC_MODULE = TimeZoneLocate;
 				INFOPLIST_FILE = "Target Support Files/TimeZoneLocate/ResourceBundle-TimeZoneLocate-TimeZoneLocate-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -3879,44 +3586,6 @@
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		9F1982F1AF57185A0A83065962FFC441 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 65B53D1E4BF6CC30B38D7FCC2876ECB8 /* Pods-CosmicCypherTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-CosmicCypherTests/Pods-CosmicCypherTests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-CosmicCypherTests/Pods-CosmicCypherTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -3957,7 +3626,7 @@
 		};
 		A09FDCCB1A83BE4083AAA0DD18C0D5D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 195EF211C82BED70EBF64A7A648CA5C9 /* Pods-CosmicCypher.debug.xcconfig */;
+			baseConfigurationReference = 2B0B0B50058CDDFC45871CDD8C5FB216 /* Pods-CosmicCypher.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -4028,53 +3697,16 @@
 			};
 			name = Release;
 		};
-		D056124F40D2ADB5DFFA1ED84BC29928 /* Debug */ = {
+		E06F8FA0F4D85544D6C2044D15E26DF0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6E855AD4C0EC2F94812937CEB2EEA95A /* Pods-CosmicCypher-CosmicCypherUITests.debug.xcconfig */;
+			baseConfigurationReference = E03A82DE22768E01C043326C753D024E /* Charts.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-CosmicCypher-CosmicCypherUITests/Pods-CosmicCypher-CosmicCypherUITests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-CosmicCypher-CosmicCypherUITests/Pods-CosmicCypher-CosmicCypherUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		E06F8FA0F4D85544D6C2044D15E26DF0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E03A82DE22768E01C043326C753D024E /* Charts.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = H4H7UN3F3K;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -4090,7 +3722,6 @@
 				MODULEMAP_FILE = "Target Support Files/Charts/Charts.modulemap";
 				PRODUCT_MODULE_NAME = Charts;
 				PRODUCT_NAME = Charts;
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
@@ -4101,51 +3732,12 @@
 			};
 			name = Debug;
 		};
-		E48E59A70B5B19B612AFDD04A0BD0194 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2770C1FB99FE18A2C9226FB4859C76A2 /* Pods-CosmicCypher-CosmicCypherUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-CosmicCypher-CosmicCypherUITests/Pods-CosmicCypher-CosmicCypherUITests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-CosmicCypher-CosmicCypherUITests/Pods-CosmicCypher-CosmicCypherUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		E9B7D4F32F17DEBCA370AF0D79FAA171 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8EAAAF59432DCFD0612B32851A131690 /* TimeZoneLocate.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/TimeZoneLocate";
-				DEVELOPMENT_TEAM = H4H7UN3F3K;
 				IBSC_MODULE = TimeZoneLocate;
 				INFOPLIST_FILE = "Target Support Files/TimeZoneLocate/ResourceBundle-TimeZoneLocate-TimeZoneLocate-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -4197,11 +3789,11 @@
 			baseConfigurationReference = 8EAAAF59432DCFD0612B32851A131690 /* TimeZoneLocate.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -4217,7 +3809,6 @@
 				MODULEMAP_FILE = "Target Support Files/TimeZoneLocate/TimeZoneLocate.modulemap";
 				PRODUCT_MODULE_NAME = TimeZoneLocate;
 				PRODUCT_NAME = TimeZoneLocate;
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
@@ -4233,11 +3824,11 @@
 			baseConfigurationReference = 6D2CCFF891A8A1C23E13198EF881683E /* Charts.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = H4H7UN3F3K;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -4253,7 +3844,6 @@
 				MODULEMAP_FILE = "Target Support Files/Charts/Charts.modulemap";
 				PRODUCT_MODULE_NAME = Charts;
 				PRODUCT_NAME = Charts;
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
@@ -4318,24 +3908,6 @@
 			buildConfigurations = (
 				EF13E0DC1058106B2B6BF65E01011D16 /* Debug */,
 				626C9B07DCBE1F9D594B0BC8EFD211BB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		799E35A1C38BA376937E833D3CF744EE /* Build configuration list for PBXNativeTarget "Pods-CosmicCypherTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2144D7B616130F89AA50D24654D104E6 /* Debug */,
-				9F1982F1AF57185A0A83065962FFC441 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9F9B0C1F1F9113AC5D1B87CC2D9C4A4F /* Build configuration list for PBXNativeTarget "Pods-CosmicCypher-CosmicCypherUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D056124F40D2ADB5DFFA1ED84BC29928 /* Debug */,
-				E48E59A70B5B19B612AFDD04A0BD0194 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
